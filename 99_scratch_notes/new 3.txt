@@ -1,0 +1,13 @@
+File System
+
+C:\Users\Delulu Lemon\.lmstudio\models\lmstudio-community\gpt-oss-20b-GGUF
+	gpt-oss-20b-MXFP4.gguf
+
+C:\Users\Delulu Lemon\.lmstudio\hub\models\openai\gpt-oss-20b
+	manifest.json
+	model.yaml
+	README.md
+	thumbnail.png
+
+
+	
