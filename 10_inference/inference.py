@@ -55,8 +55,8 @@ from train_utils import SimpleLanguageModel  # type: ignore
 
 from logger_utils import setup_logging  # type: ignore
 
-# Initialize logger
-logger = setup_logging()
+# Initialize logger with inference prefix
+logger = setup_logging(prefix="inference")
 
 
 # =====================
@@ -350,8 +350,12 @@ def interactive_mode(model, stoi, itos, block_size, max_tokens=500,
             # Extract only the newly generated part
             new_text = generated[len(full_prompt):]
             
-            # Display result
-            print(f"\nGenerated text:\n{new_text}\n")
+            # Display result with clear separators
+            print("\n" + "=" * 80)
+            print("GENERATED TEXT:")
+            print("=" * 80)
+            print(new_text)
+            print("=" * 80 + "\n")
             
             # Update context history (keep last block_size characters)
             context_history.append(prompt + new_text)
@@ -448,13 +452,25 @@ if __name__ == "__main__":
                 device=device
             )
             
-            # Display result
-            logger.info("")
-            logger.info("=" * 80)
-            logger.info("GENERATED TEXT")
-            logger.info("=" * 80)
-            logger.info("")
+            # Display result with clear separators
+            print("\n" + "=" * 80)
+            print("INPUT PROMPT:")
+            print("=" * 80)
+            print(repr(args.prompt))
+            print("\n" + "=" * 80)
+            print("GENERATED TEXT:")
+            print("=" * 80)
             print(generated_text)
+            print("=" * 80 + "\n")
+            
+            # Also log for record keeping
+            logger.info("")
+            logger.info("=" * 80)
+            logger.info("GENERATED TEXT OUTPUT")
+            logger.info("=" * 80)
+            logger.info("")
+            logger.info(f"Input prompt: {repr(args.prompt)}")
+            logger.info(f"Generated text length: {len(generated_text)} characters")
             logger.info("")
             logger.info("=" * 80)
             logger.info("INFERENCE SESSION ENDED")
