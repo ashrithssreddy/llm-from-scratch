@@ -1,6 +1,6 @@
 ---
 name: aggressive-verbose-logging
-alwaysApply: true
+alwaysApply: false
 description: |
   For all training modules, aggressively log progress to a text file in logs/ folder.
   Each function or major step should have a clearly labeled header in the log file.
@@ -11,3 +11,4 @@ rules:
   - "Include timestamps and append to the same file, do not overwrite."
   - "Ensure logs are structured and easy to scan."
 ---
+ 
