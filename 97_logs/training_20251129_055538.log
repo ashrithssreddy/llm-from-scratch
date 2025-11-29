@@ -1,0 +1,421 @@
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - TRAINING SESSION STARTED
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - Log file: 97_logs\training_20251129_055538.log
+2025-11-29 05:55:38 - INFO - Timestamp: 20251129_055538
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - Command line arguments parsed
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - TRAINING CONFIGURATION
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - Training Parameters:
+2025-11-29 05:55:38 - INFO -   - Dataset folder: 40_training_data/dataset_toy/
+2025-11-29 05:55:38 - INFO -   - Total epochs: 10
+2025-11-29 05:55:38 - INFO -   - Batch size: 32
+2025-11-29 05:55:38 - INFO -   - Sequence length (block_size): 128
+2025-11-29 05:55:38 - INFO -   - Embedding dimension: 128
+2025-11-29 05:55:38 - INFO -   - Attention heads: 4
+2025-11-29 05:55:38 - INFO -   - Transformer layers: 3
+2025-11-29 05:55:38 - INFO -   - Learning rate: 0.001
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - STEP 1: DEVICE SELECTION
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - Selected device: cpu
+2025-11-29 05:55:38 - INFO -   - Using CPU (no CUDA available)
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - STEP 2: DATA LOADING
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - Loading all .txt files from: 40_training_data/dataset_toy/
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - Data loaded successfully:
+2025-11-29 05:55:38 - INFO -   - Total characters: 5,178
+2025-11-29 05:55:38 - INFO -   - Total lines: 43
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - STEP 3: DATASET PREPARATION
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - Creating character-level dataset...
+2025-11-29 05:55:38 - INFO -   - Processing text into sequences of length 128
+2025-11-29 05:55:38 - DEBUG - Creating character-level dataset...
+2025-11-29 05:55:38 - DEBUG -   - Input text length: 5178 characters
+2025-11-29 05:55:38 - DEBUG -   - Block size: 128
+2025-11-29 05:55:38 - DEBUG -   - Vocabulary size: 48
+2025-11-29 05:55:38 - DEBUG -   - Unique characters: 
+ ',-.ABCDEFHILMNPRSTWabcdefghijklmnopqrstuvwxyz
+2025-11-29 05:55:38 - DEBUG -   - Encoding text to integer sequences...
+2025-11-29 05:55:38 - DEBUG -   - Encoded data length: 5178 tokens
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - Dataset created:
+2025-11-29 05:55:38 - INFO -   - Vocabulary size: 48 unique characters
+2025-11-29 05:55:38 - INFO -   - Total training sequences: 5,050
+2025-11-29 05:55:38 - INFO -   - Total tokens: 5,178
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - STEP 4: DATALOADER SETUP
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - Creating DataLoader with batch_size=32 (shuffling enabled)...
+2025-11-29 05:55:38 - INFO -   - Total batches per epoch: 158
+2025-11-29 05:55:38 - INFO -   - Samples per batch: 32
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - STEP 5: MODEL INITIALIZATION
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - Building transformer-based language model...
+2025-11-29 05:55:38 - INFO -   - Architecture: 3 transformer layers
+2025-11-29 05:55:38 - INFO -   - Embedding dimension: 128
+2025-11-29 05:55:38 - INFO -   - Attention heads per layer: 4
+2025-11-29 05:55:38 - INFO -   - Vocabulary size: 48
+2025-11-29 05:55:38 - INFO -   - Context window: 128 tokens
+2025-11-29 05:55:38 - DEBUG - Initializing transformer model components...
+2025-11-29 05:55:38 - DEBUG -   - Vocab size: 48, Embed dim: 128
+2025-11-29 05:55:38 - DEBUG -   - Heads: 4, Layers: 3, Block size: 128
+2025-11-29 05:55:38 - DEBUG -   - Created token embedding: 48 x 128
+2025-11-29 05:55:38 - DEBUG -   - Created positional embedding: 128 x 128
+2025-11-29 05:55:38 - DEBUG -   - Creating 3 transformer encoder layers...
+2025-11-29 05:55:38 - DEBUG -   - Transformer blocks created: 3 layers
+2025-11-29 05:55:38 - DEBUG -   - Output layer: Linear(128 -> 48)
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - Model initialized:
+2025-11-29 05:55:38 - INFO -   - Total parameters: 623,792
+2025-11-29 05:55:38 - INFO -   - Trainable parameters: 623,792
+2025-11-29 05:55:38 - INFO -   - Model location: cpu
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - STEP 6: TRAINING SETUP
+2025-11-29 05:55:38 - INFO - ================================================================================
+2025-11-29 05:55:38 - INFO - 
+2025-11-29 05:55:38 - INFO - Configuring training components:
+2025-11-29 05:55:38 - INFO -   - Loss function: CrossEntropyLoss
+2025-11-29 05:55:38 - INFO -   - Optimizer: AdamW (learning rate: 0.001)
+2025-11-29 05:55:39 - INFO - 
+2025-11-29 05:55:39 - INFO - ================================================================================
+2025-11-29 05:55:39 - INFO - STEP 7: TRAINING LOOP
+2025-11-29 05:55:39 - INFO - ================================================================================
+2025-11-29 05:55:39 - INFO - 
+2025-11-29 05:55:39 - INFO - Starting training: 10 epochs, 158 batches per epoch
+2025-11-29 05:55:39 - INFO - 
+2025-11-29 05:55:39 - INFO - 
+2025-11-29 05:55:39 - INFO - --------------------------------------------------------------------------------
+2025-11-29 05:55:39 - INFO - EPOCH 1/10
+2025-11-29 05:55:39 - INFO - --------------------------------------------------------------------------------
+2025-11-29 05:55:39 - INFO - 
+2025-11-29 05:55:39 - INFO - Processing 158 batches...
+2025-11-29 05:55:40 - DEBUG -   First batch gradient norm: 1.7349
+2025-11-29 05:55:43 - DEBUG -   Batch 10/158: Current loss = 2.9330, Running average = 3.1977
+2025-11-29 05:55:46 - DEBUG -   Batch 20/158: Current loss = 2.6508, Running average = 2.9781
+2025-11-29 05:55:50 - DEBUG -   Batch 30/158: Current loss = 2.5523, Running average = 2.8480
+2025-11-29 05:55:54 - DEBUG -   Batch 40/158: Current loss = 2.4947, Running average = 2.7648
+2025-11-29 05:55:58 - DEBUG -   Batch 50/158: Current loss = 2.4424, Running average = 2.7047
+2025-11-29 05:56:02 - DEBUG -   Batch 60/158: Current loss = 2.4377, Running average = 2.6593
+2025-11-29 05:56:06 - DEBUG -   Batch 70/158: Current loss = 2.4043, Running average = 2.6235
+2025-11-29 05:56:09 - DEBUG -   Batch 80/158: Current loss = 2.3872, Running average = 2.5942
+2025-11-29 05:56:13 - DEBUG -   Batch 90/158: Current loss = 2.3536, Running average = 2.5696
+2025-11-29 05:56:17 - DEBUG -   Batch 100/158: Current loss = 2.3255, Running average = 2.5481
+2025-11-29 05:56:21 - DEBUG -   Batch 110/158: Current loss = 2.2898, Running average = 2.5282
+2025-11-29 05:56:24 - DEBUG -   Batch 120/158: Current loss = 2.3100, Running average = 2.5106
+2025-11-29 05:56:28 - DEBUG -   Batch 130/158: Current loss = 2.2685, Running average = 2.4931
+2025-11-29 05:56:32 - DEBUG -   Batch 140/158: Current loss = 2.1069, Running average = 2.4720
+2025-11-29 05:56:36 - DEBUG -   Batch 150/158: Current loss = 1.8455, Running average = 2.4390
+2025-11-29 05:56:39 - INFO - Epoch statistics:
+2025-11-29 05:56:39 - INFO -   - Average loss: 2.3998
+2025-11-29 05:56:39 - INFO -   - Min batch loss: 1.5274
+2025-11-29 05:56:39 - INFO -   - Max batch loss: 4.0341
+2025-11-29 05:56:39 - INFO - 
+2025-11-29 05:56:39 - INFO - Epoch 1/10 completed - Average Loss: 2.3998
+2025-11-29 05:56:39 - INFO - 
+2025-11-29 05:56:39 - INFO - 
+2025-11-29 05:56:39 - INFO - --------------------------------------------------------------------------------
+2025-11-29 05:56:39 - INFO - EPOCH 2/10
+2025-11-29 05:56:39 - INFO - --------------------------------------------------------------------------------
+2025-11-29 05:56:39 - INFO - 
+2025-11-29 05:56:39 - INFO - Processing 158 batches...
+2025-11-29 05:56:40 - DEBUG -   First batch gradient norm: 0.4955
+2025-11-29 05:56:43 - DEBUG -   Batch 10/158: Current loss = 1.0231, Running average = 1.2346
+2025-11-29 05:56:47 - DEBUG -   Batch 20/158: Current loss = 0.6574, Running average = 1.0323
+2025-11-29 05:56:51 - DEBUG -   Batch 30/158: Current loss = 0.4670, Running average = 0.8683
+2025-11-29 05:56:55 - DEBUG -   Batch 40/158: Current loss = 0.3381, Running average = 0.7478
+2025-11-29 05:57:00 - DEBUG -   Batch 50/158: Current loss = 0.2646, Running average = 0.6564
+2025-11-29 05:57:04 - DEBUG -   Batch 60/158: Current loss = 0.2292, Running average = 0.5842
+2025-11-29 05:57:08 - DEBUG -   Batch 70/158: Current loss = 0.1780, Running average = 0.5265
+2025-11-29 05:57:12 - DEBUG -   Batch 80/158: Current loss = 0.1503, Running average = 0.4801
+2025-11-29 05:57:15 - DEBUG -   Batch 90/158: Current loss = 0.1217, Running average = 0.4417
+2025-11-29 05:57:19 - DEBUG -   Batch 100/158: Current loss = 0.1054, Running average = 0.4092
+2025-11-29 05:57:23 - DEBUG -   Batch 110/158: Current loss = 0.1041, Running average = 0.3817
+2025-11-29 05:57:27 - DEBUG -   Batch 120/158: Current loss = 0.0861, Running average = 0.3578
+2025-11-29 05:57:31 - DEBUG -   Batch 130/158: Current loss = 0.0785, Running average = 0.3368
+2025-11-29 05:57:35 - DEBUG -   Batch 140/158: Current loss = 0.0796, Running average = 0.3185
+2025-11-29 05:57:39 - DEBUG -   Batch 150/158: Current loss = 0.0684, Running average = 0.3021
+2025-11-29 05:57:42 - INFO - Epoch statistics:
+2025-11-29 05:57:42 - INFO -   - Average loss: 0.2905
+2025-11-29 05:57:42 - INFO -   - Min batch loss: 0.0647
+2025-11-29 05:57:42 - INFO -   - Max batch loss: 1.4491
+2025-11-29 05:57:42 - INFO - 
+2025-11-29 05:57:42 - INFO - Epoch 2/10 completed - Average Loss: 0.2905
+2025-11-29 05:57:42 - INFO - 
+2025-11-29 05:57:42 - INFO - 
+2025-11-29 05:57:42 - INFO - --------------------------------------------------------------------------------
+2025-11-29 05:57:42 - INFO - EPOCH 3/10
+2025-11-29 05:57:42 - INFO - --------------------------------------------------------------------------------
+2025-11-29 05:57:42 - INFO - 
+2025-11-29 05:57:42 - INFO - Processing 158 batches...
+2025-11-29 05:57:42 - DEBUG -   First batch gradient norm: 0.0892
+2025-11-29 05:57:46 - DEBUG -   Batch 10/158: Current loss = 0.0609, Running average = 0.0619
+2025-11-29 05:57:50 - DEBUG -   Batch 20/158: Current loss = 0.0630, Running average = 0.0608
+2025-11-29 05:57:54 - DEBUG -   Batch 30/158: Current loss = 0.0524, Running average = 0.0603
+2025-11-29 05:57:58 - DEBUG -   Batch 40/158: Current loss = 0.0569, Running average = 0.0589
+2025-11-29 05:58:02 - DEBUG -   Batch 50/158: Current loss = 0.0590, Running average = 0.0576
+2025-11-29 05:58:05 - DEBUG -   Batch 60/158: Current loss = 0.0539, Running average = 0.0570
+2025-11-29 05:58:09 - DEBUG -   Batch 70/158: Current loss = 0.0450, Running average = 0.0556
+2025-11-29 05:58:13 - DEBUG -   Batch 80/158: Current loss = 0.0401, Running average = 0.0543
+2025-11-29 05:58:17 - DEBUG -   Batch 90/158: Current loss = 0.0429, Running average = 0.0531
+2025-11-29 05:58:21 - DEBUG -   Batch 100/158: Current loss = 0.0380, Running average = 0.0523
+2025-11-29 05:58:25 - DEBUG -   Batch 110/158: Current loss = 0.0510, Running average = 0.0516
+2025-11-29 05:58:29 - DEBUG -   Batch 120/158: Current loss = 0.0383, Running average = 0.0507
+2025-11-29 05:58:33 - DEBUG -   Batch 130/158: Current loss = 0.0445, Running average = 0.0502
+2025-11-29 05:58:37 - DEBUG -   Batch 140/158: Current loss = 0.0496, Running average = 0.0495
+2025-11-29 05:58:41 - DEBUG -   Batch 150/158: Current loss = 0.0399, Running average = 0.0490
+2025-11-29 05:58:44 - INFO - Epoch statistics:
+2025-11-29 05:58:44 - INFO -   - Average loss: 0.0487
+2025-11-29 05:58:44 - INFO -   - Min batch loss: 0.0349
+2025-11-29 05:58:44 - INFO -   - Max batch loss: 0.0770
+2025-11-29 05:58:44 - INFO - 
+2025-11-29 05:58:44 - INFO - Epoch 3/10 completed - Average Loss: 0.0487
+2025-11-29 05:58:44 - INFO - 
+2025-11-29 05:58:44 - INFO - 
+2025-11-29 05:58:44 - INFO - --------------------------------------------------------------------------------
+2025-11-29 05:58:44 - INFO - EPOCH 4/10
+2025-11-29 05:58:44 - INFO - --------------------------------------------------------------------------------
+2025-11-29 05:58:44 - INFO - 
+2025-11-29 05:58:44 - INFO - Processing 158 batches...
+2025-11-29 05:58:44 - DEBUG -   First batch gradient norm: 0.0650
+2025-11-29 05:58:48 - DEBUG -   Batch 10/158: Current loss = 0.0385, Running average = 0.0399
+2025-11-29 05:58:52 - DEBUG -   Batch 20/158: Current loss = 0.0333, Running average = 0.0395
+2025-11-29 05:58:56 - DEBUG -   Batch 30/158: Current loss = 0.0425, Running average = 0.0399
+2025-11-29 05:58:59 - DEBUG -   Batch 40/158: Current loss = 0.0336, Running average = 0.0399
+2025-11-29 05:59:03 - DEBUG -   Batch 50/158: Current loss = 0.0297, Running average = 0.0391
+2025-11-29 05:59:07 - DEBUG -   Batch 60/158: Current loss = 0.0393, Running average = 0.0386
+2025-11-29 05:59:11 - DEBUG -   Batch 70/158: Current loss = 0.0425, Running average = 0.0384
+2025-11-29 05:59:15 - DEBUG -   Batch 80/158: Current loss = 0.0386, Running average = 0.0383
+2025-11-29 05:59:19 - DEBUG -   Batch 90/158: Current loss = 0.0389, Running average = 0.0380
+2025-11-29 05:59:23 - DEBUG -   Batch 100/158: Current loss = 0.0376, Running average = 0.0377
+2025-11-29 05:59:27 - DEBUG -   Batch 110/158: Current loss = 0.0360, Running average = 0.0374
+2025-11-29 05:59:31 - DEBUG -   Batch 120/158: Current loss = 0.0313, Running average = 0.0374
+2025-11-29 05:59:35 - DEBUG -   Batch 130/158: Current loss = 0.0295, Running average = 0.0372
+2025-11-29 05:59:39 - DEBUG -   Batch 140/158: Current loss = 0.0351, Running average = 0.0372
+2025-11-29 05:59:43 - DEBUG -   Batch 150/158: Current loss = 0.0331, Running average = 0.0369
+2025-11-29 05:59:46 - INFO - Epoch statistics:
+2025-11-29 05:59:46 - INFO -   - Average loss: 0.0367
+2025-11-29 05:59:46 - INFO -   - Min batch loss: 0.0264
+2025-11-29 05:59:46 - INFO -   - Max batch loss: 0.0458
+2025-11-29 05:59:46 - INFO - 
+2025-11-29 05:59:46 - INFO - Epoch 4/10 completed - Average Loss: 0.0367
+2025-11-29 05:59:46 - INFO - 
+2025-11-29 05:59:46 - INFO - 
+2025-11-29 05:59:46 - INFO - --------------------------------------------------------------------------------
+2025-11-29 05:59:46 - INFO - EPOCH 5/10
+2025-11-29 05:59:46 - INFO - --------------------------------------------------------------------------------
+2025-11-29 05:59:46 - INFO - 
+2025-11-29 05:59:46 - INFO - Processing 158 batches...
+2025-11-29 05:59:46 - DEBUG -   First batch gradient norm: 0.0488
+2025-11-29 05:59:50 - DEBUG -   Batch 10/158: Current loss = 0.0322, Running average = 0.0346
+2025-11-29 05:59:54 - DEBUG -   Batch 20/158: Current loss = 0.0282, Running average = 0.0333
+2025-11-29 05:59:58 - DEBUG -   Batch 30/158: Current loss = 0.0416, Running average = 0.0338
+2025-11-29 06:00:02 - DEBUG -   Batch 40/158: Current loss = 0.0271, Running average = 0.0336
+2025-11-29 06:00:06 - DEBUG -   Batch 50/158: Current loss = 0.0306, Running average = 0.0335
+2025-11-29 06:00:10 - DEBUG -   Batch 60/158: Current loss = 0.0323, Running average = 0.0334
+2025-11-29 06:00:14 - DEBUG -   Batch 70/158: Current loss = 0.0323, Running average = 0.0329
+2025-11-29 06:00:18 - DEBUG -   Batch 80/158: Current loss = 0.0330, Running average = 0.0329
+2025-11-29 06:00:22 - DEBUG -   Batch 90/158: Current loss = 0.0259, Running average = 0.0325
+2025-11-29 06:00:26 - DEBUG -   Batch 100/158: Current loss = 0.0297, Running average = 0.0324
+2025-11-29 06:00:30 - DEBUG -   Batch 110/158: Current loss = 0.0304, Running average = 0.0322
+2025-11-29 06:00:34 - DEBUG -   Batch 120/158: Current loss = 0.0331, Running average = 0.0321
+2025-11-29 06:00:38 - DEBUG -   Batch 130/158: Current loss = 0.0335, Running average = 0.0318
+2025-11-29 06:00:41 - DEBUG -   Batch 140/158: Current loss = 0.0308, Running average = 0.0319
+2025-11-29 06:00:45 - DEBUG -   Batch 150/158: Current loss = 0.0322, Running average = 0.0317
+2025-11-29 06:00:48 - INFO - Epoch statistics:
+2025-11-29 06:00:48 - INFO -   - Average loss: 0.0316
+2025-11-29 06:00:48 - INFO -   - Min batch loss: 0.0234
+2025-11-29 06:00:48 - INFO -   - Max batch loss: 0.0434
+2025-11-29 06:00:48 - INFO - 
+2025-11-29 06:00:48 - INFO - Epoch 5/10 completed - Average Loss: 0.0316
+2025-11-29 06:00:48 - INFO - 
+2025-11-29 06:00:48 - INFO - 
+2025-11-29 06:00:48 - INFO - --------------------------------------------------------------------------------
+2025-11-29 06:00:48 - INFO - EPOCH 6/10
+2025-11-29 06:00:48 - INFO - --------------------------------------------------------------------------------
+2025-11-29 06:00:48 - INFO - 
+2025-11-29 06:00:48 - INFO - Processing 158 batches...
+2025-11-29 06:00:49 - DEBUG -   First batch gradient norm: 0.0563
+2025-11-29 06:00:52 - DEBUG -   Batch 10/158: Current loss = 0.0299, Running average = 0.0284
+2025-11-29 06:00:56 - DEBUG -   Batch 20/158: Current loss = 0.0283, Running average = 0.0285
+2025-11-29 06:01:00 - DEBUG -   Batch 30/158: Current loss = 0.0259, Running average = 0.0286
+2025-11-29 06:01:04 - DEBUG -   Batch 40/158: Current loss = 0.0281, Running average = 0.0285
+2025-11-29 06:01:08 - DEBUG -   Batch 50/158: Current loss = 0.0231, Running average = 0.0286
+2025-11-29 06:01:12 - DEBUG -   Batch 60/158: Current loss = 0.0332, Running average = 0.0285
+2025-11-29 06:01:16 - DEBUG -   Batch 70/158: Current loss = 0.0297, Running average = 0.0287
+2025-11-29 06:01:20 - DEBUG -   Batch 80/158: Current loss = 0.0223, Running average = 0.0285
+2025-11-29 06:01:24 - DEBUG -   Batch 90/158: Current loss = 0.0284, Running average = 0.0283
+2025-11-29 06:01:28 - DEBUG -   Batch 100/158: Current loss = 0.0264, Running average = 0.0282
+2025-11-29 06:01:31 - DEBUG -   Batch 110/158: Current loss = 0.0288, Running average = 0.0281
+2025-11-29 06:01:35 - DEBUG -   Batch 120/158: Current loss = 0.0235, Running average = 0.0280
+2025-11-29 06:01:39 - DEBUG -   Batch 130/158: Current loss = 0.0293, Running average = 0.0280
+2025-11-29 06:01:43 - DEBUG -   Batch 140/158: Current loss = 0.0196, Running average = 0.0278
+2025-11-29 06:01:47 - DEBUG -   Batch 150/158: Current loss = 0.0205, Running average = 0.0277
+2025-11-29 06:01:50 - INFO - Epoch statistics:
+2025-11-29 06:01:50 - INFO -   - Average loss: 0.0276
+2025-11-29 06:01:50 - INFO -   - Min batch loss: 0.0196
+2025-11-29 06:01:50 - INFO -   - Max batch loss: 0.0363
+2025-11-29 06:01:50 - INFO - 
+2025-11-29 06:01:50 - INFO - Epoch 6/10 completed - Average Loss: 0.0276
+2025-11-29 06:01:50 - INFO - 
+2025-11-29 06:01:50 - INFO - 
+2025-11-29 06:01:50 - INFO - --------------------------------------------------------------------------------
+2025-11-29 06:01:50 - INFO - EPOCH 7/10
+2025-11-29 06:01:50 - INFO - --------------------------------------------------------------------------------
+2025-11-29 06:01:50 - INFO - 
+2025-11-29 06:01:50 - INFO - Processing 158 batches...
+2025-11-29 06:01:51 - DEBUG -   First batch gradient norm: 0.0432
+2025-11-29 06:01:54 - DEBUG -   Batch 10/158: Current loss = 0.0296, Running average = 0.0252
+2025-11-29 06:01:58 - DEBUG -   Batch 20/158: Current loss = 0.0212, Running average = 0.0254
+2025-11-29 06:02:02 - DEBUG -   Batch 30/158: Current loss = 0.0211, Running average = 0.0248
+2025-11-29 06:02:06 - DEBUG -   Batch 40/158: Current loss = 0.0226, Running average = 0.0248
+2025-11-29 06:02:10 - DEBUG -   Batch 50/158: Current loss = 0.0286, Running average = 0.0249
+2025-11-29 06:02:14 - DEBUG -   Batch 60/158: Current loss = 0.0216, Running average = 0.0249
+2025-11-29 06:02:18 - DEBUG -   Batch 70/158: Current loss = 0.0235, Running average = 0.0249
+2025-11-29 06:02:22 - DEBUG -   Batch 80/158: Current loss = 0.0233, Running average = 0.0248
+2025-11-29 06:02:26 - DEBUG -   Batch 90/158: Current loss = 0.0234, Running average = 0.0248
+2025-11-29 06:02:30 - DEBUG -   Batch 100/158: Current loss = 0.0273, Running average = 0.0248
+2025-11-29 06:02:33 - DEBUG -   Batch 110/158: Current loss = 0.0302, Running average = 0.0248
+2025-11-29 06:02:37 - DEBUG -   Batch 120/158: Current loss = 0.0202, Running average = 0.0248
+2025-11-29 06:02:41 - DEBUG -   Batch 130/158: Current loss = 0.0195, Running average = 0.0247
+2025-11-29 06:02:45 - DEBUG -   Batch 140/158: Current loss = 0.0251, Running average = 0.0247
+2025-11-29 06:02:49 - DEBUG -   Batch 150/158: Current loss = 0.0229, Running average = 0.0245
+2025-11-29 06:02:52 - INFO - Epoch statistics:
+2025-11-29 06:02:52 - INFO -   - Average loss: 0.0244
+2025-11-29 06:02:52 - INFO -   - Min batch loss: 0.0185
+2025-11-29 06:02:52 - INFO -   - Max batch loss: 0.0343
+2025-11-29 06:02:52 - INFO - 
+2025-11-29 06:02:52 - INFO - Epoch 7/10 completed - Average Loss: 0.0244
+2025-11-29 06:02:52 - INFO - 
+2025-11-29 06:02:52 - INFO - 
+2025-11-29 06:02:52 - INFO - --------------------------------------------------------------------------------
+2025-11-29 06:02:52 - INFO - EPOCH 8/10
+2025-11-29 06:02:52 - INFO - --------------------------------------------------------------------------------
+2025-11-29 06:02:52 - INFO - 
+2025-11-29 06:02:52 - INFO - Processing 158 batches...
+2025-11-29 06:02:53 - DEBUG -   First batch gradient norm: 0.0406
+2025-11-29 06:02:56 - DEBUG -   Batch 10/158: Current loss = 0.0247, Running average = 0.0229
+2025-11-29 06:03:00 - DEBUG -   Batch 20/158: Current loss = 0.0228, Running average = 0.0237
+2025-11-29 06:03:04 - DEBUG -   Batch 30/158: Current loss = 0.0180, Running average = 0.0233
+2025-11-29 06:03:08 - DEBUG -   Batch 40/158: Current loss = 0.0230, Running average = 0.0233
+2025-11-29 06:03:12 - DEBUG -   Batch 50/158: Current loss = 0.0234, Running average = 0.0232
+2025-11-29 06:03:16 - DEBUG -   Batch 60/158: Current loss = 0.0213, Running average = 0.0231
+2025-11-29 06:03:20 - DEBUG -   Batch 70/158: Current loss = 0.0234, Running average = 0.0230
+2025-11-29 06:03:24 - DEBUG -   Batch 80/158: Current loss = 0.0208, Running average = 0.0229
+2025-11-29 06:03:28 - DEBUG -   Batch 90/158: Current loss = 0.0192, Running average = 0.0230
+2025-11-29 06:03:32 - DEBUG -   Batch 100/158: Current loss = 0.0246, Running average = 0.0230
+2025-11-29 06:03:36 - DEBUG -   Batch 110/158: Current loss = 0.0233, Running average = 0.0230
+2025-11-29 06:03:40 - DEBUG -   Batch 120/158: Current loss = 0.0196, Running average = 0.0230
+2025-11-29 06:03:45 - DEBUG -   Batch 130/158: Current loss = 0.0215, Running average = 0.0230
+2025-11-29 06:03:49 - DEBUG -   Batch 140/158: Current loss = 0.0248, Running average = 0.0229
+2025-11-29 06:03:53 - DEBUG -   Batch 150/158: Current loss = 0.0191, Running average = 0.0228
+2025-11-29 06:03:56 - INFO - Epoch statistics:
+2025-11-29 06:03:56 - INFO -   - Average loss: 0.0227
+2025-11-29 06:03:56 - INFO -   - Min batch loss: 0.0177
+2025-11-29 06:03:56 - INFO -   - Max batch loss: 0.0297
+2025-11-29 06:03:56 - INFO - 
+2025-11-29 06:03:56 - INFO - Epoch 8/10 completed - Average Loss: 0.0227
+2025-11-29 06:03:56 - INFO - 
+2025-11-29 06:03:56 - INFO - 
+2025-11-29 06:03:56 - INFO - --------------------------------------------------------------------------------
+2025-11-29 06:03:56 - INFO - EPOCH 9/10
+2025-11-29 06:03:56 - INFO - --------------------------------------------------------------------------------
+2025-11-29 06:03:56 - INFO - 
+2025-11-29 06:03:56 - INFO - Processing 158 batches...
+2025-11-29 06:03:57 - DEBUG -   First batch gradient norm: 0.0370
+2025-11-29 06:04:01 - DEBUG -   Batch 10/158: Current loss = 0.0185, Running average = 0.0226
+2025-11-29 06:04:05 - DEBUG -   Batch 20/158: Current loss = 0.0213, Running average = 0.0222
+2025-11-29 06:04:09 - DEBUG -   Batch 30/158: Current loss = 0.0185, Running average = 0.0216
+2025-11-29 06:04:13 - DEBUG -   Batch 40/158: Current loss = 0.0205, Running average = 0.0215
+2025-11-29 06:04:17 - DEBUG -   Batch 50/158: Current loss = 0.0226, Running average = 0.0215
+2025-11-29 06:04:21 - DEBUG -   Batch 60/158: Current loss = 0.0224, Running average = 0.0216
+2025-11-29 06:04:25 - DEBUG -   Batch 70/158: Current loss = 0.0189, Running average = 0.0216
+2025-11-29 06:04:29 - DEBUG -   Batch 80/158: Current loss = 0.0224, Running average = 0.0215
+2025-11-29 06:04:33 - DEBUG -   Batch 90/158: Current loss = 0.0222, Running average = 0.0216
+2025-11-29 06:04:37 - DEBUG -   Batch 100/158: Current loss = 0.0220, Running average = 0.0218
+2025-11-29 06:04:41 - DEBUG -   Batch 110/158: Current loss = 0.0192, Running average = 0.0217
+2025-11-29 06:04:45 - DEBUG -   Batch 120/158: Current loss = 0.0212, Running average = 0.0217
+2025-11-29 06:04:49 - DEBUG -   Batch 130/158: Current loss = 0.0214, Running average = 0.0217
+2025-11-29 06:04:53 - DEBUG -   Batch 140/158: Current loss = 0.0230, Running average = 0.0217
+2025-11-29 06:04:57 - DEBUG -   Batch 150/158: Current loss = 0.0244, Running average = 0.0216
+2025-11-29 06:05:00 - INFO - Epoch statistics:
+2025-11-29 06:05:00 - INFO -   - Average loss: 0.0216
+2025-11-29 06:05:00 - INFO -   - Min batch loss: 0.0159
+2025-11-29 06:05:00 - INFO -   - Max batch loss: 0.0290
+2025-11-29 06:05:00 - INFO - 
+2025-11-29 06:05:00 - INFO - Epoch 9/10 completed - Average Loss: 0.0216
+2025-11-29 06:05:00 - INFO - 
+2025-11-29 06:05:00 - INFO - 
+2025-11-29 06:05:00 - INFO - --------------------------------------------------------------------------------
+2025-11-29 06:05:00 - INFO - EPOCH 10/10
+2025-11-29 06:05:00 - INFO - --------------------------------------------------------------------------------
+2025-11-29 06:05:00 - INFO - 
+2025-11-29 06:05:00 - INFO - Processing 158 batches...
+2025-11-29 06:05:01 - DEBUG -   First batch gradient norm: 0.0372
+2025-11-29 06:05:04 - DEBUG -   Batch 10/158: Current loss = 0.0197, Running average = 0.0215
+2025-11-29 06:05:08 - DEBUG -   Batch 20/158: Current loss = 0.0196, Running average = 0.0209
+2025-11-29 06:05:12 - DEBUG -   Batch 30/158: Current loss = 0.0194, Running average = 0.0209
+2025-11-29 06:05:16 - DEBUG -   Batch 40/158: Current loss = 0.0201, Running average = 0.0206
+2025-11-29 06:05:20 - DEBUG -   Batch 50/158: Current loss = 0.0194, Running average = 0.0205
+2025-11-29 06:05:24 - DEBUG -   Batch 60/158: Current loss = 0.0216, Running average = 0.0204
+2025-11-29 06:05:28 - DEBUG -   Batch 70/158: Current loss = 0.0204, Running average = 0.0203
+2025-11-29 06:05:32 - DEBUG -   Batch 80/158: Current loss = 0.0213, Running average = 0.0205
+2025-11-29 06:05:36 - DEBUG -   Batch 90/158: Current loss = 0.0198, Running average = 0.0206
+2025-11-29 06:05:40 - DEBUG -   Batch 100/158: Current loss = 0.0163, Running average = 0.0206
+2025-11-29 06:05:45 - DEBUG -   Batch 110/158: Current loss = 0.0221, Running average = 0.0206
+2025-11-29 06:05:48 - DEBUG -   Batch 120/158: Current loss = 0.0208, Running average = 0.0205
+2025-11-29 06:05:53 - DEBUG -   Batch 130/158: Current loss = 0.0241, Running average = 0.0205
+2025-11-29 06:05:57 - DEBUG -   Batch 140/158: Current loss = 0.0176, Running average = 0.0205
+2025-11-29 06:06:01 - DEBUG -   Batch 150/158: Current loss = 0.0201, Running average = 0.0204
+2025-11-29 06:06:04 - INFO - Epoch statistics:
+2025-11-29 06:06:04 - INFO -   - Average loss: 0.0205
+2025-11-29 06:06:04 - INFO -   - Min batch loss: 0.0148
+2025-11-29 06:06:04 - INFO -   - Max batch loss: 0.0252
+2025-11-29 06:06:04 - INFO - 
+2025-11-29 06:06:04 - INFO - Epoch 10/10 completed - Average Loss: 0.0205
+2025-11-29 06:06:04 - INFO - 
+2025-11-29 06:06:04 - INFO - ================================================================================
+2025-11-29 06:06:04 - INFO - TRAINING COMPLETE
+2025-11-29 06:06:04 - INFO - ================================================================================
+2025-11-29 06:06:04 - INFO - 
+2025-11-29 06:06:04 - INFO - ================================================================================
+2025-11-29 06:06:04 - INFO - STEP 8: MODEL SAVING
+2025-11-29 06:06:04 - INFO - ================================================================================
+2025-11-29 06:06:04 - INFO - 
+2025-11-29 06:06:04 - INFO - Saving trained model to: 50_models\trained_model.pt
+2025-11-29 06:06:04 - INFO - 
+2025-11-29 06:06:04 - INFO - Saving model components:
+2025-11-29 06:06:04 - INFO -   - Model weights (state_dict)
+2025-11-29 06:06:04 - INFO -   - Vocabulary mappings (character to index)
+2025-11-29 06:06:04 - INFO -   - Model hyperparameters
+2025-11-29 06:06:04 - INFO - 
+2025-11-29 06:06:04 - INFO - Model saved successfully!
+2025-11-29 06:06:04 - INFO -   - File path: 50_models\trained_model.pt
+2025-11-29 06:06:04 - INFO -   - File size: 2.39 MB
+2025-11-29 06:06:04 - INFO - 
+2025-11-29 06:06:04 - INFO - ================================================================================
+2025-11-29 06:06:04 - INFO - TRAINING SESSION ENDED
+2025-11-29 06:06:04 - INFO - ================================================================================
+2025-11-29 06:06:04 - INFO - 
