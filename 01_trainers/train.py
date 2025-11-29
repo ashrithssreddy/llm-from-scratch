@@ -1,4 +1,36 @@
 # =====================
+#  EXAMPLE USAGE
+# =====================
+#
+# Basic usage (train on default toy dataset with default parameters):
+#   python 01_trainers/train.py
+#
+# Or explicitly specify the dataset folder:
+#   python 01_trainers/train.py 40_training_data/dataset_toy/
+#
+# Train on anthropology dataset with more epochs:
+#   python 01_trainers/train.py 40_training_data/dataset_anthropology/ --epochs 50
+#
+# Train on machine learning dataset with larger model:
+#   python 01_trainers/train.py 40_training_data/dataset_machine_learning/ --embed-dim 256 --num-layers 6 --epochs 30
+#
+# Train on Bitcoin dataset with custom parameters:
+#   python 01_trainers/train.py 40_training_data/dataset_bitcoin/ --epochs 20 --batch-size 64 --lr 0.001
+#
+# Available arguments:
+#   dataset_folder (optional) - Path to folder containing .txt files (default: 40_training_data/dataset_toy/)
+#   --epochs - Number of training epochs (default: 10)
+#   --batch-size - Batch size (default: 32)
+#   --block-size - Sequence length (default: 128)
+#   --embed-dim - Embedding dimension (default: 128)
+#   --num-heads - Number of attention heads (default: 4)
+#   --num-layers - Number of transformer layers (default: 3)
+#   --lr - Learning rate (default: 0.001)
+#
+# Model will be saved to: 50_models/trained_model.pt
+
+
+# =====================
 #  SET WORKING DIRECTORY TO GIT ROOT
 # =====================
 
@@ -221,7 +253,9 @@ if __name__ == "__main__":
     parser.add_argument(
         "dataset_folder",
         type=str,
-        help="Path to folder containing .txt files to train on"
+        nargs='?',
+        default="40_training_data/dataset_toy/",
+        help="Path to folder containing .txt files to train on (default: 40_training_data/dataset_toy/)"
     )
     parser.add_argument("--epochs", type=int, default=10, help="Number of training epochs")
     parser.add_argument("--batch-size", type=int, default=32, help="Batch size")
