@@ -3,6 +3,7 @@
 # =====================
 
 import os
+import sys
 from pathlib import Path
 
 
@@ -50,5 +51,45 @@ def set_working_directory_to_git_root(start_path=None):
         raise RuntimeError("Could not find git root directory. Make sure you're in a git repository.")
     
     os.chdir(git_root)
+    return git_root
+
+
+def setup_workspace(current_file_path):
+    """
+    Complete workspace setup: find git root, set working directory, and add utils to path.
+    
+    This function handles everything needed to set up the workspace environment:
+    - Adds utils to sys.path (so imports work)
+    - Finds git root directory
+    - Changes working directory to git root
+    - Re-adds utils to sys.path after directory change
+    
+    Args:
+        current_file_path: Path to the current file (usually __file__)
+        
+    Returns:
+        Path object pointing to the git root directory
+    """
+    current_file = Path(current_file_path)
+    
+    # Add utils to path before finding git root
+    utils_path = current_file.parent.parent / '95_utils'
+    if str(utils_path) not in sys.path:
+        sys.path.insert(0, str(utils_path))
+    
+    # Find and set working directory to git root
+    git_root = find_git_root(current_file.parent)
+    
+    if git_root is None:
+        raise RuntimeError("Could not find git root directory. Make sure you're in a git repository.")
+    
+    os.chdir(git_root)
+    
+    # Re-add utils to path after changing directory (using absolute path from git root)
+    utils_path_absolute = git_root / '95_utils'
+    if str(utils_path_absolute) not in sys.path:
+        sys.path.insert(0, str(utils_path_absolute))
+    
+    print(f"Working directory set to git root: {git_root}")
     return git_root
 

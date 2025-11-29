@@ -2,21 +2,7 @@
 #  SET WORKING DIRECTORY TO GIT ROOT
 # =====================
 
-import sys
-from pathlib import Path
-
-# Add utils to path before importing
-utils_path = Path(__file__).parent.parent / '95_utils'
-sys.path.insert(0, str(utils_path))
-
-from path_utils import set_working_directory_to_git_root  # type: ignore
-
-# Set working directory to git root
-git_root = set_working_directory_to_git_root()
-print(f"Working directory set to git root: {git_root}")
-
-# Re-add utils to path after changing directory (in case relative paths changed)
-sys.path.insert(0, str(Path.cwd() / '95_utils'))
+import sys; from pathlib import Path; sys.path.insert(0, str(Path(__file__).parent.parent / '95_utils')); __import__('path_utils').setup_workspace(__file__)
 
 
 # =====================
