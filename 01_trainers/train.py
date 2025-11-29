@@ -109,11 +109,9 @@ class CharDataset(Dataset):
             text: The full text as a string
             block_size: Length of sequences to use for training
         """
-        logger.debug("")
-        logger.debug("### FUNCTION: CharDataset.__init__ ###")
-        logger.debug("")
-        logger.debug(f"Input text length: {len(text)} characters")
-        logger.debug(f"Block size: {block_size}")
+        logger.debug("Creating character-level dataset...")
+        logger.debug(f"  - Input text length: {len(text)} characters")
+        logger.debug(f"  - Block size: {block_size}")
         
         self.block_size = block_size
         
@@ -123,13 +121,13 @@ class CharDataset(Dataset):
         self.stoi = {ch: i for i, ch in enumerate(chars)}
         self.itos = {i: ch for i, ch in enumerate(chars)}
         
-        logger.debug(f"Vocabulary size: {self.vocab_size}")
-        logger.debug(f"Unique characters: {''.join(chars[:50])}{'...' if len(chars) > 50 else ''}")
+        logger.debug(f"  - Vocabulary size: {self.vocab_size}")
+        logger.debug(f"  - Unique characters: {''.join(chars[:50])}{'...' if len(chars) > 50 else ''}")
         
         # Encode the entire text
-        logger.debug("Encoding text to integer sequences...")
+        logger.debug("  - Encoding text to integer sequences...")
         self.data = [self.stoi[ch] for ch in text]
-        logger.debug(f"Encoded data length: {len(self.data)} tokens")
+        logger.debug(f"  - Encoded data length: {len(self.data)} tokens")
         
     def __len__(self):
         return len(self.data) - self.block_size
@@ -146,25 +144,23 @@ class SimpleLanguageModel(nn.Module):
     
     def __init__(self, vocab_size, embed_dim=128, num_heads=4, num_layers=3, block_size=128):
         super().__init__()
-        logger.debug("")
-        logger.debug("### FUNCTION: SimpleLanguageModel.__init__ ###")
-        logger.debug("")
-        logger.debug(f"Initializing model with vocab_size={vocab_size}, embed_dim={embed_dim}, "
-                    f"num_heads={num_heads}, num_layers={num_layers}, block_size={block_size}")
+        logger.debug("Initializing transformer model components...")
+        logger.debug(f"  - Vocab size: {vocab_size}, Embed dim: {embed_dim}")
+        logger.debug(f"  - Heads: {num_heads}, Layers: {num_layers}, Block size: {block_size}")
         
         self.block_size = block_size
         self.vocab_size = vocab_size
         
         # Token embedding
         self.token_embedding = nn.Embedding(vocab_size, embed_dim)
-        logger.debug(f"Created token embedding: {vocab_size} x {embed_dim}")
+        logger.debug(f"  - Created token embedding: {vocab_size} x {embed_dim}")
         
         # Positional embedding
         self.position_embedding = nn.Embedding(block_size, embed_dim)
-        logger.debug(f"Created positional embedding: {block_size} x {embed_dim}")
+        logger.debug(f"  - Created positional embedding: {block_size} x {embed_dim}")
         
         # Transformer blocks
-        logger.debug(f"Creating {num_layers} transformer encoder layers...")
+        logger.debug(f"  - Creating {num_layers} transformer encoder layers...")
         self.blocks = nn.Sequential(*[
             nn.TransformerEncoderLayer(
                 d_model=embed_dim,
@@ -175,12 +171,12 @@ class SimpleLanguageModel(nn.Module):
             )
             for _ in range(num_layers)
         ])
-        logger.debug(f"Transformer blocks created: {num_layers} layers")
+        logger.debug(f"  - Transformer blocks created: {num_layers} layers")
         
         # Output layer
         self.ln_f = nn.LayerNorm(embed_dim)
         self.head = nn.Linear(embed_dim, vocab_size)
-        logger.debug(f"Output layer: Linear({embed_dim} -> {vocab_size})")
+        logger.debug(f"  - Output layer: Linear({embed_dim} -> {vocab_size})")
         
     def forward(self, idx):
         B, T = idx.shape
@@ -207,31 +203,27 @@ class SimpleLanguageModel(nn.Module):
 
 def train_epoch(model, dataloader, optimizer, criterion, device, epoch_num=None):
     """Train for one epoch."""
-    logger.debug("")
-    logger.debug("### FUNCTION: train_epoch ###")
-    logger.debug("")
     if epoch_num is not None:
-        logger.info(f"Starting epoch {epoch_num}")
-    logger.debug(f"Device: {device}")
-    logger.debug(f"Number of batches: {len(dataloader)}")
+        logger.info(f"Processing {len(dataloader)} batches...")
     
     model.train()
     total_loss = 0
     num_batches = 0
     batch_losses = []
     
-    for batch_idx, (x, y) in enumerate(tqdm(dataloader, desc="Training")):
+    for batch_idx, (x, y) in enumerate(tqdm(dataloader, desc=f"Epoch {epoch_num}")):
+        # Move data to device
         x, y = x.to(device), y.to(device)
         
-        # Forward pass
+        # Forward pass: predict next character for each position
         logits = model(x)
         loss = criterion(logits.view(-1, logits.size(-1)), y.view(-1))
         
-        # Backward pass
+        # Backward pass: compute gradients
         optimizer.zero_grad()
         loss.backward()
         
-        # Log gradient norms for debugging
+        # Log gradient norms for first batch (to monitor training health)
         if batch_idx == 0:
             total_grad_norm = 0
             for p in model.parameters():
@@ -239,8 +231,9 @@ def train_epoch(model, dataloader, optimizer, criterion, device, epoch_num=None)
                     param_norm = p.grad.data.norm(2)
                     total_grad_norm += param_norm.item() ** 2
             total_grad_norm = total_grad_norm ** (1. / 2)
-            logger.debug(f"Batch {batch_idx}: Gradient norm: {total_grad_norm:.4f}")
+            logger.debug(f"  First batch gradient norm: {total_grad_norm:.4f}")
         
+        # Update model parameters
         optimizer.step()
         
         batch_loss = loss.item()
@@ -248,12 +241,15 @@ def train_epoch(model, dataloader, optimizer, criterion, device, epoch_num=None)
         batch_losses.append(batch_loss)
         num_batches += 1
         
-        # Log every 10 batches
+        # Log progress every 10 batches
         if (batch_idx + 1) % 10 == 0:
-            logger.debug(f"Batch {batch_idx + 1}/{len(dataloader)}: Loss = {batch_loss:.4f}, Avg Loss = {total_loss/num_batches:.4f}")
+            logger.debug(f"  Batch {batch_idx + 1}/{len(dataloader)}: Current loss = {batch_loss:.4f}, Running average = {total_loss/num_batches:.4f}")
     
     avg_loss = total_loss / num_batches
-    logger.info(f"Epoch complete: Average loss = {avg_loss:.4f}, Min batch loss = {min(batch_losses):.4f}, Max batch loss = {max(batch_losses):.4f}")
+    logger.info(f"Epoch statistics:")
+    logger.info(f"  - Average loss: {avg_loss:.4f}")
+    logger.info(f"  - Min batch loss: {min(batch_losses):.4f}")
+    logger.info(f"  - Max batch loss: {max(batch_losses):.4f}")
     
     return avg_loss
 
@@ -276,71 +272,86 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
         device: Device to train on (cuda/cpu)
     """
     logger.info("")
-    logger.info("### FUNCTION: train_model ###")
-    logger.info("")
-    logger.info("")
     logger.info("=" * 80)
     logger.info("TRAINING CONFIGURATION")
     logger.info("=" * 80)
     logger.info("")
-    logger.info(f"Dataset folder: {dataset_folder}")
-    logger.info(f"Epochs: {epochs}")
-    logger.info(f"Batch size: {batch_size}")
-    logger.info(f"Block size: {block_size}")
-    logger.info(f"Embedding dimension: {embed_dim}")
-    logger.info(f"Number of heads: {num_heads}")
-    logger.info(f"Number of layers: {num_layers}")
-    logger.info(f"Learning rate: {learning_rate}")
+    logger.info("Training Parameters:")
+    logger.info(f"  - Dataset folder: {dataset_folder}")
+    logger.info(f"  - Total epochs: {epochs}")
+    logger.info(f"  - Batch size: {batch_size}")
+    logger.info(f"  - Sequence length (block_size): {block_size}")
+    logger.info(f"  - Embedding dimension: {embed_dim}")
+    logger.info(f"  - Attention heads: {num_heads}")
+    logger.info(f"  - Transformer layers: {num_layers}")
+    logger.info(f"  - Learning rate: {learning_rate}")
     logger.info("")
     
     # Set device
-    logger.debug("")
-    logger.debug("### STEP: Device Selection ###")
-    logger.debug("")
+    logger.info("=" * 80)
+    logger.info("STEP 1: DEVICE SELECTION")
+    logger.info("=" * 80)
+    logger.info("")
     if device is None:
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    logger.info(f"Using device: {device}")
+    logger.info(f"Selected device: {device}")
     if torch.cuda.is_available():
-        logger.info(f"CUDA device: {torch.cuda.get_device_name(0)}")
-        logger.info(f"CUDA memory: {torch.cuda.get_device_properties(0).total_memory / 1e9:.2f} GB")
+        logger.info(f"  - CUDA device: {torch.cuda.get_device_name(0)}")
+        logger.info(f"  - Available memory: {torch.cuda.get_device_properties(0).total_memory / 1e9:.2f} GB")
+    else:
+        logger.info("  - Using CPU (no CUDA available)")
     logger.info("")
     
     # Load data
+    logger.info("=" * 80)
+    logger.info("STEP 2: DATA LOADING")
+    logger.info("=" * 80)
     logger.info("")
-    logger.info("### STEP: Data Loading ###")
-    logger.info("")
-    logger.info(f"Loading text files from: {dataset_folder}")
+    logger.info(f"Loading all .txt files from: {dataset_folder}")
     text = load_text_files_from_folder(dataset_folder)
-    logger.info(f"Loaded {len(text):,} characters of text")
-    logger.info(f"Number of lines: {text.count(chr(10)) + 1}")
+    logger.info("")
+    logger.info("Data loaded successfully:")
+    logger.info(f"  - Total characters: {len(text):,}")
+    logger.info(f"  - Total lines: {text.count(chr(10)) + 1}")
     logger.info("")
     
     # Create dataset
+    logger.info("=" * 80)
+    logger.info("STEP 3: DATASET PREPARATION")
+    logger.info("=" * 80)
     logger.info("")
-    logger.info("### STEP: Dataset Creation ###")
-    logger.info("")
-    logger.info("Creating dataset...")
+    logger.info("Creating character-level dataset...")
+    logger.info(f"  - Processing text into sequences of length {block_size}")
     dataset = CharDataset(text, block_size=block_size)
-    logger.info(f"Vocabulary size: {dataset.vocab_size}")
-    logger.info(f"Dataset size: {len(dataset):,} sequences")
-    logger.info(f"Total tokens: {len(dataset.data):,}")
+    logger.info("")
+    logger.info("Dataset created:")
+    logger.info(f"  - Vocabulary size: {dataset.vocab_size} unique characters")
+    logger.info(f"  - Total training sequences: {len(dataset):,}")
+    logger.info(f"  - Total tokens: {len(dataset.data):,}")
     logger.info("")
     
     # Create dataloader
-    logger.debug("")
-    logger.debug("### STEP: DataLoader Creation ###")
-    logger.debug(f"Creating DataLoader with batch_size={batch_size}, shuffle=True")
+    logger.info("=" * 80)
+    logger.info("STEP 4: DATALOADER SETUP")
+    logger.info("=" * 80)
+    logger.info("")
+    logger.info(f"Creating DataLoader with batch_size={batch_size} (shuffling enabled)...")
     dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
-    logger.debug(f"DataLoader created: {len(dataloader)} batches")
+    logger.info(f"  - Total batches per epoch: {len(dataloader)}")
+    logger.info(f"  - Samples per batch: {batch_size}")
     logger.info("")
     
     # Create model
+    logger.info("=" * 80)
+    logger.info("STEP 5: MODEL INITIALIZATION")
+    logger.info("=" * 80)
     logger.info("")
-    logger.info("### STEP: Model Initialization ###")
-    logger.info("")
-    logger.info("Initializing model...")
-    logger.debug(f"Model architecture: vocab_size={dataset.vocab_size}, embed_dim={embed_dim}, "
-                 f"num_heads={num_heads}, num_layers={num_layers}, block_size={block_size}")
+    logger.info("Building transformer-based language model...")
+    logger.info(f"  - Architecture: {num_layers} transformer layers")
+    logger.info(f"  - Embedding dimension: {embed_dim}")
+    logger.info(f"  - Attention heads per layer: {num_heads}")
+    logger.info(f"  - Vocabulary size: {dataset.vocab_size}")
+    logger.info(f"  - Context window: {block_size} tokens")
     model = SimpleLanguageModel(
         vocab_size=dataset.vocab_size,
         embed_dim=embed_dim,
@@ -351,57 +362,64 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     
     num_params = sum(p.numel() for p in model.parameters())
     trainable_params = sum(p.numel() for p in model.parameters() if p.requires_grad)
-    logger.info(f"Model has {num_params:,} total parameters")
-    logger.info(f"Model has {trainable_params:,} trainable parameters")
-    logger.debug(f"Model device: {next(model.parameters()).device}")
+    logger.info("")
+    logger.info("Model initialized:")
+    logger.info(f"  - Total parameters: {num_params:,}")
+    logger.info(f"  - Trainable parameters: {trainable_params:,}")
+    logger.info(f"  - Model location: {next(model.parameters()).device}")
     logger.info("")
     
     # Loss and optimizer
-    logger.debug("")
-    logger.debug("### STEP: Loss and Optimizer Setup ###")
-    logger.debug("")
-    logger.debug("Using CrossEntropyLoss")
-    logger.debug(f"Using AdamW optimizer with lr={learning_rate}")
+    logger.info("=" * 80)
+    logger.info("STEP 6: TRAINING SETUP")
+    logger.info("=" * 80)
+    logger.info("")
+    logger.info("Configuring training components:")
+    logger.info("  - Loss function: CrossEntropyLoss")
+    logger.info(f"  - Optimizer: AdamW (learning rate: {learning_rate})")
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.AdamW(model.parameters(), lr=learning_rate)
     logger.info("")
     
     # Training loop
-    logger.info("")
     logger.info("=" * 80)
-    logger.info("STARTING TRAINING LOOP")
+    logger.info("STEP 7: TRAINING LOOP")
     logger.info("=" * 80)
     logger.info("")
-    logger.info(f"Training for {epochs} epochs...")
+    logger.info(f"Starting training: {epochs} epochs, {len(dataloader)} batches per epoch")
     logger.info("")
     
     for epoch in range(epochs):
         logger.info("")
-        logger.info("")
+        logger.info("-" * 80)
+        logger.info(f"EPOCH {epoch+1}/{epochs}")
         logger.info("-" * 80)
         logger.info("")
         avg_loss = train_epoch(model, dataloader, optimizer, criterion, device, epoch_num=epoch+1)
-        logger.info(f"Epoch {epoch+1}/{epochs} - Average Loss: {avg_loss:.4f}")
+        logger.info("")
+        logger.info(f"Epoch {epoch+1}/{epochs} completed - Average Loss: {avg_loss:.4f}")
         logger.info("")
     
-    logger.info("")
-    logger.info("")
     logger.info("=" * 80)
     logger.info("TRAINING COMPLETE")
     logger.info("=" * 80)
     logger.info("")
     
     # Save model
-    logger.info("")
-    logger.info("### STEP: Model Saving ###")
+    logger.info("=" * 80)
+    logger.info("STEP 8: MODEL SAVING")
+    logger.info("=" * 80)
     logger.info("")
     model_dir = Path("50_models")
     model_dir.mkdir(exist_ok=True)
-    logger.debug(f"Model directory: {model_dir}")
     
-    # Save model and tokenizer info
     model_path = model_dir / "trained_model.pt"
-    logger.info(f"Saving model to: {model_path}")
+    logger.info(f"Saving trained model to: {model_path}")
+    logger.info("")
+    logger.info("Saving model components:")
+    logger.info("  - Model weights (state_dict)")
+    logger.info("  - Vocabulary mappings (character to index)")
+    logger.info("  - Model hyperparameters")
     save_dict = {
         'model_state_dict': model.state_dict(),
         'vocab_size': dataset.vocab_size,
@@ -414,11 +432,12 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     }
     torch.save(save_dict, model_path)
     file_size = model_path.stat().st_size / (1024 * 1024)  # Size in MB
-    logger.info(f"Model saved successfully! File size: {file_size:.2f} MB")
+    logger.info("")
+    logger.info(f"Model saved successfully!")
+    logger.info(f"  - File path: {model_path}")
+    logger.info(f"  - File size: {file_size:.2f} MB")
     logger.info("")
     
-    logger.info("")
-    logger.info("")
     logger.info("=" * 80)
     logger.info("TRAINING SESSION ENDED")
     logger.info("=" * 80)
@@ -450,8 +469,6 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     
-    logger.info("")
-    logger.info("### FUNCTION: main ###")
     logger.info("Command line arguments parsed")
     logger.info("")
     
