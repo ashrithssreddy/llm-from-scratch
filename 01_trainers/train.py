@@ -81,6 +81,7 @@ def setup_logging():
     )
     
     logger = logging.getLogger(__name__)
+    logger.info("")
     logger.info("=" * 80)
     logger.info("TRAINING SESSION STARTED")
     logger.info("=" * 80)
@@ -108,6 +109,7 @@ class CharDataset(Dataset):
             text: The full text as a string
             block_size: Length of sequences to use for training
         """
+        logger.debug("")
         logger.debug("### FUNCTION: CharDataset.__init__ ###")
         logger.debug("")
         logger.debug(f"Input text length: {len(text)} characters")
@@ -144,6 +146,7 @@ class SimpleLanguageModel(nn.Module):
     
     def __init__(self, vocab_size, embed_dim=128, num_heads=4, num_layers=3, block_size=128):
         super().__init__()
+        logger.debug("")
         logger.debug("### FUNCTION: SimpleLanguageModel.__init__ ###")
         logger.debug("")
         logger.debug(f"Initializing model with vocab_size={vocab_size}, embed_dim={embed_dim}, "
@@ -204,6 +207,7 @@ class SimpleLanguageModel(nn.Module):
 
 def train_epoch(model, dataloader, optimizer, criterion, device, epoch_num=None):
     """Train for one epoch."""
+    logger.debug("")
     logger.debug("### FUNCTION: train_epoch ###")
     logger.debug("")
     if epoch_num is not None:
@@ -271,7 +275,9 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
         learning_rate: Learning rate for optimizer
         device: Device to train on (cuda/cpu)
     """
+    logger.info("")
     logger.info("### FUNCTION: train_model ###")
+    logger.info("")
     logger.info("")
     logger.info("=" * 80)
     logger.info("TRAINING CONFIGURATION")
@@ -288,6 +294,7 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("")
     
     # Set device
+    logger.debug("")
     logger.debug("### STEP: Device Selection ###")
     logger.debug("")
     if device is None:
@@ -299,6 +306,7 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("")
     
     # Load data
+    logger.info("")
     logger.info("### STEP: Data Loading ###")
     logger.info("")
     logger.info(f"Loading text files from: {dataset_folder}")
@@ -308,6 +316,7 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("")
     
     # Create dataset
+    logger.info("")
     logger.info("### STEP: Dataset Creation ###")
     logger.info("")
     logger.info("Creating dataset...")
@@ -318,6 +327,7 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("")
     
     # Create dataloader
+    logger.debug("")
     logger.debug("### STEP: DataLoader Creation ###")
     logger.debug(f"Creating DataLoader with batch_size={batch_size}, shuffle=True")
     dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
@@ -325,6 +335,7 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("")
     
     # Create model
+    logger.info("")
     logger.info("### STEP: Model Initialization ###")
     logger.info("")
     logger.info("Initializing model...")
@@ -346,6 +357,7 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("")
     
     # Loss and optimizer
+    logger.debug("")
     logger.debug("### STEP: Loss and Optimizer Setup ###")
     logger.debug("")
     logger.debug("Using CrossEntropyLoss")
@@ -355,6 +367,7 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("")
     
     # Training loop
+    logger.info("")
     logger.info("=" * 80)
     logger.info("STARTING TRAINING LOOP")
     logger.info("=" * 80)
@@ -363,18 +376,23 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("")
     
     for epoch in range(epochs):
+        logger.info("")
+        logger.info("")
         logger.info("-" * 80)
         logger.info("")
         avg_loss = train_epoch(model, dataloader, optimizer, criterion, device, epoch_num=epoch+1)
         logger.info(f"Epoch {epoch+1}/{epochs} - Average Loss: {avg_loss:.4f}")
         logger.info("")
     
+    logger.info("")
+    logger.info("")
     logger.info("=" * 80)
     logger.info("TRAINING COMPLETE")
     logger.info("=" * 80)
     logger.info("")
     
     # Save model
+    logger.info("")
     logger.info("### STEP: Model Saving ###")
     logger.info("")
     model_dir = Path("50_models")
@@ -399,6 +417,8 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info(f"Model saved successfully! File size: {file_size:.2f} MB")
     logger.info("")
     
+    logger.info("")
+    logger.info("")
     logger.info("=" * 80)
     logger.info("TRAINING SESSION ENDED")
     logger.info("=" * 80)
@@ -430,6 +450,7 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
     
+    logger.info("")
     logger.info("### FUNCTION: main ###")
     logger.info("Command line arguments parsed")
     logger.info("")
@@ -447,6 +468,8 @@ if __name__ == "__main__":
             learning_rate=args.lr
         )
     except Exception as e:
+        logger.error("")
+        logger.error("")
         logger.error("=" * 80)
         logger.error("TRAINING FAILED")
         logger.error("=" * 80)
