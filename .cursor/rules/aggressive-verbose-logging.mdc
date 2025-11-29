@@ -1,0 +1,13 @@
+---
+name: aggressive-verbose-logging
+alwaysApply: true
+description: |
+  For all training modules, aggressively log progress to a text file in logs/ folder.
+  Each function or major step should have a clearly labeled header in the log file.
+  Logs should be verbose but organized, with consistent formatting.
+rules:
+  - "Aggressively log progress to logs/ folder."
+  - "Each function's log should have a header: '### FUNCTION: function_name ###'"
+  - "Include timestamps and append to the same file, do not overwrite."
+  - "Ensure logs are structured and easy to scan."
+---
