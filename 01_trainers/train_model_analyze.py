@@ -157,7 +157,18 @@ def visualize_neural_network(model, checkpoint, output_path=None):
     if not HAS_MATPLOTLIB:
         logger.warning("matplotlib not available - skipping visualization")
         logger.info("Install matplotlib to generate visualizations: pip install matplotlib")
-        return
+        return None
+    
+    # Suppress matplotlib debug logging
+    import logging
+    matplotlib_logger = logging.getLogger('matplotlib')
+    matplotlib_logger.setLevel(logging.WARNING)
+    matplotlib_font_logger = logging.getLogger('matplotlib.font_manager')
+    matplotlib_font_logger.setLevel(logging.WARNING)
+    
+    # Temporarily raise logging level to INFO to skip debug logs during visualization
+    original_level = logger.level
+    logger.setLevel(logging.INFO)
     
     # Set output path to logs folder if not specified
     if output_path is None:
@@ -360,30 +371,34 @@ def visualize_neural_network(model, checkpoint, output_path=None):
                                     characters=chars_list if chars_list else None)
     draw_connections(prev_layer_nodes, output_layer_nodes, alpha=0.2)
     
-    # Title
-    ax.text(5, 9.2, 'Neural Network Architecture', 
-            ha='center', va='center', fontsize=18, weight='bold', color=text_color)
+    # Title - at the very top left
+    ax.text(0.2, 9.95, 'Neural Network Architecture', 
+            ha='left', va='top', fontsize=18, weight='bold', color=text_color)
     
-    # Info box - calculate total layers (input + embedding + transformer layers + output = 2 + num_layers + 1)
+    # Info box - positioned right after title at the very top
     total_params = sum(p.numel() for p in model.parameters())
     total_layers = 2 + num_layers + 1  # Input + Embedding + Transformer layers + Output
     info_text = f'Total Parameters: {format_number(total_params)}\n'
     info_text += f'Total Layers: {total_layers} (Input + Embedding + {num_layers} Transformer + Output)\n'
     info_text += f'Transformer Layers: {num_layers} | Attention Heads: {num_heads} | Embed Dim: {embed_dim}'
-    ax.text(5, 0.5, info_text, ha='center', va='center', 
+    ax.text(0.2, 9.15, info_text, ha='left', va='top', 
             fontsize=10, color=text_color,
             bbox=dict(boxstyle='round', facecolor='#f0f0f0', edgecolor='black', alpha=0.9))
     
     plt.tight_layout()
     # Save at good resolution (2x DPI) - balance between quality and file size
     plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white', edgecolor='none')
+    plt.close()
+    
+    # Restore original logging level
+    logger.setLevel(original_level)
+    
     logger.info(f"Visualization saved to: {output_path}")
     logger.info(f"  - Image size: 32x20 inches at 300 DPI (high resolution)")
     logger.info(f"  - All {vocab_size} input/output nodes displayed")
     logger.info(f"  - All {embed_dim} embedding/transformer nodes displayed")
     logger.info(f"  - All connections between layers drawn")
     logger.info("")
-    plt.close()
     
     return output_path
 
@@ -550,6 +565,11 @@ def analyze_model(model_path, device=None):
     logger.info("LOADING MODEL")
     logger.info("=" * 80)
     logger.info("")
+    # Temporarily suppress debug logs during model initialization
+    import logging
+    original_level = logger.level
+    logger.setLevel(logging.INFO)
+    
     logger.info("Initializing model architecture...")
     model = SimpleLanguageModel(
         vocab_size=checkpoint['vocab_size'],
@@ -562,6 +582,10 @@ def analyze_model(model_path, device=None):
     logger.info("Loading model weights...")
     model.load_state_dict(checkpoint['model_state_dict'])
     model.eval()  # Set to evaluation mode
+    
+    # Restore original logging level
+    logger.setLevel(original_level)
+    
     logger.info("Model loaded successfully")
     logger.info("")
     

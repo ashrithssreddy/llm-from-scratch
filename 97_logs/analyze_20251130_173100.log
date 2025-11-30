@@ -1,0 +1,313 @@
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - ================================================================================
+2025-11-30 17:31:00 - INFO - ANALYSIS SESSION STARTED
+2025-11-30 17:31:00 - INFO - ================================================================================
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - Log file: 97_logs\analyze_20251130_173100.log
+2025-11-30 17:31:00 - INFO - Timestamp: 20251130_173100
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - DEBUG - matplotlib data path: C:\Users\Delulu Lemon\anaconda3\Lib\site-packages\matplotlib\mpl-data
+2025-11-30 17:31:00 - DEBUG - CONFIGDIR=C:\Users\Delulu Lemon\.matplotlib
+2025-11-30 17:31:00 - DEBUG - interactive is False
+2025-11-30 17:31:00 - DEBUG - platform is win32
+2025-11-30 17:31:00 - DEBUG - CACHEDIR=C:\Users\Delulu Lemon\.matplotlib
+2025-11-30 17:31:00 - DEBUG - Using fontManager instance from C:\Users\Delulu Lemon\.matplotlib\fontlist-v390.json
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - ================================================================================
+2025-11-30 17:31:00 - INFO - MODEL ANALYSIS
+2025-11-30 17:31:00 - INFO - ================================================================================
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - Analyzing model: 50_models/dataset_toy/embed128_layers3_heads4_epochs10.pt
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - Using device: cpu
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - Loading checkpoint...
+2025-11-30 17:31:00 - INFO - Checkpoint loaded successfully
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - ================================================================================
+2025-11-30 17:31:00 - INFO - CHECKPOINT METADATA
+2025-11-30 17:31:00 - INFO - ================================================================================
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - Saved Keys in Checkpoint:
+2025-11-30 17:31:00 - INFO -   - model_state_dict: dictionary with 42 entries
+2025-11-30 17:31:00 - INFO -   - vocab_size: 48
+2025-11-30 17:31:00 - INFO -   - stoi: dictionary with 48 entries
+2025-11-30 17:31:00 - INFO -   - itos: dictionary with 48 entries
+2025-11-30 17:31:00 - INFO -   - block_size: 128
+2025-11-30 17:31:00 - INFO -   - embed_dim: 128
+2025-11-30 17:31:00 - INFO -   - num_heads: 4
+2025-11-30 17:31:00 - INFO -   - num_layers: 3
+2025-11-30 17:31:00 - INFO -   - dataset_folder: 40_training_data/dataset_toy/
+2025-11-30 17:31:00 - INFO -   - dataset_name: dataset_toy
+2025-11-30 17:31:00 - INFO -   - epochs: 10
+2025-11-30 17:31:00 - INFO -   - batch_size: 32
+2025-11-30 17:31:00 - INFO -   - learning_rate: 0.001
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - Training Configuration:
+2025-11-30 17:31:00 - INFO -   - Dataset: dataset_toy
+2025-11-30 17:31:00 - INFO -   - Dataset folder: 40_training_data/dataset_toy/
+2025-11-30 17:31:00 - INFO -   - Training epochs: 10
+2025-11-30 17:31:00 - INFO -   - Batch size: 32
+2025-11-30 17:31:00 - INFO -   - Learning rate: 0.001
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - Model Hyperparameters:
+2025-11-30 17:31:00 - INFO -   - Vocabulary size: 48 unique characters
+2025-11-30 17:31:00 - INFO -   - Block size (context window): 128 tokens
+2025-11-30 17:31:00 - INFO -   - Embedding dimension: 128
+2025-11-30 17:31:00 - INFO -   - Attention heads: 4
+2025-11-30 17:31:00 - INFO -   - Transformer layers: 3
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - ================================================================================
+2025-11-30 17:31:00 - INFO - VOCABULARY ANALYSIS
+2025-11-30 17:31:00 - INFO - ================================================================================
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - Vocabulary size: 48 unique characters
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - All characters in vocabulary:
+2025-11-30 17:31:00 - INFO -   - Printable characters (46): ',-.ABCDEFHILMNPRSTWabcdefghijklmnopqrstuvwxyz
+2025-11-30 17:31:00 - INFO -   - Whitespace characters (2): '\n '
+2025-11-30 17:31:00 - INFO -   - Control characters (1): ["'\\n'"]
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - Sample character-to-index mappings (first 20):
+2025-11-30 17:31:00 - INFO -   - ''\n'' -> 0
+2025-11-30 17:31:00 - INFO -   - '' '' -> 1
+2025-11-30 17:31:00 - INFO -   - ''' -> 2
+2025-11-30 17:31:00 - INFO -   - ',' -> 3
+2025-11-30 17:31:00 - INFO -   - '-' -> 4
+2025-11-30 17:31:00 - INFO -   - '.' -> 5
+2025-11-30 17:31:00 - INFO -   - 'A' -> 6
+2025-11-30 17:31:00 - INFO -   - 'B' -> 7
+2025-11-30 17:31:00 - INFO -   - 'C' -> 8
+2025-11-30 17:31:00 - INFO -   - 'D' -> 9
+2025-11-30 17:31:00 - INFO -   - 'E' -> 10
+2025-11-30 17:31:00 - INFO -   - 'F' -> 11
+2025-11-30 17:31:00 - INFO -   - 'H' -> 12
+2025-11-30 17:31:00 - INFO -   - 'I' -> 13
+2025-11-30 17:31:00 - INFO -   - 'L' -> 14
+2025-11-30 17:31:00 - INFO -   - 'M' -> 15
+2025-11-30 17:31:00 - INFO -   - 'N' -> 16
+2025-11-30 17:31:00 - INFO -   - 'P' -> 17
+2025-11-30 17:31:00 - INFO -   - 'R' -> 18
+2025-11-30 17:31:00 - INFO -   - 'S' -> 19
+2025-11-30 17:31:00 - INFO -   ... and 28 more
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - ================================================================================
+2025-11-30 17:31:00 - INFO - LOADING MODEL
+2025-11-30 17:31:00 - INFO - ================================================================================
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - Initializing model architecture...
+2025-11-30 17:31:00 - DEBUG - Initializing transformer model components...
+2025-11-30 17:31:00 - DEBUG -   - Vocab size: 48, Embed dim: 128
+2025-11-30 17:31:00 - DEBUG -   - Heads: 4, Layers: 3, Block size: 128
+2025-11-30 17:31:00 - DEBUG -   - Created token embedding: 48 x 128
+2025-11-30 17:31:00 - DEBUG -   - Created positional embedding: 128 x 128
+2025-11-30 17:31:00 - DEBUG -   - Creating 3 transformer encoder layers...
+2025-11-30 17:31:00 - DEBUG -   - Transformer blocks created: 3 layers
+2025-11-30 17:31:00 - DEBUG -   - Output layer: Linear(128 -> 48)
+2025-11-30 17:31:00 - INFO - Loading model weights...
+2025-11-30 17:31:00 - INFO - Model loaded successfully
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:00 - INFO - ================================================================================
+2025-11-30 17:31:00 - INFO - CREATING NEURAL NETWORK VISUALIZATION
+2025-11-30 17:31:00 - INFO - ================================================================================
+2025-11-30 17:31:00 - INFO - 
+2025-11-30 17:31:52 - INFO - Visualization saved to: 97_logs\model_architecture_20251130_173100.png
+2025-11-30 17:31:52 - INFO -   - Image size: 32x20 inches at 300 DPI (high resolution)
+2025-11-30 17:31:52 - INFO -   - All 48 input/output nodes displayed
+2025-11-30 17:31:52 - INFO -   - All 128 embedding/transformer nodes displayed
+2025-11-30 17:31:52 - INFO -   - All connections between layers drawn
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - ================================================================================
+2025-11-30 17:31:52 - INFO - MODEL ARCHITECTURE
+2025-11-30 17:31:52 - INFO - ================================================================================
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - Model Structure:
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO -   SimpleLanguageModel(
+2025-11-30 17:31:52 - INFO -     (token_embedding): Embedding(48, 128)
+2025-11-30 17:31:52 - INFO -     (position_embedding): Embedding(128, 128)
+2025-11-30 17:31:52 - INFO -     (blocks): Sequential(
+2025-11-30 17:31:52 - INFO -       (0): TransformerEncoderLayer(
+2025-11-30 17:31:52 - INFO -         (self_attn): MultiheadAttention(
+2025-11-30 17:31:52 - INFO -           (out_proj): NonDynamicallyQuantizableLinear(in_features=128, out_features=128, bias=True)
+2025-11-30 17:31:52 - INFO -         )
+2025-11-30 17:31:52 - INFO -         (linear1): Linear(in_features=128, out_features=512, bias=True)
+2025-11-30 17:31:52 - INFO -         (dropout): Dropout(p=0.1, inplace=False)
+2025-11-30 17:31:52 - INFO -         (linear2): Linear(in_features=512, out_features=128, bias=True)
+2025-11-30 17:31:52 - INFO -         (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+2025-11-30 17:31:52 - INFO -         (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+2025-11-30 17:31:52 - INFO -         (dropout1): Dropout(p=0.1, inplace=False)
+2025-11-30 17:31:52 - INFO -         (dropout2): Dropout(p=0.1, inplace=False)
+2025-11-30 17:31:52 - INFO -       )
+2025-11-30 17:31:52 - INFO -       (1): TransformerEncoderLayer(
+2025-11-30 17:31:52 - INFO -         (self_attn): MultiheadAttention(
+2025-11-30 17:31:52 - INFO -           (out_proj): NonDynamicallyQuantizableLinear(in_features=128, out_features=128, bias=True)
+2025-11-30 17:31:52 - INFO -         )
+2025-11-30 17:31:52 - INFO -         (linear1): Linear(in_features=128, out_features=512, bias=True)
+2025-11-30 17:31:52 - INFO -         (dropout): Dropout(p=0.1, inplace=False)
+2025-11-30 17:31:52 - INFO -         (linear2): Linear(in_features=512, out_features=128, bias=True)
+2025-11-30 17:31:52 - INFO -         (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+2025-11-30 17:31:52 - INFO -         (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+2025-11-30 17:31:52 - INFO -         (dropout1): Dropout(p=0.1, inplace=False)
+2025-11-30 17:31:52 - INFO -         (dropout2): Dropout(p=0.1, inplace=False)
+2025-11-30 17:31:52 - INFO -       )
+2025-11-30 17:31:52 - INFO -       (2): TransformerEncoderLayer(
+2025-11-30 17:31:52 - INFO -         (self_attn): MultiheadAttention(
+2025-11-30 17:31:52 - INFO -           (out_proj): NonDynamicallyQuantizableLinear(in_features=128, out_features=128, bias=True)
+2025-11-30 17:31:52 - INFO -         )
+2025-11-30 17:31:52 - INFO -         (linear1): Linear(in_features=128, out_features=512, bias=True)
+2025-11-30 17:31:52 - INFO -         (dropout): Dropout(p=0.1, inplace=False)
+2025-11-30 17:31:52 - INFO -         (linear2): Linear(in_features=512, out_features=128, bias=True)
+2025-11-30 17:31:52 - INFO -         (norm1): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+2025-11-30 17:31:52 - INFO -         (norm2): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+2025-11-30 17:31:52 - INFO -         (dropout1): Dropout(p=0.1, inplace=False)
+2025-11-30 17:31:52 - INFO -         (dropout2): Dropout(p=0.1, inplace=False)
+2025-11-30 17:31:52 - INFO -       )
+2025-11-30 17:31:52 - INFO -     )
+2025-11-30 17:31:52 - INFO -     (ln_f): LayerNorm((128,), eps=1e-05, elementwise_affine=True)
+2025-11-30 17:31:52 - INFO -     (head): Linear(in_features=128, out_features=48, bias=True)
+2025-11-30 17:31:52 - INFO -   )
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - ================================================================================
+2025-11-30 17:31:52 - INFO - PARAMETER BREAKDOWN BY LAYER
+2025-11-30 17:31:52 - INFO - ================================================================================
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - Layer Name                                         Parameters      Shape                         
+2025-11-30 17:31:52 - INFO - -----------------------------------------------------------------------------------------------
+2025-11-30 17:31:52 - INFO - token_embedding.weight                             6,144           [48, 128]                     
+2025-11-30 17:31:52 - INFO - position_embedding.weight                          16,384          [128, 128]                    
+2025-11-30 17:31:52 - INFO - blocks.0.self_attn.in_proj_weight                  49,152          [384, 128]                    
+2025-11-30 17:31:52 - INFO - blocks.0.self_attn.in_proj_bias                    384             [384]                         
+2025-11-30 17:31:52 - INFO - blocks.0.self_attn.out_proj.weight                 16,384          [128, 128]                    
+2025-11-30 17:31:52 - INFO - blocks.0.self_attn.out_proj.bias                   128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.0.linear1.weight                            65,536          [512, 128]                    
+2025-11-30 17:31:52 - INFO - blocks.0.linear1.bias                              512             [512]                         
+2025-11-30 17:31:52 - INFO - blocks.0.linear2.weight                            65,536          [128, 512]                    
+2025-11-30 17:31:52 - INFO - blocks.0.linear2.bias                              128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.0.norm1.weight                              128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.0.norm1.bias                                128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.0.norm2.weight                              128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.0.norm2.bias                                128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.1.self_attn.in_proj_weight                  49,152          [384, 128]                    
+2025-11-30 17:31:52 - INFO - blocks.1.self_attn.in_proj_bias                    384             [384]                         
+2025-11-30 17:31:52 - INFO - blocks.1.self_attn.out_proj.weight                 16,384          [128, 128]                    
+2025-11-30 17:31:52 - INFO - blocks.1.self_attn.out_proj.bias                   128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.1.linear1.weight                            65,536          [512, 128]                    
+2025-11-30 17:31:52 - INFO - blocks.1.linear1.bias                              512             [512]                         
+2025-11-30 17:31:52 - INFO - blocks.1.linear2.weight                            65,536          [128, 512]                    
+2025-11-30 17:31:52 - INFO - blocks.1.linear2.bias                              128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.1.norm1.weight                              128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.1.norm1.bias                                128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.1.norm2.weight                              128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.1.norm2.bias                                128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.2.self_attn.in_proj_weight                  49,152          [384, 128]                    
+2025-11-30 17:31:52 - INFO - blocks.2.self_attn.in_proj_bias                    384             [384]                         
+2025-11-30 17:31:52 - INFO - blocks.2.self_attn.out_proj.weight                 16,384          [128, 128]                    
+2025-11-30 17:31:52 - INFO - blocks.2.self_attn.out_proj.bias                   128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.2.linear1.weight                            65,536          [512, 128]                    
+2025-11-30 17:31:52 - INFO - blocks.2.linear1.bias                              512             [512]                         
+2025-11-30 17:31:52 - INFO - blocks.2.linear2.weight                            65,536          [128, 512]                    
+2025-11-30 17:31:52 - INFO - blocks.2.linear2.bias                              128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.2.norm1.weight                              128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.2.norm1.bias                                128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.2.norm2.weight                              128             [128]                         
+2025-11-30 17:31:52 - INFO - blocks.2.norm2.bias                                128             [128]                         
+2025-11-30 17:31:52 - INFO - ln_f.weight                                        128             [128]                         
+2025-11-30 17:31:52 - INFO - ln_f.bias                                          128             [128]                         
+2025-11-30 17:31:52 - INFO - head.weight                                        6,144           [48, 128]                     
+2025-11-30 17:31:52 - INFO - head.bias                                          48              [48]                          
+2025-11-30 17:31:52 - INFO - -----------------------------------------------------------------------------------------------
+2025-11-30 17:31:52 - INFO - TOTAL                                              623,792        
+2025-11-30 17:31:52 - INFO - TRAINABLE                                          623,792        
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - ================================================================================
+2025-11-30 17:31:52 - INFO - WEIGHT STATISTICS
+2025-11-30 17:31:52 - INFO - ================================================================================
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - Weight statistics for each layer:
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - Layer Name                                         Mean         Std          Min          Max         
+2025-11-30 17:31:52 - INFO - --------------------------------------------------------------------------------------------------
+2025-11-30 17:31:52 - INFO - token_embedding.weight                               -0.010012    0.983558   -3.951594    4.071888
+2025-11-30 17:31:52 - INFO - position_embedding.weight                            -0.004463    1.002357   -4.094605    4.190094
+2025-11-30 17:31:52 - INFO - blocks.0.self_attn.in_proj_weight                     0.000134    0.090221   -0.316962    0.325329
+2025-11-30 17:31:52 - INFO - blocks.0.self_attn.in_proj_bias                       0.002973    0.025012   -0.106154    0.091329
+2025-11-30 17:31:52 - INFO - blocks.0.self_attn.out_proj.weight                   -0.000129    0.078042   -0.277083    0.247956
+2025-11-30 17:31:52 - INFO - blocks.0.self_attn.out_proj.bias                     -0.000063    0.010630   -0.026731    0.026413
+2025-11-30 17:31:52 - INFO - blocks.0.linear1.weight                              -0.000037    0.056938   -0.194743    0.203314
+2025-11-30 17:31:52 - INFO - blocks.0.linear1.bias                                -0.023487    0.049738   -0.140400    0.078293
+2025-11-30 17:31:52 - INFO - blocks.0.linear2.weight                               0.000086    0.031067   -0.128720    0.123311
+2025-11-30 17:31:52 - INFO - blocks.0.linear2.bias                                 0.004033    0.023182   -0.044131    0.045300
+2025-11-30 17:31:52 - INFO - blocks.0.norm1.weight                                 0.986397    0.022292    0.922918    1.064740
+2025-11-30 17:31:52 - INFO - blocks.0.norm1.bias                                   0.000324    0.010353   -0.024700    0.024976
+2025-11-30 17:31:52 - INFO - blocks.0.norm2.weight                                 0.984017    0.018473    0.942500    1.030197
+2025-11-30 17:31:52 - INFO - blocks.0.norm2.bias                                   0.000116    0.008373   -0.021636    0.019263
+2025-11-30 17:31:52 - INFO - blocks.1.self_attn.in_proj_weight                    -0.000556    0.066861   -0.215256    0.203380
+2025-11-30 17:31:52 - INFO - blocks.1.self_attn.in_proj_bias                       0.000224    0.009172   -0.032352    0.034951
+2025-11-30 17:31:52 - INFO - blocks.1.self_attn.out_proj.weight                    0.000069    0.054998   -0.164620    0.176026
+2025-11-30 17:31:52 - INFO - blocks.1.self_attn.out_proj.bias                     -0.000000    0.012745   -0.033348    0.028032
+2025-11-30 17:31:52 - INFO - blocks.1.linear1.weight                              -0.000079    0.057171   -0.195664    0.203685
+2025-11-30 17:31:52 - INFO - blocks.1.linear1.bias                                -0.022598    0.051374   -0.126510    0.087357
+2025-11-30 17:31:52 - INFO - blocks.1.linear2.weight                               0.000023    0.032011   -0.131472    0.135235
+2025-11-30 17:31:52 - INFO - blocks.1.linear2.bias                                -0.005705    0.024287   -0.044370    0.049595
+2025-11-30 17:31:52 - INFO - blocks.1.norm1.weight                                 0.986802    0.017358    0.947280    1.031209
+2025-11-30 17:31:52 - INFO - blocks.1.norm1.bias                                   0.000139    0.013706   -0.033705    0.028979
+2025-11-30 17:31:52 - INFO - blocks.1.norm2.weight                                 0.983983    0.013716    0.955544    1.018195
+2025-11-30 17:31:52 - INFO - blocks.1.norm2.bias                                   0.000596    0.010644   -0.024468    0.041510
+2025-11-30 17:31:52 - INFO - blocks.2.self_attn.in_proj_weight                    -0.000172    0.065356   -0.203072    0.190231
+2025-11-30 17:31:52 - INFO - blocks.2.self_attn.in_proj_bias                       0.000240    0.008873   -0.030415    0.030867
+2025-11-30 17:31:52 - INFO - blocks.2.self_attn.out_proj.weight                   -0.000371    0.053456   -0.151087    0.145739
+2025-11-30 17:31:52 - INFO - blocks.2.self_attn.out_proj.bias                     -0.000671    0.012778   -0.029553    0.023651
+2025-11-30 17:31:52 - INFO - blocks.2.linear1.weight                               0.000212    0.058113   -0.257485    0.247869
+2025-11-30 17:31:52 - INFO - blocks.2.linear1.bias                                -0.022688    0.053126   -0.120443    0.089898
+2025-11-30 17:31:52 - INFO - blocks.2.linear2.weight                               0.000065    0.033467   -0.148204    0.150740
+2025-11-30 17:31:52 - INFO - blocks.2.linear2.bias                                -0.001358    0.026012   -0.050560    0.053348
+2025-11-30 17:31:52 - INFO - blocks.2.norm1.weight                                 0.986612    0.013682    0.948864    1.029877
+2025-11-30 17:31:52 - INFO - blocks.2.norm1.bias                                  -0.000665    0.016868   -0.034659    0.041706
+2025-11-30 17:31:52 - INFO - blocks.2.norm2.weight                                 0.985581    0.017387    0.937687    1.036979
+2025-11-30 17:31:52 - INFO - blocks.2.norm2.bias                                  -0.000584    0.017825   -0.046672    0.037046
+2025-11-30 17:31:52 - INFO - ln_f.weight                                           1.213709    0.058274    1.083554    1.347853
+2025-11-30 17:31:52 - INFO - ln_f.bias                                            -0.000108    0.054719   -0.106500    0.087759
+2025-11-30 17:31:52 - INFO - head.weight                                           0.001176    0.096428   -0.278662    0.363001
+2025-11-30 17:31:52 - INFO - head.bias                                            -0.011541    0.048118   -0.133624    0.084416
+2025-11-30 17:31:52 - INFO - --------------------------------------------------------------------------------------------------
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - Overall Weight Statistics (all parameters combined):
+2025-11-30 17:31:52 - INFO -   - Mean: 0.001172
+2025-11-30 17:31:52 - INFO -   - Standard deviation: 0.201309
+2025-11-30 17:31:52 - INFO -   - Minimum: -4.094605
+2025-11-30 17:31:52 - INFO -   - Maximum: 4.190094
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - ================================================================================
+2025-11-30 17:31:52 - INFO - MODEL SIZE ANALYSIS
+2025-11-30 17:31:52 - INFO - ================================================================================
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - Model file size: 2.40 MB
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - Memory requirements (approximate):
+2025-11-30 17:31:52 - INFO -   - Float32 (full precision): 2.38 MB
+2025-11-30 17:31:52 - INFO -   - Float16 (half precision): 1.19 MB
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - Model size comparison:
+2025-11-30 17:31:52 - INFO -   - This is a small model (623,792 parameters)
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - ================================================================================
+2025-11-30 17:31:52 - INFO - ANALYSIS SUMMARY
+2025-11-30 17:31:52 - INFO - ================================================================================
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - Key Information:
+2025-11-30 17:31:52 - INFO -   - Model type: Transformer-based language model
+2025-11-30 17:31:52 - INFO -   - Architecture: 3 transformer layers
+2025-11-30 17:31:52 - INFO -   - Total parameters: 623,792
+2025-11-30 17:31:52 - INFO -   - Vocabulary size: 48
+2025-11-30 17:31:52 - INFO -   - Context window: 128 tokens
+2025-11-30 17:31:52 - INFO -   - Embedding dimension: 128
+2025-11-30 17:31:52 - INFO -   - Attention heads: 4
+2025-11-30 17:31:52 - INFO -   - Training epochs: 10
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - ================================================================================
+2025-11-30 17:31:52 - INFO - ANALYSIS COMPLETE
+2025-11-30 17:31:52 - INFO - ================================================================================
+2025-11-30 17:31:52 - INFO - 
+2025-11-30 17:31:52 - INFO - Opening visualization: 97_logs\model_architecture_20251130_173100.png
