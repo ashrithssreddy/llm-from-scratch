@@ -116,6 +116,7 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("")
     
     # Set device
+    step_start_time = time.time()
     logger.info("=" * 80)
     logger.info("STEP 1: DEVICE SELECTION")
     logger.info("=" * 80)
@@ -128,9 +129,12 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
         logger.info(f"  - Available memory: {torch.cuda.get_device_properties(0).total_memory / 1e9:.2f} GB")
     else:
         logger.info("  - Using CPU (no CUDA available)")
+    step_duration = time.time() - step_start_time
+    logger.info(f"  - Time taken: {step_duration:.3f} seconds")
     logger.info("")
     
     # Load data
+    step_start_time = time.time()
     logger.info("=" * 80)
     logger.info("STEP 2: DATA LOADING")
     logger.info("=" * 80)
@@ -141,9 +145,12 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("Data loaded successfully:")
     logger.info(f"  - Total characters: {len(text):,}")
     logger.info(f"  - Total lines: {text.count(chr(10)) + 1}")
+    step_duration = time.time() - step_start_time
+    logger.info(f"  - Time taken: {step_duration:.3f} seconds")
     logger.info("")
     
     # Create dataset
+    step_start_time = time.time()
     logger.info("=" * 80)
     logger.info("STEP 3: DATASET PREPARATION")
     logger.info("=" * 80)
@@ -156,9 +163,12 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info(f"  - Vocabulary size: {dataset.vocab_size} unique characters")
     logger.info(f"  - Total training sequences: {len(dataset):,}")
     logger.info(f"  - Total tokens: {len(dataset.data):,}")
+    step_duration = time.time() - step_start_time
+    logger.info(f"  - Time taken: {step_duration:.3f} seconds")
     logger.info("")
     
     # Create dataloader
+    step_start_time = time.time()
     logger.info("=" * 80)
     logger.info("STEP 4: DATALOADER SETUP")
     logger.info("=" * 80)
@@ -167,9 +177,12 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
     logger.info(f"  - Total batches per epoch: {len(dataloader)}")
     logger.info(f"  - Samples per batch: {batch_size}")
+    step_duration = time.time() - step_start_time
+    logger.info(f"  - Time taken: {step_duration:.3f} seconds")
     logger.info("")
     
     # Create model
+    step_start_time = time.time()
     logger.info("=" * 80)
     logger.info("STEP 5: MODEL INITIALIZATION")
     logger.info("=" * 80)
@@ -195,9 +208,12 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info(f"  - Total parameters: {num_params:,}")
     logger.info(f"  - Trainable parameters: {trainable_params:,}")
     logger.info(f"  - Model location: {next(model.parameters()).device}")
+    step_duration = time.time() - step_start_time
+    logger.info(f"  - Time taken: {step_duration:.3f} seconds")
     logger.info("")
     
     # Loss and optimizer
+    step_start_time = time.time()
     logger.info("=" * 80)
     logger.info("STEP 6: TRAINING SETUP")
     logger.info("=" * 80)
@@ -207,6 +223,8 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info(f"  - Optimizer: AdamW (learning rate: {learning_rate})")
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.AdamW(model.parameters(), lr=learning_rate)
+    step_duration = time.time() - step_start_time
+    logger.info(f"  - Time taken: {step_duration:.3f} seconds")
     logger.info("")
     
     # Training loop
@@ -246,6 +264,7 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("")
     
     # Save model
+    step_start_time = time.time()
     logger.info("=" * 80)
     logger.info("STEP 8: MODEL SAVING")
     logger.info("=" * 80)
@@ -287,10 +306,12 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     }
     torch.save(save_dict, model_path)
     file_size = model_path.stat().st_size / (1024 * 1024)  # Size in MB
+    step_duration = time.time() - step_start_time
     logger.info("")
     logger.info(f"Model saved successfully!")
     logger.info(f"  - File path: {model_path}")
     logger.info(f"  - File size: {file_size:.2f} MB")
+    logger.info(f"  - Time taken: {step_duration:.3f} seconds")
     logger.info("")
     
     logger.info("=" * 80)
