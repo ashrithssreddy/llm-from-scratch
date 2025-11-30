@@ -27,7 +27,8 @@
 #   --num-layers - Number of transformer layers (default: 3)
 #   --lr - Learning rate (default: 0.001)
 #
-# Model will be saved to: 50_models/trained_model.pt
+# Model will be saved to: 50_models/{dataset_name}/embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt
+# Example: 50_models/dataset_toy/embed128_layers3_heads4_epochs10.pt
 
 
 # =====================
@@ -219,10 +220,20 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("STEP 8: MODEL SAVING")
     logger.info("=" * 80)
     logger.info("")
-    model_dir = Path("50_models")
-    model_dir.mkdir(exist_ok=True)
     
-    model_path = model_dir / "trained_model.pt"
+    # Extract dataset name from folder path
+    dataset_path = Path(dataset_folder)
+    dataset_name = dataset_path.name if dataset_path.is_dir() else dataset_path.stem
+    
+    # Create folder structure: 50_models/{dataset_name}/
+    base_model_dir = Path("50_models")
+    model_dir = base_model_dir / dataset_name
+    model_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Generate filename with config: embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt
+    model_filename = f"embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt"
+    model_path = model_dir / model_filename
+    
     logger.info(f"Saving trained model to: {model_path}")
     logger.info("")
     logger.info("Saving model components:")
@@ -238,6 +249,11 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
         'embed_dim': embed_dim,
         'num_heads': num_heads,
         'num_layers': num_layers,
+        'dataset_folder': dataset_folder,
+        'dataset_name': dataset_name,
+        'epochs': epochs,
+        'batch_size': batch_size,
+        'learning_rate': learning_rate,
     }
     torch.save(save_dict, model_path)
     file_size = model_path.stat().st_size / (1024 * 1024)  # Size in MB
