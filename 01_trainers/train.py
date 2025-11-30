@@ -1,4 +1,28 @@
 # =====================
+#  TRAINING SCRIPT FOR LANGUAGE MODEL
+# =====================
+#
+# Description:
+#   This script trains a character-level transformer-based language model on text files.
+#   It supports training on various datasets with configurable hyperparameters.
+#
+# Features:
+#   - Character-level tokenization
+#   - Transformer architecture with configurable layers, heads, and embedding dimensions
+#   - Automatic dataset organization by folder
+#   - Comprehensive logging to 97_logs/
+#   - Model saving with descriptive filenames based on configuration
+#
+# Model Architecture:
+#   - Token embeddings + Positional embeddings
+#   - Multi-layer transformer encoder
+#   - Output projection to vocabulary
+#
+# Output:
+#   - Trained model saved to: 50_models/{dataset_name}/embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt
+#   - Training logs saved to: 97_logs/training_{timestamp}.log
+#
+# =====================
 #  EXAMPLE USAGE
 # =====================
 #
@@ -17,18 +41,57 @@
 # Train on Bitcoin dataset with custom parameters:
 #   python 01_trainers/train.py 40_training_data/dataset_bitcoin/ --epochs 20 --batch-size 64 --lr 0.001
 #
-# Available arguments:
-#   dataset_folder (optional) - Path to folder containing .txt files (default: 40_training_data/dataset_toy/)
-#   --epochs - Number of training epochs (default: 10)
-#   --batch-size - Batch size (default: 32)
-#   --block-size - Sequence length (default: 128)
-#   --embed-dim - Embedding dimension (default: 128)
-#   --num-heads - Number of attention heads (default: 4)
-#   --num-layers - Number of transformer layers (default: 3)
-#   --lr - Learning rate (default: 0.001)
+# =====================
+#  AVAILABLE ARGUMENTS
+# =====================
 #
-# Model will be saved to: 50_models/{dataset_name}/embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt
-# Example: 50_models/dataset_toy/embed128_layers3_heads4_epochs10.pt
+#   dataset_folder (optional)
+#       Path to folder containing .txt files to train on
+#       Default: 40_training_data/dataset_toy/
+#
+#   --epochs
+#       Number of training epochs
+#       Default: 10
+#
+#   --batch-size
+#       Batch size for training
+#       Default: 32
+#
+#   --block-size
+#       Sequence length (context window)
+#       Default: 128
+#
+#   --embed-dim
+#       Embedding dimension
+#       Default: 128
+#
+#   --num-heads
+#       Number of attention heads per layer
+#       Default: 4
+#
+#   --num-layers
+#       Number of transformer layers
+#       Default: 3
+#
+#   --lr
+#       Learning rate for optimizer
+#       Default: 0.001
+#
+# =====================
+#  MODEL SAVING
+# =====================
+#
+# Models are saved with the following structure:
+#   50_models/{dataset_name}/embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt
+#
+# Example:
+#   50_models/dataset_toy/embed128_layers3_heads4_epochs10.pt
+#
+# Each model file contains:
+#   - Model weights (state_dict)
+#   - Vocabulary mappings (character to index)
+#   - Model hyperparameters
+#   - Training configuration
 
 
 # =====================
