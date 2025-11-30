@@ -18,9 +18,7 @@
 #         → loss.backward() → backward pass
 #         → optimizer.step() → update weights
 #       → torch.save() → saves model.pt
-#   
-#   setup_logging() [module level] → creates log_file
-
+ 
 
 # =====================
 #  EXAMPLE USAGE
@@ -66,6 +64,7 @@ import sys; from pathlib import Path; sys.path.insert(0, str(Path(__file__).pare
 import os
 import argparse
 import logging
+import time
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -218,6 +217,9 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info(f"Starting training: {epochs} epochs, {len(dataloader)} batches per epoch")
     logger.info("")
     
+    # Record training start time
+    training_start_time = time.time()
+    
     for epoch in range(epochs):
         logger.info("")
         logger.info("-" * 80)
@@ -229,9 +231,18 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
         logger.info(f"Epoch {epoch+1}/{epochs} completed - Average Loss: {avg_loss:.4f}")
         logger.info("")
     
+    # Calculate training duration
+    training_end_time = time.time()
+    training_duration = training_end_time - training_start_time
+    hours = int(training_duration // 3600)
+    minutes = int((training_duration % 3600) // 60)
+    seconds = int(training_duration % 60)
+    
     logger.info("=" * 80)
     logger.info("TRAINING COMPLETE")
     logger.info("=" * 80)
+    logger.info("")
+    logger.info(f"Training duration: {hours:02d}:{minutes:02d}:{seconds:02d} ({training_duration:.2f} seconds)")
     logger.info("")
     
     # Save model
@@ -293,7 +304,6 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
 # =====================
 #  MAIN
 # =====================
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train a language model on text files")
