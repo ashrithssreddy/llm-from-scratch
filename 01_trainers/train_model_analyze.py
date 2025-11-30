@@ -27,6 +27,16 @@ from logger_utils import setup_logging  # type: ignore
 # Logging setup
 logger = setup_logging(prefix="analyze")
 
+# Visualization imports
+try:
+    import matplotlib.pyplot as plt
+    import matplotlib.patches as mpatches
+    from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+    HAS_MATPLOTLIB = True
+except ImportError:
+    HAS_MATPLOTLIB = False
+    logger.warning("matplotlib not available - cannot create visualizations")
+
 
 # =====================
 #  ANALYSIS FUNCTIONS
@@ -137,6 +147,148 @@ def analyze_vocabulary(stoi, itos):
     logger.info("")
     
     return vocab_size
+
+
+def visualize_neural_network(model, checkpoint, output_path=None):
+    """Create a visual diagram of the neural network architecture and save as image."""
+    if not HAS_MATPLOTLIB:
+        logger.warning("matplotlib not available - skipping visualization")
+        logger.info("Install matplotlib to generate visualizations: pip install matplotlib")
+        return
+    
+    # Set output path to logs folder if not specified
+    if output_path is None:
+        import datetime
+        logs_dir = Path("97_logs")
+        logs_dir.mkdir(exist_ok=True)
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        output_path = logs_dir / f"model_architecture_{timestamp}.png"
+    
+    logger.info("")
+    logger.info("=" * 80)
+    logger.info("CREATING NEURAL NETWORK VISUALIZATION")
+    logger.info("=" * 80)
+    logger.info("")
+    
+    vocab_size = checkpoint['vocab_size']
+    embed_dim = checkpoint['embed_dim']
+    num_heads = checkpoint['num_heads']
+    num_layers = checkpoint['num_layers']
+    block_size = checkpoint['block_size']
+    
+    # Create figure
+    fig, ax = plt.subplots(1, 1, figsize=(14, 10))
+    ax.set_xlim(0, 10)
+    ax.set_ylim(0, 12)
+    ax.axis('off')
+    
+    # Colors
+    input_color = '#E3F2FD'
+    embed_color = '#BBDEFB'
+    layer_color = '#90CAF9'
+    output_color = '#64B5F6'
+    arrow_color = '#424242'
+    
+    y_pos = 11
+    box_height = 0.6
+    box_width = 2.5
+    spacing = 0.8
+    
+    # Input
+    input_box = FancyBboxPatch((3.75, y_pos), box_width, box_height,
+                               boxstyle="round,pad=0.1", 
+                               facecolor=input_color, edgecolor='black', linewidth=1.5)
+    ax.add_patch(input_box)
+    ax.text(5, y_pos + box_height/2, f'Input\n{block_size} chars', 
+            ha='center', va='center', fontsize=10, weight='bold')
+    y_pos -= spacing
+    
+    # Embedding layer
+    embed_box = FancyBboxPatch((3.75, y_pos), box_width, box_height,
+                               boxstyle="round,pad=0.1",
+                               facecolor=embed_color, edgecolor='black', linewidth=1.5)
+    ax.add_patch(embed_box)
+    ax.text(5, y_pos + box_height/2, f'Embedding\n{vocab_size}→{embed_dim}', 
+            ha='center', va='center', fontsize=9, weight='bold')
+    
+    # Arrow
+    arrow1 = FancyArrowPatch((5, y_pos + box_height + 0.1), (5, y_pos + spacing - 0.1),
+                            arrowstyle='->', mutation_scale=20, color=arrow_color, linewidth=2)
+    ax.add_patch(arrow1)
+    y_pos -= spacing
+    
+    # Transformer layers
+    for i in range(num_layers):
+        # Layer box
+        layer_box = FancyBboxPatch((2.5, y_pos - box_height/2), 5, box_height * 2,
+                                   boxstyle="round,pad=0.15",
+                                   facecolor=layer_color, edgecolor='black', linewidth=1.5)
+        ax.add_patch(layer_box)
+        
+        # Layer title
+        ax.text(5, y_pos + box_height * 0.7, f'Transformer Layer {i+1}',
+                ha='center', va='center', fontsize=10, weight='bold')
+        
+        # Attention
+        attn_box = FancyBboxPatch((3, y_pos + 0.1), 1.8, box_height * 0.6,
+                                 boxstyle="round,pad=0.05",
+                                 facecolor='white', edgecolor='black', linewidth=1)
+        ax.add_patch(attn_box)
+        ax.text(3.9, y_pos + 0.4, f'Attention\n{num_heads} heads',
+                ha='center', va='center', fontsize=8)
+        
+        # Feed Forward
+        ff_box = FancyBboxPatch((5.2, y_pos + 0.1), 1.8, box_height * 0.6,
+                               boxstyle="round,pad=0.05",
+                               facecolor='white', edgecolor='black', linewidth=1)
+        ax.add_patch(ff_box)
+        ax.text(6.1, y_pos + 0.4, f'Feed Forward\n{embed_dim}→{embed_dim*4}→{embed_dim}',
+                ha='center', va='center', fontsize=7)
+        
+        # Arrow between attention and FF
+        arrow_attn_ff = FancyArrowPatch((4.8, y_pos + 0.4), (5.2, y_pos + 0.4),
+                                       arrowstyle='->', mutation_scale=15, 
+                                       color=arrow_color, linewidth=1.5)
+        ax.add_patch(arrow_attn_ff)
+        
+        # Arrow to next layer
+        if i < num_layers - 1:
+            arrow_layer = FancyArrowPatch((5, y_pos - box_height/2 - 0.1), 
+                                         (5, y_pos - spacing + 0.1),
+                                         arrowstyle='->', mutation_scale=20, 
+                                         color=arrow_color, linewidth=2)
+            ax.add_patch(arrow_layer)
+        
+        y_pos -= spacing * 1.5
+    
+    # Output layer
+    output_box = FancyBboxPatch((3.75, y_pos), box_width, box_height,
+                               boxstyle="round,pad=0.1",
+                               facecolor=output_color, edgecolor='black', linewidth=1.5)
+    ax.add_patch(output_box)
+    ax.text(5, y_pos + box_height/2, f'Output\n{embed_dim}→{vocab_size}', 
+            ha='center', va='center', fontsize=9, weight='bold')
+    
+    # Final arrow
+    arrow_final = FancyArrowPatch((5, y_pos + box_height + 0.1), (5, y_pos + spacing - 0.1),
+                                 arrowstyle='->', mutation_scale=20, color=arrow_color, linewidth=2)
+    ax.add_patch(arrow_final)
+    
+    # Title
+    ax.text(5, 11.5, 'Neural Network Architecture', 
+            ha='center', va='center', fontsize=16, weight='bold')
+    
+    # Info box
+    info_text = f'Parameters: {sum(p.numel() for p in model.parameters()):,}\n'
+    info_text += f'Layers: {num_layers} | Heads: {num_heads} | Embed Dim: {embed_dim}'
+    ax.text(5, 0.5, info_text, ha='center', va='center', 
+            fontsize=9, bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+    
+    plt.tight_layout()
+    plt.savefig(output_path, dpi=150, bbox_inches='tight')
+    logger.info(f"Visualization saved to: {output_path}")
+    logger.info("")
+    plt.close()
 
 
 def analyze_model_architecture(model):
@@ -315,6 +467,9 @@ def analyze_model(model_path, device=None):
     model.eval()  # Set to evaluation mode
     logger.info("Model loaded successfully")
     logger.info("")
+    
+    # Create visualization (saves to logs folder)
+    visualize_neural_network(model, checkpoint)
     
     # Analyze model architecture
     total_params, trainable_params = analyze_model_architecture(model)
