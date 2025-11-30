@@ -6,22 +6,21 @@
 #   This script trains a character-level transformer-based language model on text files.
 #   It supports training on various datasets with configurable hyperparameters.
 #
-# Features:
-#   - Character-level tokenization
-#   - Transformer architecture with configurable layers, heads, and embedding dimensions
-#   - Automatic dataset organization by folder
-#   - Comprehensive logging to 97_logs/
-#   - Model saving with descriptive filenames based on configuration
-#
-# Model Architecture:
-#   - Token embeddings + Positional embeddings
-#   - Multi-layer transformer encoder
-#   - Output projection to vocabulary
-#
-# Output:
-#   - Trained model saved to: 50_models/{dataset_name}/embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt
-#   - Training logs saved to: 97_logs/training_{timestamp}.log
-#
+# Code Flow:
+#   main() 
+#     → train_model() 
+#       → load_text_files_from_folder() → loads text data
+#       → CharDataset() → creates character-level dataset
+#       → DataLoader() → creates batches
+#       → SimpleLanguageModel() → initializes model
+#       → train_epoch() [for each epoch]
+#         → model.forward() → forward pass
+#         → loss.backward() → backward pass
+#         → optimizer.step() → update weights
+#       → torch.save() → saves model.pt
+#   
+#   setup_logging() [module level] → creates log_file
+
 
 
 # =====================
