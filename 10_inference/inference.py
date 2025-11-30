@@ -1,4 +1,62 @@
 # =====================
+#  CODE DESCRIPTION
+# =====================
+#
+# This script performs text generation using a trained character-level language model.
+# It loads a saved model checkpoint and generates text based on a user-provided prompt.
+#
+# Key Features:
+#   - Loads trained model from checkpoint file (.pt)
+#   - Supports both single-shot and interactive text generation
+#   - Configurable temperature for controlling randomness
+#   - Character-level tokenization using saved vocabulary mappings
+#   - Automatic device selection (CPU/CUDA)
+#   - Comprehensive logging to both console and log file
+#
+# The model uses a transformer-based architecture with positional embeddings,
+# multiple transformer encoder layers, and generates text one character at a time
+# using autoregressive sampling.
+#
+#
+# =====================
+#  CODE FLOW
+# =====================
+#
+# Execution Flow (Function Call Graph):
+#
+#   __main__ block
+#   │
+#   ├─→ setup_logging(prefix="inference")
+#   │   └─→ Creates logger and log file (inference_*.log)
+#   │
+#   ├─→ load_model(model_path)
+#   │   ├─→ torch.load() - Load checkpoint from disk
+#   │   ├─→ SimpleLanguageModel() - Initialize model architecture
+#   │   ├─→ model.load_state_dict() - Load trained weights
+#   │   └─→ model.eval() - Set to evaluation mode
+#   │   └─→ Returns: (model, vocab_size, stoi, itos, block_size, ...)
+#   │
+#   └─→ Branch based on --interactive flag:
+#       │
+#       ├─→ IF interactive mode:
+#       │   └─→ interactive_mode(model, stoi, itos, block_size, ...)
+#       │       └─→ [Loop: Get user input]
+#       │           └─→ generate_text(...) [called in loop]
+#       │
+#       └─→ ELSE single-shot mode:
+#           └─→ generate_text(model, stoi, itos, block_size, prompt, ...)
+#               ├─→ encode_text(prompt, stoi)
+#               │   └─→ Converts text string to list of token indices
+#               │
+#               ├─→ [Loop: Generate max_tokens]
+#               │   ├─→ model(input_tensor) - Forward pass through transformer
+#               │   ├─→ torch.softmax() - Convert logits to probabilities
+#               │   └─→ torch.multinomial() - Sample next token
+#               │
+#               └─→ decode_tokens(generated_tokens, itos)
+#                   └─→ Converts list of token indices back to text string
+
+# =====================
 #  EXAMPLE USAGE
 # =====================
 #
