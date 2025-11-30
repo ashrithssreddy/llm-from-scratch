@@ -150,7 +150,7 @@ def analyze_vocabulary(stoi, itos):
 
 
 def visualize_neural_network(model, checkpoint, output_path=None):
-    """Create a visual diagram of the neural network architecture and save as image."""
+    """Create a visual diagram of the neural network architecture with nodes and connections."""
     if not HAS_MATPLOTLIB:
         logger.warning("matplotlib not available - skipping visualization")
         logger.info("Install matplotlib to generate visualizations: pip install matplotlib")
@@ -176,116 +176,140 @@ def visualize_neural_network(model, checkpoint, output_path=None):
     num_layers = checkpoint['num_layers']
     block_size = checkpoint['block_size']
     
-    # Create figure
-    fig, ax = plt.subplots(1, 1, figsize=(14, 10))
+    # Create figure with dark background (like the example)
+    fig, ax = plt.subplots(1, 1, figsize=(16, 10))
+    ax.set_facecolor('black')
+    fig.patch.set_facecolor('black')
     ax.set_xlim(0, 10)
-    ax.set_ylim(0, 12)
+    ax.set_ylim(0, 10)
     ax.axis('off')
     
     # Colors
-    input_color = '#E3F2FD'
-    embed_color = '#BBDEFB'
-    layer_color = '#90CAF9'
-    output_color = '#64B5F6'
-    arrow_color = '#424242'
+    node_color = '#FFA500'  # Orange like the example
+    connection_color = '#666666'  # Gray connections
+    text_color = 'white'
     
-    y_pos = 11
-    box_height = 0.6
-    box_width = 2.5
-    spacing = 0.8
+    # Layer positions (x coordinates)
+    layer_x_positions = []
+    x_start = 1.5
+    x_spacing = 1.5
     
-    # Input
-    input_box = FancyBboxPatch((3.75, y_pos), box_width, box_height,
-                               boxstyle="round,pad=0.1", 
-                               facecolor=input_color, edgecolor='black', linewidth=1.5)
-    ax.add_patch(input_box)
-    ax.text(5, y_pos + box_height/2, f'Input\n{block_size} chars', 
-            ha='center', va='center', fontsize=10, weight='bold')
-    y_pos -= spacing
+    # Calculate number of nodes per layer (simplified representation)
+    # We'll show a representative sample of nodes, not all of them
+    max_nodes_to_show = 8  # Maximum nodes to display per layer
+    
+    def get_num_nodes_to_show(actual_size):
+        """Get number of nodes to show (sample if too many)"""
+        return min(actual_size, max_nodes_to_show)
+    
+    # Input layer
+    input_nodes = get_num_nodes_to_show(vocab_size)
+    layer_x_positions.append(x_start)
+    x_start += x_spacing
     
     # Embedding layer
-    embed_box = FancyBboxPatch((3.75, y_pos), box_width, box_height,
-                               boxstyle="round,pad=0.1",
-                               facecolor=embed_color, edgecolor='black', linewidth=1.5)
-    ax.add_patch(embed_box)
-    ax.text(5, y_pos + box_height/2, f'Embedding\n{vocab_size}→{embed_dim}', 
-            ha='center', va='center', fontsize=9, weight='bold')
+    embed_nodes = get_num_nodes_to_show(embed_dim)
+    layer_x_positions.append(x_start)
+    x_start += x_spacing
     
-    # Arrow
-    arrow1 = FancyArrowPatch((5, y_pos + box_height + 0.1), (5, y_pos + spacing - 0.1),
-                            arrowstyle='->', mutation_scale=20, color=arrow_color, linewidth=2)
-    ax.add_patch(arrow1)
-    y_pos -= spacing
-    
-    # Transformer layers
+    # Transformer layers (each as a group)
     for i in range(num_layers):
-        # Layer box
-        layer_box = FancyBboxPatch((2.5, y_pos - box_height/2), 5, box_height * 2,
-                                   boxstyle="round,pad=0.15",
-                                   facecolor=layer_color, edgecolor='black', linewidth=1.5)
-        ax.add_patch(layer_box)
-        
-        # Layer title
-        ax.text(5, y_pos + box_height * 0.7, f'Transformer Layer {i+1}',
-                ha='center', va='center', fontsize=10, weight='bold')
-        
-        # Attention
-        attn_box = FancyBboxPatch((3, y_pos + 0.1), 1.8, box_height * 0.6,
-                                 boxstyle="round,pad=0.05",
-                                 facecolor='white', edgecolor='black', linewidth=1)
-        ax.add_patch(attn_box)
-        ax.text(3.9, y_pos + 0.4, f'Attention\n{num_heads} heads',
-                ha='center', va='center', fontsize=8)
-        
-        # Feed Forward
-        ff_box = FancyBboxPatch((5.2, y_pos + 0.1), 1.8, box_height * 0.6,
-                               boxstyle="round,pad=0.05",
-                               facecolor='white', edgecolor='black', linewidth=1)
-        ax.add_patch(ff_box)
-        ax.text(6.1, y_pos + 0.4, f'Feed Forward\n{embed_dim}→{embed_dim*4}→{embed_dim}',
-                ha='center', va='center', fontsize=7)
-        
-        # Arrow between attention and FF
-        arrow_attn_ff = FancyArrowPatch((4.8, y_pos + 0.4), (5.2, y_pos + 0.4),
-                                       arrowstyle='->', mutation_scale=15, 
-                                       color=arrow_color, linewidth=1.5)
-        ax.add_patch(arrow_attn_ff)
-        
-        # Arrow to next layer
-        if i < num_layers - 1:
-            arrow_layer = FancyArrowPatch((5, y_pos - box_height/2 - 0.1), 
-                                         (5, y_pos - spacing + 0.1),
-                                         arrowstyle='->', mutation_scale=20, 
-                                         color=arrow_color, linewidth=2)
-            ax.add_patch(arrow_layer)
-        
-        y_pos -= spacing * 1.5
+        layer_x_positions.append(x_start)
+        x_start += x_spacing * 0.8
     
     # Output layer
-    output_box = FancyBboxPatch((3.75, y_pos), box_width, box_height,
-                               boxstyle="round,pad=0.1",
-                               facecolor=output_color, edgecolor='black', linewidth=1.5)
-    ax.add_patch(output_box)
-    ax.text(5, y_pos + box_height/2, f'Output\n{embed_dim}→{vocab_size}', 
-            ha='center', va='center', fontsize=9, weight='bold')
+    output_nodes = get_num_nodes_to_show(vocab_size)
+    layer_x_positions.append(x_start)
     
-    # Final arrow
-    arrow_final = FancyArrowPatch((5, y_pos + box_height + 0.1), (5, y_pos + spacing - 0.1),
-                                 arrowstyle='->', mutation_scale=20, color=arrow_color, linewidth=2)
-    ax.add_patch(arrow_final)
+    # Function to draw a layer of nodes
+    def draw_layer(x, num_nodes, layer_name, y_center=5):
+        """Draw a vertical column of nodes"""
+        if num_nodes == 0:
+            return []
+        
+        node_radius = 0.15
+        node_spacing = 0.4
+        total_height = (num_nodes - 1) * node_spacing
+        y_start = y_center - total_height / 2
+        
+        nodes = []
+        for i in range(num_nodes):
+            y = y_start + i * node_spacing
+            circle = plt.Circle((x, y), node_radius, color=node_color, 
+                              edgecolor='white', linewidth=1.5, zorder=3)
+            ax.add_patch(circle)
+            nodes.append((x, y))
+        
+        # Layer label
+        ax.text(x, y_center + total_height/2 + 0.5, layer_name, 
+               ha='center', va='bottom', fontsize=9, color=text_color, weight='bold')
+        
+        # Size label
+        if num_nodes < max_nodes_to_show:
+            size_text = f'{num_nodes} nodes'
+        else:
+            size_text = f'{num_nodes}+ nodes'
+        ax.text(x, y_center - total_height/2 - 0.3, size_text,
+               ha='center', va='top', fontsize=7, color=text_color, style='italic')
+        
+        return nodes
+    
+    # Function to draw connections between layers
+    def draw_connections(from_nodes, to_nodes, alpha=0.3):
+        """Draw connections between two layers"""
+        # Sample connections if too many nodes
+        from_sample = from_nodes[:max_nodes_to_show] if len(from_nodes) > max_nodes_to_show else from_nodes
+        to_sample = to_nodes[:max_nodes_to_show] if len(to_nodes) > max_nodes_to_show else to_nodes
+        
+        for fx, fy in from_sample:
+            for tx, ty in to_sample:
+                ax.plot([fx, tx], [fy, ty], color=connection_color, 
+                       linewidth=0.5, alpha=alpha, zorder=1)
+    
+    # Draw layers
+    layer_idx = 0
+    
+    # Input layer
+    input_layer_nodes = draw_layer(layer_x_positions[layer_idx], input_nodes, 
+                                   'Input', y_center=5)
+    layer_idx += 1
+    
+    # Embedding layer
+    embed_layer_nodes = draw_layer(layer_x_positions[layer_idx], embed_nodes,
+                                   'Embedding', y_center=5)
+    draw_connections(input_layer_nodes, embed_layer_nodes, alpha=0.2)
+    layer_idx += 1
+    
+    # Transformer layers
+    prev_layer_nodes = embed_layer_nodes
+    for i in range(num_layers):
+        # Show a representative number of nodes for transformer layer
+        transformer_nodes = get_num_nodes_to_show(embed_dim)
+        transformer_layer_nodes = draw_layer(layer_x_positions[layer_idx], transformer_nodes,
+                                            f'Transformer\nLayer {i+1}', y_center=5)
+        draw_connections(prev_layer_nodes, transformer_layer_nodes, alpha=0.2)
+        prev_layer_nodes = transformer_layer_nodes
+        layer_idx += 1
+    
+    # Output layer
+    output_layer_nodes = draw_layer(layer_x_positions[layer_idx], output_nodes,
+                                    'Output', y_center=5)
+    draw_connections(prev_layer_nodes, output_layer_nodes, alpha=0.2)
     
     # Title
-    ax.text(5, 11.5, 'Neural Network Architecture', 
-            ha='center', va='center', fontsize=16, weight='bold')
+    ax.text(5, 9.2, 'Neural Network Architecture', 
+            ha='center', va='center', fontsize=18, weight='bold', color=text_color)
     
     # Info box
-    info_text = f'Parameters: {sum(p.numel() for p in model.parameters()):,}\n'
-    info_text += f'Layers: {num_layers} | Heads: {num_heads} | Embed Dim: {embed_dim}'
+    total_params = sum(p.numel() for p in model.parameters())
+    info_text = f'Total Parameters: {format_number(total_params)}\n'
+    info_text += f'Layers: {num_layers} | Attention Heads: {num_heads} | Embed Dim: {embed_dim}'
     ax.text(5, 0.5, info_text, ha='center', va='center', 
-            fontsize=9, bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+            fontsize=10, color=text_color,
+            bbox=dict(boxstyle='round', facecolor='#333333', edgecolor='white', alpha=0.8))
     
     plt.tight_layout()
-    plt.savefig(output_path, dpi=150, bbox_inches='tight')
+    plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor='black')
     logger.info(f"Visualization saved to: {output_path}")
     logger.info("")
     plt.close()
