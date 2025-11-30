@@ -1,4 +1,26 @@
 # =====================
+#  TRAINING SCRIPT FOR LANGUAGE MODEL
+# =====================
+#
+# Description:
+#   This script trains a character-level transformer-based language model on text files.
+#   It supports training on various datasets with configurable hyperparameters.
+#
+# Code Flow:
+#   main() 
+#     → train_model() 
+#       → load_text_files_from_folder() → loads text data
+#       → CharDataset() → creates character-level dataset
+#       → DataLoader() → creates batches
+#       → SimpleLanguageModel() → initializes model
+#       → train_epoch() [for each epoch]
+#         → model.forward() → forward pass
+#         → loss.backward() → backward pass
+#         → optimizer.step() → update weights
+#       → torch.save() → saves model.pt
+ 
+
+# =====================
 #  EXAMPLE USAGE
 # =====================
 #
@@ -27,23 +49,22 @@
 #   --num-layers - Number of transformer layers (default: 3)
 #   --lr - Learning rate (default: 0.001)
 #
-# Model will be saved to: 50_models/trained_model.pt
+# Model will be saved to: 50_models/{dataset_name}/embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt
+# Example: 50_models/dataset_toy/embed128_layers3_heads4_epochs10.pt
 
 
 # =====================
-#  SET WORKING DIRECTORY TO GIT ROOT
+#  SETUP
 # =====================
 
+# Set working directory to git root
 import sys; from pathlib import Path; sys.path.insert(0, str(Path(__file__).parent.parent / '95_utils')); __import__('path_utils').setup_workspace(__file__)
 
-
-# =====================
-#  IMPORTS
-# =====================
-
+# Imports
 import os
 import argparse
 import logging
+import time
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -52,16 +73,14 @@ from torch.utils.data import DataLoader
 from data_loader import load_text_files_from_folder  # type: ignore
 from train_utils import CharDataset, SimpleLanguageModel, train_epoch  # type: ignore
 
-
-# =====================
-#  LOGGING SETUP
-# =====================
-
+# Logging setup
 from logger_utils import setup_logging  # type: ignore
-
-# Initialize logger
 logger = setup_logging()
 
+
+# =====================
+#  TRAIN MODEL()
+# =====================
 
 def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128, 
                 embed_dim=128, num_heads=4, num_layers=3, learning_rate=1e-3,
@@ -96,6 +115,9 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info(f"  - Learning rate: {learning_rate}")
     logger.info("")
     
+    # Initialize timing - track last timestamp for sequential timing
+    last_timestamp = time.time()
+    
     # Set device
     logger.info("=" * 80)
     logger.info("STEP 1: DEVICE SELECTION")
@@ -109,6 +131,9 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
         logger.info(f"  - Available memory: {torch.cuda.get_device_properties(0).total_memory / 1e9:.2f} GB")
     else:
         logger.info("  - Using CPU (no CUDA available)")
+    step_duration = time.time() - last_timestamp
+    last_timestamp = time.time()
+    logger.info(f"  - Time taken: {step_duration:.3f} seconds")
     logger.info("")
     
     # Load data
@@ -122,6 +147,9 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("Data loaded successfully:")
     logger.info(f"  - Total characters: {len(text):,}")
     logger.info(f"  - Total lines: {text.count(chr(10)) + 1}")
+    step_duration = time.time() - last_timestamp
+    last_timestamp = time.time()
+    logger.info(f"  - Time taken: {step_duration:.3f} seconds")
     logger.info("")
     
     # Create dataset
@@ -137,6 +165,9 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info(f"  - Vocabulary size: {dataset.vocab_size} unique characters")
     logger.info(f"  - Total training sequences: {len(dataset):,}")
     logger.info(f"  - Total tokens: {len(dataset.data):,}")
+    step_duration = time.time() - last_timestamp
+    last_timestamp = time.time()
+    logger.info(f"  - Time taken: {step_duration:.3f} seconds")
     logger.info("")
     
     # Create dataloader
@@ -148,6 +179,9 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     dataloader = DataLoader(dataset, batch_size=batch_size, shuffle=True)
     logger.info(f"  - Total batches per epoch: {len(dataloader)}")
     logger.info(f"  - Samples per batch: {batch_size}")
+    step_duration = time.time() - last_timestamp
+    last_timestamp = time.time()
+    logger.info(f"  - Time taken: {step_duration:.3f} seconds")
     logger.info("")
     
     # Create model
@@ -176,6 +210,9 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info(f"  - Total parameters: {num_params:,}")
     logger.info(f"  - Trainable parameters: {trainable_params:,}")
     logger.info(f"  - Model location: {next(model.parameters()).device}")
+    step_duration = time.time() - last_timestamp
+    last_timestamp = time.time()
+    logger.info(f"  - Time taken: {step_duration:.3f} seconds")
     logger.info("")
     
     # Loss and optimizer
@@ -188,6 +225,9 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info(f"  - Optimizer: AdamW (learning rate: {learning_rate})")
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.AdamW(model.parameters(), lr=learning_rate)
+    step_duration = time.time() - last_timestamp
+    last_timestamp = time.time()
+    logger.info(f"  - Time taken: {step_duration:.3f} seconds")
     logger.info("")
     
     # Training loop
@@ -198,20 +238,35 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info(f"Starting training: {epochs} epochs, {len(dataloader)} batches per epoch")
     logger.info("")
     
+    # Record training start time
+    training_start_time = last_timestamp
+    
     for epoch in range(epochs):
+        epoch_start_time = time.time()
         logger.info("")
         logger.info("-" * 80)
         logger.info(f"EPOCH {epoch+1}/{epochs}")
         logger.info("-" * 80)
         logger.info("")
         avg_loss = train_epoch(model, dataloader, optimizer, criterion, device, epoch_num=epoch+1)
+        epoch_duration = time.time() - epoch_start_time
         logger.info("")
         logger.info(f"Epoch {epoch+1}/{epochs} completed - Average Loss: {avg_loss:.4f}")
+        logger.info(f"  - Time taken: {epoch_duration:.3f} seconds")
         logger.info("")
+        last_timestamp = time.time()
+    
+    # Calculate training duration
+    training_duration = time.time() - training_start_time
+    hours = int(training_duration // 3600)
+    minutes = int((training_duration % 3600) // 60)
+    seconds = int(training_duration % 60)
     
     logger.info("=" * 80)
     logger.info("TRAINING COMPLETE")
     logger.info("=" * 80)
+    logger.info("")
+    logger.info(f"Training duration: {hours:02d}:{minutes:02d}:{seconds:02d} ({training_duration:.2f} seconds)")
     logger.info("")
     
     # Save model
@@ -219,10 +274,20 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("STEP 8: MODEL SAVING")
     logger.info("=" * 80)
     logger.info("")
-    model_dir = Path("50_models")
-    model_dir.mkdir(exist_ok=True)
     
-    model_path = model_dir / "trained_model.pt"
+    # Extract dataset name from folder path
+    dataset_path = Path(dataset_folder)
+    dataset_name = dataset_path.name if dataset_path.is_dir() else dataset_path.stem
+    
+    # Create folder structure: 50_models/{dataset_name}/
+    base_model_dir = Path("50_models")
+    model_dir = base_model_dir / dataset_name
+    model_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Generate filename with config: embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt
+    model_filename = f"embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt"
+    model_path = model_dir / model_filename
+    
     logger.info(f"Saving trained model to: {model_path}")
     logger.info("")
     logger.info("Saving model components:")
@@ -238,13 +303,20 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
         'embed_dim': embed_dim,
         'num_heads': num_heads,
         'num_layers': num_layers,
+        'dataset_folder': dataset_folder,
+        'dataset_name': dataset_name,
+        'epochs': epochs,
+        'batch_size': batch_size,
+        'learning_rate': learning_rate,
     }
     torch.save(save_dict, model_path)
     file_size = model_path.stat().st_size / (1024 * 1024)  # Size in MB
+    step_duration = time.time() - last_timestamp
     logger.info("")
     logger.info(f"Model saved successfully!")
     logger.info(f"  - File path: {model_path}")
     logger.info(f"  - File size: {file_size:.2f} MB")
+    logger.info(f"  - Time taken: {step_duration:.3f} seconds")
     logger.info("")
     
     logger.info("=" * 80)
@@ -303,4 +375,3 @@ if __name__ == "__main__":
         logger.error(f"Error: {str(e)}", exc_info=True)
         logger.error("")
         raise
-
