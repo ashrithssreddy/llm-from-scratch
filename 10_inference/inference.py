@@ -18,12 +18,7 @@
 # using autoregressive sampling.
 #
 #
-# =====================
-#  CODE FLOW
-# =====================
-#
 # Execution Flow (Function Call Graph):
-#
 #   __main__ block
 #   │
 #   ├─→ setup_logging(prefix="inference")
@@ -45,7 +40,7 @@
 #       │
 #       └─→ ELSE single-shot mode:
 #           └─→ generate_text(model, stoi, itos, block_size, prompt, ...)
-#               ├─→ encode_text(prompt, stoi)
+#               ├─→ encode_text(prompt, stoi) [from inference_utils]
 #               │   └─→ Converts text string to list of token indices
 #               │
 #               ├─→ [Loop: Generate max_tokens]
@@ -53,8 +48,12 @@
 #               │   ├─→ torch.softmax() - Convert logits to probabilities
 #               │   └─→ torch.multinomial() - Sample next token
 #               │
-#               └─→ decode_tokens(generated_tokens, itos)
+#               └─→ decode_tokens(generated_tokens, itos) [from inference_utils]
 #                   └─→ Converts list of token indices back to text string
+#
+# Helper Functions (in inference_utils.py):
+#   - encode_text(text, stoi) - Encodes text to token indices
+#   - decode_tokens(tokens, itos) - Decodes token indices to text
 
 # =====================
 #  EXAMPLE USAGE
@@ -85,16 +84,11 @@
 
 
 # =====================
-#  SET WORKING DIRECTORY TO GIT ROOT
+#  SETUP
 # =====================
-
 import sys; from pathlib import Path; sys.path.insert(0, str(Path(__file__).parent.parent / '95_utils')); __import__('path_utils').setup_workspace(__file__)
 
-
-# =====================
 #  IMPORTS
-# =====================
-
 import os
 import argparse
 import logging
@@ -106,16 +100,12 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent / '01_trainers'))
 from train_utils import SimpleLanguageModel  # type: ignore
 
+# Import inference utilities
+from inference_utils import encode_text, decode_tokens  # type: ignore
 
-# =====================
 #  LOGGING SETUP
-# =====================
-
 from logger_utils import setup_logging  # type: ignore
-
-# Initialize logger with inference prefix
 logger = setup_logging(prefix="inference")
-
 
 # =====================
 #  MODEL LOADING
@@ -205,42 +195,6 @@ def load_model(model_path, device=None):
 # =====================
 #  TEXT GENERATION
 # =====================
-
-def encode_text(text, stoi):
-    """
-    Encode text string to list of token indices.
-    
-    Args:
-        text: Input text string
-        stoi: String-to-index mapping dictionary
-        
-    Returns:
-        List of token indices
-    """
-    # Handle unknown characters by skipping them or using a default
-    encoded = []
-    for char in text:
-        if char in stoi:
-            encoded.append(stoi[char])
-        else:
-            # Skip unknown characters or use first character in vocab as fallback
-            logger.warning(f"Unknown character '{char}' (ord={ord(char)}) - skipping")
-    return encoded
-
-
-def decode_tokens(tokens, itos):
-    """
-    Decode list of token indices to text string.
-    
-    Args:
-        tokens: List of token indices
-        itos: Index-to-string mapping dictionary
-        
-    Returns:
-        Decoded text string
-    """
-    return ''.join([itos.get(token, '') for token in tokens])
-
 
 def generate_text(model, stoi, itos, block_size, prompt="\n", max_tokens=500, 
                   temperature=1.0, device=None):
