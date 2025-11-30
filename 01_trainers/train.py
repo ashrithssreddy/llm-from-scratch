@@ -58,16 +58,12 @@
 
 
 # =====================
-#  SET WORKING DIRECTORY TO GIT ROOT
+#  SETUP
 # =====================
-
+#  SET WORKING DIRECTORY TO GIT ROOT
 import sys; from pathlib import Path; sys.path.insert(0, str(Path(__file__).parent.parent / '95_utils')); __import__('path_utils').setup_workspace(__file__)
 
-
-# =====================
-#  IMPORTS
-# =====================
-
+# IMPORTS
 import os
 import argparse
 import logging
@@ -79,16 +75,14 @@ from torch.utils.data import DataLoader
 from data_loader import load_text_files_from_folder  # type: ignore
 from train_utils import CharDataset, SimpleLanguageModel, train_epoch  # type: ignore
 
-
-# =====================
-#  LOGGING SETUP
-# =====================
-
+# LOGGING SETUP
 from logger_utils import setup_logging  # type: ignore
+logger = setup_logging() # Initialize logger
 
-# Initialize logger
-logger = setup_logging()
 
+# =====================
+#  TRAIN MODEL()
+# =====================
 
 def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128, 
                 embed_dim=128, num_heads=4, num_layers=3, learning_rate=1e-3,
