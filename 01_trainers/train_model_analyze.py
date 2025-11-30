@@ -17,6 +17,9 @@ import sys; from pathlib import Path; sys.path.insert(0, str(Path(__file__).pare
 
 # Imports
 import argparse
+import os
+import subprocess
+import sys
 import torch
 import torch.nn as nn
 from collections import OrderedDict
@@ -176,8 +179,8 @@ def visualize_neural_network(model, checkpoint, output_path=None):
     num_layers = checkpoint['num_layers']
     block_size = checkpoint['block_size']
     
-    # Create figure with white background
-    fig, ax = plt.subplots(1, 1, figsize=(16, 10))
+    # Create figure with white background - 2x larger for good resolution without huge file size
+    fig, ax = plt.subplots(1, 1, figsize=(32, 20))  # 2x larger: 16*2=32, 10*2=20
     ax.set_facecolor('white')
     fig.patch.set_facecolor('white')
     ax.set_xlim(0, 10)
@@ -200,22 +203,20 @@ def visualize_neural_network(model, checkpoint, output_path=None):
         chars_list = sorted(checkpoint['stoi'].keys())
     
     # For input/output layers, show ALL nodes (not just a sample)
-    # For other layers, we can still sample if too many
-    max_nodes_to_show_other = 20  # For embedding/transformer layers
-    
+    # For embedding/transformer layers, also show ALL nodes
     def get_num_nodes_to_show(actual_size, show_all=False):
         """Get number of nodes to show"""
         if show_all:
             return actual_size
-        return min(actual_size, max_nodes_to_show_other)
+        return actual_size  # Show all nodes for all layers
     
     # Input layer - show ALL nodes
     input_nodes = get_num_nodes_to_show(vocab_size, show_all=True)
     layer_x_positions.append(x_start)
     x_start += x_spacing
     
-    # Embedding layer
-    embed_nodes = get_num_nodes_to_show(embed_dim, show_all=False)
+    # Embedding layer - show ALL 128 nodes
+    embed_nodes = get_num_nodes_to_show(embed_dim, show_all=True)
     layer_x_positions.append(x_start)
     x_start += x_spacing
     
@@ -229,13 +230,21 @@ def visualize_neural_network(model, checkpoint, output_path=None):
     layer_x_positions.append(x_start)
     
     # Function to draw a layer of nodes
-    def draw_layer(x, num_nodes, layer_name, actual_size, y_center=5, characters=None):
+    def draw_layer(x, num_nodes, layer_name, actual_size, y_center=5, characters=None, dimension_labels=None):
         """Draw a vertical column of nodes"""
         if num_nodes == 0:
             return []
         
         # Adjust node size and spacing based on number of nodes
-        if num_nodes > 30:
+        if num_nodes > 100:
+            node_radius = 0.05
+            node_spacing = 0.08
+            label_fontsize = 3
+        elif num_nodes > 50:
+            node_radius = 0.06
+            node_spacing = 0.1
+            label_fontsize = 3.5
+        elif num_nodes > 30:
             node_radius = 0.08
             node_spacing = 0.15
             label_fontsize = 4
@@ -266,6 +275,12 @@ def visualize_neural_network(model, checkpoint, output_path=None):
                 char_display = repr(char) if not char.isprintable() or char.isspace() else char
                 ax.text(x, y, char_display, ha='center', va='center', 
                        fontsize=label_fontsize, color='black', weight='bold', zorder=4)
+            
+            # Label each node with dimension number if provided (for embedding/transformer layers)
+            if dimension_labels is not None and i < len(dimension_labels):
+                dim_label = dimension_labels[i]
+                ax.text(x, y, dim_label, ha='center', va='center', 
+                       fontsize=label_fontsize, color='black', weight='bold', zorder=4)
         
         # Layer label
         ax.text(x, y_center + total_height/2 + 0.5, layer_name, 
@@ -276,26 +291,38 @@ def visualize_neural_network(model, checkpoint, output_path=None):
         ax.text(x, y_center - total_height/2 - 0.3, size_text,
                ha='center', va='top', fontsize=7, color=text_color, style='italic')
         
+        # Add dimension range label for embedding/transformer layers
+        if dimension_labels is not None:
+            # Show range of dimensions (all are shown, so just indicate the range)
+            dim_range_text = f'dim 0-{actual_size-1}'
+            ax.text(x, y_center - total_height/2 - 0.5, dim_range_text,
+                   ha='center', va='top', fontsize=6, color=text_color, style='italic')
+        
         return nodes
     
     # Function to draw connections between layers
     def draw_connections(from_nodes, to_nodes, alpha=0.3):
-        """Draw connections between two layers"""
-        # Sample connections if too many nodes to avoid clutter
-        max_connections_from = 30 if len(from_nodes) > 30 else len(from_nodes)
-        max_connections_to = 30 if len(to_nodes) > 30 else len(to_nodes)
-        
-        from_sample = from_nodes[:max_connections_from]
-        to_sample = to_nodes[:max_connections_to]
-        
-        # Reduce alpha if many connections
-        if len(from_sample) * len(to_sample) > 100:
+        """Draw connections between two layers - draw ALL connections"""
+        # Draw ALL connections, not just a sample
+        # Reduce alpha and linewidth if many connections to avoid visual clutter
+        num_connections = len(from_nodes) * len(to_nodes)
+        if num_connections > 1000:
+            alpha = 0.05
+            linewidth = 0.1
+        elif num_connections > 500:
+            alpha = 0.08
+            linewidth = 0.15
+        elif num_connections > 100:
             alpha = 0.1
+            linewidth = 0.2
+        else:
+            linewidth = 0.3
         
-        for fx, fy in from_sample:
-            for tx, ty in to_sample:
+        # Draw all connections
+        for fx, fy in from_nodes:
+            for tx, ty in to_nodes:
                 ax.plot([fx, tx], [fy, ty], color=connection_color, 
-                       linewidth=0.3, alpha=alpha, zorder=1)
+                       linewidth=linewidth, alpha=alpha, zorder=1)
     
     # Draw layers
     layer_idx = 0
@@ -306,19 +333,23 @@ def visualize_neural_network(model, checkpoint, output_path=None):
                                    characters=chars_list if chars_list else None)
     layer_idx += 1
     
-    # Embedding layer
+    # Embedding layer - create dimension labels for ALL 128 dimensions (d0, d1, ..., d127)
+    embed_dim_labels = [f'd{i}' for i in range(embed_dim)]  # Labels for all 128 nodes
     embed_layer_nodes = draw_layer(layer_x_positions[layer_idx], embed_nodes,
-                                   'Embedding', embed_dim, y_center=5)
+                                   'Embedding', embed_dim, y_center=5,
+                                   dimension_labels=embed_dim_labels)
     draw_connections(input_layer_nodes, embed_layer_nodes, alpha=0.2)
     layer_idx += 1
     
-    # Transformer layers
+    # Transformer layers - show ALL 128 nodes with dimension labels
     prev_layer_nodes = embed_layer_nodes
     for i in range(num_layers):
-        # Show a representative number of nodes for transformer layer
-        transformer_nodes = get_num_nodes_to_show(embed_dim, show_all=False)
+        # Show ALL nodes for transformer layer
+        transformer_nodes = get_num_nodes_to_show(embed_dim, show_all=True)
+        transformer_dim_labels = [f'd{j}' for j in range(transformer_nodes)]  # Labels for all nodes d0-d127
         transformer_layer_nodes = draw_layer(layer_x_positions[layer_idx], transformer_nodes,
-                                            f'Transformer\nLayer {i+1}', embed_dim, y_center=5)
+                                            f'Transformer\nLayer {i+1}', embed_dim, y_center=5,
+                                            dimension_labels=transformer_dim_labels)
         draw_connections(prev_layer_nodes, transformer_layer_nodes, alpha=0.2)
         prev_layer_nodes = transformer_layer_nodes
         layer_idx += 1
@@ -344,10 +375,17 @@ def visualize_neural_network(model, checkpoint, output_path=None):
             bbox=dict(boxstyle='round', facecolor='#f0f0f0', edgecolor='black', alpha=0.9))
     
     plt.tight_layout()
-    plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor='white', edgecolor='none')
+    # Save at good resolution (2x DPI) - balance between quality and file size
+    plt.savefig(output_path, dpi=300, bbox_inches='tight', facecolor='white', edgecolor='none')
     logger.info(f"Visualization saved to: {output_path}")
+    logger.info(f"  - Image size: 32x20 inches at 300 DPI (high resolution)")
+    logger.info(f"  - All {vocab_size} input/output nodes displayed")
+    logger.info(f"  - All {embed_dim} embedding/transformer nodes displayed")
+    logger.info(f"  - All connections between layers drawn")
     logger.info("")
     plt.close()
+    
+    return output_path
 
 
 def analyze_model_architecture(model):
@@ -528,7 +566,7 @@ def analyze_model(model_path, device=None):
     logger.info("")
     
     # Create visualization (saves to logs folder)
-    visualize_neural_network(model, checkpoint)
+    viz_path = visualize_neural_network(model, checkpoint)
     
     # Analyze model architecture
     total_params, trainable_params = analyze_model_architecture(model)
@@ -559,6 +597,38 @@ def analyze_model(model_path, device=None):
     logger.info("ANALYSIS COMPLETE")
     logger.info("=" * 80)
     logger.info("")
+    
+    # Open generated files automatically
+    try:
+        import logging
+        # Get the log file path from the logger
+        log_file = None
+        for handler in logger.handlers:
+            if isinstance(handler, logging.FileHandler):
+                log_file = handler.baseFilename
+                break
+        
+        # Open log file
+        if log_file and Path(log_file).exists():
+            logger.info(f"Opening log file: {log_file}")
+            if sys.platform == 'win32':
+                os.startfile(log_file)
+            elif sys.platform == 'darwin':  # macOS
+                subprocess.run(['open', log_file])
+            else:  # Linux
+                subprocess.run(['xdg-open', log_file])
+        
+        # Open visualization image
+        if viz_path and Path(viz_path).exists():
+            logger.info(f"Opening visualization: {viz_path}")
+            if sys.platform == 'win32':
+                os.startfile(viz_path)
+            elif sys.platform == 'darwin':  # macOS
+                subprocess.run(['open', viz_path])
+            else:  # Linux
+                subprocess.run(['xdg-open', viz_path])
+    except Exception as e:
+        logger.warning(f"Could not open files automatically: {e}")
     
     return model, checkpoint
 
