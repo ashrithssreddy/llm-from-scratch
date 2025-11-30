@@ -176,18 +176,18 @@ def visualize_neural_network(model, checkpoint, output_path=None):
     num_layers = checkpoint['num_layers']
     block_size = checkpoint['block_size']
     
-    # Create figure with dark background (like the example)
+    # Create figure with white background
     fig, ax = plt.subplots(1, 1, figsize=(16, 10))
-    ax.set_facecolor('black')
-    fig.patch.set_facecolor('black')
+    ax.set_facecolor('white')
+    fig.patch.set_facecolor('white')
     ax.set_xlim(0, 10)
     ax.set_ylim(0, 10)
     ax.axis('off')
     
     # Colors
-    node_color = '#FFA500'  # Orange like the example
+    node_color = '#FFA500'  # Orange nodes
     connection_color = '#666666'  # Gray connections
-    text_color = 'white'
+    text_color = 'black'
     
     # Layer positions (x coordinates)
     layer_x_positions = []
@@ -222,7 +222,7 @@ def visualize_neural_network(model, checkpoint, output_path=None):
     layer_x_positions.append(x_start)
     
     # Function to draw a layer of nodes
-    def draw_layer(x, num_nodes, layer_name, y_center=5):
+    def draw_layer(x, num_nodes, layer_name, actual_size, y_center=5):
         """Draw a vertical column of nodes"""
         if num_nodes == 0:
             return []
@@ -236,7 +236,7 @@ def visualize_neural_network(model, checkpoint, output_path=None):
         for i in range(num_nodes):
             y = y_start + i * node_spacing
             circle = plt.Circle((x, y), node_radius, color=node_color, 
-                              edgecolor='white', linewidth=1.5, zorder=3)
+                              edgecolor='black', linewidth=1.5, zorder=3)
             ax.add_patch(circle)
             nodes.append((x, y))
         
@@ -244,11 +244,8 @@ def visualize_neural_network(model, checkpoint, output_path=None):
         ax.text(x, y_center + total_height/2 + 0.5, layer_name, 
                ha='center', va='bottom', fontsize=9, color=text_color, weight='bold')
         
-        # Size label
-        if num_nodes < max_nodes_to_show:
-            size_text = f'{num_nodes} nodes'
-        else:
-            size_text = f'{num_nodes}+ nodes'
+        # Size label - show actual number of nodes
+        size_text = f'{actual_size} nodes'
         ax.text(x, y_center - total_height/2 - 0.3, size_text,
                ha='center', va='top', fontsize=7, color=text_color, style='italic')
         
@@ -271,12 +268,12 @@ def visualize_neural_network(model, checkpoint, output_path=None):
     
     # Input layer
     input_layer_nodes = draw_layer(layer_x_positions[layer_idx], input_nodes, 
-                                   'Input', y_center=5)
+                                   'Input', vocab_size, y_center=5)
     layer_idx += 1
     
     # Embedding layer
     embed_layer_nodes = draw_layer(layer_x_positions[layer_idx], embed_nodes,
-                                   'Embedding', y_center=5)
+                                   'Embedding', embed_dim, y_center=5)
     draw_connections(input_layer_nodes, embed_layer_nodes, alpha=0.2)
     layer_idx += 1
     
@@ -286,30 +283,32 @@ def visualize_neural_network(model, checkpoint, output_path=None):
         # Show a representative number of nodes for transformer layer
         transformer_nodes = get_num_nodes_to_show(embed_dim)
         transformer_layer_nodes = draw_layer(layer_x_positions[layer_idx], transformer_nodes,
-                                            f'Transformer\nLayer {i+1}', y_center=5)
+                                            f'Transformer\nLayer {i+1}', embed_dim, y_center=5)
         draw_connections(prev_layer_nodes, transformer_layer_nodes, alpha=0.2)
         prev_layer_nodes = transformer_layer_nodes
         layer_idx += 1
     
     # Output layer
     output_layer_nodes = draw_layer(layer_x_positions[layer_idx], output_nodes,
-                                    'Output', y_center=5)
+                                    'Output', vocab_size, y_center=5)
     draw_connections(prev_layer_nodes, output_layer_nodes, alpha=0.2)
     
     # Title
     ax.text(5, 9.2, 'Neural Network Architecture', 
             ha='center', va='center', fontsize=18, weight='bold', color=text_color)
     
-    # Info box
+    # Info box - calculate total layers (input + embedding + transformer layers + output = 2 + num_layers + 1)
     total_params = sum(p.numel() for p in model.parameters())
+    total_layers = 2 + num_layers + 1  # Input + Embedding + Transformer layers + Output
     info_text = f'Total Parameters: {format_number(total_params)}\n'
-    info_text += f'Layers: {num_layers} | Attention Heads: {num_heads} | Embed Dim: {embed_dim}'
+    info_text += f'Total Layers: {total_layers} (Input + Embedding + {num_layers} Transformer + Output)\n'
+    info_text += f'Transformer Layers: {num_layers} | Attention Heads: {num_heads} | Embed Dim: {embed_dim}'
     ax.text(5, 0.5, info_text, ha='center', va='center', 
             fontsize=10, color=text_color,
-            bbox=dict(boxstyle='round', facecolor='#333333', edgecolor='white', alpha=0.8))
+            bbox=dict(boxstyle='round', facecolor='#f0f0f0', edgecolor='black', alpha=0.9))
     
     plt.tight_layout()
-    plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor='black')
+    plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor='white', edgecolor='none')
     logger.info(f"Visualization saved to: {output_path}")
     logger.info("")
     plt.close()
