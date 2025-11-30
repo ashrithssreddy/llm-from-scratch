@@ -194,21 +194,28 @@ def visualize_neural_network(model, checkpoint, output_path=None):
     x_start = 1.5
     x_spacing = 1.5
     
-    # Calculate number of nodes per layer (simplified representation)
-    # We'll show a representative sample of nodes, not all of them
-    max_nodes_to_show = 8  # Maximum nodes to display per layer
+    # Get actual characters from vocabulary
+    chars_list = []
+    if 'stoi' in checkpoint:
+        chars_list = sorted(checkpoint['stoi'].keys())
     
-    def get_num_nodes_to_show(actual_size):
-        """Get number of nodes to show (sample if too many)"""
-        return min(actual_size, max_nodes_to_show)
+    # For input/output layers, show ALL nodes (not just a sample)
+    # For other layers, we can still sample if too many
+    max_nodes_to_show_other = 20  # For embedding/transformer layers
     
-    # Input layer
-    input_nodes = get_num_nodes_to_show(vocab_size)
+    def get_num_nodes_to_show(actual_size, show_all=False):
+        """Get number of nodes to show"""
+        if show_all:
+            return actual_size
+        return min(actual_size, max_nodes_to_show_other)
+    
+    # Input layer - show ALL nodes
+    input_nodes = get_num_nodes_to_show(vocab_size, show_all=True)
     layer_x_positions.append(x_start)
     x_start += x_spacing
     
     # Embedding layer
-    embed_nodes = get_num_nodes_to_show(embed_dim)
+    embed_nodes = get_num_nodes_to_show(embed_dim, show_all=False)
     layer_x_positions.append(x_start)
     x_start += x_spacing
     
@@ -217,18 +224,30 @@ def visualize_neural_network(model, checkpoint, output_path=None):
         layer_x_positions.append(x_start)
         x_start += x_spacing * 0.8
     
-    # Output layer
-    output_nodes = get_num_nodes_to_show(vocab_size)
+    # Output layer - show ALL nodes
+    output_nodes = get_num_nodes_to_show(vocab_size, show_all=True)
     layer_x_positions.append(x_start)
     
     # Function to draw a layer of nodes
-    def draw_layer(x, num_nodes, layer_name, actual_size, y_center=5):
+    def draw_layer(x, num_nodes, layer_name, actual_size, y_center=5, characters=None):
         """Draw a vertical column of nodes"""
         if num_nodes == 0:
             return []
         
-        node_radius = 0.15
-        node_spacing = 0.4
+        # Adjust node size and spacing based on number of nodes
+        if num_nodes > 30:
+            node_radius = 0.08
+            node_spacing = 0.15
+            label_fontsize = 4
+        elif num_nodes > 15:
+            node_radius = 0.1
+            node_spacing = 0.2
+            label_fontsize = 5
+        else:
+            node_radius = 0.15
+            node_spacing = 0.4
+            label_fontsize = 6
+        
         total_height = (num_nodes - 1) * node_spacing
         y_start = y_center - total_height / 2
         
@@ -236,9 +255,17 @@ def visualize_neural_network(model, checkpoint, output_path=None):
         for i in range(num_nodes):
             y = y_start + i * node_spacing
             circle = plt.Circle((x, y), node_radius, color=node_color, 
-                              edgecolor='black', linewidth=1.5, zorder=3)
+                              edgecolor='black', linewidth=1, zorder=3)
             ax.add_patch(circle)
             nodes.append((x, y))
+            
+            # Label each node with its character if provided (for input/output layers)
+            if characters and i < len(characters):
+                char = characters[i]
+                # Use repr for non-printable characters
+                char_display = repr(char) if not char.isprintable() or char.isspace() else char
+                ax.text(x, y, char_display, ha='center', va='center', 
+                       fontsize=label_fontsize, color='black', weight='bold', zorder=4)
         
         # Layer label
         ax.text(x, y_center + total_height/2 + 0.5, layer_name, 
@@ -254,21 +281,29 @@ def visualize_neural_network(model, checkpoint, output_path=None):
     # Function to draw connections between layers
     def draw_connections(from_nodes, to_nodes, alpha=0.3):
         """Draw connections between two layers"""
-        # Sample connections if too many nodes
-        from_sample = from_nodes[:max_nodes_to_show] if len(from_nodes) > max_nodes_to_show else from_nodes
-        to_sample = to_nodes[:max_nodes_to_show] if len(to_nodes) > max_nodes_to_show else to_nodes
+        # Sample connections if too many nodes to avoid clutter
+        max_connections_from = 30 if len(from_nodes) > 30 else len(from_nodes)
+        max_connections_to = 30 if len(to_nodes) > 30 else len(to_nodes)
+        
+        from_sample = from_nodes[:max_connections_from]
+        to_sample = to_nodes[:max_connections_to]
+        
+        # Reduce alpha if many connections
+        if len(from_sample) * len(to_sample) > 100:
+            alpha = 0.1
         
         for fx, fy in from_sample:
             for tx, ty in to_sample:
                 ax.plot([fx, tx], [fy, ty], color=connection_color, 
-                       linewidth=0.5, alpha=alpha, zorder=1)
+                       linewidth=0.3, alpha=alpha, zorder=1)
     
     # Draw layers
     layer_idx = 0
     
-    # Input layer
+    # Input layer - show ALL 48 nodes with character labels
     input_layer_nodes = draw_layer(layer_x_positions[layer_idx], input_nodes, 
-                                   'Input', vocab_size, y_center=5)
+                                   'Input', vocab_size, y_center=5,
+                                   characters=chars_list if chars_list else None)
     layer_idx += 1
     
     # Embedding layer
@@ -281,16 +316,17 @@ def visualize_neural_network(model, checkpoint, output_path=None):
     prev_layer_nodes = embed_layer_nodes
     for i in range(num_layers):
         # Show a representative number of nodes for transformer layer
-        transformer_nodes = get_num_nodes_to_show(embed_dim)
+        transformer_nodes = get_num_nodes_to_show(embed_dim, show_all=False)
         transformer_layer_nodes = draw_layer(layer_x_positions[layer_idx], transformer_nodes,
                                             f'Transformer\nLayer {i+1}', embed_dim, y_center=5)
         draw_connections(prev_layer_nodes, transformer_layer_nodes, alpha=0.2)
         prev_layer_nodes = transformer_layer_nodes
         layer_idx += 1
     
-    # Output layer
+    # Output layer - show ALL 48 nodes with character labels
     output_layer_nodes = draw_layer(layer_x_positions[layer_idx], output_nodes,
-                                    'Output', vocab_size, y_center=5)
+                                    'Output', vocab_size, y_center=5,
+                                    characters=chars_list if chars_list else None)
     draw_connections(prev_layer_nodes, output_layer_nodes, alpha=0.2)
     
     # Title
