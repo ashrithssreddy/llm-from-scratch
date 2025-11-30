@@ -25,7 +25,7 @@ from train_utils import SimpleLanguageModel  # type: ignore
 from logger_utils import setup_logging  # type: ignore
 
 # Logging setup
-logger = setup_logging()
+logger = setup_logging(prefix="analyze")
 
 
 # =====================
