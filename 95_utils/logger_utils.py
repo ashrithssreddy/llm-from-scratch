@@ -7,15 +7,23 @@ import datetime
 from pathlib import Path
 
 
-def setup_logging():
-    """Set up aggressive logging to both console and file."""
+def setup_logging(prefix="training"):
+    """
+    Set up aggressive logging to both console and file.
+    
+    Args:
+        prefix: Prefix for log filename (default: "training", use "inference" for inference scripts)
+        
+    Returns:
+        Logger instance
+    """
     # Create logs directory if it doesn't exist
     logs_dir = Path("97_logs")
     logs_dir.mkdir(exist_ok=True)
     
-    # Create log filename with training prefix and timestamp
+    # Create log filename with specified prefix and timestamp
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-    log_file = logs_dir / f"training_{timestamp}.log"
+    log_file = logs_dir / f"{prefix}_{timestamp}.log"
     
     # Configure logging
     logging.basicConfig(
@@ -31,7 +39,10 @@ def setup_logging():
     logger = logging.getLogger(__name__)
     logger.info("")
     logger.info("=" * 80)
-    logger.info("TRAINING SESSION STARTED")
+    if prefix == "inference":
+        logger.info("INFERENCE SESSION STARTED")
+    else:
+        logger.info("TRAINING SESSION STARTED")
     logger.info("=" * 80)
     logger.info("")
     logger.info(f"Log file: {log_file}")
