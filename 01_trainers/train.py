@@ -22,7 +22,6 @@
 #   setup_logging() [module level] → creates log_file
 
 
-
 # =====================
 #  EXAMPLE USAGE
 # =====================
@@ -59,10 +58,11 @@
 # =====================
 #  SETUP
 # =====================
-#  SET WORKING DIRECTORY TO GIT ROOT
+
+# Set working directory to git root
 import sys; from pathlib import Path; sys.path.insert(0, str(Path(__file__).parent.parent / '95_utils')); __import__('path_utils').setup_workspace(__file__)
 
-# IMPORTS
+# Imports
 import os
 import argparse
 import logging
@@ -74,9 +74,9 @@ from torch.utils.data import DataLoader
 from data_loader import load_text_files_from_folder  # type: ignore
 from train_utils import CharDataset, SimpleLanguageModel, train_epoch  # type: ignore
 
-# LOGGING SETUP
+# Logging setup
 from logger_utils import setup_logging  # type: ignore
-logger = setup_logging() # Initialize logger
+logger = setup_logging()
 
 
 # =====================
@@ -294,6 +294,7 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
 #  MAIN
 # =====================
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Train a language model on text files")
     parser.add_argument(
@@ -338,4 +339,3 @@ if __name__ == "__main__":
         logger.error(f"Error: {str(e)}", exc_info=True)
         logger.error("")
         raise
-
