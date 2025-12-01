@@ -97,7 +97,7 @@ import logging
 import torch
 
 # Import inference utilities
-from inference_utils import load_model, generate_text, interactive_mode  # type: ignore
+from inference_utils import load_model, generate_text, interactive_mode, trace_forward_pass  # type: ignore
 
 #  LOGGING SETUP
 from logger_utils import setup_logging  # type: ignore
@@ -119,7 +119,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--prompt",
         type=str,
-        default="\n",
+        default="Machine learning",
         help="Starting text prompt (default: newline)"
     )
     parser.add_argument(
@@ -145,6 +145,17 @@ if __name__ == "__main__":
         default=None,
         help="Random seed for reproducibility"
     )
+    parser.add_argument(
+        "--trace",
+        type=str,
+        default=None,
+        help="Trace forward pass for given input text (e.g., 'ma') - shows what happens at each stage. If not specified, uses the prompt value."
+    )
+    parser.add_argument(
+        "--no-trace",
+        action="store_true",
+        help="Disable tracing (tracing is enabled by default)"
+    )
     
     args = parser.parse_args()
     
@@ -166,6 +177,11 @@ if __name__ == "__main__":
         )
         
         device = next(model.parameters()).device
+        
+        # Trace forward pass by default (unless --no-trace is specified)
+        if not args.no_trace:
+            trace_input = args.trace if args.trace else args.prompt
+            trace_forward_pass(model, trace_input, stoi, itos, device=device)
         
         # Run inference
         if args.interactive:
