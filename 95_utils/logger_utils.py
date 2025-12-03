@@ -12,7 +12,7 @@ def setup_logging(prefix="training"):
     Set up aggressive logging to both console and file.
     
     Args:
-        prefix: Prefix for log filename (default: "training", use "inference" for inference scripts)
+        prefix: Prefix for log filename (default: "training", use "inference" for inference scripts, "analyze" for analysis scripts)
         
     Returns:
         Logger instance
@@ -41,6 +41,8 @@ def setup_logging(prefix="training"):
     logger.info("=" * 80)
     if prefix == "inference":
         logger.info("INFERENCE SESSION STARTED")
+    elif prefix == "analyze":
+        logger.info("ANALYSIS SESSION STARTED")
     else:
         logger.info("TRAINING SESSION STARTED")
     logger.info("=" * 80)

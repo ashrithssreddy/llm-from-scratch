@@ -253,6 +253,177 @@ def generate_text(model, stoi, itos, block_size, prompt="\n", max_tokens=500,
 
 
 # =====================
+#  TRACE FORWARD PASS
+# =====================
+
+def trace_forward_pass(model, input_text, stoi, itos, device=None):
+    """
+    Trace through the model and show actual outputs at each stage.
+    
+    Args:
+        model: The trained model
+        input_text: Input text (e.g., "ma")
+        stoi: String-to-index mapping
+        itos: Index-to-string mapping
+        device: Device to run on
+    """
+    if device is None:
+        device = next(model.parameters()).device
+    
+    logger.info("")
+    logger.info("=" * 80)
+    logger.info(f"TRACING FORWARD PASS - Input: '{input_text}'")
+    logger.info("=" * 80)
+    logger.info("")
+    
+    # Stage 1: Input Encoding
+    logger.info("STAGE 1: INPUT ENCODING")
+    logger.info("-" * 80)
+    logger.info(f"Input text: '{input_text}'")
+    encoded = [stoi[char] for char in input_text if char in stoi]
+    logger.info(f"Encoded to indices: {encoded}")
+    for i, char in enumerate(input_text):
+        if char in stoi:
+            logger.info(f"  '{char}' -> index {stoi[char]}")
+    logger.info("")
+    
+    # Convert to tensor
+    input_tensor = torch.tensor([encoded], dtype=torch.long, device=device)
+    logger.info(f"Input tensor shape: {list(input_tensor.shape)}")
+    logger.info("")
+    
+    # Stage 2: Token Embedding
+    logger.info("STAGE 2: TOKEN EMBEDDING")
+    logger.info("-" * 80)
+    with torch.no_grad():
+        tok_emb = model.token_embedding(input_tensor)
+        logger.info(f"Token embedding shape: {list(tok_emb.shape)}")
+        logger.info(f"  - Batch size: {tok_emb.shape[0]}")
+        logger.info(f"  - Sequence length: {tok_emb.shape[1]}")
+        logger.info(f"  - Embedding dimension: {tok_emb.shape[2]}")
+        logger.info("")
+        for i, char in enumerate(input_text):
+            if char in stoi:
+                emb_values = tok_emb[0, i, :].cpu().numpy()
+                logger.info(f"  Character '{char}' (index {stoi[char]}) embedding:")
+                logger.info(f"    - First 10 values: {emb_values[:10]}")
+                logger.info(f"    - Mean: {emb_values.mean():.4f}, Std: {emb_values.std():.4f}")
+                logger.info(f"    - Min: {emb_values.min():.4f}, Max: {emb_values.max():.4f}")
+        logger.info("")
+    
+    # Stage 3: Positional Embedding
+    logger.info("STAGE 3: POSITIONAL EMBEDDING")
+    logger.info("-" * 80)
+    with torch.no_grad():
+        pos = torch.arange(0, input_tensor.shape[1], dtype=torch.long, device=device)
+        pos_emb = model.position_embedding(pos)
+        logger.info(f"Positional embedding shape: {list(pos_emb.shape)}")
+        logger.info("")
+        for i in range(input_tensor.shape[1]):
+            pos_values = pos_emb[i, :].cpu().numpy()
+            logger.info(f"  Position {i} embedding:")
+            logger.info(f"    - First 10 values: {pos_values[:10]}")
+            logger.info(f"    - Mean: {pos_values.mean():.4f}, Std: {pos_values.std():.4f}")
+        logger.info("")
+    
+    # Stage 4: Combined Embedding
+    logger.info("STAGE 4: COMBINED EMBEDDING (Token + Position)")
+    logger.info("-" * 80)
+    with torch.no_grad():
+        combined_emb = tok_emb + pos_emb.unsqueeze(0)
+        logger.info(f"Combined embedding shape: {list(combined_emb.shape)}")
+        for i, char in enumerate(input_text):
+            if char in stoi:
+                comb_values = combined_emb[0, i, :].cpu().numpy()
+                logger.info(f"  Character '{char}' at position {i}:")
+                logger.info(f"    - First 10 values: {comb_values[:10]}")
+                logger.info(f"    - Mean: {comb_values.mean():.4f}, Std: {comb_values.std():.4f}")
+        logger.info("")
+    
+    # Stage 5: Transformer Layers
+    x = combined_emb
+    for layer_idx in range(len(model.blocks)):
+        logger.info(f"STAGE {5 + layer_idx}: TRANSFORMER LAYER {layer_idx + 1}")
+        logger.info("-" * 80)
+        with torch.no_grad():
+            x_before = x.clone()
+            x = model.blocks[layer_idx](x)
+            logger.info(f"Output shape: {list(x.shape)}")
+            # Show how values changed
+            diff = (x - x_before).abs().mean().item()
+            logger.info(f"  - Mean absolute change from input: {diff:.6f}")
+            for i, char in enumerate(input_text):
+                if char in stoi:
+                    layer_values = x[0, i, :].cpu().numpy()
+                    logger.info(f"  Character '{char}' at position {i}:")
+                    logger.info(f"    - First 10 values: {layer_values[:10]}")
+                    logger.info(f"    - Mean: {layer_values.mean():.4f}, Std: {layer_values.std():.4f}")
+            logger.info("")
+    
+    # Stage 6: Final Layer Norm
+    logger.info(f"STAGE {5 + len(model.blocks) + 1}: FINAL LAYER NORM")
+    logger.info("-" * 80)
+    with torch.no_grad():
+        x = model.ln_f(x)
+        logger.info(f"Output shape: {list(x.shape)}")
+        for i, char in enumerate(input_text):
+            if char in stoi:
+                norm_values = x[0, i, :].cpu().numpy()
+                logger.info(f"  Character '{char}' at position {i}:")
+                logger.info(f"    - First 10 values: {norm_values[:10]}")
+                logger.info(f"    - Mean: {norm_values.mean():.4f}, Std: {norm_values.std():.4f}")
+        logger.info("")
+    
+    # Stage 7: Output Projection (Logits)
+    logger.info(f"STAGE {5 + len(model.blocks) + 2}: OUTPUT PROJECTION (LOGITS)")
+    logger.info("-" * 80)
+    with torch.no_grad():
+        logits = model.head(x)
+        logger.info(f"Logits shape: {list(logits.shape)}")
+        logger.info(f"  - Batch size: {logits.shape[0]}")
+        logger.info(f"  - Sequence length: {logits.shape[1]}")
+        logger.info(f"  - Vocabulary size: {logits.shape[2]}")
+        logger.info("")
+        
+        # For each position, show top predictions
+        for i, char in enumerate(input_text):
+            if char in stoi:
+                pos_logits = logits[0, i, :].cpu().numpy()
+                # Get top 10 predictions
+                top_indices = pos_logits.argsort()[-10:][::-1]
+                logger.info(f"  Position {i} (after character '{char}') - Top 10 predicted next characters:")
+                for rank, idx in enumerate(top_indices, 1):
+                    char_pred = itos.get(idx, '?')
+                    logit_val = pos_logits[idx]
+                    prob = torch.softmax(torch.tensor(pos_logits), dim=0)[idx].item()
+                    logger.info(f"    {rank}. '{char_pred}' (index {idx}): logit={logit_val:.4f}, prob={prob:.4f}")
+        logger.info("")
+    
+    # Stage 8: Final Prediction (for last position)
+    logger.info(f"STAGE {5 + len(model.blocks) + 3}: FINAL PREDICTION (Last Position)")
+    logger.info("-" * 80)
+    with torch.no_grad():
+        last_logits = logits[0, -1, :]  # Last position
+        probs = torch.softmax(last_logits, dim=-1)
+        top_probs, top_indices = torch.topk(probs, k=10)
+        
+        logger.info(f"Predicting next character after '{input_text}':")
+        for rank, (prob, idx) in enumerate(zip(top_probs, top_indices), 1):
+            char_pred = itos.get(idx.item(), '?')
+            logger.info(f"  {rank}. '{char_pred}' (index {idx.item()}): probability = {prob.item():.4f}")
+        
+        # Sample one
+        sampled_idx = torch.multinomial(probs, num_samples=1).item()
+        sampled_char = itos.get(sampled_idx, '?')
+        logger.info("")
+        logger.info(f"Sampled next character: '{sampled_char}' (index {sampled_idx})")
+        logger.info("")
+    
+    logger.info("=" * 80)
+    logger.info("")
+
+
+# =====================
 #  INTERACTIVE MODE
 # =====================
 
