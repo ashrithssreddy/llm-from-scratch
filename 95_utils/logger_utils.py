@@ -28,8 +28,7 @@ def setup_logging(prefix="training"):
     # Configure logging
     logging.basicConfig(
         level=logging.DEBUG,
-        format='%(asctime)s - %(levelname)s - %(message)s',
-        datefmt='%Y-%m-%d %H:%M:%S',
+        format='%(levelname)s - %(message)s',
         handlers=[
             logging.FileHandler(log_file, mode='w'),
             logging.StreamHandler()  # Also output to console
