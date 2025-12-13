@@ -217,7 +217,7 @@ def generate_text(model, stoi, itos, block_size, prompt="\n", max_tokens=500,
             logits = model(input_tensor)  # Shape: [1, seq_len, vocab_size]
             
             # Get logits for the last position
-            logits = logits[0, -1, :] # / temperature  # Shape: [vocab_size]
+            last_logits = logits[0, -1, :]  # Shape: [vocab_size]
             
             # Handle temperature: if 0, use argmax for deterministic output
             if temperature == 0.0:
