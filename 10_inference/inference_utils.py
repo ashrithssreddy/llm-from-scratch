@@ -162,7 +162,7 @@ def generate_text(model, stoi, itos, block_size, prompt="\n", max_tokens=500,
         block_size: Context window size
         prompt: Starting text prompt
         max_tokens: Maximum number of tokens to generate
-        temperature: Sampling temperature (higher = more random)
+        temperature: Sampling temperature (0.0 = deterministic argmax, higher = more random)
         device: Device to run inference on
         
     Returns:
@@ -217,13 +217,19 @@ def generate_text(model, stoi, itos, block_size, prompt="\n", max_tokens=500,
             logits = model(input_tensor)  # Shape: [1, seq_len, vocab_size]
             
             # Get logits for the last position
-            logits = logits[0, -1, :] / temperature  # Shape: [vocab_size]
+            last_logits = logits[0, -1, :]  # Shape: [vocab_size]
             
-            # Apply softmax to get probabilities
-            probs = torch.softmax(logits, dim=-1)
-            
-            # Sample from the distribution
-            next_token = torch.multinomial(probs, num_samples=1).item()
+            # Handle temperature: if 0, use argmax for deterministic output
+            if temperature == 0.0:
+                # Deterministic: always pick the highest probability token
+                next_token = torch.argmax(last_logits, dim=-1).item()
+            else:
+                # Apply temperature scaling
+                scaled_logits = last_logits / temperature
+                # Apply softmax to get probabilities
+                probs = torch.softmax(scaled_logits, dim=-1)
+                # Sample from the distribution
+                next_token = torch.multinomial(probs, num_samples=1).item()
             
             # Add to context and generated tokens
             context.append(next_token)
@@ -417,6 +423,70 @@ def trace_forward_pass(model, input_text, stoi, itos, device=None):
         sampled_char = itos.get(sampled_idx, '?')
         logger.info("")
         logger.info(f"Sampled next character: '{sampled_char}' (index {sampled_idx})")
+        logger.info("")
+    
+    # Stage 9: Generation Predictions (First 4 and Last 4 steps)
+    logger.info(f"STAGE {5 + len(model.blocks) + 4}: GENERATION PREDICTIONS (First 4 and Last 4 Steps)")
+    logger.info("-" * 80)
+    logger.info("")
+    logger.info("Generating tokens step-by-step and showing predictions for first 4 and last 4 generation steps...")
+    logger.info("")
+    
+    with torch.no_grad():
+        # Encode prompt
+        prompt_tokens = [stoi[char] for char in input_text if char in stoi]
+        if len(prompt_tokens) == 0:
+            prompt_tokens = [stoi.get('\n', 0)]
+        
+        context = prompt_tokens.copy()
+        block_size = model.block_size
+        
+        # Generate enough tokens to show first 4 and last 4
+        # We'll generate at least 8 tokens, or more if specified
+        num_generation_steps = max(8, 20)  # Generate at least 20 to have meaningful "last 4"
+        generated_tokens = []
+        
+        for step in range(num_generation_steps):
+            # Prepare input
+            input_tokens = context[-block_size:] if len(context) >= block_size else context
+            input_tensor = torch.tensor([input_tokens], dtype=torch.long, device=device)
+            
+            # Forward pass
+            logits = model(input_tensor)
+            last_logits = logits[0, -1, :]
+            probs = torch.softmax(last_logits, dim=-1)
+            
+            # Determine if we should show predictions for this step
+            show_predictions = (step < 4) or (step >= num_generation_steps - 4)
+            
+            if show_predictions:
+                top_probs, top_indices = torch.topk(probs, k=10)
+                
+                # Get context string
+                current_text = decode_tokens(context, itos)
+                logger.info(f"Generation Step {step + 1} - Predicting next character after '{current_text}':")
+                for rank, (prob, idx) in enumerate(zip(top_probs, top_indices), 1):
+                    char_pred = itos.get(idx.item(), '?')
+                    logger.info(f"  {rank}. '{char_pred}' (index {idx.item()}): probability = {prob.item():.4f}")
+                
+                # Get the actual next token (using argmax for deterministic)
+                next_token = torch.argmax(last_logits, dim=-1).item()
+                next_char = itos.get(next_token, '?')
+                logger.info(f"  -> Selected: '{next_char}' (index {next_token})")
+                logger.info("")
+            
+            # Get next token (deterministic argmax)
+            next_token = torch.argmax(last_logits, dim=-1).item()
+            context.append(next_token)
+            generated_tokens.append(next_token)
+        
+        # Show summary
+        generated_text = decode_tokens(generated_tokens, itos)
+        logger.info("=" * 80)
+        logger.info("GENERATION SUMMARY")
+        logger.info("=" * 80)
+        logger.info(f"Generated {len(generated_tokens)} tokens")
+        logger.info(f"Generated text: '{generated_text}'")
         logger.info("")
     
     logger.info("=" * 80)

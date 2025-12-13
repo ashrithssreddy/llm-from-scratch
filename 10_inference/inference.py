@@ -71,6 +71,9 @@
 # Generate with custom parameters:
 #   python 10_inference/inference.py --prompt "Hello" --max-tokens 200 --temperature 0.8
 #
+# Use higher temperature for more randomness:
+#   python 10_inference/inference.py --prompt "Hello" --temperature 1.0
+#
 # Interactive mode (keep generating):
 #   python 10_inference/inference.py --interactive
 #
@@ -81,7 +84,7 @@
 #   --model-path - Path to trained model file (default: 50_models/trained_model.pt)
 #   --prompt - Starting text prompt (default: "\n")
 #   --max-tokens - Maximum number of tokens to generate (default: 500)
-#   --temperature - Sampling temperature (default: 1.0, higher = more random)
+#   --temperature - Sampling temperature (default: 0.0 for fully deterministic argmax, higher = more random)
 #   --interactive - Enable interactive mode (default: False)
 #   --seed - Random seed for reproducibility (default: None)
 
@@ -113,13 +116,13 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model-path",
         type=str,
-        default="50_models/trained_model.pt",
+        default="50_models/dataset_machine_learning/embed128_layers3_heads4_epochs10.pt",
         help="Path to trained model file (default: 50_models/trained_model.pt)"
     )
     parser.add_argument(
         "--prompt",
         type=str,
-        default="Machine learning",
+        default="Explain machine learning",
         help="Starting text prompt (default: newline)"
     )
     parser.add_argument(
@@ -131,8 +134,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--temperature",
         type=float,
-        default=1.0,
-        help="Sampling temperature (default: 1.0, higher = more random)"
+        default=0.0,
+        help="Sampling temperature (default: 0.0 for fully deterministic output using argmax, higher = more random)"
     )
     parser.add_argument(
         "--interactive",
