@@ -285,8 +285,21 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     model_dir.mkdir(parents=True, exist_ok=True)
     
     # Generate filename with config: embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt
-    model_filename = f"embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt"
-    model_path = model_dir / model_filename
+    base_filename = f"embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt"
+    model_path = model_dir / base_filename
+    
+    # If file exists, add version suffix to prevent overwriting
+    if model_path.exists():
+        base_name = model_path.stem  # filename without extension
+        extension = model_path.suffix  # .pt
+        version = 2
+        while True:
+            versioned_filename = f"{base_name}_v{version}{extension}"
+            model_path = model_dir / versioned_filename
+            if not model_path.exists():
+                logger.info(f"File {base_filename} already exists. Using versioned name: {versioned_filename}")
+                break
+            version += 1
     
     logger.info(f"Saving trained model to: {model_path}")
     logger.info("")
