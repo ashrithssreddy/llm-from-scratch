@@ -173,8 +173,8 @@ def visualize_neural_network(model, checkpoint, output_path=None):
     # Set output path to logs folder if not specified
     if output_path is None:
         import datetime
-        logs_dir = Path("97_logs")
-        logs_dir.mkdir(exist_ok=True)
+        logs_dir = Path("97_logs") / "analyze_model"
+        logs_dir.mkdir(parents=True, exist_ok=True)
         timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
         output_path = logs_dir / f"model_architecture_{timestamp}.png"
     

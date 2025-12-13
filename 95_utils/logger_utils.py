@@ -17,9 +17,14 @@ def setup_logging(prefix="training"):
     Returns:
         Logger instance
     """
-    # Create logs directory if it doesn't exist
-    logs_dir = Path("97_logs")
-    logs_dir.mkdir(exist_ok=True)
+    # Create logs directory and subdirectory if they don't exist
+    if prefix == "analyze":
+        logs_dir = Path("97_logs") / "analyze_model"
+    elif prefix == "inference":
+        logs_dir = Path("97_logs") / "inference"
+    else:
+        logs_dir = Path("97_logs") / "training"
+    logs_dir.mkdir(parents=True, exist_ok=True)
     
     # Create log filename with specified prefix and timestamp
     timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
