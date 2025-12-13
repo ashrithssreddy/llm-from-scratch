@@ -350,7 +350,7 @@ if __name__ == "__main__":
         "dataset_folder",
         type=str,
         nargs='?',
-        default="40_training_data/dataset_toy/",
+        default="40_training_data/dataset_machine_learning/",
         help="Path to folder containing .txt files to train on (default: 40_training_data/dataset_toy/)"
     )
     parser.add_argument("--epochs", type=int, default=10, help="Number of training epochs")
