@@ -148,16 +148,17 @@ def get_category_members(category_name: str, cmtype: str = "page|subcat") -> Lis
     return all_members
 
 
-def get_all_category_members(category_name: str, visited_categories: Optional[Set[str]] = None) -> Set[str]:
+def get_all_category_members(category_name: str, visited_categories: Optional[Set[str]] = None, category_path: str = "") -> Dict[str, str]:
     """
     Recursively get all article titles in a category and its subcategories.
     
     Args:
         category_name: Starting category name (e.g., "Category:Machine_learning")
         visited_categories: Set of already visited categories (to avoid cycles)
+        category_path: Path string representing the category hierarchy (for folder structure)
         
     Returns:
-        Set of article titles (page titles, not category titles)
+        Dictionary mapping article titles to their category folder paths
     """
     if visited_categories is None:
         visited_categories = set()
@@ -165,12 +166,19 @@ def get_all_category_members(category_name: str, visited_categories: Optional[Se
     # Avoid infinite loops
     if category_name in visited_categories:
         logger.debug(f"Skipping already visited category: {category_name}")
-        return set()
+        return {}
     
     visited_categories.add(category_name)
     logger.info(f"Processing category: {category_name}")
     
-    all_articles = set()
+    # Extract category name without "Category:" prefix for folder name
+    category_folder_name = category_name.replace('Category:', '').replace(' ', '_')
+    if category_path:
+        current_path = f"{category_path}/{category_folder_name}"
+    else:
+        current_path = category_folder_name
+    
+    all_articles = {}
     
     # Get all members (pages and subcategories)
     members = get_category_members(category_name, cmtype="page|subcat")
@@ -190,14 +198,19 @@ def get_all_category_members(category_name: str, visited_categories: Optional[Se
         is_page = not is_category and (member_type == 'page' or member_ns == 0)
         
         if is_page:
-            # It's an article page
-            all_articles.add(title)
-            logger.debug(f"  Found article: {title}")
+            # It's an article page - map it to current category path
+            # Only add if not already in dict (first category wins for articles in multiple categories)
+            if title not in all_articles:
+                all_articles[title] = current_path
+                logger.debug(f"  Found article: {title} -> {current_path}")
         elif is_category:
             # It's a subcategory - recurse
             logger.debug(f"  Found subcategory: {title}")
-            subcategory_articles = get_all_category_members(title, visited_categories)
-            all_articles.update(subcategory_articles)
+            subcategory_articles = get_all_category_members(title, visited_categories, current_path)
+            # Merge subcategory articles, but don't overwrite existing entries
+            for article_title, article_path in subcategory_articles.items():
+                if article_title not in all_articles:
+                    all_articles[article_title] = article_path
     
     logger.info(f"  Category {category_name} contains {len(all_articles)} articles (including subcategories)")
     return all_articles
@@ -316,14 +329,15 @@ def sanitize_filename(title: str) -> str:
 #  FILE OPERATIONS
 # =====================
 
-def save_article_to_file(title: str, text: str, output_folder: Path, overwrite: bool = False) -> bool:
+def save_article_to_file(title: str, text: str, output_folder: Path, category_path: str = "", overwrite: bool = False) -> bool:
     """
-    Save an article's text to a .txt file.
+    Save an article's text to a .txt file in the appropriate category folder.
     
     Args:
         title: Article title
         text: Article text content
-        output_folder: Folder to save the file
+        output_folder: Base folder to save files
+        category_path: Subfolder path based on category hierarchy (e.g., "Neural_networks/Deep_learning")
         overwrite: Whether to overwrite existing files
         
     Returns:
@@ -333,8 +347,16 @@ def save_article_to_file(title: str, text: str, output_folder: Path, overwrite: 
         logger.debug(f"Skipping {title}: text too short ({len(text)} chars)")
         return False
     
+    # Create category subfolder if needed
+    if category_path:
+        category_folder = output_folder / category_path
+        category_folder.mkdir(parents=True, exist_ok=True)
+        save_folder = category_folder
+    else:
+        save_folder = output_folder
+    
     filename = sanitize_filename(title) + '.txt'
-    filepath = output_folder / filename
+    filepath = save_folder / filename
     
     if filepath.exists() and not overwrite:
         logger.debug(f"Skipping {title}: file already exists")
@@ -402,17 +424,18 @@ def prepare_dataset(
     logger.info("")
     
     start_time = time.time()
-    article_titles = get_all_category_members(category)
+    article_to_category = get_all_category_members(category)
     elapsed_time = time.time() - start_time
     
     logger.info("")
-    logger.info(f"Found {len(article_titles)} unique articles")
+    logger.info(f"Found {len(article_to_category)} unique articles")
     logger.info(f"Time taken: {elapsed_time:.2f} seconds")
     logger.info("")
     
     # Limit articles if specified
-    if max_articles and len(article_titles) > max_articles:
-        article_titles = set(list(article_titles)[:max_articles])
+    if max_articles and len(article_to_category) > max_articles:
+        limited_items = list(article_to_category.items())[:max_articles]
+        article_to_category = dict(limited_items)
         logger.info(f"Limited to {max_articles} articles for processing")
         logger.info("")
     
@@ -421,7 +444,7 @@ def prepare_dataset(
     logger.info("STEP 2: FETCHING AND SAVING ARTICLES")
     logger.info("=" * 80)
     logger.info("")
-    logger.info(f"Fetching {len(article_titles)} articles...")
+    logger.info(f"Fetching {len(article_to_category)} articles...")
     logger.info("")
     
     start_time = time.time()
@@ -429,10 +452,12 @@ def prepare_dataset(
     skipped_count = 0
     error_count = 0
     
-    article_list = sorted(list(article_titles))
+    article_list = sorted(article_to_category.items())
     
-    for i, title in enumerate(article_list, 1):
+    for i, (title, category_path) in enumerate(article_list, 1):
         logger.info(f"[{i}/{len(article_list)}] Processing: {title}")
+        if category_path:
+            logger.info(f"  Category path: {category_path}")
         
         # Fetch article text
         text = fetch_article_text(title)
@@ -451,8 +476,8 @@ def prepare_dataset(
             logger.debug(f"  Skipped: text too short after cleaning")
             continue
         
-        # Save to file
-        if save_article_to_file(title, cleaned_text, output_path, overwrite):
+        # Save to file in appropriate category folder
+        if save_article_to_file(title, cleaned_text, output_path, category_path, overwrite):
             saved_count += 1
             logger.info(f"  Saved: {len(cleaned_text):,} characters")
         else:
@@ -470,7 +495,7 @@ def prepare_dataset(
     logger.info("=" * 80)
     logger.info("")
     logger.info("Summary:")
-    logger.info(f"  - Total articles found: {len(article_titles)}")
+    logger.info(f"  - Total articles found: {len(article_to_category)}")
     logger.info(f"  - Articles saved: {saved_count}")
     logger.info(f"  - Articles skipped: {skipped_count}")
     logger.info(f"  - Errors: {error_count}")
@@ -478,11 +503,23 @@ def prepare_dataset(
     logger.info(f"  - Output folder: {output_path}")
     logger.info("")
     
-    # Count total files and size
-    txt_files = list(output_path.glob("*.txt"))
+    # Count total files and size (recursively)
+    txt_files = list(output_path.rglob("*.txt"))
     total_size = sum(f.stat().st_size for f in txt_files)
-    logger.info(f"Total files in output folder: {len(txt_files)}")
+    logger.info(f"Total files in output folder (including subfolders): {len(txt_files)}")
     logger.info(f"Total size: {total_size / 1024 / 1024:.2f} MB")
+    
+    # Show folder structure
+    category_folders = sorted(set(f.parent for f in txt_files if f.parent != output_path))
+    if category_folders:
+        logger.info(f"Category folders created: {len(category_folders)}")
+        logger.info("  Sample folders:")
+        for folder in category_folders[:10]:  # Show first 10
+            relative_path = folder.relative_to(output_path)
+            file_count = len(list(folder.glob("*.txt")))
+            logger.info(f"    - {relative_path} ({file_count} files)")
+        if len(category_folders) > 10:
+            logger.info(f"    ... and {len(category_folders) - 10} more")
     logger.info("")
 
 
