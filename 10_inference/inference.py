@@ -84,7 +84,7 @@
 #   --model-path - Path to trained model file (default: 50_models/trained_model.pt)
 #   --prompt - Starting text prompt (default: "\n")
 #   --max-tokens - Maximum number of tokens to generate (default: 500)
-#   --temperature - Sampling temperature (default: 0.01 for deterministic output, higher = more random)
+#   --temperature - Sampling temperature (default: 0.0 for fully deterministic argmax, higher = more random)
 #   --interactive - Enable interactive mode (default: False)
 #   --seed - Random seed for reproducibility (default: None)
 
@@ -134,8 +134,8 @@ if __name__ == "__main__":
     parser.add_argument(
         "--temperature",
         type=float,
-        default=0.01,
-        help="Sampling temperature (default: 0.01 for deterministic output, higher = more random)"
+        default=0.0,
+        help="Sampling temperature (default: 0.0 for fully deterministic output using argmax, higher = more random)"
     )
     parser.add_argument(
         "--interactive",

@@ -162,7 +162,7 @@ def generate_text(model, stoi, itos, block_size, prompt="\n", max_tokens=500,
         block_size: Context window size
         prompt: Starting text prompt
         max_tokens: Maximum number of tokens to generate
-        temperature: Sampling temperature (higher = more random)
+        temperature: Sampling temperature (0.0 = deterministic argmax, higher = more random)
         device: Device to run inference on
         
     Returns:
@@ -217,13 +217,19 @@ def generate_text(model, stoi, itos, block_size, prompt="\n", max_tokens=500,
             logits = model(input_tensor)  # Shape: [1, seq_len, vocab_size]
             
             # Get logits for the last position
-            logits = logits[0, -1, :] / temperature  # Shape: [vocab_size]
+            logits = logits[0, -1, :] # / temperature  # Shape: [vocab_size]
             
-            # Apply softmax to get probabilities
-            probs = torch.softmax(logits, dim=-1)
-            
-            # Sample from the distribution
-            next_token = torch.multinomial(probs, num_samples=1).item()
+            # Handle temperature: if 0, use argmax for deterministic output
+            if temperature == 0.0:
+                # Deterministic: always pick the highest probability token
+                next_token = torch.argmax(last_logits, dim=-1).item()
+            else:
+                # Apply temperature scaling
+                scaled_logits = last_logits / temperature
+                # Apply softmax to get probabilities
+                probs = torch.softmax(scaled_logits, dim=-1)
+                # Sample from the distribution
+                next_token = torch.multinomial(probs, num_samples=1).item()
             
             # Add to context and generated tokens
             context.append(next_token)
