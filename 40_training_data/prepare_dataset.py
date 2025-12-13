@@ -220,7 +220,7 @@ def fetch_article_text(title: str) -> Optional[str]:
     """
     Fetch the full text content of a Wikipedia article.
     
-    Uses prop=revisions to get the full article content, then extracts plain text.
+    Uses prop=revisions to get the full article content (no character limits), then extracts plain text.
     
     Args:
         title: Article title
@@ -228,67 +228,50 @@ def fetch_article_text(title: str) -> Optional[str]:
     Returns:
         Plain text content of the article, or None if fetch fails
     """
-    # First try to get full article using extracts with high character limit
-    params = {
+    # Always use revisions API to get full wikitext (no character limits)
+    params_rev = {
         'action': 'query',
-        'prop': 'extracts',
+        'prop': 'revisions',
         'titles': title,
-        'explaintext': '1',  # Get plain text, not HTML
-        'exintro': '0',  # Get full article, not just intro
-        'exsectionformat': 'plain',
-        'exchars': '100000',  # Request up to 100k characters (API limit is usually 20k per section)
+        'rvprop': 'content',
+        'rvslots': 'main',
+        'rvlimit': '1',
     }
     
     try:
-        data = make_api_request(params)
+        data_rev = make_api_request(params_rev)
         
         full_text = None
-        if 'query' in data and 'pages' in data['query']:
-            pages = data['query']['pages']
-            # With formatversion=2, pages is a list, not a dict
+        if 'query' in data_rev and 'pages' in data_rev['query']:
+            pages = data_rev['query']['pages']
             if isinstance(pages, list):
                 for page_data in pages:
-                    if 'extract' in page_data:
-                        full_text = page_data['extract']
-                        break
+                    if 'revisions' in page_data and len(page_data['revisions']) > 0:
+                        # Try to get wikitext from slots first (newer API format)
+                        revision = page_data['revisions'][0]
+                        if 'slots' in revision and 'main' in revision['slots']:
+                            wikitext = revision['slots']['main'].get('*', '')
+                        else:
+                            # Fallback to direct content field (older format)
+                            wikitext = revision.get('*', '')
+                        
+                        if wikitext:
+                            # Parse wikitext to plain text
+                            full_text = parse_wikitext_to_text(wikitext)
+                            break
             else:
                 # Fallback for formatversion=1 (dict format)
                 for page_id, page_data in pages.items():
-                    if 'extract' in page_data:
-                        full_text = page_data['extract']
-                        break
-        
-        # If extracts didn't return enough (might be truncated), try revisions API
-        if not full_text or len(full_text) < 1000:
-            # Try using revisions to get full wikitext, then parse it
-            params_rev = {
-                'action': 'query',
-                'prop': 'revisions',
-                'titles': title,
-                'rvprop': 'content',
-                'rvslots': 'main',
-                'rvlimit': '1',
-            }
-            
-            data_rev = make_api_request(params_rev)
-            
-            if 'query' in data_rev and 'pages' in data_rev['query']:
-                pages = data_rev['query']['pages']
-                if isinstance(pages, list):
-                    for page_data in pages:
-                        if 'revisions' in page_data and len(page_data['revisions']) > 0:
-                            wikitext = page_data['revisions'][0].get('slots', {}).get('main', {}).get('*', '')
-                            if wikitext:
-                                # Parse wikitext to plain text (basic parsing)
-                                full_text = parse_wikitext_to_text(wikitext)
-                                break
-                else:
-                    for page_id, page_data in pages.items():
-                        if 'revisions' in page_data and len(page_data['revisions']) > 0:
-                            wikitext = page_data['revisions'][0].get('slots', {}).get('main', {}).get('*', '')
-                            if wikitext:
-                                full_text = parse_wikitext_to_text(wikitext)
-                                break
+                    if 'revisions' in page_data and len(page_data['revisions']) > 0:
+                        revision = page_data['revisions'][0]
+                        if 'slots' in revision and 'main' in revision['slots']:
+                            wikitext = revision['slots']['main'].get('*', '')
+                        else:
+                            wikitext = revision.get('*', '')
+                        
+                        if wikitext:
+                            full_text = parse_wikitext_to_text(wikitext)
+                            break
         
         if full_text:
             return full_text
@@ -303,66 +286,91 @@ def fetch_article_text(title: str) -> Optional[str]:
 
 def parse_wikitext_to_text(wikitext: str) -> str:
     """
-    Basic parsing of Wikipedia wikitext to plain text.
-    This is a simplified parser - for full parsing, consider using mwparserfromhell.
+    Parse Wikipedia wikitext to plain text, preserving structure and content.
     
     Args:
         wikitext: Raw Wikipedia wikitext
         
     Returns:
-        Plain text content
+        Plain text content with sections preserved
     """
     text = wikitext
     
     # Remove HTML comments
     text = re.sub(r'<!--.*?-->', '', text, flags=re.DOTALL)
     
-    # Remove templates {{...}}
-    text = re.sub(r'\{\{[^}]*\}\}', '', text)
+    # Remove complex nested templates (but keep simple ones that might have content)
+    # Remove templates like {{Infobox}}, {{Citation needed}}, etc.
+    # This is a simplified approach - for better parsing, use mwparserfromhell
+    text = re.sub(r'\{\{[^{}]*\}\}', '', text)  # Simple templates
+    # Handle nested templates (up to 3 levels)
+    for _ in range(3):
+        text = re.sub(r'\{\{[^{}]*\{[^{}]*\{[^{}]*\}[^{}]*\}[^{}]*\}\}', '', text)
     
-    # Remove ref tags <ref>...</ref>
+    # Remove ref tags <ref>...</ref> and <ref name="..."/>
     text = re.sub(r'<ref[^>]*>.*?</ref>', '', text, flags=re.DOTALL)
     text = re.sub(r'<ref[^>]*/>', '', text)
     
-    # Remove other HTML tags
+    # Remove other HTML tags but preserve content
     text = re.sub(r'<[^>]+>', '', text)
     
     # Remove file/image links [[File:...]] or [[Image:...]]
-    text = re.sub(r'\[\[(?:File|Image):[^\]]+\]\]', '', text)
+    text = re.sub(r'\[\[(?:File|Image|Media):[^\]]+\]\]', '', text, flags=re.IGNORECASE)
+    
+    # Convert section headers (== Header ==) to plain text headers
+    # Keep the header text but remove the == markers
+    text = re.sub(r'^=+\s*(.+?)\s*=+$', r'\1', text, flags=re.MULTILINE)
     
     # Convert internal links [[Link|Display]] to Display, or [[Link]] to Link
     text = re.sub(r'\[\[([^\|\]]+)\|([^\]]+)\]\]', r'\2', text)  # [[Link|Display]] -> Display
     text = re.sub(r'\[\[([^\]]+)\]\]', r'\1', text)  # [[Link]] -> Link
     
-    # Remove external links [url text] -> text
+    # Remove external links [url text] -> text, or [url] -> remove
     text = re.sub(r'\[https?://[^\s]+\s+([^\]]+)\]', r'\1', text)
     text = re.sub(r'\[https?://[^\]]+\]', '', text)
+    text = re.sub(r'\[mailto:[^\]]+\]', '', text)
     
-    # Remove section headers (== Header ==)
-    text = re.sub(r'^=+\s*(.+?)\s*=+$', r'\1', text, flags=re.MULTILINE)
-    
-    # Remove reference markers [1], [2], etc.
+    # Remove reference markers [1], [2], etc. (but keep content before them)
     text = re.sub(r'\[\d+\]', '', text)
     
     # Remove category links [[Category:...]]
-    text = re.sub(r'\[\[Category:[^\]]+\]\]', '', text)
+    text = re.sub(r'\[\[Category:[^\]]+\]\]', '', text, flags=re.IGNORECASE)
     
     # Remove interwiki links [[lang:...]]
-    text = re.sub(r'\[\[[a-z]+:[^\]]+\]\]', '', text)
+    text = re.sub(r'\[\[[a-z]+:[^\]]+\]\]', '', text, flags=re.IGNORECASE)
     
-    # Remove bold/italic markup '''text''' -> text, ''text'' -> text
+    # Remove navigation templates and other structural elements
+    text = re.sub(r'\[\[(?:Template|Help|Wikipedia):[^\]]+\]\]', '', text, flags=re.IGNORECASE)
+    
+    # Convert bold/italic markup '''text''' -> text, ''text'' -> text
     text = re.sub(r"'''(.*?)'''", r'\1', text)
     text = re.sub(r"''(.*?)''", r'\1', text)
     
     # Remove horizontal rules ----
     text = re.sub(r'^----+$', '', text, flags=re.MULTILINE)
     
-    # Remove multiple consecutive newlines
+    # Remove table markup {| ... |}
+    text = re.sub(r'\{[|].*?[|]\}', '', text, flags=re.DOTALL)
+    
+    # Remove list markers at start of lines (*, #, ;, :)
+    text = re.sub(r'^[*#;:]+', '', text, flags=re.MULTILINE)
+    
+    # Remove leading/trailing pipes from table remnants
+    text = re.sub(r'^\|+', '', text, flags=re.MULTILINE)
+    
+    # Clean up whitespace - preserve paragraph breaks
+    lines = []
+    for line in text.split('\n'):
+        line = line.strip()
+        if line:  # Only add non-empty lines
+            lines.append(line)
+    
+    text = '\n\n'.join(lines)  # Double newline between paragraphs
+    
+    # Remove excessive blank lines (more than 2 consecutive)
     text = re.sub(r'\n{3,}', '\n\n', text)
     
-    # Clean up whitespace
-    lines = [line.strip() for line in text.split('\n')]
-    text = '\n'.join(lines)
+    # Final cleanup
     text = text.strip()
     
     return text
