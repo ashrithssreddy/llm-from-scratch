@@ -246,32 +246,60 @@ def fetch_article_text(title: str) -> Optional[str]:
             pages = data_rev['query']['pages']
             if isinstance(pages, list):
                 for page_data in pages:
+                    # Check if page is missing or invalid
+                    if 'missing' in page_data:
+                        logger.warning(f"Article '{title}' does not exist or is missing")
+                        return None
+                    
                     if 'revisions' in page_data and len(page_data['revisions']) > 0:
                         # Try to get wikitext from slots first (newer API format)
                         revision = page_data['revisions'][0]
+                        wikitext = None
+                        
+                        # Try slots format first - content is in slots['main']['content']
                         if 'slots' in revision and 'main' in revision['slots']:
-                            wikitext = revision['slots']['main'].get('*', '')
-                        else:
-                            # Fallback to direct content field (older format)
+                            main_slot = revision['slots']['main']
+                            wikitext = main_slot.get('content', '') or main_slot.get('*', '')
+                        # Try direct content field (older format)
+                        elif '*' in revision:
                             wikitext = revision.get('*', '')
+                        # Try content field
+                        elif 'content' in revision:
+                            wikitext = revision.get('content', '')
                         
                         if wikitext:
+                            logger.debug(f"Found wikitext for {title}, length: {len(wikitext)}")
                             # Parse wikitext to plain text
                             full_text = parse_wikitext_to_text(wikitext)
                             break
+                        else:
+                            logger.debug(f"No wikitext found in revision. Keys: {list(revision.keys())}")
             else:
                 # Fallback for formatversion=1 (dict format)
                 for page_id, page_data in pages.items():
+                    if 'missing' in page_data:
+                        logger.warning(f"Article '{title}' does not exist or is missing")
+                        return None
+                    
                     if 'revisions' in page_data and len(page_data['revisions']) > 0:
                         revision = page_data['revisions'][0]
+                        wikitext = None
+                        
+                        # Try slots format first - content is in slots['main']['content']
                         if 'slots' in revision and 'main' in revision['slots']:
-                            wikitext = revision['slots']['main'].get('*', '')
-                        else:
+                            main_slot = revision['slots']['main']
+                            wikitext = main_slot.get('content', '') or main_slot.get('*', '')
+                        elif '*' in revision:
                             wikitext = revision.get('*', '')
+                        elif 'content' in revision:
+                            wikitext = revision.get('content', '')
                         
                         if wikitext:
+                            logger.debug(f"Found wikitext for {title}, length: {len(wikitext)}")
                             full_text = parse_wikitext_to_text(wikitext)
                             break
+        else:
+            logger.debug(f"Unexpected API response structure. Keys: {list(data_rev.keys())}")
         
         if full_text:
             return full_text
@@ -677,28 +705,75 @@ if __name__ == "__main__":
         action="store_true",
         help="Overwrite existing files (default: False)"
     )
+    parser.add_argument(
+        "--test-article",
+        type=str,
+        default=None,
+        help="Test mode: fetch a single article by title (e.g., 'Machine learning')"
+    )
     
     args = parser.parse_args()
     
     # Setup logging
     logger = setup_logging(prefix="prepare_dataset")
     
-    # Run dataset preparation
-    try:
-        prepare_dataset(
-            output_folder=args.output,
-            category=args.category,
-            max_articles=args.max_articles,
-            delay=args.delay,
-            overwrite=args.overwrite
-        )
-    except Exception as e:
-        logger.error("")
-        logger.error("")
-        logger.error("=" * 80)
-        logger.error("DATASET PREPARATION FAILED")
-        logger.error("=" * 80)
-        logger.error("")
-        logger.error(f"Error: {str(e)}", exc_info=True)
-        logger.error("")
-        raise
+    # Test mode: fetch single article
+    if args.test_article:
+        logger.info("")
+        logger.info("=" * 80)
+        logger.info("TEST MODE: FETCHING SINGLE ARTICLE")
+        logger.info("=" * 80)
+        logger.info("")
+        logger.info(f"Article title: {args.test_article}")
+        logger.info("")
+        
+        try:
+            text = fetch_article_text(args.test_article)
+            if text:
+                logger.info(f"Success! Retrieved {len(text):,} characters")
+                logger.info("")
+                logger.info("First 500 characters:")
+                logger.info("-" * 80)
+                logger.info(text[:500])
+                logger.info("-" * 80)
+                logger.info("")
+                logger.info("Last 500 characters:")
+                logger.info("-" * 80)
+                logger.info(text[-500:])
+                logger.info("-" * 80)
+                
+                # Optionally save it
+                if args.output:
+                    output_path = Path(args.output)
+                    output_path.mkdir(parents=True, exist_ok=True)
+                    filename = sanitize_filename(args.test_article) + '.txt'
+                    filepath = output_path / filename
+                    with open(filepath, 'w', encoding='utf-8') as f:
+                        f.write(text)
+                    logger.info(f"")
+                    logger.info(f"Saved to: {filepath}")
+            else:
+                logger.error("Failed to fetch article text")
+        except Exception as e:
+            logger.error(f"Error: {str(e)}", exc_info=True)
+            raise
+    else:
+        # Run dataset preparation
+        try:
+            prepare_dataset(
+                output_folder=args.output,
+                category=args.category,
+                max_articles=args.max_articles,
+                delay=args.delay,
+                overwrite=args.overwrite
+            )
+        except Exception as e:
+            logger.error("")
+            logger.error("")
+            logger.error("=" * 80)
+            logger.error("DATASET PREPARATION FAILED")
+            logger.error("=" * 80)
+            logger.error("")
+            logger.error(f"Error: {str(e)}", exc_info=True)
+            logger.error("")
+            raise
