@@ -220,12 +220,15 @@ def fetch_article_text(title: str) -> Optional[str]:
     """
     Fetch the full text content of a Wikipedia article.
     
+    Uses prop=revisions to get the full article content, then extracts plain text.
+    
     Args:
         title: Article title
         
     Returns:
         Plain text content of the article, or None if fetch fails
     """
+    # First try to get full article using extracts with high character limit
     params = {
         'action': 'query',
         'prop': 'extracts',
@@ -233,23 +236,62 @@ def fetch_article_text(title: str) -> Optional[str]:
         'explaintext': '1',  # Get plain text, not HTML
         'exintro': '0',  # Get full article, not just intro
         'exsectionformat': 'plain',
+        'exchars': '100000',  # Request up to 100k characters (API limit is usually 20k per section)
     }
     
     try:
         data = make_api_request(params)
         
+        full_text = None
         if 'query' in data and 'pages' in data['query']:
             pages = data['query']['pages']
             # With formatversion=2, pages is a list, not a dict
             if isinstance(pages, list):
                 for page_data in pages:
                     if 'extract' in page_data:
-                        return page_data['extract']
+                        full_text = page_data['extract']
+                        break
             else:
                 # Fallback for formatversion=1 (dict format)
                 for page_id, page_data in pages.items():
                     if 'extract' in page_data:
-                        return page_data['extract']
+                        full_text = page_data['extract']
+                        break
+        
+        # If extracts didn't return enough (might be truncated), try revisions API
+        if not full_text or len(full_text) < 1000:
+            # Try using revisions to get full wikitext, then parse it
+            params_rev = {
+                'action': 'query',
+                'prop': 'revisions',
+                'titles': title,
+                'rvprop': 'content',
+                'rvslots': 'main',
+                'rvlimit': '1',
+            }
+            
+            data_rev = make_api_request(params_rev)
+            
+            if 'query' in data_rev and 'pages' in data_rev['query']:
+                pages = data_rev['query']['pages']
+                if isinstance(pages, list):
+                    for page_data in pages:
+                        if 'revisions' in page_data and len(page_data['revisions']) > 0:
+                            wikitext = page_data['revisions'][0].get('slots', {}).get('main', {}).get('*', '')
+                            if wikitext:
+                                # Parse wikitext to plain text (basic parsing)
+                                full_text = parse_wikitext_to_text(wikitext)
+                                break
+                else:
+                    for page_id, page_data in pages.items():
+                        if 'revisions' in page_data and len(page_data['revisions']) > 0:
+                            wikitext = page_data['revisions'][0].get('slots', {}).get('main', {}).get('*', '')
+                            if wikitext:
+                                full_text = parse_wikitext_to_text(wikitext)
+                                break
+        
+        if full_text:
+            return full_text
         
         logger.warning(f"No text found for article: {title}")
         return None
@@ -257,6 +299,73 @@ def fetch_article_text(title: str) -> Optional[str]:
     except Exception as e:
         logger.warning(f"Error fetching article {title}: {e}")
         return None
+
+
+def parse_wikitext_to_text(wikitext: str) -> str:
+    """
+    Basic parsing of Wikipedia wikitext to plain text.
+    This is a simplified parser - for full parsing, consider using mwparserfromhell.
+    
+    Args:
+        wikitext: Raw Wikipedia wikitext
+        
+    Returns:
+        Plain text content
+    """
+    text = wikitext
+    
+    # Remove HTML comments
+    text = re.sub(r'<!--.*?-->', '', text, flags=re.DOTALL)
+    
+    # Remove templates {{...}}
+    text = re.sub(r'\{\{[^}]*\}\}', '', text)
+    
+    # Remove ref tags <ref>...</ref>
+    text = re.sub(r'<ref[^>]*>.*?</ref>', '', text, flags=re.DOTALL)
+    text = re.sub(r'<ref[^>]*/>', '', text)
+    
+    # Remove other HTML tags
+    text = re.sub(r'<[^>]+>', '', text)
+    
+    # Remove file/image links [[File:...]] or [[Image:...]]
+    text = re.sub(r'\[\[(?:File|Image):[^\]]+\]\]', '', text)
+    
+    # Convert internal links [[Link|Display]] to Display, or [[Link]] to Link
+    text = re.sub(r'\[\[([^\|\]]+)\|([^\]]+)\]\]', r'\2', text)  # [[Link|Display]] -> Display
+    text = re.sub(r'\[\[([^\]]+)\]\]', r'\1', text)  # [[Link]] -> Link
+    
+    # Remove external links [url text] -> text
+    text = re.sub(r'\[https?://[^\s]+\s+([^\]]+)\]', r'\1', text)
+    text = re.sub(r'\[https?://[^\]]+\]', '', text)
+    
+    # Remove section headers (== Header ==)
+    text = re.sub(r'^=+\s*(.+?)\s*=+$', r'\1', text, flags=re.MULTILINE)
+    
+    # Remove reference markers [1], [2], etc.
+    text = re.sub(r'\[\d+\]', '', text)
+    
+    # Remove category links [[Category:...]]
+    text = re.sub(r'\[\[Category:[^\]]+\]\]', '', text)
+    
+    # Remove interwiki links [[lang:...]]
+    text = re.sub(r'\[\[[a-z]+:[^\]]+\]\]', '', text)
+    
+    # Remove bold/italic markup '''text''' -> text, ''text'' -> text
+    text = re.sub(r"'''(.*?)'''", r'\1', text)
+    text = re.sub(r"''(.*?)''", r'\1', text)
+    
+    # Remove horizontal rules ----
+    text = re.sub(r'^----+$', '', text, flags=re.MULTILINE)
+    
+    # Remove multiple consecutive newlines
+    text = re.sub(r'\n{3,}', '\n\n', text)
+    
+    # Clean up whitespace
+    lines = [line.strip() for line in text.split('\n')]
+    text = '\n'.join(lines)
+    text = text.strip()
+    
+    return text
 
 
 # =====================
