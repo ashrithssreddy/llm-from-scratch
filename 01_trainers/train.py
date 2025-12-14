@@ -62,6 +62,8 @@ import sys; from pathlib import Path; sys.path.insert(0, str(Path(__file__).pare
 
 # Imports
 import os
+import sys
+import signal
 import argparse
 import logging
 import time
@@ -76,6 +78,48 @@ from train_utils import CharDataset, SimpleLanguageModel, train_epoch  # type: i
 # Logging setup
 from logger_utils import setup_logging  # type: ignore
 logger = setup_logging()
+
+
+# =====================
+#  CHECKPOINTING FUNCTIONS
+# =====================
+
+def save_checkpoint(model, dataset, optimizer, epoch, avg_loss, model_path, 
+                   dataset_folder, dataset_name, epochs, batch_size, learning_rate,
+                   embed_dim, num_heads, num_layers, block_size):
+    """
+    Save model checkpoint with all necessary information.
+    
+    Args:
+        model: The model to save
+        dataset: The dataset (for vocab mappings)
+        optimizer: The optimizer (for resuming training)
+        epoch: Current epoch number
+        avg_loss: Average loss for this epoch
+        model_path: Path to save the checkpoint
+        ... (other metadata)
+    """
+    save_dict = {
+        'model_state_dict': model.state_dict(),
+        'optimizer_state_dict': optimizer.state_dict(),
+        'vocab_size': dataset.vocab_size,
+        'stoi': dataset.stoi,
+        'itos': dataset.itos,
+        'block_size': block_size,
+        'embed_dim': embed_dim,
+        'num_heads': num_heads,
+        'num_layers': num_layers,
+        'dataset_folder': dataset_folder,
+        'dataset_name': dataset_name,
+        'epochs': epochs,
+        'current_epoch': epoch,
+        'batch_size': batch_size,
+        'learning_rate': learning_rate,
+        'avg_loss': avg_loss,
+    }
+    torch.save(save_dict, model_path)
+    file_size = model_path.stat().st_size / (1024 * 1024)  # Size in MB
+    return file_size
 
 
 # =====================
@@ -241,6 +285,76 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     # Record training start time
     training_start_time = last_timestamp
     
+    # Setup checkpoint path (save to same location, overwrite each time)
+    dataset_path = Path(dataset_folder)
+    dataset_name = dataset_path.name if dataset_path.is_dir() else dataset_path.stem
+    base_model_dir = Path("50_models")
+    model_dir = base_model_dir / dataset_name
+    model_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Use a consistent checkpoint filename that gets overwritten
+    checkpoint_filename = f"embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}_latest.pt"
+    checkpoint_path = model_dir / checkpoint_filename
+    
+    # Store checkpoint metadata for signal handler
+    checkpoint_metadata = {
+        'dataset_folder': dataset_folder,
+        'dataset_name': dataset_name,
+        'epochs': epochs,
+        'batch_size': batch_size,
+        'learning_rate': learning_rate,
+        'embed_dim': embed_dim,
+        'num_heads': num_heads,
+        'num_layers': num_layers,
+        'block_size': block_size,
+    }
+    
+    # Track current state for signal handler
+    training_state = {
+        'model': model,
+        'dataset': dataset,
+        'optimizer': optimizer,
+        'epoch': 0,
+        'checkpoint_path': checkpoint_path,
+        'metadata': checkpoint_metadata,
+    }
+    
+    # Signal handler for graceful interruption
+    def signal_handler(sig, frame):
+        logger.info("")
+        logger.warning("=" * 80)
+        logger.warning("TRAINING INTERRUPTED - SAVING CHECKPOINT")
+        logger.warning("=" * 80)
+        logger.info("")
+        try:
+            state = training_state
+            file_size = save_checkpoint(
+                state['model'], state['dataset'], state['optimizer'], state['epoch'],
+                0.0, state['checkpoint_path'], **state['metadata']
+            )
+            logger.info(f"Checkpoint saved successfully!")
+            logger.info(f"  - File path: {state['checkpoint_path']}")
+            logger.info(f"  - File size: {file_size:.2f} MB")
+            logger.info(f"  - Epoch: {state['epoch']}/{state['metadata']['epochs']}")
+            logger.info("")
+            logger.info("You can resume training later or use this checkpoint for inference.")
+        except Exception as e:
+            logger.error(f"Error saving checkpoint: {e}", exc_info=True)
+        logger.info("")
+        sys.exit(0)
+    
+    # Register signal handler for Ctrl+C
+    signal.signal(signal.SIGINT, signal_handler)
+    if hasattr(signal, 'SIGTERM'):
+        signal.signal(signal.SIGTERM, signal_handler)
+    
+    logger.info("Checkpointing enabled:")
+    logger.info(f"  - Checkpoint file: {checkpoint_path}")
+    logger.info(f"  - Saving after each epoch")
+    logger.info(f"  - Will save on interruption (Ctrl+C)")
+    logger.info("")
+    
+    final_avg_loss = 0.0  # Initialize for final save
     for epoch in range(epochs):
         epoch_start_time = time.time()
         logger.info("")
@@ -249,11 +363,30 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
         logger.info("-" * 80)
         logger.info("")
         avg_loss = train_epoch(model, dataloader, optimizer, criterion, device, epoch_num=epoch+1)
+        final_avg_loss = avg_loss  # Keep track of latest loss
         epoch_duration = time.time() - epoch_start_time
         logger.info("")
         logger.info(f"Epoch {epoch+1}/{epochs} completed - Average Loss: {avg_loss:.4f}")
         logger.info(f"  - Time taken: {epoch_duration:.3f} seconds")
         logger.info("")
+        
+        # Update training state for signal handler
+        training_state['epoch'] = epoch + 1
+        
+        # Save checkpoint after each epoch
+        logger.info("Saving checkpoint...")
+        checkpoint_start = time.time()
+        file_size = save_checkpoint(
+            model, dataset, optimizer, epoch + 1, avg_loss,
+            checkpoint_path, dataset_folder, dataset_name, epochs,
+            batch_size, learning_rate, embed_dim, num_heads, num_layers, block_size
+        )
+        checkpoint_duration = time.time() - checkpoint_start
+        logger.info(f"  - Checkpoint saved: {checkpoint_path}")
+        logger.info(f"  - File size: {file_size:.2f} MB")
+        logger.info(f"  - Time taken: {checkpoint_duration:.3f} seconds")
+        logger.info("")
+        
         last_timestamp = time.time()
     
     # Calculate training duration
@@ -269,67 +402,51 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info(f"Training duration: {hours:02d}:{minutes:02d}:{seconds:02d} ({training_duration:.2f} seconds)")
     logger.info("")
     
-    # Save model
+    # Final model save (same as checkpoint, but with final naming)
     logger.info("=" * 80)
-    logger.info("STEP 8: MODEL SAVING")
+    logger.info("STEP 8: FINAL MODEL SAVING")
     logger.info("=" * 80)
     logger.info("")
     
-    # Extract dataset name from folder path
-    dataset_path = Path(dataset_folder)
-    dataset_name = dataset_path.name if dataset_path.is_dir() else dataset_path.stem
-    
-    # Create folder structure: 50_models/{dataset_name}/
-    base_model_dir = Path("50_models")
-    model_dir = base_model_dir / dataset_name
-    model_dir.mkdir(parents=True, exist_ok=True)
-    
-    # Generate filename with config: embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt
-    base_filename = f"embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt"
-    model_path = model_dir / base_filename
+    # Generate final filename (without _latest suffix)
+    final_filename = f"embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt"
+    final_model_path = model_dir / final_filename
     
     # If file exists, add version suffix to prevent overwriting
-    if model_path.exists():
-        base_name = model_path.stem  # filename without extension
-        extension = model_path.suffix  # .pt
+    if final_model_path.exists():
+        base_name = final_model_path.stem
+        extension = final_model_path.suffix
         version = 2
         while True:
             versioned_filename = f"{base_name}_v{version}{extension}"
-            model_path = model_dir / versioned_filename
-            if not model_path.exists():
-                logger.info(f"File {base_filename} already exists. Using versioned name: {versioned_filename}")
+            final_model_path = model_dir / versioned_filename
+            if not final_model_path.exists():
+                logger.info(f"File {final_filename} already exists. Using versioned name: {versioned_filename}")
                 break
             version += 1
     
-    logger.info(f"Saving trained model to: {model_path}")
+    logger.info(f"Saving final trained model to: {final_model_path}")
     logger.info("")
     logger.info("Saving model components:")
     logger.info("  - Model weights (state_dict)")
     logger.info("  - Vocabulary mappings (character to index)")
     logger.info("  - Model hyperparameters")
-    save_dict = {
-        'model_state_dict': model.state_dict(),
-        'vocab_size': dataset.vocab_size,
-        'stoi': dataset.stoi,
-        'itos': dataset.itos,
-        'block_size': block_size,
-        'embed_dim': embed_dim,
-        'num_heads': num_heads,
-        'num_layers': num_layers,
-        'dataset_folder': dataset_folder,
-        'dataset_name': dataset_name,
-        'epochs': epochs,
-        'batch_size': batch_size,
-        'learning_rate': learning_rate,
-    }
-    torch.save(save_dict, model_path)
-    file_size = model_path.stat().st_size / (1024 * 1024)  # Size in MB
+    
+    # Use final loss from last epoch
+    file_size = save_checkpoint(
+        model, dataset, optimizer, epochs, final_avg_loss,
+        final_model_path, dataset_folder, dataset_name, epochs,
+        batch_size, learning_rate, embed_dim, num_heads, num_layers, block_size
+    )
+    
     step_duration = time.time() - last_timestamp
     logger.info("")
-    logger.info(f"Model saved successfully!")
-    logger.info(f"  - File path: {model_path}")
+    logger.info(f"Final model saved successfully!")
+    logger.info(f"  - File path: {final_model_path}")
     logger.info(f"  - File size: {file_size:.2f} MB")
     logger.info(f"  - Time taken: {step_duration:.3f} seconds")
+    logger.info("")
+    logger.info(f"Note: Latest checkpoint is also available at: {checkpoint_path}")
     logger.info("")
     
     logger.info("=" * 80)
