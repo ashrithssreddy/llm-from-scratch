@@ -1,0 +1,191 @@
+In bioinformatics, neighbor joining is a bottom-up (agglomerative) clustering method for the creation of phylogenetic trees, created by Naruya Saitou and Masatoshi Nei in 1987. Usually based on DNA or protein sequence data, the algorithm requires knowledge of the distance between each pair of taxa (e.g., species or sequences) to create the phylogenetic tree.
+
+The algorithm
+
+Neighbor joining takes a distance matrix, which specifies the distance between each pair of taxa, as input.
+
+The algorithm starts with a completely unresolved tree, whose topology corresponds to that of a star network, and iterates over the following steps, until the tree is completely resolved, and all branch lengths are known:
+
+Based on the current distance matrix, calculate a matrix Q (defined below).
+
+Find the pair of distinct taxa i and j (i.e. with i \neq j) for which Q(i,j) is smallest. Make a new node that joins the taxa i and j, and connect the new node to the central node. For example, in part (B) of the figure at right, node u is created to join f and g.
+
+Calculate the distance from each of the taxa in the pair to this new node.
+
+Calculate the distance from each of the taxa outside of this pair to the new node.
+
+Start the algorithm again, replacing the pair of joined neighbors with the new node and using the distances calculated in the previous step.
+
+The Q-matrix
+
+Based on a distance matrix relating the n taxa, calculate the n x n matrix Q as follows:
+
+{{NumBlk|:| Q(i,j)=(n-2)d(i,j)-\sum_{k=1}^n d(i,k) - \sum_{k=1}^n d(j,k)|}}
+
+where d(i,j) is the distance between taxa i and j.
+
+Distance from the pair members to the new node
+
+For each of the taxa in the pair being joined, use the following formula to calculate the distance to the new node:
+
+{{NumBlk|:| \delta(f,u)=\frac{1}{2}d(f,g)+\frac{1}{2(n-2)} \left [ \sum_{k=1}^n d(f,k) - \sum_{k=1}^n d(g,k) \right ] \quad  |}}
+
+and:
+
+\delta(g,u)=d(f,g)-\delta(f,u) \quad
+
+Taxa f and g are the paired taxa and u is the newly created node. The branches joining f and u and g and u, and their lengths, \delta(f,u) and \delta(g,u) are part of the tree which is gradually being created; they neither affect nor are affected by later neighbor-joining steps.
+
+Distance of the other taxa from the new node
+
+For each taxon not considered in the previous step, we calculate the distance to the new node as follows:
+
+{{NumBlk|:|  d(u,k)=\frac{1}{2} [d(f,k)+d(g,k)-d(f,g)] |}}
+
+where u is the new node, k is the node which we want to calculate the distance to and f and g are the members of the pair just joined.
+
+Complexity
+
+Neighbor joining on a set of  n taxa requires n-3 iterations.  At each step one has to build and search a Q matrix. Initially the Q matrix is size n\times n, then the next step it is (n-1)\times(n-1), etc. Implementing this in a straightforward way leads to an algorithm with a time complexity of O(n^3); implementations exist which use heuristics to do much better than this on average.
+
+Example
+
+Let us assume that we have five taxa (a,b,c,d,e) and the following distance matrix D:
+
+First step
+
+First joining
+
+We calculate the Q_1 values by equation (). For example:
+
+Q_1(a,b) = (n-2)d(a,b) - \sum_{k=1}^5 d(a,k) - \sum_{k=1}^5 d(b,k)
+
+= (5-2) \times 5 - (5+9+9+8) - (5+10+10+9) = 15-31-34 = -50
+
+We obtain the following values for the Q_1 matrix (the diagonal elements of the matrix are not used and are
+
+omitted here):
+
+In the example above, Q_1(a,b)=-50. This is the smallest value of Q_1, so we join elements a and b.
+
+First branch length estimation
+
+Let u denote the new node. By equation (), above, the branches joining  a and b to u then have lengths:
+
+\delta(a,u)=\frac{1}{2}d(a,b)+\frac{1}{2(5-2)} \left [ \sum_{k=1}^5 d(a,k) - \sum_{k=1}^5 d(b,k) \right ] \quad =\frac{5}{2} + \frac{31-34}{6} = 2
+
+\delta(b,u)=d(a,b)-\delta(a,u) \quad = 5-2 = 3
+
+First distance matrix update
+
+We then proceed to update the initial distance matrix D into a new distance matrix D_1 (see below), reduced in size by one row and one column because of the joining of a with b into their neighbor u. Using equation () above, we compute the distance from u to each of the other nodes besides a and b. In this case, we obtain:
+
+d(u,c)=\frac{1}{2} [d(a,c)+d(b,c)-d(a,b)] = \frac{9+10-5}{2} = 7
+
+d(u,d)=\frac{1}{2} [d(a,d)+d(b,d)-d(a,b)] = \frac{9+10-5}{2} = 7
+
+d(u,e)=\frac{1}{2} [d(a,e)+d(b,e)-d(a,b)] = \frac{8+9-5}{2} = 6
+
+The resulting distance matrix D_1 is:
+
+Bold values in D_1 correspond to the newly calculated distances, whereas italicized values are not affected by the matrix update as they correspond to distances between elements not involved in the first joining of taxa.
+
+Second step
+
+Second joining
+
+The corresponding Q_2 matrix is:
+
+We may choose either to join u and c, or to join d and e; both pairs have the minimal Q_2 value of -28, and either choice leads to the same result. For concreteness, let us join u and c and call the new node v.
+
+Second branch length estimation
+
+The lengths of the branches joining  u and c to v can be calculated:
+
+\delta(u,v)=\frac{1}{2}d(u,c)+\frac{1}{2(4-2)} \left [ \sum_{k=1}^4 d(u,k) - \sum_{k=1}^4 d(c,k) \right ] \quad =\frac{7}{2} + \frac{20-22}{4} = 3
+
+\delta(c,v)=d(u,c)-\delta(u,v) \quad = 7-3 = 4
+
+The joining of the elements and the branch length calculation help drawing the neighbor joining tree as shown in the figure.
+
+Second distance matrix update
+
+The updated distance matrix D_2 for the remaining 3 nodes, v, d, and e, is now computed:
+
+d(v,d)=\frac{1}{2} [d(u,d)+d(c,d)-d(u,c)] = \frac{7+8-7}{2} = 4
+
+d(v,e)=\frac{1}{2} [d(u,e)+d(c,e)-d(u,c)] = \frac{6+7-7}{2} = 3
+
+Final step
+
+The tree topology is fully resolved at this point. However, for clarity, we can calculate the Q_3 matrix. For example:
+
+Q_3(v,e) = (3-2)d(v,e) - \sum_{k=1}^3 d(v,k) - \sum_{k=1}^3 d(e,k) = 3-7-6  = -10
+
+For concreteness, let us join v and d and call the last node w. The lengths of the three remaining branches can be calculated:
+
+\delta(v,w)=\frac{1}{2}d(v,d)+\frac{1}{2(3-2)} \left [ \sum_{k=1}^3 d(v,k) - \sum_{k=1}^3 d(d,k) \right ] \quad =\frac{4}{2} + \frac{7-7}{2} = 2
+
+\delta(w,d)=d(v,d)-\delta(v,w) = 4-2 = 2
+
+\delta(w,e)=d(v,e)-\delta(v,w) = 3-2 = 1
+
+The neighbor joining tree is now complete, as shown in the figure.
+
+Conclusion: additive distances
+
+This example represents an idealized case: note that if we move from any taxon to any other along the branches of the tree, and sum the lengths of the branches traversed,
+
+the result is equal to the distance between those taxa in the input distance matrix. For example, going from d to b we have 2+2+3+3=10. A distance matrix whose distances agree in this way with some tree is said to be 'additive', a property which is rare in practice. Nonetheless it is important to note that, given an additive distance matrix as input, neighbor joining is guaranteed to find the tree whose distances between taxa agree with it.
+
+Neighbor joining as minimum evolution
+
+Neighbor joining may be viewed as a greedy heuristic for the balanced minimum evolution (BME) criterion. For each topology, BME defines the tree length (sum of branch lengths) to be a particular weighted sum of the distances in the distance matrix, with the weights depending on the topology. The BME optimal topology is the one which minimizes this tree length. NJ at each step greedily joins that pair of taxa which will give the greatest decrease in the estimated tree length. This procedure does not guarantee to find the optimum for the BME criterion, although it often does and is usually quite close.
+
+This makes it practical for analyzing large data sets (hundreds or thousands of taxa) and for bootstrapping, for which purposes other means of analysis (e.g. maximum parsimony, maximum likelihood) may be computationally prohibitive.
+
+Neighbor joining has the property that if the input distance matrix is correct, then the output tree will be correct.
+
+Furthermore, the correctness of the output tree topology is guaranteed as long as the distance matrix is 'nearly additive', specifically if each entry in the distance matrix differs from the true distance by less than half of the shortest branch length in the tree.
+
+In practice the distance matrix rarely satisfies this condition, but neighbor joining often constructs the correct tree topology anyway. The correctness of neighbor joining for nearly additive distance matrices implies that it is statistically consistent under many models of evolution; given data of sufficient length, neighbor joining will reconstruct the true tree with high probability.
+
+Compared with UPGMA and WPGMA, neighbor joining has the advantage that it does not assume all lineages evolve at the same rate (molecular clock hypothesis).
+
+Nevertheless, neighbor joining has been largely superseded by phylogenetic methods that do not rely on distance measures and offer superior accuracy under most conditions. Neighbor joining has the undesirable feature that it often assigns negative lengths to some of the branches.
+
+Implementations and variants
+
+There are many programs available implementing neighbor joining. Among implementations of canonical NJ (i.e. using the classical NJ optimisation criteria, therefore giving the same results), RapidNJ (started 2003, major update in 2011, still updated in 2023) and NINJA (started 2009, last update 2013) are considered state-of-the-art. They have  typical run times proportional to approximately the square of the number of taxa.
+
+Variants that deviate from canonical include:
+
+BIONJ (1997) and Weighbor (2000), improving on the accuracy by making use of the fact that the shorter distances in the distance matrix are generally better known than the longer distances. The two methods have been extended to run on incomplete distance matrices.
+
+"Fast NJ" remembers the best node and is O(n^2) always; "relax NJ" performs a hill-climbing search and retains the worst-case complexity of O(n^3). Rapid NJ is faster than plain relaxed NJ.
+
+FastME is an implementation of the closely related balanced minimum evolution (BME) method (see ). It is about as fast as and more accurate than NJ. It starts with a rough tree then improves it using a set of topological moves such as Nearest Neighbor Interchanges (NNI). FastTree is a related method. It works on sequence "profiles" instead of a matrix. It starts with an approximately NJ tree, rearranges it into BME, then rearranges it into approximate maximum-likelihood.
+
+See also
+
+Nearest neighbor search
+
+UPGMA and WPGMA
+
+Minimum Evolution
+
+References
+
+Other sources
+
+External links
+
+The Neighbor-Joining Method  &mdash; a tutorial
+
+Category:Bioinformatics algorithms
+
+Category:Phylogenetics
+
+Category:Computational phylogenetics
+
+Category:Cluster analysis algorithms

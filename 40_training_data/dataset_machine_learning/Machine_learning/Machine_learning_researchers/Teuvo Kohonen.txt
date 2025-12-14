@@ -1,0 +1,123 @@
+{{Infobox scientist
+
+birth_name        = Teuvo Kohonen
+
+name              =
+
+image             = Teuvo-Kohonen-2.jpg
+
+image_size        =
+
+caption           =
+
+birth_date        =
+
+birth_place       = Lauritsala, Finland
+
+death_date        =
+
+death_place       = Espoo, Finland
+
+residence         =
+
+citizenship       =
+
+nationality       = Finnish
+
+ethnicity         =
+
+fields            = Machine learningArtificial neural networks
+
+work_institution  = Helsinki University of TechnologyAcademy of Finland
+
+alma_mater        = Helsinki University of Technology
+
+doctoral_advisor  =
+
+doctoral_students = Erkki Oja
+
+notable_students =
+
+thesis_title =
+
+thesis_year =
+
+thesis_url =
+
+known_for         = Self-organizing mapLearning vector quantization
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+awards            = IEEE Neural Networks Council Pioneer Award International Neural Network Society Lifetime Achievement Award IEEE Signal Processing Society Technical Achievement Award IEEE Fellow
+
+religion          =
+
+signature         =
+
+footnotes         =
+
+website           =
+
+}}
+
+Teuvo Kalevi Kohonen (11 July 1934 – 13 December 2021) was a Finnish computer scientist. He was professor emeritus of the Academy of Finland.
+
+Career
+
+Kohonen studied at the Helsinki University of Technology and graduated with a master's degree in engineering in 1957. He received his doctorate in 1962 and stayed at the university with a faculty position until 1993. He was an academy professor of the Academy of Finland between 1975 and 1999.
+
+During doctorate, he worked on the quantum electrodynamics of the scattering of polarized electrons and positrons, and measured the lifetime of positrons to accuracy of 10^{-11} s.
+
+During most of his career, Kohonen conducted research at Helsinki University of Technology (TKK). The Neural Networks Research Centre of TKK, a center of excellence appointed by Academy of Finland was founded to conduct research related to Kohonen's innovations. After Kohonen's retirement, the center was led by Erkki Oja and later renamed to Adaptive Informatics Research Centre with widened foci of research.
+
+Kohonen made contributions to the field of artificial neural networks, including the Learning Vector Quantization algorithm, fundamental theories of distributed associative memory and optimal associative mappings, the learning subspace method and novel algorithms for symbol processing like redundant hash addressing. He  published several books and over 300 peer-reviewed papers.
+
+Kohonen died on 13 December 2021, at the age of 87.
+
+Honors and awards
+
+Kohonen was elected the First Vice President of the International Association for Pattern Recognition from 1982 to 1984, and acted as the first president of the European Neural Network Society from 1991 to 1992.
+
+For his scientific achievements, Kohonen received a number of prizes including the following:
+
+IEEE Neural Networks Council Pioneer Award, 1991
+
+Technical Achievement Award of the IEEE Signal Processing Society, 1995
+
+IEEE Frank Rosenblatt Award, 2008
+
+Bibliography
+
+Books
+
+References
+
+External links
+
+Kohonen, Teuvo (2014): MATLAB Implementations and Applications of the Self-Organizing Map, a text book.
+
+Interview with Teuvo Kohonen, by CIM Editorial Officer. IEEE Computational Intelligence Magazine, August 2008, Volume 3, Number 3, pages 4–5.
+
+Category:1934 births
+
+Category:2021 deaths
+
+Category:Academic staff of the Helsinki University of Technology
+
+Category:Finnish computer scientists
+
+Category:Members of the European Academy of Sciences and Arts
+
+Category:Machine learning researchers
+
+Category:Members of the Finnish Academy of Science and Letters
+
+Category:Fellows of the IEEE
+
+Category:People from Lauritsala

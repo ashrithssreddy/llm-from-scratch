@@ -1,0 +1,75 @@
+{{Infobox software
+
+name                   = revoscalepy
+
+title                  = revoscalepy
+
+logo                   =
+
+logo caption           =
+
+screenshot             =
+
+caption                =
+
+collapsible            =
+
+author                 = Microsoft
+
+developer              =
+
+released               =
+
+discontinued           =
+
+latest release version =
+
+latest release date    =
+
+latest preview version =
+
+latest preview date    =
+
+programming language   = Python
+
+operating system       =
+
+platform               = Windows, Linux
+
+size                   =
+
+language               = Python
+
+language footnote      =
+
+status                 =
+
+genre                  =
+
+license                =
+
+website                =
+
+}}
+
+revoscalepy is a machine learning package in Python created by Microsoft. It is available as part of Machine Learning Services in Microsoft SQL Server 2017 and Machine Learning Server 9.2.0 and later.
+
+See also
+
+Microsoft Machine Learning Services
+
+References
+
+{{reflist|30em|refs=
+
+}}
+
+External links
+
+Samples for using revoscalepy and microsoftml
+
+Category:Applied machine learning
+
+Category:Python (programming language) software
+
+Category:Microsoft software

@@ -1,0 +1,83 @@
+{{Infobox software
+
+author = Joseph Redmon, Santosh Divvala, Ross Girshick, Ali Farhadi
+
+released = 2015
+
+latest release version = YOLOv12
+
+latest release date = 2025-02-20
+
+programming language = Python
+
+genre =
+
+website =
+
+}}
+
+dataset capable to detect objects of 80 common classes]]
+
+You Only Look Once (YOLO) is a series of real-time object detection systems based on convolutional neural networks. First introduced by Joseph Redmon et al. in 2015, YOLO has undergone several iterations and improvements, becoming one of the most popular object detection frameworks.
+
+The name "You Only Look Once" refers to the fact that the algorithm requires only one forward propagation pass through the neural network to make predictions, unlike previous region proposal-based techniques like R-CNN that require thousands for a single image.
+
+Overview
+
+Compared to previous methods like R-CNN and OverFeat, instead of applying the model to an image at multiple locations and scales, YOLO applies a single neural network to the full image. This network divides the image into regions and predicts bounding boxes and probabilities for each region. These bounding boxes are weighted by the predicted probabilities.
+
+OverFeat
+
+OverFeat was an early influential model for simultaneous object classification and localization. Its architecture is as follows:
+
+Train a neural network for image classification only ("classification-trained network"). This could be one like the AlexNet.
+
+The last layer of the trained network is removed, and for every possible object class, initialize a network module at the last layer ("regression network"). The base network has its parameters frozen. The regression network is trained to predict the (x, y) coordinates of two corners of the object's bounding box.
+
+During inference time, the classification-trained network is run over the same image over many different zoom levels and croppings. For each, it outputs a class label and a probability for that class label. Each output is then processed by the regression network of the corresponding class. This results in thousands of bounding boxes with class labels and probability. These boxes are merged until only one single box with a single class label remains.
+
+Versions
+
+There are two parts to the YOLO series. The original part contained YOLOv1, v2, and v3, all released on a website maintained by Joseph Redmon.
+
+YOLOv1
+
+The original YOLO algorithm, introduced in 2015, improved upon the original model by incorporating batch normalization, a higher resolution classifier, and using anchor boxes to predict bounding boxes. It could detect over 9000 object categories. It was also released on GitHub under the Apache 2.0 license.
+
+YOLOv3
+
+YOLOv3, introduced in 2018, contained only "incremental" improvements, including the use of a more complex backbone network, multiple scales for detection, and a more sophisticated loss function.
+
+YOLOv4 and beyond
+
+Subsequent versions of YOLO (v4, v5, etc.) have been developed by different researchers, further improving performance and introducing new features. These versions are not officially associated with the original YOLO authors but build upon their work. , there are versions up to YOLOv12.
+
+See also
+
+Computer vision
+
+Object detection
+
+Convolutional neural network
+
+R-CNN
+
+SqueezeNet
+
+MobileNet
+
+EfficientNet
+
+References
+
+External links
+
+Official YOLO website
+
+YOLO implementation in Darknet
+
+Category:Computer vision
+
+Category:Deep learning
+
+Category:Neural networks

@@ -1,0 +1,119 @@
+In artificial neural networks, the gated recurrent unit (GRU) is a gating mechanism used in recurrent neural networks, introduced in 2014 by Kyunghyun Cho et al. The GRU is like a long short-term memory (LSTM) with a gating mechanism to input or forget certain features, but lacks a context vector or output gate, resulting in fewer parameters than LSTM.
+
+GRU's performance on certain tasks of polyphonic music modeling, speech signal modeling and natural language processing was found to be similar to that of LSTM. GRUs showed that gating is indeed helpful in general, and Bengio's team came to no concrete conclusion on which of the two gating units was better.
+
+Architecture
+
+There are several variations on the full gated unit, with gating done using the previous hidden state and the bias in various combinations, and a simplified form called minimal gated unit.
+
+In the following, the operator \odot denotes the Hadamard product.
+
+Fully gated unit
+
+Initially, for t = 0, the output vector is h_0 = 0.
+
+\begin{align}
+
+z_t &= \sigma(W_{z} x_t + U_{z} h_{t-1} + b_z) \\
+
+r_t &= \sigma(W_{r} x_t + U_{r} h_{t-1} + b_r) \\
+
+\hat{h}_t &= \phi(W_{h} x_t + U_{h} (r_t \odot h_{t-1}) + b_h) \\
+
+h_t &=   (1-z_t) \odot  h_{t-1} + z_t \odot  \hat{h}_t
+
+\end{align}
+
+Variables (d denotes the number of input features and e the number of output features):
+
+x_t \in \mathbb{R}^{d}: input vector
+
+h_t \in \mathbb{R}^{e}: output vector
+
+\hat{h}_t \in \mathbb{R}^{e}: candidate activation vector
+
+z_t \in (0,1)^{e}: update gate vector
+
+r_t \in (0,1)^{e}: reset gate vector
+
+W \in \mathbb{R}^{e \times d}, U \in \mathbb{R}^{e \times e} and b \in \mathbb{R}^{e}: parameter matrices and vector which need to be learned during training
+
+Activation functions
+
+\sigma: The original is a logistic function.
+
+\phi: The original is a hyperbolic tangent.
+
+Alternative activation functions are possible, provided that \sigma(x) \isin [0, 1].
+
+Alternate forms can be created by changing z_t and r_t
+
+Type 1: each gate depends only on the previous hidden state and the bias.
+
+\begin{align}
+
+z_t &= \sigma(U_{z} h_{t-1} + b_z) \\
+
+r_t &= \sigma(U_{r} h_{t-1} + b_r) \\
+
+\end{align}
+
+Type 2: each gate depends only on  the previous hidden state.
+
+\begin{align}
+
+z_t &= \sigma(U_{z} h_{t-1}) \\
+
+r_t &= \sigma(U_{r} h_{t-1}) \\
+
+\end{align}
+
+Type 3: each gate is computed using only the bias.
+
+\begin{align}
+
+z_t &= \sigma(b_z) \\
+
+r_t &= \sigma(b_r) \\
+
+\end{align}
+
+Minimal gated unit
+
+The minimal gated unit (MGU) is similar to the fully gated unit, except the update and reset gate vector is merged into a forget gate. This also implies that the equation for the output vector must be changed:
+
+\begin{align}
+
+f_t &= \sigma(W_{f} x_t + U_{f} h_{t-1} + b_f) \\
+
+\hat{h}_t &= \phi(W_{h} x_t + U_{h} (f_t \odot h_{t-1}) + b_h) \\
+
+h_t &=  (1-f_t) \odot h_{t-1} + f_t \odot \hat{h}_t
+
+\end{align}
+
+Variables
+
+x_t: input vector
+
+h_t: output vector
+
+\hat{h}_t: candidate activation vector
+
+f_t: forget vector
+
+W, U and b: parameter matrices and vector
+
+Light gated recurrent unit
+
+The light gated recurrent unit (LiGRU) This analysis yielded a variant called light Bayesian recurrent unit (LiBRU), which showed slight improvements over the LiGRU on speech recognition tasks.
+
+References
+
+Category:Neural network architectures
+
+Category:Artificial neural networks
+
+Category:2014 software
+
+Category:2014 in artificial intelligence

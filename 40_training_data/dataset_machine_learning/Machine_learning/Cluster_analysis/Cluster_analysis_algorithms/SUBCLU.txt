@@ -1,0 +1,115 @@
+SUBCLU is an algorithm for clustering high-dimensional data by Karin Kailing, Hans-Peter Kriegel and Peer Kröger. It is a subspace clustering algorithm that builds on the density-based clustering algorithm DBSCAN. SUBCLU can find clusters in axis-parallel subspaces, and uses a bottom-up, greedy strategy to remain efficient.
+
+Approach
+
+SUBCLU uses a monotonicity criteria: if a cluster is found in a subspace S, then each subspace T \subseteq S also contains a cluster. However, a cluster C \subseteq DB in subspace S is not necessarily a cluster in T \subseteq S, since clusters are required to be maximal, and more objects might be contained in the cluster in T that contains C. However, a density-connected set in a subspace S is also a density-connected set in T \subseteq S.
+
+This downward-closure property is utilized by SUBCLU in a way similar to the Apriori algorithm: first, all 1-dimensional subspaces are clustered. All clusters in a higher-dimensional subspace will be subsets of the clusters detected in this first clustering. SUBCLU hence recursively produces k+1-dimensional candidate subspaces by combining k-dimensional subspaces with clusters sharing k-1 attributes. After pruning irrelevant candidates, DBSCAN is applied to the candidate subspace to find out if it still contains clusters. If it does, the candidate subspace is used for the next combination of subspaces. In order to improve the runtime of DBSCAN, only the points known to belong to clusters in one k-dimensional subspace (which is chosen to contain as little clusters as possible) are considered. Due to the downward-closure property, other point cannot be part of a k+1-dimensional cluster anyway.
+
+Pseudocode
+
+SUBCLU takes two parameters, \epsilon\!\, and MinPts, which serve the same role as in DBSCAN. In a first step, DBSCAN is used to find 1D-clusters in each subspace spanned by a single attribute:
+
+\mathtt{SUBCLU}(DB, eps, MinPts)
+
+S_1 := \emptyset
+
+C_1 := \emptyset
+
+\mathtt{for\, each}\, a \in Attributes
+
+C^{\{a\}} = \mathtt{DBSCAN}(DB, \{a\}, eps, MinPts)\!\,
+
+\mathtt{if} (C^{\{a\}} \neq \emptyset)
+
+S_1 := S_1 \cup \{a\}
+
+C_1 := C_1 \cup C^{\{a\}}
+
+\mathtt{end\, if}
+
+\mathtt{end\, for}
+
+// In a second step, k+1-dimensional clusters are built from k-dimensional ones:
+
+k := 1\!\,
+
+\mathtt{while} (C_k \neq \emptyset)
+
+\mathtt{CandS}_{k+1} := \mathtt{GenerateCandidateSubspaces}(S_k)\!\,
+
+\mathtt{for\, each}\, cand \in \mathtt{CandS}_{k+1}
+
+\mathtt{bestSubspace :=} \min_{s \in S_k \wedge s \subset cand} \sum_{C_i \in C^s} |C_i|
+
+C^{cand} := \emptyset
+
+\mathtt{for\, each\, cluster}\, cl \in C^\mathtt{bestSubspace}
+
+C^{cand} := C^{cand} \cup \mathtt{DBSCAN}(cl, cand, eps, MinPts)
+
+\mathtt{if}\, (C^{cand} \neq \emptyset)
+
+S_{k+1} := S_{k+1} \cup cand
+
+C_{k+1} := C_{k+1} \cup C^{cand}
+
+\mathtt{end\, if}
+
+\mathtt{end\, for}
+
+\mathtt{end\, for}
+
+k:=k+1\!\,
+
+\mathtt{end\, while}
+
+\mathtt{end}\!\,
+
+The set S_k contains all the k-dimensional subspaces that are known to contain clusters. The set C_k contains the sets of clusters found in the subspaces. The bestSubspace is chosen to minimize the runs of DBSCAN (and the number of points that need to be considered in each run) for finding the clusters in the candidate subspaces.
+
+Candidate subspaces are generated much alike the Apriori algorithm generates the frequent itemset candidates: Pairs of the k-dimensional subspaces are compared, and if they differ in one attribute only, they form a k+1-dimensional candidate. However, a number of irrelevant candidates are found as well; they contain a k-dimensional subspace that does not contain a cluster. Hence, these candidates are removed in a second step:
+
+\mathtt{GenerateCandidateSubspaces}(S_k)
+
+\mathtt{CandS}_{k+1} := \emptyset
+
+\mathtt{for\,each}\,s_1 \in S_k
+
+\mathtt{for\,each}\,s_2 \in S_k
+
+\mathtt{if}\,(s_1\,\mathtt{and}\,s_2\,\,\mathtt{differ\,\,in\,\,exactly\,\,one\,\,attribute})
+
+\mathtt{CandS}_{k+1} := \mathtt{CandS}_{k+1} \cup \{s_1 \cup s_2\}
+
+\mathtt{end\,if}
+
+\mathtt{end\,for}
+
+\mathtt{end\,for}
+
+// Pruning of irrelevant candidate subspaces
+
+\mathtt{for\,each}\,cand \in \mathtt{CandS}_{k+1}
+
+\mathtt{for\, each}\, k\texttt{-element}\,s \subset cand
+
+\mathtt{if} \, (s \not \in S_k)
+
+\mathtt{CandS}_{k+1} = \mathtt{CandS}_{k+1} \setminus \{cand\}
+
+\mathtt{end\,if}
+
+\mathtt{end\,for}
+
+\mathtt{end\,for}
+
+\mathtt{end}\,\!
+
+Availability
+
+An example implementation of SUBCLU is available in the ELKI framework.
+
+References
+
+Category:Cluster analysis algorithms

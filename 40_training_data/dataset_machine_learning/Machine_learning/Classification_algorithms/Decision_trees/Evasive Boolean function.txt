@@ -1,0 +1,13 @@
+In mathematics, an evasive Boolean function f (of n variables) is a Boolean function for which every decision tree algorithm has running time of exactly n.  Consequently, every decision tree algorithm that represents the function has, at worst case, a running time of n.
+
+Definition
+
+The type of algorithms considered in the definition of evasive Boolean function are decision trees in which each internal node tests the value of one of the given Boolean variables, and branches accordingly. Each leaf node of the tree specifies the value of the function for inputs that reach that node. The worst case decision tree complexity of a given decision tree is the number of variables examined on the longest root-to-leaf path of the tree. Every n-variable function has a decision tree algorithm that examines exactly n variables on all inputs, using a decision tree in which all nodes at level i test the ith variable. A function is evasive if no other decision tree for the same function has smaller complexity. For an evasive function, any decision tree must have at least one input that leads to a path in the tree along which all input variables are examined.
+
+The Aanderaa–Karp–Rosenberg conjecture would follow from a more general conjecture on the evasiveness of Boolean functions: that every nontrivial monotone Boolean function that has symmetries taking any variable to any other variable is evasive. This conjecture also remains unproven, but it is known to be true for certain values of n, including the prime powers. It has been called the evasiveness conjecture.
+
+References
+
+Category:Boolean algebra
+
+Category:Decision trees

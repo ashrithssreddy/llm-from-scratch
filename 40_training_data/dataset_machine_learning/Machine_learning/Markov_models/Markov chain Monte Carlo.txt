@@ -1,0 +1,365 @@
+In statistics, Markov chain Monte Carlo (MCMC) is a class of algorithms used to draw samples from a probability distribution. Given a probability distribution, one can construct a Markov chain whose elements' distribution approximates it – that is, the Markov chain's equilibrium distribution matches the target distribution. The more steps that are included, the more closely the distribution of the sample matches the actual desired distribution.
+
+Markov chain Monte Carlo methods are used to study probability distributions that are too complex or too high dimensional to study with analytic techniques alone. Various algorithms exist for constructing such Markov chains, including the Metropolis–Hastings algorithm.
+
+General explanation
+
+. Markov chain Monte Carlo attempts to approximate the blue distribution with the orange distribution.]]
+
+Markov chain Monte Carlo methods create samples from a continuous random variable, with probability density proportional to a known function. These samples can be used to evaluate an integral over that variable, as its expected value or variance.
+
+Practically, an ensemble of chains is generally developed, starting from a set of points arbitrarily chosen and sufficiently distant from each other. These chains are stochastic processes of "walkers" which move around randomly according to an algorithm that looks for places with a reasonably high contribution to the integral to move into next, assigning them higher probabilities.
+
+Random walk Monte Carlo methods are a kind of random simulation or Monte Carlo method. However, whereas the random samples of the integrand used in a conventional Monte Carlo integration are statistically independent, those used in MCMC are autocorrelated. Correlations of samples introduces the need to use the Markov chain central limit theorem when estimating the error of mean values.
+
+These algorithms create Markov chains such that they have an equilibrium distribution which is proportional to the function given.
+
+History
+
+The development of MCMC methods is deeply rooted in the early exploration of Monte Carlo (MC) techniques in the mid-20th century, particularly in physics. These developments were marked by the Metropolis algorithm proposed by Nicholas Metropolis, Arianna W. Rosenbluth, Marshall Rosenbluth, Augusta H. Teller, and Edward Teller in 1953, which was designed to tackle high-dimensional integration problems using early computers. Then in 1970, W. K. Hastings generalized this algorithm and inadvertently introduced the component-wise updating idea, later known as Gibbs sampling. Simultaneously, the theoretical foundations for Gibbs sampling were being developed, such as the Hammersley–Clifford theorem from Julian Besag's 1974 paper. Although the seeds of MCMC were sown earlier, including the formal naming of Gibbs sampling in image processing by Stuart Geman and Donald Geman (1984) and the data augmentation method by Martin A. Tanner and Wing Hung Wong (1987), its "revolution" in mainstream statistics largely followed demonstrations of the universality and ease of implementation of sampling methods (especially Gibbs sampling) for complex statistical (particularly Bayesian) problems, spurred by increasing computational power and software like BUGS. This transformation was accompanied by significant theoretical advancements, such as Luke Tierney's (1994) rigorous treatment of MCMC convergence, and Jun S. Liu, Wong, and Augustine Kong's (1994, 1995) analysis of Gibbs sampler structure. Subsequent developments further expanded the MCMC toolkit, including particle filters (Sequential Monte Carlo) for sequential problems, Perfect sampling aiming for exact simulation (Jim Propp and David B. Wilson, 1996), RJMCMC (Peter J. Green, 1995) for handling variable-dimension models, and deeper investigations into convergence diagnostics and the central limit theorem. Overall, the evolution of MCMC represents a paradigm shift in statistical computation, enabling the analysis of numerous previously intractable complex models and continually expanding the scope and impact of statistics.
+
+Mathematical setting
+
+Suppose (Xn) is a Markov Chain in the general state space \mathcal{X} with specific properties. We are interested in the limiting behavior of the partial sums:
+
+S_n(h) = \dfrac{1}{n} \sum_{i=1}^{n} h(X_i)
+
+as n goes to infinity. Particularly, we hope to establish the Law of Large Numbers and the Central Limit Theorem for MCMC. In the following, we state some definitions and theorems necessary for the important convergence results. In short, we need the existence of invariant measure and Harris recurrent to establish the Law of Large Numbers of MCMC (Ergodic Theorem). And we need aperiodicity, irreducibility and extra conditions such as reversibility to ensure the Central Limit Theorem holds in MCMC.
+
+Irreducibility and aperiodicity
+
+Recall that in the discrete setting, a Markov chain is said to be irreducible if it is possible to reach any state from any other state in a finite number of steps with positive probability. However, in the continuous setting, point-to-point transitions have zero probability. In this case, &phi;-irreducibility generalizes irreducibility by using a reference measure &phi; on the measurable space (\mathcal{X},\mathcal{B}(\mathcal{X})).
+
+Definition (φ-irreducibility)
+
+Given a measure \varphi defined on (\mathcal{X},\mathcal{B}(\mathcal{X})), the Markov chain (X_n) with transition kernel K(x, y) is φ-irreducible if, for every A \in \mathcal{B}(\mathcal{X}) with \varphi(A) > 0, there exists n such that K^n(x, A) > 0 for all x \in \mathcal{X} (Equivalently, P_x(\tau_A  0, here \tau_A = \inf\{n \geq 1 ; X_n \in A\} is the first n for which the chain enters the set A).
+
+This is a more general definition for irreducibility of a Markov chain in non-discrete state space. In the discrete case, an irreducible Markov chain is said to be aperiodic if it has period 1. Formally, the period of a state \omega \in \mathcal{X} is defined as:
+
+d(\omega) := \mathrm{gcd}\{m \geq 1 \,;\, K^m(\omega, \omega) > 0\}
+
+For the general (non-discrete) case, we define aperiodicity in terms of small sets:
+
+Definition (Cycle length and small sets)
+
+A &phi;-irreducible Markov chain (X_n) has a cycle of length d if there exists a small set C, an associated integer M, and a probability distribution \nu_M such that d is the greatest common divisor of:
+
+\{ m \geq 1 \,;\, \exists\, \delta_m > 0 \text{ such that } C \text{ is small for } \nu_m \geq \delta_m \nu_M \}.
+
+A set C is called small if there exists m \in \mathbb{N}^* and a nonzero measure \nu_m such that:
+
+K^m(x, A) \geq \nu_m(A), \quad \forall x \in C,\, \forall A \in \mathcal{B}(\mathcal{X}).
+
+Harris recurrent
+
+Definition (Harris recurrence)
+
+A set A is Harris recurrent if P_x(\eta_A = \infty) = 1 for all x \in A, where \eta_A = \sum_{n=1}^\infty \mathbb{I}_A(X_n) is the number of visits of the chain (X_n) to the set A.
+
+The chain (X_n) is said to be Harris recurrent if there exists a measure \psi such that the chain is \psi-irreducible and every measurable set A with \psi(A) > 0 is Harris recurrent.
+
+A useful criterion for verifying Harris recurrence is the following:
+
+Proposition
+
+If for every A \in \mathcal{B}(\mathcal{X}), we have P_x(\tau_A  for every x \in A, then P_x(\eta_A = \infty) = 1 for all x \in \mathcal{X}, and the chain (X_n) is Harris recurrent.
+
+This definition is only needed when the state space \mathcal{X} is uncountable. In the countable case, recurrence corresponds to \mathbb{E}_x[\eta_x] = \infty, which is equivalent to P_x(\tau_x  for all x \in \mathcal{X}.
+
+Definition (Invariant measure)
+
+A \sigma-finite measure \pi is said to be invariant for the transition kernel K(\cdot, \cdot) (and the associated chain) if:
+
+\pi(B) = \int_{\mathcal{X}} K(x, B) \, \pi(dx), \qquad \forall B \in \mathcal{B}(\mathcal{X}).
+
+When there exists an invariant probability measure for a &psi;-irreducible (hence recurrent) chain, the chain is said to be positive recurrent.
+
+Recurrent chains that do not allow for a finite invariant measure are called null recurrent.
+
+In applications of Markov Chain Monte Carlo (MCMC), a very useful criterion for Harris recurrence involves the use of bounded harmonic functions.
+
+Definition (Harmonic function)
+
+A measurable function h is said to be harmonic for the chain (X_n) if:
+
+\mathbb{E}[h(X_{n+1}) \mid x_n] = h(x_n)
+
+These functions are invariant under the transition kernel in the functional sense, and they help characterize Harris recurrence.
+
+Proposition
+
+For a positive Markov chain, if the only bounded harmonic functions are the constant functions, then the chain is Harris recurrent.
+
+Law of Large Numbers for MCMC
+
+Theorem (Ergodic Theorem for MCMC)
+
+If (X_n) has a \sigma-finite invariant measure \pi, then the following two statements are equivalent:
+
+The Markov chain (X_n) is Harris recurrent.
+
+If f, g \in L^1(\pi) with \int g(x) \, d\pi(x) \ne 0, then
+
+\lim_{n \to \infty} \frac{S_n(f)}{S_n(g)} = \frac{\int f(x) \, d\pi(x)}{\int g(x) \, d\pi(x)}.
+
+This theorem provides a fundamental justification for the use of Markov Chain Monte Carlo (MCMC) methods, and it serves as the counterpart of the Law of Large Numbers (LLN) in classical Monte Carlo.
+
+An important aspect of this result is that \pi does not need to be a probability measure. Therefore, there can be some type of strong stability even if the chain is null recurrent. Moreover, the Markov chain can be started from arbitrary state.
+
+If \pi is a probability measure, we can let g \equiv 1 and get
+
+\lim_{n \to \infty} S_n(f) = \int f(x) \,  d\pi(x).
+
+This is the Ergodic Theorem that we are more familiar with.
+
+Central Limit Theorem for MCMC
+
+There are several conditions under which the Central Limit Theorem (CLT) holds for Markov chain Monte Carlo (MCMC) methods. One of the most commonly used is the condition of reversibility.
+
+Definition (Reversibility)
+
+A stationary Markov chain (X_n) is said to be reversible if the distribution of X_{n+1} given X_{n+2} = x is the same as the distribution of X_{n+1} given X_n = x.
+
+This is equivalent to the detailed balance condition, which is defined as follows:
+
+Definition (Detailed balance)
+
+A Markov chain with transition kernel K satisfies the detailed balance condition if there exists a function f such that:
+
+K(y, x) f(y) = K(x, y) f(x)
+
+for every pair (x, y) in the state space.
+
+Theorem (CLT under reversibility)
+
+If (X_n) is aperiodic, irreducible, and reversible with invariant distribution \pi, then:
+
+\frac{1}{\sqrt{N}} \left( \sum_{n=1}^N \left( h(X_n) - \mathbb{E}^\pi[h] \right) \right)
+
+\overset{\mathcal{L}}{\longrightarrow} \mathcal{N}(0, \gamma_h^2)
+
+where
+
+0
+
+and
+
+\bar{h}(\cdot) = h(\cdot) - E[h(\cdot)]
+
+.
+
+Even though reversibility is a restrictive assumption in theory, it is often easily satisfied in practical MCMC algorithms by introducing auxiliary variables or using symmetric proposal mechanisms. There are many other conditions that can be used to establish CLT for MCMC such as geometric ergodicity and the discrete state space.
+
+Autocorrelation
+
+MCMC methods produce autocorrelated samples, in contrast to standard Monte Carlo techniques that draw independent samples. Autocorrelation means successive draws from the Markov chain are statistically dependent, so each new sample adds less fresh information than an independent draw would. As a result, one must account for this correlation when assessing the accuracy of estimates from the chain. In particular, positive autocorrelation in the chain increases the variance of estimators and slows the convergence of sample averages toward the true expectation.
+
+Autocorrelation and efficiency
+
+The effect of correlation on estimation can be quantified through the Markov chain central limit theorem. For a chain targeting a distribution with variance \sigma^2, the variance of the sample mean after N steps is approximately {\sigma^2}\big/N_{\text{eff}}, where N_{\text{eff}} is an effective sample size smaller than N. Equivalently, one can express this as:
+
+\mathrm{Var}(\bar{X}_N) \approx \frac{\sigma^2}{N} \left(1 + 2 \sum_{k=1}^{\infty} \rho_k \right)
+
+where \bar{X}_N is the sample mean and \rho_k is the autocorrelation of the chain at lag k, defined as \rho_k = \frac{\mathrm{Cov}(X_0, X_k)}{\sqrt{\mathrm{Var}(X_0)\mathrm{Var}(X_k)}}. The term in parentheses, 1 + 2\sum_{k= 1}^\infty\rho_k, is often called the integrated autocorrelation. When the chain has no autocorrelation (\rho_k=0 for all k\ge1), this factor equals 1, and one recovers the usual \sigma^2/N variance for independent samples. If the chain's samples are highly correlated, the sum of autocorrelations is large, leading to a much bigger variance for \bar{X}_N than in the independent case.
+
+Effective sample size (ESS)
+
+The effective sample size N_{\text{eff}} is a useful diagnostic that translates the autocorrelation in a chain into an equivalent number of independent samples. It is defined by the formula:
+
+N_{\text{eff}} = \frac{N}{1 + 2 \sum_{k=1}^{\infty} \rho_k}
+
+so that N_{\text{eff}} is the number of independent draws that would yield the same estimation precision as the N dependent draws from the Markov chain. For example, if 1 + 2\sum_{k=1}^{\infty} \rho_k = 5, then N_{\text{eff}} = N/5, meaning the chain of length N carries information equivalent to N/5 independent samples. In an ideal scenario with no correlation, \rho_k=0 and thus N_{\text{eff}}\approx N. But in a poorly mixing chain with strong autocorrelation, N_{\text{eff}} can be much smaller than N. In practice, monitoring the ESS for each parameter is a way to gauge how much correlation is present: a low ESS indicates that many more iterations may be needed to achieve a desired effective sample of independent draws.
+
+Reducing correlation
+
+While MCMC methods were created to address multi-dimensional problems better than generic Monte Carlo algorithms, when the number of dimensions rises they too tend to suffer the curse of dimensionality: regions of higher probability tend to stretch and get lost in an increasing volume of space that contributes little to the integral. One way to address this problem could be shortening the steps of the walker, so that it does not continuously try to exit the highest probability region, though this way the process would be highly autocorrelated and expensive (i.e. many steps would be required for an accurate result). More sophisticated methods such as Hamiltonian Monte Carlo and the Wang and Landau algorithm use various ways of reducing this autocorrelation, while managing to keep the process in the regions that give a higher contribution to the integral. These algorithms usually rely on a more complicated theory and are harder to implement, but they usually converge faster.
+
+We outline several general strategies such as reparameterization, adaptive proposal tuning, parameter blocking, and overrelaxation that help reduce correlation and improve sampling efficiency within the standard MCMC framework.
+
+Reparameterization
+
+One way to reduce autocorrelation is to reformulate or reparameterize the statistical model so that the posterior geometry leads to more efficient sampling. By changing the coordinate system or using alternative variable definitions, one can often lessen correlations. For example, in Bayesian hierarchical modeling, a non-centered parameterization can be used in place of the standard (centered) formulation to avoid extreme posterior correlations between latent and higher-level parameters. This involves expressing latent variables in terms of independent auxiliary variables, dramatically improving mixing. Such reparameterization strategies are commonly employed in both Gibbs sampling and Metropolis–Hastings algorithm to enhance convergence and reduce autocorrelation.
+
+Proposal tuning and adaptation
+
+Another approach to reducing correlation is to improve the MCMC proposal mechanism. In Metropolis–Hastings algorithm, step size tuning is critical: if the proposed steps are too small, the sampler moves slowly and produces highly correlated samples; if the steps are too large, many proposals are rejected, resulting in repeated values. Adjusting the proposal step size during an initial testing phase helps find a balance where the sampler explores the space efficiently without too many rejections.
+
+Adaptive MCMC methods modify proposal distributions based on the chain's past samples. For instance, the adaptive Metropolis algorithm updates the Gaussian proposal distribution using the full information accumulated from the chain so far, allowing the proposal to adapt over time.
+
+Parameter blocking
+
+Parameter blocking is a technique that reduces autocorrelation in MCMC by updating parameters jointly rather than one at a time. When parameters exhibit strong posterior correlations, one-by-one updates can lead to poor mixing and slow exploration of the target distribution. By identifying and sampling blocks of correlated parameters together, the sampler can more effectively traverse high-density regions of the posterior.
+
+Parameter blocking is commonly used in both Gibbs sampling and Metropolis–Hastings algorithms. In blocked Gibbs sampling, entire groups of variables are updated conditionally at each step. In Metropolis–Hastings, multivariate proposals enable joint updates (i.e., updates of multiple parameters at once using a vector-valued proposal distribution, typically a multivariate Gaussian), though they often require careful tuning of the proposal covariance matrix.
+
+Overrelaxation
+
+Overrelaxation is a technique to reduce autocorrelation between successive samples by proposing new samples that are negatively correlated with the current state. This helps the chain explore the posterior more efficiently, especially in high-dimensional Gaussian models or when using Gibbs sampling. The basic idea is to reflect the current sample across the conditional mean, producing proposals that retain the correct stationary distribution but with reduced serial dependence. Overrelaxation is particularly effective when combined with Gaussian conditional distributions, where exact reflection or partial overrelaxation can be analytically implemented.
+
+Examples
+
+Random walk Monte Carlo methods
+
+Metropolis–Hastings algorithm: This method generates a Markov chain using a proposal density for new steps and a method for rejecting some of the proposed moves. It is actually a general framework which includes as special cases the very first and simpler MCMC (Metropolis algorithm) and many more recent variants listed below.
+
+Gibbs sampling: When target distribution is multi-dimensional, Gibbs sampling algorithm updates each coordinate from its full conditional distribution given other coordinates. Gibbs sampling can be viewed as a special case of Metropolis–Hastings algorithm with acceptance rate uniformly equal to 1. When drawing from the full conditional distributions is not straightforward other samplers-within-Gibbs are used (e.g., see ). Gibbs sampling is popular partly because it does not require any 'tuning'. Algorithm structure of the Gibbs sampling highly resembles that of the coordinate ascent variational inference in that both algorithms utilize the full-conditional distributions in the updating procedure.
+
+Metropolis-adjusted Langevin algorithm and other methods that rely on the gradient (and possibly second derivative) of the log target density to propose steps that are more likely to be in the direction of higher probability density.
+
+Hamiltonian (or hybrid) Monte Carlo (HMC): Tries to avoid random walk behaviour by introducing an auxiliary momentum vector and implementing Hamiltonian dynamics, so the potential energy function is the target density. The momentum samples are discarded after sampling. The result of hybrid Monte Carlo is that proposals move across the sample space in larger steps; they are therefore less correlated and converge to the target distribution more rapidly.
+
+Pseudo-marginal Metropolis–Hastings: This method replaces the evaluation of the density of the target distribution with an unbiased estimate and is useful when the target density is not available analytically, e.g. latent variable models.
+
+Slice sampling: This method depends on the principle that one can sample from a distribution by sampling uniformly from the region under the plot of its density function. It alternates uniform sampling in the vertical direction with uniform sampling from the horizontal 'slice' defined by the current vertical position.
+
+Multiple-try Metropolis: This method is a variation of the Metropolis–Hastings algorithm that allows multiple trials at each point. By making it possible to take larger steps at each iteration, it helps address the curse of dimensionality.
+
+Reversible-jump: This method is a variant of the Metropolis–Hastings algorithm that allows proposals that change the dimensionality of the space. Markov chain Monte Carlo methods that change dimensionality have long been used in statistical physics applications, where for some problems a distribution that is a grand canonical ensemble is used (e.g., when the number of molecules in a box is variable). But the reversible-jump variant is useful when doing Markov chain Monte Carlo or Gibbs sampling over nonparametric Bayesian models such as those involving the Dirichlet process or Chinese restaurant process, where the number of mixing components/clusters/etc. is automatically inferred from the data.
+
+Interacting particle methods
+
+Interacting MCMC methodologies are a class of mean-field particle methods for obtaining random samples from a sequence of probability distributions with an increasing level of sampling complexity. These probabilistic models include path space state models with increasing time horizon, posterior distributions w.r.t. sequence of partial observations, increasing constraint level sets for conditional distributions, decreasing temperature schedules associated with some Boltzmann–Gibbs distributions, and many others. In principle, any Markov chain Monte Carlo sampler can be turned into an interacting Markov chain Monte Carlo sampler. These interacting Markov chain Monte Carlo samplers can be interpreted as a way to run in parallel a sequence of Markov chain Monte Carlo samplers. For instance, interacting simulated annealing algorithms are based on independent Metropolis–Hastings moves interacting sequentially with a selection-resampling type mechanism. In contrast to traditional Markov chain Monte Carlo methods, the precision parameter of this class of interacting Markov chain Monte Carlo samplers is only related to the number of interacting Markov chain Monte Carlo samplers. These advanced particle methodologies belong to the class of Feynman–Kac particle models, also called Sequential Monte Carlo or particle filter methods in Bayesian inference and signal processing communities. Interacting Markov chain Monte Carlo methods can also be interpreted as a mutation-selection genetic particle algorithm with Markov chain Monte Carlo mutations.
+
+Quasi-Monte Carlo
+
+The quasi-Monte Carlo method is an analog to the normal Monte Carlo method that uses low-discrepancy sequences instead of random numbers. It yields an integration error that decays faster than that of true random sampling, as quantified by the Koksma–Hlawka inequality. Empirically it allows the reduction of both estimation error and convergence time by an order of magnitude. such as the Array–RQMC method combine randomized quasi–Monte Carlo and Markov chain simulation by simulating n chains simultaneously in a way that better approximates the true distribution of the chain than with ordinary MCMC. In empirical experiments, the variance of the average of a function of the state sometimes converges at rate O(n^{-2}) or even faster, instead of the O(n^{-1}) Monte Carlo rate.
+
+Applications
+
+MCMC methods are primarily used for calculating numerical approximations of multi-dimensional integrals, for example in Bayesian statistics, computational physics, computational biology and computational linguistics.
+
+Bayesian statistics
+
+In Bayesian statistics, Markov chain Monte Carlo methods are typically used to calculate moments and credible intervals of posterior probability distributions. The use of MCMC methods makes it possible to compute large hierarchical models that require integrations over hundreds to thousands of unknown parameters.
+
+Statistical physics
+
+Many contemporary research problems in statistical physics can be addressed by approximate solutions using Monte Carlo simulation, which provides valuable insights into the properties of complex systems. Monte Carlo methods are fundamental in computational physics, astrophysics, physical chemistry, and related disciplines, with broad applications including medical physics, where they are employed to model radiation transport for radiation dosimetry calculations. Instead of exhaustively analyzing all possible system states, the Monte Carlo method randomly examines a subset of them to form a representative sample, and yields accurate approximations of the system's characteristic properties. As the number of sampled states increases, the error can be further reduced to a lower level.
+
+Complex distribution sampling
+
+Langevin Dynamics are typically used in complex distribution sampling and generative modeling, via an MCMC procedure. Specifically, given the probability density function  p(x), we use its log gradient \nabla_x \log p(x) as the score function and start from a prior distribution x_0 \sim p_0 . Then, a chain is built by
+
+x_{i+1} = x_i + \epsilon \nabla_x \log p(x) + \sqrt{2 \epsilon}z_i, z_i \sim \mathcal{N}(0, I)
+
+for i=0, \dots, K. When \epsilon \rightarrow 0 and K \rightarrow \infty, x_K converges to a sample from the target distribution p(x).
+
+For some complex distribution, if we know its probability density function but find it difficult to directly sample from it, we can apply Langevin Dynamics as an alternate. However, in most cases, especially generative modeling, usually we do not know the exact probability density function of the target distribution we wish to sample from, neither the score function \nabla_x \log p(x). In this case, score matching methods provide feasible solutions, minimizing the Fisher information metric between a parameterized score-based model s_\theta(x) and the score function without knowing the ground-truth data score. The score function can be estimated on a training dataset by stochastic gradient descent.
+
+In real cases, however, the training data only takes a small region of the target distribution, and the estimated score functions are inaccurate in other low density regions with fewer available data examples. To overcome this challenge, denoising score matching methods purturb the available data examples with noise of different scales, which can improve the coverage of low density regions, and use them as the training dataset for the score-base model. Note that the choice of noise scales is tricky, as too large noise will corrupt the original data, while too small noise will not populate the original data to those low density regions. Thus, carefully crafted noise schedules Fortunately, there are a variety of practical diagnostics to empirically assess convergence.
+
+Total variation distance
+
+Formally, let \pi denote the stationary distribution and P^t(x, \cdot) the distribution of the Markov chain after t steps starting from state x. Theoretically, convergence can be quantified by measuring the  total variation distance:
+
+d_{\text{TV}}(P^t(x,\cdot), \pi) = \sup_{A} |P^t(x,A) - \pi(A)|
+
+A chain is said to mix rapidly if d_{\text{TV}}(P^t(x,\cdot),\pi) \leq \epsilon for all x \in \mathcal{X} within a small number of steps t under a pre-defined tolerance \epsilon > 0. In other words, the stationary distribution is reached quickly starting from an arbitrary position, and the minimum such t is known as the mixing time. In practice, however, the total variation distance is generally intractable to compute, especially in high-dimensional problems or when the stationary distribution is only known up to a normalizing constant (as in most Bayesian applications).
+
+Gelman-Rubin diagnostics
+
+The Gelman-Rubin statistic, also known as the potential scale reduction factor (PSRF), evaluates MCMC convergence by sampling multiple independent Markov chains and comparing within-chain and between-chain variances. If all chains have converged to the same stationary distribution, the between-chain and within-chain variances should be similar, and thus the PSRF must approach 1. In practice, a value of  is often taken as evidence of convergence. Higher values suggest that the chains are still exploring different parts of the target distribution.
+
+Geweke diagnostics
+
+The Geweke diagnostic examines whether the distribution of samples in the early part of the Markov chain is statistically indistinguishable from the distribution in a later part. Given a sequence of correlated MCMC samples \{X_1, X_2, \dots, X_n\}, the diagnostic splits the chain into an early segment consisting of the first n_A samples, typically chosen as n_A=0.1n (i.e., the first 10% of the chain), and a late segment consisting of the last n_B samples, typically chosen as n_B=0.5n (i.e., the last 50% of the chain)
+
+Denote the sample means of these segments as:
+
+\bar{X}_A = \dfrac{1}{n_A}\sum_{i=1}^{n_A} X_i,\;\;\; \bar{X}_B = \dfrac{1}{n_B}\sum_{i=n-n_B+1}^n X_i
+
+Since MCMC samples are autocorrelated, a simple comparison of sample means is insufficient. Instead, the difference in means is standardized using an estimator of the spectral density at zero frequency, which accounts for the long-range dependencies in the chain. The test statistic is computed as:
+
+Z = \dfrac{\bar{X}_A - \bar{X}_B}{\sqrt{\hat{S}(0)/n_A + \hat{S}(0)/n_B}}
+
+where \hat{S}(0) is an estimate of the long-run variance (i.e., the spectral density at frequency zero), commonly estimated using Newey-West estimators or batch means. Under the null hypothesis of convergence, the statistic Z follows an approximately standard normal distribution Z \sim \mathcal{N}(0,1).
+
+If |Z| > 1.96, the null hypothesis is rejected at the 5% significance level, suggesting that the chain has not yet reached stationarity.
+
+Heidelberger-Welch diagnostics
+
+The Heidelberger-Welch diagnostic is grounded in spectral analysis and Brownian motion theory, and is particularly useful in the early stages of simulation to determine appropriate burn-in and stopping time. The diagnostic consists of two components, a stationarity test that assesses whether the Markov chain has reached a steady-state, and a half-width test that determines whether the estimated expectation is within a user-specified precision.
+
+Stationary test
+
+Let \{X_t\}_{t=1}^n be the output of an MCMC simulation for a scalar function g(X_t), and g_1,g_2,\dots,g_n the evaluations of the function g over the chain. Define the standardized cumulative sum process:
+
+B_n(t) = \dfrac{\sum_{i=1}^{\text{round}(nt)} g_i - \text{round}(nt) \bar{g}_n}{\sqrt{n\hat{S}(0)}},\;\;\; t\in[0,1]
+
+where \bar{g}_n = \frac{1}{n}\sum_{i=1}^n g_i is the sample mean and \hat{S}(0) is an estimate of the spectral density at frequency zero.
+
+Under the null hypothesis of convergence, the process B_n(t) converges in distribution to a Brownian bridge. The following Cramér-von Mises statistic is used to test for stationarity:
+
+C_n = \int_0^1 B_n(t)^2 dt.
+
+This statistic is compared against known critical values from the Brownian bridge distribution. If the null hypothesis is rejected, the first 10% of the samples are discarded and the test can be repeated on the remaining chain until either stationarity is accepted or 50% of the chain is discarded.
+
+Half-Width test (Precision check)
+
+Once stationarity is accepted, the second part of the diagnostic checks whether the Monte Carlo estimator is accurate enough for practical use. Assuming the central limit theorem holds, the confidence interval for the mean \mathbb{E}_\pi[g(X)] is given by
+
+\bar{g}_n \pm t_{\alpha/2,\nu} \cdot \dfrac{\hat{\sigma}_n}{\sqrt{n}}
+
+where \hat{\sigma}^2 is an estimate of the variance of g(X), t_{\alpha/2,\nu} is the Student's t critical value at confidence level 1 - \alpha and degrees of freedom \nu, n is the number of samples used.
+
+The half-width of this interval is defined as
+
+t_{\alpha/2,\nu} \cdot \dfrac{\hat{\sigma}_n}{\sqrt{n}}
+
+If the half-width is smaller than a user-defined tolerance (e.g., 0.05), the chain is considered long enough to estimate the expectation reliably. Otherwise, the simulation should be extended.
+
+Raftery-Lewis diagnostics
+
+The Raftery-Lewis diagnostic is specifically designed to assess how many iterations are needed to estimate quantiles or tail probabilities of the target distribution with a desired accuracy and confidence. Unlike Gelman-Rubin or Geweke diagnostics, which are based on assessing convergence to the entire distribution, the Raftery-Lewis diagnostic is goal-oriented as it provides estimates for the number of samples required to estimate a specific quantile of interest within a desired margin of error.
+
+Let q denote the desired quantile (e.g., 0.025) of a real-valued function g(X): in other words, the goal is to find u such that P(g(X) \leq u) = q. Suppose we wish to estimate this quantile such that the estimate falls within margin \varepsilon of the true value with probability 1 - \alpha. That is, we want
+
+P(|\hat{q} - q|
+
+The diagnostic proceeds by converting the output of the MCMC chain into a binary sequence:
+
+W_n = \mathbb{I}(g(X_n) \leq u), \;\;\; n=1,2,\dots
+
+where I(\cdot) is the indicator function. The sequence \{W_n\} is treated as a realization from a two-state Markov chain. While this may not be strictly true, it is often a good approximation in practice.
+
+From the empirical transitions in the binary sequence, the Raftery-Lewis method estimates:
+
+The minimum number of iterations n_{\text{min}} required to achieve the desired precision and confidence for estimating the quantile is obtained based on asymptotic theory for Bernoulli processes:
+
+n_{\text{min}} = \bigg\{\Phi^{-1}\bigg(1-\dfrac{\alpha}{2}\bigg)\bigg\}^2 \dfrac{q(1-q)}{\varepsilon^2}
+
+where \Phi^{-1}(\cdot) is the standard normal quantile function.
+
+The burn-in period n_{\text{burn}} is calculated using eigenvalue analysis of the transition matrix to estimate the number of initial iterations needed for the Markov chain to forget its initial state.
+
+See also
+
+Coupling from the past
+
+Integrated nested Laplace approximations
+
+Markov chain central limit theorem
+
+Metropolis-adjusted Langevin algorithm
+
+References
+
+Citations
+
+Sources
+
+Christophe Andrieu, Nando De Freitas, Arnaud Doucet and Michael I. Jordan An Introduction to MCMC for Machine Learning, 2003
+
+Carlin, Brad; Chib, Siddhartha (1995). "Bayesian Model Choice via Markov Chain Monte Carlo Methods". Journal of the Royal Statistical Society, Series B, 57(3), 473&ndash;484.
+
+(See Chapter 11.)
+
+Further reading
+
+Category:Monte Carlo methods
+
+Category:Computational statistics
+
+Category:Markov models
+
+Category:Bayesian estimation

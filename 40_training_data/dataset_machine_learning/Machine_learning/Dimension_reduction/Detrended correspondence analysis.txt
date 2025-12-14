@@ -1,0 +1,43 @@
+Detrended correspondence analysis (DCA) is a multivariate statistical technique widely used by ecologists to find the main factors or gradients in large, species-rich but usually sparse data matrices that typify ecological community data. DCA is frequently used to suppress artifacts inherent in most other multivariate analyses when applied to gradient data.
+
+History
+
+DCA was created in 1979 by Mark Hill of the United Kingdom's Institute for Terrestrial Ecology (now
+
+merged into Centre for Ecology and Hydrology) and implemented in FORTRAN code package called DECORANA (Detrended Correspondence Analysis), a correspondence analysis method.  DCA is sometimes erroneously referred to as DECORANA; however, DCA is the underlying algorithm, while DECORANA is a tool implementing it.
+
+Issues addressed
+
+According to Hill and Gauch, in the vegan R-package.
+
+See also
+
+Eigenanalysis
+
+Ordination (statistics)
+
+Seriation (archaeology) &ndash; including additional examples for the arch effect
+
+Principal Component Analysis
+
+References
+
+Hill, M.O. (1979).  DECORANA &mdash; A FORTRAN program for Detrended Correspondence Analysis and Reciprocal Averaging.  Section of Ecology and Systematics, Cornell University, Ithaca, New York, 52pp.
+
+Hill, M.O. and Gauch, H.G. (1980). Detrended Correspondence Analysis: An Improved Ordination Technique. Vegetatio 42, 47&ndash;58.
+
+Oksanen J and Minchin PR (1997).  Instability of ordination results under changes in input data order: explanation and remedies.  Journal of  vegetation science 8, 447&ndash;454
+
+Shaw PJA (2003).  Multivariate Statistics for the Environmental Sciences.  London: Hodder Arnold
+
+Ter Braak, C.J.F. and Prentice, I.C. (1988). A Theory of Gradient Analysis. Advances in Ecological Research 18, 271&ndash;371. . Reprinted in: Ter Braak, C.J.F. (1987). Unimodal models to relate species to environment. Wageningen: PhD thesis Agricultural Mathematics Group, 101&ndash;146.
+
+External links
+
+PAST (PAlaeontological STatistics) &mdash; free software including DCA  with modifications according to Oksanen and Minchin (1997)
+
+WINBASP &mdash; free software including DCA with detrending-by-polynomials according to Ter Braak and Prentice (1988)
+
+vegan: Community Ecology Package for R &mdash; free software including the function decorana: Detrended Correspondence Analysis and Basic Reciprocal Averaging from Hill and Gauch (1980)
+
+Category:Dimension reduction

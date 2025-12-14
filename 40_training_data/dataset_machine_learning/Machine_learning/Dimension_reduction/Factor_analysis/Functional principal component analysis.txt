@@ -1,0 +1,113 @@
+Functional principal component analysis (FPCA) is a statistical method for investigating the dominant modes of variation of functional data. Using this method,  a random function is represented in the eigenbasis, which is an orthonormal basis of the Hilbert space L2 that consists of the  eigenfunctions of the autocovariance operator. FPCA represents functional data in the most parsimonious way, in the sense that when using a fixed number of basis functions, the eigenfunction basis explains more variation than any other basis expansion. FPCA can be applied for representing random functions, or in functional regression and classification.
+
+Formulation
+
+For a square-integrable stochastic process X(t), t ∈  𝒯, let
+
+\mu(t) = \text{E}(X(t))
+
+and
+
+G(s, t) = \text{Cov}(X(s), X(t)) = \sum_{k=1}^\infty \lambda_k \varphi_k(s) \varphi_k(t),
+
+where  \lambda_1 \geq \lambda_2 \geq ... \geq 0  are the eigenvalues and \varphi_1, \varphi_2, ... are the orthonormal eigenfunctions of the linear Hilbert–Schmidt operator
+
+G: L^2(\mathcal{T}) \rightarrow L^2(\mathcal{T}),\, G(f) = \int_\mathcal{T} G(s, t) f(s) ds.
+
+By the Karhunen–Loève theorem, one can express the centered process in the eigenbasis,
+
+X(t) - \mu(t) = \sum_{k=1}^\infty \xi_k \varphi_k(t),
+
+where
+
+\xi_k = \int_\mathcal{T} (X(t) - \mu(t)) \varphi_k(t) dt
+
+is the principal component associated with the k-th eigenfunction \varphi_k, with the properties
+
+\text{E}(\xi_k) = 0, \text{Var}(\xi_k) = \lambda_k \text{ and } \text{E}(\xi_k \xi_l) = 0 \text{ for } k \ne l.
+
+The centered process is then equivalent to ξ1, ξ2, .... A common assumption is that X can be represented by only the first few eigenfunctions (after subtracting the mean function), i.e.
+
+X(t) \approx X_m(t) = \mu(t) + \sum_{k=1}^m \xi_k \varphi_k(t),
+
+where
+
+\mathrm{E}\left(\int_{\mathcal{T}} \left( X(t) - X_m(t)\right)^2 dt\right) = \sum_{j>m} \lambda_j \rightarrow 0 \text{ as } m \rightarrow \infty .
+
+Interpretation of eigenfunctions
+
+The first eigenfunction \varphi_1 depicts the dominant mode of variation of X.
+
+\varphi_1 = \underset{\Vert \mathbf{\varphi} \Vert = 1}{\operatorname{arg\,max}}
+
+\left\{\operatorname{Var} \left( \int_\mathcal{T} (X(t) - \mu(t)) \varphi(t) dt \right) \right\},
+
+where
+
+\Vert \mathbf{\varphi} \Vert = \left( \int_\mathcal{T} \varphi(t)^2 dt \right)^{\frac{1}{2}}.
+
+The k-th eigenfunction \varphi_k is the dominant mode of variation orthogonal to \varphi_1, \varphi_2, ... , \varphi_{k-1},
+
+\varphi_k = \underset{\Vert \mathbf{\varphi} \Vert = 1, \langle \varphi, \varphi_j \rangle = 0 \text{ for } j = 1, \dots, k-1}{\operatorname{arg\,max}}
+
+\left\{\operatorname{Var} \left( \int_\mathcal{T} (X(t) - \mu(t)) \varphi(t) dt \right) \right\},
+
+where
+
+\langle \varphi, \varphi_j \rangle = \int_\mathcal{T} \varphi(t)\varphi_j(t) dt, \text{ for } j = 1, \dots, k-1.
+
+Estimation
+
+Let Y'ij = X'i(t'ij) + εij be the observations made at locations (usually time points) t'ij, where X'i is the i-th realization of the smooth stochastic process that generates the data, and εij are identically and independently distributed normal random variable with mean 0 and variance σ2, j = 1, 2, ..., m'i. To obtain an estimate of the mean function μ(t'ij), if a dense sample on a regular grid is available, one may take the average at each location t'ij:
+
+\hat{\mu}(t_{ij}) = \frac{1}{n} \sum_{i=1}^n Y_{ij}.
+
+If the observations are sparse, one needs to smooth the data pooled from all observations to obtain the mean estimate, using smoothing methods like local linear smoothing or spline smoothing.
+
+Then the estimate of the covariance function  \hat{G}(s, t)  is obtained by averaging (in the dense case) or smoothing (in the sparse case) the raw covariances
+
+G_i(t_{ij}, t_{il}) = (Y_{ij} - \hat{\mu}(t_{ij})) (Y_{il} - \hat{\mu}(t_{il})), j \neq l, i = 1, \dots, n.
+
+Note that the diagonal elements of Gi should be removed because they contain measurement error.
+
+In practice,  \hat{G}(s, t)  is discretized to an equal-spaced dense grid, and the estimation of eigenvalues λ'k and eigenvectors v'k is carried out by numerical linear algebra. The eigenfunction estimates  \hat{\varphi}_k can then be obtained by interpolating the eigenvectors  \hat{v_k}.
+
+The fitted covariance should be positive definite and symmetric and is then obtained as
+
+\tilde{G}(s, t) = \sum_{\lambda_k > 0} \hat{\lambda}_k \hat{\varphi}_k(s) \hat{\varphi}_k(t).
+
+Let  \hat{V}(t)  be a smoothed version of the diagonal elements Gi(tij, tij) of the raw covariance matrices. Then   \hat{V}(t)  is an estimate of (G(t, t) + σ2). An estimate of σ2 is obtained by
+
+\hat{\sigma}^2 = \frac{2} \int_{\mathcal{T}} (\hat{V}(t) - \tilde{G}(t, t)) dt,  if  \hat{\sigma}^2 > 0;  otherwise  \hat{\sigma}^2 = 0.
+
+If the observations X'ij, j=1, 2, ..., mi are dense in 𝒯, then the k-th FPC ξ'k can be estimated by numerical integration, implementing
+
+\hat{\xi}_k = \langle X - \hat{\mu}, \hat{\varphi}_k \rangle.
+
+However, if the observations are sparse, this method will not work. Instead, one can use best linear unbiased predictors, and R package
+
+Asymptotic convergence properties of these estimates have been investigated.
+
+Applications
+
+FPCA can be applied for displaying the modes of functional variation, in scatterplots of FPCs against each other or of responses against FPCs, for modeling sparse longitudinal data, A good example of advantages of the functional approach is the Smoothed FPCA (SPCA), developed by Silverman  and studied by Pezzulli and Silverman , that enables direct combination of FPCA along with a general smoothing approach that makes using the information stored in some linear differential operators possible. An important application of the FPCA already known from multivariate PCA is motivated by the Karhunen-Loève decomposition of a random function to the set of functional parameters – factor functions and corresponding factor loadings (scalar random variables). This application is much more important than in the standard multivariate PCA since the distribution of the random function is in general too complex to be directly analyzed and the Karhunen-Loève decomposition reduces the analysis to the interpretation of the factor functions and the distribution of scalar random variables. Due to dimensionality reduction as well as its accuracy to represent data, there is a wide scope for further developments of functional principal component techniques in the financial field.
+
+Applications of PCA in automotive engineering.
+
+Connection with principal component analysis
+
+The following table shows a comparison of various elements of principal component analysis (PCA) and FPCA. The two methods are both used for dimensionality reduction. In implementations, FPCA uses a PCA step.
+
+However, PCA and FPCA differ in some critical aspects. First, the order of multivariate data in PCA can be permuted, which has no effect on the analysis, but the order of functional data carries time or space information and cannot be reordered. Second, the spacing of observations in FPCA matters, while there is no spacing issue in PCA. Third, regular PCA does not work for high-dimensional data without regularization, while FPCA has a built-in regularization due to the smoothness of the functional data and the truncation to a finite number of included components.
+
+See also
+
+Principal component analysis
+
+Notes
+
+References
+
+Category:Factor analysis
+
+Category:Nonparametric statistics

@@ -1,0 +1,131 @@
+{{Infobox scientist
+
+name              = Michael Kohlhase
+
+image             = MichaelKohlhaseExplainsNestedWorkingCopies.jpg
+
+image_size        =
+
+caption           =
+
+birth_date        =
+
+birth_place       = Erlangen, Germany
+
+nationality       = German
+
+fields            = Mathematics, Computer Science
+
+workplaces        =
+
+thesis_year       = 1994
+
+thesis_title      = A Mechanization of Sorted Higher-Order Logic Based on the Resolution Principle
+
+alma_mater        = Saarland University
+
+doctoral_advisor  = Jörg SiekmannFrank Pfenning
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students  =
+
+known_for         = OMDoc
+
+influences        =
+
+influenced        =
+
+awards            =
+
+religion          =
+
+signature         =
+
+footnotes         =
+
+}}
+
+Michael Kohlhase (born 13 September 1964, in Erlangen) is a German computer scientist and professor at University of Erlangen–Nuremberg, where he is head of the KWARC research group (Knowledge Adaptation and Reasoning for Content).
+
+Academic Positions
+
+Michael Kohlhase is president of the OpenMath Society and a trustee of the Interest Group for Mathematical Knowledge Management (MKM). He was a trustee of the Conference on Automated Deduction and the CALCULEMUS Interest Group. He has been Conference Chair of CADE-21 and Program Chair of the KI-2006, MKM-2005, and CALCULEMUS-2000 conferences and has served on the Programme Committees of more than three dozen international conferences.
+
+Kohlhase holds an adjunct associate professorship at Carnegie Mellon University and  was (2006–2008) vice director of the Department of Safe and Secure Cognitive Systems at German Research Centre for Artificial Intelligence (DFKI) Lab Bremen.
+
+In 2014, he became a member of the Global Digital Mathematics Library Working Group of the IMU.
+
+Academic career
+
+Michael Kohlhase obtained a degree in Mathematics (1989) from University of Bonn, a doctorate (1994) and habilitation (1999) in Computer Science at Saarland University. He has pursued his doctoral and post-doctoral research in extended research visits at Carnegie Mellon University,
+
+University of Amsterdam, the University of Edinburgh, and SRI International. From 2000–2003, he has conducted research and taught at the School of Computer Science at Carnegie Mellon University, where he was appointed to an adjunct associate professor. In September 2003 he was appointed as Professor of Computer Science at Jacobs University Bremen (International University Bremen until 2007), and 2006–2008 he was vice director of the Department of Safe and Secure Cognitive Systems of the German Research Centre for Artificial Intelligence (DFKI) Bremen. Since September 2016 he holds the Professorship for Knowledge Representation and Processing at University of Erlangen–Nuremberg.
+
+He has authored or edited four books and published almost 100 peer-reviewed papers.
+
+Awards and Scholarships
+
+2000:3-year Heisenberg-Stipend of the Deutsche Forschungsgemeinschaft (DFG).
+
+1996:AKI-prize, dissertation prize of the "Arbeitsgemeinschaft deutscher KI-Institute (AKI)"
+
+1991:dissertation stipend of the Studienstiftung (German National Academic Foundation)
+
+1986:masters stipend of Studienstiftung
+
+Research interests
+
+engine MathWebSearch]]
+
+Michael Kohlhase's current research interests include Automated theorem proving and knowledge representation for mathematics, inference-based techniques for natural language processing and semantics, and computer-supported education.
+
+Much of his concrete work is based on web-based content markup formats like MathML, OpenMath, and OMDoc and systems for managing this data, e.g. semantic search engines for mathematical formulae, semantic extensions to LaTeX, or converting legacy LaTeX documents from the arXiv.
+
+Bibliography
+
+see a more complete bibliography
+
+Michael Kohlhase OMDoc: Open Mathematical Documents [Version 1.2], Springer Verlag, LNAI 4180, 2006.
+
+Christian Freksa, Michael Kohlhase, Kerstin Schill (eds.): The 29th Annual German Conference on Artificial Intelligence, KI 2006, LNAI 4314, Springer Verlag, 2006.
+
+Michael Kohlhase (ed.): Mathematical Knowledge Management, 4th International Conference, MKM 2005, Lecture Notes in Artificial Intelligence 3863, Springer Verlag, 2005.
+
+Manfred Kerber, Michael Kohlhase: Symbolic Computation and Automated Reasoning, Proceedings of the CALCULEMUS-2000 Symposium, AKPeters, Boston 2001.
+
+In 2006, Michael Kohlhase ranked #8126 in CiteSeer's list of most cited computer science authors, having 305 citations.
+
+References
+
+External links
+
+Michael Kohlhase's website at the Friedrich-Alexander-University Erlangen-Nuremberg
+
+Knowledge Adaptation and Reasoning for Content
+
+DFKI Lab Bremen, Safe and Secure Cognitive Systems
+
+OpenMath Society
+
+MathWeb, a site for MKM-related projects
+
+Michael Kohlhase at the Mathematics Genealogy Project
+
+Publications ar DBLP
+
+Category:1964 births
+
+Category:German artificial intelligence researchers
+
+Category:German computer scientists
+
+Category:Academic staff of the University of Erlangen-Nuremberg
+
+Category:Living people
+
+Category:Studienstiftung alumni
+
+Category:Natural language processing researchers

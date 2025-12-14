@@ -1,0 +1,23 @@
+FaceNet is a facial recognition system developed by Florian Schroff, Dmitry Kalenichenko and James Philbin, a group of researchers affiliated with Google. The system was first presented at the 2015 IEEE Conference on Computer Vision and Pattern Recognition. The system uses a deep convolutional neural network to learn a mapping (also called an embedding) from a set of face images to a 128-dimensional Euclidean space, and assesses the similarity between faces based on the square of the Euclidean distance between the images' corresponding normalized vectors in the 128-dimensional Euclidean space. The system uses the triplet loss function as its cost function and introduced a new online triplet mining method. The system achieved an accuracy of 99.63%, which is the highest score to date on the Labeled Faces in the Wild dataset using the unrestricted with labeled outside data protocol.  On YouTube Faces DB the system achieved an accuracy of 95.12%.
+
+See also
+
+DeepFace
+
+FindFace
+
+Further reading
+
+For a discussion on the vulnerabilities of  Facenet-based face recognition algorithms in applications to the Deepfake videos:
+
+For a discussion on applying FaceNet for verifying faces in Android:  Amazon
+
+References
+
+Category:Facial recognition software
+
+Category:Image search
+
+Category:Deep learning software applications
+
+Category:Artificial neural networks

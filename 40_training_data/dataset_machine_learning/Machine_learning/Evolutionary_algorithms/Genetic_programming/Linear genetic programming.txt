@@ -1,0 +1,67 @@
+"Linear genetic programming" is unrelated to "linear programming".
+
+Linear genetic programming (LGP) is a particular method of genetic programming wherein computer programs in a population are represented as a sequence of register-based instructions from an imperative programming language or machine language. The adjective "linear" stems from the fact that each LGP program is a sequence of instructions and the sequence of instructions is normally executed sequentially. Like in other programs, the data flow in LGP can be modeled as a graph that will visualize the potential multiple usage of register contents and the existence of structurally noneffective code (introns) which are two main differences of this genetic representation from the more common tree-based genetic programming (TGP) variant.
+
+Like other Genetic Programming methods, Linear genetic programming requires the input of data to run the program population on. Then, the output of the program (its behaviour) is judged against some target behaviour, using a fitness function. However, LGP is generally more efficient than tree genetic programming due to its two main differences mentioned above: Intermediate results (stored in registers) can be reused and a simple intron removal algorithm exists
+
+Linear genetic programming should not be confused with linear tree programs in tree genetic programming, program composed of a variable number of unary functions and a single terminal. Note that linear tree GP differs from bit string genetic algorithms since a population may contain programs of different lengths and there may be more than two types of functions or more than two types of terminals.
+
+Examples of LGP programs
+
+Because LGP programs are basically represented by a linear sequence of instructions, they are simpler to read and to operate on than their tree-based counterparts. For example, a simple program written to solve a Boolean function problem with 3 inputs (in R1, R2, R3) and one output (in R0), could read like this:
+
+R4 = R2 AND R3
+
+R0 = R1 OR R4
+
+R0 = R3 AND R0
+
+R4 = R2 AND R4   # This is a non-effective instruction
+
+R0 = R0 OR R2
+
+R1, R2, R3 have to be declared as input (read-only) registers, while R0 and R4 are declared as calculation (read-write) registers. This program is very simple, having just 5 instructions. But mutation and crossover operators could work to increase the length of the program, as well as the content of each of its instructions.
+
+Note that one instruction is non-effective or an intron (marked), since it does not impact the output register R0. Recognition of those instructions is the basis for the intron removal algorithm which is used analyze code prior to execution. Technically, this happens by copying an individual and then run the intron removal once. The copy with removed introns is then executed as many times as dictated by the number of training cases. Notably, the original individual is left intact, so as to continue participating in the evolutionary process. It is only the copy that is executed that is compressed by removing these "structural" introns.
+
+Another simple program, this one written in the LGP language Slash/A looks like a series of instructions separated by a slash:
+
+input/   # gets an input from user and saves it to register F
+
+0/       # sets register I = 0
+
+save/    # saves content of F into data vector D[I] (i.e. D := F)
+
+input/   # gets another input, saves to F
+
+add/     # adds to F current data pointed to by I (i.e. F := F + D)
+
+output/. # outputs result from F
+
+By representing such code in bytecode format, i.e. as an array of bytes each representing a different instruction, one can make mutation operations simply by changing an element of such an array.
+
+See also
+
+Multi expression programming
+
+Cartesian genetic programming
+
+Grammatical evolution
+
+Genetic programming
+
+Notes
+
+External links
+
+Slash/A A programming language and C++ library specifically designed for linear GP
+
+DigitalBiology.NET Vertical search engine for GA/GP resources
+
+Discipulus Genetic-Programming Software
+
+MicroGP Genetic-Programming Software (open source)
+
+An open-source Linear GP project based on a Java-based Evolutionary Computation Research System (ECJ).
+
+[http://www.genetic-programming.org

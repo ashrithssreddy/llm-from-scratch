@@ -1,0 +1,75 @@
+{{Infobox scientist
+
+name             = Wang-Chiew Tan
+
+image            =
+
+image_size       =
+
+caption          =
+
+nationality      = Singaporean
+
+field            = Computer Science
+
+work_institution = Megagon Labs
+
+alma_mater       = University of Pennsylvania
+
+doctoral_advisor = Peter Buneman and Sanjeev Khanna
+
+known_for        = data lineage and data integration
+
+awards           = ACM Fellow
+
+website          =
+
+}}
+
+Wang-Chiew Tan is a Singaporean computer scientist specializing in data management and natural language processing. Her work in data management includes data provenance (or data lineage) and data integration. She is currently a Research Scientist at Facebook AI, and was previously the Director of Research at Megagon Labs in Mountain View, California.
+
+At Megagon Labs, Tan was the lead researcher on a study with the University of Tokyo that concluded that the company of other people is more effective than pets at making people happy.
+
+Education and career
+
+Tan earned her bachelor's degree in computer science (first-class) at the National University of Singapore, and completed her Ph.D. at the University of Pennsylvania.
+
+Her 2002 dissertation, Data Annotations, Provenance, and Archiving, was jointly supervised by Peter Buneman and Sanjeev Khanna.
+
+Before working at Megagon, she has been a professor of computer science at the University of California, Santa Cruz beginning in 2002, and, from 2010 to 2012, was on leave from Santa Cruz as a researcher at IBM Research - Almaden.
+
+Recognition
+
+Tan was named a Fellow of the Association for Computing Machinery in 2015 "for contributions to data provenance and to the foundations of information integration".
+
+References
+
+{{reflist|refs=
+
+}}
+
+External links
+
+Home page
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:American computer scientists
+
+Category:Singaporean computer scientists
+
+Category:Singaporean women scientists
+
+Category:Singaporean women computer scientists
+
+Category:National University of Singapore alumni
+
+Category:University of Pennsylvania alumni
+
+Category:University of California, Santa Cruz faculty
+
+Category:Natural language processing researchers
+
+Category:Data miners

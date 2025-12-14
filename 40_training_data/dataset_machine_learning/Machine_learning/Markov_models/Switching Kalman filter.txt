@@ -1,0 +1,29 @@
+The switching Kalman filtering (SKF) method is a variant of the Kalman filter. In its generalised form, it is often attributed to Kevin P. Murphy, but related switching state-space models have been in use.
+
+Applications
+
+Applications of the switching Kalman filter include: Brain–computer interfaces and neural decoding, real-time decoding for continuous neural-prosthetic control, and sensorimotor learning in humans.
+
+It also has application in econometrics, For example, when an industrial plant has "multiple discrete modes of behaviour, each of which having a linear (Gaussian) dynamics".
+
+Model
+
+There are several variants of SKF discussed in.
+
+The filtering and smoothing procedure for general cases is discussed in.
+
+References
+
+Category:Control theory
+
+Category:Nonlinear filters
+
+Category:Linear filters
+
+Category:Signal estimation
+
+Category:Stochastic differential equations
+
+Category:Robot control
+
+Category:Markov models

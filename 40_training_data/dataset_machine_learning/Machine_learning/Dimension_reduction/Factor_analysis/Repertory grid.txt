@@ -1,0 +1,59 @@
+{{Multiple issues|
+
+}}
+
+The repertory grid is an interviewing technique which uses nonparametric factor analysis to determine an idiographic measure of personality. It was devised by George Kelly in around 1955 and is based on his personal construct theory of personality.
+
+Introduction
+
+The repertory grid is a technique for identifying the ways that a person construes (interprets or gives meaning to) his or her experience. It provides information from which inferences about personality can be made, but it is not a personality test in the conventional sense. It is underpinned by the personal construct theory developed by George Kelly, first published in 1955.
+
+Unlike a conventional rating-scale questionnaire, it is not the investigator but the interviewee who provides the constructs on which a topic is rated. Market researchers, trainers, teachers, guidance counsellors, new product developers, sports scientists, and knowledge capture specialists are among the users who find the technique (originally developed for use in clinical psychology) helpful.
+
+Relationship to other tools
+
+In the book Personal Construct Methodology, researchers Brian R. Gaines and Mildred L.G. Shaw noted that they "have also found concept mapping and semantic network tools to be complementary to repertory grid tools and generally use both in most studies" but that they "see less use of network representations in PCP [personal construct psychology] studies than is appropriate". They encouraged practitioners to use semantic network techniques in addition to the repertory grid.
+
+See also
+
+Graph (abstract data type)
+
+Implicit Relational Assessment Procedure
+
+Knowledge representation and reasoning
+
+Q methodology
+
+Tree (data structure)
+
+Notes
+
+Further reading
+
+External links
+
+Software
+
+OpenRepGrid – An R package for the analysis of repertory grids
+
+Repertory Grid Tool – An open source web tool for repertory grids
+
+rep:grid – repertory grid software, 3D Grid Analysis
+
+WebGrid 5
+
+nextexpertizer – computer supported repertory grid interview and analysis tool
+
+Idiogrid – Idiographic Analysis with Repertory Grids
+
+Gridsuite – Repertory Grid Software
+
+Culturetools – Repertory Grid for Organizational Development and Brands
+
+Category:Constructivism (psychological school)
+
+Category:Factor analysis
+
+Category:Knowledge representation
+
+Category:Psychological testing

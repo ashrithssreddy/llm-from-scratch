@@ -1,0 +1,7 @@
+In probability theory, the spectral expansion solution method is a technique for computing the stationary probability distribution of a continuous-time Markov chain whose state space is a semi-infinite lattice strip. For example, an M/M/c queue where service nodes can breakdown and be repaired has a two-dimensional state space where one dimension has a finite limit and the other is unbounded. The stationary distribution vector is expressed directly (not as a transform) in terms of eigenvalues and eigenvectors of a matrix polynomial.
+
+References
+
+Category:Markov processes
+
+Category:Queueing theory

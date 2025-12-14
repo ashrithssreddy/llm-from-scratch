@@ -1,0 +1,55 @@
+In probability theory, a Markov model is a stochastic model used to model pseudo-randomly changing systems. It is assumed that future states depend only on the current state, not on the events that occurred before it (that is, it assumes the Markov property). Generally, this assumption enables reasoning and computation with the model that would otherwise be intractable. For this reason, in the fields of predictive modelling and probabilistic forecasting, it is desirable for a given model to exhibit the Markov property.
+
+Introduction
+
+Andrey Andreyevich Markov (14 June 1856 – 20 July 1922) was a Russian mathematician best known for his work on stochastic processes. A primary subject of his research later became known as the Markov chain.
+
+There are four common Markov models used in different situations, depending on whether every sequential state is observable or not, and whether the system is to be adjusted on the basis of observations made:
+
+Markov chain
+
+The simplest Markov model is the Markov chain. It models the state of a system with a random variable that changes through time. In this context, the Markov property indicates that the distribution for this variable depends only on the distribution of a previous state. An example use of a Markov chain is Markov chain Monte Carlo, which uses the Markov property to prove that a particular method for performing a random walk will sample from the joint distribution.
+
+Hidden Markov model
+
+A hidden Markov model is a Markov chain for which the state is only partially observable or noisily observable. In other words, observations are related to the state of the system, but they are typically insufficient to precisely determine the state. Several well-known algorithms for hidden Markov models exist. For example, given a sequence of observations, the Viterbi algorithm will compute the most-likely corresponding sequence of states, the forward algorithm will compute the probability of the sequence of observations, and the Baum–Welch algorithm will estimate the starting probabilities, the transition function, and the observation function of a hidden Markov model.
+
+One common use is for speech recognition, where the observed data is the speech audio waveform and the hidden state is the spoken text. In this example, the Viterbi algorithm finds the most likely sequence of spoken words given the speech audio.
+
+Markov decision process
+
+A Markov decision process is a Markov chain in which state transitions depend on the current state and an action vector that is applied to the system. Typically, a Markov decision process is used to compute a policy of actions that will maximize some utility with respect to expected rewards.
+
+Partially observable Markov decision process
+
+A partially observable Markov decision process (POMDP) is a Markov decision process in which the state of the system is only partially observed. POMDPs are known to be NP complete, but recent approximation techniques have made them useful for a variety of applications, such as controlling simple agents or robots.
+
+Markov random field
+
+A Markov random field, or Markov network, may be considered to be a generalization of a Markov chain in multiple dimensions. In a Markov chain, state depends only on the previous state in time, whereas in a Markov random field, each state depends on its neighbors in any of multiple directions. A Markov random field may be visualized as a field or graph of random variables, where the distribution of each random variable depends on the neighboring variables with which it is connected. More specifically, the joint distribution for any random variable in the graph can be computed as the product of the "clique potentials" of all the cliques in the graph that contain that random variable. Modeling a problem as a Markov random field is useful because it implies that the joint distributions at each vertex in the graph may be computed in this manner.
+
+Hierarchical Markov models
+
+Hierarchical Markov models can be applied to categorize human behavior at various levels of abstraction.  For example, a series of simple observations, such as a person's location in a room, can be interpreted to determine more complex information, such as in what task or activity the person is performing. Two kinds of Hierarchical Markov Models are the Hierarchical hidden Markov model and the Abstract Hidden Markov Model. Both have been used for behavior recognition and certain conditional independence properties between different levels of abstraction in the model allow for faster learning and inference.
+
+Tolerant Markov model
+
+A Tolerant Markov model (TMM) is a probabilistic-algorithmic Markov chain model. It assigns the probabilities according to a conditioning context that considers the last symbol, from the sequence to occur, as the most probable instead of the true occurring symbol. A TMM can model three different natures: substitutions, additions or deletions. Successful applications have been efficiently implemented in DNA sequences compression.
+
+Markov-chain forecasting models
+
+Markov-chains have been used as a forecasting methods for several topics, for example price trends, wind power and solar irradiance. The Markov-chain forecasting models utilize a variety of different settings, from discretizing the time-series to hidden Markov-models combined with wavelets and the Markov-chain mixture distribution model (MCM).
+
+See also
+
+Markov chain Monte Carlo
+
+Markov blanket
+
+Andrey Markov
+
+Variable-order Markov model
+
+References
+
+zh-yue:馬可夫鏈

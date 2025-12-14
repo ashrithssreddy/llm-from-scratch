@@ -1,0 +1,27 @@
+Aapo Johannes Hyvärinen (born 1970 in Helsinki) is a Finnish professor of computer science at the University of Helsinki and known for his research in independent component analysis.
+
+Education and career
+
+Hyvärinen was born in Helsinki and studied mathematics at the University of Helsinki and received his Doctor of Technology in information science in 1997 at the Helsinki University of Technology under the supervision of Erkki Oja. His doctoral thesis, titled "Independent component analysis: A neural network approach", introduced the FastICA algorithm. Since then, Hyvärinen has conducted research especially in relation to the independent component analysis, as well as score matching (also known as Hyvärinen scoring rule). In November 2007, he was appointed as a professor at the University of Helsinki. Hyvärinen has been a member of the Finnish Academy of Sciences since 2016. From August 2016 to March 2019, he held a professorship in machine learning at the Gatsby Computational Neuroscience Unit of the University College London.
+
+Bibliography
+
+References
+
+Category:Living people
+
+Category:1970 births
+
+Category:People from Helsinki
+
+Category:Finnish computer scientists
+
+Category:Machine learning researchers
+
+Category:Academics of University College London
+
+Category:University of Helsinki alumni
+
+Category:Aalto University alumni
+
+Category:Academic staff of the University of Helsinki

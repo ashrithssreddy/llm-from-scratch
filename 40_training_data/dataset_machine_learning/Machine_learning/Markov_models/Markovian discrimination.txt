@@ -1,0 +1,25 @@
+Markovian discrimination is a class of spam filtering methods used in CRM114 and other spam filters to filter based on statistical patterns of transition probabilities between words or other lexical tokens in spam messages that would not be captured using simple bag-of-words naive Bayes spam filtering.
+
+Markovian Discrimination vs. Bag-of-Words Discrimination
+
+A bag-of-words model contains only a dictionary of legal words and their relative probabilities in spam and genuine messages. A Markovian model additionally includes the relative transition probabilities between words in spam and in genuine messages, where the relative transition probability is the likelihood that a given word will be written next, based on what the current word is. Put another way, a bag-of-words filter discriminates based on relative probabilities of single words alone regardless of phrase structure, while a Markovian word-based filter discriminates based on relative probabilities of either pairs of words, or, more commonly, short sequences of words. This allows the Markovian filter greater sensitivity to phrase structure.
+
+Neither naive Bayes nor Markovian filters are limited to the word level for tokenizing messages. They may also process letters, partial words, or phrases as tokens. In such cases, specific bag-of-words methods would correspond to general bag-of-tokens methods. Modelers can parameterize Markovian spam filters based on the relative probabilities of any such tokens' transitions appearing in spam or in legitimate messages.
+
+Visible and Hidden Markov Models
+
+There are two primary classes of Markov models, visible Markov models and hidden Markov models, which differ in whether the Markov chain generating token sequences is assumed to have its states fully determined by each generated token (the visible Markov models) or might also have additional state (the hidden Markov models).
+
+With a visible Markov model, each current token is modeled as if it contains the complete information about previous tokens of the message relevant to the probability of future tokens, whereas a hidden Markov model allows for more obscure conditional relationships. Since those more obscure conditional relationships are more typical of natural language messages including both genuine messages and spam, hidden Markov models are generally preferred over visible Markov models for spam filtering. Due to storage constraints, the most commonly employed model is a specific type of hidden Markov model known as a Markov random field, typically with a 'sliding window' or clique size ranging between four and six tokens.
+
+See also
+
+Maximum-entropy Markov model
+
+References
+
+Category:Anti-spam
+
+Category:Markov models
+
+Category:Statistical natural language processing

@@ -1,0 +1,21 @@
+In statistics, m-separation is a measure of disconnectedness in ancestral graphs and a generalization of d-separation for directed acyclic graphs.  It is the opposite of m-connectedness.
+
+Suppose G is an ancestral graph. For given source and target nodes s and t and a set Z of nodes in G\{s, t}, m-connectedness can be defined as follows. Consider a path from s to t. An intermediate node on the  path is called a collider if both edges on the path touching it are directed toward the node. The path is said to m-connect the nodes s and t, given Z, if and only if:
+
+every non-collider on the path is outside Z, and
+
+for each collider c on the path, either c is in Z or there is a directed path from c to an element of Z.
+
+If s and t cannot be m-connected by any path satisfying the above conditions, then the nodes are said to be m-separated.
+
+The definition can be extended to node sets S and T. Specifically, S and T are m-connected if each node in S can be m-connected to any node in T, and are m-separated otherwise.
+
+References
+
+Drton, Mathias and Thomas Richardson. Iterative Conditional Fitting for Gaussian Ancestral Graph Models.  Technical Report 437, December 2003.
+
+See also
+
+d-separation
+
+Category:Graphical models

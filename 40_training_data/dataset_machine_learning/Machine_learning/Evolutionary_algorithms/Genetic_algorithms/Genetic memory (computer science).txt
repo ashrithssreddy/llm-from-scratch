@@ -1,0 +1,5 @@
+In computer science, genetic memory refers to an artificial neural network combination of genetic algorithm and the mathematical model of sparse distributed memory. It can be used to predict weather patterns. Genetic memory and genetic algorithms have also gained an interest in the creation of artificial life.
+
+References
+
+Category:Genetic algorithms

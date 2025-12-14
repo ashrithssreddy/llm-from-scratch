@@ -1,0 +1,101 @@
+{{Infobox scientist
+
+name              = Marcus Hutter
+
+image             = Marcus Hutter.jpg
+
+image_size        =
+
+alt               = Portrait of Marcus Hutter
+
+caption           = Hutter in 2010
+
+birth_date        =
+
+birth_place       =
+
+citizenship       =
+
+nationality       = German
+
+fields            =
+
+workplaces        = DeepMind, Google, IDSIA, ANU, BrainLAB
+
+alma_mater        = Technical University Munich and Ludwig Maximilian University of Munich
+
+thesis_title      = Instantons in QCD
+
+thesis_url        = https://arxiv.org/abs/hep-ph/0107098
+
+thesis_year       = 1996
+
+doctoral_advisor  = Harald Fritzsch
+
+academic_advisors = Wilfried Brauer
+
+doctoral_students = Shane Legg, Jan Leike and Tor Lattimore
+
+notable_students  =
+
+known_for         = Universal artificial intelligenceArtificial general intelligence
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+awards            = IJCAI 2023Alignment 2018AGI 2016UAI 2016IJCAI-JAIR 2014Kurzweil AGI 2009Lindley 2006Best Paper Prizes
+
+signature         =
+
+signature_alt     =
+
+website           =
+
+footnotes         =
+
+spouse            =
+
+}}
+
+Marcus Hutter (born 14 April 1967 in Munich) is a German computer scientist, professor and artificial intelligence researcher. As a senior researcher at DeepMind, he studies the mathematical foundations of artificial general intelligence.
+
+Hutter studied physics and computer science at the Technical University of Munich. In 2000 he joined Jürgen Schmidhuber's group at the Dalle Molle Institute for Artificial Intelligence Research in Manno, Switzerland.
+
+Research
+
+Starting in 2000, Hutter developed and published a mathematical theory of artificial general intelligence, AIXI, based on idealised intelligent agents and reward-motivated reinforcement learning. Also in 2005, Hutter published with his doctoral student Shane Legg an intelligence test for artificial intelligence devices. In 2009, Hutter developed and published the theory of feature reinforcement learning. In 2014, Lattimore and Hutter published an asymptotically optimal extension of the AIXI agent.
+
+An accessible podcast with Lex Fridman about his theory of Universal AI appeared in 2021 and a more technical follow-up with Tim Nguyen in 2024 in the Cartesian Cafe. His new (2024) book also gives a more accessible introduction to Universal AI and progress in the 20 years since his first book, including a chapter on ASI safety, which featured as a keynote at the inaugural workshop on AI safety in Sydney.
+
+Hutter Prize
+
+In 2006, Hutter announced the Hutter Prize for Lossless Compression of Human Knowledge, with a total of €50,000 in prize money. In 2020, Hutter raised the prize money for the Hutter Prize to €500,000.
+
+See also
+
+Solomonoff induction
+
+Published works
+
+{{cite book |author-mask=1 |first=Marcus |last=Hutter |title=Universal Artificial Intelligence: Sequential Decisions Based on Algorithmic Probability |url= |date=2005 |publisher=Springer |isbn=978-3-540-22139-5 |oclc=828802143}}
+
+References
+
+Category:Living people
+
+Category:Machine learning researchers
+
+Category:Artificial intelligence researchers
+
+Category:German computer scientists
+
+Category:Technical University of Munich alumni
+
+Category:Academic staff of the Australian National University
+
+Category:1967 births
+
+Category:DeepMind people
+
+Category:AI safety scientists

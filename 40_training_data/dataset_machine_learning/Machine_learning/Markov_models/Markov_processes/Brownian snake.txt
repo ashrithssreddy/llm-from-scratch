@@ -1,0 +1,77 @@
+A Brownian snake is a stochastic Markov process on the space of stopped paths. It has been extensively studied., and was in particular successfully used as a representation of superprocesses.
+
+Informally, superprocesses are the scaling limit of branching processes, except each particle splits and dies at infinite rates. The Brownian snake is a stochastic object that enables the representation of the genealogy of a superprocess, providing a link between super-Brownian motion and Brownian trees. In other words, even though infinitely many particles are constantly born, we can still keep track of individual trajectories in space, or of when two given present-day particles have split from a common ancestor in the past.
+
+History
+
+The Brownian snake approach was originally developed by Jean-François Le Gall. It has since been applied in fragmentation theory, partial differential equation or planar map
+
+The simplest setting
+
+Let D(\R_+,\R) be the space of càdlàg functions from \R_+ to \R, equipped with a metric d compatible with the Skorokhod topology. We define a stopped path as a couple (w,z) where w\in D(\R_+,\R) and z\in \R_+ are such that w(t)=w(t\wedge z). In other words, w is constant after z.
+
+Now, we consider a jump process (J_s^N)_{s\geq 0} with states \{+1,-1\} and jump rate N, such that J^N_0 = +1 . We set:\hat{\beta}^N_s := \int_0^s J^N_{s'}ds'and then \beta^N_s := |\hat{\beta}_s^N| to be the process reflected on 0.
+
+In words, \beta^N_s increases with speed 1, until J^N_s jumps, in which case it decreases with speed 1, and so on. We define the stopping time \sigma_N to be the N-th hitting time of 0 by \beta^N.
+
+We now define a stochastic process (\eta^N_s,\beta^N_s)_{s\in \R_+} on the set of stopped paths as follows:
+
+\eta_0^N = 0
+
+if J^N_s = +1 for s\in [s_1,s_2] then:
+
+\eta_{s_1}(t)=\eta_{s_2}(t) for t\leq \beta_{s_1}
+
+\Big(\eta_{s_2}(t-\beta_{s_1})-\eta_{s_1}(\beta_{s_1})\Big)_{0\leq t\leq \beta_{s_2}-\beta_{s_1}}  is distributed as a Brownian motion independent from \eta_{s_1}
+
+if J_s^N = -1 for s\in [s_1,s_2] then \eta_{s_1}(t)=\eta_{s_2}(t) for t\leq \beta_{s_2}
+
+See animation for an illustration. We call this process a snake and \beta_s^N the head of the snake. This process is not yet the Brownian snake, but a good introduction. The path is erased when the snake head moves backwards, and is created anew when it moves forward.
+
+Duality with a branching Brownian motion
+
+We now consider a measure-valued branching process (X^N_t)_{t\geq 0} starting with N particles, such that each particle dies with rate N, and upon its death gives birth to two offspring with probability 1/2.
+
+On the other hand, we may define from our process (\eta_s^N,\beta_s^N)_{0\leq s\leq \sigma^N} a measure-valued random process \hat{X}_t as follows: note that for any t\in \R_+, there will almost surely be finitely many times s_1,s_2,\dots,s_n\in [0,\sigma^N] such that \beta_{s_i}=t. We then set for any measurable function f:
+
+\hat{X}^N_t(f):= \sum\limits_{i=1}^nf(\eta^N_s(t))
+
+Then X and \hat{X} are equal in distribution.
+
+The Brownian snake
+
+We take the limit of the previous system as N\to \infty. In this setting, the head of the snake keeps jittering. In fact, the process \beta_s^N tends towards a reflected Brownian motion \beta_s. The definitions are no longer valid for a number of reasons, in particular because \beta_s is almost surely never monotonous on any interval.
+
+However, we may define a probability R_{a,b}((u,y),d(w,z)) on stopped paths such that:
+
+R_{a,b}-almost surely z=b and w(t)=u(t) for 0\leq t\leq a
+
+The law of (w(a+t))_{0\leq t\leq b-a} is the law of a standard Brownian motion.
+
+We may also define \gamma_s^y(da,db) to be the distribution of (\inf_{0\leq r\leq s}\beta_r,\beta_s) if \beta_0=y. Finally, define the transition semigroup on the set of stopped paths:
+
+Q_s((u,y),d(w,z)) = \int \gamma_s^y(da,db)R_{a,b}((u,y),d(w,z))
+
+A stochastic process with this semigroup is called a Brownian snake.
+
+We may again find a duality between this process and a branching process. Here the branching process will be a super-Brownian motion (X_t)_{t\in \R_+} with branching mechanism \phi(z)=z^2, started on a Dirac in 0.
+
+However, unlike the previous case, we must be more careful in the definition of the process \hat{X}. Indeed, for t\in \R_+ we cannot just list the times s_1,s_2,\dots such that \beta_s=t. Instead we use the local time l_s(t) associated with \beta_s: we first define the stopping time \sigma = \inf\{s\geq 0, l_s(0)\geq u\}. Then we define for any measurable f:\hat{X}_t(f):= \int_0^\sigma f(\eta_s(t))dl_s(t) Then, as before, we obtain that X and \hat{X} are equal in distribution. See the animation for the construction of the branching process from the Brownian snake.
+
+Generalisation
+
+The previous example can be generalized in many ways:
+
+We may consider D(\R_+,E) where (E,d) is a complete separable metric space.
+
+Instead of a Brownian motion, the underlying movement of the snake can be very general class of Markov processes (see Superprocess).
+
+Link with genealogy and the Brownian tree
+
+The Brownian snake can be seen as a way to represent the genealogy of a superprocess, the same way a Galton-Watson tree may encode the hidden genealogy of a Galton–Watson process. Indeed, for two points of the Brownian snake, their common ancestor will be the infimum of the snake's head position between them.
+
+If we take a Brownian snake and construct a real tree from it, we obtain a Brownian tree.
+
+References
+
+Category:Markov processes

@@ -1,0 +1,21 @@
+In computer science, Java Grammatical Evolution is an implementation of grammatical evolution in the Java programming language. Two examples include the jGE library and GEVA.
+
+jGE Library
+
+The jGE library was the first published implementation of grammatical evolution in the Java language.  GEVA is another published Java implementation. GEVA was developed at University College Dublin's Natural Computing Research & Applications group under the guidance of one of the inventors of grammatical evolution, Dr. Michael O'Neill.
+
+The jGE library aims to provide an implementation of grammatical evolution as well as an open-source, extendable, and free framework for experimentation in the area of evolutionary computation. It supports the implementation of any evolutionary algorithm through additions and extensions. Its extendable architecture and design aims to facilitate the implementation and incorporation of new experimental implementations inspired by natural evolution and biology.
+
+The jGE library binary file, source code, documentation, and an extension for the NetLogo modeling environment, named jGE NetLogo extension, can be downloaded from the jGE Official Web Site.
+
+License
+
+The jGE library is free software released under the GNU General Public License v3.
+
+References
+
+External links
+
+jGE Official Web Site
+
+Category:Evolutionary algorithms software

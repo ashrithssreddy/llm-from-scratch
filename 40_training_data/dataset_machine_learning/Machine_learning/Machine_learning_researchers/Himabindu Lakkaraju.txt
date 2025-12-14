@@ -1,0 +1,73 @@
+Himabindu "Hima" Lakkaraju is an Indian-American computer scientist who works on machine learning, artificial intelligence, algorithmic bias, and AI accountability. She is currently an assistant professor at the Harvard Business School and is also affiliated with the Department of Computer Science at Harvard University. Lakkaraju is known for her work on trustworthy AI and ethics of artificial intelligence. More broadly, her research focuses on developing machine learning models and algorithms that are interpretable, transparent, fair, and reliable. She also investigates the practical and ethical implications of deploying machine learning models in domains involving high-stakes decisions such as healthcare, criminal justice, business, and education. Lakkaraju was named as one of the world's top Innovators Under 35 by both Vanity Fair and the MIT Technology Review.
+
+She is also known for her efforts to make the field of machine learning more accessible to the general public. Lakkaraju co-founded the Trustworthy ML Initiative (TrustML) to lower entry barriers and promote research on interpretability, fairness, privacy, and robustness of machine learning models. She has also developed several tutorials and a full-fledged course on the topic of explainable machine learning.
+
+Early life and education
+
+Lakkaraju obtained a master's degree in computer science from the Indian Institute of Science in Bangalore. As part of her master's thesis, she worked on probabilistic graphical models and developed semi-supervised topic models which can be used to automatically extract sentiment and concepts from customer reviews. This work was published at the SIAM International Conference on Data Mining, and won the Best Research Paper Award at the conference.
+
+She then spent two years as a research engineer at IBM Research, India in Bangalore before moving to Stanford University to pursue her PhD in computer science. Her doctoral thesis was advised by Jure Leskovec. She also collaborated with Jon Kleinberg, Cynthia Rudin, and Sendhil Mullainathan during her PhD. Her doctoral research focused on developing interpretable and fair machine learning models that can complement human decision making in domains such as healthcare, criminal justice, and education. This work was awarded the Microsoft Research Dissertation Grant and the INFORMS Best Data Mining Paper prize.
+
+During her PhD, Lakkaraju spent a summer working as a research fellow at the Data Science for Social Good program at University of Chicago. As part of this program, she collaborated with Rayid Ghani to develop machine learning models which can identify at-risk students and also prescribe appropriate interventions. This research was leveraged by schools in Montgomery County, Maryland. Lakkaraju also worked as a research intern and visiting researcher at Microsoft Research, Redmond during her PhD. She collaborated with Eric Horvitz at Microsoft Research to develop human-in-the-loop algorithms for identifying blind spots of machine learning models.
+
+Research and career
+
+Lakkaraju's doctoral research focused on developing and evaluating interpretable, transparent, and fair predictive models which can assist human decision makers (e.g., doctors, judges) in domains such as healthcare, criminal justice, and education. and other complex decisions which involve trade-offs. Lakkaraju and her co-authors also highlighted the challenges associated with evaluating predictive models in settings with missing counterfactuals and unmeasured confounders, and developed new computational frameworks for addressing these challenges. She co-authored a study which demonstrated that when machine learning models are used to assist in making bail decisions, they can help reduce crime rates by up to 24.8% without exacerbating racial disparities.
+
+Lakkaraju joined Harvard University as a postdoctoral researcher in 2018, and then became an assistant professor at the Harvard Business School and the Department of Computer Science at Harvard University in 2020. Over the past few years, she has done pioneering work in the area of explainable machine learning. She initiated the study of adaptive and interactive post hoc explanations which can be used to explain the behavior of complex machine learning models in a manner that is tailored to user preferences. She and her collaborators also made one of the first attempts at identifying and formalizing the vulnerabilities of popular post hoc explanation methods. They demonstrated how adversaries can game popular explanation methods, and elicit explanations that hide undesirable biases (e.g., racial or gender biases) of the underlying models. Lakkaraju also co-authored a study which demonstrated that domain experts may not always interpret post hoc explanations correctly, and that adversaries could exploit post hoc explanations to manipulate experts into trusting and deploying biased models.
+
+She also worked on improving the reliability of explanation methods. She and her collaborators developed novel theory and methods to analyze and improve the robustness of different classes of post hoc explanation methods by proposing a unified theoretical framework and establishing the first known connections between explainability and adversarial training. Lakkaraju has also made important research contributions to the field of algorithmic recourse. She and her co-authors developed one of the first methods which allows decision makers to vet predictive models thoroughly to ensure that the recourse provided is meaningful and non-discriminatory.
+
+Trustworthy ML Initiative (TrustML)
+
+In 2020, Lakkaraju co-founded the Trustworthy ML Initiative (TrustML) to democratize and promote research in the field of trustworthy machine learning which broadly encompasses interpretability, fairness, privacy, and robustness of machine learning models.
+
+2019 MIT Technology Review Innovators Under 35
+
+2019 Vanity Fair Future Innovators
+
+2017 Microsoft Research Dissertation Grant
+
+2015 Google Anita Borg Scholarship
+
+2013 Stanford Graduate Fellowship
+
+2011 Best Research Paper Award, SIAM International Conference on Data Mining
+
+External links
+
+A course on "Interpretability and Explainability in Machine Learning", 2019
+
+NeurIPS conference tutorial on "Explaining Machine Learning Predictions: State-of-the-art, Challenges, and Opportunities", 2020
+
+AAAI conference tutorial on "Explaining Machine Learning Predictions: State-of-the-art, Challenges, and Opportunities", 2021
+
+CHIL conference tutorial on "Explainable ML: Understanding the Limits and Pushing the Boundaries", 2021
+
+Selected publications
+
+References
+
+Category:Living people
+
+Category:Year of birth missing (living people)
+
+Category:Indian Institute of Science alumni
+
+Category:Stanford University alumni
+
+Category:University of Chicago faculty
+
+Category:Harvard Business School faculty
+
+Category:American computer scientists
+
+Category:American women scientists
+
+Category:American women academics
+
+Category:21st-century American women
+
+Category:Machine learning researchers
+
+Category:Network scientists

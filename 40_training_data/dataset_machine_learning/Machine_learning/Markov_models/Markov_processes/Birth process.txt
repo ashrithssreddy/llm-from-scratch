@@ -1,0 +1,95 @@
+In probability theory, a birth process or a pure birth process is a special case of a continuous-time Markov process and a generalisation of a Poisson process. It defines a continuous process which takes values in the natural numbers and can only increase by one (a "birth") or remain unchanged. This is a type of birth–death process with no deaths. The rate at which births occur is given by an exponential random variable whose parameter depends only on the current value of the process
+
+Definition
+
+Birth rates definition
+
+A birth process with birth rates (\lambda_n, n\in \mathbb{N}) and initial value k\in \mathbb{N} is a minimal right-continuous process (X_t, t\ge 0) such that X_0=k and the interarrival times T_i = \inf\{t\ge 0: X_t=i+1\} - \inf\{t\ge 0: X_t=i\} are independent exponential random variables with parameter \lambda_i.
+
+Infinitesimal definition
+
+A birth process with rates (\lambda_n, n\in \mathbb{N}) and initial value k\in \mathbb{N} is a process (X_t, t\ge 0) such that:
+
+X_0=k
+
+\forall s,t\ge 0: s
+
+\mathbb{P}(X_{t+h}=X_t+1)=\lambda_{X_t}h+o(h)
+
+\mathbb{P}(X_{t+h}=X_t)=o(h)
+
+\forall s,t\ge 0: s is independent of (X_u, u
+
+(The third and fourth conditions use little o notation.)
+
+These conditions ensure that the process starts at i, is non-decreasing and has independent single births continuously at rate \lambda_n, when the process has value n.
+
+Continuous-time Markov chain definition
+
+A birth process can be defined as a continuous-time Markov process (CTMC) (X_t, t\ge 0) with the non-zero Q-matrix entries q_{n,n+1}=\lambda_n=-q_{n,n} and initial distribution i (the random variable which takes value i with probability 1).
+
+Q=\begin{pmatrix}
+
+-\lambda_0 & \lambda_0 & 0 & 0 & \cdots \\
+
+0 & -\lambda_1 & \lambda_1 & 0 & \cdots \\
+
+0 & 0 & -\lambda_2 & \lambda_2 & \cdots\\
+
+\vdots & \vdots & \vdots & & \vdots \ddots
+
+\end{pmatrix}
+
+Variations
+
+Some authors require that a birth process start from 0 i.e. that X_0=0, while others allow the initial value to be given by a probability distribution on the natural numbers. The state space can include infinity, in the case of an explosive birth process. The birth rates are also called intensities.
+
+Properties
+
+As for CTMCs, a birth process has the Markov property. The CTMC definitions for communicating classes, irreducibility and so on apply to birth processes. By the conditions for recurrence and transience of a birth–death process, any birth process is transient. The transition matrices ((p_{i,j}(t))_{i,j\in\mathbb{N}}), t\ge 0) of a birth process satisfy the Kolmogorov forward and backward equations.
+
+The backwards equations are:
+
+p'_{i,j}(t)=\lambda_i (p_{i+1,j}(t)-p_{i,j}(t)) (for i,j\in\mathbb{N})
+
+The forward equations are:
+
+p'_{i,i}(t)=-\lambda_i p_{i,i}(t) (for i\in\mathbb{N})
+
+p'_{i,j}(t)=\lambda_{j-1}p_{i,j-1}(t)-\lambda_j p_{i,j}(t) (for j\ge i+1)
+
+From the forward equations it follows that:
+
+p_{i,i}(t)=e^{-\lambda_i t} (for i\in\mathbb{N})
+
+p_{i,j}(t)=\lambda_{j-1}e^{-\lambda_j t}\int_0^t e^{\lambda_j s}p_{i,j-1}(s)\, \text{d} s (for j\ge i+1)
+
+Unlike a Poisson process, a birth process may have infinitely many births in a finite amount of time. We define T_\infty=\sup \{T_n:n\in\mathbb{N}\} and say that a birth process explodes if T_\infty is finite. If \sum_{n=0}^\infty \frac{1}{\lambda_n} then the process is explosive with probability 1; otherwise, it is non-explosive with probability 1 ("honest").
+
+Examples
+
+is a special case of a birth process.]]
+
+A Poisson process is a birth process where the birth rates are constant i.e. \lambda_n=\lambda for some \lambda>0.
+
+Simple birth process
+
+A simple birth process is a birth process with rates \lambda_n=n\lambda. It models a population in which each individual gives birth repeatedly and independently at rate \lambda. Udny Yule studied the processes, so they may be known as Yule processes.
+
+The number of births in time t from a simple birth process of population n is given by:
+
+p_{n,n+m}(t)=\binom{n}{m}(\lambda t)^m(1-\lambda t)^{n-m}+o(h)
+
+In exact form, the number of births is the negative binomial distribution with parameters n and e^{-\lambda t}. For the special case n=1, this is the geometric distribution with success rate e^{-\lambda t}.
+
+The expectation of the process grows exponentially; specifically, if X_0=1 then \mathbb{E}(X_t)=e^{\lambda t}.
+
+A simple birth process with immigration is a modification of this process with rates \lambda_n=n\lambda+\nu. This models a population with births by each population member in addition to a constant rate of immigration into the system.
+
+Notes
+
+References
+
+Category:Markov processes
+
+Category:Poisson point processes

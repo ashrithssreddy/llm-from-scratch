@@ -1,0 +1,217 @@
+The generalized distributive law (GDL) is a generalization of the distributive property which gives rise to a general message passing algorithm. It is a synthesis of the work of many authors in the information theory, digital communications, signal processing, statistics, and artificial intelligence communities. The law and algorithm were introduced in a semi-tutorial by Srinivas M. Aji and Robert J. McEliece with the same title.
+
+As it can be observed from the definition, application of distributive law to an arithmetic expression reduces the number of operations in it. In the previous example the total number of operations reduced from three (two multiplications and an addition in  a*b + a*c ) to two (one multiplication and one addition in  a*(b + c) ). Generalization of distributive law leads to a large family of fast algorithms. This includes the FFT and Viterbi algorithm.
+
+This is explained in a more formal way in the example below:
+
+\alpha(a,\, b) \stackrel{\mathrm{def}}{=} \displaystyle\sum \limits_{c,d,e \in A} f(a, \, c, \, b) \, g(a, \, d, \, e)  where f(\cdot) and g(\cdot) are real-valued functions, a,b,c,d,e \in A and |A|=q (say)
+
+Here we are "marginalizing out" the independent variables (c, d, and e) to obtain the result. When we are calculating the computational complexity, we can see that for each q^{2} pairs of (a,b), there are q^{3} terms due to the triplet (c,d,e) which needs to take part in the evaluation of \alpha(a,\, b) with each step having one addition and one multiplication. Therefore, the total number of computations needed is 2\cdot q^2 \cdot q^3 = 2q^5. Hence the asymptotic complexity of the above function is O(n^5).
+
+If we apply the distributive law to the RHS of the equation, we get the following:
+
+\alpha(a, \, b) \stackrel{\mathrm{def}}{=}   \displaystyle\sum\limits_{c \in A} f(a, \, c, \, b ) \cdot \sum _{d,\,e \in A} g(a,\,d,\,e)
+
+This implies that \alpha(a, \, b) can be described as a product \alpha_{1}(a,\, b) \cdot \alpha_{2}(a) where  \alpha_{1}(a,b) \stackrel{\mathrm{def}}{=} \displaystyle\sum\limits_{c \in A} f(a, \, c, \, b ) and \alpha_{2}(a) \stackrel{\mathrm{def}}{=} \displaystyle\sum\limits_{d,\,e \in A} g(a,\, d, \,e )
+
+Now, when we are calculating the computational complexity, we can see that there are q^{3} additions in \alpha_{1}(a,\, b) and \alpha_{2}(a) each and there are q^2 multiplications when we are using the product \alpha_{1}(a,\, b) \cdot \alpha_{2}(a) to evaluate \alpha(a, \, b). Therefore, the total number of computations needed is q^3 + q^3 + q^2 = 2q^3 + q^2. Hence the asymptotic complexity of calculating \alpha(a,b) reduces to O(n^{3}) from O(n^{5}).  This shows by an example that applying distributive law reduces the computational complexity which is one of the good features of a "fast algorithm".
+
+History
+
+Some of the problems that used distributive law to solve can be grouped as follows:
+
+Decoding algorithms: A GDL like algorithm was used by Gallager's for decoding low density parity-check codes. Based on Gallager's work Tanner introduced the Tanner graph and expressed Gallagers work in message passing form. The tanners graph also helped explain the Viterbi algorithm. It is observed by Forney that Viterbi's maximum likelihood decoding of convolutional codes also used algorithms of GDL-like generality.
+
+Forward–backward algorithm: The forward backward algorithm helped as an algorithm for tracking the states in the Markov chain. And this also was used the algorithm of GDL like generality
+
+Artificial intelligence: The notion of junction trees has been used to solve many problems in AI. Also the concept of bucket elimination used many of the concepts.
+
+The MPF problem
+
+MPF or marginalize a product function is a general computational problem which as special case includes many classical problems such as computation of discrete Hadamard transform, maximum likelihood decoding of a linear code over a memory-less channel, and matrix chain multiplication. The power of the GDL lies in the fact that it applies to situations in which additions and multiplications are generalized.
+
+A commutative semiring is a good framework for explaining this behavior. It is defined over a set K with operators "+" and "." where (K,\, +) and (K,\, .) are a commutative monoids and the distributive law holds.
+
+Let p_1, \ldots, p_n be variables such that p_1 \in A_1, \ldots, p_n \in A_{n} where A  is a finite set and |A_i| = q_i. Here i = 1,\ldots, n. If S = \{i_{1}, \ldots, i_{r}\} and S \, \subset \{1,\ldots, n\}, let
+
+A_{S}  = A_{i_1} \times \cdots \times A_{i_r} ,  p_{S} = (p_{i_1},\ldots, p_{i_r}),
+
+q_{S} = |A_{S}|,  \mathbf A  = A_{1} \times \cdots \times A_{n} , and
+
+\mathbf p = \{p_{1}, \ldots, p_{n}\}
+
+Let S = \{S_{j}\}_{j=1}^M  where S_{j} \subset \{1, ...\,,n\}. Suppose a function is defined as \alpha_{i}: A_{S_{i}} \rightarrow R, where R is a commutative semiring. Also,  p_{S_{i}} are named the local domains and \alpha_{i} as the local kernels.
+
+Now the global kernel \beta : \mathbf A \rightarrow R is defined as:  \beta(p_{1}, ...\,, p_{n}) = \prod_{i=1}^M \alpha(p_{S_{i}})
+
+Definition of MPF problem: For one or more indices i = 1, ...\,, M, compute a table of the values of S_{i}-marginalization of the global kernel \beta, which is the function \beta_{i}:A_{S_{i}} \rightarrow R defined as \beta_{i}(p_{S_{i}}) \, = \displaystyle\sum\limits_{p_{S_{i}^c} \in A_{S_{i}^c}} \beta(p)
+
+Here S_{i}^c is the complement of S_{i} with respect to \mathbf \{1,...\,,n\} and the \beta_i(p_{S_i}) is called the i^{th} objective function, or the objective function at S_i. It can observed that the computation of the i^{th} objective function in the obvious way needs Mq_1 q_2 q_3\cdots q_{n} operations. This is because there are q_1 q_2\cdots q_n additions and (M-1)q_1 q_2...q_n multiplications needed in the computation of the i^\text{th} objective function. The GDL algorithm which is explained in the next section can reduce this computational complexity.
+
+The following is an example of the MPF problem.
+
+Let p_{1},\,p_{2},\,p_{3},\,p_{4}, and p_{5} be variables such that p_{1} \in A_{1}, p_{2} \in A_{2}, p_{3} \in A_{3}, p_{4} \in A_{4},  and p_{5} \in A_{5}. Here M=4 and S = \{\{1,2,5\},\{2,4\},\{1,4\}, \{2\}\}. The given functions using these variables are f(p_{1},p_{2},p_{5}) and g(p_{2},p_{4}) and we need to calculate \alpha(p_{1}, \, p_{4}) and \beta(p_{2}) defined as:
+
+\alpha(p_1, \, p_4) =  \displaystyle\sum\limits_{p_2 \in A_2,\, p_3 \in A_3, \, p_5 \in A_5 } f(p_1,\, p_2,\, p_5 ) \cdot g(p_2, \, p_4)
+
+\beta(p_{2}) = \sum\limits_{p_1 \in A_1,\, p_3 \in A_3,\, p_4 \in A_4, \, p_5 \in A_5 } f(p_1, \, p_2, \, p_5) \cdot g(p_2, \, p_4)
+
+Here local domains and local kernels are defined as follows:
+
+where \alpha(p_{1}, p_{4}) is the 3^{rd} objective function and \beta(p_{2}) is the 4^{th} objective function.
+
+Consider another example where p_{1},p_{2},p_{3},p_{4},r_{1},r_{2},r_{3},r_{4} \in \{0,1\} and f(r_{1},r_{2},r_{3},r_{4}) is a real valued function. Now, we shall consider the MPF problem where the commutative semiring is defined as the set of real numbers with ordinary addition and multiplication and the local domains and local kernels are defined as follows:
+
+Now since the global kernel is defined as the product of the local kernels, it is
+
+F(p_1, p_2, p_3,p_4, r_1, r_2, r_3,r_4) = f(p_1,p_2,p_3,p_4)\cdot(-1)^{p_1r_1 + p_2r_2 + p_3r_3 + p_4r_4}
+
+and the objective function at the local domain p_1, p_2, p_3,p_4 is
+
+F(p_1, p_2, p_3,p_4) = \displaystyle\sum \limits_{r_1,r_2,r_3,r_4} f(r_1,r_2,r_3,r_4) \cdot(-1)^{p_1r_1 + p_2r_2 + p_3r_3 + p_4r_4}.
+
+This is the Hadamard transform of the function f(\cdot). Hence we can see that the computation of Hadamard transform is a special case of the MPF problem. More examples can be demonstrated to prove that the MPF problem forms special cases of many classical problem as explained above whose details can be found at
+
+Scheduling theorem
+
+Let 'T' be a junction tree with vertex set 'V' and edge set 'E'. In this algorithm, the messages are sent in both the direction on any edge, so we can say/regard the edge set E as set of ordered pairs of vertices. For example, from Figure 1 'E' can be defined as follows
+
+E = \{(1,2),(2,1),(1,3),(3,1),(4,2),(2,4),(5,2),(2,5),(6,3),(3,6),(7,3),(3,7),(8,4),(4,8),(9,4),(4,9)\}
+
+NOTE:E above gives you all the possible directions that a message can travel in the tree.
+
+The schedule for the GDL is defined as a finite sequence of subsets ofE. Which is generally represented by
+
+\mathcal{E} ={E_{1},E_{2},E_{3},\ldots, E_{N}}, Where E_{N} is the set of messages updated during the N^{th} round of running the algorithm.
+
+Having defined/seen some notations, we will see want the theorem says, When we are given a schedule \mathcal{E} =\{ E_1,E_2,E_3,\ldots, E_N\}, the corresponding message trellis as a finite directed graph with Vertex set of  V \times \{0,1,2,3,\ldots, N\}, in which a typical element is denoted by v_{i}(t) for  t \in \{0,1,2,3,\ldots,N\}, Then after completion of the message passing, state at  vertex v_{j} will be the j^\text{th} objective defined in
+
+\sigma(p_{S_i}) = \alpha_i(p_{S_i}) \prod_{v_k \operatorname{adj} v_i}  \mu_{k,j}(p_{S_{k}\cap S_{i}})
+
+and iff there is a path from v_i(0) to v_j(N)
+
+Computational complexity
+
+Here we try to explain the complexity of solving the MPF problem in terms of the number of mathematical operations required for the calculation. i.e. We compare the number of operations required when calculated using the normal method (Here by normal method we mean by methods that do not use message passing or junction trees in short methods that do not use the concepts of GDL) and the number of operations using the generalized distributive law.
+
+Example: Consider the simplest case where we need to compute the following expression ab+ac.
+
+To evaluate this expression naively requires two multiplications and one addition. The expression when expressed using the distributive law can be written as a(b+c) a simple optimization that reduces the number of operations to one addition and one multiplication.
+
+Similar to the above explained example we will be expressing the equations in different forms to perform as few operation as possible by applying the GDL.
+
+As explained in the previous sections we solve the problem by using the concept of the junction trees. The optimization obtained by the use of these trees is comparable to the optimization obtained by solving a semi group problem on trees. For example, to find the minimum of a group of numbers we can observe that if we have a tree and the elements are all at the bottom of the tree, then we can compare the minimum of two items in parallel and the resultant minimum will be written to the parent. When this process is propagated up the tree the minimum of the group of elements will be found at the root.
+
+The following is the complexity for solving the junction tree using message passing
+
+We rewrite the formula used earlier to the following form. This is the eqn for a message to be sent from vertex v to w
+
+\mu _{v,w} (p_{v \cap w}) =  \sum _{p _{v \setminus w} \in A _{S(v) \setminus S(w)}} \alpha _{v} (p _{v})  \prod _{u adj v _{u \neq v}} \mu _{u,v} (p _{u \cap v})            ----message equation
+
+Similarly we rewrite the equation for calculating the state of vertex v as follows
+
+\sigma_v(p_v) =  \alpha_v (p_v) \prod_{u \operatorname{adj} v} \mu _{v,w} (p _{v \cap w})
+
+We first will analyze for the single-vertex problem and assume the target vertex is v_0 and hence we have one edge from v to v _{0}.
+
+Suppose we have an edge (v,w) we calculate the message using the message equation. To calculate p _{u \cap v} requires
+
+q _{v \setminus w} -1
+
+additions and
+
+q _{v \setminus w} (d(v)-1)
+
+multiplications.
+
+(We represent the |A _{S(v) \ S(w)}| as q _{v \setminus w}.)
+
+But there will be many possibilities for x _{v \cap w} hence
+
+q _{v \cap w} \stackrel{\mathrm{def}}{=} | A _{S(v) \cap S(w)}| possibilities for p _{v \cap w}.
+
+Thus the entire message will need
+
+(q _{v \cap w})(q _{v \setminus w} -1)  = q _{v} - q _{v \cap w}
+
+additions and
+
+(q _{v \cap w}) q _{v \setminus w}. (d(v) -1) = (d(v) -1) q _v
+
+multiplications
+
+The total number of arithmetic operations required to send a message towards v_0 along the edges of tree will be
+
+\sum _{ v \neq v0} (q_v - q _{v \cap w})
+
+additions and
+
+\sum _{ v \neq v0}  (d(v) - 1) q_v
+
+multiplications.
+
+Once all the messages have been transmitted the algorithm terminates with the computation of state at v_0. The state computation requires d(v_0) q _0 more multiplications.
+
+Thus number of calculations required to calculate the state is given as below
+
+\sum _{v \neq v _{0}} (q _{v} - q _{v \cap w})
+
+additions and
+
+\sum _{v \neq v _{0}} (d(v) -1) q _{v} + d(v _{0})q _{v _{0}}
+
+multiplications
+
+Thus the grand total of the number of calculations is
+
+\chi (T) = \sum _{v \in V} d(v)q _{v} - \sum _{e \in E} q _{e} ----(1)
+
+where e = (v,w) is an edge and its size is defined by q _{v \cap w}
+
+The formula above gives us the upper bound.
+
+If we define the complexity of the edge e = (v,w) as
+
+\chi (e) = q _{v} + q _{w} - q _{v \cap w}
+
+Therefore, (1) can be written as
+
+\chi(T) = \sum _{e \in E} \chi (e)
+
+We now calculate the edge complexity for the problem defined in Figure 1 as follows
+
+\chi(1,2) = q_2 + q_2 q_3 - q_2
+
+\chi(2,4) = q_3 q_4 + q_2 q_3 - q_3
+
+\chi(2,5) = q_3 + q_2 q_3 - q_3
+
+\chi(4,8) = q_4 + q_3 q_4 - q_4
+
+\chi(4,9) = q_2 q_4 + q_3 q_4 - q_4
+
+\chi(1,3) = q _2 + q_2 q_1 - q_2
+
+\chi(3,7) = q_1 + q_1 q_2 - q_1
+
+\chi(3,6) = q_1 q _4 + q _1 q_2 - q _1
+
+The total complexity will be  3 q _{2}q _{3} + 3q _{3}q _{4}+ 3 q _{1}q _{2}+q _{2}q _{4} + q _{1}q _{4} - q _{1} - q _{3} - q _{4} which is considerably low compared to the direct method. (Here by direct method we mean by methods that do not use message passing. The time taken using the direct method will be the equivalent to calculating message at each node and time to calculate the state of each of the nodes.)
+
+Now we consider the all-vertex problem where the message will have to be sent in both the directions and state must be computed at both the vertexes. This would take  O( \sum _{v} d(v) d(v) q _{v})  but by precomputing we can reduce the number of multiplications to 3(d-2). Here d is the degree of the vertex. Ex: If there is a set (a _{1}, \ldots ,a _{d}) with  d  numbers. It is possible to compute all the d products of d-1 of the  a _{i} with at most 3(d-2) multiplications rather than the obvious  d(d-2) .
+
+We do this by precomputing the quantitiesb_1 = a_1, b_2= b_1 \cdot a_2 = a_1 \cdot a _2, b _{d-1} = b _{d-2} \cdot a_{d-1} = a_1 a_2 \cdots a_{d-1} and c_d = a_d, c_{d-1} = a_{d-1} c_d = a _{d-1} \cdot a_d, \ldots , c_2 = a _2 \cdot c_3 = a _2 a_3 \cdots a_d this takes  2 (d-2) multiplications. Then if  m_j denotes the product of all  a_i except for  a_j we have  m_1 = c_2, m_2 = b_1 \cdot c_3 and so on will need another d-2 multiplications making the total  3 (d-2).
+
+There is not much we can do when it comes to the construction of the junction tree except that we may have many maximal weight spanning tree and we should choose the spanning tree with the least \chi(T) and sometimes this might mean adding a local domain to lower the junction tree complexity.
+
+It may seem that GDL is correct only when the local domains can be expressed as a junction tree. But even in cases where there are cycles and a number of iterations the messages will approximately be equal to the objective function. The experiments on Gallager–Tanner–Wiberg algorithm for low density parity-check codes were supportive of this claim.
+
+References
+
+Category:Information theory
+
+Category:Algorithms
+
+Category:Graphical models
+
+Category:Digital signal processing

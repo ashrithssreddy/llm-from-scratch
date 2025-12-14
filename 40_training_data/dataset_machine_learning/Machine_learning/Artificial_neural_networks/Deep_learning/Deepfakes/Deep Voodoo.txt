@@ -1,0 +1,153 @@
+{{Infobox company
+
+name                = Deep Voodoo
+
+logo                = Deep Voodoo Logo.jpg
+
+logo_class          =
+
+logo_size           =
+
+logo_upright        =
+
+logo_alt            =
+
+logo_caption        = Shortened logo of Deep Voodoo
+
+image               = File:Trey Parker and Matt Stone by Gage Skidmore.jpg
+
+image_size          =
+
+image_upright       =
+
+image_alt           = Two adult males sitting in chairs with their left legs crossed.
+
+image_caption       = South Park creators Trey Parker (left) and Matt Stone, the founders of Deep Voodoo.
+
+trade_name          =
+
+native_name         =
+
+native_name_lang    =
+
+romanized_name      =
+
+former_name         =
+
+type                = Private
+
+traded_as           =
+
+ISIN                =
+
+industry            = Artificial intelligence
+
+genre               =
+
+predecessor         =
+
+incorporated        =
+
+founded             =
+
+founders             = Matt StoneTrey Parker
+
+defunct             =
+
+fate                =
+
+successor           =
+
+hq_location         =
+
+hq_location_city    =
+
+hq_location_country =
+
+num_locations       =
+
+num_locations_year  =
+
+area_served         =
+
+key_people          =
+
+products            = Deepfakes
+
+production          =
+
+production_year     =
+
+brands              =
+
+services            = Visual effects
+
+revenue             =
+
+revenue_year        =
+
+operating_income    =
+
+income_year         =
+
+net_income          =
+
+net_income_year     =
+
+aum                 =
+
+assets              =
+
+assets_year         =
+
+equity              =
+
+equity_year         =
+
+owner               =
+
+members             =
+
+members_year        =
+
+num_employees       =
+
+num_employees_year  =
+
+parent              =
+
+divisions           =
+
+subsid              =
+
+module              =
+
+ratio               =
+
+rating              =
+
+website             =
+
+footnotes           =
+
+embed               =
+
+}}
+
+Deep Voodoo is an artificial intelligence-based visual effects studio created by Matt Stone and Trey Parker in 2020. The studio utilizes deepfake technology to create hyperrealistic effects for entertainment purposes.
+
+History
+
+Deep Voodoo was established in early 2020 after being spun out of Matt Stone and Trey Parker's independent entertainment company, Park County, to develop deepfake technology. The team, originally composed of more than twenty computer graphics artists, had been assembled for a film project that was interrupted due to the COVID-19 pandemic. Following this, the studio pivoted to creating deepfake tools for the entertainment industry.
+
+Projects
+
+Deep Voodoo's first project was titled Sassy Justice, a parody of television investigative reports, which was done in collaboration with actor Peter Serafinowicz. The series was released in 2020 and was described by Trey Parker as "probably the single most expensive YouTube video ever made".
+
+In 2022, Deep Voodoo made deepfakes for Kendrick Lamar, putting the faces of O.J. Simpson, Jussie Smollett, Nipsey Hussle, Kobe Bryant, and Kanye West on Kendrick for the music video for "The Heart Part 5". It also helped to create a music video for Billy Joel's song, "Turn the Lights Back On", where the artist is depicted playing the song at different at multiple ages in his life. Deep Voodoo's de-aging technology was used on the Apple TV series, Before.
+
+References
+
+Category:Deepfakes
+
+Category:Works by Trey Parker and Matt Stone

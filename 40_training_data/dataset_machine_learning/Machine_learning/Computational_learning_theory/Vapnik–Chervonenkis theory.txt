@@ -1,0 +1,99 @@
+Vapnik–Chervonenkis theory (also known as VC theory) was developed during 1960–1990 by Vladimir Vapnik and Alexey Chervonenkis. The theory is a form of computational learning theory, which attempts to explain the learning process from a statistical point of view.
+
+Introduction
+
+VC theory covers at least four parts (as explained in The Nature of Statistical Learning Theory
+
+{{math proof|proof=
+
+Introduce the "ghost sample" Y_1,\ldots, Y_n to be independent copies of X_1,\ldots, X_n. For fixed values of X_1,\ldots, X_n one has:
+
+\|\mathbb{P}_n - P\|_{\mathcal{F}} = \sup_{f \in \mathcal{F}} \dfrac{1}{n} \left|\sum_{i = 1}^n f(X_i) - \mathbb{E} f(Y_i) \right| \leq \mathbb{E}_{Y} \sup_{f \in \mathcal{F}} \dfrac{1}{n} \left|\sum_{i = 1}^n f(X_i) - f(Y_i) \right|
+
+Therefore, by Jensen's inequality:
+
+\Phi(\|\mathbb{P}_n - P\|_{\mathcal{F}}) \leq \mathbb{E}_{Y} \Phi \left(\left\| \dfrac{1}{n}\sum_{i = 1}^n f(X_i) - f(Y_i) \right\|_{\mathcal{F}} \right)
+
+Taking expectation with respect to X gives:
+
+\mathbb{E}\Phi(\|\mathbb{P}_n - P\|_{\mathcal{F}}) \leq \mathbb{E}_{X}  \mathbb{E}_{Y} \Phi \left(\left\| \dfrac{1}{n}\sum_{i = 1}^n f(X_i) - f(Y_i) \right\|_{\mathcal{F}}\right)
+
+Note that adding a minus sign in front of a term f(X_i) - f(Y_i) doesn't change the RHS, because it's a symmetric function of X and Y. Therefore, the RHS remains the same under "sign perturbation":
+
+\mathbb{E} \Phi \left( \left\| \dfrac{1}{n}\sum_{i = 1}^n e_i \left(f(X_i) - f(Y_i)\right) \right\|_{\mathcal{F}} \right)
+
+for any (e_1,e_2,\ldots,e_n) \in \{-1,1\}^n. Therefore:
+
+\mathbb{E}\Phi(\|\mathbb{P}_n - P\|_{\mathcal{F}}) \leq \mathbb{E}_{\varepsilon} \mathbb{E} \Phi \left(\left\| \dfrac{1}{n}\sum_{i=1}^n \varepsilon_i \left(f(X_i) - f(Y_i)\right) \right\|_{\mathcal{F}} \right)
+
+Finally using first triangle inequality and then convexity of \Phi gives:
+
+\mathbb{E}\Phi(\|\mathbb{P}_n - P\|_{\mathcal{F}}) \leq \dfrac{1}{2}\mathbb{E}_{\varepsilon} \mathbb{E} \Phi \left( 2 \left \| \dfrac{1}{n}\sum_{i = 1}^n \varepsilon_i f(X_i)\right\|_{\mathcal{F}} \right) + \dfrac{1}{2}\mathbb{E}_{\varepsilon}  \mathbb{E} \Phi \left( 2 \left\| \dfrac{1}{n}\sum_{i = 1}^n \varepsilon_i f(Y_i)\right\|_{\mathcal{F}} \right)
+
+Where the last two expressions on the RHS are the same, which concludes the proof.
+
+}}
+
+A typical way of proving empirical CLTs, first uses symmetrization to pass the empirical process to \mathbb{P}_n^0 and then argue conditionally on the data, using the fact that Rademacher processes are simple processes with nice properties.
+
+VC Connection
+
+It turns out that there is a fascinating connection between certain combinatorial properties of the set \mathcal{F} and the entropy numbers. Uniform  covering numbers can be controlled by the notion of Vapnik–Chervonenkis classes of sets – or shortly VC sets.
+
+Consider a collection  \mathcal{C} of subsets of the sample space \mathcal{X}. \mathcal{C} is said to pick out a certain subset W of the finite set S = \{x_1,\ldots, x_n\} \subset \mathcal{X} if W = S \cap C for some C \in \mathcal{C}. \mathcal{C} is said to shatter  if it picks out each of its  subsets. The VC-index (similar to VC dimension + 1 for an appropriately chosen classifier set) V(\mathcal{C}) of \mathcal{C} is the smallest  for which no set of size  is shattered by \mathcal{C}.
+
+Sauer's lemma then states that the number \Delta_n(\mathcal{C}, x_1, \ldots, x_n) of subsets picked out by a VC-class \mathcal{C} satisfies:
+
+\max_{x_1,\ldots, x_n} \Delta_n(\mathcal{C}, x_1, \ldots, x_n) \leq \sum_{j = 0}^{V(\mathcal{C}) - 1} {n \choose j} \leq \left( \frac{n e}{V(\mathcal{C}) - 1}\right)^{V(\mathcal{C}) - 1}
+
+Which is a polynomial number O(n^{V(\mathcal{C}) - 1}) of subsets rather than an exponential number. Intuitively this means that a finite VC-index implies that \mathcal{C} has an apparent simplistic structure.
+
+A similar bound can be shown (with a different constant, same rate) for the so-called VC subgraph classes. For a function f : \mathcal{X} \to \mathbf{R} the subgraph is a subset of \mathcal{X} \times \mathbf{R} such that: \{(x,t): t . A collection of \mathcal{F} is called a VC subgraph class if all subgraphs form a VC-class.
+
+Consider a set of indicator functions \mathcal{I}_{\mathcal{C}} = \{1_C: C \in \mathcal{C} \} in L_1(Q) for discrete empirical type of measure  (or equivalently for any probability measure ). It can then be shown that quite remarkably, for r \geq 1:
+
+N(\varepsilon, \mathcal{I}_{\mathcal{C}}, L_r(Q)) \leq KV(\mathcal{C}) (4e)^{V(\mathcal{C})} \varepsilon^{-r (V(\mathcal{C}) - 1)}
+
+Further consider the symmetric convex hull of a set \mathcal{F}: \operatorname{sconv}\mathcal{F} being the collection of functions of the form \sum_{i =1}^m \alpha_i f_i with \sum_{i =1}^m |\alpha_i| \leq 1. Then if
+
+N \left (\varepsilon\|F\|_{Q,2}, \mathcal{F}, L_2(Q) \right) \leq C \varepsilon^{-V}
+
+the following is valid for the convex hull of \mathcal{F}:
+
+\log N \left (\varepsilon\|F\|_{Q,2}, \operatorname{sconv}\mathcal{F}, L_2(Q) \right ) \leq K \varepsilon^{-\frac{2V}{V + 2}}
+
+The important consequence of this fact is that
+
+\frac{2V}{V + 2}
+
+which is just enough so that the entropy integral is going to converge, and therefore the class \operatorname{sconv}\mathcal{F} is going to be -Donsker.
+
+Finally an example of a VC-subgraph class is considered. Any finite-dimensional vector space \mathcal{F} of measurable functions f:\mathcal{X} \to \mathbf{R} is VC-subgraph of index smaller than or equal to \dim(\mathcal{F}) + 2.
+
+Proof: Take n = \dim(\mathcal{F}) + 2  points (x_1, t_1), \ldots, (x_n, t_n). The vectors:
+
+(f(x_1), \ldots, f(x_n)) - (t_1, \ldots, t_n)
+
+are in a  dimensional subspace of . Take , a vector that is orthogonal to this subspace. Therefore:
+
+\sum_{a_i > 0} a_i (f(x_i) - t_i) = \sum_{a_i
+
+Consider the set S = \{(x_i, t_i): a_i > 0\}. This set cannot be picked out since if there is some f such that S = \{(x_i,t_i): f(x_i) > t_i\} that would imply that the LHS is strictly positive but the RHS is non-positive.
+
+There are generalizations of the notion VC subgraph class, e.g. there is the notion of pseudo-dimension.
+
+}}
+
+See references in articles: Richard M. Dudley, empirical processes, Shattered set.
+
+This is a translation by B. Seckler, of the 1968 note.
+
+Reprinted in
+
+They obtained results in a draft form in July 1966 and announced in 1968 in their note
+
+The paper was first published properly in Russian as
+
+Category:Computational learning theory
+
+Category:Empirical process

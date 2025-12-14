@@ -1,0 +1,49 @@
+of breast cancer microarray data: a) Configuration of nodes and 2D Principal Surface in the 3D PCA linear manifold. The dataset is curved and can not be mapped adequately on a 2D principal plane; b) The distribution in the internal 2D non-linear principal surface coordinates (ELMap2D) together with an estimation of the density of points; c) The same as b), but for the linear 2D PCA manifold (PCA2D). The “basal” breast cancer subtype is visualized more adequately with ELMap2D and some features of the distribution become better resolved in comparison to PCA2D. Principal manifolds are produced by the elastic maps algorithm. Data are available for public competition. Software is available for free non-commercial use.]]
+
+Elastic maps provide a tool for nonlinear dimensionality reduction. By their construction, they are a system of elastic springs  embedded in the data
+
+space.
+
+For example, on the 2D rectangular grid the elastic edges are just vertical and horizontal edges (pairs of closest vertices) and the bending ribs are the vertical or horizontal triplets of consecutive (closest) vertices.
+
+The total energy of the elastic map is thus U=D+U_E+U_G.
+
+The position of the nodes \{{\bf w}_j\} is determined by the mechanical equilibrium of the elastic map, i.e. its location is such that it minimizes the total energy U.
+
+Expectation-maximization algorithm
+
+For a given splitting of dataset  {\mathcal S} in classes K_j, minimization of the quadratic functional U is a linear problem with the sparse matrix of coefficients. Therefore, similar to principal component analysis or k-means, a splitting method is used:
+
+For given \{{\bf w}_j\} find \{K_j\};
+
+For given \{K_j\} minimize U and find \{{\bf w}_j\};
+
+If no change, terminate.
+
+This expectation-maximization algorithm guarantees a local minimum of U. For improving the approximation various additional methods are proposed. For example, the softening strategy is used. This strategy
+
+starts with a rigid grids (small length, small bending and large elasticity modules
+
+\lambda  and \mu  coefficients) and finishes with soft grids (small \lambda  and \mu ). The training goes in several epochs, each epoch with its own grid rigidness. Another adaptive strategy is growing net: one starts from a small number of nodes and gradually adds new nodes. Each epoch goes with its own number of nodes.
+
+Applications
+
+171 countries in 4-dimensional space formed by the values of 4 indicators: gross product per capita, life expectancy, infant mortality, tuberculosis incidence. Different forms and colors correspond to various geographical locations and years. Red bold line represents the principal curve, approximating the dataset.]]
+
+Most important applications of the method and free software for exploratory data analysis and visualisation of multidimensional data, for data visualisation in economics, social and political sciences, as an auxiliary tool for data mapping in geographic informational systems and for visualisation of data of various nature.
+
+The method is applied in quantitative biology for reconstructing the curved surface of a tree leaf from a stack of light microscopy images. This reconstruction is used for quantifying the geodesic distances between trichomes and their patterning, which is a marker of the capability of a plant to resist to pathogenes.
+
+Recently, the method is adapted as a support tool in the decision process underlying the selection, optimization, and management of financial portfolios.
+
+The method of elastic maps has been systematically tested and compared with several machine learning methods on the applied problem of identification of the flow regime of a gas-liquid flow in a pipe. There are various regimes: Single phase water or air flow, Bubbly flow, Bubbly-slug flow, Slug flow, Slug-churn flow, Churn flow, Churn-annular flow, and Annular flow. The simplest and most common method used to identify the flow regime is visual observation. This approach is, however, subjective and unsuitable for relatively high gas and liquid flow rates. Therefore, the machine learning methods are proposed by many authors. The methods are applied to differential pressure data collected during a calibration process. The method of elastic maps provided a 2D map, where the area of each regime is represented. The comparison with some other machine learning methods is presented in Table 1 for various pipe diameters and pressure.
+
+Here, ANN stands for the backpropagation artificial neural networks, SVM stands for the support vector machine, SOM for the self-organizing maps. The hybrid technology was developed for engineering applications. In this technology, elastic maps are used in combination with Principal Component Analysis (PCA), Independent Component Analysis (ICA) and backpropagation ANN.
+
+The textbook provides a systematic comparison of elastic maps and self-organizing maps (SOMs) in applications to economic and financial decision-making.
+
+References
+
+Category:Data mining
+
+Category:Dimension reduction

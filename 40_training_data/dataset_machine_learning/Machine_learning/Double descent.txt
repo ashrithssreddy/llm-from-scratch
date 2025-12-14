@@ -1,0 +1,37 @@
+as the ratio of parameters to data points increases, the test error first falls, then rises, then falls again. The vertical line marks the "interpolation threshold" boundary between the underparametrized region (more data points than parameters) and the overparameterized region (more parameters than data points).]]
+
+Double descent in statistics and machine learning is the phenomenon where a model's error rate on the test set initially decreases with the number of parameters, then peaks, then decreases again. The increase usually occurs near the interpolation threshold, where the number of parameters is the same as the number of training data points. This phenomenon has been considered surprising, as it contradicts assumptions about overfitting in classical machine learning.
+
+History
+
+Early observations of what would later be called double descent in specific models date back to 1989.
+
+The term "double descent" was coined by Belkin et. al. in 2019, The latter development was prompted by a perceived contradiction between the conventional wisdom that too many parameters in the model result in a significant overfitting error (an extrapolation of the bias–variance tradeoff), and the empirical observations in the 2010s that some modern machine learning techniques tend to perform better with larger models.
+
+Theoretical models
+
+Double descent occurs in linear regression with isotropic Gaussian covariates and isotropic Gaussian noise.
+
+A model of double descent at the thermodynamic limit has been analyzed using the replica trick, and the result has been confirmed numerically.
+
+A number of works have suggested that double descent can be explained using the concept of effective dimension: While a network may have a large number of parameters, in practice only a subset of those parameters are relevant for generalization performance, as measured by the local Hessian curvature. This explanation is formalized through PAC-Bayes compression-based generalization bounds, which show that less complex models are expected to generalize better under a Solomonoff prior.
+
+See also
+
+Grokking (machine learning)
+
+References
+
+Further reading
+
+Manuchehr Aminian: "Characterizations of Double Descent", SIAM News, Vol.58, No.10 (Dec.,2025).
+
+External links
+
+Understanding "Deep Double Descent" at evhub.
+
+Category:Model selection
+
+Category:Machine learning
+
+Category:Statistical classification

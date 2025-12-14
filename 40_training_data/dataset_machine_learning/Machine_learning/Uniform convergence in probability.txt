@@ -1,0 +1,69 @@
+Uniform convergence in probability is a form of convergence in probability in statistical asymptotic theory and probability theory. It means that, under certain conditions, the empirical frequencies of all events in a certain event-family converge to their theoretical probabilities.  Uniform convergence in probability has applications to statistics as well as machine learning as part of statistical learning theory.
+
+The law of large numbers says that, for each single event A, its empirical frequency in a sequence of independent trials converges (with high probability) to its theoretical probability. In many application however, the need arises to judge simultaneously the probabilities of events of an entire class S from one and the same sample. Moreover it, is required that the relative frequency of the events converge to the probability uniformly over the entire class of events S
+
+Here "simple" means that the Vapnik–Chervonenkis dimension of the class H is small relative to the size of the sample. In other words, a sufficiently simple collection of functions behaves roughly the same on a small random sample as it does on the distribution as a whole.
+
+The Uniform Convergence Theorem was first proved by Vapnik and Chervonenkis using the concept of growth function.
+
+Uniform convergence theorem
+
+The statement of the uniform convergence theorem is as follows:
+
+If H is a set of \{0,1\}-valued functions defined on a set X and  P is a probability distribution on X then for \varepsilon>0 and m a positive integer, we have:
+
+P^m\\sum_{\sigma\in\Gamma_m} \int_{X^{2m}} 1_R(\sigma(x)) \, dP^{2m}(x) \\[5pt]
+
+= {} & \int_{X^{2m}} \frac 1 \sum_{\sigma\in\Gamma_m} 1_R (\sigma(x)) \, dP^{2m}(x) \\[5pt]
+
+& \text{(because } |\Gamma_{m}| \text{ is finite)} \\[5pt]
+
+= {} & \int_{X^{2m}} \Pr[\sigma(x)\in R] \, dP^{2m}(x) \quad \text{(the expectation)} \\[5pt]
+
+\leq {} & \max_{x\in X^{2m}}(\Pr[\sigma(x)\in R]).
+
+\end{align}
+
+The maximum is guaranteed to exist since there is only a finite set of values that probability under a random permutation can take.
+
+Reduction to a finite class
+
+Lemma: Basing on the previous lemma,
+
+\max_{x\in X^{2m}}(\Pr[\sigma(x)\in R])\leq 4\Pi_H(2m)e^{-\varepsilon^2 m/8} .
+
+Proof:
+
+Let us define x=(x_1,x_2,\ldots,x_{2m}) and t=|H|_x| which is at most \Pi_H(2m). This means there are functions h_1,h_2,\ldots,h_t\in H such that for any h\in H,\exists i between 1 and t with h_i(x_k)=h(x_k) for 1\leq k\leq 2m.
+
+We see that \sigma(x)\in R iff for some h in H satisfies,
+
+\frac{1}{m}|\{1\leq i\leq m:h(x_{\sigma_{i}})=1\}|-\frac{1}{m}|\{m+1\leq i\leq 2m:h(x_{\sigma_{i}})=1\}||\geq\frac{\varepsilon}{2}.
+
+Hence if we define w^{j}_{i}=1 if h_{j}(x_{i})=1 and w^{j}_{i}=0 otherwise.
+
+For 1\leq i\leq m and 1\leq j\leq t, we have that \sigma(x)\in R iff for some j in {1,\ldots,t} satisfies |\frac 1 m \left(\sum_i w^j_{\sigma(i)}-\sum_i w^j_{\sigma(m+i)}\right)|\geq\frac \varepsilon 2 . By union bound we get
+
+\Pr[\sigma(x)\in R]\leq t\cdot \max\left(\Pr[|\frac 1 m \left(\sum_i w^j_{\sigma_i} - \sum_i w^j_{\sigma_{m+i}}\right)| \geq \frac \varepsilon 2]\right)
+
+\leq \Pi_{H}(2m)\cdot \max\left(\Pr\left[ \left| \frac 1 m \left(\sum_i w^j_{\sigma_i}-\sum_i w^j_{\sigma_{m+i}}\right)\right| \geq \frac \varepsilon 2 \right] \right).
+
+Since, the distribution over the permutations \sigma is uniform for each i, so w^j_{\sigma_i}-w^j_{\sigma_{m+i}} equals \pm |w^j_i-w^j_{m+i}|, with equal probability.
+
+Thus,
+
+\Pr\left[\left|\frac 1 m \left(\sum_i \left(w^j_{\sigma_i}-w^j_{\sigma_{m+i}}\right)\right)\right|\geq\frac \varepsilon 2\right] = \Pr\left[ \left| \frac 1 m \left( \sum_i|w^j_i-w^j_{m+i}|\beta_i\right)\right|\geq\frac \varepsilon 2\right],
+
+where the probability on the right is over \beta_{i} and both the possibilities are equally likely. By Hoeffding's inequality, this is at most 2e^{-m\varepsilon^2/8}.
+
+Finally, combining all the three parts of the proof we get the Uniform Convergence Theorem.
+
+References
+
+Category:Combinatorics
+
+Category:Machine learning
+
+Category:Articles containing proofs
+
+Category:Theorems in probability theory

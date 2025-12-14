@@ -1,0 +1,191 @@
+In computational learning theory, induction of regular languages refers to the task of learning a formal description (e.g. grammar) of a regular language from a given set of example strings. Although E. Mark Gold has shown that not every regular language can be learned this way (see language identification in the limit), approaches have been investigated for a variety of subclasses. They are sketched in this article. For learning of more general grammars, see Grammar induction.
+
+Definitions
+
+A regular language is defined as a (finite or infinite) set of strings that can be described by one of the mathematical formalisms called "finite automaton", "regular grammar", or "regular expression", all of which have the same expressive power. Since the latter formalism leads to shortest notations, it shall be introduced and used here. Given a set Σ of symbols (a.k.a. alphabet), a regular expression can be any of
+
+∅ (denoting the empty set of strings),
+
+ε (denoting the singleton set containing just the empty string),
+
+a (where a is any character in Σ; denoting the singleton set just containing the single-character string a),
+
+r&nbsp;+&thinsp;s (where r and s are, in turn, simpler regular expressions; denoting their set's union)
+
+r&nbsp;⋅&thinsp;s (denoting the set of all possible concatenations of strings from rs and ss set),
+
+r&thinsp;+ (denoting the set of n-fold repetitions of strings from r's set, for any n ≥ 1), or
+
+r&thinsp;* (similarly denoting the set of n-fold repetitions, but also including the empty string, seen as 0-fold repetition).
+
+For example, using Σ = {0,1}, the regular expression (0+1+ε)⋅(0+1) denotes the set of all binary numbers with one or two digits (leading zero allowed), while 1⋅(0+1)*⋅0 denotes the (infinite) set of all even binary numbers (no leading zeroes).
+
+Given a set of strings (also called "positive examples"), the task of regular language induction is to come up with a regular expression that denotes a set containing all of them.
+
+As an example, given {1, 10, 100}, a "natural" description could be the regular expression 1⋅0*, corresponding to the informal characterization "a 1 followed by arbitrarily many (maybe even none) 0's".
+
+However, (0+1)* and 1+(1⋅0)+(1⋅0⋅0) is another regular expression, denoting the largest (assuming Σ = {0,1}) and the smallest set containing the given strings, and called the trivial overgeneralization and undergeneralization, respectively.
+
+Some approaches work in an extended setting where also a set of "negative example" strings is given; then, a regular expression is to be found that generates all of the positive, but none of the negative examples.
+
+Lattice of automata
+
+Dupont et al. have shown that the set of all structurally complete finite automata
+
+generating a given input set of example strings forms a lattice, with the trivial undergeneralized and the trivial overgeneralized automaton as bottom and top element, respectively.
+
+Each member of this lattice can be obtained by factoring the undergeneralized automaton by an appropriate equivalence relation.
+
+For the above example string set {1, 10, 100}, the picture shows at its bottom the undergeneralized automaton Aa,b,c,d in , consisting of states , , , and . On the state set {a,b,c,d}, a total of 15 equivalence relations exist, forming a lattice. Mapping each equivalence E to the corresponding quotient automaton language L(Aa,b,c,d / E) obtains the partially ordered set shown in the picture.
+
+Each node's language is denoted by a regular expression. The language may be recognized by quotient automata w.r.t. different equivalence relations, all of which are shown below the node. An arrow between two nodes indicates that the lower node's language is a proper subset of the higher node's.
+
+If both positive and negative example strings are given, Dupont et al. build the lattice from the positive examples, and then investigate the separation border between automata that generate some negative example and such that do not.
+
+Most interesting are those automata immediately below the border.
+
+In the picture, separation borders are shown for the negative example strings 11 (), 1001 (, 101 (), and 0 ().
+
+Coste and Nicolas present an own search method within the lattice, which they relate to Mitchell's version space paradigm.
+
+To find the separation border, they use a graph coloring algorithm on the state inequality relation induced by the negative examples.
+
+Later, they investigate several ordering relations on the set of all possible state fusions.
+
+Kudo and Shimbo use the representation by automaton factorizations to give a unique framework for the following approaches (sketched below):
+
+k-reversible languages and the "tail clustering" follow-up approach,
+
+Successor automata and the predecessor-successor method, and
+
+pumping-based approaches (framework-integration challenged by Luzeaux, however).
+
+Each of these approaches is shown to correspond to a particular kind of equivalence relations used for factorization.
+
+Approaches
+
+k-reversible languages
+
+Angluin considers so-called "k-reversible" regular automata, that is, deterministic automata in which each state can be reached from at most one state by following a transition chain of length k.
+
+Formally, if Σ, Q, and δ denote the input alphabet, the state set, and the transition function of an automaton A, respectively, then A is called k-reversible if: ∀a0, ..., a'k ∈ Σ ∀s1, s2 ∈ Q: δ*(s1, a0...a'k) = δ*(s2, a0...ak) ⇒ s1&thinsp;=&nbsp;s2, where δ* means the homomorphic extension of δ to arbitrary words.
+
+Angluin gives a cubic algorithm for learning of the smallest k-reversible language from a given set of input words; for k = 0, the algorithm has even almost linear complexity.
+
+The required state uniqueness after k&nbsp;+&thinsp;1 given symbols forces unifying automaton states, thus leading to a proper generalization different from the trivial undergeneralized automaton.
+
+This algorithm has been used to learn simple parts of English syntax;
+
+later, an incremental version has been provided.
+
+Another approach based on k-reversible automata is the tail clustering method.
+
+Successor automata
+
+From a given set of input strings, Vernadat and Richetin build a so-called successor automaton, consisting of one state for each distinct character and a transition between each two adjacent characters' states.
+
+For example, the singleton input set {} leads to an automaton corresponding to the regular expression (a+⋅b+)*.
+
+An extension of this approach is the predecessor-successor method which generalizes each character repetition immediately to a Kleene + and then includes for each character the set of its possible predecessors in its state.
+
+Successor automata can learn exactly the class of local languages.
+
+Since each regular language is the homomorphic image of a local language, grammars from the former class can be learned by lifting, if an appropriate (depending on the intended application) homomorphism is provided.
+
+In particular, there is such a homomorphism for the class of languages learnable by the predecessor-successor method.
+
+The learnability of local languages can be reduced to that of k-reversible languages.
+
+Early approaches
+
+Chomsky and Miller (1957)
+
+used the pumping lemma: they guess a part v of an input string uvw and try to build a corresponding cycle into the automaton to be learned; using membership queries they ask, for appropriate k, which of the strings uw, uvvw, uvvvw, ..., uvkw also belongs to the language to be learned, thereby refining the structure of their automaton. In 1959, Solomonoff generalized this approach to context-free languages, which also obey a pumping lemma.
+
+Cover automata
+
+Câmpeanu et al. learn a finite automaton as a compact representation of a large finite language.
+
+Given such a language F, they search a so-called cover automaton A such that its language L(A) covers F in the following sense: , where  is the length of the longest string in F, and  denotes the set of all strings not longer than .
+
+If such a cover automaton exists, F is uniquely determined by A and .
+
+For example, F = {ad, read, reread&thinsp;} has  and a cover automaton corresponding to the regular expression (r⋅e)*⋅a⋅d.
+
+For two strings x and y, Câmpeanu et al. define x ~ y if xz&thinsp;∈&thinsp;F ⇔ yz&thinsp;∈&thinsp;F for all strings z of a length such that both xz and yz are not longer than . Based on this relation, whose lack of transitivity causes considerable technical problems, they give an O(n4) algorithm to construct from F a cover automaton A of minimal state count.
+
+Moreover, for union, intersection, and difference of two finite languages they provide corresponding operations on their cover automata.
+
+Păun et al. improve the time complexity to O(n2).
+
+Residual automata
+
+For a set S of strings and a string u, the Brzozowski derivative u−1S is defined as the set of all rest-strings obtainable from a string in S by cutting off its prefix u (if possible), formally: {{math|1=u−1S = {v ∈ Σ*: uv ∈ S} }}, cf. picture.
+
+Denis et al. define a residual automaton to be a nondeterministic finite automaton A where each state q corresponds to a Brzozowski derivative of its accepted language L(A), formally: ∀q∈Q ∃u∈Σ*: L(A,q) = u−1L(A), where L(A,q) denotes the language accepted from q as start state.
+
+They show that each regular language is generated by a uniquely determined minimal residual automaton. Its states are -indecomposable Brzozowski derivatives, and it may be exponentially smaller than the minimal deterministic automaton.
+
+Moreover, they show that residual automata for regular languages cannot be learned in polynomial time, even assuming optimal sample inputs.
+
+They give a learning algorithm for residual automata and prove that it learns the automaton from its characteristic sample of positive and negative input strings.
+
+Query Learning
+
+Regular languages cannot be learned in polynomial time
+
+using only membership queries or using only equivalence queries.
+
+However, Angluin has shown that regular languages can be learned in polynomial time
+
+using membership queries and equivalence queries, and has provided a learning algorithm
+
+termed L* that does exactly that.
+
+The L* algorithm was later generalised to output an NFA (non-deterministic finite automata) rather than a DFA (deterministic finite automata), via an algorithm termed NL*.
+
+This result was further generalised, and an algorithm that outputs an AFA (alternating finite automata) termed AL* was devised. It is noted that NFA can be exponentially more succinct than DFAs, and that AFAs can be exponentially more succinct than NFAs and doubly-exponentially more succinct than DFAs. The L* algorithm and its generalizations have significant implications in the field of automata theory and formal language learning, as they demonstrate the feasibility of efficiently learning more expressive automata models, such as NFA and AFA, which can represent languages more concisely and capture more complex patterns compared to traditional DFAs.
+
+Reduced regular expressions
+
+Brill defines a reduced regular expression to be any of
+
+a (where a is any character in Σ; denoting the singleton set just containing the single-character string a),
+
+¬a (denoting any other single character in Σ except a),
+
+• (denoting any single character in Σ)
+
+a*, (¬a)*, or •* (denoting arbitrarily many, possibly zero, repetitions of characters from the set of a, ¬a, or •, respectively), or
+
+r&nbsp;⋅&thinsp;s (where r and s are, in turn, simpler reduced regular expressions; denoting the set of all possible concatenations of strings from rs and ss set).
+
+Given an input set of strings, he builds step by step a tree with each branch labelled by a reduced regular expression accepting a prefix of some input strings, and each node labelled with the set of lengths of accepted prefixes.
+
+He aims at learning correction rules for English spelling errors,
+
+rather than at theoretical considerations about learnability of language classes.
+
+Consequently, he uses heuristics to prune the tree-buildup, leading to a considerable improvement in run time.
+
+Applications
+
+Finding common patterns in DNA and RNA structure descriptions (Bioinformatics)
+
+Modelling natural language acquisition by humans
+
+Learning of structural descriptions from structured example documents, in particular Document Type Definitions (DTD) from SGML documents
+
+Learning the structure of music pieces
+
+Obtaining compact representations of finite languages
+
+Generating of context-dependent correction rules for English grammatical errors
+
+Notes
+
+References
+
+Category:Formal languages
+
+Category:Computational learning theory

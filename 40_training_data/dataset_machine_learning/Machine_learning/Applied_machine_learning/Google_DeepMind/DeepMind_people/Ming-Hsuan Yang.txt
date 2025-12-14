@@ -1,0 +1,69 @@
+Ming-Hsuan Yang is a computer scientist, academic, and author. He is a professor at the University of California, Merced, and a research scientist at Google DeepMind.
+
+Yang's work is focused on computer vision, machine learning, artificial intelligence, and robotics. Association for Computing Machinery (ACM), and the Association for the Advancement of Artificial Intelligence (AAAI).
+
+Education and career
+
+Yang received his Ph.D. degree in Computer Science from the University of Illinois at Urbana-Champaign.
+
+Yang worked as a senior research scientist at the Honda Research Institute in Mountain View, California. He previously chaired the IEEE International Conference on Computer Vision (ICCV) and the Asian Conference on Computer Vision (ACCV).
+
+Research
+
+Much of Yang's research has explored intelligent systems such as AI, machine learning, computer vision, and robotics. In a paper published in 2013, Yang assessed online object tracking algorithms through large-scale experiments, identifying methods, benchmarking performance, and highlighting key factors influencing tracking accuracy across different scenarios. He also presented a graph-based manifold ranking approach for saliency detection, integrating foreground and background cues, and benchmark dataset evaluation.
+
+Yang has been named a highly cited researcher from 2018 to 2024.
+
+Awards and honors
+
+1999 – Ray Ozzie Fellowship, The Grainger College of Engineering
+
+2009 – Google Faculty Award, Google
+
+2012 – Faculty Early Career Development (CAREER) Award, NSF
+
+2014 – Distinguished Research Award, UC Merced
+
+2017 – Nvidia Pioneer Research Award
+
+2018 – Best Paper Honorable Mention, IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+
+2018 – Nvidia Pioneer Research Award
+
+2018 – Best Student Paper Honorable Mention, Asian Conference on Computer Vision (ACCV)
+
+2019 – Fellow, IEEE
+
+2024 – Best Paper Award, International Conference on Machine Learning (ICML)
+
+2025 – Fellow, AAAI
+
+Bibliography
+
+Books
+
+Selected articles
+
+References
+
+External links
+
+Category:National Tsing Hua University alumni
+
+Category:University of Texas at Austin alumni
+
+Category:University of Illinois Urbana-Champaign alumni
+
+Category:University of California, Merced faculty
+
+Category:DeepMind people
+
+Category:Fellows of the IEEE
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:2021 fellows of the Association for Computing Machinery
+
+Category:Living people
+
+Category:Year of birth missing (living people)

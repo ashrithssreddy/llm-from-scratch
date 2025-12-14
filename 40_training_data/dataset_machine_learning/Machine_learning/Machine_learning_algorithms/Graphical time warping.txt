@@ -1,0 +1,53 @@
+Graphical time warping (GTW) is a framework for jointly aligning multiple pairs of time series or sequences. GTW considers both the alignment accuracy of each sequence pair and the similarity among pairs. On contrary, alignment with dynamic time warping (DTW) considers the pairs independently and minimizes only the distance between the two sequences in a given pair. Therefore, GTW generalizes DTW and could achieve a better alignment performance when similarity among pairs is expected.
+
+One application of GTW is signal propagation analysis in time-lapse bio-imaging data, where the propagation patterns in adjacent pixels are generally similar. Other applications include signature identification, binocular stereo depth calculation, and liquid chromatography–mass spectrometry (LC-MS) profile alignment in proteomics data analysis. Indeed, as long as the data are structured with inter-dependent time series/sequences, they can be analyzed with GTW.
+
+GTW is able to model constraints or similarities between warping paths by transforming the DTW-equivalent shortest path problem to the maximum flow problem in the dual graph, which can be solved by most max-flow algorithms. However, when the data is large, these algorithms become time-consuming and the memory usage is high. An efficient algorithm, Bidirectional pushing with Linear Component Operations (BILCO), was developed to solve the GTW problem. It could achieve an average 10-fold improvement in both computational and memory usage compared with the state of art generic maximum flow algorithms in GTW applications.
+
+Joint alignment and GTW formulation
+
+Joint alignment
+
+Assume there are N pairs of time series \{(x_n,y_n)|n = 1,2,...,N\}, and each pair {x_n,y_n} has a corresponding warping path P_n. Some pairs of warping paths are known to be similar, and the set of all such pairs is denoted as {(m,n)}. For example, if (m,n) is in this set, warping paths P_m and P_n are similar. To optimize both the similarity between the aligned time series and the warping paths distances, the joint alignment problem is formulated as a minimization problem:
+
+\min_{\{P_n| n = 1,2,...,N\}} \left( \sum_{n=1}^N cost(P_n) + \kappa \sum_{(m,n)\in Neib} dist (P_m,P_n)    \right)
+
+Here cost(P_n) denotes the distance between x_n and y_n after alignment with warping function P_n, dist(P_m,P_n) is the distance between warping paths P_m and P_n defined by the area of the region bounded by P_m and P_n, and \kappa is a hyperparameter balancing the time series alignment cost term and warping function distance term.
+
+Notice that the similarity strength can be application-specific or user-designed. For different related warping paths pair (m,n), we can set different parameters \kappa_(m,n). For simplicity, here we use the unified hyperparameter \kappa.
+
+The above minimization problem is intuitively formulated. However, it is not clear how to efficiently solve it in its original form, and a naïve enumeration of the warping paths leads to an NP-hard problem.
+
+GTW formulation
+
+This minimization problem can be reformulated into a minimum cut problem on a special graph termed GTW graph, where the minimum cut and the warping paths are equivalent. Studying signal propagation may help uncover the function of these cells in both normal and pathological conditions. The propagation information could be derived from the warping paths by aligning pixels’ curves with a reference signal. Due to the low signal-to-noise ratio in bio-imaging data, pairwise alignment methods usually lead to unsatisfactory results. Considering the spatial correlation of the signals, the similarity of warping paths between adjacent pixels can be utilized in GTW to enhance the alignment performance, which may lead to a more accurate calculation of propagation properties.
+
+Depth extraction
+
+In binocular stereo images, alignment technique can be used to extract depth information. The depth could be derived by the disparity of the same row between left image and right image. Since the depth of adjacent rows should be similar, GTW could be utilized to enhance the extraction result.
+
+Signature identification
+
+A signature usually contains multiple feature sequences, such as the x location, the y location, and the pressure. Those feature sequences are correlated, which indicates that when comparing two signatures, the distance measure obtained by pairwise alignment is not optimal. GTW could take the dependency between features into account and provide a better distance measure.
+
+Biological sequence alignment
+
+In a biological sequence data set, it is common that there is some structural information among the sequences. In LC-MS data, the samples of nearby profiles tend to have similar patterns of distortion and GTW is extended to jointly align these profiles. The same technique may also be applied to the joint alignment of other sequences. Structural information between sequences also exists in DNA and amino acids data. For example, the sequences between related species are more similar compared with sequences from more remotely related species. This information could be utilized by GTW.
+
+See also
+
+Dynamic time warping
+
+Elastic matching
+
+Sequence alignment
+
+Multiple sequence alignment
+
+References
+
+Category:Dynamic programming
+
+Category:Machine learning algorithms
+
+Category:Multivariate time series

@@ -1,0 +1,51 @@
+{{Infobox organization
+
+name = Bot Sentinel
+
+formation =
+
+image = Bot Sentinel home page.png
+
+caption = Home page in March 2023
+
+founder = Christopher Bouzy
+
+leader_name =
+
+website =
+
+}}
+
+Bot Sentinel is a Twitter analytics service founded in 2018 by Christopher Bouzy. It tracks disinformation, inauthentic behavior and targeted harassment on Twitter.
+
+History
+
+Bot Sentinel was founded in 2018 by American tech entrepreneur Christopher Bouzy. Its stated goal is to improve Twitter users' experience, and it says that people should be able to engage in "healthy online discourse without inauthentic accounts, toxic trolls, foreign countries, and organized groups manipulating the conversation."
+
+Investigations
+
+Prior to the 2020 United States presidential election, Bouzy said that inauthentic Twitter accounts were promoting false or unverified claims of voter fraud, or advancing then-President Donald Trump's unfounded claims of impropriety in the counting of ballots.
+
+In October 2021, Bot Sentinel released their analysis of more than 114,000 tweets about Prince Harry and Meghan, the Duke and Duchess of Sussex, as a result of which they found 83 accounts with a combined number of 187,631 followers that were possibly responsible for approximately 70 percent of the negative content posted about the couple. The report prompted an investigation by Twitter. The company stated that it found no evidence of "widespread coordination" between the accounts, and said that it had taken action against users who violated Twitter's conduct policy.
+
+A January 2022 Bot Sentinel report said that online hate campaigns targeting Harry and Meghan had become a "cottage industry" for a few online influencers exclusively posting about the couple. The report described it as "a lucrative hate-for-profit enterprise" where "racism and YouTube ad revenue are the primary motivators", and described the conspiracy theories the influencers promoted about Harry and Meghan as being reminiscent of the QAnon conspiracy theory.
+
+Operation
+
+Bot Sentinel relies on machine learning to identify Twitter bots, using millions of tweets from suspended accounts that are categorized as being either bots or not bots. The service is trained to identify what Bouzy calls "problematic accounts". Its algorithm gives Twitter accounts a score between 0% and 100%, which is based on their resemblance to accounts that violate Twitter's rules.
+
+As of October 2022, Bot Sentinel consisted of Bouzy and three programmers and data scientists. Bot Sentinel receives funding through donations on its website, which allows its browser extensions and hate trackers to be used free of charge by the general public. Bot Sentinel is hosted by Ionos.
+
+References
+
+External links
+
+Category:Internet properties established in 2018
+
+Category:Twitter services and applications
+
+Category:Fact-checking websites
+
+Category:Media analysis organizations and websites
+
+Category:Social network analysis software

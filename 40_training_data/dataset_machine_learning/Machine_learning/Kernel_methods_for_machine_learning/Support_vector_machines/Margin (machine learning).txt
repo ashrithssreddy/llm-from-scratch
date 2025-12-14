@@ -1,0 +1,27 @@
+{{multiple issues|
+
+}}
+
+In machine learning, the margin of a single data point is defined to be the distance from the data point to a decision boundary. Note that there are many distances and decision boundaries that may be appropriate for certain datasets and goals. A margin classifier is a classification model that utilizes the margin of each example to learn such classification. There are theoretical justifications (based on the VC dimension) as to why maximizing the margin (under some suitable constraints) may be beneficial for machine learning and statistical inference algorithms.
+
+For a given dataset, there may be many hyperplanes that could classify it. One reasonable choice as the best hyperplane is the one that represents the largest separation, or margin, between the classes. Hence, one should choose the hyperplane such that the distance from it to the nearest data point on each side is maximized. If such a hyperplane exists, it is known as the maximum-margin hyperplane, and the linear classifier it defines is known as a maximum margin classifier (or, equivalently, the perceptron of optimal stability).
+
+Category:Support vector machines
+
+See also
+
+Support vector machine
+
+Statistical classification
+
+VC dimension
+
+Hyperplane
+
+Perceptron
+
+Maximum margin classifier
+
+Kernel method
+
+Decision boundary

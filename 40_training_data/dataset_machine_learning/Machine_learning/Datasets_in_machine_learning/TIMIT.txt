@@ -1,0 +1,41 @@
+TIMIT is a corpus of phonemically and lexically transcribed speech of American English speakers of different sexes and dialects.  Each transcribed element has been delineated in time.
+
+TIMIT was designed to further acoustic-phonetic knowledge and automatic speech recognition systems.  It was commissioned by DARPA and corpus design was a joint effort between the Massachusetts Institute of Technology, SRI International, and Texas Instruments (TI). The speech was recorded at TI, transcribed at MIT, and verified and prepared for publishing by the National Institute of Standards and Technology (NIST). There is also a telephone bandwidth version called NTIMIT (Network TIMIT).
+
+TIMIT and NTIMIT are not freely available — either membership of the Linguistic Data Consortium, or a monetary payment, is required for access to the dataset.
+
+Data
+
+TIMIT contains ~5 hours of speech, of 10 sentences spoken by each of 630 speakers. The sentences were randomly sampled from a corpus of 2342 sentences. The speakers were native speakers of American English, classified under 8 major dialect regions: New England, Northern, North Midland, South Midland, Southern, New York City, Western, Army Brat (moved around). The speakers were 70% male and 30% female.
+
+Recordings were made in a noise-isolated recording booth at Texas Instrument, using a semi-automatic computer system (STEROIDS) to control the presentation of prompts to the speaker and the recording. Two-channel recordings were made using a Sennheiser HMD 414 headset-mounted microphone and a Brüel & Kjær 1/2" far-field pressure microphone (#4165). The speech was digitized at a sample rate of 20&nbsp;kHz then and downsampled to 16&nbsp;kHz. It was published in the year 1988 on CD-ROM and consists of only 10 sentences per speaker. Two 'dialect' sentences were read by each speaker, as well as another 8 sentences selected from a larger set  Each sentence averages 3 seconds long and is spoken by 630 different speakers. It was the first notable attempt in creating and distributing a speech corpus and the overall project has produced costs of 1.5 million US$.
+
+An update was released in October 1990. It included and the acronym TIMIT stands for Texas Instruments/Massachusetts Institute of Technology. The main reason why a corpus of telephone speech was created was to train speech recognition software. In the Blizzard challenge, different software has the obligation to convert audio recordings into textual data and the TIMIT corpus was used as a standardized baseline.
+
+See also
+
+Comparison of datasets in machine learning
+
+References
+
+External links
+
+TIMIT Acoustic-Phonetic Continuous Speech Corpus
+
+Category:Applied linguistics
+
+Category:Computational linguistics
+
+Category:English corpora
+
+Category:Dialectology
+
+Category:Linguistic research
+
+Category:Phonetics
+
+Category:Speech recognition
+
+Category:Speech processing
+
+Category:Datasets in machine learning

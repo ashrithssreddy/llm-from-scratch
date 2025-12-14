@@ -1,0 +1,57 @@
+Hanna Megan Wallach (born 1979) is a computational social scientist and partner research manager at Microsoft Research. Her work makes use of machine learning models to study the dynamics of social processes. Her current research focuses on issues of fairness, accountability, transparency, and ethics as they relate to AI and machine learning.
+
+Early life and education
+
+Wallach graduated with a BA in Computer Science from Newnham College, Cambridge in 2001. Wallach explained that social interactions have several things in common; structure (i.e. who is involved in the interaction), content (the information that is shared during or arises from these interactions) and dynamics (the structure and content can change over time). She worked alongside journalists and computer scientists to better understand how organisations function. In 2007 she joined the University of Massachusetts Amherst, where she was made Assistant Professor in 2010.
+
+At Microsoft Research Wallach investigates fairness and transparency in machine learning. In 2020 she worked with machine learning practitioners from across the tech sector to create an artificial intelligence ethics checklist. The checklist aimed to provide clear guidelines for the ethical development of artificial intelligence systems.
+
+Awards and honours
+
+2001 Science, Engineering & Technology Student of the Year
+
+2002 University of Edinburgh Best MSc Student in Cognitive Science
+
+2014 Glamour magazine 35 Women Under 35 Who Are Changing the Tech Industry
+
+2015 Elected to the International Machine Learning Society's Board of Trustees
+
+2016 AnitaB.org Early Career Award
+
+2018 Program Chair for the Conference on Neural Information Processing Systems
+
+2019 General Chair for the Conference on Neural Information Processing Systems
+
+Selected publications
+
+Personal life
+
+Wallach is a competitive roller derby player. Debian Women Project and GNOME Outreach Program for Women (now Outreachy).
+
+References
+
+Category:1979 births
+
+Category:Alumni of the University of Edinburgh
+
+Category:American computer scientists
+
+Category:American women computer scientists
+
+Category:Living people
+
+Category:Machine learning researchers
+
+Category:Roller derby skaters
+
+Category:University of Massachusetts Amherst faculty
+
+Category:Natural language processing researchers
+
+Category:Data miners
+
+Category:Alumni of Newnham College, Cambridge
+
+Category:21st-century American women academics
+
+Category:21st-century American academics

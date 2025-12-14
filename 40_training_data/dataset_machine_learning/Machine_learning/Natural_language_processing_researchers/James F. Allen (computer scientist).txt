@@ -1,0 +1,131 @@
+{{Infobox scientist
+
+name              = James Frederick Allen
+
+image             =
+
+caption           = James Allen
+
+birth_date        =
+
+birth_place       =
+
+citizenship       =
+
+nationality       =
+
+fields            = Artificial IntelligenceNatural Language Processing & UnderstandingComputational Linguistics
+
+workplaces        = University of RochesterIHMC
+
+alma_mater        = University of Toronto (Ph.D., 1979)
+
+thesis_title      = A plan-based approach to speech act recognition
+
+thesis_url        = http://dl.acm.org/citation.cfm?id=909217
+
+thesis_year       = 1979
+
+doctoral_advisor  =
+
+academic_advisors = C. Raymond Perrault
+
+doctoral_students =
+
+notable_students  = Garrison CottrellHenry KautzDiane Litman
+
+known_for         = TRIPS (An Integrated Intelligent Problem-Solving Assistant)  PLOW (A Collaborative Task Learning Agent)
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+awards            = AAAI Fellow (1990, Founding)
+
+signature         =
+
+footnotes         =
+
+website           =
+
+}}
+
+James Frederick Allen (born 1950) is an American computational linguist recognized for his contributions to temporal logic, in particular Allen's interval algebra. He is interested in knowledge representation, commonsense reasoning, and natural language understanding, believing that "deep language understanding can only currently be achieved by significant hand-engineering of semantically-rich formalisms coupled with statistical preferences". He is the John H. Dessaurer Professor of Computer Science at the University of Rochester.
+
+Biography
+
+Allen received his Ph.D. from the University of Toronto in 1979, under the supervision of C. Raymond Perrault, after which he joined the faculty at Rochester. At Rochester, he was department chair from 1987 to 1990, directed the Cognitive Science Program from 1992 to 1996, and co-directed the Center for the Sciences of Language from 1996 to 1998. Since 2006 he has also been associate director of the Florida Institute for Human and Machine Cognition.
+
+Academic life
+
+TRIPS project
+
+The TRIPS project is a long-term research to build generic technology for dialogue (both spoken and 'chat') systems, which includes natural language processing, collaborative problem solving, and dynamic context-sensitive language modeling. This is contrast with the data driven approaches by machine learning, which requires to collect and annotate corpora, i.e. training data,  firstly.
+
+PLOW agent
+
+PLOW agent is a system that learns executable task models from a single collaborative learning session, which integrates wide AI technologies including deep natural language understanding, knowledge representation and reasoning, dialogue systems, planning/agent-based systems, and machine learning. This paper won the outstanding paper award at AAAI in 2007.
+
+Selected works
+
+Books
+
+Allen is the author of the textbook Natural Language Understanding (Benjamin-Cummings, 1987; 2nd ed., 1995).
+
+He is also the co-author with Henry Kautz, Richard Pelavin, and Josh Tenenberg of Reasoning About Plans (Morgan Kaufmann, 1991).
+
+Articles
+
+2007. PLOW: A Collaborative Task Learning Agent. (with Nathanael Chambers et al) AAAI'07
+
+won the outstanding paper award at AAAI in 2007.
+
+2006. Chester: Towards a Personal Medication Advisor. (with N. Blaylock, et al) Biomedical informatics 39(5)
+
+1998. TRIPS: An Integrated Intelligent Problem-Solving Assistant. (with George Ferguson) AAAI'98
+
+1983. Maintaining Knowledge about Temporal Intervals. CACM 26, 11, 832-843
+
+Awards and honors
+
+In 1991 he was elected as a fellow of the Association for the Advancement of Artificial Intelligence (1990, founding fellow).
+
+In 1992 he became the Dessaurer Professor at Rochester.
+
+References
+
+External links
+
+James F. Allen's Home Page
+
+Google Scholar, h-index is 59.
+
+Category:Florida Institute for Human and Machine Cognition people
+
+Category:Living people
+
+Category:1950 births
+
+Category:American computer scientists
+
+Category:Linguists from the United States
+
+Category:American logicians
+
+Category:American artificial intelligence researchers
+
+Category:Computational linguistics researchers
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:University of Rochester faculty
+
+Category:University of Toronto alumni
+
+Category:Fellows of the Cognitive Science Society
+
+Category:Natural language processing researchers

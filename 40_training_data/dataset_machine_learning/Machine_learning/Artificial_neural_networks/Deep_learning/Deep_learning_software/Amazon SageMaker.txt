@@ -1,0 +1,81 @@
+{{Infobox software
+
+name = Amazon SageMaker AI
+
+developer = Amazon, Amazon Web Services
+
+released =
+
+genre = Software as a service
+
+website =
+
+}}
+
+Amazon SageMaker AI is a cloud-based machine-learning platform that allows the creation, training, and deployment by developers of machine-learning (ML) models on the cloud. The platform was launched in November 2017. In addition, it offers a number of built-in ML algorithms that developers can train on their own data. AWS Batch for offline batch processing, or Amazon Kinesis for real-time processing.
+
+Development interfaces
+
+A number of interfaces are available for developers to interact with SageMaker. First, there is a web API that remotely controls a SageMaker server instance. While the web API is agnostic to the programming language used by the developer, Amazon provides SageMaker API bindings for a number of languages, including Python, JavaScript, Ruby, Java, and Go. In addition, SageMaker provides managed Jupyter Notebook instances for interactively programming SageMaker and other applications.
+
+History and features
+
+2017-11-29: SageMaker is launched at the AWS re:Invent conference.
+
+2018-02-27: Managed TensorFlow and MXNet deep neural network training and inference are now supported within SageMaker.
+
+2018-02-28: SageMaker automatically scales model inference to multiple server instances.
+
+2018-07-13: Support is added for recurrent neural network training, word2vec training, multi-class linear learner training, and distributed deep neural network training in Chainer with Layer-wise Adaptive Rate Scaling (LARS).
+
+2018-07-17: AWS Batch Transform enables high-throughput non-real-time machine learning inference in SageMaker.
+
+2018-11-08: Support for training and inference of Object2Vec word embeddings.
+
+2018-11-27: SageMaker Ground Truth "makes it much easier for developers to label their data using human annotators through Mechanical Turk, third-party vendors, or their own employees."
+
+2018-11-28: SageMaker Reinforcement Learning (RL) "enables developers and data scientists to quickly and easily develop reinforcement learning models at scale."
+
+2019-01-27: SageMaker Neo is released as open-source software.
+
+Notable Customers
+
+NASCAR is using SageMaker to train deep neural networks on 70 years of video data.
+
+Carsales.com uses SageMaker to train and deploy machine learning models to analyze and approve automotive classified ad listings.
+
+Avis Budget Group and Slalom Consulting are using SageMaker to develop "a practical on-site solution that could address the over and under utilization of cars in real-time using an optimization engine built in Amazon SageMaker."
+
+Volkswagen Group uses SageMaker to develop and deploy machine learning in its manufacturing plants.
+
+Peak and Footasylum use SageMaker in a recommendation engine for footwear.
+
+Awards
+
+In 2019, CIOL named SageMaker one of the "5 Best Machine Learning Platforms For Developers," alongside IBM Watson, Microsoft Azure Machine Learning, Apache PredictionIO, and AiONE.
+
+See also
+
+Amazon Web Services
+
+Amazon Lex
+
+Amazon Polly
+
+Amazon Rekognition
+
+Amazon Mechanical Turk
+
+Timeline of Amazon Web Services
+
+References
+
+Category:Amazon (company)
+
+Category:Amazon Web Services
+
+Category:Cloud infrastructure
+
+Category:2017 software
+
+Category:Deep learning software

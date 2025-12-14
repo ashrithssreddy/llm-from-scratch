@@ -1,0 +1,35 @@
+In statistics and Markov modeling, an ancestral graph is a type of mixed graph used to provide a graphical representation for the result of marginalizing one or more vertices in a graphical model that takes the form of a directed acyclic graph. Ancestral graphs can encode conditional independence relations that arise in directed acyclic graph (DAG) models with latent variables and selection bias.
+
+Definition
+
+Ancestral graphs are mixed graphs with three kinds of edges: directed edges (→), drawn as an arrow from one vertex to another, bidirected edges (↔), which have an arrowhead at both ends, and undirected edges (—), which have no arrowheads. An ancestral graph must satisfy the following constraints:
+
+In the context of causal inference, ancestral graphs assume the Causal Markov Condition (CMC) and Causal Faithfulness Condition (CFC). The CMC requires that every variable is independent of its non-descendants conditional on its parents in the causal graph, while the CFC stipulates that the only independence relationships are those implied by the CMC. They are particularly useful for representing the independence structure over observed variables when some variables in an underlying DAG model are unobserved (latent) or when data are sampled from a specific sub-population determined by selection variables. Unlike methods that assume causal sufficiency (no unmeasured confounders), this approach can identify when causal effects are non-identifiable and provide informative bounds instead of point estimates.
+
+Causal discovery
+
+The FCI algorithm (Fast Causal Inference) is a procedure for learning causal structure from observational data in the presence of latent confounders and selection bias. The algorithm outputs a partial ancestral graph (PAG), which represents a Markov equivalence class of MAGs. Zhang (2008) established that with additional orientation rules beyond those in the original FCI algorithm, the procedure is complete. That is, it can discover all aspects of causal structure that are uniquely determined by conditional independence relations, under standard causal inference assumptions. This calculus provides rules for determining when post-intervention probability distributions can be identified from pre-intervention (observational) data, even when the exact causal structure is not uniquely determined.
+
+The extension requires distinguishing between visible and invisible directed edges in a MAG. A directed edge A \to B is visible if there exists a vertex C not adjacent to B such that either there is an edge between C and A that is into A, or there is a collider path between C and A that is into A and every vertex on this path is a parent of B. Otherwise the edge is invisible. This distinction determines how graph manipulations affect the correspondence between a MAG and its underlying DAGs.
+
+The calculus involves two types of graph manipulations:
+
+Lower-manipulation (denoted M_{\mathbf{X}}): For visible edges out of variables in \mathbf{X}, delete them; for invisible edges out of variables in \mathbf{X}, replace them with bidirected edges
+
+Upper-manipulation (denoted M^{\mathbf{X}}): Delete all edges into variables in \mathbf{X}
+
+These manipulations allow formulation of graphical conditions under which certain probabilistic equalities hold, such as when P(\mathbf{y}|\text{do}(\mathbf{x}),\mathbf{w}) = P(\mathbf{y}|\mathbf{x},\mathbf{w}). The PAG-based do-calculus is formulated in terms of definite m-separation, which requires the absence of possibly m-connecting paths rather than just m-connecting paths.
+
+A central application is determining invariance under interventions: a conditional probability P(Y=y|Z=z) is invariant under an intervention X:=x if the post-intervention probability equals the pre-intervention probability. Graphical conditions for such invariance can be checked directly from a PAG without enumerating all compatible DAGs.
+
+References
+
+External links
+
+TETRAD Project - Software for causal discovery including algorithms for ancestral graphs
+
+Category:Extensions and generalizations of graphs
+
+Category:Graphical models
+
+Category:Causal inference

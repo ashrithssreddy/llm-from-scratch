@@ -1,0 +1,115 @@
+{{Infobox scientist
+
+name              = Grace Wahba
+
+image             = Grace Wahba 1986.jpg
+
+image_size        =
+
+caption           = Wahba in 1986
+
+birth_date        =
+
+birth_place       =
+
+death_date        =
+
+death_place       =
+
+nationality       = American
+
+fields            = Mathematics, statistics, machine learning
+
+workplaces        = University of Wisconsin–Madison
+
+alma_mater        = Stanford UniversityUniversity of Maryland, College ParkCornell University
+
+thesis_title      = Cross Spectral Distribution Theory for Mixed Spectra and Estimation of Prediction Filter Coefficients
+
+doctoral_advisor  = Emanuel Parzen
+
+doctoral_students =
+
+known_for         = generalized cross validation, smoothing splines
+
+awards            =
+
+website           = http://www.stat.wisc.edu/~wahba/
+
+}}
+
+Grace Goldsmith Wahba (born August 3, 1934) is an American statistician and retired I. J. Schoenberg-Hilldale Professor of Statistics at the University of Wisconsin–Madison. She is a pioneer in methods for smoothing noisy data. Best known for the development of generalized cross-validation and "Wahba's problem", She retired in August 2018 from the University of Wisconsin-Madison.
+
+Her life and career are discussed in interviews in
+
+2007,
+
+2018,
+
+and
+
+2020.
+
+Honors and awards
+
+Wahba was elected to the American Academy of Arts and Sciences in 1997 and to the National Academy of Sciences in 2000. She is also a fellow of several academic societies including the American Association for the Advancement of Science, the American Statistical Association, and the  Institute of Mathematical Statistics.
+
+Over the years she has received a selection of notable awards in the statistics community:
+
+International Prize in Statistics, 2025
+
+R. A. Fisher Lectureship, COPSS, August 2014
+
+Gottfried E. Noether Senior Researcher Award, Joint Statistics Meetings, August 2009
+
+Committee of Presidents of Statistical Societies Elizabeth Scott Award, 1996
+
+References
+
+External links
+
+Grace Wahba's University of Wisconsin website Home page
+
+Category:1934 births
+
+Category:Living people
+
+Category:American women statisticians
+
+Category:Fellows of the American Statistical Association
+
+Category:Members of the United States National Academy of Sciences
+
+Category:20th-century American mathematicians
+
+Category:21st-century American mathematicians
+
+Category:Fellows of the Society for Industrial and Applied Mathematics
+
+Category:University of Wisconsin–Madison faculty
+
+Category:Cornell University alumni
+
+Category:University of Maryland, College Park alumni
+
+Category:Stanford University alumni
+
+Category:Bayesian statisticians
+
+Category:Fellows of the American Academy of Arts and Sciences
+
+Category:Fellows of the American Association for the Advancement of Science
+
+Category:Fellows of the Institute of Mathematical Statistics
+
+Category:Machine learning researchers
+
+Category:20th-century American women mathematicians
+
+Category:21st-century American women mathematicians
+
+Category:20th-century American women scientists
+
+Category:21st-century American women scientists
+
+Category:American mathematical statisticians

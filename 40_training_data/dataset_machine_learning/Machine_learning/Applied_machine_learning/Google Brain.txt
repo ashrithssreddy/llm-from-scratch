@@ -1,0 +1,93 @@
+{{Infobox company
+
+logo =
+
+defunct = April 2023
+
+successor = Google DeepMind
+
+founder = Andrew NgGreg Corrado
+
+website =
+
+type = Artificial intelligence and machine learning
+
+location = Mountain View, California, U.S.
+
+}}
+
+Google Brain was a deep learning artificial intelligence research team that served as the sole AI branch of Google before being incorporated under the newer umbrella of Google AI, a research division at Google dedicated to artificial intelligence. Formed in 2011, it combined open-ended machine learning research with information systems and large-scale computing resources. It created tools such as TensorFlow, which allow neural networks to be used by the public, and multiple internal AI research projects,
+
+In June 2012, the New York Times reported that a cluster of 16,000 processors in 1,000 computers dedicated to mimicking some aspects of human brain activity had successfully trained itself to recognize a cat based on 10 million digital images taken from YouTube videos. The story was also covered by National Public Radio.
+
+In March 2013, Google hired Geoffrey Hinton, a leading researcher in the deep learning field, and acquired the company DNNResearch Inc. headed by Hinton. Hinton said that he would be dividing his future time between his university research and his work at Google.
+
+In April 2023, Google Brain merged with Google sister company DeepMind to form Google DeepMind, as part of the company's continued efforts to accelerate work on AI.
+
+Team and location
+
+Google Brain was initially established by Google Fellow Jeff Dean and visiting Stanford professor Andrew Ng. In 2014, the team included Jeff Dean, Quoc Le, Ilya Sutskever, Alex Krizhevsky, Samy Bengio, and Vincent Vanhoucke. In 2017, team members included Anelia Angelova, Samy Bengio, Greg Corrado, George Dahl, Michael Isard, Anjuli Kannan, Hugo Larochelle, Chris Olah, Salih Edneer, Benoit Steiner, Vincent Vanhoucke, Vijay Vasudevan, and Fernanda Viegas. Lattner left the team in January 2020 and joined SiFive.
+
+, Google Brain was led by Jeff Dean, Geoffrey Hinton, and Zoubin Ghahramani. Other members include Katherine Heller, Pi-Chuan Chang, Ian Simon, Jean-Philippe Vert, Nevena Lazic, Anelia Angelova, Lukasz Kaiser, Carrie Jun Cai, Eric Breck, Ruoming Pang, Carlos Riquelme, Hugo Larochelle, and David Ha. Samy Bengio left the team in April 2021, and Zoubin Ghahramani took on his responsibilities.
+
+Google Research includes Google Brain and is based in Mountain View, California. It also has satellite groups in Accra, Amsterdam, Atlanta,  Beijing, Berlin, Cambridge (Massachusetts), Israel, Los Angeles, London, Montreal, Munich, New York City, Paris, Pittsburgh, Princeton, San Francisco, Seattle, Tokyo, Toronto, and Zürich.
+
+Projects
+
+Artificial-intelligence-devised encryption system
+
+In October 2016, Google Brain designed an experiment to determine that neural networks are capable of learning secure symmetric encryption. In this experiment, three neural networks were created: Alice, Bob and Eve. Adhering to the idea of a generative adversarial network (GAN), the goal of the experiment was for Alice to send an encrypted message to Bob that Bob could decrypt, but the adversary, Eve, could not. The method built upon an already existing probabilistic model called pixelCNN to generate pixel translations.
+
+The proposed software utilizes two neural networks to make approximations for the pixel makeup of translated images. The first network, known as the "conditioning network," downsizes high-resolution images to 8x8 and attempts to create mappings from the original 8x8 image to these higher-resolution ones.
+
+Google Translate
+
+The Google Brain team contributed to the Google Translate project by employing a new deep learning system that combines artificial neural networks with vast databases of multilingual texts. In September 2016, Google Neural Machine Translation (GNMT) was launched, an end-to-end learning framework, able to learn from a large number of examples. But rather than choosing a replacement for each individual word in the desired language, GNMT evaluates word segments in the context of the rest of the sentence to choose more accurate replacements. Compared to older PBMT models, the GNMT model scored a 24% improvement in similarity to human translation, with a 60% reduction in errors. Google announced that Google Translate can now also translate without transcribing, using neural networks. This means that it is possible to translate speech in one language directly into text in another language, without first transcribing it to text.
+
+According to the Researchers at Google Brain, this intermediate step can be avoided using neural networks. In order for the system to learn this, they exposed it to many hours of Spanish audio together with the corresponding English text. The different layers of neural networks, replicating the human brain, were able to link the corresponding parts and subsequently manipulate the audio waveform until it was transformed to English text. Another drawback of the GNMT model is that it causes the time of translation to increase exponentially with the number of words in the sentence. They also attempt to develop ways for information sharing between robots so that robots can learn from each other during their learning process, also known as cloud robotics. As a result, Google has launched the Google Cloud Robotics Platform for developers in 2019, an effort to combine robotics, AI, and the cloud to enable efficient robotic automation through cloud-connected collaborative robots. For example, Google Brain researchers showed that robots can learn to pick and throw rigid objects into selected boxes by experimenting in an environment without being pre-programmed to do so. Their method allowed real-time robot control for grasping novel objects with self-correction. The model can be altered to choose speech segments in the context of Text-To-Speech Training. Google owns a patent on this widely used architecture, but hasn't enforced it.
+
+Text-to-image model
+
+Google Brain announced in 2022 that it created two different types of text-to-image models called Imagen and Parti that compete with OpenAI's DALL-E.
+
+Later in 2022, the project was extended to text-to-video.
+
+Imagen development was transferred to Google Deepmind after the merger with Deepmind.
+
+Other Google products
+
+The Google Brain projects' technology is currently used in various other Google products such as the Android Operating System's speech recognition system, photo search for Google Photos, smart reply in Gmail, and video recommendations in YouTube.
+
+Reception
+
+Google Brain has received coverage in Wired, NPR, These articles have contained interviews with key team members Ray Kurzweil and Andrew Ng, and focus on explanations of the project's goals and applications. While the exact nature of her quitting or being fired is disputed, the cause of the departure was her refusal to retract a paper entitled "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big?" and a related ultimatum she made, setting conditions to be met otherwise she would leave. The request to retract the paper was made by Megan Kacholia, vice president of Google Brain. As of April 2021, nearly 7000 current or former Google employees and industry supporters have signed an open letter accusing Google of "research censorship" and condemning Gebru's treatment at the company.
+
+In February 2021, Google fired one of the leaders of the company's AI ethics team, Margaret Mitchell. In April 2021, Google Brain co-founder Samy Bengio announced his resignation from the company. This paper claimed that their AI techniques (in particular reinforcement learning) for the placement problem for integrated circuits were superior to prior methods. However, this claim is contested because claimed results, especially fast chip design, were not properly supported by specific empirical data and found inconsistent with subsequent published research. The paper does not report run times of prior and proposed methods on specific inputs, lacks head-to-head comparisons to sufficiently advanced implementations of prior methods, and is difficult to replicate due to proprietary training and test data. and the paper is under investigation by Nature. Further media coverage conveyed skepticism about research published by Google and noted that Google had not provided the comparative benchmarks long requested by experts. California Judge Frederick Chung ruled that Chatterjee had "adequately supported his claim that Google terminated him in retaliation for refusing to participate in an act that would violate state or federal law." In his lawsuit, Chatterjee claimed a Google research paper overhyped technology.
+
+See also
+
+Artificial intelligence art
+
+Glossary of artificial intelligence
+
+List of artificial intelligence projects
+
+Noosphere
+
+Quantum Artificial Intelligence Lab – run by Google in collaboration with NASA and Universities Space Research Association
+
+References
+
+Category:2011 establishments in California
+
+Category:2023 disestablishments in California
+
+Category:Applied machine learning
+
+Category:Artificial intelligence researchers
+
+Category:Defunct organizations based in California
+
+Brain
+
+Category:American companies disestablished in 2023

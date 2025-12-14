@@ -1,0 +1,123 @@
+{{Infobox scientist
+
+name              = Steve Omohundro
+
+native_name       =
+
+native_name_lang  =
+
+image             = Steve Omohundro.jpg
+
+alt               = Steve Omohundro
+
+caption           = Omohundro in 2010
+
+birth_date        =
+
+birth_place       = United States
+
+death_date        =
+
+death_place       =
+
+resting_place     =
+
+resting_place_coordinates =
+
+other_names       =
+
+residence         =
+
+citizenship       =
+
+nationality       =
+
+fields            = Artificial IntelligencePhysics
+
+workplaces        = University of Illinois at Urbana-ChampaignPossibility ResearchSelf-Aware Systems
+
+education         = Stanford UniversityUniversity of California, Berkeley
+
+thesis_title      = Geometric Perturbation Theory and Plasma Physics
+
+thesis_url        = https://www.proquest.com/docview/303333208
+
+thesis_year       = 1985
+
+doctoral_advisor  =
+
+doctoral_students =
+
+known_for         =
+
+awards            =
+
+website           = steveomohundro.com
+
+}}
+
+Stephen Malvern Omohundro (born 1959) is an American computer scientist whose areas of research include Hamiltonian physics, dynamical systems, programming languages, machine learning, machine vision, and the social implications of artificial intelligence. His current work uses rational economics to develop safe and beneficial intelligent technologies for better collaborative modeling, understanding, innovation, and decision making.
+
+Education
+
+Omohundro has degrees in physics and mathematics from Stanford University (Phi Beta Kappa)
+
+Learning algorithms
+
+Omohundro started the "Vision and Learning Group" at the University of Illinois, which produced 4 Masters and 2 Ph.D. theses. His work in learning algorithms included a number of efficient geometric algorithms, the manifold learning task and various algorithms for accomplishing this task, other related visual learning and modelling tasks, the  model merging approach to machine learning (including the learning of Hidden Markov Models and Stochastic Context-free Grammars), and the Family Discovery Learning Algorithm, which discovers the dimension and structure of a parameterized family of stochastic models.
+
+Self-improving artificial intelligence and AI safety
+
+Omohundro started Self-Aware Systems in Palo Alto, California to research the technology and social implications of self-improving artificial intelligence. He is an advisor to the Machine Intelligence Research Institute on artificial intelligence. He argues that rational systems exhibit problematic natural "drives" that will need to be countered in order to build intelligent systems safely. His papers, talks, and videos on AI safety have generated extensive interest. He has given many talks on self-improving artificial intelligence, cooperative technology, AI safety, and connections with biological intelligence.
+
+Programming languages
+
+At Thinking Machines Corporation, Cliff Lasser and Steve Omohundro developed Star Lisp, the first programming language for the Connection Machine. Omohundro joined the International Computer Science Institute (ICSI) in Berkeley, California, where he led the development of the open source programming language Sather. Sather is featured in O'Reilly's History of Programming Languages poster.
+
+Physics and dynamical systems theory
+
+Omohundro's book Geometric Perturbation Theory in Physics describes natural Hamiltonian symplectic structures for a wide range of physical models that arise from perturbation theory analyses.
+
+He showed that there exist smooth partial differential equations which stably perform universal computation by simulating arbitrary cellular automata. The asymptotic behavior of these PDEs is therefore logically undecidable.
+
+With John David Crawford he showed that the orbits of three-dimensional period doubling systems can form an infinite number of topologically distinct torus knots and described the structure of their stable and unstable manifolds.
+
+Mathematica and Apple tablet contest
+
+From 1986 to 1988, he was an Assistant Professor of Computer science at the University of Illinois at Urbana-Champaign and cofounded the Center for Complex Systems Research with Stephen Wolfram and Norman Packard. While at the University of Illinois, he worked with Stephen Wolfram and five others to create the symbolic mathematics program Mathematica.
+
+Other contributions
+
+Subutai Ahmad and Steve Omohundro developed biologically realistic neural models of selective attention. As a research scientist at the NEC Research Institute, Omohundro worked on machine learning and computer vision, and was a co-inventor of U.S. Patent 5,696,964, "Multimedia Database Retrieval System Which Maintains a Posterior Probability Distribution that Each Item in the Database is a Target of a Search."
+
+Pirate puzzle
+
+Omohundro developed an extension to the game theoretic pirate puzzle featured in Scientific American.
+
+Outreach
+
+Omohundro has sat on the Machine Intelligence Research Institute board of advisors. He has written extensively on artificial intelligence, and has warned that "an autonomous weapons arms race is already taking place" because "military and economic pressures are driving the rapid development of autonomous systems".
+
+References
+
+External links
+
+Self-Aware Systems
+
+Steve Omohundro Interviews Playlist
+
+Category:Living people
+
+Category:1959 births
+
+Category:Machine learning researchers
+
+Category:American artificial intelligence researchers
+
+Category:Cellular automatists
+
+Category:American computer scientists
+
+Category:Stanford University alumni
+
+Category:AI safety scientists

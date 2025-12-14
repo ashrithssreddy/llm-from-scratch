@@ -1,0 +1,45 @@
+Photoacoustic imaging (PA) is based on the photoacoustic effect, in which optical absorption causes a rise in temperature, which causes a subsequent rise in pressure via thermo-elastic expansion. This pressure rise propagates through the tissue and is sensed via ultrasonic transducers. Due to the proportionality between the optical absorption, the rise in temperature, and the rise in pressure, the ultrasound pressure wave signal can be used to quantify the original optical energy deposition within the tissue.
+
+Photoacoustic imaging has applications of deep learning in both photoacoustic computed tomography (PACT) and photoacoustic microscopy (PAM). PACT utilizes wide-field optical excitation and an array of unfocused ultrasound transducers. modified delay-and-sum, or time reversal ) to elicit the initial pressure distribution within the tissue. PAM on the other hand uses focused ultrasound detection combined with weakly focused optical excitation (acoustic resolution PAM or AR-PAM) or tightly focused optical excitation (optical resolution PAM or OR-PAM). PAM typically captures images point-by-point via a mechanical raster scanning pattern. At each scanned point, the acoustic time-of-flight provides axial resolution while the acoustic focusing yields lateral resolution. in which a deep neural network was trained to learn spatial impulse responses and locate photoacoustic point sources. The resulting mean axial and lateral point location errors on 2,412 of their randomly selected test images were 0.28&nbsp;mm and 0.37&nbsp;mm respectively. After this initial implementation, the applications of deep learning in PACT have branched out primarily into removing artifacts from acoustic reflections, sparse sampling, limited-view, and limited-bandwidth. There has also been some recent work in PACT toward using deep learning for wavefront localization. There have been networks based on fusion of information from two different reconstructions to improve the reconstruction using deep learning fusion based networks.
+
+Using deep learning to locate photoacoustic point sources
+
+Traditional photoacoustic beamforming techniques modeled photoacoustic wave propagation by using detector array geometry and the time-of-flight to account for differences in the PA signal arrival time. However, this technique failed to account for reverberant acoustic signals caused by acoustic reflection, resulting in acoustic reflection artifacts that corrupt the true photoacoustic point source location information. In Reiter et al., style architecture) was used that took pre-beamformed photoacoustic data as input and outputted a classification result specifying the 2-D point source location.
+
+Deep learning for PA wavefront localization
+
+Johnstonbaugh et al. due to sampling under the Nyquist-Shannon's sampling requirement or with limited-bandwidth/view, the resulting reconstruction contains image artifacts. Traditionally these artifacts were removed with slow iterative methods like total variation minimization, but the advent of deep learning approaches has opened a new avenue that utilizes a priori knowledge from network training to remove artifacts. In the deep learning methods that seek to remove these sparse sampling, limited-bandwidth, and limited-view artifacts, the typical workflow involves first performing the ill-posed reconstruction technique to transform the pre-beamformed data into a 2-D representation of the initial pressure distribution that contains artifacts. Then, a convolutional neural network (CNN) is trained to remove the artifacts, in order to produce an artifact-free representation of the ground truth initial pressure distribution.
+
+Using deep learning to remove sparse sampling artifacts
+
+When the density of uniform tomographic view angles is under what is prescribed by the Nyquist-Shannon's sampling theorem, it is said that the imaging system is performing sparse sampling. Sparse sampling typically occurs as a way of keeping production costs low and improving image acquisition speed. The decompression phase then combines with information passed by the residual connections in order to add back image details without adding in the details associated with the artifacts. As illustrated by the experiments of Davoudi et al., and full ring-shaped transducer arrays, as well as solutions like compressed sensing, weighted factor, and iterative filtered backprojection. The result of this ill-posed reconstruction is imaging artifacts that can be removed by CNNs. The deep learning algorithms used to remove limited-view artifacts include U-net and FD U-net, as well as generative adversarial networks (GANs) This procedure was posed to correct the PAM artifacts that occur when an in vivo model moves during scanning. This movement creates the appearance of vessel discontinuities.
+
+Deep learning to remove motion artifacts in PAM
+
+The two primary motion artifact types addressed by deep learning in PAM are displacements in the vertical and tilted directions. Chen et al. Nevertheless, this imaging approach generally provides smaller signal-to-noise ratios (SNR) which can be up to two orders of magnitude lower than the conventional time-domain systems. To overcome the inherent SNR limitation of frequency-domain PAM, a U-Net neural network has been utilized to augment the generated images without the need for excessive averaging or the application of high optical power on the sample. In this context, the accessibility of PAM is improved as the system's cost is dramatically reduced while retaining sufficiently high image quality standards for demanding biological observations.
+
+See also
+
+Photoacoustic imaging
+
+Photoacoustic microscopy
+
+Photoacoustic effect
+
+References
+
+External links
+
+Photoacoustic imaging
+
+Photoacoustic microscopy
+
+Photoacoustic effect
+
+__FORCETOC__
+
+Category:Computing in medical imaging
+
+Category:Deep learning
+
+Category:Medical imaging

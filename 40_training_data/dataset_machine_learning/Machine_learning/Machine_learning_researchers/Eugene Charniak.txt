@@ -1,0 +1,129 @@
+{{Infobox scientist
+
+name        = Eugene Charniak
+
+image       =
+
+imagesize   =
+
+alt         =
+
+caption     =
+
+birth_date  = 1946
+
+birth_place =
+
+death_date  = June 13, 2023, age 77
+
+death_place =
+
+death_cause =
+
+resting_place =
+
+resting_place_coordinates =
+
+other_names =
+
+residence   =
+
+citizenship =
+
+nationality =
+
+fields      = Natural Language Processing
+
+workplaces  =
+
+patrons     =
+
+alma_mater  = University of Chicago (A.B.)M.I.T. (Ph.D.)
+
+thesis_title =
+
+thesis_url  =
+
+thesis_year =
+
+doctoral_advisor = Marvin Minsky
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students =
+
+known_for   =
+
+influences  =
+
+influenced  =
+
+awards      =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+spouse      =
+
+children    =
+
+signature   =
+
+signature_alt =
+
+website     =
+
+footnotes   =
+
+}}
+
+Eugene Charniak (1946 – June 13, 2023) was a professor of computer Science and cognitive Science at Brown University. He held an A.B. in Physics from the University of Chicago and a Ph.D. from M.I.T. in Computer Science. His research was in the area of language understanding or technologies which relate to it, such as knowledge representation, reasoning under uncertainty, and learning. Since the early 1990s  he was interested in statistical techniques for language understanding. His research in this area included work in the subareas of part-of-speech tagging, probabilistic context-free grammar induction, and, more recently, syntactic disambiguation through word statistics, efficient syntactic parsing, and lexical resource acquisition through statistical means.
+
+He was a Fellow of the American Association of Artificial Intelligence and was previously a Councilor of the organization. He was also honored with the 2011 Association for Computational Linguistics Lifetime Achievement Award and awarded the 2011 Calvin & Rose G Hoffman Prize. In 2011, he was named a fellow of the Association for Computational Linguistics. In 2015, he won the Association for the Advancement of Artificial Intelligence (AAAI) Classic Paper Award for a paper (“Statistical Parsing with a Context-Free Grammar and Word Statistics”) that he presented at the Fourteenth National Conference on Artificial Intelligence in 1997.
+
+Books
+
+He published six books:
+
+Computational Semantics, (with Yorick Wilks), Amsterdam: North-Holland (1976)
+
+Artificial Intelligence Programming (now in a second edition) (with Chris Riesbeck, Drew McDermott, and James Meehan), Hillsdale NJ: Lawrence Erlbaum Associates (1980, 1987)
+
+Introduction to Artificial Intelligence (with Drew McDermott), Reading MA: Addison-Wesley (1985)
+
+Statistical Language Learning, Cambridge: MIT Press (1993)
+
+Introduction to Deep Learning, Cambridge: MIT Press (2019)
+
+AI & I: An Intellectual History of Artificial Intelligence, Cambridge: MIT Press (2024)
+
+References
+
+External links
+
+Eugene Charniak's homepage at Brown University
+
+"The Nature Of Life, The Nature Of Thinking: Looking Back On Eugene Charniak’s Work And Life"
+
+Category:American computer scientists
+
+Category:Brown University faculty
+
+Category:Living people
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:University of Chicago alumni
+
+Category:MIT School of Engineering alumni
+
+Category:Fellows of the Association for Computational Linguistics
+
+Category:Natural language processing researchers
+
+Category:Machine learning researchers
+
+Category:1946 births

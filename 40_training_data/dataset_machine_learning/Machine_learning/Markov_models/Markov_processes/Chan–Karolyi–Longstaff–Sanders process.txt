@@ -1,0 +1,55 @@
+In mathematics, the Chan–Karolyi–Longstaff–Sanders process (abbreviated as CKLS process) is a stochastic process with applications to finance. In particular it has been used to model the term structure of interest rates. The CKLS process can also be viewed as a generalization of the Ornstein–Uhlenbeck process. It is named after K. C. Chan, G. Andrew Karolyi, Francis A. Longstaff, and Anthony B. Sanders, with their paper published in 1992.
+
+Definition
+
+The CKLS process X_t is defined by the following stochastic differential equation:
+
+dX_t = (\alpha + \beta X_t) dt + \sigma X_t^{\gamma}dW_t
+
+where W_t  denotes the Wiener process. The CKLS process has the following equivalent definition:
+
+dX_t = -k(X_t - a) dt + \sigma X_t^{\gamma}dW_t
+
+Properties
+
+CKLS is an example of a mean-reverting process
+
+Cai and Wang (2015) have derived a central limit theorem and deviation principle for the CKLS model while studying its asymptotic behavior.
+
+The CKLS has also been referred to as a one-factor model (also see Factor analysis).
+
+Special cases
+
+Many interest rate models and short-rate models are special cases of the CKLS process which can be obtained by setting the CKLS model parameters to specific values. currency exchange rates, securities, and other options, derivatives, and contingent claims.
+
+One question studied in the literature is how to set the model parameters, in particular the elasticity parameter \gamma. Robust statistics and nonparametric estimation techniques have been used to measure CKLS model parameters.
+
+The period of 1979-1982 marked a change in monetary policy of the Federal Reserve, and this regime change has often been studied in the context of CKLS models.
+
+References
+
+Category:Stochastic differential equations
+
+Category:Markov processes
+
+Category:Variants of random walks
+
+Category:Financial models
+
+Category:Financial risk modeling
+
+Category:Credit risk
+
+Category:Options (finance)
+
+Category:Derivatives (finance)
+
+Category:Equity securities
+
+Category:Interest rates
+
+Category:Fixed income analysis
+
+Category:Stochastic models
+
+Category:Short-rate models

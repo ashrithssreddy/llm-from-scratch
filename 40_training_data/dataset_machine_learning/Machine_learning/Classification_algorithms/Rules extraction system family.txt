@@ -1,0 +1,77 @@
+{{Multiple issues|
+
+}}
+
+The rules extraction system (RULES) family is a family of inductive learning that includes several covering algorithms. This family is used to build a predictive model based on given observation. It works based on the concept of separate-and-conquer to directly induce rules from a given training set and build its knowledge repository.
+
+Algorithms under RULES family are usually available in data mining tools, such as KEEL and WEKA, known for knowledge extraction and decision making.
+
+Overview
+
+RULES family algorithms are mainly used in data mining to create a model that predicts the actions of a given input features. It goes under the umbrella of inductive learning, which is a machine learning approach. In this type of learning, the agent is usually provided with previous information to gain descriptive knowledge based on the given historical data. Thus, it is a supervised learning paradigm that works as a data analysis tool, which uses the knowledge gained through training to reach a general conclusion and identify new objects using the produced classifier.
+
+Inductive learning had been divided into two types: decision tree (DT) and covering algorithms (CA). DTs discover rules using decision tree based on the concept of divide-and-conquer, while CA directly induces rules from the training set based on the concept of separate and conquers. Although DT algorithms was well recognized in the past few decades, CA started to attract the attention due to its direct rule induction property, as emphasized by Kurgan et al. Under this type of inductive learning approach, several families have been developed and improved. RULES family, known as rule extraction system, is one family of covering algorithms that separate each instance or example when inducing the best rules. In this family, the resulting rules are stored in an ‘IF condition THEN conclusion’ structure. It has its own induction procedure that is used to induce the best rules and build the knowledge repository.
+
+Induction procedure
+
+To induce the best rules based on a given observation, RULES family start by selecting (separating) a seed example to build a rule, condition by condition. The rule that covers the most positive examples and the least negative examples are chosen as the best rule of the current seed example. It allows the best rule to cover some negative examples to handle the increase flexibility and reduce the overfitting problem and noisy data in the rule induction. When the coverage performance reaches a specified threshold, it marks the examples that match the induced rules without deletion. This prevents the repetition of discovering the same rule as well as preserves the coverage accuracy and the generality of new rules. After that, the algorithm is repeated to select (conquer) another seed example until all the examples are covered. Hence, only one rule can be generated at each step.
+
+Algorithms
+
+Several versions and algorithms have been proposed in RULES family, and can be summarized as follows:
+
+RULES-1 is the first version in RULES family and was proposed by prof. Pham and prof. Aksoy in 1995.
+
+RULES-2 is an upgraded version of RULES-1, in which every example is studied separately.
+
+RULES-3 is another version that contained all the properties of RULES-2 as well as other additional features to generates more general rules.
+
+RULES-3Plus is an extended version of RULES-3 with two additional functionalities.
+
+RULES-4 is the first incremental version in the RULES family.
+
+RULES-5 is the first RULES version that handles continuous attributes without discretization. It was also extended to produce RULES-5+, which improves the performance using a new rule space representation scheme.
+
+RULES-6 is a scalable version of RULES family developed as an extension of RULES-3 plus.
+
+RULES-F is an extension of RULES-5 that handles not only continuous attributes but also continuous classes. A new rule space representation scheme was also integrated to produce an extended version called RULES-F+.
+
+RULES-SRI is another scalable RULES algorithm, developed to improve RULES-6 scalability.
+
+Rule Extractor-1 (REX-1) is an improvement of RULES-3, RULES-3 Plus, and RULES-4 to shortened the process time and produced simpler models with fewer rules.
+
+RULES-IS an incremental algorithm inspired by the immune systems.
+
+RULES-3EXT is an extension of RULES-3 with additional features.
+
+RULES-7 is an extension of RULES-6, in which it applies specialization over one seed at a time.
+
+RULES-8 is an improved version that deals with continuous attributes online.
+
+RULES-TL is another scalable algorithm that was proposed to enhance the performance and speed while introducing more intelligent aspects.
+
+RULES-IT is an incremental version that is built based on RULES-TL to incrementally deal with large and incomplete problems.
+
+Applications
+
+Covering algorithms, in general, can be applied to any machine learning application field, as long as it supports its data type. Witten, Frank and Hall identified six main fielded applications that are actively used as ML applications, including sales and marketing, judgment decisions, image screening, load forecasting, diagnosis, and web mining.
+
+RULES algorithms, in particular, were applied in different manufacturing and engineering applications. RULES-3 EXT was also applied over signature verification and the algorithm performance was verified by Aksoy and Mathkour. Recently, Salem and Schmickl  have studied the efficiency of RULEs-4 in predating agent's density.
+
+See also
+
+Decision Tree
+
+WEKA
+
+KEEL
+
+Machine learning
+
+C4.5 algorithm
+
+References
+
+Category:Classification algorithms
+
+Category:Knowledge engineering

@@ -1,0 +1,25 @@
+The Liar's dividend is a political tactic where politicians falsely claim that medium content is "fake news" or AI generated in order to avoid responsibility for their actions. The term has been studies in political science to explain how misinformation can help public figures maintain support after scandals. The tactic leverages people's distrust of AI and fear of deepfakes to gain sympathy and support.
+
+History
+
+Since the AI boom rapidly increased the quality and ease of production of convincing deepfakes, making it much possible to fool viewers into believing that the content is real. In September 2023, a fake audio clip rapidly spread of Michal Šimečka, a politician for the Progressive Slovakia party, supposedly discussing with a journalist how to rig an election. In a poll by YouGov, 85% of respondents said they were "very concerned" or "somewhat concerned" about the spread of misleading deepfakes. In addition, many deepfakes of US presidents Joe Biden, Donald Trump, and other political leaders have widely been circulated.
+
+The term "liar's dividend" was coined by legal scholars Bobby Chesney and Danielle Citron to reflect the phenomenon that the existence of real deepfakes can make people wary of real information.
+
+Social examples of the liar's dividend
+
+Not all examples of the liar's dividend are political. Many incidents involving incriminating footage of civilians being dismissed as AI exist:
+
+In the aftermath of the January 6 Capitol riots, Guy Reffitt was charged with being a handgun to the Capitol building, but his lawyer dismissed the evidence as AI generated.
+
+Tesla lawyers have argued that Elon Musk's past statements about the safety of Self-driving cars could not be used in court because they were deepfakes.
+
+References
+
+Category:Wikipedia Student Program
+
+Category:Political science
+
+Category:Artificial intelligence
+
+Category:Deepfakes

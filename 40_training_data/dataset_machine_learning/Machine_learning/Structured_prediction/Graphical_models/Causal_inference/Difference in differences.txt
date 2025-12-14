@@ -1,0 +1,155 @@
+Difference in differences (DID or DD) is a quasi-experimental statistical technique used in econometrics  and quantitative research in the social sciences that attempts to mimic an experimental research design using observational study data, by studying the differential effect of a treatment on a 'treatment group' versus a 'control group' in a natural experiment. It calculates the effect of a treatment (i.e., an explanatory variable or an independent variable) on an outcome (i.e., a response variable or dependent variable) by comparing the average change over time in the outcome variable for the treatment group to the average change over time for the control group. Although it is intended to mitigate the effects of extraneous factors and selection bias, depending on how the treatment group is chosen, this method may still be subject to certain biases (e.g., mean regression, reverse causality and omitted variable bias).
+
+In contrast to a time-series estimate of the treatment effect on subjects (which analyzes differences over time) or a cross-section estimate of the treatment effect (which measures the difference between treatment and control groups), the difference in differences uses panel data to measure the differences, between the treatment and control group, of the changes in the outcome variable that occur over time.
+
+General definition
+
+Difference in differences requires data measured from a treatment group and a control group at two or more different time periods, specifically at least one time period before "treatment" and at least one time period after "treatment." In the example pictured, the outcome in the treatment group is represented by the line P and the outcome in the control group is represented by the line S. The outcome (dependent) variable in both groups is measured at time 1, before either group has received the treatment (i.e., the independent or explanatory variable), represented by the points P1 and S1. The treatment group then receives or experiences the treatment and both groups are again measured at time 2. Not all of the difference between the treatment and control groups at time 2 (that is, the difference between P2 and S2) can be explained as being an effect of the treatment, because the treatment group and control group did not start out at the same point at time 1. DID, therefore, calculates the "normal" difference in the outcome variable between the two groups (the difference that would still exist if neither group experienced the treatment), represented by the dotted line Q. (Notice that the slope from P1 to Q is the same as the slope from S1 to S2.) The treatment effect is the difference between the observed outcome (P2) and the "normal" outcome (the difference between P2 and Q).
+
+Formal definition
+
+Consider the model
+
+y_{it} ~=~ \gamma_{s(i)} + \lambda_t + \delta I(\dots) + \varepsilon_{it}
+
+where y_{it} is the dependent variable for individual i and time t, s(i) is the group to which i belongs (i.e. the treatment or the control group), and  I(\dots)  is short-hand for the dummy variable equal to 1 when the event described in  (\dots)  is true, and 0 otherwise. In the plot of time versus Y by group, \gamma_s is the vertical intercept for the graph for s, and \lambda_t is the time trend shared by both groups according to the parallel trend assumption (see Assumptions below). \delta is the treatment effect, and \varepsilon_{it} is the residual term.
+
+Consider the average of the dependent variable and dummy indicators by group and time:
+
+\begin{align}
+
+n_s & = \text{ number of individuals in group } s \\
+
+\overline{y}_{st} & = \frac{1}{n_s} \sum_{i=1}^n y_{it} \ I(s(i) ~=~ s), \\
+
+\overline{\gamma}_s & = \frac{1}{n_s} \sum_{i=1}^n \gamma_{s(i)} \ I(s(i) ~=~ s) ~=~ \gamma_s, \\
+
+\overline{\lambda}_{st} & = \frac{1}{n_s} \sum_{i=1}^n \lambda_t \ I(s(i) ~=~ s) ~=~ \lambda_t, \\
+
+D_{st} & = \frac{1}{n_s} \sum_{i=1}^n I(s(i) ~=~\text{ treatment, } t \text{ in after period}) \ I(s(i) ~=~ s) ~=~ I(s ~=~\text{ treatment, } t \text{ in after period}) , \\
+
+\overline{\varepsilon}_{st} & = \frac{1}{n_s} \sum_{i=1}^n \varepsilon_{it} \ I(s(i) ~=~ s),
+
+\end{align}
+
+and suppose for simplicity that s=1,2 and t=1,2. Note that D_{st} is not random; it just encodes how the groups and the periods are labeled. Then
+
+\begin{align}
+
+& (\overline{y}_{11} - \overline{y}_{12}) - (\overline{y}_{21} - \overline{y}_{22}) \\[6pt]
+
+= {} & \big[ (\gamma_1 + \lambda_1 + \delta D_{11} + \overline{\varepsilon}_{11}) - (\gamma_1 + \lambda_2 + \delta D_{12} + \overline{\varepsilon}_{12}) \big] \\
+
+& \qquad {} - \big[ (\gamma_2 + \lambda_1 + \delta D_{21} + \overline{\varepsilon}_{21}) - (\gamma_2 + \lambda_2 + \delta D_{22} + \overline{\varepsilon}_{22}) \big] \\[6pt]
+
+= {} & \delta (D_{11} - D_{12}) + \delta(D_{22} - D_{21}) + \overline{\varepsilon}_{11} - \overline{\varepsilon}_{12} + \overline{\varepsilon}_{22} - \overline{\varepsilon}_{21}.
+
+\end{align}
+
+The strict exogeneity assumption then implies that
+
+\operatorname{E} \left [ (\overline{y}_{11} - \overline{y}_{12}) - (\overline{y}_{21} - \overline{y}_{22}) \right ] ~=~ \delta (D_{11} - D_{12}) + \delta(D_{22} - D_{21}).
+
+Without loss of generality, assume that s = 2 is the treatment group, and t = 2 is the after period, then D_{22}=1 and D_{11}=D_{12}=D_{21}=0, giving the DID estimator
+
+\hat{\delta} ~=~ (\overline{y}_{11} - \overline{y}_{12}) - (\overline{y}_{21} - \overline{y}_{22}),
+
+which can be interpreted as the treatment effect of the treatment indicated by D_{st}. Below it is shown how this estimator can be read as a coefficient in an ordinary least squares regression. The model described in this section is over-parametrized; to remedy that, one of the coefficients for the dummy variables can be set to 0, for example, we may set \gamma_1 = 0.
+
+Assumptions
+
+All the Gauss-Markov assumptions of the OLS model apply equally to DID since DID is a special version of OLS. In addition, DID requires a parallel trend assumption. The parallel trend assumption says that \lambda_2 - \lambda_1 are the same in both s=1 and s=2. Given that the formal definition above accurately represents reality, this assumption automatically holds. However, a model with \lambda_{st} ~:~ \lambda_{22} - \lambda_{21} \neq \lambda_{12} - \lambda_{11} may well be more realistic. In order to increase the likelihood of the parallel trend assumption holding, a difference-in-differences approach is often combined with matching. This involves 'matching' known 'treatment' units with simulated counterfactual 'control' units: characteristically equivalent units which did not receive treatment. By defining the Outcome Variable as a temporal difference (change in observed outcome between pre- and posttreatment periods), and matching multiple units in a large sample on the basis of similar pre-treatment histories, the resulting ATE (i.e. the ATT: Average Treatment Effect for the Treated) provides a robust difference-in-differences estimate of treatment effects. This serves two statistical purposes: firstly, conditional on pre-treatment covariates, the parallel trends assumption is likely to hold; and secondly, this approach reduces dependence on associated ignorability assumptions necessary for valid inference.
+
+As illustrated to the right, the treatment effect is the difference between the observed value of y and what the value of y would have been with parallel trends, had there been no treatment. The Achilles' heel of DID is when something other than the treatment changes in one group but not the other at the same time as the treatment, implying a violation of the parallel trend assumption.
+
+To guarantee the accuracy of the DID estimate, the composition of individuals of the two groups is assumed to remain unchanged over time. When using a DID model, various issues that may compromise the results, such as autocorrelation Consistently, a difference among the treatment and control groups would eliminate the need for treatment differentials (i.e., \hat{\beta}_2) to form an unbiased estimate of \hat{\beta}_3. This nuance is important to understand when the user believes (weak) violations of parallel pre-trend exist or in the case of violations of the appropriate counterfactual approximation assumptions given the existence of non-common shocks or confounding events.  To see the relation between this notation and the previous section, consider as above only one observation per time period for each group, then
+
+\begin{align}
+
+\widehat{E}(y \mid T=1,~ S=0) & = \widehat{E}(y \mid \text{ after period, control}) \\
+
+[3pt] \\
+
+& = \frac{  \widehat{E}(y \ I(\text{ after period, control}) )}{ \widehat{P}(\text{ after period, control})} \\
+
+[3pt] \\
+
+& = \frac{  \sum_{i=1}^n    y_{i,\text{after}} I(i \text{ in control}) }   {  n_{\text{control}} } = \overline{y}_{\text{control, after}} \\
+
+[3pt] \\
+
+& = \overline{y}_{\text{12}}
+
+\end{align}
+
+and so on for other values of T and S, which is equivalent to
+
+\hat{\beta}_3 ~=~ (y_{11} - y_{21}) - (y_{12} - y_{22}).
+
+But this is the expression for the treatment effect that was given in the formal definition and in the above table.
+
+Variants of difference-in-difference frameworks include ones for staggered implementation of treatment as well as an estimator introduced for multiple time periods and other variations by Brantly Callaway and Pedro H.C. Sant'Anna.
+
+Example
+
+The Card and Krueger article on minimum wage in New Jersey, published in 1994,
+
+Applications
+
+The difference-in-differences (DID) framework has been applied widely beyond labor economics and minimum wage studies.
+
+In public health, DID has been used to evaluate the effect of new medical guidelines or vaccination campaigns by comparing
+
+regions before and after policy implementation.
+
+In education, DID methods help measure the impact of reforms such as changes in school funding or class size.
+
+In environmental economics, they are used to assess regulations on pollution, energy consumption, or climate policy.
+
+These applications rely on the key assumption of parallel trends, but when carefully designed, they provide policymakers with
+
+robust causal estimates using observational data.
+
+In economic history
+
+Difference-in-differences has also been applied to the study of historical events, particularly in the field of economic history, where researchers rely on natural experiments to investigate long-run outcomes. By comparing regions or groups that were differentially exposed to shocks such as disease, institutional change, or wartime destruction, scholars have used the method to identify causal effects that cannot be observed directly.
+
+In 2021, Elena Esposito used DID to examine how the arrival of malaria influenced the expansion of African slavery in the United States.
+
+She compared counties that were more ecologically suitable for malaria transmission with those that were less suitable, before and after the introduction of the disease in the late seventeenth century. Results showed that malaria-prone counties experienced a much greater increase in the share of enslaved Africans after the disease became endemic. In addition, enslaved individuals from parts of Africa with high malaria prevalence sold at higher prices in Louisiana slave markets, suggesting that buyers placed a premium on resistance to malaria. This application demonstrated how DID can be used to link environmental shocks with institutional development over the long run.
+
+González, Marshall, and Naidu in 2017 used DID to analyze how the abolition of slavery in Maryland affected patterns of entrepreneurship. They combined census data with contemporary credit reports to compare business formation by slaveowners and non-slaveowners before and after the uncompensated abolition of slavery in 1864. They found that slaveowners were more likely to start businesses before emancipation, but this advantage disappeared once slavery was abolished.In this case, DID made it possible to treat emancipation as a sudden institutional change and to see how it affected business activity.
+
+In 2022, James Feigenbaum, James Lee, and Filippo Mezzanotti used DID to measure the economic effects of General Sherman’s March during the American Civil War. Using county-level data from 1850 to 1920, they compared areas directly in the path of the march with nearby counties that were spared. Their findings showed large and immediate declines in farm values, agricultural investment, and manufacturing activity in the affected counties. While manufacturing output eventually recovered by the late nineteenth century, agricultural effects lasted for decades, with lower levels of improved farmland still evident in 1920. The study also showed that the lack of credit and the collapse of banks after the Civil War slowed down the recovery, especially in places that relied more on borrowing. Overall, the study used DID to demonstrate that conflict had lasting effects on the economy and local institutions.
+
+In 2012, Richard Hornbeck used DID to study the long-term economic consequences of the American Dust Bowl of the 1930s. He compared counties that experienced severe soil erosion with nearby counties that were less affected, before and after the disaster. His findings show that heavily eroded counties suffered persistent declines in land values and agricultural revenues of 20 to 30 percent, with little recovery even 10 years later. Many residents migrated away as a result, and population decline became the primary adjustment. This work demonstrates how DID can be applied to environmental shocks in economic history, pointing out  the long run effects of ecological disasters on regional development.
+
+See also
+
+Design of experiments
+
+Average treatment effect
+
+Synthetic control method
+
+References
+
+Further reading
+
+Andrew Baker, Brantly Callaway, Scott Cunningham, Andrew Goodman-Bacon and Pedro H. C. Sant'Anna. 2025. "Difference-in-Differences Designs: A Practitioner’s Guide." Journal of Economic Literature.
+
+External links
+
+Difference in Difference Estimation, Healthcare Economist website
+
+Category:Econometric modeling
+
+Category:Regression analysis
+
+Category:Design of experiments
+
+Category:Observational study
+
+Category:Causal inference
+
+Category:Subtraction

@@ -1,0 +1,153 @@
+{{Infobox academic
+
+honorific_prefix   =
+
+name               = Jean Véronis
+
+honorific_suffix   =
+
+image              = Jean.Veronis.png
+
+image_size         =
+
+alt                =
+
+caption            =
+
+native_name        =
+
+native_name_lang   =
+
+birth_name         =
+
+birth_date         =
+
+birth_place        = Toulon, France
+
+death_date         =
+
+death_place        =
+
+death_cause        =
+
+nationality        = French
+
+citizenship        =
+
+other_names        =
+
+occupation         =
+
+period             =
+
+known_for          =
+
+title              =
+
+boards             =
+
+spouse             =
+
+partner            =
+
+children           =
+
+parents            =
+
+relatives          =
+
+awards             =
+
+website            =
+
+education          =
+
+alma_mater         = Paul Cézanne University
+
+thesis_title       =
+
+thesis_url         =
+
+thesis_year        =
+
+school_tradition   =
+
+doctoral_advisor   =
+
+academic_advisors  =
+
+influences         =
+
+era                =
+
+discipline         =
+
+sub_discipline     =
+
+workplaces         = Aix-Marseille UniversityVassar College faculty
+
+doctoral_students  =
+
+notable_students   =
+
+main_interests     =
+
+notable_works      =
+
+notable_ideas      =
+
+influenced         =
+
+signature          =
+
+signature_alt      =
+
+signature_size     =
+
+footnotes          =
+
+}}
+
+Jean Véronis  (3 June 1955 – 8 September 2013) was a French linguist, computer scientist and blogger, and a research professor at Aix-Marseille University. His research interests included natural language processing, text mining and standardisation. He was a founder of the field that is now called digital humanities.
+
+In 2006, his blog was listed among the 15 most influential by Le Monde.
+
+Bibliography
+
+Contribution to the study of error in natural language man-machine dialogue /Contribution a l'etude de l'erreur dans le dialogue homme-machine en language naturel. Ph.D. Thesis, Aix-Marseille University. 1988. http://hdl.handle.net/10068/23512 / http://www.sudoc.fr/006502245
+
+Text Encoding Initiative - Background and Context. Nancy Ide and Jean Véronis. 1995.
+
+Parallel Text Processing: Alignment and Use of Translation Corpora (Text, Speech and Language Technology). Jean Véronis. 2000
+
+Parallel Text Processing: Alignment and Use of Translation Corpora (Text, Speech and Language Technology). Jean Véronis. Second edition 2010.
+
+Les mots de Nicolas Sarkozy. Louis-Jean Calvet and  Jean Véronis. 2008.
+
+Les politiques mis au Net : l'aventure du PoliTIC'Show. Estelle Veronis, Jean Véronis and Nicolas Voisin. 2007.
+
+Combat Pour l'Elysée : Paroles de prétendants. Louis-Jean Calvet, Jean Véronis and Plantu. 2006.
+
+References
+
+Category:1955 births
+
+Category:2013 deaths
+
+Category:Academic staff of Aix-Marseille University
+
+Category:French male bloggers
+
+Category:Paul Cézanne University alumni
+
+Category:Scientists from Toulon
+
+Category:People in digital humanities
+
+Category:Vassar College faculty
+
+Category:Natural language processing researchers
+
+Category:Computational linguistics researchers
+
+Category:Data miners

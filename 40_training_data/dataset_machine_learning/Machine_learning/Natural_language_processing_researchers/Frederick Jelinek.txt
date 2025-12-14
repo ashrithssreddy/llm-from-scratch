@@ -1,0 +1,121 @@
+{{Infobox scientist
+
+birth_name       = Bedřich Jelínek
+
+birth_date       =
+
+birth_place      = Kladno, Czechoslovakia (now Czech Republic)
+
+death_date       =
+
+death_place      = Baltimore, Maryland, U.S.
+
+citizenship      = American
+
+fields           = Information theory, natural language processing
+
+residence        =
+
+workplaces       = Cornell University, IBM Research, Johns Hopkins University
+
+alma_mater       = Massachusetts Institute of Technology
+
+doctoral_advisor = Robert Fano
+
+notable_students = Neil Sloane
+
+known_for        = Advancement of natural language processing techniques
+
+awards           = *James L. Flanagan Award (2005)
+
+ACL Lifetime Achievement Award (2009)
+
+signature        =
+
+footnotes        =
+
+spouse           = Milena Jelinek
+
+}}
+
+Frederick Jelinek (18 November 1932 – 14 September 2010) was a Czech-American researcher in information theory, automatic speech recognition, and natural language processing. He is well known for his oft-quoted statement, "Every time I fire a linguist, the performance of the speech recognizer goes up".
+
+Jelinek was born in Czechoslovakia before World War II and emigrated with his family to the United States in the early years of the communist regime. He studied engineering at the Massachusetts Institute of Technology and taught for 10 years at Cornell University before accepting a job at IBM Research. In 1961, he married Czech screenwriter Milena Jelinek. At IBM, his team advanced approaches to computer speech recognition and machine translation. After IBM, he went to head the Center for Language and Speech Processing at Johns Hopkins University for 17 years, where he was still working on the day he died.
+
+Personal life
+
+Jelinek was born on November 18, 1932, as Bedřich Jelínek especially when it became clear he would not be allowed to even attempt the graduation examination. His mother hoped her son would become a physician, but Jelinek dreamed of being a lawyer. He studied engineering in evening classes at the City College of New York and received stipends from the National Committee for a Free Europe that allowed him to study at the Massachusetts Institute of Technology. About his choice of specialty, he said: "Fortunately, to electrical engineering there belonged a discipline whose aim was not the construction of physical systems: the theory of information". During the next decade, a combination of factors shut down the application of information theory to natural language processing (NLP) problemsin particular machine translation. One factor was the 1957 publication of Noam Chomsky's Syntactic Structures, which stated, "probabilistic models give no insight into the basic problems of syntactic structure". This accorded well with the philosophy of the artificial intelligence research of the time, which promoted rule-based approaches. The other factor was the 1966 ALPAC report, which recommended that the government should stop funding research into machine translation. ALPAC chairman John Pierce later said that the field was filled with "mad inventors or untrustworthy engineers". He said that the underlying linguistic problems must be solved before attempts at NLP could be reasonably made. These elements essentially halted research in the field. Jelinek claimed that he said it in a talk titled "Applying Information Theoretic Methods: Evaluation of Grammar Quality" at the Workshop on Evaluation of NLP Systems (Wayne, Pennsylvania, December 1988). He also gave more details around the context. At the start of their Continuous Speech Recognition at IBM in 1972, two linguists were assigned to the group. The group was trying to make a language model. One of them, Stan Petrick, said "Don't worry, I will just make a little grammar." He never did. One year later, both linguists left, leaving behind a group of mostly engineers and physicists with little experience with linguistics, but much experience with information theory.
+
+Selected publications
+
+Jelinek, Frederick (1968). Probabilistic Information Theory: Discrete and memoryless models. McGraw-Hill series in systems science. New York: McGraw-Hill. 689p.   (review)
+
+———————- (1969). "Fast sequential decoding algorithm using a stack". IBM Journal of Research and Development 13(6):675–685. .
+
+———————- (1969). "Tree encoding of memoryless time-discrete sources with a fidelity criterion". IEEE Transactions on Information Theory 15(5):584–590. . (received 1971 "Best Paper" award)
+
+Bahl, Lalit R.; John Cocke, Frederick Jelinek, Josef Raviv (1974). "Optimal decoding of linear codes for minimizing symbol error rate". IEEE Transactions on Information Theory 20(2):284–287. . (received Information Theory Society Golden Jubilee paper award)
+
+———————- (1976). "Continuous speech recognition by statistical methods". Proceedings of the IEEE 64(4):532–556. .
+
+Brown, P.; J. Cocke, S. Della Pietra, V. Della Pietra, F. Jelinek, R, Mercer and P. Roossin (1988). "A statistical approach to language translation" . In Dénes Vargha, ed. Coling 88: Proceedings of the 12th conference on Computational linguistics, volume 1. Budapest: John Von Neumann society for computing sciences. pp.&nbsp;71–76. . .
+
+———————- (1990). "Self-Organized Language Modeling for Speech Recognition". In Alex Waibel & Kai-Fu Lee, eds. Readings in speech recognition. San Mateo: Morgan Kaufmann. 629p. .
+
+———————-; John D. Lafferty and Robert L. Mercer. (1990) "Basic methods of probabilistic context free grammars". Technical Report RC 16374 (72684), IBM.
+
+Reprinted in Laface, Pietro; Renato De Mori (1992). Speech Recognition and Understanding: Recent advances, trends, and applications. NATO ASI series. Series F, Computer and systems sciences, 75. New York: Springer-Verlag. pp.&nbsp;345–360. .
+
+———————- (1997). Statistical Methods for Speech Recognition. Cambridge, Mass.: MIT Press. 283p. . (review) (review 2)
+
+Chelba, Ciprian; Frederick Jelinek (2000). "Structured Language Modeling". Computer Speech & Language 14(4):283–332.  (received 2002 "Best Paper" award).
+
+Expanded version of a presentation at NLDB'99. Klagenfurt, Austria, June 17–19, 1999 ().
+
+Xu, Peng; Ahmad Emami and Frederick Jelinek (2003). "Training Connectionist Models for the Structured Language Model". In Michael Collins and Mark Steedman, eds. EMNLP '03 Proceedings of the 2003 conference on Empirical methods in natural language processing. East Stroudsburg, Penn.: Association for Computational Linguistics. pp.&nbsp;160–167. . . (won "best paper" award)
+
+References
+
+Notes
+
+References
+
+{{reflist|35em|refs=
+
+}}
+
+External links
+
+Institutional page at Johns Hopkins university
+
+Category:1932 births
+
+Category:2010 deaths
+
+Category:American people of Bohemian descent
+
+Category:American people of Czech-Jewish descent
+
+Category:Statistical natural language processing
+
+Category:Czechoslovak emigrants to the United States
+
+Category:Cornell University faculty
+
+Category:Harvard University faculty
+
+Category:Johns Hopkins University faculty
+
+Category:MIT School of Engineering alumni
+
+Category:IBM Research computer scientists
+
+Category:IBM employees
+
+Category:Members of the United States National Academy of Engineering
+
+Category:People from Kladno
+
+Category:Speech processing researchers
+
+Category:Natural language processing researchers

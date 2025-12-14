@@ -1,0 +1,81 @@
+{{Infobox company
+
+name = Synthesia Limited
+
+logo = Synthesia Logo 2024.png
+
+logo_upright = 1.25
+
+logo_caption = Logo
+
+logo_alt = Logo of Synthesia (company) comprising circular graphic aside company name
+
+type = Private
+
+industry = Artificial intelligence
+
+fate =
+
+predecessor =
+
+successor =
+
+founded =
+
+founder = Lourdes AgapitoMatthias NiessnerVictor RiparbelliSteffen Tjerrild
+
+defunct =
+
+hq_location = London, United Kingdom
+
+area_served = Worldwide
+
+key_people =
+
+products = Synthetic mediaVideo editing software
+
+owner =
+
+num_employees = 550 It has been used in advertising campaigns, reporting, product demonstrations, and to create chatbots.
+
+Synthesia's software algorithm mimics speech and facial movements based on video recordings of an individual's speech and phoneme pronunciation. From this a text-to-speech video is created to look and sound like the individual.
+
+Users create content via the platform's pre-generated AI presenters or by creating digital representations of themselves, or personal avatars, using the platform's AI video editing tool. These avatars can be used to narrate videos generated from text. As of August 2021, Synthesia's voice database included multiple gender options in over sixty languages.
+
+Deepfakes
+
+The platform prohibits use of its software to create non-consensual clones, including of celebrities or political figures for satirical purposes. Explicit consent must be provided in addition to a strict pre-screening regimen for use of an individual's likeness to avoid “deepfaking”.
+
+While the company prohibits use of its technology for misinformation or "news-like content", an October 2023 Freedom House report stated that Synthesia tools had been used by governments in Venezuela, China, Burkina Faso, and Russia to create videos of fake TV news outlets with AI-generated avatars in order to spread propaganda. Actor Dan Dewhirst signed a contract with the company in 2021, becoming one of the first actors whose likeness would be made into an AI avatar, finding his likeness used in the Venezuelan generated-videos. The company stated, in February 2024, that it had improved its misuse detection systems,
+
+History
+
+Synthesia's software utilizes deep learning architecture developed by Lourdes Agapito and Matthias Niessner. The company was co-founded in 2017 by Agapito, Niessner, Victor Riparbelli, and Steffen Tjerrild. In 2018, the company first demonstrated the software's capabilities on the BBC programme Click when it presented a digitization of Matthew Amroliwala speaking Spanish, Mandarin, and Hindi. Through Synthesia's first two years of existence, it employed ten people and struggled to make sales, leading to an expansion of the company's focus. It moved on from just targeting entertainment studios to a variety of businesses.
+
+In 2020, Synthesia users were reported to include Amazon, Tiffany & Co. and IHG Hotels & Resorts.
+
+In January 2024, the company introduced its AI video assistant, which turns text-to-video. That April, with a reported 55,000 customers, including half of the Fortune 100, Synthesia launched "expressive avatars". Synthesia gained a total valuation of $1 billion, and achieved unicorn status, when it raised $90 million from Accel and Nvidia partnership NVentures, in June 2023, during its Series C funding round.
+
+In April 2025, Adobe Inc. invested "an undisclosed amount of funds" in Synthesia for a “strategic” partnership. Around that time, Synthesia rejected an acquisition offer from Adobe that reportedly valued the company at about $3 billion, due to disagreements over pricing.
+
+After Synthesia raised in $200 million funding round led by GV, the company's valuation rose to approximately $4 billion in October 2025.
+
+Recognition
+
+In 2021, Synthesia partnered with Lay's to create the Messi Messages campaign featuring Argentine footballer Lionel Messi. Users created personalized messages with Synthesia's software and sent custom artificial reality video messages from Messi based on their text input. The campaign received a Cannes Lion Award under the Bronze category.
+
+In February 2025, UK Science and Technology Minister Peter Kyle commended Synthesia's "pioneering generative AI innovations."
+
+References
+
+External links
+
+Category:2017 establishments in England
+
+Category:2017 software
+
+Category:Chatbots
+
+Category:Artificial intelligence companies
+
+Category:Text-to-video generation

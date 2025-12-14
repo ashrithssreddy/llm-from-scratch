@@ -1,0 +1,7 @@
+Statistical relational learning (SRL) is a subdiscipline of artificial intelligence and machine learning that is concerned with domain models that exhibit both uncertainty (which can be dealt with using statistical methods) and complex, relational structure.
+
+}}
+
+Category:Computational statistics
+
+Category:Machine learning

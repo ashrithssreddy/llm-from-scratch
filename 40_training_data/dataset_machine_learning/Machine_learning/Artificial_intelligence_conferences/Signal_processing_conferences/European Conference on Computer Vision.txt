@@ -1,0 +1,41 @@
+{{Infobox Academic Conference
+
+| history = 1990–present
+
+| discipline = Computer Vision
+
+| abbreviation = ECCV
+
+| frequency = Biennial
+
+| publisher = Springer Science+Business Media
+
+}}
+
+The European Conference on Computer Vision (ECCV) is a biennial research conference with the proceedings published by Springer Science+Business Media. Similar to ICCV in scope and quality, it is held those years which ICCV is not. It is considered to be one of the top conferences in computer vision, alongside CVPR and ICCV,
+
+with an 'A' rating from the Australian Ranking of ICT Conferences and an 'A1' rating from the Brazilian ministry of education. The acceptance rate for ECCV 2010 was 24.4% for posters and 3.3% for oral presentations.
+
+Like other top computer vision conferences, ECCV has tutorial talks, technical sessions, and poster sessions. The conference is usually spread over five to six days with the main technical program occupying three days in the middle, and tutorial and workshops, focused on specific topics, being held in the beginning and at the end.
+
+The ECCV presents the Koenderink Prize annually to recognize fundamental contributions in computer vision.
+
+Location
+
+The conference is usually held in autumn in Europe.
+
+See also
+
+Computer Vision and Pattern Recognition
+
+International Conference on Computer Vision
+
+References
+
+Category:Signal processing conferences
+
+Category:Computer vision research infrastructure
+
+Category:Information technology organizations based in Europe
+
+Category:IEEE conferences

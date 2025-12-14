@@ -1,0 +1,143 @@
+{{Infobox scientist
+
+name        = Dan Jurafsky
+
+native_name =
+
+native_name_lang =
+
+image       = Dan Jurafsky at MOCA 1 (cropped).jpg
+
+imagesize   =
+
+alt         =
+
+caption     = Jurafsky in 2014
+
+birth_date  =
+
+birth_place =  Yonkers, New York, US
+
+death_date  =
+
+death_place =
+
+death_cause =
+
+resting_place =
+
+resting_place_coordinates =
+
+other_names =
+
+fields      = Linguistics and Computer Science
+
+workplaces  = Stanford University (2003— )  University of Colorado Boulder (1996–2003)
+
+patrons     =
+
+alma_mater  = University of California at Berkeley (B.A., 1983; Ph.D., 1992; postdoc, 1992–1995)
+
+thesis_title =
+
+thesis_url  =
+
+thesis_year =
+
+doctoral_advisor =
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students =
+
+known_for   =
+
+influences  =
+
+influenced  =
+
+awards      = MacArthur Fellowship (2002)  NSF CAREER Award (1998)
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+spouse      =
+
+partner     =
+
+children    =
+
+signature   =
+
+signature_alt =
+
+website     =
+
+footnotes   =
+
+}}
+
+Daniel Jurafsky is a professor of linguistics and computer science at Stanford University, and also an author. With Daniel Gildea, he is known for developing the first automatic system for semantic role labeling (SRL). He is the author of The Language of Food: A Linguist Reads the Menu (2014) and a textbook on speech and language processing (2000). For the former, Jurafsky was named a finalist for the James Beard Award.  Jurafsky was given a MacArthur Fellowship in 2002.
+
+Education
+
+Jurafsky received his B.A in linguistics (1983) and Ph.D. in computer science (1992), both at University of California, Berkeley; and then a postdoc at International Computer Science Institute, Berkeley (1992–1995).
+
+Academic life
+
+He is the author of The Language of Food: A Linguist Reads the Menu (W. W. Norton & Company, 2014). With James H. Martin, he wrote the textbook Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition (Prentice Hall, 2000).
+
+The first automatic system for semantic role labeling (SRL, sometimes also referred to as "shallow semantic parsing") was developed by Daniel Gildea and Daniel Jurafsky to automate the FrameNet annotation process in 2002; SRL has since become one of the standard tasks in natural language processing.
+
+Personal life
+
+Jurafsky is Jewish. He is married. They reside in San Francisco, California.
+
+Selected works
+
+2009. Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition, 2nd Edition. (with James H. Martin) Prentice-Hall.
+
+2014. The Language of Food: A Linguist Reads the Menu. W. W. Norton & Company.
+
+2023. Speech and Language Processing: An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition, 3rd Edition draft. (with James H. Martin)
+
+Honors and awards
+
+1998. NSF Career Award
+
+2002. MacArthur Fellowship
+
+2019. LSA Fellow
+
+2022. Atkinson Prizes in Psychological and Cognitive Sciences
+
+References
+
+External links
+
+Dan Jurafsky's Home Page at Stanford University
+
+Bibliography of works by Dan Jurafsky
+
+Category:Living people
+
+Category:American non-fiction writers
+
+Category:MacArthur Fellows
+
+Category:Stanford University Department of Linguistics faculty
+
+Category:Stanford University School of Engineering faculty
+
+Category:1962 births
+
+Category:Natural language processing researchers
+
+Category:Computational linguistics researchers
+
+Category:Linguists from the United States
+
+Category:Fellows of the Linguistic Society of America

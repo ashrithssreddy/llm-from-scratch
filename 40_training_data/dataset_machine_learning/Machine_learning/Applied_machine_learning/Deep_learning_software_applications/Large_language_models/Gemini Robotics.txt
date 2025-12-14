@@ -1,0 +1,9 @@
+Gemini Robotics is an advanced vision-language-action model developed by Google DeepMind in partnership with Apptronik. It is based on the Gemini 2.0 large language model. It is tailored for robotics applications and can understand new situations. There is a related version called Gemini Robotics-ER, which stands for embodied reasoning.
+
+Access to Gemini Robotics models is currently restricted to trusted testers, including Agile Robots, Agility Robots, Boston Dynamics, and Enchanted Tools.
+
+References
+
+Category:Google DeepMind
+
+Category:Large language models

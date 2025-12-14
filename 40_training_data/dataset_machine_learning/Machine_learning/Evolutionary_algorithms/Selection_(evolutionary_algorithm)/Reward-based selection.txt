@@ -1,0 +1,35 @@
+Reward-based selection is a technique used in evolutionary algorithms for selecting potentially useful solutions for recombination.
+
+The probability of being selected for an individual is proportional to the cumulative reward obtained by the individual. The cumulative reward can be computed as a sum of the individual reward and the reward inherited from parents.
+
+Description
+
+Reward-based selection can be used within Multi-armed bandit framework for Multi-objective optimization to obtain a better approximation of the Pareto front.
+
+The newborn a'^{(g+1)} and its parents receive a reward r^{(g)}, if a'^{(g+1)} was selected for new population Q^{(g+1)}, otherwise the reward is zero.
+
+Several reward definitions are possible:
+
+1.  r^{(g)}=1, if the newborn individual a'^{(g+1)} was selected for new population Q^{(g+1)}.
+
+2.  r^{(g)} = 1 - \frac{rank(a'^{(g+1)})}{\mu} \mbox{ if } a'^{(g+1)} \in Q^{(g+1)} , where rank(a'^{(g+1)}) is the rank of newly inserted individual in the population of \mu individuals. Rank can be computed using a well-known non-dominated sorting procedure.
+
+3.  r^{(g)} = \sum_{a\in Q^{(g+1)}} \Delta{H}(a,Q^{(g+1)}) - \sum_{a\in Q^{(g)}} \Delta{H}(a,Q^{(g)}), where \Delta{H}(a,Q^{(g)}) is the hypervolume indicator contribution of the individual a to the population Q^{(g)}. The reward r^{(g)}>0 if the newly inserted individual improves the quality of the population, which is measured as its hypervolume contribution in the objective space.
+
+4. A relaxation of the above reward, involving a rank-based penalization for points for k-th dominated Pareto front:  r^{(g)} =  \frac{1}{2^{k-1}} \left( \sum_{ndom_k(Q^{(g+1)})} \Delta{H}(a,ndom_k(Q^{(g+1)})) - \sum_{ndom_k(Q^{(g)})}  \Delta{H}(a,ndom_k(Q^{(g)})) \right)
+
+Reward-based selection can quickly identify the most fruitful directions of search by maximizing the cumulative reward of individuals.
+
+See also
+
+Fitness proportionate selection
+
+Selection (evolutionary algorithm)
+
+Stochastic universal sampling
+
+Tournament selection
+
+References
+
+Category:Selection (evolutionary algorithm)

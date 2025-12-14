@@ -1,0 +1,73 @@
+{{Infobox economist
+
+name        = Halbert Lynn White
+
+school_tradition =
+
+image       =
+
+image_size  =
+
+caption     =
+
+birth_date  =
+
+birth_place = Kansas City, Missouri, U.S.
+
+death_date  =
+
+death_place = San Diego, California, U.S.
+
+nationality = American
+
+institution = University of RochesterUniversity of California, San Diego
+
+field       = Econometrics
+
+alma_mater  =
+
+doctoral_advisor = Jerry A. HausmanRobert Solow was the Chancellor's Associates Distinguished Professor of Economics at the University of California, San Diego, and a Fellow of the Econometric Society and the American Academy of Arts and Sciences.
+
+Education and career
+
+White, a native of Kansas City, Missouri, graduated salutatorian from Southwest High School in 1968. He went on to study at Princeton University, receiving his B.A. in economics in 1972. He earned his Ph.D. in economics at the Massachusetts Institute of Technology in 1976, under the supervision of Jerry A. Hausman and Robert Solow. White spent his first years as an assistant professor in the University of Rochester before moving to University of California, San Diego (UCSD) in 1979. He remained at UCSD until his untimely death from cancer. A 1982 paper by White contributed strongly to the development of quasi-maximum likelihood estimation. He also contributed to numerous other areas such as neural networks and medicine. In 1999, White co-founded an economic consulting firm, Bates White, which is based in Washington, D.C.
+
+Bibliography
+
+Books
+
+Selected papers
+
+References
+
+External links
+
+Faculty profile at the University of California, San Diego's website
+
+Category:1950 births
+
+Category:2012 deaths
+
+Category:American econometricians
+
+Category:Economists from California
+
+Category:University of California, San Diego faculty
+
+Category:Princeton University alumni
+
+Category:MIT School of Humanities, Arts, and Social Sciences alumni
+
+Category:Place of birth missing
+
+Category:Place of death missing
+
+Category:Fellows of the Econometric Society
+
+Category:University of Rochester faculty
+
+Category:American mathematical statisticians
+
+Category:People from Kansas City, Missouri
+
+Category:Machine learning researchers

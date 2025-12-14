@@ -1,0 +1,47 @@
+Claire Gardent is a French computer scientist and linguist specializing in natural language processing, including natural language generation and machine translation. She is a director of research at the French National Centre for Scientific Research, affiliated with the  (LORIA), She is also past chair of the European chapter of the Association for Computational Linguistics, and former editor-in-chief of the journal Traitement Automatique des Langues (Revue TAL).
+
+Education and career
+
+Gardent was a linguistics student at the University of Toulouse, graduating in 1986. She went to the UK for graduate study, earning a master's degree in artificial intelligence from the University of Essex in 1987 and a PhD in cognitive science from the University of Edinburgh in 1991. Her doctoral dissertation, Gapping and VP ellipsis in a unification-based grammar, was jointly supervised by Ewan Klein and Robin Cooper.
+
+After ten years as a postdoctoral researcher in the Netherlands and Germany, she joined CNRS and LORIA as a researcher in 2000. She has headed a research group on computational, formal, and field linguistics since 2019.
+
+Books
+
+Gardent is the coauthor of books including:
+
+Techniques d'analyse et de génération pour la langue naturelle (with Karine Baschung, Editions Adosa, 1995)
+
+Deep Learning Approaches to Text Production (with Shashi Narayan, Morgan & Claypool, 2020).
+
+Recognition
+
+In 2022 she won the CNRS Silver Medal.
+
+References
+
+{{reflist|refs=
+
+}}
+
+External links
+
+Home page
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:French computer scientists
+
+Category:French women computer scientists
+
+Category:Linguists from France
+
+Category:Natural language processing researchers
+
+Category:University of Toulouse alumni
+
+Category:Alumni of the University of Essex
+
+Category:Alumni of the University of Edinburgh

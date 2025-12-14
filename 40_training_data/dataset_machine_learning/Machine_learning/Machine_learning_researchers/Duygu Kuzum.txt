@@ -1,0 +1,79 @@
+{{Infobox scientist
+
+name              = Duygu Kuzum
+
+image             = Duygu Kuzum - PopTech 2013 (cropped).jpg
+
+caption           = Kuzum at PopTech 2013
+
+birth_date        =
+
+birth_place       = Ankara
+
+workplaces        = Jacobs School of Engineering, UCSD  University of Pennsylvania
+
+alma_mater        = Stanford University  Bilkent University
+
+thesis_title      = Interface-engineered Ge MOSFETs for future high performance CMOS applications
+
+thesis_url        = https://worldcat.org/en/title/606825232
+
+thesis_year       = 2010
+
+}}
+
+Duygu Kuzum (born 1983) is a Turkish-American electrical engineer who is a professor at the University of California, San Diego's Jacobs School of Engineering. She develops transparent neural sensors based on single-layer materials. She was awarded a National Institutes of Health New Innovator Award in 2020. She became interested in science as a child. She attended Bilkent University and was a doctoral researcher at Stanford University. Her doctoral research considered MOSFETs for CMOS applications. During her doctorate, she completed an internship at Intel. In 2011, she joined the University of Pennsylvania as a postdoctoral researcher, working in the Center for Neuroengineering and Therapeutics on the development of transparent neural electrodes. Her research focuses on innovative computation strategies based on neural networks. She has built self-assembled structures from stem cells embedded with controllable neural sensors to mimic the embryonic human brain.
+
+2014 MIT Technology Review Innovators under 35
+
+2017 IEEE Nanotechnology Council Young Investigator Award
+
+2018 NSF Career Award
+
+2018 National Institutes of Health NIBIB Trailblazer Award
+
+2020 National Institutes of Health New Innovator Award
+
+2025 Presidential Early Career Award for Scientists and Engineers
+
+Selected publications
+
+References
+
+Category:1983 births
+
+Category:Living people
+
+Category:People from Ankara
+
+Category:Ankara Science High School alumni
+
+Category:Bilkent University alumni
+
+Category:Stanford University alumni
+
+Category:University of California, San Diego faculty
+
+Category:Turkish emigrants to the United States
+
+Category:American electrical engineers
+
+Category:21st-century American engineers
+
+Category:21st-century American women engineers
+
+Category:21st-century Turkish women scientists
+
+Category:21st-century Turkish engineers
+
+Category:Turkish electrical engineers
+
+Category:Machine learning researchers
+
+Category:Turkish neuroscientists
+
+Category:American neuroscientists
+
+Category:Network scientists
+
+Category:Turkish bioengineers

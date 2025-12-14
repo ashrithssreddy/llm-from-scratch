@@ -1,0 +1,173 @@
+Complete-linkage clustering is one of several methods of agglomerative hierarchical clustering. At the beginning of the process, each element is in a cluster of its own. The clusters are then sequentially combined into larger clusters until all elements end up being in the same cluster. The method is also known as farthest neighbour clustering. The result of the clustering can be visualized as a dendrogram, which shows the sequence of cluster fusion and the distance at which each fusion took place.
+
+Clustering procedure
+
+At each step, the two clusters separated by the shortest distance are combined. The definition of 'shortest distance' is what differentiates between the different agglomerative clustering methods. In complete-linkage clustering, the link between two clusters contains all element pairs, and the distance between clusters equals the distance between those two elements (one in each cluster) that are farthest away from each other. The shortest of these links that remains at any step causes the fusion of the two clusters whose elements are involved.
+
+Mathematically, the complete linkage function &mdash; the distance D(X,Y) between clusters X and Y &mdash; is described by the following expression :
+
+D(X,Y)= \max_{x\in X, y\in Y} d(x,y)
+
+where
+
+d(x,y) is the distance between elements x \in X and y \in Y ;
+
+X and Y are two sets of elements (clusters).
+
+Algorithms
+
+Naive scheme
+
+The following algorithm is an agglomerative scheme that erases rows and columns in a proximity matrix as old clusters are merged into new ones. The N \times N proximity matrix D contains all distances d(i,j). The clusterings are assigned sequence numbers 0,1,......, (n&nbsp;&minus;&nbsp;1) and L(k) is the level of the kth clustering. A cluster with sequence number m is denoted (m) and the proximity between clusters (r) and (s) is denoted d[(r),(s)].
+
+The complete linkage clustering algorithm consists of the following steps:
+
+Begin with the disjoint clustering having level  L(0) = 0 and sequence number m=0.
+
+Find the most similar pair of clusters in the current clustering, say pair (r), (s), according to d[(r),(s)] = \max d[(i),(j)]where the maximum is over all pairs of clusters in the current clustering.
+
+Increment the sequence number: m = m + 1. Merge clusters (r) and (s) into a single cluster to form the next clustering m. Set the level of this clustering to L(m) = d[(r),(s)]
+
+Update the proximity matrix, D, by deleting the rows and columns corresponding to clusters (r) and (s) and adding a row and column corresponding to the newly formed cluster. The proximity between the new cluster, denoted (r,s), and an old cluster (k) is defined as d[(r,s),(k)] = \max \{d[(k),(r)], d[(k),(s)] \}.
+
+If all objects are in one cluster, stop. Else, go to step 2.
+
+Optimally efficient scheme
+
+The algorithm explained above is easy to understand but of complexity O(n^3). In May 1976, D. Defays proposed an optimally efficient algorithm of only complexity O(n^2) known as CLINK (published 1977) inspired by the similar algorithm SLINK for single-linkage clustering.
+
+Working example
+
+The working example is based on a JC69 genetic distance matrix computed from the 5S ribosomal RNA sequence alignment of five bacteria: Bacillus subtilis (a), Bacillus stearothermophilus (b), Lactobacillus viridescens (c), Acholeplasma modicum (d), and Micrococcus luteus (e).
+
+First step
+
+First clustering
+
+Let us assume that we have five elements (a,b,c,d,e) and the following matrix D_1 of pairwise distances between them:
+
+In this example, D_1 (a,b)=17 is the smallest value of D_1, so we join elements a and b.
+
+First branch length estimation
+
+Let u denote the node to which a and b are now connected. Setting  \delta(a,u)=\delta(b,u)=D_1(a,b)/2  ensures that elements a and b are equidistant from u. This corresponds to the expectation of the ultrametricity hypothesis.
+
+The branches joining a and b to u then have lengths  \delta(a,u)=\delta(b,u)=17/2=8.5 (see the final dendrogram)
+
+First distance matrix update
+
+We then proceed to update the initial proximity matrix D_1 into a new proximity matrix D_2 (see below), reduced in size by one row and one column because of the clustering of a with b.
+
+Bold values in D_2 correspond to the new distances, calculated by retaining the maximum distance between each element of the first cluster (a,b) and each of the remaining elements:
+
+D_2((a,b),c)=max(D_1(a,c),D_1(b,c))=max(21,30)=30
+
+D_2((a,b),d)=max(D_1(a,d),D_1(b,d))=max(31,34)=34
+
+D_2((a,b),e)=max(D_1(a,e),D_1(b,e))=max(23,21)=23
+
+Italicized values in D_2 are not affected by the matrix update as they correspond to distances between elements not involved in the first cluster.
+
+Second step
+
+Second clustering
+
+We now reiterate the three previous steps, starting from the new distance matrix D_2 :
+
+Here, D_2 ((a,b),e)=23  is the lowest value of D_2, so we join cluster (a,b) with element e.
+
+Second branch length estimation
+
+Let v denote the node to which (a,b) and e are now connected. Because of the ultrametricity constraint, the branches joining a or b to v, and e to v, are equal and have the following total length:
+
+\delta(a,v)=\delta(b,v)=\delta(e,v)=23/2=11.5
+
+We deduce the missing branch length:
+
+\delta(u,v)=\delta(e,v)-\delta(a,u)=\delta(e,v)-\delta(b,u)=11.5-8.5=3 (see the final dendrogram)
+
+Second distance matrix update
+
+We then proceed to update the D_2 matrix into a new distance matrix D_3 (see below), reduced in size by one row and one column because of the clustering of (a,b) with e :
+
+D_3(((a,b),e),c)=max(D_2((a,b),c),D_2(e,c))=max(30,39)=39
+
+D_3(((a,b),e),d)=max(D_2((a,b),d),D_2(e,d))=max(34,43)=43
+
+Third step
+
+Third clustering
+
+We again reiterate the three previous steps, starting from the updated distance matrix D_3.
+
+Here, D_3 (c,d)=28 is the smallest value of D_3, so we join elements c and d.
+
+Third branch length estimation
+
+Let w denote the node to which c and d are now connected.
+
+The branches joining c and d to w then have lengths  \delta(c,w)=\delta(d,w)=28/2=14 (see the final dendrogram)
+
+Third distance matrix update
+
+There is a single entry to update:
+
+D_4((c,d),((a,b),e))=max(D_3(c,((a,b),e)), D_3(d,((a,b),e)))=max(39, 43)=43
+
+Final step
+
+The final D_4 matrix is:
+
+So we join clusters ((a,b),e) and (c,d).
+
+Let r denote the (root) node to which ((a,b),e) and (c,d) are now connected.
+
+The branches joining ((a,b),e) and (c,d) to r then have lengths:
+
+\delta(((a,b),e),r)=\delta((c,d),r)=43/2=21.5
+
+We deduce the two remaining branch lengths:
+
+\delta(v,r)=\delta(((a,b),e),r)-\delta(e,v)=21.5-11.5=10
+
+\delta(w,r)=\delta((c,d),r)-\delta(c,w)=21.5-14=7.5
+
+The complete-linkage dendrogram
+
+The dendrogram is now complete. It is ultrametric because all tips (a to e) are equidistant from r :
+
+\delta(a,r)=\delta(b,r)=\delta(e,r)=\delta(c,r)=\delta(d,r)=21.5
+
+The dendrogram is therefore rooted by r, its deepest node.
+
+Comparison with other linkages
+
+Alternative linkage schemes include single linkage clustering and average linkage clustering - implementing a different linkage in the naive algorithm is simply a matter of using a different formula to calculate inter-cluster distances in the initial computation of the proximity matrix and in step 4 of the above algorithm. An optimally efficient algorithm is however not available for arbitrary linkages. The formula that should be adjusted has been highlighted using bold text.
+
+Complete linkage clustering avoids a drawback of the alternative single linkage method - the so-called chaining phenomenon, where clusters formed via single linkage clustering may be forced together due to single elements being close to each other, even though many of the elements in each cluster may be very distant to each other. Complete linkage tends to find compact clusters of approximately equal diameters.
+
+See also
+
+Cluster analysis
+
+Hierarchical clustering
+
+Molecular clock
+
+Neighbor-joining
+
+Single-linkage clustering
+
+UPGMA
+
+WPGMA
+
+References
+
+Further reading
+
+Category:Cluster analysis algorithms
+
+Category:Bioinformatics algorithms
+
+Category:Computational phylogenetics

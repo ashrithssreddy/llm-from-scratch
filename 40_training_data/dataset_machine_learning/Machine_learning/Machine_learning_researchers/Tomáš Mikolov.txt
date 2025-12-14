@@ -1,0 +1,103 @@
+{{Infobox scientist
+
+name              = Tomáš Mikolov
+
+image             = Tomáš Mikolov (2020).jpg
+
+image_size        =
+
+caption           = Mikolov in 2020
+
+birth_date        =
+
+birth_place       = Šumperk
+
+death_date        =
+
+death_place       =
+
+citizenship       = Czech
+
+nationality       =
+
+ethnicity         =
+
+fields            = Computer Science
+
+workplaces        = Johns Hopkins UniversityUniversité de MontréalMicrosoftGoogleFacebook
+
+alma_mater        = Brno University of Technology
+
+thesis_title      = Statistical Language Models Based on Neural Networks
+
+thesis_url        = https://www.fit.vut.cz/study/phd-thesis/283/.en
+
+thesis_year       = 2012
+
+doctoral_advisor  =
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students  =
+
+known_for         =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+awards            =
+
+religion          =
+
+signature         =
+
+footnotes         =
+
+}}
+
+Tomáš Mikolov is a Czech computer scientist working in the field of machine learning. In March 2020, Mikolov became a senior research scientist at the Czech Institute of Informatics, Robotics and Cybernetics.
+
+Career
+
+Mikolov obtained his PhD in Computer Science from Brno University of Technology for his work on recurrent neural network-based language models. He is the lead author of the 2013 paper that introduced the Word2vec technique in natural language processing and is an author on the FastText architecture. Mikolov came up with the idea to generate text from neural language models in 2007 and his RNNLM toolkit was the first to demonstrate the capability to train language models on large corpora, resulting in large improvements over the state of the art.
+
+Prior to joining Facebook in 2014, Mikolov worked as a visiting researcher at Johns Hopkins University, Université de Montréal, Microsoft and Google. He left Facebook at some time in 2019/2020 to join the Czech Institute of Informatics, Robotics and Cybernetics.
+
+Mikolov has argued that humanity might be at a greater existential risk if an artificial general intelligence is not developed.
+
+References
+
+External links
+
+Category:Living people
+
+Category:Brno University of Technology alumni
+
+Category:Machine learning researchers
+
+Category:Facebook employees
+
+Category:Czech computer scientists
+
+Category:Artificial intelligence researchers
+
+Category:Czech expatriates in the United States
+
+Category:1982 births
+
+Category:Johns Hopkins University people
+
+Category:Academic staff of the Université de Montréal
+
+Category:Microsoft Research people
+
+Category:Google people
+
+Category:Natural language processing researchers

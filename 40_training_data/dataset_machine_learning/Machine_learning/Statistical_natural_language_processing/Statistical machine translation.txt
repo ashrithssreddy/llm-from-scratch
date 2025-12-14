@@ -1,0 +1,129 @@
+Statistical machine translation (SMT) is a machine translation approach where translations are generated on the basis of statistical models whose parameters are derived from the analysis of bilingual text corpora. The statistical approach contrasts with the rule-based approaches to machine translation as well as with example-based machine translation, that superseded the previous rule-based approach that required explicit description of each and every linguistic rule, which was costly, and which often did not generalize to other languages.
+
+The first ideas of statistical machine translation were introduced by Warren Weaver in 1949, including the ideas of applying Claude Shannon's information theory. Statistical machine translation was re-introduced in the late 1980s and early 1990s by researchers at IBM's Thomas J. Watson Research Center. Before the introduction of neural machine translation, it was by far the most widely studied machine translation method.
+
+Basis
+
+The idea behind statistical machine translation comes from information theory. A document is translated according to the probability distribution p(e|f) that a string e in the target language (for example, English) is the translation of a string f in the source language (for example, French).
+
+The problem of modeling the probability distribution p(e|f) has been approached in a number of ways.  One approach which lends itself well to computer implementation is to apply Bayes' theorem, that is p(e|f) \propto p(f|e) p(e), where the translation model p(f|e) is the probability that the source string is the translation of the target string, and the language model p(e) is the probability of seeing that target language string. This decomposition is attractive as it splits the problem into two subproblems. Finding the best translation \tilde{e} is done by picking up the one that gives the highest probability:
+
+\tilde{e} = arg \max_{e \in e^*} p(e|f) = arg \max_{e\in e^*} p(f|e) p(e) .
+
+For a rigorous implementation of this one would have to perform an exhaustive search by going through all strings e^* in the native language. Performing the search efficiently is the work of a machine translation decoder that uses the foreign string, heuristics and other methods to limit the search space and at the same time keeping acceptable quality. This trade-off between quality and time usage can also be found in speech recognition.
+
+As the translation systems are not able to store all native strings and their translations, a document is typically translated sentence by sentence. Language models are typically approximated by smoothed n-gram models, and similar approaches have been applied to translation models, but this introduces additional complexity due to different sentence lengths and word orders in the languages.
+
+Statistical translation models were initially word based (Models 1-5 from IBM Hidden Markov model from Stephan Vogel and Model 6 from Franz-Joseph Och), but significant advances were made with the introduction of phrase based models.  Later work incorporated syntax or quasi-syntactic structures.
+
+Benefits
+
+The most frequently cited benefits of statistical machine translation (SMT) over rule-based approach are:
+
+More efficient use of human and data resources
+
+There are many parallel corpora in machine-readable format and even more monolingual data.
+
+Generally, SMT systems are not tailored to any specific pair of languages.
+
+More fluent translations owing to use of a language model
+
+Shortcomings
+
+Corpus creation can be costly.
+
+Specific errors are hard to predict and fix.
+
+Results may have superficial fluency that masks translation problems.
+
+Statistical machine translation usually works less well for language pairs with significantly different word order.
+
+The benefits obtained for translation between Western European languages are not representative of results for other language pairs, owing to smaller training corpora and greater grammatical differences.
+
+Word-based translation
+
+In word-based translation, the fundamental unit of translation is a word in some natural language. Typically, the number of words in translated sentences are different, because of compound words, morphology and idioms. The ratio of the lengths of sequences of translated words is called fertility, which tells how many foreign words each native word produces. Necessarily it is assumed by information theory that each covers the same concept. In practice this is not really true. For example, the English word corner can be translated in Spanish by either rincón or esquina, depending on whether it is to mean its internal or external angle.
+
+Simple word-based translation cannot translate between languages with different fertility. Word-based translation systems can relatively simply be made to cope with high fertility, such that they could map a single word to multiple words, but not the other way about. For example, if we were translating from English to French, each word in English could produce any number of French words&mdash; sometimes none at all. But there is no way to group two English words producing a single French word.
+
+An example of a word-based translation system is the freely available GIZA++ package (GPLed), which includes the training program for IBM models and HMM model and Model 6. And matching words in bi-text is still a problem actively discussed in the community. Because of the predominance of GIZA++, there are now several distributed implementations of it online.
+
+Phrase-based translation
+
+In phrase-based translation, the aim is to reduce the restrictions of word-based translation by translating whole sequences of words, where the lengths may differ. The sequences of words are called blocks or phrases. These are typically not linguistic phrases, but phrasemes that were found using statistical methods from corpora. It has been shown that restricting the phrases to linguistic phrases (syntactically motivated groups of words, see syntactic categories) decreased the quality of translation.
+
+The chosen phrases are further mapped one-to-one based on a phrase translation table, and may be reordered. This table could be learnt based on word-alignment, or directly from a parallel corpus. The second model is trained using the expectation maximization algorithm, similarly to the word-based IBM model.
+
+Microsoft Translator (started transition to neural machine translation in 2016)
+
+Yandex.Translate (switched to hybrid approach incorporating neural machine translation in 2017)
+
+Challenges with statistical machine translation
+
+Problems with statistical machine translation include:
+
+Sentence alignment
+
+Single sentences in one language can be found translated into several sentences in the other and vice versa. Long sentences may be broken up, while short sentences may be merged. There are even languages that use writing systems without clear indication of a sentence end, such as Thai. Sentence aligning can be performed through the Gale-Church alignment algorithm. Efficient search and retrieval of the highest scoring sentence alignment is possible through this and other mathematical models.
+
+Word alignment
+
+Sentence alignment is usually either provided by the corpus or obtained by the aforementioned Gale-Church alignment algorithm. To learn e.g. the translation model, however, we need to know which words align in a source-target sentence pair. The IBM-Models or the HMM-approach were attempts at solving this challenge.
+
+Function words that have no clear equivalent in the target language are another issue for the statistical models. For example, when translating from English to German, in the sentence "John does not live here", the word "does" has no clear alignment in the translated sentence "John wohnt hier nicht". Through logical reasoning, it may be aligned with the words "wohnt" (as it contains grammatical information for the English word "live") or "nicht" (as it only appears in the sentence because it is negated) or it may be unaligned.
+
+Statistical anomalies
+
+An example of such an anomaly is the phrase "I took the train to Berlin" being mistranslated as "I took the train to Paris" due to the statistical abundance of "train to Paris" in the training set.
+
+Idiom and register
+
+Depending on the corpora used, the use of idiom and linguistic register might not receive a translation that accurately represents the original intent. For example, the popular Canadian Hansard bilingual corpus primarily consists of parliamentary speech examples, where "Hear, Hear!" is frequently associated with "Bravo!" Using a model built on this corpus to translate ordinary speech in a conversational register would lead to incorrect translation of the word hear as Bravo!
+
+This problem is connected with word alignment, as in very specific contexts the idiomatic expression aligned with words that resulted in an idiomatic expression of the same meaning in the target language. However, it is unlikely, as the alignment usually does not work in any other contexts. For that reason, idioms could only be subjected to phrasal alignment, as they could not be decomposed further without losing their meaning. This problem was specific for word-based translation.
+
+Different word orders
+
+Word order in languages differ. Some classification can be done by naming the typical order of subject (S), verb (V) and object (O) in a sentence and one can talk, for instance, of SVO or VSO languages. There are also additional differences in word orders, for instance, where modifiers for nouns are located, or where the same words are used as a question or a statement.
+
+In speech recognition, the speech signal and the corresponding textual representation can be mapped to each other in blocks in order. This is not always the case with the same text in two languages. For SMT, the machine translator can only manage small sequences of words, and word order has to be thought of by the program designer. Attempts at solutions have included re-ordering models, where a distribution of location changes for each item of translation is guessed from aligned bi-text. Different location changes can be ranked with the help of the language model and the best can be selected.
+
+Out of vocabulary (OOV) words
+
+SMT systems typically store different word forms as separate symbols without any relation to each other, and word forms or phrases that were not in the training data cannot be translated. This might be because of the lack of training data, changes in the human domain where the system is used, or differences in morphology.
+
+See also
+
+AppTek
+
+Cache language model
+
+Duolingo
+
+Europarl corpus
+
+Example-based machine translation
+
+Google Translate
+
+Hybrid machine translation
+
+Microsoft Translator
+
+Moses (machine translation), free software
+
+Rule-based machine translation
+
+SDL Language Weaver
+
+Statistical parsing
+
+Notes and references
+
+External links
+
+Annotated list of statistical natural language processing resources &mdash; Includes links to freely available statistical machine translation software
+
+Category:Machine translation
+
+Category:Statistical natural language processing

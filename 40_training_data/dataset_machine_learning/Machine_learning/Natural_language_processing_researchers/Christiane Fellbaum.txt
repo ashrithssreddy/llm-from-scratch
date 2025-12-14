@@ -1,0 +1,63 @@
+{{Infobox academic
+
+name = Christiane D. Fellbaum
+
+alma_mater = Princeton University (Ph.D., 1980)
+
+nationality = American
+
+discipline = Linguist
+
+sub_discipline = Cognitive linguistics
+
+workplaces = Princeton University
+
+known_for = Co-creating WordNet
+
+website =
+
+}}
+
+Christiane D. Fellbaum is an American linguist and computational linguistics researcher who is Lecturer with Rank of Professor in the Program in Linguistics and the Computer Science Department at Princeton University. The co-developer of the WordNet project, she is also its current director.
+
+Biography
+
+Fellbaum received a Ph.D. from Princeton University in linguistics in 1980 and later joined Princeton's Cognitive Science Laboratory, working with George Armitage Miller. Together with Miller and his team, she was a creator of WordNet,
+
+She is a founder and president of the Global WordNet Association, which guides the construction of lexical databases in many languages. She is a site coordinator of the North American Computational Linguistics Open competition. Her research focuses on lexical semantics, the syntax-semantics interface, and computational linguistics.
+
+Awards and honors
+
+In 2001, Fellbaum was one of fourteen scientists to receive the Wolfgang-Paul Prize of the Humboldt Foundation. She used her award money (1.53 million Euros) to construct an electronic database of German idioms ('Kollokationen im Wörterbuch'), a three-year project that she led at the Berlin-Brandenburg Academy of Sciences. The goal of the project, which focused on collocations that combine nouns with verbs, was to analyze and record a wide range of German-language idioms.
+
+In 2006, she and WordNet collaborator George A. Miller were awarded the Antonio Zampolli Prize of the European Language Resources Association. According to the ELRA website, the prize recognizes "individuals whose work lies within the areas of Language Resources and Language Technology Evaluation with acknowledged contributions to their advancements."
+
+References
+
+External links
+
+Biography of Christiane Fellbaum (German)
+
+Global WordNet Association
+
+Webpage at Princeton
+
+Homepage and database access, Kollokationen project (German)
+
+Category:Linguists from the United States
+
+Category:Living people
+
+Category:Women lexicographers
+
+Category:Princeton University alumni
+
+Category:Princeton University faculty
+
+Category:American women linguists
+
+Category:Natural language processing researchers
+
+Category:Computational linguistics researchers
+
+Category:1950 births

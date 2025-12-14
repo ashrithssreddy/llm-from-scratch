@@ -1,0 +1,31 @@
+AlphaEvolve is an evolutionary coding agent for designing advanced algorithms based on large language models such as Gemini. It was developed by Google DeepMind and unveiled in May 2025.
+
+Design
+
+AlphaEvolve aims to autonomously discover and refine algorithms through a combination of large language models (LLMs) and evolutionary computation.
+
+Unlike domain-specific predecessors like AlphaFold or AlphaTensor, AlphaEvolve is designed as a general-purpose system. It can operate across a wide array of scientific and engineering tasks by automatically modifying code and optimizing for multiple objectives. Its architecture allows it to evaluate code programmatically, reducing reliance on human input and mitigating risks such as hallucinations common in standard LLM outputs.
+
+See also
+
+Gemini (chatbot)
+
+Strassen algorithm
+
+Evolutionary programming
+
+Genetic programming
+
+References
+
+External links
+
+AlphaEvolve white paper
+
+Category:Applied machine learning
+
+Category:2025 software
+
+Category:Google DeepMind
+
+Category:Evolutionary algorithms

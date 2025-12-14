@@ -1,0 +1,65 @@
+{{Infobox scientist
+
+name              = Sasha Luccioni
+
+image             = Sasha Luccioni 2022.jpg
+
+caption           = Luccioni in 2022
+
+birth_name        = Alexandra Sasha Vorobyova
+
+birth_date        =
+
+birth_place       = Ukrainian SSR, Soviet Union
+
+fields            = Environmental impacts of artificial intelligence
+
+workplaces        = Hugging Face
+
+alma_mater        = Université Sorbonne NouvelleÉcole normale supérieureUniversité du Québec à Montréal
+
+}}
+
+Alexandra Sasha Luccioni (née Vorobyova; born 1990) is a computer scientist specializing in the intersection of artificial intelligence (AI) and climate change. Her work focuses on quantifying the environmental impact of AI technologies and promoting sustainable practices in machine learning development.
+
+Early life and education
+
+Alexandra Sasha Vorobyova was born in the Ukrainian Soviet Socialist Republic in 1990. When she was four years old, her family relocated to Ontario, Canada. Her interest in science is influenced by her family's history; her mother, grandmother, and great-grandmother all pursued careers in scientific fields. Subsequently, she completed a M.S. in cognitive science, with a minor in natural language processing, at École normale supérieure in Paris in 2012.
+
+In 2019, she became a postdoctoral researcher at Université de Montréal and Mila, collaborating with computer scientist Yoshua Bengio on a project titled This Climate Does Not Exist. This initiative used generative adversarial networks to visualize the effects of climate change.
+
+In addition to her research, she has developed tools to measure the environmental impact of AI models, communicated findings through media engagements, and presented at international conferences, including a TED Talk.
+
+References
+
+Category:Living people
+
+Category:1990 births
+
+Category:Date of birth missing (living people)
+
+Category:Place of birth missing (living people)
+
+Category:Ukrainian Soviet Socialist Republic people
+
+Category:Soviet emigrants to Canada
+
+Category:Ukrainian emigrants to Canada
+
+Category:Sorbonne Nouvelle University Paris 3 alumni
+
+Category:École Normale Supérieure alumni
+
+Category:Université du Québec à Montréal alumni
+
+Category:Hugging Face people
+
+Category:Natural language processing researchers
+
+Category:Machine learning researchers
+
+Category:21st-century Ukrainian women scientists
+
+Category:Ukrainian computer scientists
+
+Category:Ukrainian women computer scientists

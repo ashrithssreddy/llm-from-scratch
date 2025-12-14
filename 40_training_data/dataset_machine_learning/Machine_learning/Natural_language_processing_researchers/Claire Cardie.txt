@@ -1,0 +1,69 @@
+{{infobox scientist
+
+education  =
+
+workplaces = Cornell University
+
+awards     =
+
+fields  = Natural language processing
+
+thesis_title =  Domain-Specific Knowledge Acquisition for Conceptual Sentence Analysis
+
+thesis_year = 1994
+
+doctoral_advisor = Wendy Lehnert
+
+doctoral_students =
+
+}}
+
+Claire Cardie is an American computer scientist specializing in natural language processing. Since 2006, she has been a professor of computer science and information science at Cornell University, and from 2010 to 2011 she was the first Charles and Barbara Weiss Chair of Information Science at Cornell. Her research interests include coreference resolution and sentiment analysis.
+
+Education and career
+
+Cardie is a 1982 graduate of Yale University, majoring in computer science. After working for several companies as a computer programmer, she returned to graduate study in the late 1980s and completed her Ph.D. at the University of Massachusetts Amherst in 1994. Her dissertation, Domain-Specific Knowledge Acquisition for Conceptual Sentence Analysis, was supervised by Wendy Lehnert.
+
+She has been on the Cornell University faculty since 1994, initially in computer science and since 2005 also in information science. She was an assistant professor (1994–2000) and associate professor (2000–06), before being promoted to a full professorship in 2006. In 2007 she founded a start-up company, Appinions, and she was its chief scientist until 2015. Her doctoral students at Cornell have included Amit Singhal and Kiri Wagstaff.
+
+Recognition
+
+Cardie became a Fellow of the Association for Computational Linguistics in 2016. She was elected as an ACM Fellow in 2019 "for contributions to natural language processing, including coreference resolution, information and opinion extraction". She was named to the 2021 class of Fellows of the American Association for the Advancement of Science.
+
+References
+
+{{reflist|refs=
+
+}}
+
+External links
+
+Home page
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:American women computer scientists
+
+Category:American computer scientists
+
+Category:Computational linguistics researchers
+
+Category:Yale College alumni
+
+Category:University of Massachusetts Amherst alumni
+
+Category:Cornell University faculty
+
+Category:Fellows of the Association for Computational Linguistics
+
+Category:2019 fellows of the Association for Computing Machinery
+
+Category:Fellows of the American Association for the Advancement of Science
+
+Category:Natural language processing researchers
+
+Category:American women academics
+
+Category:21st-century American women

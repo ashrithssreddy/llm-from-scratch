@@ -1,0 +1,151 @@
+Brian Tomasik is an American researcher, ethicist, and essayist. He is known for his work on suffering-focused ethics, wild animal suffering, and the ethics of artificial intelligence. He previously sometimes wrote under the name Alan Dawrst, a pseudonym he no longer uses. A proponent of consent-based negative utilitarianism, he has written extensively on the welfare and moral consideration of invertebrates such as insects, as well as on artificial sentience and reinforcement learning agents. He co-founded the non-profit Center on Long-Term Risk (formerly the Foundational Research Institute) and is affiliated with the effective altruism movement. He is the creator of the website Essays on Reducing Suffering, on which he has published over a hundred essays on ethics, consciousness, and strategies for reducing suffering in biological and artificial systems.
+
+Tomasik's 2009 essay "The Importance of Wild-Animal Suffering" has been cited in discussions of the topic and as an early contribution to efforts to present it as a significant moral issue. He supports interventions aimed at reducing suffering in nature, including habitat destruction and gene editing, while warning about suffering risks posed by technologies such as terraforming, directed panspermia, and large-scale computer simulations. He argues against entomophagy and the consumption of bivalves, citing concerns about potential suffering and the large numbers of animals involved. Tomasik advocates evidence-based reasoning, cost-effectiveness, and long-term impact in ethical decision-making. In his writings on consciousness, he treats it as a constructed and morally relevant concept, rejecting metaphysical notions such as qualia and the hard problem of consciousness.
+
+Education and career
+
+Ethical development
+
+Health and philosophical interests
+
+As a teenager, Tomasik experienced chronic esophagitis, which he described as causing severe pain and sensitizing him to the intensity and prevalence of suffering. While there, he began writing philosophical essays and continued independently after being introduced to Western philosophy in 2003. Influenced by Ralph Nader and Peter Singer, he adopted a utilitarian perspective in 2005. That same year, he encountered the issue of wild animal suffering in Singer's work and began to question whether life in nature yields more suffering than happiness. Influenced by thinkers such as Singer, Bernard Rollin, Yew-Kwang Ng, and David Pearce, he came to regard the suffering of wild animals, especially insects, as a major ethical concern, which he explored in early essays.
+
+Altruism and earning to give
+
+Around 2005, Tomasik began thinking seriously about valuing money from an altruistic perspective, influenced by claims that small donations could save lives through global health interventions. He also considered the concept of "replaceability", that taking a job in the non-profit sector might displace someone equally capable but less motivated to reduce suffering. He discussed the idea with peers and articulated it in an editorial for his school newspaper.
+
+Although the basic idea had earlier been proposed by Peter Unger, Tomasik is credited with introducing it to the utilitarian forum Felicifia, of which he was a prominent member, where it helped shape discussions that later influenced the early development of the effective altruism movement.
+
+University education and research
+
+Tomasik majored in computer science and minored in mathematics and statistics at Swarthmore College from 2005 to 2009, receiving a B.A. in computer science in May 2009. He was elected to Phi Beta Kappa and Sigma Xi, and received several academic scholarships and awards. His coursework included subjects such as probability, statistics, machine learning, information retrieval, and mathematical finance. He donated a substantial portion of his income to charities, particularly those focused on animal welfare and vegan advocacy, including The Humane League and Vegan Outreach.
+
+Advisory and later roles
+
+Tomasik has served as an advisor to the Center for Reducing Suffering and as a board member of Animal Charity Evaluators. In 2015, he worked at FlyHomes as a software engineer, where he developed valuation models and data pipelines. The site contains over a hundred essays on topics including ethics, consciousness, AI, wild animal suffering, and related subjects. It also features interviews, donation recommendations, and contributions by other authors. Many of the essays have been cited in academic literature.
+
+Tomasik now publishes less frequently, citing higher standards for accuracy, increasing overlap between his work and that of the broader effective altruism movement, changing personal priorities, and the rise of artificial intelligence, which he believes reduces the distinctiveness of human-generated content.
+
+Philosophy
+
+Moral anti-realism and moral progress
+
+Tomasik identifies as a moral anti-realist. He argues that moral progress can still be made relative to personal values, which he considers significant because they reflect what individuals deeply care about. He maintains that the emotional weight often associated with moral truth can apply equally to personal feelings about how one wants the world to be. Tomasik suggests that in the long term, a convergence of values may occur through the emergence of a dominant decision-making system, or "singleton", as described by Nick Bostrom. However, he views such convergence as the outcome of power struggles between competing factions, rather than a reflection of objective moral truth. He supports a form of threshold negative utilitarianism grounded in the principle of consent. According to this view, some forms of suffering are so intense that they cannot be morally outweighed by happiness. To identify this threshold, Tomasik proposes considering whether the individual experiencing the suffering would consent to keep experiencing it in exchange for future benefit. If consent is withdrawn during the experience, the suffering is deemed to have exceeded the moral threshold and should not be justified.
+
+He contrasts this view with what he terms "consent-based positive utilitarianism", which would permit severe suffering if offset by sufficient happiness. While Tomasik acknowledges the coherence of that view, he favors the negative utilitarian framework, which he considers more consistent with his emotional intuitions about the moral urgency of preventing suffering. He has described the suffering of animals in nature as "the most important current issue due to its sheer scale", and argues that wild animal suffering may exceed all other forms of suffering on Earth by several orders of magnitude.
+
+Among the practical measures he has discussed is replacing grass lawns with gravel to reduce invertebrate populations, an approach aimed at lowering the number of sentient beings likely to experience suffering rather than deliberately causing species extinction. He has also considered the potential use of gene drives to spread traits such as reduced pain sensitivity within wild populations. While acknowledging the theoretical appeal of such technologies, Tomasik notes that large-scale ecological interventions would likely disrupt existing equilibria and lead to biodiversity loss. He maintains that species extinction is not inherently morally significant, and that biodiversity and ecosystem stability are valuable only to the extent that they benefit sentient beings. He has also expressed support for the controlled reduction of wild invertebrate populations, including through sterilisation, as a potential method for preventing future suffering.
+
+Future risks of replicating wild animal suffering
+
+Tomasik has warned that some advanced technologies could inadvertently multiply wild animal suffering rather than reduce it. He cites examples such as terraforming Mars or initiating directed panspermia to spread life to other planets, which could recreate Earth-like environments with high levels of suffering. He also notes that future computer simulations, especially those incorporating artificial intelligence, may reach a level of complexity where simulated wild animals become sentient and capable of suffering. Tomasik urges that such possibilities be seriously evaluated for their ethical implications before being pursued.
+
+Moral scope and animal ethics
+
+Tomasik rejects speciesism, arguing that moral concern should be based on ethically relevant traits such as sentience and cognitive capacity, rather than species membership. However, he acknowledges that differences in treatment may be justified when they reflect meaningful distinctions, such as communication ability or social complexity. He acknowledges claims that insect farming may offer environmental benefits and cultural acceptability in some regions, but expresses concern about the potential for large-scale suffering. In particular, he notes that insects have very high rates of reproduction and mortality, meaning that farming them for food likely involves the deaths of vast numbers of individuals.
+
+Ethics of artificial intelligence
+
+Tomasik has written extensively about the moral significance of artificial minds, especially those built using reinforcement learning and related techniques. He argues that even simple artificial agents may merit moral consideration due to structural similarities with animal learning systems.
+
+Artificial suffering and s-risks
+
+Tomasik warns that future technologies could create vast numbers of suffering artificial minds, particularly if AI goals are misaligned or if computer simulations are used extensively to model sentient processes. He has described these scenarios as posing a risk of astronomical suffering ("s-risks") and calls for proactive AI governance and ethical safeguards to prevent such outcomes.
+
+Moral consideration of video game characters
+
+Tomasik has argued that some non-player characters (NPCs) in video games may deserve limited moral consideration, depending on their behavioral complexity. In a 2014 interview with Vox, he suggested that while simple NPCs such as Goombas in Super Mario Bros. likely have negligible ethical relevance, more advanced characters that display goal-directed behavior, such as avoiding harm or adapting to player actions, may be ethically relevant to a very small degree. He drew parallels between such NPCs and simple reinforcement learning agents, noting that if these systems pursue rewards or avoid punishments, they may embody minimal forms of morally relevant processing. While stating that individual NPCs carry minimal ethical weight, Tomasik argued that the aggregate harm caused by large-scale simulated violence might become nontrivial. He also expressed concern that as NPCs become more lifelike and intelligent, their moral significance could increase.
+
+In a 2021 interview with Wired, he reiterated that large-scale simulated harm could pose ethical risks, and suggested that some NPCs displaying goal-directed behavior might merit moral attention.
+
+Consciousness as an emergent and moral construct
+
+Tomasik has been described as endorsing a form of consciousness eliminativism, the view that consciousness does not exist in some ontologically distinct fashion. He describes consciousness as a high-level concept that humans ascribe to physical systems, rather than an objectively existing property. He rejects the existence of ontological qualia and does not accept the hard problem of consciousness, identifying instead as a type-A physicalist in the terminology of David Chalmers. He compares consciousness to concepts such as justice, socially constructed, morally significant, but vague at the margins, suggesting that while people may agree on clear cases, they may differ in judgment about borderline instances. has been cited in discussions of animal ethics and welfare biology by scholars including Horta, Jeff Sebo, Alasdair Cochrane, Catia Faria, Kyle Johannsen, and Jacy Reese Anthis. It has been identified as an early contribution to efforts to frame wild animal suffering as a moral concern and to promote welfare biology as a potential framework for intervention.
+
+Tomasik's 2009 essay "How Many Wild Animals Are There?" has also been widely cited in academic literature concerning the scale of wild animal populations and their ethical relevance, particularly within debates on wild animal suffering, welfare biology, and longtermist ethics.
+
+In addition, Tomasik co-authored the 2017 paper "Framework for Integrating Animal Welfare into Life Cycle Sustainability Assessment", published in The International Journal of Life Cycle Assessment. The study proposed three indicators for evaluating animal welfare based on life quality, lifespan, and the number of animals required per unit of food. One indicator also incorporated cognitive traits such as intelligence. The study found that insect-based foods scored worst across all indicators due to high mortality and low yield, despite lower assumed sentience. The authors argue that even simplified welfare metrics can contribute meaningfully to sustainability assessments.
+
+Recognition by Peter Singer
+
+Peter Singer has credited Tomasik, along with Horta and Faria, with helping to establish wild animal suffering as a serious topic within animal ethics. Singer has said their work influenced his decision to include the subject in Animal Liberation Now, having previously considered it too speculative to address in earlier editions of the book. He also cited work by Tomasik and Horta in his 2015 book on effective altruism, The Most Good You Can Do.
+
+Criticism
+
+Concerns about insect welfare and human exceptionalism
+
+In a 2014 article in the National Review, Wesley J. Smith criticized Tomasik's concern for insect welfare as an example of rejecting human exceptionalism. Smith questioned the implications of prioritizing the potential suffering of insects, particularly in comparison to human interests, and expressed skepticism about proposals to reduce insect populations on moral grounds. He also cited Tomasik's suggestions for insect farming standards and concern over insect deaths in nature as indicative of what he viewed as a disproportionate focus on sentience as the primary basis of moral concern.
+
+Debate over habitat destruction
+
+Philosopher Kyle Johannsen has critiqued Tomasik's argument that intentional habitat destruction could be justified as a means of reducing wild animal suffering, particularly among r-strategist species. While acknowledging that such measures might reduce total suffering, Johannsen argues that Tomasik's position depends on a utilitarian ethical framework that places less importance on moral constraints against directly causing harm. From a moderate deontological perspective, Johannsen contends that negative duties, such as the duty not to kill or displace animals, are more stringent than positive duties to prevent suffering. He concludes that intentional habitat destruction is morally impermissible even if it would improve net outcomes, and instead advocates for cautious, harm-avoiding interventions in nature.
+
+In The Oxford Handbook of Consequentialism, philosophers Tyler M. John and Jeff Sebo describe Tomasik's view as exemplifying the "Logic of the Logger". While recognizing the internal coherence of this position within consequentialism, they caution that it could unintentionally justify ecologically harmful actions and reduce empathy toward wild animals. They recommend a more cautious ethical stance, grounded in further empirical understanding of ecological systems, before endorsing large-scale interventions based on such reasoning.
+
+See also
+
+Ethics of uncertain sentience
+
+Relationship between animal ethics and environmental ethics
+
+Selected publications
+
+References
+
+Further reading
+
+External links
+
+Essays on Reducing Suffering
+
+Brian Tomasik's forum posts on Felificia
+
+Category:Living people
+
+Category:Place of birth missing (living people)
+
+Category:Year of birth missing (living people)
+
+Category:21st-century American essayists
+
+Category:21st-century American male writers
+
+Category:21st-century American writers
+
+Category:AI safety advocates
+
+Category:American animal welfare scholars
+
+Category:American computer scientists
+
+Category:American consciousness researchers and theorists
+
+Category:American ethicists
+
+Category:American male essayists
+
+Category:American organization founders
+
+Category:American philosophy writers
+
+Category:Animal ethicists
+
+Category:Artificial intelligence ethicists
+
+Category:Machine learning researchers
+
+Category:Founders of charities
+
+Category:Microsoft employees
+
+Category:People associated with effective altruism
+
+Category:People from Guilderland, New York
+
+Category:Phi Beta Kappa
+
+Category:Swarthmore College alumni
+
+Category:Utilitarians
+
+Category:Wild animal suffering writers

@@ -1,0 +1,69 @@
+{{Infobox scientist
+
+name              = Margaret Mitchell
+
+image             = MargaretMitchell2022.jpg
+
+caption           = Mitchell in 2022
+
+birth_place       = United States
+
+other_names       = Shmargaret Shmitchell
+
+nationality       =
+
+workplaces        = Google  Microsoft Research  Johns Hopkins University
+
+alma_mater        = Reed College (BA)University of Washington (MSc)University of Aberdeen (PhD)
+
+thesis_title      = Generating Reference to Visible Objects
+
+thesis_year       = 2012
+
+thesis_url        = http://www.m-mitchell.com/papers/Mitchell-2013-Thesis.pdf
+
+fields            = Computer science
+
+known_for         = Algorithmic bias  Fairness in machine learning  Computer vision   Natural language processing
+
+website           =
+
+}}
+
+Margaret Mitchell is a computer scientist who works on algorithmic bias and fairness in machine learning. She is most well known for her work on automatically removing undesired biases concerning demographic groups from machine learning models, as well as more transparent reporting of their intended use. graduating in 2013.
+
+Career and research
+
+Mitchell is best known for her work on fairness in machine learning and methods for mitigating algorithmic bias. This includes her work on introducing the concept of 'Model Cards' for more transparent model reporting,
+
+In 2012, Mitchell joined the Human Language Technology Center of Excellence at Johns Hopkins University as a postdoctoral researcher, before taking up a position at Microsoft Research in 2013. At Microsoft, Mitchell was the research lead of the Seeing AI project, an app that offers support for the visually impaired by narrating texts and images.
+
+In November 2016, she became a senior research scientist at Google Research and Machine intelligence. While at Google, she founded and co-led the Ethical Artificial Intelligence team together with Timnit Gebru. In May 2018, she represented Google in the Partnership on AI.
+
+In February 2018, she gave a TED talk on 'How we can build AI to help humans, not hurt us'.
+
+In January 2021, after  Timnit Gebru's termination from Google, Mitchell reportedly used a script to search through her corporate account and download emails that allegedly documented discriminatory incidents involving Gebru. An automated system locked Mitchell's account in response. In response to media attention Google claimed that she "exfiltrated thousands of files and shared them with multiple external accounts". After a five-week investigation, Mitchell was fired. Prior to her dismissal, Mitchell had been a vocal advocate for diversity at Google, and had voiced concerns about research censorship at the company.
+
+Mitchell was a co-founder of Widening NLP, group seeking to increase the proportion of women and minorities working in natural language processing, and a special interest group within the Association for Computational Linguistics.
+
+References
+
+Category:Alumni of the University of Aberdeen
+
+Category:American women computer scientists
+
+Category:American computer scientists
+
+Category:Living people
+
+Category:Machine learning researchers
+
+Category:Natural language processing researchers
+
+Category:University of Washington alumni
+
+Category:Year of birth missing (living people)
+
+Category:21st-century American women scientists
+
+Category:Hugging Face people

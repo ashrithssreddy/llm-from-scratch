@@ -1,0 +1,83 @@
+In statistics, ordinal regression, also called ordinal classification, is a type of regression analysis used for predicting an ordinal variable, i.e. a variable whose value exists on an arbitrary scale where only the relative ordering between different values is significant. It can be considered an intermediate problem between regression and classification. Examples of ordinal regression are ordered logit and ordered probit. Ordinal regression turns up often in the social sciences, for example in the modeling of human levels of preference (on a scale from, say, 1–5 for "very poor" through "excellent"), as well as in information retrieval. In machine learning, ordinal regression may also be called ranking learning.
+
+Linear models for ordinal regression
+
+Ordinal regression can be performed using a generalized linear model (GLM) that fits both a coefficient vector and a set of thresholds to a dataset. Suppose one has a set of observations, represented by length- vectors  through , with associated responses  through , where each  is an ordinal variable on a scale .  For simplicity, and without loss of generality, we assume   is a non-decreasing vector, that is,  . To this data, one fits a length- coefficient vector  and a set of thresholds  with the property that . This set of thresholds divides the real number line into  disjoint segments, corresponding to the  response levels.
+
+The model can now be formulated as
+
+\Pr(y \le i \mid \mathbf{x}) = \sigma(\theta_i - \mathbf{w} \cdot \mathbf{x})
+
+or, the cumulative probability of the response  being at most  is given by a function  (the inverse link function) applied to a linear function of . Several choices exist for ; the logistic function
+
+\sigma(\theta_i - \mathbf{w} \cdot \mathbf{x}) = \frac{1}{1 + e^{-(\theta_i - \mathbf{w} \cdot \mathbf{x})}}
+
+gives the ordered logit model, while using the CDF of the standard normal distribution gives the ordered probit model. A third option is to use an exponential function
+
+\sigma(\theta_i - \mathbf{w} \cdot \mathbf{x}) = 1 - \exp(-\exp(\theta_i - \mathbf{w} \cdot \mathbf{x}))
+
+which gives the proportional hazards model.
+
+Latent variable model
+
+The probit version of the above model can be justified by assuming the existence of a real-valued latent variable (unobserved quantity) , determined by
+
+y^* = \mathbf{w} \cdot \mathbf{x} + \varepsilon
+
+where  is normally distributed with zero mean and unit variance, conditioned on . The response variable  results from an "incomplete measurement" of , where one only determines the interval into which  falls:
+
+y = \begin{cases}
+
+1 & \text{if} ~~ y^* \le \theta_1, \\
+
+2 & \text{if} ~~ \theta_1
+
+Defining {{math|θ0  -∞}} and {{math|θK  ∞}}, the above can be summarized as {{math|y  k}} if and only if .
+
+From these assumptions, one can derive the conditional distribution of  as
+
+\begin{align}
+
+P(y = k \mid \mathbf{x})
+
+& = P(\theta_{k-1}
+
+where  is the cumulative distribution function of the standard normal distribution, and takes on the role of the inverse link function . The log-likelihood of the model for a single training example ,  can now be stated as
+
+\log\mathcal{L}(\mathbf{w}, \mathbf{\theta} \mid \mathbf{x}_i, y_i)
+
+= \sum_{k=1}^K [y_i = k] \log [\Phi(\theta_k - \mathbf{w} \cdot \mathbf{x}_i) - \Phi(\theta_{k-1} - \mathbf{w} \cdot \mathbf{x}_i)]
+
+(using the Iverson bracket {{math|[yi  k]}}.) The log-likelihood of the ordered logit model is analogous, using the logistic function instead of .
+
+Alternative models
+
+In machine learning, alternatives to the latent-variable models of ordinal regression have been proposed. An early result was PRank, a variant of the perceptron algorithm that found multiple parallel hyperplanes separating the various ranks; its output is a weight vector  and a sorted vector of  thresholds , as in the ordered logit/probit models. The prediction rule for this model is to output the smallest rank  such that .
+
+Other methods rely on the principle of large-margin learning that also underlies support vector machines.
+
+Another approach is given by Rennie and Srebro, who, realizing that "even just evaluating the likelihood of a predictor is not straight-forward" in the ordered logit and ordered probit models, propose fitting ordinal regression models by adapting common loss functions from classification (such as the hinge loss and log loss) to the ordinal case.
+
+Software
+
+ORCA (Ordinal Regression and Classification Algorithms) is an Octave/MATLAB framework including a wide set of ordinal regression methods.
+
+R packages that provide ordinal regression methods include MASS and Ordinal.
+
+See also
+
+Logistic regression
+
+Continuous ranked probability score
+
+Notes
+
+References
+
+Further reading
+
+Category:Generalized linear models
+
+Category:Categorical regression models
+
+Category:Classification algorithms

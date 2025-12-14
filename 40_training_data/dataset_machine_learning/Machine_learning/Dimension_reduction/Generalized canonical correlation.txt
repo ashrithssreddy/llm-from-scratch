@@ -1,0 +1,21 @@
+In statistics, the generalized canonical correlation analysis (gCCA), is a way of making sense of cross-correlation matrices between the sets of random variables when there are more than two sets. While a conventional CCA generalizes principal component analysis (PCA) to two sets of random variables, a gCCA  generalizes PCA to more than two sets of random variables. The canonical variables represent those common factors that can be found by a large PCA of all of the transformed random variables after each set underwent its own PCA.
+
+Applications
+
+The Helmert-Wolf blocking (HWB) method of estimating linear regression parameters can find an optimal solution only if all cross-correlations between the data blocks are zero. They can always be made to vanish by introducing a new regression parameter for each common factor. The gCCA method can be used for finding those harmful common factors that create cross-correlation between the blocks. However, no optimal HWB solution exists if the random variables do not contain enough information on all of the new regression parameters.
+
+References
+
+Afshin-Pour, B.; Hossein-Zadeh, G.A. Strother, S.C.; Soltanian-Zadeh, H. (2012), "Enhancing reproducibility of fMRI statistical maps using generalized canonical correlation analysis in NPAIRS framework", NeuroImage 60(4): 1970–1981.
+
+Sun, Q.S., Liu, Z.D., Heng, P.A., Xia, D.S. (2005) "A Theorem on the Generalized Canonical Projective Vectors". Pattern Recognition 38 (3) 449
+
+Kettenring, J. R. (1971) "Canonical analysis of several sets of variables". "Biometrika" 58 (3) 433
+
+External links
+
+FactoMineR (free exploratory multivariate data analysis software linked to R)
+
+Category:Covariance and correlation
+
+Category:Dimension reduction

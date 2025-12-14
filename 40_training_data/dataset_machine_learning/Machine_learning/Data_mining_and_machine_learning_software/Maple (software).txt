@@ -1,0 +1,527 @@
+{{Infobox software
+
+name = Maple
+
+logo = Maple 2015 logo.svg
+
+logo size = 250px
+
+caption = Maple interface
+
+developer = Waterloo Maple (Maplesoft)
+
+released = 1982
+
+latest release version =
+
+programming language = C, Java, Maple
+
+genre = Computer algebra system, Numeric computation
+
+license = Proprietary commercial software
+
+platform = Windows (7, 8 and 10), macOS, Linux
+
+language = English, Japanese, and limited support in additional languages
+
+website =
+
+}}
+
+Maple is a symbolic and numeric computing environment as well as a multi-paradigm programming language. It covers several areas of technical computing, such as symbolic mathematics, numerical analysis, data processing, visualization, and others. A toolbox, MapleSim, adds functionality for multidomain physical modeling and code generation.
+
+Maple's capacity for symbolic computing include those of a general-purpose computer algebra system. For instance, it can manipulate mathematical expressions and find symbolic solutions to
+
+certain problems, such as those arising from ordinary and partial differential equations.
+
+Maple is developed commercially by the Canadian software company Maplesoft. The name 'Maple' is a reference to the software's Canadian heritage.
+
+Overview
+
+Core functionality
+
+Users can enter mathematics in traditional mathematical notation.  Custom user interfaces can also be created. There is support for numeric computations, to arbitrary precision, as well as symbolic computation and visualization.  Examples of symbolic computations are given below.
+
+Maple incorporates a dynamically typed imperative-style programming language (resembling Pascal), which permits variables of lexical scope. There are also interfaces to other languages (C, C#, Fortran, Java, MATLAB, and Visual Basic), as well as to Microsoft Excel.
+
+Maple supports MathML 2.0, which is a W3C format for representing and interpreting mathematical expressions, including their display in web pages. There is also functionality for converting expressions from traditional mathematical notation to markup suitable for the typesetting system LaTeX.
+
+Architecture
+
+Maple is based on a small kernel, written in C, which provides the Maple language. Most functionality is provided by libraries, which come from a variety of sources. Most of the libraries are written in the Maple language; these have viewable source code.  Many numerical computations are performed by the NAG Numerical Libraries, ATLAS libraries, or GMP libraries.
+
+Different functionality in Maple requires numerical data in different formats. Symbolic expressions are stored in memory as directed acyclic graphs. The standard interface and calculator interface are written in Java.
+
+History
+
+The first concept of Maple arose from a meeting in late 1980 at the University of Waterloo. Researchers at the university wished to purchase a computer powerful enough to run the Lisp-based computer algebra system Macsyma. Instead, they opted to develop their own computer algebra system, named Maple, that would run on lower cost computers. Aiming for portability, they began writing Maple in programming languages from the BCPL family (initially using a subset of B and C, and later on only C). By the end of 1983, over 50 universities had copies of Maple installed on their machines.
+
+In 1984, the research group arranged with Watcom Products Inc to license and distribute the first commercially available version, Maple 3.3.).
+
+In 1989, the first graphical user interface for Maple was developed and included with version 4.3 for the Macintosh. X11 and Windows versions of the new interface followed in 1990 with Maple V. In 1992, Maple V Release 2 introduced the Maple "worksheet" that combined text, graphics, and input and typeset output. In 1994 a special issue of a newsletter created by Maple developers called MapleTech was published.
+
+In 1999, with the release of Maple 6, Maple included some of the NAG Numerical Libraries.  In 2003, the current "standard" interface was introduced with Maple 9. This interface is primarily written in Java (although portions, such as the rules for typesetting mathematical formulae, are written in the Maple language). The Java interface was criticized for being slow; improvements have been made in later versions, although the Maple&nbsp;11 documentation recommends the previous ("classic") interface for users with less than 500&nbsp;MB of physical memory.
+
+Between 1995 and 2005 Maple lost significant market share to competitors due to a weaker user interface. With Maple 10 in 2005, Maple introduced a new "document mode" interface, which has since been further developed across several releases.
+
+In September 2009 Maple and Maplesoft were acquired by the Japanese software retailer Cybernet Systems.
+
+Version history
+
+Maple 1.0: January, 1982
+
+Maple 1.1: January, 1982
+
+Maple 2.0: May, 1982
+
+Maple 2.1: June, 1982
+
+Maple 2.15: August, 1982
+
+Maple 2.2: December, 1982
+
+Maple 3.0: May, 1983
+
+Maple 3.1: October, 1983
+
+Maple 3.2: April, 1984
+
+Maple 3.3: March, 1985 (first public available version)
+
+Maple 4.0: April, 1986
+
+Maple 4.1: May, 1987
+
+Maple 4.2: December, 1987
+
+Maple 4.3: March, 1989
+
+Maple V: August, 1990
+
+Maple V R2: November 1992
+
+Maple V R3: March 15, 1994
+
+Maple V R4: January, 1996
+
+Maple V R5: November 1, 1997
+
+Maple 6: December 6, 1999
+
+Maple 7: July 1, 2001
+
+Maple 8: April 16, 2002
+
+Maple 9: June 30, 2003
+
+Maple 9.5: April 15, 2004
+
+Maple 10: May 10, 2005
+
+Maple 11: February 21, 2007
+
+Maple 11.01: July, 2007
+
+Maple 11.02: November, 2007
+
+Maple 12: May, 2008
+
+Maple 12.01: October, 2008
+
+Maple 12.02: December, 2008
+
+Maple 13: April 28, 2009
+
+Maple 13.01: July, 2009
+
+Maple 13.02: October, 2009
+
+Maple 14: April 29, 2010
+
+Maple 14.01: October 28, 2010
+
+Maple 15: April 13, 2011
+
+Maple 15.01: June 21, 2011
+
+Maple 16: March 28, 2012
+
+Maple 16.01: May 16, 2012
+
+Maple 17: March 13, 2013
+
+Maple 17.01: July, 2013
+
+Maple 18: Mar 5, 2014
+
+Maple 18.01: May, 2014
+
+Maple 18.01a: July, 2014
+
+Maple 18.02: Nov, 2014
+
+Maple 2015.0: Mar 4, 2015
+
+Maple 2015.1: Nov, 2015
+
+Maple 2016.0: March 2, 2016
+
+Maple 2016.1: April 20, 2016
+
+Maple 2016.1a: April 27, 2016
+
+Maple 2017.0: May 25, 2017
+
+Maple 2017.1: June 28, 2017
+
+Maple 2017.2: August 2, 2017
+
+Maple 2017.3: October 3, 2017
+
+Maple 2018.0: March 21, 2018
+
+Maple 2019.0: March 14, 2019
+
+Maple 2020.0: March 12, 2020
+
+Maple 2021.0: March 10, 2021
+
+Maple 2022.0: March 15, 2022
+
+Maple 2023.0: March 9, 2023
+
+Features
+
+Features of Maple include:
+
+Support for symbolic and numeric computation with arbitrary precision
+
+Elementary and special mathematical function libraries
+
+Complex numbers and interval arithmetic
+
+Arithmetic, greatest common divisors and factorization for multivariate polynomials over the rationals, finite fields, algebraic number fields, and algebraic function fields
+
+Limits, series and asymptotic expansions
+
+Gröbner basis
+
+Differential Algebra
+
+Matrix manipulation tools including support for sparse arrays
+
+Mathematical function graphing and animation tools
+
+Solvers for systems of equations, diophantine equations, ODEs, PDEs, DAEs, DDEs and recurrence relations
+
+Numeric and symbolic tools for discrete and continuous calculus including definite and indefinite integration, definite and indefinite summation, automatic differentiation and continuous and discrete integral transforms
+
+Constrained and unconstrained local and global optimization
+
+Statistics including model fitting, hypothesis testing, and probability distributions
+
+Tools for data manipulation, visualization and analysis
+
+Tools for probability and combinatoric problems
+
+Support for time-series and unit based data
+
+Connection to online collection of financial and economic data
+
+Tools for financial calculations including bonds, annuities, derivatives, options etc.
+
+Calculations and simulations on random processes
+
+Tools for text mining including regular expressions
+
+Tools for signal processing and linear and non-linear control systems
+
+Discrete math tools including number theory
+
+Tools for visualizing and analysing directed and undirected graphs
+
+Group theory including permutation and finitely presented groups
+
+Symbolic tensor functions
+
+Import and export filters for data, image, sound, CAD, and document formats
+
+Technical word processing including formula editing
+
+Programming language supporting procedural, functional and object-oriented constructs
+
+Tools for adding user interfaces to calculations and applications
+
+Tools for connecting to SQL, Java, .NET, C++, Fortran and http
+
+Tools for generating code for C, C#, Fortran, Java, JavaScript, Julia, Matlab, Perl, Python, R, and Visual Basic
+
+Tools for parallel programming
+
+Examples of Maple code
+
+The following code, which computes the factorial of a nonnegative integer, is an example of an imperative programming construct within Maple:
+
+myfac := proc(n::nonnegint)
+
+local out, i;
+
+out := 1;
+
+for i from 2 to n do
+
+out := out * i
+
+end do;
+
+out
+
+end proc;
+
+Simple functions can also be defined using the "maps to" arrow notation:
+
+myfac := n -> product(i, i = 1..n);
+
+Integration
+
+Find
+
+\int\cos\left(\frac{x}{a}\right)dx.
+
+int(cos(x/a), x);
+
+Output:
+
+a \sin\left(\frac{x}{a}\right)
+
+Determinant
+
+Compute the determinant of a matrix.
+
+M := Matrix([[1,2,3], [a,b,c], [x,y,z]]);  # example Matrix
+
+\begin{bmatrix}
+
+1 & 2 & 3 \\
+
+a & b & c \\
+
+x & y & z
+
+\end{bmatrix}
+
+LinearAlgebra:-Determinant(M);
+
+bz-cy+3ay-2az+2xc-3xb
+
+Series expansion
+
+series(tanh(x), x = 0, 15)
+
+x-\frac{1}{3}\,x^3+\frac{2}{15}\,x^5-\frac{17}{315}\,x^7
+
+{}+\frac{62}{2835}\,x^9-\frac{1382}{155925}\,x^{11}+\frac{21844}{6081075}\,x^{13}+\mathcal{O}\left(x^{15}\right)
+
+Solve equations numerically
+
+The following code numerically calculates the roots of a high-order polynomial:
+
+f := x^53-88*x^5-3*x-5 = 0
+
+fsolve(f)
+
+-1.097486315, -.5226535640, 1.099074017
+
+The same command can also solve systems of equations:
+
+f := (cos(x+y))^2 + exp(x)*y+cot(x-y)+cosh(z+x) = 0:
+
+g := x^5 - 8*y = 2:
+
+h := x+3*y-77*z=55;
+
+fsolve( {f,g,h} );
+
+{x = -2.080507182, y = -5.122547821, z = -0.9408850733}
+
+Plotting of function of single variable
+
+Plot x \sin(x) with  ranging from -10 to 10:
+
+plot(x*sin(x), x = -10..10);
+
+Plotting of function of two variables
+
+Plot x^2+y^2 with  and  ranging from -1 to 1:
+
+plot3d(x^2+y^2, x = -1..1, y = -1..1);
+
+Animation of functions
+
+Animation of function of two variables
+
+f := \frac{2k^2}{\cosh^2\left(x k - 4 k^3 t\right)}
+
+plots:-animate(subs(k = 0.5, f), x=-30..30, t=-10..10, numpoints=200, frames=50, color=red, thickness=3);
+
+Animation of functions of three variables
+
+plots:-animate3d(cos(t*x)*sin(3*t*y), x=-Pi..Pi, y=-Pi..Pi, t=1..2);
+
+Fly-through animation of 3-D plots.
+
+M := Matrix([[400,400,200], [100,100,-400], [1,1,1]], datatype=float):
+
+plot3d(1, x=0..2*Pi, y=0..Pi, axes=none, coords=spherical, viewpoint=[path=M]);
+
+Laplace transform
+
+Laplace transform
+
+f := (1+A*t+B*t^2)*exp(c*t);
+
+\left(1 + A \, t + B \, t^2\right) e^{c t}
+
+inttrans:-laplace(f, t, s);
+
+\frac{1}{s-c}+\frac{A}{(s-c)^2}+\frac{2B}{(s-c)^3}
+
+inverse Laplace transform
+
+inttrans:-invlaplace(1/(s-a), s, x);
+
+e^{ax}
+
+Fourier transform
+
+Fourier transform
+
+inttrans:-fourier(sin(x), x, w)
+
+\mathrm{I}\pi\,(\mathrm{Dirac}(w+1)-\mathrm{Dirac}(w-1))
+
+Integral equations
+
+Find functions  that satisfy the integral equation
+
+f(x)-3\int_{-1}^1(xy+x^2y^2)f(y)dy = h(x).
+
+eqn:= f(x)-3*Int((x*y+x^2*y^2)*f(y), y=-1..1) = h(x):
+
+intsolve(eqn,f(x));
+
+f \left( x \right) =\int _{-1}^{1}\! \left( -15\,{x}^{2}{y}^{2}-3\,xy \right) h \left( y \right) {dy}+h \left( x \right)
+
+Use of the Maple engine
+
+The Maple engine is used within several other products from Maplesoft:
+
+MapleNet allows users to create JSP pages and Java Applets. MapleNet 12 and above also allow users to upload and work with Maple worksheets containing interactive components.
+
+MapleSim, an engineering simulation tool.
+
+Maple Quantum Chemistry Package from RDMChem computes and visualizes the electronic energies and properties of molecules.
+
+Listed below are third-party commercial products that no longer use the Maple engine:
+
+Versions of Mathcad released between 1994 and 2006 included a Maple-derived algebra engine (MKM, aka Mathsoft Kernel Maple), though subsequent versions use MuPAD.
+
+Symbolic Math Toolbox in MATLAB contained a portion of the Maple 10 engine, but now uses MuPAD (starting with MATLAB R2007b+ release).
+
+Older versions of the mathematical editor Scientific Workplace included Maple as a computational engine, though current versions include MuPAD.
+
+See also
+
+Comparison of computer algebra systems
+
+Comparison of numerical-analysis software
+
+Comparison of programming languages
+
+Comparison of statistical packages
+
+List of computer algebra systems
+
+List of computer simulation software
+
+List of graphing software
+
+List of numerical-analysis software
+
+Mathematical software
+
+SageMath (an open source algebra program)
+
+References
+
+External links
+
+Maplesoft, division of Waterloo Maple, Inc. – official website
+
+Category:C (programming language) software
+
+Category:Notebook interface
+
+Category:Computer algebra system software for Linux
+
+Category:Computer algebra system software for macOS
+
+Category:Computer algebra system software for Windows
+
+Category:Computer algebra systems
+
+Category:Cross-platform software
+
+Category:Data mining and machine learning software
+
+Category:Data and information visualization software
+
+Category:Data-centric programming languages
+
+Category:Econometrics software
+
+Category:Functional languages
+
+Category:Interactive geometry software
+
+Category:IRIX software
+
+Category:Linear algebra
+
+Category:Maplesoft
+
+Category:Mathematical optimization software
+
+Category:Mathematical software
+
+Category:Numerical analysis software for Linux
+
+Category:Numerical analysis software for macOS
+
+Category:Numerical analysis software for Windows
+
+Category:Numerical programming languages
+
+Category:Numerical software
+
+Category:Parallel computing
+
+Category:Physics software
+
+Category:Plotting software
+
+Category:Products introduced in 1982
+
+Category:Proprietary commercial software for Linux
+
+Category:Regression and curve fitting software
+
+Category:Simulation programming languages
+
+Category:Software modeling language
+
+Category:Statistical programming languages
+
+Category:Theorem proving software systems
+
+Category:Time series software

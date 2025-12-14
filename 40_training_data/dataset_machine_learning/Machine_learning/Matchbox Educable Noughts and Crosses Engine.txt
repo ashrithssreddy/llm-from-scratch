@@ -1,0 +1,39 @@
+The Matchbox Educable Noughts and Crosses Engine (sometimes called the Machine Educable Noughts and Crosses Engine or MENACE) was a mechanical computer made from 304 matchboxes designed and built by artificial intelligence researcher Donald Michie and his colleague Roger Chambers, in 1961. It was designed to play human opponents in games of noughts and crosses (tic-tac-toe) by returning a move for any given state of play and to refine its strategy through reinforcement learning. This was one of the first types of artificial intelligence.
+
+Michie and Chambers did not have immediate access to a computer; they worked around this by building the engine out of matchboxes. Fifteen years later, he wanted to further display his mathematical and computational prowess with an early convolutional neural network. Since computer equipment was not obtainable for such uses, he decided to display and demonstrate artificial intelligence in a more esoteric format and constructed a functional mechanical computer out of matchboxes and beads. Michie undertook the task of collecting and defining each matchbox as a "fun project", later turned into a demonstration tool. Michie completed his essay on MENACE in 1963, This was one of the earliest versions of the Reinforcement Loop, the schematic algorithm of looping the algorithm, dropping unsuccessful strategies until only the winning ones remain.
+
+Composition
+
+MENACE was made from 304 matchboxes glued together in an arrangement similar to a chest of drawers. Each box had a code number, which was keyed into a chart. This chart had drawings of tic-tac-toe game grids with various configurations of X, O, and empty squares, After removing duplicate arrangements (ones that were simply rotations or mirror images of other configurations), MENACE used 304 permutations in its chart and thus that many matchboxes. Each colour represented a move on a square on the game grid, and so matchboxes with arrangements where positions on the grid were already taken would not have beads for that position. Additionally, at the front of the tray were two extra pieces of card in a "V" shape, after the apparatus used for the machine. The first stage "Boxes" operated in five phases, each setting a definition and a precedent for the rules of the algorithm in relation to the game.
+
+Operation
+
+MENACE played first, as O, since all matchboxes represented permutations only relevant to the "X" player. To retrieve MENACE's choice of move, the opponent or operator located the matchbox that matched the current game state, or a rotation or mirror image of it. For example, at the start of a game, this would be the matchbox for an empty grid. The tray would be removed and lightly shaken so as to move the beads around. A player must place their symbol in a way that blocks the other player from achieving any rows while simultaneously making a row themself. However, if both players use this strategy, the game always ends in a draw. had the following milestones: Michie began by consistently opening with "Variant 0", the middle square. At 15 games, MENACE abandoned all non-corner openings. At just over 20, Michie switched to consistently using "Variant 1", the bottom-right square. At 60, he returned to Variant 0. As he neared 80 games, he moved to "Variant 2", the top-middle. At 110, he switched to "Variant 3", the top right. At 135, he switched to "Variant 4", middle-right. At 190, he returned to Variant 1, and at 210, he returned to Variant 0.
+
+The trend in changes of beads in the "2" boxes runs: In 1968, Donald Michie and R.A Chambers made another BOXES-based algorithm called GLEE (Game Learning Expectimaxing Engine) which had to learn how to balance a pole on a cart.
+
+After the resounding reception of MENACE, Michie was invited to the US Office of Naval Research, where he was commissioned to build a BOXES-running program for an IBM Computer for use at Stanford University. Michie created a simulation program of MENACE on a Pegasus 2 computer with the aid of D. Martin. There have been multiple recreations of MENACE in more recent years, both in its original physical form and as a computer program. Its algorithm was later converged into Christopher Watkin's Q-Learning algorithm. Although not as a functional computer, in examples of demonstration, MENACE has been used as a teaching aid for various neural network classes, including a public demonstration from University College London researcher Matthew Scroggs. A copy of MENACE built by Scroggs was featured in the 2019 Royal Institution Christmas Lectures, and in a 2023 episode of QI XL.
+
+MENACE is referenced in Fred Saberhagen's 1963 short story Without A Thought, and Thomas J Ryan's 1977 novel The Adolescence of P-1. In her 2023 book The Future, author Naomi Alderman includes a fictional lecture with a detailed overview of MENACE.
+
+See also
+
+Hexapawn
+
+Reinforcement learning
+
+References
+
+Sources
+
+, Michie and R. A Chambers' paper on the AI implications of BOXES and MENACE.
+
+, a book on the "Boxes" algorithm employed by MENACE.
+
+External links
+
+Online simulation of MENACE
+
+Category:Machine learning
+
+Category:Mechanical computers

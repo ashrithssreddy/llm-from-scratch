@@ -1,0 +1,79 @@
+{{Infobox scientist
+
+name              = Chelsea Finn
+
+image             = Chelsea Finn and Vestri the robot, UC Berkeley.jpg
+
+caption           = Finn as a graduate student at UC Berkeley in 2017
+
+birth_date        =
+
+workplaces        = Stanford University
+
+alma_mater        = University of California, BerkeleyMassachusetts Institute of Technology
+
+thesis_title      = Learning to Learn with Gradients
+
+thesis_url        = http://www.worldcat.org/oclc/1083628768
+
+thesis_year       = 2018
+
+doctoral_advisor  = Sergey Levine  Pieter Abbeel
+
+academic_advisors =
+
+known_for         = Deep reinforcement learning
+
+website           = IRIS LAB
+
+}}
+
+Chelsea Finn (born ) is an American computer scientist and assistant professor at Stanford University. Her research investigates intelligence through the interactions of robots, with the hope to create robotic systems that can learn how to learn. She is part of the Google Brain group.
+
+Early life and education
+
+Finn was an undergraduate student in electrical engineering and computer science at Massachusetts Institute of Technology. She then moved to the University of California, Berkeley, where she earned her Ph.D. in 2018 under Pieter Abbeel and Sergey Levine. Her work in the Berkeley Artificial Intelligence Lab (BAIR) focused on gradient based algorithms . Such algorithms allow machines to 'learn to learn', more akin to human learning than traditional machine learning systems. These “meta-learning” techniques train machines to quickly adapt, such that when they encounter new scenarios they can learn quickly. As a doctoral student she worked as an intern at Google Brain, where she worked on robot learning algorithms from deep predictive models. She delivered a massive open online course on deep reinforcement learning. She was the first woman to win the C.V. & Daulat Ramamoorthy Distinguished Research Award.
+
+Research and career
+
+Finn investigates the capabilities of robots to develop intelligence through learning and interaction. She has made use of deep learning algorithms to simultaneously learn visual perception and control robotic skills.
+
+She developed meta-learning approaches to train neural networks to take in student code and output useful feedback. She showed that the system could quickly adapt without too much input from the instructor.
+
+Awards and honors
+
+2016 C.V. & Daulat Ramamoorthy Distinguished Research Award
+
+2018 MIT Technology Review 35 Under 35
+
+2018 ACM Doctoral Dissertation Award
+
+2020 Samsung Advanced Institute of Technology AI Researcher of the Year
+
+2020 Intel Rising Star Faculty Award
+
+2021 Office of Naval Research Young Investigator Award
+
+2022 IEEE Robotics and Automation Society Early Academic Career Award
+
+Select publications
+
+References
+
+Category:Living people
+
+Category:University of California, Berkeley alumni
+
+Category:Massachusetts Institute of Technology alumni
+
+Category:Stanford University Department of Electrical Engineering faculty
+
+Category:American computer scientists
+
+Category:American women scientists
+
+Category:Machine learning researchers
+
+Category:Year of birth missing (living people)
+
+Category:1990s births

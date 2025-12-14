@@ -1,0 +1,3 @@
+REDIRECT Kolmogorov equations#Continuous-time Markov chains
+
+Category:Markov processes

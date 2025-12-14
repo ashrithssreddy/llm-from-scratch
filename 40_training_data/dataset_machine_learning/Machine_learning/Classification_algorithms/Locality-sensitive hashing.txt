@@ -1,0 +1,227 @@
+In computer science, locality-sensitive hashing (LSH) is a fuzzy hashing technique that hashes similar input items into the same "buckets" with high probability. The number of buckets is much smaller than the universe of possible input items.
+
+Locality-preserving hashing was initially devised as a way to facilitate data pipelining in implementations of massively parallel algorithms that use randomized routing and universal hashing to reduce memory contention and network congestion.
+
+Definitions
+
+A finite family  \mathcal F of functions h\colon M \to S is defined to be an LSH family
+
+for
+
+a metric space \mathcal M =(M, d),
+
+a threshold r>0,
+
+an approximation factor c>1,
+
+and probabilities p_1 > p_2
+
+if it satisfies the following condition. For any two points a, b \in M and a hash function h chosen uniformly at random from \mathcal F:
+
+If d(a,b) \le r, then h(a)=h(b) (i.e.,  and  collide) with probability at least p_1,
+
+If d(a,b) \ge cr, then h(a)=h(b) with probability at most p_2.
+
+Such a family \mathcal F is called (r,cr,p_1,p_2)-sensitive.
+
+LSH with respect to a similarity measure
+
+Alternatively it is possible to define an LSH family on a universe of items  endowed with a similarity function \phi\colon U \times U \to [0,1]. In this setting, a LSH scheme is a family of hash functions  coupled with a probability distribution  over  such that a function h \in H chosen according to  satisfies Pr [h(a) = h(b)] = \phi(a,b) for each a,b \in U.
+
+Amplification
+
+Given a (d_1, d_2, p_1, p_2)-sensitive family \mathcal F, we can construct new families \mathcal G by either the AND-construction or OR-construction of \mathcal F.
+
+Hierarchical clustering
+
+Genome-wide association study
+
+Image similarity identification
+
+VisualRank
+
+Gene expression similarity identification
+
+Audio similarity identification
+
+Nearest neighbor search
+
+Audio fingerprint
+
+Digital video fingerprinting
+
+Shared memory organization in parallel computing
+
+Training fully connected neural networks
+
+Computer security
+
+Machine learning
+
+Methods
+
+Bit sampling for Hamming distance
+
+One of the easiest ways to construct an LSH family is by bit sampling. and that this bound is tight.
+
+Because min-wise independent families are too big for practical applications, two variant notions of min-wise independence are introduced: restricted min-wise independent permutations families, and approximate min-wise independent families.
+
+Restricted min-wise independence is the min-wise independence property restricted to certain sets of cardinality at most .
+
+Approximate min-wise independence differs from the property by at most a fixed .
+
+Open source methods
+
+Nilsimsa Hash
+
+Nilsimsa is a locality-sensitive hashing algorithm used in anti-spam efforts. The goal of Nilsimsa is to generate a hash digest of an email message such that the digests of two similar messages are similar to each other.  The paper suggests that the Nilsimsa satisfies three requirements:
+
+The digest identifying each message should not vary significantly for changes that can be produced automatically.
+
+The encoding must be robust against intentional attacks.
+
+The encoding should support an extremely low risk of false positives.
+
+Testing performed in the paper on a range of file types identified the Nilsimsa hash as having a significantly higher false positive rate when compared to other similarity digest schemes such as TLSH, Ssdeep and Sdhash.
+
+TLSH
+
+TLSH is locality-sensitive hashing algorithm designed for a range of security and digital forensic applications.
+
+Random projection
+
+The random projection method of LSH due to Moses Charikar) uses an approximation of the cosine distance between vectors.  The technique was used to approximate the NP-complete max-cut problem. the probability of two vectors being on different sides of the random hyperplane is approximately proportional to the cosine distance between them.
+
+Stable distributions
+
+The hash function
+
+h_{\mathbf{a},b} (\boldsymbol{\upsilon}) :
+
+\mathcal{R}^d
+
+\to \mathcal{N}  maps a -dimensional vector
+
+\boldsymbol{\upsilon} onto the set of integers. Each hash function
+
+in the family is indexed by a choice of random \mathbf{a} and
+
+b where \mathbf{a} is a -dimensional
+
+vector with
+
+entries chosen independently from a stable distribution and
+
+b is
+
+a real number chosen uniformly from the range [0,r]. For a fixed
+
+\mathbf{a},b the hash function h_{\mathbf{a},b} is
+
+given by h_{\mathbf{a},b} (\boldsymbol{\upsilon}) = \left \lfloor
+
+\frac{\mathbf{a}\cdot \boldsymbol{\upsilon}+b}{r} \right \rfloor .
+
+Other construction methods for hash functions have been proposed to better fit the data.
+
+In particular k-means hash functions are better in practice than projection-based hash functions, but without any theoretical guarantee.
+
+Semantic hashing
+
+Semantic hashing is a technique that attempts to map input items to addresses such that closer inputs have higher semantic similarity. The hashcodes are found via training of an artificial neural network or graphical model.
+
+Algorithm for nearest neighbor search
+
+One of the main applications of LSH is to provide a method for efficient approximate nearest neighbor search algorithms.  Consider an LSH family \mathcal F.  The algorithm has two main parameters: the width parameter  and the number of hash tables .
+
+In the first step, we define a new family \mathcal G of hash functions , where each function  is obtained by concatenating  functions h_1, \ldots, h_k from \mathcal F, i.e., g(p) = [h_1(p), \ldots, h_k(p)].  In other words, a random hash function  is obtained by concatenating  randomly chosen hash functions from \mathcal F.  The algorithm then constructs  hash tables, each corresponding to a different randomly chosen hash function .
+
+In the preprocessing step we hash all  -dimensional points from the data set  into each of the  hash tables.  Given that the resulting hash tables have only  non-zero entries, one can reduce the amount of memory used per each hash table to O(n) using standard hash functions.
+
+Given a query point , the algorithm iterates over the  hash functions .  For each  considered, it retrieves the data points that are hashed into the same bucket as .  The process is stopped as soon as a point within distance  from  is found.
+
+Given the parameters  and , the algorithm has the following performance guarantees:
+
+preprocessing time: O(nLkt), where  is the time to evaluate a function h \in \mathcal F on an input point ;
+
+space: O(nL), plus the space for storing data points;
+
+query time: O(L(kt+dnP_2^k));
+
+the algorithm succeeds in finding a point within distance  from  (if there exists a point within distance ) with probability at least 1 - ( 1 - P_1^k ) ^ L;
+
+For a fixed approximation ratio c=1+\epsilon and probabilities P_1 and P_2, one can set k = \left\lceil\tfrac{\log n}{\log 1/P_2}\right\rceil and L = \lceil P_1^{-k}\rceil = O(n^{\rho}P_1^{-1}), where \rho={\tfrac{\log P_1}{\log P_2}}. Then one obtains the following performance guarantees:
+
+preprocessing time: O(n^{1+\rho}P_1^{-1}kt);
+
+space: O(n^{1+\rho}P_1^{-1}), plus the space for storing data points;
+
+query time: O(n^{\rho}P_1^{-1}(kt+d));
+
+Finding nearest neighbor without fixed dimensionality
+
+To generalize the above algorithm without radius  being fixed, we can take the algorithm and do a sort of binary search over . It has been shown that there is a data structure for the approximate nearest neighbor with the following performance guarantees:
+
+space: O(n^{1+\rho}P_1^{-1}d\log^2 n);
+
+query time: O(n^{\rho}P_1^{-1}(kt+d)\log n);
+
+the algorithm succeeds in finding the nearest neighbor with probability at least 1 - (( 1 - P_1^k ) ^ L\log n);
+
+Improvements
+
+When  is large, it is possible to reduce the hashing time from O(n^{\rho}).
+
+This was shown by and which gave
+
+query time: O(t\log^2(1/P_2)/P_1 + n^{\rho}(d + 1/P_1));
+
+space: O(n^{1+\rho}/P_1 + \log^2(1/P_2)/P_1);
+
+It is also sometimes the case that the factor 1/P_1 can be very large.
+
+This happens for example with Jaccard similarity data, where even the most similar neighbor often has a quite low Jaccard similarity with the query.
+
+In it was shown how to reduce the query time to O(n^\rho/P_1^{1-\rho}) (not including hashing costs) and similarly the space usage.
+
+See also
+
+Random indexing
+
+References
+
+Further reading
+
+Samet, H. (2006) Foundations of Multidimensional and Metric Data Structures. Morgan Kaufmann.
+
+External links
+
+Alex Andoni's LSH homepage
+
+LSHKIT: A C++ Locality Sensitive Hashing Library
+
+A Python Locality Sensitive Hashing library that optionally supports persistence via redis
+
+Caltech Large Scale Image Search Toolbox: a Matlab toolbox implementing several LSH hash functions, in addition to Kd-Trees, Hierarchical K-Means, and Inverted File search algorithms.
+
+Slash: A C++ LSH library, implementing Spherical LSH by Terasawa, K., Tanaka, Y
+
+LSHBOX: An Open Source C++ Toolbox of Locality-Sensitive Hashing for Large Scale Image Retrieval, Also Support Python and MATLAB.
+
+SRS: A C++ Implementation of An In-memory, Space-efficient Approximate Nearest Neighbor Query Processing Algorithm based on p-stable Random Projection
+
+TLSH open source on Github
+
+JavaScript port of TLSH (Trend Micro Locality Sensitive Hashing) bundled as node.js module
+
+Java port of TLSH (Trend Micro Locality Sensitive Hashing) bundled as maven package
+
+Category:Search algorithms
+
+Category:Classification algorithms
+
+Category:Dimension reduction
+
+Category:Hashing
+
+Category:Probabilistic data structures

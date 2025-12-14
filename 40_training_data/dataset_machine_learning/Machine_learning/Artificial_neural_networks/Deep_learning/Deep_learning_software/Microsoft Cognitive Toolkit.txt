@@ -1,0 +1,73 @@
+{{Infobox software
+
+name = Microsoft Cognitive Toolkit
+
+logo = Microsoft-CogTK.png
+
+logo_size = 128px
+
+screenshot =
+
+caption =
+
+collapsible =
+
+author =
+
+developer = Microsoft Research
+
+released =
+
+latest release version = 2.7.0
+
+latest release date =
+
+latest preview version =
+
+latest preview date =
+
+programming language = C++
+
+operating system = Windows, Linux
+
+platform =
+
+size =
+
+language =
+
+genre = Library for machine learning and deep learning
+
+license = MIT License
+
+website =
+
+}}
+
+Microsoft Cognitive Toolkit, previously known as CNTK and sometimes styled as The Microsoft Cognitive Toolkit, is a deprecated deep learning framework developed by Microsoft Research. Microsoft Cognitive Toolkit describes neural networks as a series of computational steps via a directed graph.
+
+See also
+
+Comparison of deep learning software
+
+ML.NET
+
+Open Neural Network Exchange
+
+References
+
+Further reading
+
+Category:Deep learning software
+
+Category:Free and open-source software
+
+Category:Free statistical software
+
+Cognitive Toolkit
+
+Category:Microsoft Research
+
+Category:Software using the MIT license
+
+Category:2016 software

@@ -1,0 +1,35 @@
+Devi Parikh is an American computer scientist.
+
+Career
+
+Parikh earned her PhD in Electrical and Computer Engineering at Carnegie Mellon University. She has served as a professor at Virginia Tech and Georgia Tech, and as of 2022 she is a research director at Meta.
+
+Research
+
+Parikh's research focuses on computer vision and natural language processing.
+
+In 2015, Parikh and her students at Virginia Tech worked on AI for Visual Question Answering (VQA). This technology allows users to ask questions about pictures, e.g. "Is this a vegetarian pizza?" Parikh's VQA dataset has been used to evaluate over 30 AI models.
+
+In 2017, Parikh published a conversational agent called ParlAI. In 2020, she developed an AI system that generates dance moves in sync with songs. In 2022, Parikh and a team at Meta developed Make-a-Video, a text-to-video AI model that is based on the diffusion algorithm.
+
+Awards
+
+2017 IJCAI Computers and Thought Award
+
+2011 ICCV Best-Paper Award ("Marr Prize")
+
+References
+
+Category:American computer scientists
+
+Category:Living people
+
+Category:American artificial intelligence researchers
+
+Category:Machine learning researchers
+
+Category:Computer vision researchers
+
+Category:Georgia Tech faculty
+
+Category:Year of birth missing (living people)

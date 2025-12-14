@@ -1,0 +1,39 @@
+{{Infobox software
+
+title = Progol
+
+developer = Stephen Muggleton
+
+latest release version = 4.4
+
+latest release date =
+
+repo = https://www.doc.ic.ac.uk/~shm/Software/progol4.4/
+
+programming language = C
+
+genre = Inductive logic programming system
+
+website = https://www.doc.ic.ac.uk/~shm/progol.html
+
+}}
+
+Progol is an implementation of inductive logic programming that combines inverse entailment with general-to-specific search through a refinement graph.
+
+Features
+
+Inverse entailment is used with mode declarations to derive the bottom clause, the most-specific clause within the mode language which subsume a given example. This clause is used to guide a refinement-graph search.
+
+Unlike the searches of Ehud Shapiro's model inference system (MIS) and J. Ross Quinlan's FOIL, Progol's search has a provable guarantee of returning a solution having the maximum compression in the search-space. To do so it performs an admissible A*-like search, guided by compression, over clauses which subsume the most specific clause.
+
+Progol deals with noisy data by using a compression measure to trade off the description of errors against the hypothesis description length. Progol allows arbitrary Prolog programs as background knowledge and arbitrary definite clauses as examples.
+
+History
+
+Progol was introduced by Stephen Muggleton in 1995. In 1996, it was used by Ashwin Srinivasan, Muggleton, Michael Sternberg and Ross King to predict the mutagenic activity in nitroaromatic compounds. This was considered a landmark application for inductive logic programming, as a general purpose inductive learner had discovered results that were both novel and meaningful to domain experts.
+
+Progol proved very influential in the field, and the widely-used inductive logic programming system Aleph builds directly on Progol.
+
+References
+
+Category:Inductive logic programming

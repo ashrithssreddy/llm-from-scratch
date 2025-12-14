@@ -1,0 +1,77 @@
+{{Infobox scientist
+
+name              = Alexander Gammerman
+
+image             = Alexander-Gammerman-professor-at-RHUL.jpg
+
+birth_date        =
+
+birth_place       = Almaty, Soviet Union
+
+nationality       = British
+
+workplaces        = Royal Holloway, University of London
+
+alma_mater        = Saint Petersburg State UniversityRussia
+
+known_for         = Conformal prediction
+
+field             = Machine learningStatistics
+
+}}
+
+Alexander Gammerman (born 2 November 1944) is a British computer scientist, and professor at Royal Holloway University of London. He is the co-inventor of conformal prediction. He is the founding director of the Centre for Machine Learning at Royal Holloway, University of London, and a Fellow of the Royal Statistical Society.
+
+Career
+
+Gammerman's academic career has been pursued in the Soviet Union and the United Kingdom. He started working as a Research Fellow in the Agrophysical Research Institute, St. Petersburg. In 1983, he emigrated to the United Kingdom and was appointed as a lecturer in the Computer Science Department at Heriot-Watt University, Edinburgh. In 1993, he was appointed to the established chair in Computer Science at University of London tenable at Royal Holloway and Bedford New College, where he served as the Head of Computer Science department from 1995 to 2005. In 1998, the Centre for Reliable Machine Learning was established, and Gammerman became the first director of the centre.
+
+Gammerman has written 7 books.
+
+Honours and awards
+
+In 1996, Gammerman received the P.W. Allen Award from the Forensic Science Society. In 2006, he became a Honorary Professor, at University College London. In 2009, he became a Distinguished Professor at Complutense University of Madrid, Spain. In 2019, he received a research grant funded by the energy company Centrica about predicting the time to the next failure of equipment. In 2020, he received the Amazon Research Award for the project titled Conformal Martingales for Change-Point Detection
+
+Selected books
+
+Measures of Complexity (2016), Springer, .
+
+Algorithmic Learning in a Random World (2005), Springer, .
+
+Causal Models and Intelligent Data Management (1999), Springer, .
+
+Probabilistic Reasoning and Bayesian Belief Networks (1998), Nelson Thornes Ltd, .
+
+Computational Learning and Probabilistic Reasoning (1996), Wiley, .
+
+References
+
+External links
+
+Gammerman's University Website
+
+Category:Living people
+
+Category:Machine learning researchers
+
+Category:Soviet computer scientists
+
+Category:Soviet mathematicians
+
+Category:British mathematicians
+
+Category:British computer scientists
+
+Category:Academics of Royal Holloway, University of London
+
+Category:Soviet emigrants to the United Kingdom
+
+Category:Fellows of the Royal Statistical Society
+
+Category:British artificial intelligence researchers
+
+Category:1949 births
+
+Category:Academics of Heriot-Watt University
+
+Category:Academic staff of the Complutense University of Madrid

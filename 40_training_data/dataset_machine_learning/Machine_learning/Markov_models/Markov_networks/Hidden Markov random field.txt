@@ -1,0 +1,21 @@
+In statistics, a hidden Markov random field is a generalization of a hidden Markov model.  Instead of having an underlying Markov chain, hidden Markov random fields have an  underlying Markov random field.
+
+Suppose that we observe a random variable  Y_i , where  i \in S . Hidden Markov random fields assume that the probabilistic nature of  Y_i  is determined by the unobservable Markov random field  X_i ,  i \in S .
+
+That is, given the neighbors  N_i  of  X_i, X_i  is independent of all other  X_j  (Markov property).
+
+The main difference with a hidden Markov model is that neighborhood is not defined in 1 dimension but within a network, i.e.  X_i  is allowed to have more than the two neighbors that it would have in a Markov chain. The model is formulated in such a way that given  X_i ,  Y_i  are independent (conditional independence of the observable variables given the Markov random field).
+
+In the vast majority of the related literature, the number of possible latent states is considered a user-defined constant. However, ideas from nonparametric Bayesian statistics, which allow for data-driven inference of the number of states, have been also recently investigated with success, e.g.
+
+See also
+
+Hidden Markov model
+
+Markov network
+
+Bayesian network
+
+References
+
+Category:Markov networks

@@ -1,0 +1,125 @@
+{{Infobox scientist
+
+name              = Arantza Díaz de Ilarraza
+
+image             = Arantza Díaz de Ilarraza (DRI0401).jpg
+
+image_size        =
+
+alt               =
+
+caption           =
+
+birth_name        = Arantza Díaz de Ilarraza Sánchez
+
+birth_date        =
+
+birth_place       = Donostia, Basque Country, Spain
+
+death_date        =
+
+death_place       =
+
+nationality       = Basque, Spanish
+
+fields            = Informatics,Language Technology,Computational Linguistics,Artificial intelligence
+
+workplaces        =
+
+alma_mater        = University of the Basque Country
+
+thesis_title      = Management of natural-language dialogues for an intelligent teaching system.
+
+thesis_url        =
+
+thesis_year       = 1990
+
+doctoral_advisor  = Felisa Verdejo
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students  = Mikel Artetxe Zurutuza
+
+known_for         = Main researcher of the Ixa research group (1988–2020), First president of the HiTZ Centre
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+awards            =
+
+signature         =
+
+signature_alt     =
+
+website           =
+
+footnotes         =
+
+spouse            =
+
+children          =
+
+}}
+
+Arantza Díaz de Ilarraza Sánchez (San Sebastián, 18 April 1957) is a professor of informatics at the University of the Basque Country. In 1981, she began her work as a lecturer at the Faculty of Informatics of Donostia. As a specialist in language and computer technology, she has held positions of responsibility in Basque technology institutions.
+
+Academic career
+
+Díaz de Ilarraza graduated in 1979 and began lecturing in the same faculty two years later. In 1983, she completed her degree dissertation and in 1990 defended her PhD thesis entitled "Management of natural-language dialogues for an intelligent teaching system".
+
+Díaz de Ilarraza has worked in numerous fields as a researcher. Although most of them are connected with natural language processing and the Ixa Group, she also worked with the Galan Group in the field of Intelligent Tutoring Systems for 20 years. Her main lines of research are:
+
+Intelligent tutoring systems (from 1981): Díaz de Ilarraza's PhD thesis was in this field: the managing of a dialogue system of the CAPRA intelligent tutoring system that taught computer programming. After completing her thesis, she directed this line of research with Isabel Fernández de Castro and they both started the Galan group. In 1989, she secured her first European project. The following centres collaborated in the project known as ITSIE (Intelligent Tutoring System for Industrial Environments): UPV/EHU, Iberdrola, Labein, Heriot-Watt University, Marconi (Edinburgh) and CISE (Italy).
+
+Lexical knowledge extraction and management (1993–2000)
+
+Basic linguistic analysers (from 1994)
+
+Integration of linguistic tools in teaching environments (from 1994)
+
+Integration of language tools and assistance in linguistic text tagging (from 1995): The EPEC syntactically tagged corpus (EPEC-DEP) emerged from these works.
+
+Application of NLP technology to medical texts (from 2010): A huge advance was achieved in semi-automatically translating health terminology into Basque. The research's starting point was the SNOMED CT database, which contained 300,000 English clinical terms to be translated into Basque. After completing the translation in 2018, the group is currently integrating machine translation in the Itzulbide project to create technical facilities to produce healthcare reports in Basque.
+
+Machine translation (from 2000): Aingeru Mayor's thesis realised the Matxin translating system (2007), the first to be developed for Basque. In 2010, a statistical machine translator was created by Gorka Labaka's. With the emergence of the neuronal paradigm, a huge improvement was seen since 2017 in machine translation among the major languages. Afterwards, the Basque research community was able to put Basque neuronal translators at the same level. In 2015, the DeepL translator provided quality results in translations across ten languages, but Basque was not among them; the Ixa Group began working on that in the TADEEP project, and the first public demo was available in 2017. That year various organisations (Ixa Group, Elhuyar, Vicomtech, Ametzagaña, Mondragon Lingua, etc.) collaborated and launched the MODELA project. The first service offering neuronal translation into Basque over the Internet for the general public was published a year later in 2018. In this field at least three other neuronal translators have been made available since:
+
+The Basque Government's neuronal translator uses the Basque Government's translation libraries (over 10 million "sentences" gathered over a 20-year period).
+
+Batua.eus: Vicomtech incorporated improvements into the MODELA system (transferring from RNN technology to Transformer technology) and enlarged its libraries.
+
+Itzultzailea.eus: Elhuyar also made similar improvements and incorporated additional languages (English, French, Spanish, Galician and Catalan).
+
+HiTZ Center
+
+In 1988, she created the Ixa Group along with four others. Both Ixa and HiTZ are multidisciplinary teams (73 members, consisting of computer scientists, linguists and engineers) that promote research, training, technological transfer and innovation in the area of language technology, mainly for the Basque language. In 2018, she retired as President of the HiTZ Center (Basque Center for Language Technology).
+
+SEPLN association
+
+She was one of the creators of the Sociedad Española para el Procesamiento del Lenguaje Natural (SEPLN, in English: Spanish association for Natural Language Processing), a scientific and professional association for people working on natural language processing. Later on, since 1990 to 2004, she was the vicepresident of SEPLN, and also the editor of the international journal Procesamiento del Lenguaje Natural published by SEPLN.
+
+Textbooks in Basque
+
+Díaz de Ilarraza was one of the first authors in the area of computer science to publish textbooks and teaching materials in Basque, with those books later being translated into Spanish.  In 1993, she published the Basque-language book Programen egiaztapena eta eratorpena with Xabier Arregi and Paqui Lucio Carrasco (UEU, 1993). (English: Program verification and derivation). In 1999 she co-authored Oinarrizko programazioa. Ariketa bilduma (English: Basic Programming) with Kepa Sarasola.
+
+References
+
+Category:Academic staff of the University of the Basque Country
+
+Category:People from San Sebastián
+
+Category:1957 births
+
+Category:Living people
+
+Category:Computational linguistics researchers
+
+Category:Natural language processing researchers
+
+Category:Basque women

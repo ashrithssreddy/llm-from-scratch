@@ -1,0 +1,69 @@
+Golem is an inductive logic programming algorithm developed by Stephen Muggleton and Cao Feng in 1990. It uses the technique of relative least general generalisation proposed by Gordon Plotkin, leading to a bottom-up search through the subsumption lattice. In 1992, shortly after its introduction, Golem was considered the only inductive logic programming system capable of scaling to tens of thousands of examples.
+
+Therefore, rather than using  directly, Golem uses the set B^{h} of all ground atoms that can be resolved from   in at most  resolution steps. An additional difficulty is that if E^{-} is non-empty, the least general generalisation of E^{+} may entail a negative example. In this case, Golem generalises different subsets of E^{+} separately to obtain a program of several clauses.
+
+Example
+
+The following example about learning definitions of family relations uses the abbreviations
+
+, , , , , , , , and .
+
+It starts from the background knowledge (cf. picture)
+
+\textit{par}(h,m) \land \textit{par}(h,t) \land \textit{par}(g,m) \land \textit{par}(t,e) \land \textit{par}(n,e) \land \textit{fem}(h) \land \textit{fem}(m) \land \textit{fem}(n) \land \textit{fem}(e),
+
+the positive examples
+
+\textit{dau}(m,h) \land \textit{dau}(e,t),
+
+and the trivial proposition
+
+to denote the absence of negative examples.
+
+The relative least general generalisation is now computed as follows to obtain a definition of the daughter relation.
+
+Relativise each positive example literal with the complete background knowledge:
+
+\begin{align}
+
+\textit{dau}(m,h) \leftarrow \textit{par}(h,m) \land \textit{par}(h,t) \land \textit{par}(g,m) \land \textit{par}(t,e) \land \textit{par}(n,e) \land \textit{fem}(h) \land \textit{fem}(m) \land \textit{fem}(n) \land \textit{fem}(e) \\
+
+\textit{dau}(e,t) \leftarrow \textit{par}(h,m) \land \textit{par}(h,t) \land \textit{par}(g,m) \land \textit{par}(t,e) \land \textit{par}(n,e) \land \textit{fem}(h) \land \textit{fem}(m) \land \textit{fem}(n) \land \textit{fem}(e)
+
+\end{align},
+
+Convert into clause normal form:
+
+\begin{align}
+
+\textit{dau}(m,h) \lor \lnot \textit{par}(h,m) \lor \lnot \textit{par}(h,t) \lor \lnot \textit{par}(g,m) \lor \lnot \textit{par}(t,e) \lor \lnot \textit{par}(n,e) \lor \lnot \textit{fem}(h) \lor \lnot \textit{fem}(m) \lor \lnot \textit{fem}(n) \lor \lnot \textit{fem}(e) \\
+
+\textit{dau}(e,t) \lor \lnot \textit{par}(h,m) \lor \lnot \textit{par}(h,t) \lor \lnot \textit{par}(g,m) \lor \lnot \textit{par}(t,e) \lor \lnot \textit{par}(n,e) \lor \lnot \textit{fem}(h) \lor \lnot \textit{fem}(m) \lor \lnot \textit{fem}(n) \lor \lnot \textit{fem}(e)
+
+\end{align},
+
+Anti-unify each compatible  pair  of literals:
+
+\textit{dau}(x_{me},x_{ht}) from \textit{dau}(m,h) and \textit{dau}(e,t),
+
+\lnot \textit{par}(x_{ht},x_{me}) from \lnot \textit{par}(h,m) and \lnot \textit{par}(t,e),
+
+\lnot \textit{fem}(x_{me}) from \lnot \textit{fem}(m) and \lnot \textit{fem}(e),
+
+\lnot \textit{par}(g,m) from \lnot \textit{par}(g,m) and \lnot \textit{par}(g,m), similar for all other background-knowledge literals
+
+\lnot \textit{par}(x_{gt},x_{me}) from \lnot \textit{par}(g,m) and \lnot \textit{par}(t,e), and many more negated literals
+
+Delete all negated literals containing variables that don't occur in a positive literal:
+
+after deleting all negated literals containing other variables than x_{me},x_{ht}, only \textit{dau}(x_{me},x_{ht}) \lor \lnot \textit{par}(x_{ht},x_{me}) \lor \lnot \textit{fem}(x_{me}) remains, together with all ground literals from the background knowledge
+
+Convert clauses back to Horn form:
+
+\textit{dau}(x_{me},x_{ht}) \leftarrow \textit{par}(x_{ht},x_{me}) \land \textit{fem}(x_{me}) \land (\text{all background knowledge facts})
+
+The resulting Horn clause is the hypothesis  obtained by Golem. Informally, the clause reads "x_{me} is called a daughter of x_{ht} if x_{ht} is the parent of x_{me} and x_{me} is female", which is a commonly accepted definition.
+
+References
+
+Category:Inductive logic programming

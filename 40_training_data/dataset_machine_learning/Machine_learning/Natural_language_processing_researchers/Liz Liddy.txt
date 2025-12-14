@@ -1,0 +1,59 @@
+{{Infobox scientist
+
+name = Liz Liddy
+
+birth_date =
+
+birth_place = Dayton, Ohio, U.S.
+
+death_date =
+
+death_place = Charlotte, North Carolina, U.S.
+
+alma_mater = Syracuse University (PhD)  Daemen College (BS)
+
+known_for = Natural language processing
+
+workplaces = SU School of Information Studies
+
+thesis_title = The discourse-level structure of  of empirical abstracts
+
+thesis_url = https://www.worldcat.org/oclc/223590506
+
+thesis_year = 1988
+
+website =
+
+}}
+
+Elizabeth DuRoss Liddy (May 12, 1944 – August 21, 2025) was an American computer scientist and academic who was professor of information science and dean of the Syracuse University School of Information Studies. She was a pioneer in the field of natural language processing.
+
+Early life and education
+
+Liddy was born in Dayton, Ohio, on May 14, 1944, and grew up in Utica, New York. She was one of five children, all of whom worked in her father's family business. At Daemen College Liddy studied English language and literature. Her dissertation research involved natural language processing, a computerized approach to analyzing text. She was hired to the faculty at Syracuse University whilst completing her PhD.
+
+Research and career
+
+In 1994 Liddy was the founding President of TextWise, a semantics-based search engine. The first product she developed was called Document Retrieval Using Linguistic Knowledge (DR-LINK). She started the Syracuse University Center for Natural Language Processing in 1999,
+
+Liddy was appointed Dean of the School of Information Studies (iSchool) in 2008, and held the position for over ten years. She temporarily left the role in 2015.
+
+References
+
+External links
+
+Liddy on 'Cuse Conversations Podcast in 2019
+
+Category:1944 births
+
+Category:2025 deaths
+
+Category:Syracuse University School of Information Studies alumni
+
+Category:Daemen University alumni
+
+Category:Syracuse University faculty
+
+Category:American information scientists
+
+Category:Natural language processing researchers

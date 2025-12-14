@@ -1,0 +1,21 @@
+Computational cybernetics is the integration of cybernetics and computational intelligence techniques. Though the term Cybernetics entered the technical lexicon in the 1940s and 1950s, it was first used informally as a popular noun in the 1960s, when it became associated with computers, robotics, Artificial Intelligence and Science fiction.
+
+The initial promise of cybernetics was that it would revolutionise the mathematical biologies (a blanket term that includes some kinds of AI) by its use of closed loop semantics rather than open loop mathematics to describe and control living systems and biological process behaviours. It is fair to say that this idealistic program goal remains generally unrealised.
+
+While ‘philosophical’ treatments of  cybernetics are common, especially in the biosciences, computational cybernetics has failed to gain traction in mainstream engineering and graduate education. This makes its specific achievements all the more remarkable. Feldman and Dyer (independently) discovered the true mechanism of somatic motor governance. This theory, called ‘equilibrium point theory’ by Feldman , and ‘neocybernetics’ by Dyer  debunks the concept of efference copy completely.
+
+While Cybernetics is primarily concerned with the study of control systems, computational cybernetics focuses on their automatic (complex, autonomic, flexible, adaptive) operation. Furthermore, computational cybernetics covers not only mechanical, but biological (living), social and economical systems. To achieve this goal, it uses research from the fields of communication theory, signal processing, information technology, control theory, the theory of adaptive systems, the theory of complex systems (game theory, and operational research).
+
+IEEE, a professional organization for the advancement of technology, has organized two international conferences focusing on computational cybernetics in 2008 and 2013.
+
+See also
+
+Cybercognition
+
+Computational Heuristic Intelligence
+
+References
+
+Category:Cybernetics
+
+Category:Artificial neural networks

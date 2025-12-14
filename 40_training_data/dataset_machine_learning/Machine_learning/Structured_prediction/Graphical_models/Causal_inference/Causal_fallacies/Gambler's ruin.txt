@@ -1,0 +1,161 @@
+In statistics, gambler's ruin is the fact that a gambler playing a game with non-positive expected value will eventually go bankrupt, regardless of their betting system.
+
+The concept was initially stated: A persistent gambler who raises his bet to a fixed fraction of the gambler's bankroll after a win, but does not reduce it after a loss, will eventually and inevitably go broke, even if each bet has a positive expected value.
+
+Another statement of the concept is that a persistent gambler with finite wealth, playing a fair game (that is, each bet has expected value of zero to both sides) will eventually and inevitably go broke against an opponent with infinite wealth. Such a situation can be modeled by a random walk on the real number line. In that context, it is probable that the gambler will, with virtual certainty, return to their point of origin, which means going broke, and is ruined an infinite number of times if the random walk continues forever. This is a corollary of a general theorem by Christiaan Huygens, which is also known as gambler's ruin. That theorem shows how to compute the probability of each player winning a series of bets that continues until one's entire initial stake is lost, given the initial stakes of the two players and the constant probability of winning. This is the oldest mathematical idea that goes by the name gambler's ruin, but not the first idea to which the name was applied. The term's common usage today is another corollary to Huygens's result.
+
+The concept has specific relevance for gamblers. However it also leads to mathematical theorems with wide application and many related results in probability and statistics. Huygens's result in particular led to important advances in the mathematical theory of probability.
+
+History
+
+The earliest known mention of the gambler's ruin problem is a letter from Blaise Pascal to Pierre Fermat in 1656 (two years after the more famous correspondence on the problem of points). Pascal's version was summarized in a 1656 letter from Pierre de Carcavi to Huygens:
+
+Let two men play with three dice, the first player scoring a point whenever 11 is thrown, and the second whenever 14 is thrown. But instead of the points accumulating in the ordinary way, let a point be added to a player's score only if his opponent's score is nil, but otherwise let it be subtracted from his opponent's score. It is as if opposing points form pairs, and annihilate each other, so that the trailing player always has zero points. The winner is the first to reach twelve points; what are the relative chances of each player winning?
+
+Huygens reformulated the problem and published it in De ratiociniis in ludo aleae ("On Reasoning in Games of Chance", 1657):
+
+Problem (2-1) Each player starts with 12 points, and a successful roll of the three dice for a player (getting an 11 for the first player or a 14 for the second) adds one to that player's score and subtracts one from the other player's score; the loser of the game is the first to reach zero points. What is the probability of victory for each player? This is the classic gambler's ruin formulation: two players begin with fixed stakes, transferring points until one or the other is "ruined" by getting to zero points. However, the term "gambler's ruin" was not applied until many years later.
+
+The gambler's ruin problem is often applied to gamblers with finite capital playing against a bookie or casino assumed to have an “infinite” or much larger amount of capital available. It can then be proven that the probability of the gambler's eventual ruin tends to 1 even in the scenario where the game is fair or what mathematically is defined as a martingale.
+
+Reasons for the four results
+
+Let d be the amount of money a gambler has at their disposal at any moment, and let N be any positive integer. Suppose that they raise their stake to \frac{d}{N} when they win, but do not reduce their stake when they lose (a not uncommon pattern among real gamblers). Under this betting scheme, it will take at most N losing bets in a row to bankrupt them. If their probability of winning each bet is less than 1 (if it is 1, then they are no gambler), they are virtually certain to eventually lose N bets in a row, however big N is. It is not necessary that they follow the precise rule, just that they increase their bet fast enough as they win. This is true even if the expected value of each bet is positive.
+
+The gambler playing a fair game (with probability \frac{1}{2} of winning) will eventually either go broke or double their wealth. By symmetry, they have a \frac{1}{2} chance of going broke before doubling their money. If they double their money, they repeat this process and they again have a \frac{1}{2} chance of doubling their money before going broke. After the second process, they have a \left(\frac{1}{2}\right)^2 = \frac{1}{4} chance that they have not gone broke yet.  Continuing this way, their chance of not going broke after n processes is \left(\frac{1}{2}\right)^n, which approaches 0, and their chance of going broke after n successive processes is \sum_{i = 1}^{n}\left(\frac{1}{2}\right)^i which approaches 1.
+
+Huygens's result is illustrated in the next section.
+
+The eventual fate of a player at a game with negative expected value cannot be better than the player at a fair game, so they will go broke as well.
+
+Example of Huygens's result
+
+Fair coin flipping
+
+Consider a coin-flipping game with two players where each player has a 50% chance of winning with each flip of the coin. After each flip of the coin the loser transfers one penny to the winner. The game ends when one player has all the pennies.
+
+If there are no other limitations on the number of flips, the probability that the game will eventually end this way is 1. (One way to see this is as follows. Any given finite string of heads and tails will eventually be flipped with certainty: the probability of not seeing this string, while high at first, decays exponentially.  In particular, the players would eventually flip a string of heads as long as the total number of pennies in play, by which time the game must have already ended.)
+
+If player one has n1 pennies and player two n2 pennies, the probabilities  P1 and P2 that players one and two, respectively, will end penniless are:
+
+\begin{align}
+
+P_1 & = \frac{n_2}{n_1+n_2} \\[5pt]
+
+P_2 & = \frac{n_1}{n_1+n_2}
+
+\end{align}
+
+Two examples of this are if one player has more pennies than the other; and if both players have the same number of pennies.
+
+In the first case say player one (P_1) has 8 pennies and player two (P_2) were to have 5 pennies then the probability of each losing is:
+
+\begin{align}
+
+P_1 & =\frac{5}{8+5} =\frac{5}{13} = 0.3846 \text{ or } 38.46\% \\[6pt]
+
+P_2 & =\frac{8}{8+5} =\frac{8}{13} = 0.6154 \text{ or } 61.54\%
+
+\end{align}
+
+It follows that even with equal odds of winning the player that starts with fewer pennies is more likely to fail.
+
+In the second case where both players have the same number of pennies (in this case&nbsp;6) the likelihood of each losing is:
+
+\begin{align}
+
+P_1 & =\frac{6}{6+6} = \frac{6}{12} = \frac{1}{2} = 0.5 \\[5pt]
+
+P_2 & =\frac{6}{6+6} = \frac{6}{12} = \frac{1}{2}  = 0.5
+
+\end{align}
+
+Unfair coin flipping
+
+In the event of an unfair coin, where player one wins each toss with probability p, and player two wins with probability q&nbsp;=&nbsp;1&nbsp;−&nbsp;p, then the probability of each ending penniless is:
+
+is clustered. The variance of a Bernoulli process i.e. a binomial distribution is np(1-p)=npq and proportion \frac{pq}{n}.]]
+
+\begin{align}
+
+P_1 & = \frac{1-(\frac{p}{q})^{n_2}}{1-(\frac{p}{q})^{n_1+n_2}} \\[5pt]
+
+P_2 & = \frac{1-(\frac{q}{p})^{n_1}}{1-(\frac{q}{p})^{n_1+n_2}}
+
+\end{align}
+
+An argument is that the expected hitting time is finite and so with a martingale, associating the value  \left(\frac{q}{p}\right)^l  with each state so that the expected value of the state is constant, this is the solution to the system of equations:
+
+\begin{align}
+
+P_1 + P_2 & = 1 \\[5pt]
+
+\left(\frac{q}{p}\right)^{n_1} & = P_1 + P_2 \left(\frac{q}{p}\right)^{n_1+n_2}
+
+\end{align}
+
+Alternately, this can be shown as follows: Consider the probability of player 1 experiencing gamblers ruin having started with n > 1 amount of money, P(R_n). Then, using the Law of Total Probability, we have
+
+P(R_n) = P(R_{n}\mid W)P(W) + P(R_{n}\mid\bar{W})P(\bar{W}),
+
+where W denotes the event that player 1 wins the first bet. Then clearly P(W) = p and P(\bar{W}) = 1 - p = q. Also P(R_{n}|W) =P(R_{n+1}) is the probability that player 1 experiences gambler's ruin having started with n+1 amount of money: and P(R_{n} \mid \bar{W}) = P(R_{n-1}) is the probability that player 1 experiences gambler's ruin having started with n-1 amount of money.
+
+Denoting q_n = P(R_n), we get the linear homogeneous recurrence relation
+
+q_n = q_{n+1} p + q_{n-1} q,
+
+which we can solve using the fact that q_0 = 1 (i.e. the probability of gambler's ruin given that player 1 starts with no money is 1), and q_{n_1 + n_2} = 0 (i.e. the probability of gambler's ruin given that player 1 starts with all the money is 0.) For a more detailed description of the method see e.g. Feller (1970), An introduction to probability theory and its applications, 3rd ed.
+
+N-player ruin problem
+
+The above-described problem (2 players) is a special case of the so-called N-Player Ruin problem.
+
+Here  N \geq 2  players with  initial capital  x_1, x_2, \ldots, x_N  dollars, respectively, play a sequence of (arbitrary) independent games and win and lose certain amounts of dollars from and to each other according to fixed rules.  The sequence of games ends as soon as at least one player is ruined. Standard Markov chain methods can be applied to solve this more general problem in principle, but the computations quickly become prohibitive as soon as the number of players or their initial capitals increase. For  N = 2  and large initial capitals  x_1, x_2  the solution can be well approximated by using two-dimensional Brownian motion. (For  N \geq 3  this is not possible.)
+
+In practice the true problem is to find the solution for the typical cases of  N \geq 3  and limited initial capital.
+
+Swan (2006) proposed an algorithm based on matrix-analytic methods (Folding Algorithm for ruin problems) which significantly reduces the order of the computational task in such cases.
+
+See also
+
+Fixed-odds betting
+
+Gambler's conceit
+
+Gambling
+
+Gambler's fallacy
+
+Impossibility of a gambling system
+
+Kelly criterion
+
+Martingale (betting system)
+
+Online gambling
+
+Risk of ruin
+
+Volatility tax
+
+Notes
+
+References
+
+Ferguson T. S. Gamblers Ruin in Three Dimensions. Unpublished manuscript: https://www.math.ucla.edu/~tom/
+
+External links
+
+Illustration of Gambler's Ruin
+
+The Gambler's Ruin at MathPages
+
+The Gambler’s Ruin Simulation at Wolfram Demonstration Project
+
+Category:Gambling terminology
+
+Category:Probability problems
+
+Category:Causal fallacies
+
+Category:Variants of random walks

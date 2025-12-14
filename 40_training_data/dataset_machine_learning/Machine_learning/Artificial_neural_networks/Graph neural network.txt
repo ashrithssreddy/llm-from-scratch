@@ -1,0 +1,49 @@
+Graph neural networks (GNN) are specialized artificial neural networks that are designed for tasks whose inputs are graphs.  Each input sample is a graph representation of a molecule, where atoms form the nodes and chemical bonds between atoms form the edges.  In addition to the graph representation, the input also includes known chemical properties for each of the atoms.  Dataset samples may thus differ in length, reflecting the varying numbers of atoms in molecules, and the varying number of bonds between them. The task is to predict the efficacy of a given molecule for a specific medical application, like eliminating E. coli bacteria.
+
+The key design element of GNNs is the use of pairwise message passing, such that graph nodes iteratively update their representations by exchanging information with their neighbors. Several GNN architectures have been proposed, chemistry, physics (framework agnostic), jraph (Julia, Flux).
+
+Architecture
+
+The architecture of a generic GNN implements the following fundamental layers: However, recent work has identified a non-trivial set of datasets where GNN's performance compared to the NN's is not satisfactory. Heterophily, i.e., low homophily, has been considered the main cause of this empirical observation. People have begun to revisit and re-evaluate most existing graph models in the heterophily scenario across various kinds of graphs, e.g., heterogeneous graphs, temporal graphs and hypergraphs. Moreover, numerous graph-related applications are found to be closely related to the heterophily problem, e.g. graph fraud/anomaly detection, graph adversarial attacks and robustness, privacy, federated learning and point cloud segmentation, graph clustering, recommender systems, generative models, link prediction, graph classification and coloring, etc. In the past few years, considerable effort has been devoted to studying and addressing the heterophily issue in graph learning.
+
+Applications
+
+Protein folding
+
+Graph neural networks are one of the main building blocks of AlphaFold, an artificial intelligence program developed by Google's DeepMind for solving the protein folding problem in biology. AlphaFold achieved first place in several CASP competitions. and within paths to detect malicious processes, or on the edge level to detect lateral movement.
+
+Water distribution networks
+
+Water distribution systems can be modelled as graphs, being then a straightforward application of GNN. This kind of algorithm has been applied to water demand forecasting, interconnecting District Metered Areas(DMAs) to improve the forecasting capacity. Other application of this algorithm on water distribution modelling is the development of metamodels.
+
+Computer Vision
+
+To represent an image as a graph structure, the image is first divided into multiple patches, each of which is treated as a node in the graph. Edges are then formed by connecting each node to its nearest neighbors based on spatial or feature similarity. This graph-based representation enables the application of graph learning models to visual tasks. The relational structure helps to enhance feature extraction and improve performance on image understanding.
+
+Text and NLP
+
+Graph-based representation of text helps to capture deeper semantic relationships between words. Many studies have used graph networks to enhance performance in various text processing tasks such as text classification, question answering, Neural Machine Translation (NMT), event extraction, fact verification, etc.
+
+References
+
+{{Reflist|refs=
+
+}}
+
+External links
+
+A Gentle Introduction to Graph Neural Networks
+
+Category:Neural network architectures
+
+Category:Semisupervised learning
+
+Category:Supervised learning
+
+Category:Unsupervised learning
+
+Category:Artificial neural networks
+
+Category:Graph algorithms
+
+Category:2009 in artificial intelligence

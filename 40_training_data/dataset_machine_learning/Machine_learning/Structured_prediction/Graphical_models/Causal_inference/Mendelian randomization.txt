@@ -1,0 +1,81 @@
+In epidemiology, Mendelian randomization (commonly abbreviated to MR) is a method using measured variation in genes to examine the causal effect of an exposure on an outcome. Under key assumptions (see below), the design reduces both reverse causation and confounding, which often substantially impede or mislead the interpretation of results from epidemiological studies.
+
+. The term Mendelian randomization was coined because the random assignment of genetic variants from parents to offspring is fundamental to the method.]]
+
+The study design was first proposed in 1986
+
+Well-known successful demonstrations of causal evidence consistent across multiple studies with different designs include the identified causal links between smoking and lung cancer, and between blood pressure and stroke. However, there have also been notable failures when exposures hypothesized to be a causal risk factor for a particular outcome were later shown by well conducted randomized controlled trials not to be causal. For instance, it was previously thought that hormone replacement therapy would prevent cardiovascular disease, but it is now known to have no such benefit. Another notable example is that of selenium and prostate cancer. Some observational studies found an association between higher circulating selenium levels (usually acquired through various foods and dietary supplements ) and lower risk of prostate cancer. However, the Selenium and Vitamin E Cancer Prevention Trial (SELECT) showed evidence that dietary selenium supplementation actually increased the risk of prostate and advanced prostate cancer and had an additional off-target effect on increasing type 2 diabetes risk. Mendelian randomization methods now support the view that high selenium status may not prevent cancer in the general population, and may even increase the risk of specific types.
+
+Such inconsistencies between observational epidemiological studies and randomized controlled trials are likely a function of social, behavioral, or physiological confounding factors in many observational epidemiological designs, which are particularly difficult to measure accurately and difficult to control for. Moreover, randomized controlled trials (RCTs) are usually expensive, time-consuming and laborious and many epidemiological findings cannot be ethically replicated in clinical trials. In some settings Mendelian randomization studies appear capable of resolving questions of potential confounding more efficiently than RCTs
+
+Definition
+
+Mendelian randomization (MR) uses the properties of germline genetic variation (usually in the form of single nucleotide polymorphisms or SNPs) strongly associated with a potential exposure, if those genetic variants are associated with the outcome then this adds strength to the conclusion that the exposure does have a causal effect on the outcome. The method is most commonly implemented using the instrumental variables estimation method hailing from econometrics. The genetic variants are then used as a "proxy" for that exposure to test for and estimate a causal effect of the exposure on an outcome of interest. The genetic variation used will have either well-understood effects on exposure patterns (e.g. propensity to smoke heavily) or effects that mimic those produced by modifiable exposures  (e.g., raised blood cholesterol
+
+As genotypes are assigned randomly when passed from parents to offspring during meiosis, then groups of individuals defined by genetic variation associated with an exposure at a population level should be largely unrelated to the confounding factors that typically plague observational epidemiology studies. Given an individuals parents genotype, the genotype they inherit is truly random and so the method was initially proposed as being applied to data which included parents and their offspring. However, the number of datasets which include family data are limited and so Mendelian randomization is usually applied to data on unrelated individuals from a population. However, increasing availability of data is increasing the use of family based methods.
+
+Germline genetic variation (i.e. that which can be inherited) is fixed at conception and not modified by the onset of any outcome or disease, precluding reverse causation. Additionally, given improvements in modern genotyping technologies, measurement error and systematic misclassification is often low with genetic data. In this regard Mendelian randomization can be thought of as analogous to "nature's randomized controlled trial".
+
+Mendelian randomization requires three core instrumental variable assumptions. Namely that:
+
+The genetic variant(s) being used as an instrument for the exposure is associated with the exposure. This is known as the "relevance" assumption.
+
+There are no common causes (i.e. confounders) of the genetic variant(s) and the outcome of interest. This is known as the "independence" or "exchangeability" assumption.
+
+There is no independent pathway between the genetic variant(s) and the outcome other than through the exposure. This is known as the "exclusion restriction" or "no horizontal pleiotropy" assumption.
+
+To ensure that the first core assumption is validated, Mendelian randomization requires strong associations between genetic variation and exposures of interest. These are usually obtained by selecting variants identified as associated with the exposure in genome-wide association studies though can also be through using variants with a well understood function that influences the exposure. The second assumption relies on there being no population substructure (e.g. geographical factors that induce an association between the genotype and outcome), mate choice that is not associated with genotype (i.e. random mating or panmixia) and no dynastic effects (i.e. where the expression of parental genotype in the parental phenotype directly affects the offspring phenotype).
+
+Statistical analysis
+
+Mendelian randomization is currently generally applied through the use of instrumental variables estimation with genetic variants acting as instruments for the exposure of interest. This can be implemented using data on the genetic variants, exposure and outcome of interest for a set of individuals in a single dataset or using summary data on the association between the genetic variants and the exposure and the association between the genetic variants and the outcome in separate datasets. The method has also been used in economic research studying the effects of obesity on earnings, and other labor market outcomes. If multiple genetic variants are associated with the exposure they can either be used individually as instruments or combined to create an allele score which is used as a single instrument.
+
+Analysis using summary data often applies data from genome-wide association studies. In this case the association between genetic variants and the exposure is taken from the summary results produced by a genome-wide association study for the exposure. The association between the same genetic variants and the outcome is then taken from the summary results produced by a genome-wide association study for the outcome. These two sets of summary results are then used to obtain the MR estimate. Given the following notation:
+
+\hat{\pi}_g \equiv  effect of genetic variant \ g\  on the exposure (X);
+
+\hat{\Gamma}_g \equiv  estimated effect of genetic variant \ g\  on the outcome \ (Y)\ ;
+
+\hat{\sigma}_g \equiv  estimated standard error of this estimated effect;
+
+\hat{\beta}_\mathsf{MR} \equiv  MR estimate of the causal effect of the exposure \ X\  on the outcome \ Y\ ;
+
+and considering the effect of a single genetic variant, the MR estimate can be obtained from the Wald ratio:
+
+\hat{\beta}_\mathsf{MR} = \frac{\ \hat{\Gamma}_g\ }{\ \hat{\pi}_g\ } ~.
+
+When multiple genetic variants are used, the individual ratios for each genetic variants are combined using inverse variance weighting where each individual ratio is weighted by the uncertainty in their estimation. This gives the IVW estimate which can be calculated as:
+
+\hat{\beta}_\mathsf{IVW} = \frac{\ \sum_{g=1}^G \hat{\pi}_g\ \hat{\Gamma}_g\ \sigma_{y,g}^2\ }{\ \sum_{g=1}^G\ \hat{\pi}_g^2\ \sigma_{y,g}^2\ }  ~.
+
+Alternatively, the same estimate can be obtained from a linear regression which used the genetic variant-outcome association as the outcome and the genetic variant-exposure association as the exposure. This linear regression is weighted by the uncertainty in the genetic-variant outcome association and does not include a constant.
+
+\hat{\Gamma}_g = \beta_\mathsf{IVW}\ \hat{\pi}_g+u_g\ \quad\ \mathsf{ weighted\ by } \ \quad\ \frac{ 1 }{~~ \hat{\sigma}^2_{y,g}\ } ~.
+
+These methods only provide reliable estimates of the causal effect of the exposure on the outcome under the core instrumental variable assumptions. Alternative methods are available that are robust to a violation of the third assumption, i.e. that provide reliable results under some types of horizontal pleiotropy. Additionally some biases that arise from violations of the second IV assumption, such as dynastic effects, can be overcome through the use of data which includes siblings or parents and their offspring.
+
+History
+
+The Mendelian randomization method depends on two principles derived from the original work by Gregor Mendel on genetic inheritance. Its foundation come from Mendel's laws namely 1) the law of segregation in which there is complete segregation of the two allelomorphs in equal number of germ-cells of a heterozygote and 2) separate pairs of allelomorphs segregate independently of one another and which were first described as such in 1906 by Robert Heath Lock. Another progenitor of Mendelian randomization is Sewall Wright who introduced path analysis, a form of causal diagram used for making causal inference from non-experimental data. The method relies on causal anchors, and the anchors in the majority of his examples were provided by Mendelian inheritance, as is the basis of MR. Another component of the logic of MR is the instrumental gene, the concept of which was introduced by Thomas Hunt Morgan. This is important as it removed the need to understand the physiology of the gene for making the inference about how genetic processes worked through phenotypes.
+
+Since that time the literature includes examples of research using molecular genetics to make inference about modifiable risk factors, which is the essence of MR. One example is the work of Gerry Lower and colleagues in 1979 who used the N-acetyltransferase phenotype as an anchor to draw inference about various exposures including smoking and amine dyes as risk factors for bladder cancer. Another example is the work of Martijn Katan (then of Wageningen University & Research, Netherlands) in which he advocated a study design using Apolipoprotein E allele as an anchor to study the observed relationship between low blood cholesterol levels and increased risk of cancer, although no data were reported.
+
+References
+
+{{reflist|25em|refs=
+
+}}
+
+Further reading
+
+External links
+
+Category:Epidemiology
+
+Category:Genetic epidemiology
+
+Category:Applications of randomness
+
+Category:Causal inference
+
+Category:Observational study

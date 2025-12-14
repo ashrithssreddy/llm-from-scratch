@@ -1,0 +1,19 @@
+Prototype methods are machine learning methods that use data prototypes. A data prototype is a data value that reflects other values in its class, e.g., the centroid in a K-means clustering problem.
+
+Methods
+
+The following are some prototype methods
+
+K-means clustering
+
+Learning vector quantization (LVQ)
+
+Gaussian mixtures
+
+Related Methods
+
+While K-nearest neighbor's does not use prototypes, it is similar to prototype methods like K-means clustering.
+
+References
+
+Category:Machine learning algorithms

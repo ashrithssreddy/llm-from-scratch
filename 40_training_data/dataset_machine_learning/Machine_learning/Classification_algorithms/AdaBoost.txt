@@ -1,0 +1,215 @@
+AdaBoost (short for Adaptive Boosting) is a statistical classification meta-algorithm formulated by Yoav Freund and Robert Schapire in 1995, who won the 2003 Gödel Prize for their work. It can be used in conjunction with many types of learning algorithm to improve performance. The output of multiple weak learners is combined into a weighted sum that represents the final output of the boosted classifier. Usually, AdaBoost is presented for binary classification, although it can be generalized to multiple classes or bounded intervals of real values.
+
+AdaBoost is adaptive in the sense that subsequent weak learners (models) are adjusted in favor of instances misclassified by previous models. In some problems, it can be less susceptible to overfitting than other learning algorithms. The individual learners can be weak, but as long as the performance of each one is slightly better than random guessing, the final model can be proven to converge to a strong learner.
+
+Although AdaBoost is typically used to combine weak base learners (such as decision stumps), it has been shown to also effectively combine strong base learners (such as deeper decision trees), producing an even more accurate model.
+
+Every learning algorithm tends to suit some problem types better than others, and typically has many different parameters and configurations to adjust before it achieves optimal performance on a dataset. AdaBoost (with decision trees as the weak learners) is often referred to as the best out-of-the-box classifier. When used with decision tree learning, information gathered at each stage of the AdaBoost algorithm about the relative 'hardness' of each training sample is fed into the tree-growing algorithm such that later trees tend to focus on harder-to-classify examples.
+
+Training
+
+AdaBoost refers to a particular method of training a boosted classifier. A boosted classifier is a classifier of the form
+
+F_T(x) = \sum_{t=1}^T f_t(x)
+
+where each f_t is a weak learner that takes an object x as input and returns a value indicating the class of the object. For example, in the two-class problem, the sign of the weak learner's output identifies the predicted object class and the absolute value gives the confidence in that classification.
+
+Each weak learner produces an output hypothesis h which fixes a prediction h(x_i) for each sample in the training set. At each iteration t, a weak learner is selected and assigned a coefficient \alpha_t such that the total training error E_t of the resulting t-stage boosted classifier is minimized.
+
+E_t = \sum_i E[F_{t-1}(x_i) + \alpha_t h(x_i)]
+
+Here F_{t-1}(x) is the boosted classifier that has been built up to the previous stage of training and f_t(x) = \alpha_t h(x) is the weak learner that is being considered for addition to the final classifier.
+
+Weighting
+
+At each iteration of the training process, a weight w_{i,t} is assigned to each sample in the training set equal to the current error E(F_{t-1}(x_i)) on that sample. These weights can be used in the training of the weak learner. For instance, decision trees can be grown which favor the splitting of sets of samples with large weights.
+
+Derivation
+
+This derivation follows Rojas (2009):
+
+Suppose we have a data set \{(x_1, y_1), \ldots, (x_N, y_N)\} where each item x_i has an associated class y_i \in \{-1, 1\}, and a set of weak classifiers \{k_1, \ldots, k_L\} each of which outputs a classification k_j(x_i) \in \{-1, 1\} for each item. After the (m-1)-th iteration our boosted classifier is a linear combination of the weak classifiers of the form:
+
+C_{(m-1)}(x_i) = \alpha_1k_1(x_i) + \cdots + \alpha_{m-1}k_{m-1}(x_i),
+
+where the class will be the sign of C_{(m-1)}(x_i). At the m-th iteration we want to extend this to a better boosted classifier by adding another weak classifier k_m, with another weight \alpha_m:
+
+C_{m}(x_i) = C_{(m-1)}(x_i) + \alpha_m k_m(x_i)
+
+So it remains to determine which weak classifier is the best choice for k_m, and what its weight \alpha_m should be. We define the total error E of C_m as the sum of its exponential loss on each data point, given as follows:
+
+E = \sum_{i=1}^N e^{-y_i C_m(x_i)} = \sum_{i=1}^N e^{-y_i C_{(m-1)}(x_i)}e^{-y_i \alpha_m k_m(x_i)}
+
+Letting w_i^{(1)} = 1 and w_i^{(m)} = e^{-y_i C_{m-1}(x_i)} for m > 1, we have:
+
+E = \sum_{i=1}^N w_i^{(m)}e^{-y_i\alpha_m k_m(x_i)}
+
+We can split this summation between those data points that are correctly classified by k_m (so y_i k_m(x_i) = 1) and those that are misclassified (so y_i k_m(x_i) = -1):
+
+\begin{align}
+
+E &= \sum_{y_i = k_m(x_i)} w_i^{(m)}e^{-\alpha_m} + \sum_{y_i \neq k_m(x_i)} w_i^{(m)}e^{\alpha_m} \\
+
+&= \sum_{i=1}^N w_i^{(m)}e^{-\alpha_m} + \sum_{y_i \neq k_m(x_i)} w_i^{(m)}\left(e^{\alpha_m} - e^{-\alpha_m}\right)
+
+\end{align}
+
+Since the only part of the right-hand side of this equation that depends on k_m is \sum_{y_i \neq k_m(x_i)} w_i^{(m)}, we see that the k_m that minimizes E is the one in the set \{k_1, \ldots, k_L\} that minimizes \sum_{y_i \neq k_m(x_i)} w_i^{(m)} [assuming that \alpha_m > 0], i.e. the weak classifier with the lowest weighted error (with weights w_i^{(m)} = e^{-y_i C_{m-1}(x_i)}).
+
+To determine the desired weight \alpha_m that minimizes E with the k_m that we just determined, we differentiate:
+
+\frac{d E}{d \alpha_m} = \frac{d (\sum_{y_i = k_m(x_i)} w_i^{(m)}e^{-\alpha_m} + \sum_{y_i \neq k_m(x_i)} w_i^{(m)}e^{\alpha_m}) }{d \alpha_m}
+
+Luckily the minimum occurs when setting this to zero, then solving for \alpha_m yields:
+
+\alpha_m = \frac{1}{2}\ln\left(\frac{\sum_{y_i = k_m(x_i)} w_i^{(m)}}{\sum_{y_i \neq k_m(x_i)} w_i^{(m)}}\right)
+
+{{Math proof|drop=hidden|
+
+\frac{d E}{d \alpha_m} = -\sum_{y_i = k_m(x_i)} w_i^{(m)}e^{-\alpha_m} + \sum_{y_i \neq k_m(x_i)} w_i^{(m)}e^{\alpha_m} = 0
+
+because e^{-\alpha_m} does not depend on i
+
+e^{-\alpha_m} \sum_{y_i = k_m(x_i)} w_i^{(m)} = e^{\alpha_m} \sum_{y_i \neq k_m(x_i)} w_i^{(m)}
+
+-\alpha_m + \ln\left( \sum_{y_i = k_m(x_i)} w_i^{(m)} \right) = \alpha_m + \ln\left(\sum_{y_i \neq k_m(x_i)} w_i^{(m)} \right)
+
+-2\alpha_m =  \ln\left( \dfrac{\sum_{y_i \neq k_m(x_i)} w_i^{(m)}}{\sum_{y_i = k_m(x_i)} w_i^{(m)}} \right)
+
+\alpha_m = - \dfrac{1}{2} \ln\left( \dfrac{\sum_{y_i \neq k_m(x_i)} w_i^{(m)}}{\sum_{y_i = k_m(x_i)} w_i^{(m)}} \right)
+
+\alpha_m = \dfrac{1}{2} \ln\left( \dfrac{\sum_{y_i = k_m(x_i)} w_i^{(m)}}{\sum_{y_i \neq k_m(x_i)} w_i^{(m)}} \right)
+
+}}
+
+We calculate the weighted error rate of the weak classifier to be \epsilon_m = \frac{\sum_{y_i \neq k_m(x_i)} w_i^{(m)}}{\sum_{i=1}^N w_i^{(m)}}, so it follows that:
+
+\alpha_m = \frac{1}{2}\ln\left( \frac{1 - \epsilon_m}{\epsilon_m}\right)
+
+which is the negative logit function multiplied by 0.5. Due to the convexity of E as a function of \alpha_m, this new expression for \alpha_m gives the global minimum of the loss function.
+
+Note: This derivation only applies when k_m(x_i) \in \{-1, 1\}, though it can be a good starting guess in other cases, such as when the weak learner is biased (k_m(x) \in \{a,b\}, a \neq -b), has multiple leaves (k_m(x) \in \{a,b,\dots,n\}) or is some other function k_m(x) \in \mathbb{R}.
+
+Thus we have derived the AdaBoost algorithm: At each iteration, choose the classifier k_m, which minimizes the total weighted error \sum_{y_i \neq k_m(x_i)} w_i^{(m)}, use this to calculate the error rate \epsilon_m = \frac{\sum_{y_i \neq k_m(x_i)} w_i^{(m)}}{\sum_{i=1}^N w_i^{(m)}}, use this to calculate the weight \alpha_m = \frac{1}{2}\ln\left( \frac{1 - \epsilon_m}{\epsilon_m}\right), and finally use this to improve the boosted classifier C_{m-1} to C_{m} = C_{(m-1)} + \alpha_m k_m.
+
+Statistical understanding of boosting
+
+Boosting is a form of linear regression in which the features of each sample x_i are the outputs of some weak learner h applied to x_i.
+
+While regression tries to fit F(x) to y(x) as precisely as possible without loss of generalization, typically using least square error E(f) = (y(x) - f(x))^2, whereas the AdaBoost error function E(f) = e^{-y(x)f(x)} takes into account the fact that only the sign of the final result is used, thus |F(x)| can be far larger than 1 without increasing error. However, the exponential increase in the error for sample x_i as -y(x_i)f(x_i) increases, resulting in excessive weights being assigned to outliers.
+
+One feature of the choice of exponential error function is that the error of the final additive model is the product of the error of each stage, that is, e^{\sum_i -y_i f(x_i)} = \prod_i e^{-y_i f(x_i)}. Thus it can be seen that the weight update in the AdaBoost algorithm is equivalent to recalculating the error on F_t(x) after each stage.
+
+There is a lot of flexibility allowed in the choice of loss function. As long as the loss function is monotonic and continuously differentiable, the classifier is always driven toward purer solutions. Specifically, the loss being minimized by AdaBoost is the exponential loss
+
+\sum_i \phi(i,y,f) = \sum_i e^{-y_i f(x_i)},
+
+whereas LogitBoost performs logistic regression, minimizing
+
+\sum_i \phi(i,y,f) = \sum_i \ln\left(1+e^{-y_i f(x_i)}\right).
+
+In the gradient descent analogy, the output of the classifier for each training point is considered a point \left(F_t(x_1), \dots, F_t(x_n)\right) in n-dimensional space, where each axis corresponds to a training sample, each weak learner h(x) corresponds to a vector of fixed orientation and length, and the goal is to reach the target point (y_1, \dots, y_n) (or any region where the value of loss function E_T(x_1, \dots, x_n) is less than the value at that point), in the fewest steps. Thus AdaBoost algorithms perform either Cauchy (find h(x) with the steepest gradient, choose \alpha to minimize test error) or Newton (choose some target point, find \alpha h(x) that brings F_t closest to that point) optimization of training error.
+
+Example algorithm (Discrete AdaBoost)
+
+With:
+
+Samples x_1 \dots x_n
+
+Desired outputs y_1 \dots y_n, y \in \{-1, 1\}
+
+Initial weights w_{1,1} \dots w_{n,1} set to \frac{1}{n}
+
+Error function E(f(x), y_i) = e^{-y_i f(x_i)}
+
+Weak learners h\colon x \rightarrow \{-1, 1\}
+
+For t in 1 \dots T:
+
+Choose h_t(x):
+
+Find weak learner h_t(x) that minimizes \epsilon_t, the weighted sum error for misclassified points \epsilon_t = \sum^n_{\stackrel{i=1}{h_t(x_i)\neq y_i}} w_{i,t}
+
+Choose \alpha_t = \frac{1}{2} \ln \left(\frac{1-\epsilon_t}{\epsilon_t}\right)
+
+Add to ensemble:
+
+F_t(x) = F_{t-1}(x) + \alpha_t h_t(x)
+
+Update weights:
+
+w_{i,t+1} = w_{i,t} e^{-y_i \alpha_t h_t(x_i)} for i in 1 \dots n
+
+Renormalize w_{i,t+1} such that \sum_i w_{i,t+1} = 1
+
+(Note: It can be shown that \frac{\sum_{h_{t}(x_i) = y_i} w_{i,t+1}}{\sum_{h_{t}(x_i) \neq y_i} w_{i,t+1}} = \frac{\sum_{h_t(x_i) = y_i} w_{i,t}}{\sum_{h_t(x_i) \neq y_i} w_{i,t}} at every step, which can simplify the calculation of the new weights.)
+
+Variants
+
+Real AdaBoost
+
+The output of decision trees is a class probability estimate p(x) = P(y=1 | x), the probability that x is in the positive class. Friedman, Hastie and Tibshirani derive an analytical minimizer for e^{-y\left(F_{t-1}(x)+f_t(p(x))\right)} for some fixed p(x) (typically chosen using weighted least squares error):
+
+f_t(x) = \frac{1}{2} \ln\left(\frac{x}{1-x}\right).
+
+Thus, rather than multiplying the output of the entire tree by some fixed value, each leaf node is changed to output half the logit transform of its previous value.
+
+LogitBoost
+
+LogitBoost represents an application of established logistic regression techniques to the AdaBoost method. Rather than minimizing error with respect to y, weak learners are chosen to minimize the (weighted least-squares) error of f_t(x) with respect to
+
+z_t = \frac{y^* - p_t(x)}{2 p_t(x)(1 - p_t(x))},
+
+where
+
+p_t(x) = \frac{e^{F_{t-1}(x)}}{e^{F_{t-1}(x)}+e^{-F_{t-1}(x)}},
+
+w_t = p_t(x)(1 - p_t(x))
+
+y^* = \frac{y+1} 2.
+
+That is z_t is the Newton–Raphson approximation of the minimizer of the log-likelihood error at stage t, and the weak learner f_t is chosen as the learner that best approximates z_t by weighted least squares.
+
+As p approaches either 1 or 0, the value of p_t(x_i)(1 - p_t(x_i)) becomes very small and the z term, which is large for misclassified samples, can become numerically unstable, due to machine precision rounding errors. This can be overcome by enforcing some limit on the absolute value of z and the minimum value of&nbsp;w
+
+Gentle AdaBoost
+
+While previous boosting algorithms choose f_t greedily, minimizing the overall test error as much as possible at each step, GentleBoost features a bounded step size. f_t is chosen to minimize \sum_i w_{t,i} (y_i-f_t(x_i))^2, and no further coefficient is applied. Thus, in the case where a weak learner exhibits perfect classification performance, GentleBoost chooses f_t(x) = \alpha_t h_t(x) exactly equal to y, while steepest descent algorithms try to set \alpha_t = \infty. Empirical observations about the good performance of GentleBoost appear to back up Schapire and Singer's remark that allowing excessively large values of \alpha can lead to poor generalization performance.
+
+Early termination
+
+A technique for speeding up processing of boosted classifiers, early termination refers to only testing each potential object with as many layers of the final classifier necessary to meet some confidence threshold, speeding up computation for cases where the class of the object can easily be determined. One such scheme is the object detection framework introduced by Viola and Jones: in an application with significantly more negative samples than positive, a cascade of separate boost classifiers is trained, the output of each stage biased such that some acceptably small fraction of positive samples is mislabeled as negative, and all samples marked as negative after each stage are discarded. If 50% of negative samples are filtered out by each stage, only a very small number of objects would pass through the entire classifier, reducing computation effort. This method has since been generalized, with a formula provided for choosing optimal thresholds at each stage to achieve some desired false positive and false negative rate.
+
+In the field of statistics, where AdaBoost is more commonly applied to problems of moderate dimensionality, early stopping is used as a strategy to reduce overfitting. A validation set of samples is separated from the training set, performance of the classifier on the samples used for training is compared to performance on the validation samples, and training is terminated if performance on the validation sample is seen to decrease even as performance on the training set continues to improve.
+
+Totally corrective algorithms
+
+For steepest descent versions of AdaBoost, where \alpha_t is chosen at each layer t to minimize test error, the next layer added is said to be maximally independent of layer t: it is unlikely to choose a weak learner t+1 that is similar to learner t. However, there remains the possibility that t+1 produces similar information to some other earlier layer. Totally corrective algorithms, such as LPBoost, optimize the value of every coefficient after each step, such that new layers added are always maximally independent of every previous layer. This can be accomplished by backfitting, linear programming or some other method.
+
+Pruning
+
+Pruning is the process of removing poorly performing weak classifiers to improve memory and execution-time cost of the boosted classifier. The simplest methods, which can be particularly effective in conjunction with totally corrective training, are weight- or margin-trimming: when the coefficient, or the contribution to the total test error, of some weak classifier falls below a certain threshold, that classifier is dropped. Margineantu & Dietterich suggested an alternative criterion for trimming: weak classifiers should be selected such that the diversity of the ensemble is maximized. If two weak learners produce very similar outputs, efficiency can be improved by removing one of them and increasing the coefficient of the remaining weak learner.
+
+See also
+
+Bootstrap aggregating
+
+CoBoosting
+
+BrownBoost
+
+Gradient boosting
+
+References
+
+Further reading
+
+original paper of Yoav Freund and Robert E.Schapire where AdaBoost is first introduced.
+
+On the margin explanation of boosting algorithm.
+
+On the doubt about margin explanation of boosting.
+
+Category:Classification algorithms
+
+Category:Ensemble learning

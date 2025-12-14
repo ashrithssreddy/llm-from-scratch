@@ -1,0 +1,49 @@
+Probabilistic causation is a concept in a group of philosophical theories that aim to characterize the relationship between cause and effect using the tools of probability theory. The central idea behind these theories is that causes raise the probabilities of their effects, all else being equal.
+
+Deterministic versus probabilistic theory
+
+Interpreting causation as a deterministic relation means that if A causes B, then A must always be followed by B. In this sense, war does not cause deaths, nor does smoking cause cancer. As a result, many turn to a notion of probabilistic causation.  Informally, A probabilistically causes B if A's occurrence increases the probability of B.  This is sometimes interpreted to reflect imperfect knowledge of a deterministic system but other times interpreted to mean that the causal system under study has an inherently indeterministic  nature. (Propensity probability is an analogous idea, according to which probabilities have an objective existence and are not just limitations in a subject's knowledge).
+
+Philosophers such as Hugh Mellor and Patrick Suppes have defined causation in terms of a cause preceding and increasing the probability of the effect. (Additionally, Mellor claims that cause and effect are both facts - not events - since even a non-event, such as the failure of a train to arrive, can cause effects such as my taking the bus.  Suppes, by contrast, relies on events defined set-theoretically, and much of his discussion is informed by this terminology.)
+
+Pearl argues that the entire enterprise of probabilistic causation has been misguided from the very beginning, because the central notion that causes "raise the probabilities" of their effects cannot be expressed in the language of probability theory. In particular, the inequality Pr(effect | cause) > Pr(effect | ~cause) which philosophers invoked to define causation, as well as its many variations and nuances, fails to capture the intuition behind "probability raising", which is inherently a manipulative or counterfactual notion.
+
+The correct formulation, according to Pearl, should read:
+
+Pr(effect | do(cause)) > Pr(effect | do(~cause))
+
+where do(C) stands for an external intervention that compels the truth of C. The conditional probability Pr(E | C), in contrast, represents a probability resulting from a passive observation of C, and rarely coincides with Pr(E | do(C)). Indeed, observing the barometer falling increases the probability of a storm coming, but does not
+
+"cause" the storm; were the act of manipulating the barometer to change the probability of storms, the falling barometer would qualify as a cause of storms. In general, formulating the notion of "probability raising" within the calculus of do-operators among them the infamous Simpson's paradox, and clarifies precisely what relationships exist between probabilities and causation.
+
+The establishing of cause and effect, even with this relaxed reading, is notoriously difficult, expressed by the widely accepted statement "Correlation does not imply causation". For instance, the observation that smokers have a dramatically increased lung cancer rate does not establish that smoking must be a cause of that increased cancer rate: maybe there exists a certain genetic defect which both causes cancer and a yearning for nicotine; or even perhaps nicotine craving is a symptom of very early-stage lung cancer which is not otherwise detectable. Scientists are always seeking the exact mechanisms by which Event A produces Event B. But scientists also are comfortable making a statement like, "Smoking probably causes cancer," when the statistical correlation between the two, according to probability theory, is far greater than chance. In this dual approach, scientists accept both deterministic and probabilistic causation in their terminology.
+
+In statistics, it is generally accepted that observational studies (like counting cancer cases among smokers and among non-smokers and then comparing the two) can give hints, but can never establish cause and effect. Often, however, qualitative causal assumptions (e.g., absence of causation between some variables) may permit the derivation of consistent
+
+causal effect estimates from observational studies.
+
+An example would be a system of A, B and C, where A, B and C are known. Characteristics are below and limited to a given time (such as 50 ms, or 50 hours). "^" means "not", "*" means "and":
+
+^A * ^B => ^C (99.9999998027%)
+
+A * ^B => ^C (99.9999998027%)
+
+^A * B => ^C (99.9999998027%)
+
+A * B => C (99.9999998027%)
+
+One can reasonably claim, within 6 Standard Deviations, that A * B cause C given the time boundary (such as 50 ms, or 50 hours) IF And Only IF A, B and C are the only parts of the system in question.  Any result outside of this may be considered a deviation.
+
+See also
+
+Bayesian inference
+
+Notes
+
+References
+
+Category:Causality
+
+Category:Causal inference
+
+causation

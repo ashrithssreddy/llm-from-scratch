@@ -1,0 +1,161 @@
+In machine learning and mathematical optimization, loss functions for classification are computationally feasible loss functions representing the price paid for inaccuracy of predictions in classification problems (problems of identifying which category a particular observation belongs to).  Given \mathcal{X} as the space of all possible inputs (usually \mathcal{X} \subset \mathbb{R}^d), and \mathcal{Y} = \{ -1,1 \} as the set of labels (possible outputs), a typical goal of classification algorithms is to find a function f: \mathcal{X} \to \mathcal{Y} which best predicts a label y for a given input \vec{x}.  However, because of incomplete information, noise in the measurement, or probabilistic components in the underlying process, it is possible for the same \vec{x} to generate different y.  As a result, the goal of the learning problem is to minimize expected loss (also known as the risk), defined as
+
+I[f] = \displaystyle \int_{\mathcal{X} \times \mathcal{Y}} V(f(\vec{x}),y) \, p(\vec{x},y) \, d\vec{x} \, dy
+
+where V(f(\vec{x}),y) is a given loss function, and  p(\vec{x},y) is the probability density function of the process that generated the data, which can equivalently be written as
+
+p(\vec{x},y)=p(y\mid\vec{x}) p(\vec{x}).
+
+Within classification, several commonly used loss functions are written solely in terms of the product of the true label y and the predicted label f(\vec{x}). Therefore, they can be defined as functions of only one variable \upsilon=y f(\vec{x}), so that V(f(\vec{x}),y) = \phi(yf(\vec{x})) = \phi(\upsilon) with a suitably chosen function \phi:\mathbb{R}\to\mathbb{R}. These are called margin-based loss functions. Choosing a margin-based loss function amounts to choosing \phi. Selection of a loss function within this framework impacts the optimal f^{*}_\phi which minimizes the expected risk, see empirical risk minimization.
+
+In the case of binary classification, it is possible to simplify the calculation of expected risk from the integral specified above.  Specifically,
+
+\begin{align}
+
+I[f] & = \int_{\mathcal{X} \times \mathcal{Y}} V(f(\vec{x}),y) \, p(\vec{x},y) \,d\vec{x} \,dy \\[6pt]
+
+& = \int_\mathcal{X} \int_\mathcal{Y} \phi(yf(\vec{x})) \, p(y\mid\vec{x}) \, p(\vec{x}) \,dy \,d\vec{x} \\[6pt]
+
+& = \int_\mathcal{X} [\phi(f(\vec{x})) \, p(1\mid\vec{x}) + \phi(-f(\vec{x})) \, p(-1\mid\vec{x})]\, p(\vec{x})\,d\vec{x} \\[6pt]
+
+& = \int_\mathcal{X} [\phi(f(\vec{x})) \, p(1\mid\vec{x}) + \phi(-f(\vec{x})) \, (1-p(1\mid\vec{x}))]\, p(\vec{x})\,d\vec{x}
+
+\end{align}
+
+The second equality follows from the properties described above.  The third equality follows from the fact that 1 and −1 are the only possible values for y, and the fourth because p(-1\mid x)=1-p(1\mid x). The term within brackets
+
+[\phi(f(\vec{x})) p(1\mid\vec{x})+\phi(-f(\vec{x})) (1-p(1\mid\vec{x}))]
+
+is known as the conditional risk.
+
+One can solve for the minimizer of I[f] by taking the functional derivative of the last equality with respect to f and setting the derivative equal to 0.  This will result in the following equation
+
+\frac{\partial \phi(f)}{\partial f}\eta + \frac{\partial \phi(-f)}{\partial f}(1-\eta)=0, \;\;\;\;\;(1)
+
+where
+
+\eta=p(y=1|\vec{x})
+
+, which is also equivalent to setting the derivative of the conditional risk equal to zero.
+
+Given the binary nature of classification, a natural selection for a loss function (assuming equal cost for false positives and false negatives) would be the 0-1 loss function (0–1 indicator function), which takes the value of 0 if the predicted classification equals that of the true class or a 1 if the predicted classification does not match the true class. This selection is modeled by
+
+V(f(\vec{x}),y)=H(-yf(\vec{x}))
+
+where H indicates the Heaviside step function.
+
+However, this loss function is non-convex and non-smooth, and solving for the optimal solution is an NP-hard combinatorial optimization problem.  As a result, it is better to substitute loss function surrogates which are tractable for commonly used learning algorithms, as they have convenient properties such as being convex and smooth.  In addition to  their computational tractability,  one can show that the solutions to the learning problem using these loss surrogates allow for the recovery of the actual solution to the original classification problem.  Some of these surrogates are described below.
+
+In practice, the probability distribution p(\vec{x},y) is unknown.  Consequently, utilizing a training set of n independently and identically distributed sample points
+
+S = \{(\vec{x}_1,y_1), \dots ,(\vec{x}_n,y_n)\}
+
+drawn from the data sample space, one seeks to minimize empirical risk
+
+I_S[f] = \frac{1}{n} \sum_{i=1}^n V( f(\vec{x}_i),y_i)
+
+as a proxy for expected risk.
+
+\phi(v)=C[f^{-1}(v)]+(1-f^{-1}(v))C'[f^{-1}(v)]  \;\;\;\;\;(2),
+
+where f(\eta), (0\leq \eta \leq 1) is any invertible function such that f^{-1}(-v)=1-f^{-1}(v) and C(\eta) is any differentiable strictly concave function such that C(\eta)=C(1-\eta). Table-I shows the generated Bayes consistent loss functions for some example choices of C(\eta) and f^{-1}(v). Note that the Savage and Tangent loss are not convex. Such non-convex loss functions have been shown to be useful in dealing with outliers in classification. For all loss functions generated from (2), the posterior probability p(y=1|\vec{x}) can be found using the invertible link function as  p(y=1|\vec{x})=\eta=f^{-1}(v). Such loss functions where the posterior probability can be recovered using the invertible link are called proper loss functions.
+
+The sole minimizer of the expected risk, f^*_{\phi}, associated with the above generated loss functions can be directly found from equation (1) and shown to be equal to the corresponding
+
+f(\eta)
+
+. This holds even for the nonconvex loss functions, which means that gradient descent based algorithms such as gradient boosting can be used to construct the minimizer.
+
+Proper loss functions, loss margin and regularization
+
+For proper loss functions, the loss margin can be defined as \mu_{\phi}=-\frac{\phi'(0)}{\phi''(0)} and shown to be directly related to the regularization properties of the classifier. Specifically a loss function of larger margin increases regularization and produces better estimates of the posterior probability. For example, the loss margin can be increased for the logistic loss by introducing a \gamma parameter and writing the logistic loss as \frac{1}{\gamma}\log(1+e^{-\gamma v}) where smaller 0 increases the margin of the loss. It is shown that this is directly equivalent to decreasing the learning rate in gradient boosting F_m(x) = F_{m-1}(x) + \gamma h_m(x), where decreasing \gamma improves the regularization of the boosted classifier. The theory makes it clear that when a learning rate of \gamma is used, the correct formula for retrieving the posterior probability is now \eta=f^{-1}(\gamma F(x)).
+
+In conclusion, by choosing a loss function with larger margin (smaller \gamma) we increase regularization and improve our estimates of the posterior probability which in turn improves the ROC curve of the final classifier.
+
+Square loss
+
+While more commonly used in regression, the square loss function can be re-written as a function \phi(yf(\vec{x})) and utilized for classification.  It can be generated using (2) and Table-I as follows
+
+\phi(v)=C[f^{-1}(v)]+(1-f^{-1}(v))C'[f^{-1}(v)] = 4(\frac{1}{2}(v+1))(1-\frac{1}{2}(v+1))+(1-\frac{1}{2}(v+1))(4-8(\frac{1}{2}(v+1)))=(1-v)^2.
+
+The square loss function is both convex and smooth.  However, the square loss function tends to penalize outliers excessively, leading to slower convergence rates (with regards to sample complexity) than for the logistic loss or hinge loss functions.
+
+The minimizer of I[f] for the square loss function can be directly found from equation (1) as
+
+f^*_\text{Square}= 2\eta-1=2p(1\mid x)-1.
+
+Logistic loss
+
+The logistic loss function can be generated using (2) and Table-I as follows
+
+\begin{align}
+
+\phi(v) &= C[f^{-1}(v)]+\left(1-f^{-1}(v)\right)\, C'\left[f^{-1}(v)\right] \\
+
+&= \frac{1}{\log(2)}\left [\frac{-e^v}{1+e^v}\log\frac{e^v}{1+e^v}-\left(1-\frac{e^v}{1+e^v}\right)\log\left(1-\frac{e^v}{1+e^v}\right)\right ]+\left(1-\frac{e^v}{1+e^v}\right) \left [\frac{-1}{\log(2)}\log\left(\frac{\frac{e^v}{1+e^v}}{1-\frac{e^v}{1+e^v}}\right)\right] \\
+
+&=\frac{1}{\log(2)}\log(1+e^{-v}).
+
+\end{align}
+
+The logistic loss is convex and grows linearly for negative values which make it less sensitive to outliers. The logistic loss is used in the LogitBoost algorithm.
+
+The minimizer of I[f] for the logistic loss function  can be directly found from equation (1) as
+
+f^*_\text{Logistic}= \log\left(\frac{\eta}{1-\eta}\right)=\log\left(\frac{p(1\mid x)}{1-p(1\mid x)}\right).
+
+This function is undefined when p(1\mid x)=1 or  p(1\mid x)=0 (tending toward ∞ and −∞ respectively), but predicts a smooth curve which grows when p(1\mid x) increases and equals 0 when p(1\mid x)= 0.5. can be generated using (2) and Table-I as follows
+
+\begin{align}
+
+\phi(v) & = C[f^{-1}(v)]+\left( 1-f^{-1}(v)\right) C'[f^{-1}(v)]
+
+\\ & = 4 \left( \arctan(v)+\frac{1}{2} \right) \left( 1- \left( \arctan(v)+\frac{1}{2} \right) \right) + \left( 1- \left( \arctan(v)+\frac{1}{2} \right) \right) \left( 4-8 \left( \arctan(v)+\frac{1}{2} \right) \right) \\
+
+& = \left( 2\arctan(v)-1 \right) ^2.
+
+\end{align}
+
+The Tangent loss is quasi-convex and is bounded for large negative values which makes it less sensitive to outliers. Interestingly, the Tangent loss also assigns a bounded penalty to data points that have been classified "too correctly". This can help prevent over-training on the data set.   The Tangent loss has been used in gradient boosting, the TangentBoost algorithm and Alternating Decision Forests.
+
+The minimizer of I[f] for the Tangent loss function  can be directly found from equation (1) as
+
+f^*_\text{Tangent}= \tan \left( \eta-\frac{1}{2} \right)  =\tan \left( p \left( 1\mid x \right) -\frac{1}{2}\right) .
+
+Hinge loss
+
+The hinge loss function is defined with \phi(\upsilon) = \max(0, 1-\upsilon) = [1-\upsilon]_{+}, where [a]_{+} = \max(0,a) is the positive part function.
+
+V(f(\vec{x}),y) = \max(0, 1-yf(\vec{x})) = [1 - yf(\vec{x}) ]_{+}.
+
+The hinge loss provides a relatively tight, convex upper bound on the 0–1 indicator function.  Specifically, the hinge loss equals the 0–1 indicator function when \operatorname{sgn}(f(\vec{x})) = y and |yf(\vec{x})| \geq 1.  In addition, the empirical risk minimization of this loss is equivalent to the classical formulation for support vector machines (SVMs).  Correctly classified points lying outside the margin boundaries of the support vectors are not penalized, whereas points within the margin boundaries or on the wrong side of the hyperplane are penalized in a linear fashion compared to their distance from the correct boundary.
+
+While the hinge loss function is both convex and continuous, it is not smooth (is not differentiable) at yf(\vec{x})=1.  Consequently, the hinge loss function cannot be used with gradient descent methods or stochastic gradient descent methods which rely on differentiability over the entire domain.  However, the hinge loss does have a subgradient at yf(\vec{x})=1, which allows for the utilization of subgradient descent methods.  SVMs utilizing the hinge loss function can also be solved using quadratic programming.
+
+The minimizer of I[f] for the hinge loss function is
+
+f^*_\text{Hinge}(\vec{x}) \;=\; \begin{cases} 1& \text{if }p(1\mid\vec{x}) >  p(-1\mid\vec{x}) \\ -1 & \text{if }p(1\mid\vec{x})
+
+when p(1\mid x) \ne 0.5, which matches that of the 0–1 indicator function.  This conclusion makes the hinge loss quite attractive, as bounds can be placed on the difference between expected risk and the sign of hinge loss function. The Hinge loss cannot be derived from (2) since f^*_{\text{Hinge}}  is not invertible.
+
+Generalized smooth hinge loss
+
+The generalized smooth hinge loss function with parameter \alpha is defined as
+
+f^*_\alpha(z) \;=\; \begin{cases} \frac{\alpha}{\alpha + 1} - z & \text{if }z \leq 0 \\ \frac{1}{\alpha + 1}z^{\alpha + 1} - z + \frac{\alpha}{\alpha + 1} & \text{if } 0
+
+where
+
+z = yf(\vec{x}).
+
+It is monotonically decreasing and reaches 0 when z = 1.
+
+See also
+
+Differentiable programming
+
+Scoring function
+
+References
+
+Category:Machine learning algorithms

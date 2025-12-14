@@ -1,0 +1,133 @@
+Massive Online Analysis (MOA) is a free open-source software project specific for data stream mining with concept drift. It is written in Java and developed at the University of Waikato, New Zealand.
+
+Description
+
+MOA is an open-source framework software that allows to build and run experiments
+
+of machine learning or data mining on evolving data streams. It includes a set of learners and stream generators that can be used from the graphical user interface (GUI), the command-line, and the Java API.
+
+MOA contains several collections of machine learning algorithms:
+
+Classification
+
+Bayesian classifiers
+
+Naive Bayes
+
+Naive Bayes Multinomial
+
+Decision trees classifiers
+
+Decision Stump
+
+Hoeffding Tree
+
+Hoeffding Option Tree
+
+Hoeffding Adaptive Tree
+
+Meta classifiers
+
+Bagging
+
+Boosting
+
+Bagging using ADWIN
+
+Bagging using Adaptive-Size Hoeffding Trees.
+
+Perceptron Stacking of Restricted Hoeffding Trees
+
+Leveraging Bagging
+
+Online Accuracy Updated Ensemble
+
+Function classifiers
+
+Perceptron
+
+Stochastic gradient descent (SGD)
+
+Pegasos
+
+Drift classifiers
+
+Self-Adjusting Memory
+
+Probabilistic Adaptive Windowing
+
+Multi-label classifiers
+
+Active learning classifiers
+
+Regression
+
+FIMTDD
+
+AMRules
+
+Clustering
+
+StreamKM++
+
+CluStream
+
+ClusTree
+
+D-Stream
+
+CobWeb.
+
+Outlier detection
+
+STORM
+
+Abstract-C
+
+COD
+
+MCOD
+
+AnyOut
+
+Recommender systems
+
+BRISMFPredictor
+
+Frequent pattern mining
+
+Itemsets
+
+Graphs
+
+Change detection algorithms
+
+These algorithms are designed for large scale machine learning, dealing with concept drift, and big data streams in real time.
+
+MOA supports bi-directional interaction with Weka. MOA is free software released under the GNU GPL.
+
+See also
+
+ADAMS Workflow: Workflow engine for MOA and Weka
+
+Streams: Flexible module environment for the design and execution of data stream experiments
+
+Vowpal Wabbit
+
+List of numerical analysis software
+
+References
+
+External links
+
+MOA Project home page at University of Waikato in New Zealand
+
+SAMOA Project home page at Yahoo Labs
+
+Category:Data mining and machine learning software
+
+Category:Free science software
+
+Category:Java (programming language) software
+
+Category:Free data analysis software

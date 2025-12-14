@@ -1,0 +1,79 @@
+In mathematics, specifically in the theory of Markovian stochastic processes in probability theory, the Chapman–Kolmogorov equation (CKE) is an identity relating the joint probability distributions of different sets of coordinates on a stochastic process.   The equation was derived independently by both the British mathematician Sydney Chapman and the Russian mathematician Andrey Kolmogorov. The CKE is prominently used in recent variational Bayesian methods.
+
+Mathematical description
+
+Suppose that { fi } is an indexed collection of random variables, that is, a stochastic process. Let
+
+p_{i_1,\ldots,i_n}(f_1,\ldots,f_n)
+
+be the joint probability density function of the values of the random variables f1 to fn. Then, the Chapman–Kolmogorov equation is
+
+p_{i_1,\ldots,i_{n-1}}(f_1,\ldots,f_{n-1})=\int_{-\infty}^{\infty}p_{i_1,\ldots,i_n}(f_1,\ldots,f_n)\,df_n
+
+i.e. a straightforward marginalization over the nuisance variable.
+
+(Note that nothing yet has been assumed about the temporal (or any other) ordering of the random variables—the above equation applies equally to the marginalization of any of them.)
+
+In terms of Markov kernels
+
+If we consider the Markov kernels induced by the transitions of a Markov process, the Chapman-Kolmogorov equation can be seen as giving a way of composing the kernel, generalizing the way stochastic matrices compose. Given a measurable space (X,\mathcal{A}) and a Markov kernel k:(X,\mathcal{A})\to(X,\mathcal{A}), the two-step transition kernel k^2:(X,\mathcal{A})\to(X,\mathcal{A}) is given by
+
+k^2(A|x) = \int_X k(A|x') \, k(dx'|x)
+
+for all x\in X and A\in\mathcal{A}.
+
+One can interpret this as a sum, over all intermediate states, of pairs of independent probabilistic transitions.
+
+More generally, given measurable spaces (X,\mathcal{A}), (Y,\mathcal{B}) and (Z,\mathcal{C}), and Markov kernels k:(X,\mathcal{A})\to(Y,\mathcal{B}) and h:(Y,\mathcal{B})\to(Z,\mathcal{C}), we get a composite kernel h\circ k:(X,\mathcal{A})\to(Z,\mathcal{C}) by
+
+(h\circ k)(C|x) = \int_Y h(C|y)\,k(dy|x)
+
+for all x\in X and C\in\mathcal{C}.
+
+Because of this, Markov kernels, like stochastic matrices, form a category.
+
+Application to time-dilated Markov chains
+
+When the stochastic process under consideration is Markovian, the Chapman–Kolmogorov equation is equivalent to an identity on transition densities. In the Markov chain setting, one assumes that i1&nbsp;n. Then, because of the Markov property,
+
+p_{i_1,\ldots,i_n}(f_1,\ldots,f_n)=p_{i_1}(f_1)p_{i_2;i_1}(f_2\mid f_1)\cdots p_{i_n;i_{n-1}}(f_n\mid
+
+f_{n-1}),
+
+where the conditional probability p_{i;j}(f_i\mid f_j) is the transition probability between the times i>j. So, the Chapman–Kolmogorov equation takes the form
+
+p_{i_3;i_1}(f_3\mid f_1)=\int_{-\infty}^\infty p_{i_3;i_2}(f_3\mid f_2)p_{i_2;i_1}(f_2\mid f_1) \, df_2.
+
+Informally, this says that the probability of going from state 1 to state 3 can be found from the probabilities of going from 1 to an intermediate state 2 and then from 2 to 3, by adding up over all the possible intermediate states 2.
+
+When the probability distribution on the state space of a Markov chain is discrete and the Markov chain is homogeneous, the Chapman–Kolmogorov equations can be expressed in terms of (possibly infinite-dimensional) matrix multiplication, thus:
+
+P(t+s)=P(t)P(s)\,
+
+where P(t) is the transition matrix of jump t, i.e., P(t) is the matrix such that entry (i,j) contains the probability of the chain moving from state i to state j in t steps.
+
+As a corollary, it follows that to calculate the transition matrix of jump t, it is sufficient to raise the transition matrix of jump one to the power of t, that is
+
+P(t)=P^t.\,
+
+The differential form of the Chapman–Kolmogorov equation is known as a master equation.
+
+See also
+
+Fokker–Planck equation (also known as Kolmogorov forward equation)
+
+Kolmogorov backward equation
+
+Examples of Markov chains
+
+Category of Markov kernels
+
+Citations
+
+Further reading
+
+Category:Equations
+
+Category:Markov processes
+
+Category:Stochastic calculus

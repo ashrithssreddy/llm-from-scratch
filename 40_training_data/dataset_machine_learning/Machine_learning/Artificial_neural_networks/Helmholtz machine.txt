@@ -1,0 +1,25 @@
+The Helmholtz machine (named after Hermann von Helmholtz and his concept of Helmholtz free energy) is a type of artificial neural network that can account for the hidden structure of a set of data by being trained to create a generative model of the original set of data. The hope is that by learning economical representations of the data, the underlying structure of the generative model should reasonably approximate the hidden structure of the data set. A Helmholtz machine contains two networks, a bottom-up recognition network that takes the data as input and produces a distribution over hidden variables, and a top-down "generative" network that generates values of the hidden variables and the data itself. At the time, Helmholtz machines were one of a handful of learning architectures that used feedback as well as feedforward to ensure quality of learned models.
+
+Helmholtz machines are usually trained using an unsupervised learning algorithm, such as the wake-sleep algorithm. They are a precursor to variational autoencoders, which are instead trained using backpropagation. Helmholtz machines  may also be used in applications requiring a supervised learning algorithm (e.g. character recognition, or position-invariant recognition of an object within a field).
+
+See also
+
+Autoencoder
+
+Boltzmann machine
+
+Hopfield network
+
+Restricted Boltzmann machine
+
+References
+
+External links
+
+http://www.cs.utoronto.ca/~hinton/helmholtz.html — Hinton's papers on Helmholtz machines
+
+https://www.nku.edu/~kirby/docs/HelmholtzTutorialKoeln.pdf - A tutorial on Helmholtz machines
+
+Category:Artificial neural networks
+
+Category:Hermann von Helmholtz

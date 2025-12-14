@@ -1,0 +1,83 @@
+{{Infobox software
+
+name = Generative Pre-trained Transformer 2 (GPT-2)
+
+logo =
+
+screenshot             = File:GPT2-talks-about-GPT2.png
+
+screenshot size        =
+
+caption                = GPT-2 completion using the Hugging Face Write With Transformer website, prompted with text from this article (All highlighted text after the initial prompt is machine-generated from the first suggested completion, without further editing.)
+
+author = OpenAI
+
+developer =
+
+released =
+
+latest release version =
+
+latest release date =
+
+repo = https://github.com/openai/gpt-2
+
+programming language =
+
+operating system =
+
+replaces = GPT-1
+
+replaced_by = GPT-3
+
+genre =
+
+license = MIT
+
+website =
+
+}}
+
+Generative Pre-trained Transformer 2 (GPT-2) is a large language model by OpenAI and the second in their foundational series of GPT models. GPT-2 was pre-trained on a dataset of 8 million web pages.
+
+The GPT-2 series contained 4 models, reported in the paper. They were not released all at once, but in stages.
+
+Restrictions and partial release
+
+While previous OpenAI models had been made immediately available to the public, OpenAI initially refused to make a public release of GPT-2's source code when announcing it in February, citing the risk of malicious use; was released on November 5, 2019.
+
+Limitations
+
+article about Donald Trump giving a speech praising the anime character Asuka Langley Soryu. Here, the tendency to generate nonsensical and repetitive text with increasing output length (even in the full 1.5B model) can be seen; in the second paragraph, grammar begins to deteriorate, and the output eventually becomes one incoherent sentence repeated over and over.]]
+
+While GPT-2's ability to generate plausible passages of natural language text were generally remarked on positively, its shortcomings were noted as well, especially when generating texts longer than a couple paragraphs; Vox said "the prose is pretty rough, there’s the occasional non-sequitur, and the articles get less coherent the longer they get".
+
+In February 2021, a crisis center for troubled teens announced that they would begin using a GPT-2-derived chatbot to help train counselors by allowing them to have conversations with simulated teens (this use was purely for internal purposes, and did not involve having GPT-2 communicate with the teens themselves).
+
+Performance and evaluation
+
+'s actions after winning the 2020 United States presidential election (all highlighted text is machine-generated). While Snowden had (at the time of generation) never been elected to public office, the generated sample is grammatically and stylistically valid.]]
+
+GPT-2 became capable of performing a variety of tasks beyond simple text production due to the breadth of its dataset and technique: answering questions, summarizing, and even translating between languages in a variety of specific domains, without being instructed in anything beyond how to predict the next word in a sequence. 4.5 GB of text, from 7000 unpublished books of various genres.
+
+-
+
+GPT-2
+
+GPT-1, but with modified normalization
+
+1.5 billion
+
+WebText: 40 GB
+
+Category:Large language models
+
+Category:Generative pre-trained transformers
+
+Category:Software using the MIT license
+
+Category:OpenAI
+
+Category:2019 in artificial intelligence
+
+Category:2019 software

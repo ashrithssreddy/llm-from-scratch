@@ -1,0 +1,35 @@
+{{Infobox software
+
+name                   = QLattice
+
+screenshot             =
+
+caption                =
+
+developer              = Abzu
+
+released               =
+
+operating system       = Linux, macOS, Windows
+
+programming language   = C, Python
+
+genre                  = Machine learning
+
+license                = CC BY-NC-ND 4.0
+
+website                =
+
+}}
+
+The QLattice is a software library which provides a framework for symbolic regression in Python. It works on Linux, Windows, and macOS. The QLattice algorithm is developed by the Danish/Spanish AI research company Abzu.
+
+}}
+
+Category:Data mining and machine learning software
+
+Category:Free data analysis software
+
+Category:Big data products
+
+Category:2020 software

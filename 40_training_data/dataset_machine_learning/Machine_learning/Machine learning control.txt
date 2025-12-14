@@ -1,0 +1,53 @@
+Machine learning control (MLC) is a subfield of machine learning, intelligent control, and control theory which aims to solve optimal control problems with machine learning methods. Key applications are complex nonlinear systems for which linear control theory methods are not applicable.
+
+Types of problems and tasks
+
+Four types of problems are commonly encountered:
+
+Control parameter identification: MLC translates to a parameter identification if the structure of the control law is given but the parameters are unknown. One example is the genetic algorithm for optimizing coefficients of a PID controller or discrete-time optimal control.
+
+Control design as regression problem of the first kind: MLC approximates a general nonlinear mapping from sensor signals to actuation commands, if the sensor signals and the optimal actuation command are known for every state. One example is the computation of sensor feedback from a known full state feedback. Neural networks are commonly used for such tasks.
+
+Control design as regression problem of the second kind: MLC may also identify arbitrary nonlinear control laws which minimize the cost function of the plant. In this case, neither a model, the control law structure, nor the optimizing actuation command needs to be known. The optimization is only based on the control performance (cost function) as measured in the plant. Genetic programming is a powerful regression technique for this purpose.
+
+Reinforcement learning control: The control law may be continually updated over measured performance changes (rewards) using reinforcement learning.
+
+Adaptive Dynamic Programming
+
+Adaptive Dynamic Programming (ADP), also known as approximate dynamic programming or neuro-dynamic programming, is a machine learning control method that combines reinforcement learning with dynamic programming to solve optimal control problems for complex systems. ADP addresses the "curse of dimensionality" in traditional dynamic programming by approximating value functions or control policies using parametric structures such as neural networks. The core idea revolves around learning a control policy that minimizes a long-term cost function J, defined as  J(x(t)) = \int_{t}^{\infty} e^{-\gamma(\tau-t)} r(x(\tau), u(\tau)) \, d\tau , where x is the system state, u is the control input, r is the instantaneous reward, and \gamma is a discount factor. ADP employs two interacting components: a critic that estimates the value function V(x) \approx J(x), and an actor that updates the control policy u(x). The critic and actor are trained iteratively using temporal difference learning or gradient descent to satisfy the Hamilton-Jacobi-Bellman (HJB) equation:
+
+\min_{u} \left( r(x,u) + \frac{\partial V}{\partial x} f(x,u) \right) = 0,
+
+where f(x,u) describes the system dynamics. Key variants include heuristic dynamic programming (HDP), dual heuristic programming (DHP), and globalized dual heuristic programming (GDHP).
+
+thermal control of buildings,
+
+feedback control of turbulence,
+
+and remotely operated underwater vehicles.
+
+Many more engineering MLC application are summarized in the review article of PJ Fleming & RC Purshouse (2002).
+
+As is the case for all general nonlinear methods,
+
+MLC does not guarantee convergence,
+
+optimality, or robustness for a range of operating conditions.
+
+See also
+
+Reinforcement learning
+
+References
+
+Further reading
+
+Dimitris C Dracopoulos (August 1997) "Evolutionary Learning Algorithms for Neural Adaptive Control", Springer. .
+
+Thomas Duriez, Steven L. Brunton & Bernd R. Noack (November 2016) "Machine Learning Control - Taming Nonlinear Dynamics and Turbulence", Springer. .
+
+Category:Machine learning
+
+Category:Control theory
+
+Category:Cybernetics

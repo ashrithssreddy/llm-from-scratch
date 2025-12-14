@@ -1,0 +1,123 @@
+{{Infobox scientist
+
+name             =
+
+image            = Ayanna M. Howard - SnoMote.jpg
+
+caption          =
+
+birth_date       =
+
+birth_place      =
+
+death_date       =
+
+death_place      =
+
+nationality      = American
+
+field            =
+
+work_institution =
+
+alma_mater       =
+
+doctoral_advisor = George A. Bekey
+
+}}
+
+Ayanna MacCalla Howard (born January 24, 1972) is an American roboticist, entrepreneur, and educator currently serving as the dean of the College of Engineering at Ohio State University. Assuming this role in March 2021, Howard became the first woman to lead the Ohio State College of Engineering.
+
+Howard previously served as the chair of the School of Interactive Computing in the Georgia Tech College of Computing, the Linda J. and Mark C. Smith Endowed Chair in Bioengineering in the School of Electrical and Computer Engineering, and the director of the Human-Automation Systems (Humans) Lab. Howard received her B.S. in engineering from Brown University in 1993 and her M.S. and Ph.D. in electrical engineering from the University of Southern California in 1994 and 1999, respectively. Her thesis, Recursive Learning for Deformable Object Manipulation, was advised by George A. Bekey. Howard has also received an MBA from Claremont Graduate University. holding multiple roles such as senior robotics researcher and deputy manager in the Office of the Chief Scientist.
+
+In 2008, Howard received worldwide attention for her SnoMote robots, designed to study the impact of global warming on the Antarctic ice shelves. In 2013, she founded Zyrobotics, which has released their first suite of therapy and educational products for children with special needs.
+
+Howard has authored 250 publications in reputable journals and conferences, including serving as co-editor/co-author of more than a dozen books and book chapters. She has also received four patents and given over 140 invited talks and keynotes.
+
+On November 30, 2020, the Columbus Dispatch reported that Howard would become the next dean of the College of Engineering at Ohio State University on March 1, pending approval by the board of trustees. On March 1, 2021, she assumed this role, becoming the first woman to hold the position.
+
+Research
+
+Howard's research interests include human-robot interaction, assistive/rehabilitation robotics, science-driven/field robotics, and perception, learning, and reasoning.
+
+Howard's research and published works span across various topics in robotics and AI, including intelligent learning, virtual reality for rehabilitation and robotics in the role of pediatric therapy. Her research is highlighted by her focus on technology development for intelligent agents that must interact with and in a human-centered world. Her work, which addresses issues of human-robot interaction, learning, and autonomous control, has resulted in more than 200 peer-reviewed publications. She was featured in Time magazine's "Rise of the Machines" article in 2004. She was also featured in a USA Today Science & Space article.
+
+Some of Howard's notable awards include:
+
+Lew Allen Award for Excellence (formerly the Director's Research Achievement Award of the Jet Propulsion Laboratory) for significant technical contributions, 2001
+
+MIT Technology Review Top 100 Young Innovators of the Year, 2003
+
+A. Richard Newton Educator ABIE Award, Anita Borg Institute, 2014
+
+Computer Research Association's A. Nico Habermann Award, 2016
+
+Brown Engineering Alumni Medal (BEAM), 2016
+
+AAAS-Lemelson Invention Ambassador, 2016-2017
+
+Atlanta magazine's Women Making a Mark, 2017
+
+Forbes America's Top 50 Women In Tech, 2018
+
+ACM Athena Lecturer Award, 2021
+
+IEEE Fellow, 2021, "for contributions to human-robot interaction systems"
+
+2023 AAAI/EAAI Patrick Henry Winston Outstanding Educator Award
+
+References
+
+External links
+
+Home Page
+
+ECE Profile
+
+Presenter at Cusp Conference 2008
+
+United Nations Academic Impact Podcast Interview
+
+Category:1972 births
+
+Category:American artificial intelligence researchers
+
+Category:Georgia Tech faculty
+
+Category:Living people
+
+Category:Machine learning researchers
+
+Category:American roboticists
+
+Category:Women roboticists
+
+Category:American women computer scientists
+
+Category:African-American computer scientists
+
+Category:Brown University School of Engineering alumni
+
+Category:USC Viterbi School of Engineering alumni
+
+Category:African-American women engineers
+
+Category:21st-century American women engineers
+
+Category:21st-century American engineers
+
+Category:African-American engineers
+
+Category:American women academics
+
+Category:21st-century African-American people
+
+Category:21st-century African-American women
+
+Category:20th-century African-American people
+
+Category:20th-century African-American women
+
+Category:Fellows of the American Association for the Advancement of Science
+
+Category:Fellows of the IEEE

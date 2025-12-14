@@ -1,0 +1,247 @@
+Decision tree learning is a supervised learning approach used in statistics, data mining and machine learning. In this formalism, a classification or regression decision tree is used as a predictive model to draw conclusions about a set of observations.
+
+Tree models where the target variable can take a discrete set of values are called classification trees; in these tree structures, leaves represent class labels and branches represent conjunctions of features that lead to those class labels. Decision trees where the target variable can take continuous values (typically real numbers) are called regression trees. More generally, the concept of regression tree can be extended to any kind of object equipped with pairwise dissimilarities such as categorical sequences.
+
+Decision trees are among the most popular machine learning algorithms given their intelligibility and simplicity because they produce algorithms that are easy to interpret and visualize, even for users without a statistical background.
+
+In decision analysis, a decision tree can be used to visually and explicitly represent decisions and decision making. In data mining, a decision tree describes data (but the resulting classification tree can be an input for decision making).
+
+General
+
+("sibsp" is the number of spouses or siblings aboard). The figures under the leaves show the probability of survival and the percentage of observations in the leaf. Summarizing: Your chances of survival were good if you were (i) a female or (ii) a male at most 9.5 years old with strictly fewer than 3 siblings.]]
+
+Decision tree learning is a method commonly used in data mining. The goal is to create an algorithm that predicts the value of a target variable based on several input variables.
+
+A decision tree is a simple representation for classifying examples. For this section, assume that all of the input features have finite discrete domains, and there is a single target feature called the "classification". Each element of the domain of the classification is called a class.
+
+A decision tree or a classification tree is a tree in which each internal (non-leaf) node is labeled with an input feature. The arcs coming from a node labeled with an input feature are labeled with each of the possible values of the target feature or the arc leads to a subordinate decision node on a different input feature. Each leaf of the tree is labeled with a class or a probability distribution over the classes, signifying that the data set has been classified by the tree into either a specific class, or into a particular probability distribution (which, if the decision tree is well-constructed, is skewed towards certain subsets of classes).
+
+A tree is built by splitting the source set, constituting the root node of the tree, into subsets—which constitute the successor children. The splitting is based on a set of splitting rules based on classification features.  This process is repeated on each derived subset in a recursive manner called recursive partitioning.
+
+The recursion is completed when the subset at a node has all the same values of the target variable, or when splitting no longer adds value to the predictions. This process of top-down induction of decision trees (TDIDT) is an example of a greedy algorithm, and it is by far the most common strategy for learning decision trees from data. Trees used for regression and trees used for classification have some similarities – but also some differences, such as the procedure used to determine where to split.
+
+Committees of decision trees (also called k-DT), an early method that used randomized decision tree algorithms to generate multiple different trees from the training data, and then combine them using majority voting to generate output.
+
+Bootstrap aggregated (or bagged) decision trees, an early ensemble method, builds multiple decision trees by repeatedly resampling training data with replacement, and voting the trees for a consensus prediction.
+
+A random forest classifier is a specific type of bootstrap aggregating
+
+Rotation forest – in which every decision tree is trained by first applying principal component analysis (PCA) on a random subset of the input features.
+
+A special case of a decision tree is a decision list, which is a one-sided decision tree, so that every internal node has exactly 1 leaf node and exactly 1 internal node as a child (except for the bottommost node, whose only child is a single leaf node).  While less expressive, decision lists are arguably easier to understand than general decision trees due to their added sparsity, permit non-greedy learning methods and monotonic constraints to be imposed.
+
+Notable decision tree algorithms include:
+
+ID3 (Iterative Dichotomiser 3)
+
+C4.5 (successor of ID3)
+
+CART (Classification And Regression Tree)
+
+Chi-square automatic interaction detection (CHAID). Performs multi-level splits when computing classification trees.
+
+MARS: extends decision trees to handle numerical data better.
+
+Conditional Inference Trees. Statistics-based approach that uses non-parametric tests as splitting criteria, corrected for multiple testing to avoid overfitting. This approach results in unbiased predictor selection and does not require pruning.
+
+ID3 and CART were invented independently at around the same time (between 1970 and 1980), yet follow a similar approach for learning a decision tree from training tuples.
+
+It has also been proposed to leverage concepts of fuzzy set theory for the definition of a special version of decision tree, known as Fuzzy Decision Tree (FDT).
+
+In this type of fuzzy classification, generally, an input vector \textbf{x} is associated with multiple classes, each with a different confidence value.
+
+Boosted ensembles of FDTs have been recently investigated as well, and they have shown performances comparable to those of other very efficient fuzzy classifiers.
+
+Metrics
+
+Algorithms for constructing decision trees usually work top-down, by choosing a variable at each step that best splits the set of items. Different algorithms use different metrics for measuring "best".  These generally measure the homogeneity of the target variable within the subsets. Some examples are given below. These metrics are applied to each candidate subset, and the resulting values are combined (e.g., averaged) to provide a measure of the quality of the split. Depending on the underlying metric, the performance of various heuristic algorithms for decision tree learning may vary significantly.
+
+Estimate of Positive Correctness
+
+A simple and effective metric can be used to identify the degree to which true positives outweigh false positives (see Confusion matrix). This metric, "Estimate of Positive Correctness" is defined below:
+
+E_P = TP - FP
+
+In this equation, the total false positives (FP) are subtracted from the total true positives (TP). The resulting number gives an estimate on how many positive examples the feature could correctly identify within the data, with higher numbers meaning that the feature could correctly classify more positive samples. Below is an example of how to use the metric when the full confusion matrix of a certain feature is given:
+
+Feature A Confusion Matrix
+
+Here we can see that the TP value would be 8 and the FP value would be 2 (the underlined numbers in the table). When we plug these numbers in the equation we are able to calculate the estimate: E_p = TP - FP = 8 - 2 = 6. This means that using the estimate on this feature would have it receive a score of 6.
+
+However, it should be worth noting that this number is only an estimate. For example, if two features both had a FP value of 2 while one of the features had a higher TP value, that feature would be ranked higher than the other because the resulting estimate when using the equation would give a higher value. This could lead to some inaccuracies when using the metric if some features have more positive samples than others. To combat this, one could use a more powerful metric known as Sensitivity that takes into account the proportions of the values from the confusion matrix to give the actual true positive rate (TPR). The difference between these metrics is shown in the example below:
+
+style="padding-left: 4em;" | Feature B Confusion Matrix
+
+-
+
+E_p = TP - FP = 8 - 2 = 6
+
+TPR = TP / (TP + FN) = 8 / (8 + 3) \approx 0.73
+
+style="padding-left: 4em;" | E_p = TP - FP = 6 - 2 = 4
+
+TPR = TP / (TP + FN) = 6 / (6 + 2) = 0.75
+
+}
+
+In this example, Feature A had an estimate of 6 and a TPR of approximately 0.73 while Feature B had an estimate of 4 and a TPR of 0.75. This shows that although the positive estimate for some feature may be higher, the more accurate TPR value for that feature may be lower when compared to other features that have a lower positive estimate. Depending on the situation and knowledge of the data and decision trees, one may opt to use the positive estimate for a quick and easy solution to their problem. On the other hand, a more experienced user would most likely prefer to use the TPR value to rank the features because it takes into account the proportions of the data and all the samples that should have been classified as positive.
+
+Gini impurity
+
+Gini impurity, Gini's diversity index, or Gini-Simpson Index in biodiversity research, is named after Italian mathematician Corrado Gini and used by the CART (classification and regression tree) algorithm for classification trees. Gini impurity measures how often a randomly chosen element of a set would be incorrectly labeled if it were labeled randomly and independently according to the distribution of labels in the set. It reaches its minimum (zero) when all cases in the node fall into a single target category.
+
+For a set of items with J classes and relative frequencies p_i, i \in \{1, 2, ...,J\}, the probability of choosing an item with label i is p_i, and the probability of miscategorizing that item is \sum_{k \ne i} p_k = 1-p_i. The Gini impurity is computed by summing pairwise products of these probabilities for each class label:
+
+\operatorname{I}_G(p) = \sum_{i=1}^J \left( p_i \sum_{k\neq i} p_k \right)
+
+= \sum_{i=1}^J p_i (1-p_i)
+
+= \sum_{i=1}^J (p_i - p_i^2)
+
+= \sum_{i=1}^J p_i - \sum_{i=1}^J p_i^2
+
+= 1 - \sum^J_{i=1} p_i^2.
+
+The Gini impurity is also an information theoretic measure and corresponds to Tsallis Entropy with deformation coefficient q=2, which in physics is associated with the lack of information in out-of-equilibrium, non-extensive, dissipative and quantum systems. For the limit q\to 1 one recovers the usual Boltzmann-Gibbs or Shannon entropy. In this sense, the Gini impurity is nothing but a variation of the usual entropy measure for decision trees.
+
+Information gain
+
+Used by the ID3, C4.5 and C5.0 tree-generation algorithms. Information gain is based on the concept of entropy and information content from information theory.
+
+Entropy is defined as below
+
+\Eta(T) = \operatorname{I}_{E}\left(p_1, p_2, \ldots, p_J\right)
+
+= - \sum^J_{i=1} p_i \log_2 p_i
+
+where p_1, p_2, \ldots are fractions that add up to 1 and represent the percentage of each class present in the child node that results from a split in the tree.
+
+\overbrace{IG(T,a)}^\text{information gain}
+
+= \overbrace{\Eta(T)}^\text{entropy (parent)}
+
+- \overbrace{\Eta(T\mid a)}^\text{sum of entropies (children)} =-\sum_{i=1}^J p_i\log_2 p_i - \sum_{i=1}^J - \Pr(i\mid a)\log_2 \Pr(i\mid a)
+
+Averaging over the possible values of A,
+
+\overbrace{E_A(\operatorname{IG}(T,a))}^\text{expected information gain}
+
+= \overbrace{I(T; A)}^{\text{mutual information between } T \text{ and } A}
+
+= \overbrace{\Eta(T)}^\text{entropy (parent)}
+
+- \overbrace{\Eta(T\mid A)}^\text{weighted sum of entropies (children)} =-\sum_{i=1}^J p_i\log_2 p_i - \sum_a p(a)\sum_{i=1}^J-\Pr(i\mid a) \log_2 \Pr(i\mid a)
+
+Where weighted sum of entropies is given by,
+
+{\Eta(T\mid A)}= \sum_a p(a)\sum_{i=1}^J-\Pr(i\mid a) \log_2 \Pr(i\mid a)
+
+That is, the expected information gain is the mutual information, meaning that on average, the reduction in the entropy of T is the mutual information.
+
+Information gain is used to decide which feature to split on at each step in building the tree. Simplicity is best, so we want to keep our tree small. To do so, at each step we should choose the split that results in the most consistent child nodes. A commonly used measure of consistency is called information which is measured in bits. For each node of the tree, the information value "represents the expected amount of information that would be needed to specify whether a new instance should be classified yes or no, given that the example reached that node". the measure of "goodness" is a function that seeks to optimize the balance of a candidate split's capacity to create pure children with its capacity to create equally-sized children. This process is repeated for each impure node until the tree is complete. The function \varphi(s\mid t), where s is a candidate split at node t, is defined as below
+
+\varphi(s\mid t) = 2P_L P_R \sum_{j=1}^\text{class count}|P(j\mid t_L) - P(j\mid t_R)|
+
+where t_L and t_R are the left and right children of node t using split s, respectively; P_L and P_R are the proportions of records in t in t_L and t_R, respectively; and P(j\mid t_L) and P(j\mid t_R) are the proportions of class j records in t_L and t_R, respectively.
+
+Consider an example data set with three attributes: savings(low, medium, high), assets(low, medium, high), income(numerical value), and a binary target variable credit risk(good, bad) and 8 data points.
+
+Able to handle both numerical and categorical data.
+
+Mirrors human decision making more closely than other approaches. It means that the features on top are the most informative.
+
+Decision trees can approximate any Boolean function e.g. XOR.
+
+Limitations
+
+Trees can be very non-robust. A small change in the training data can result in a large change in the tree and consequently the final predictions. Consequently, practical decision-tree learning algorithms are based on heuristics such as the greedy algorithm where locally optimal decisions are made at each node. Such algorithms cannot guarantee to return the globally optimal decision tree. To reduce the greedy effect of local optimality, some methods such as the dual information distance (DID) tree were proposed.
+
+Decision-tree learners can create over-complex trees that do not generalize well from the training data.  (This is known as overfitting.)  Mechanisms such as pruning are necessary to avoid this problem (with the exception of some algorithms such as the Conditional Inference approach, that does not require pruning).
+
+For data including categorical variables with different numbers of levels, information gain in decision trees is biased in favor of attributes with more levels. To counter this problem,  instead of choosing the attribute with highest information gain, one can choose the attribute with the highest information gain ratio among the attributes whose information gain is greater than the mean information gain. This biases the decision tree against considering attributes with a large number of distinct values, while not giving an unfair advantage to attributes with very low information gain. Alternatively, the issue of biased predictor selection can be avoided by the Conditional Inference approach, or adaptive leave-one-out feature selection.
+
+Implementations
+
+Many data mining software packages provide implementations of one or more decision tree algorithms (e.g. random forest).
+
+Open source examples include:
+
+ALGLIB, a C++, C# and Java numerical analysis library with data analysis features (random forest)
+
+KNIME, a free and open-source data analytics, reporting and integration platform (decision trees, random forest)
+
+Orange, an open-source data visualization, machine learning and data mining toolkit (random forest)
+
+R (an open-source software environment for statistical computing, which includes several CART implementations such as rpart, party and randomForest packages),
+
+scikit-learn (a free and open-source machine learning library for the Python programming language).
+
+Weka (a free and open-source data-mining suite, contains many decision tree algorithms),
+
+Notable commercial software:
+
+MATLAB
+
+Microsoft SQL Server
+
+RapidMiner*
+
+SAS Enterprise Miner
+
+IBM SPSS Modeler
+
+Extensions
+
+Decision graphs
+
+In a decision tree, all paths from the root node to the leaf node proceed by way of conjunction, or AND. In a decision graph, it is possible to use disjunctions (ORs) to join two more paths together using minimum message length (MML).  Decision graphs have been further extended to allow for previously unstated new attributes to be learnt dynamically and used at different places within the graph.  The more general coding scheme results in better predictive accuracy and log-loss probabilistic scoring.  In general, decision graphs infer models with fewer leaves than decision trees.
+
+Alternative search methods
+
+Evolutionary algorithms have been used to avoid local optimal decisions and search the decision tree space with little a priori bias.
+
+It is also possible for a tree to be sampled using MCMC.
+
+The tree can be searched for in a bottom-up fashion. Or several trees can be constructed parallelly to reduce the expected number of tests till classification.
+
+See also
+
+Decision tree pruning
+
+Binary decision diagram
+
+CHAID
+
+CART
+
+ID3 algorithm
+
+C4.5 algorithm
+
+Decision stumps, used in e.g. AdaBoosting
+
+Decision list
+
+Incremental decision tree
+
+Alternating decision tree
+
+Structured data analysis (statistics)
+
+Logistic model tree
+
+Hierarchical clustering
+
+References
+
+Further reading
+
+External links
+
+Evolutionary Learning of Decision Trees in C++
+
+A very detailed explanation of information gain as splitting criterion
+
+Category:Decision trees
+
+Category:Classification algorithms

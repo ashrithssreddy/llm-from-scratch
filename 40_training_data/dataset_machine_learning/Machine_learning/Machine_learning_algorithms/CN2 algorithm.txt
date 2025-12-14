@@ -1,0 +1,79 @@
+The CN2 induction algorithm is a learning algorithm for rule induction. It is designed to work even when the training data is imperfect. It is based on ideas from the AQ algorithm and the ID3 algorithm. As a consequence it creates a rule set like that created by AQ but is able to handle noisy data like ID3.
+
+Description of algorithm
+
+The algorithm must be given a set of examples, TrainingSet, which have already been classified in order to generate a list of classification rules. A set of conditions, SimpleConditionSet, which can be applied, alone or in combination, to any set of examples is predefined to be used for the classification.
+
+routine CN2(TrainingSet)
+
+let the ClassificationRuleList be empty
+
+repeat
+
+let the BestConditionExpression be Find_BestConditionExpression(TrainingSet)
+
+if the BestConditionExpression is not nil
+
+then
+
+let the TrainingSubset be the examples covered by the BestConditionExpression
+
+remove from the TrainingSet the examples in the TrainingSubset
+
+let the MostCommonClass be the most common class of examples in the TrainingSubset
+
+append to the ClassificationRuleList the rule
+
+'if ' the BestConditionExpression ' then the class is ' the MostCommonClass
+
+until the TrainingSet is empty or the BestConditionExpression is nil
+
+return the ClassificationRuleList
+
+routine Find_BestConditionExpression(TrainingSet)
+
+let the ConditionalExpressionSet be empty
+
+let the BestConditionExpression be nil
+
+repeat
+
+let the TrialConditionalExpressionSet be the set of conditional expressions,
+
+{x and y where x belongs to the ConditionalExpressionSet and y belongs to the SimpleConditionSet}.
+
+remove all formulae in the TrialConditionalExpressionSet that are either in the ConditionalExpressionSet (i.e.,
+
+the unspecialized ones) or null (e.g., big = y and big = n)
+
+for every expression, F, in the TrialConditionalExpressionSet
+
+if
+
+F is statistically significant
+
+and F is better than the BestConditionExpression
+
+by user-defined criteria when tested on the TrainingSet
+
+then
+
+replace the current value of the BestConditionExpression by F
+
+while the number of expressions in the TrialConditionalExpressionSet > user-defined maximum
+
+remove the worst expression from the TrialConditionalExpressionSet
+
+let the ConditionalExpressionSet be the TrialConditionalExpressionSet
+
+until the ConditionalExpressionSet is empty
+
+return the BestConditionExpression
+
+References
+
+External links
+
+CN2 Algorithm Description
+
+Category:Machine learning algorithms

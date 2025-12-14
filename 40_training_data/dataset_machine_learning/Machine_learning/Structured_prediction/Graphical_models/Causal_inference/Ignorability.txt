@@ -1,0 +1,33 @@
+In statistics, ignorability is a feature of an experiment design whereby the method of data collection (and the nature of missing data) does not depend on the missing data.  A missing data mechanism such as a treatment assignment or survey sampling strategy is "ignorable" if the missing data matrix, which indicates which variables are observed or missing, is independent of the missing data conditional on the observed data. It has also been called unconfoundedness, selection on the observables, or no omitted variable bias.
+
+This idea is part of the Rubin Causal Inference Model, developed by Donald Rubin in collaboration with Paul Rosenbaum in the early 1970s. The exact definition differs between their articles in that period. In a 1978 article, Rubin discusses ignorable assignment mechanisms, which can be understood as the way individuals are assigned to treatment groups being irrelevant for the data analysis, given everything that is recorded about that individual. In a 1983 paper on propensity score matching, Rubin and Rosenbaum define the stronger condition of a treatment assignment being strongly ignorable, mathematically formulated as (r_1,r_0) \perp \!\!\!\perp z \mid v ,\quad 0, where r_t is a potential outcome given treatment t, v is some covariates and z is the actual treatment.
+
+Judea Pearl devised a simple graphical criterion, called back-door, that entails ignorability and identifies sets of covariates that achieve this condition.
+
+Ignorability means we can ignore how one ended up in one vs. the other group (‘treated’ Tx = 1, or ‘control’ Tx = 0) when it comes to the potential outcome (say Y). The potential Y outcome of a person i  had they been treated or not does not depend on whether they have really been (observable) treated or not. We can treat their potential outcomes as exchangeable.
+
+Formally, this has been written as [Y_i^1, Y_i^0] \perp Tx_i, using a notation (suggested by David Freedman) where we add subscripts for the ‘realized’ and superscripts for the ‘ideal’ (potential) worlds. So: Y11 and *Y01 are potential Y outcomes had the person been treated (superscript 1), when in reality they have actually been (Y11, subscript 1), or not (*Y01: the ^* signals this quantity can never be realized or observed, or is fully contrary-to-fact or counterfactual, CF). Similarly, ^*Y_1^0 / Y_0^0 are potential Y outcomes had the person not been treated (superscript ^0), when in reality they have been ^*Y_1^0, subscript _1 or not actually (Y_0^0).
+
+Only one of each potential outcome (PO) can be realized, the other cannot, for the same assignment to condition, so when we try to estimate treatment effects, we need something to replace the fully contrary-to-fact ones with observables (or estimate them). When ignorability/exogeneity holds, like when people are randomized to be treated or not, we can ‘replace’ *Y01 with its observable counterpart Y11, and *Y10 with its observable counterpart Y00, not at the individual level Yi’s, but when it comes to averages like E[Y'i1 – Y'i0], which is exactly the causal treatment effect (TE) one tries to recover.
+
+Because of the ‘consistency rule’, the potential outcomes are the values actually realized, so we can write Yi0 = Yi00 and Yi1 = Yi11 (“the consistency rule states that an individual’s potential outcome under a hypothetical condition that happened to materialize is precisely the outcome experienced by that individual”, p.&nbsp;872). Hence TE = E[Yi1 – Yi0] = E[Yi11 – Yi00].
+
+Now, by simply adding and subtracting the same fully counterfactual quantity *Y10 we get:
+
+E[Yi11 – Yi00] = E[Yi11 –*Y10  +*Y10 - Yi00] = E[Yi11 –*Y10] + E[*Y10 - Yi00] = ATT + {Selection Bias}
+
+where ATT = average treatment effect on the treated  and the second term is the bias introduced when people have the choice to belong to either the ‘treated’ or the ‘control’ group.
+
+Ignorability, either plain or conditional on some other variables, implies that such selection bias can be ignored, so one can recover (or estimate) the causal effect.
+
+See also
+
+Missing at random
+
+References
+
+Further reading
+
+Category:Design of experiments
+
+Category:Causal inference

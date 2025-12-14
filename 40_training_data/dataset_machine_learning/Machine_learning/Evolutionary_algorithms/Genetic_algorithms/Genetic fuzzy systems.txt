@@ -1,0 +1,71 @@
+In computer science and operations research, Genetic fuzzy systems are fuzzy systems constructed by using genetic algorithms or genetic programming, which mimic the process of natural evolution, to identify its structure and parameter.
+
+When it comes to automatically identifying and building a fuzzy system, given the high degree of nonlinearity of the output, traditional linear optimization tools have several limitations. Therefore, in the framework of soft computing, genetic algorithms (GAs) and genetic programming (GP) methods have been used successfully to identify structure and parameters of fuzzy systems.
+
+Fuzzy systems
+
+Fuzzy systems are fundamental methodologies to represent and process linguistic information, with mechanisms to deal with uncertainty and imprecision. For instance, the task of modeling a driver parking a car involves greater difficulty in writing down a concise mathematical model as the description becomes more detailed.  However, the level of difficulty is not so much using simple linguistic rules, which are themselves fuzzy.  With such remarkable attributes, fuzzy systems have been widely and successfully applied to control, classification and modeling problems (Mamdani, 1974) (Klir and Yuan, 1995) (Pedrycz and Gomide, 1998).
+
+Although simplistic in its design, the identification of a fuzzy system is a rather complex task that comprises the identification
+
+of (a) the input and output variables, (b) the rule base (knowledge base), (c) the membership functions and (d) the mapping parameters.
+
+Usually the rule base consists of several IF-THEN rules, linking input(s) and output(s).
+
+A simple rule of a fuzzy controller could be:
+
+IF (TEMPERATURE = HOT) THEN (COOLING = HIGH)
+
+The numerical impact/meaning of this rule depends on how the membership functions of HOT and HIGH are shaped and defined.
+
+The construction and identification of a fuzzy system can be divided into (a) the structure and (b) the parameter identification of a fuzzy system.
+
+The structure of a fuzzy system is expressed by the input and output variables and the rule base, while the parameters of a fuzzy system are the rule parameters (defining the membership functions, the aggregation operator and the implication function) and the mapping parameters related to the mapping of a crisp set to a fuzzy set, and vice versa. (Bastian, 2000).
+
+Much work has been done to develop or adapt methodologies that are capable of automatically identifying a fuzzy system from numerical data. Particularly in the framework of soft computing, significant methodologies have been proposed with the objective of building fuzzy systems by means of genetic algorithms (GAs) or genetic programming (GP).
+
+Genetic algorithms for fuzzy system identification
+
+Given the high degree of nonlinearity of the output of a fuzzy system, traditional linear optimization tools do have their limitations.
+
+Genetic algorithms have demonstrated to be a robust and very powerful tool to perform tasks such as the generation of fuzzy rule base, optimization of fuzzy rule bases, generation of membership functions, and tuning of membership functions (Cordón et al., 2001a). All these tasks can be considered as optimization or search processes within large solution spaces (Bastian and Hayashi, 1995) (Yuan and Zhuang, 1996) (Cordón et al., 2001b).
+
+Genetic programming for fuzzy system identification
+
+While genetic algorithms are very powerful tools to identify the fuzzy membership functions of a pre-defined rule base, they have their limitation especially when it also comes to identify the input and output variables of a fuzzy system from a given set of data. Genetic programming has been used to identify the input variables, the rule base as well as the involved membership functions of a fuzzy model (Bastian, 2000)
+
+Multiobjective Genetic Fuzzy Systems
+
+In the last decade multi-objective optimization of fuzzy rule based systems has attracted wide interest within the research community and practitioners. It is based on the use of stochastic algorithms for Multi-objective optimization to search for the Pareto efficiency in a multiple objectives scenario. For instance, the objectives to simultaneously optimize can be accuracy and complexity, or accuracy and interpretability. A recent review of the field is provided in the work of Fazzolari et al. (2013). In addition,  provides an up-to-date and continuously growing list of references on the subject.
+
+References
+
+1974, E.H. Mamdani, Applications of fuzzy algorithms for control of simple dynamic plant, Proc. IEE 121 1584 - 1588.
+
+1995, A. Bastian, I. Hayashi: "An Anticipating Hybrid Genetic Algorithm for Fuzzy Modeling", Journal of Japan Society for Fuzzy Theory and Systems, Vol.10, pp.&nbsp;801–810
+
+1995, Klir, G. B. Yuan, Fuzzy sets and Fuzzy Logic - Theory and Applications, Prentice-Hall.
+
+1996, Y. Yuan and H. Zhuang, "A genetic algorithm for generating fuzzy classification rules", Fuzzy Sets and Systems, V. 84, N. 4, pp.&nbsp;1–19.
+
+1998, W. Pedrycz and F. Gomide, An Introduction to Fuzzy Sets: Analysis and Design, MIT Press.
+
+2000, A. Bastian: ”Identifying Fuzzy Models utilizing Genetic Programming”, Fuzzy Sets and Systems 113, 333–350.
+
+2001, O. Cordón,  F. Herrera, F. Gomide,  F. Hoffmann and L. Magdalena, Ten years of genetic-fuzzy systems: a current framework and new trends,  Proceedings of Joint 9th IFSA World Congress and 20th NAFIPS International Conference, pp.&nbsp;1241–1246, Vancouver - Canada, 2001.
+
+2001, O. Cordon, F. Herrera, F. Hoffmann and L. Magdalena, Genetic Fuzzy Systems. Evolutionary tuning and learning of fuzzy knowledge bases, Advances in Fuzzy Systems: Applications and Theory, World Scientific.
+
+1997, H. Ishibuchi, T. Murata, IB. Türkşen, Single-objective and two-objective genetic algorithms for selecting linguistic rules for pattern classification problems, Fuzzy Sets and Systems, V. 89, N. 2, pp.&nbsp;135–150
+
+2007, M. Cococcioni, B. Lazzerini, F. Marcelloni, A Pareto-based multi-objective evolutionary approach to the identification of Mamdani fuzzy systems, Soft Computing, V.11, N.11, pp.&nbsp;1013–1031
+
+2011, M. Cococcioni, B. Lazzerini, F. Marcelloni, On reducing computational overhead in multi-objective genetic Takagi-Sugeno fuzzy systems, Applied Soft Computing V. 11, N. 1, pp.&nbsp;675–688
+
+2013, M. Fazzolari, R. Alcalá, Y. Nojima, H. Ishibuchi, F. Herrera, A Review of the Application of Multiobjective Evolutionary Fuzzy Systems: Current Status and Further Directions, IEEE T. Fuzzy Systems, V. 21, N. 1, pp.&nbsp;45–65
+
+The Evolutionary Multiobjective Optimization of Fuzzy Rule-Based Systems Bibliography Page
+
+Category:Computational linguistics
+
+Category:Genetic algorithms

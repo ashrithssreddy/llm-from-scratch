@@ -1,0 +1,79 @@
+{{Infobox scientist
+
+name              = Paola Velardi
+
+image = Paola Velardi.png
+
+birth_date =
+
+birth_place       =Rome, Italy
+
+nationality       = Italian
+
+fields            = Computer science
+
+workplaces        = Sapienza University of Rome
+
+alma_mater        = Stanford University
+
+}}
+
+Paola Velardi (born in Rome, April 26, 1955) is a full professor of computer science at Sapienza University in Rome, Italy.  Her research encompasses Artificial Intelligence and specifically,  natural language processing, machine learning  business intelligence and semantic web. Velardi is one of the hundred female scientists included in the database "100esperte.it" (translated from Italian with "100 female experts"). This online, open database champions the recognition of top-rated female scientists in Science, Technology, Engineering and Mathematics (STEM) areas.
+
+Research
+
+Velardi's research aims at using algorithms to analyse natural language on social networks and in general in natural language existing in any written documentation. Her current interest encompasses the study of social media for epidemiological surveillance, for the analysis of the leadership role of women working in enterprise social networks and for the design of recommender systems. Velardi also maintains a strong interest in the area of ontology learning and knowledge bases. A well-known example of application of her research is the extraction of trending topics on social media. The fundamental concepts of her research within the area of natural language are knowledge learning, graph mining and semantics. Velardi and her team developed a suit of web-based tools based on machine learning techniques that classify natural language for several purposes of analysis, whose applications stem from e-health to female leadership. The key purpose of these web-based tools is the extraction of taxonomies, ontologies and semantics from a pool of written natural-language data, including human crafted knowledge bases such as Wikipedia and from social, semantic and biological networks.
+
+According to Google Scholar bibliometrics updated until February 2023, Velardi's scientific publications have been cited more than 7118 times. Her h-index was 38. She has published more than 150 papers on international journals and conference proceedings. Some of her publications have been published in top rated journals such as Artificial Intelligence, Computational Linguistics, Knowledge-Based Systems, IEEE Transactions on Data and Knowledge Engineering (TDKE), Pattern Analysis and Machine Intelligence (PAMI), on Computers (TOC), on Software Engineering (TSE), Data Mining and Knowledge Discovery, and Journal of Web Semantics.
+
+Education and previous employments
+
+Velardi graduated in electronic engineering from Sapienza University in 1978. From 1978 to 1983, she worked for the Ugo Bordoni Foundation, a research institution focusing on ICT and working under the supervision of the Italian Ministry of Economic Development.  In 1983, she was a visiting scholar at Stanford University. During this period she became passionate about Artificial Intelligence, which will remain her area of research throughout her career. From 1984 to 1986, she came back to her natal city and worked as a researcher for IBM. From 1986 to 1996 she was an associate professor in the engineering faculty of Polytechnic University of the Marches (Ancona, Italy). Starting in November 1996, she taught in and did research for the Department of Computer Science at the Sapienza University. Velardi was the head of Bachelor and Master Programs in Computer Science at Sapienza University from 2010 to 2013 and from 2015 to 2016.
+
+Current employment
+
+Since November 2001, Velardi has been a full professor in the department of computer science ("Dipartimento di Informatica" in Italian) at Sapienza University in Rome, Italy.
+
+Since 2013, she has been the coordinator of the Distance Learning Degree in Computer Science at Sapienza University.
+
+Recognition
+
+Velardi is one of the hundred female scientists included in the database "100esperte.it" (translated from Italian with "100 female experts"). This database lists top Italian female STEM scientists. Six out of one hundred scientists in the 100esperte's database are computer scientists like Velardi.
+
+Velardi is in the list of the top Italian scientists. A top scientist appearing in the Top-Italian-Scientists database is a scientist whose h-index is greater than 30.
+
+In March 2017, she was given an IBM Faculty Award for her research on social recommender systems.
+
+In December 2018, Velardi was included in the list of the 50 most influential Italian women in science and technology by Inspiring Fifty, a non-profit that aims to increase diversity in STEM by making female role models in tech more visible.
+
+In September 2019 she was the local co-organizer and Program Chair of the 6th ACM Celebration of Women in Computing.
+
+In November 2019 Velardi received the Standout Woman Award International at the seat of the Italian Parliament in Montecitorio.
+
+Causes
+
+Velardi aims at debunking the myth of computer science as a man-oriented and "inflexible" discipline. She is the founder of the project "NERD? Non e' roba per donne?" (translated from Italian: "NERD? Is it not stuff for women?"). This project was launched by Velardi in 2012 in the Department of Computer Science at Sapienza University. Since 2013 the project has been carried out in partnership with IBM Italy, which later created a spin-off of the project. The goal of the project is two-fold: (1) conveying computer science as creative, interdisciplinary and problem-solving-oriented science, and (2) encouraging young female students in studying computer science by, for instance, developing apps for smartphones. She has been the program chair of the 19th ACM celebration of Women in Computing. She is the creator and coordinator of the G4GRETA,  an educational project that involves students of the third and fourth grades of Rome and Lazio. The project combines the development of IT skills with the themes of environmental sustainability and soft skills (teambuilding, pitching, social networking, etc.)
+
+Velardi is also involved in scientific dissemination. In 2020 and 2021 she cooperated with RaiCultura, the cultural division of RAI, the national broadcasting company.
+
+References
+
+External links
+
+Official website
+
+Velardi's profile in 100esperte.it's database (Italian)
+
+Category:Living people
+
+Category:Italian women computer scientists
+
+Category:1955 births
+
+Category:Academic staff of the Sapienza University of Rome
+
+Category:Stanford University alumni
+
+Category:Natural language processing researchers
+
+Category:Data miners

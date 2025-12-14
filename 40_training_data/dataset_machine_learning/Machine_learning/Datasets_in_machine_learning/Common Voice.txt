@@ -1,0 +1,59 @@
+{{Infobox software
+
+name = Common Voice
+
+logo = Common Voice Banner2.png
+
+website = commonvoice.mozilla.org
+
+caption = Teach machines how real people speak
+
+language = Multilingual (List of languages)
+
+developer = Mozilla Foundation
+
+released =
+
+repo =
+
+license = Creative Commons CC0
+
+}}
+
+Common Voice is a crowdsourcing project started by Mozilla to create a free and open speech corpus. The project is supported by volunteers who record sample sentences with a microphone and review recordings of other users. The transcribed sentences are collected in a voice database available under the public domain license CC0. This license ensures that developers can use the database for voice-to-text and text-to-voice applications without restrictions or costs.
+
+Aims
+
+Common Voice aims to provide diverse voice samples. According to Mozilla's Katharina Borchert, many existing projects took datasets from public radio or otherwise had datasets that underrepresented both women and people with pronounced accents.
+
+Voice database
+
+The first dataset was released in November 2017. More than 20,000 users worldwide had recorded 500 hours of English sentences.
+
+In February 2019, the first batch of languages was released for use. This included 18 languages such as English, French, German and Mandarin Chinese, but also less prevalent languages like Welsh and Kabyle. In total, this included almost 1,400 hours of recorded voice data from more than 42,000 contributors.
+
+By July 2020 the database had amassed 7,226 hours of voice recordings in 54 languages, 5,591 hours of which had been verified by volunteers.
+
+In May 2021, following the work to add Kinyarwanda, the project received a grant to add Kiswahili.
+
+At the beginning of 2022, Bengali.AI partnered with Common Voice to launch the "Bangla Speech Recognition" project that aims to make machines understand the Bangla language. 2000 hours of voice was collected.
+
+In September 2022, it was announced that the Twi language of Ghana was the 100th language to be added to the database.
+
+, Mozilla Common Voice collects voice data for over 250 languages, with the most hours having been collected in English, Catalan, Kinyarwanda, Belarusian and Esperanto.
+
+See also
+
+Forvo
+
+Lingua Libre
+
+Crowdsource (app)
+
+References
+
+Category:Speech recognition software
+
+Category:Datasets in machine learning
+
+Category:Internet properties established in 2017

@@ -1,0 +1,63 @@
+In statistical learning theory, the principle of empirical risk minimization defines a family of learning algorithms based on evaluating performance over a known and fixed dataset. The core idea is based on an application of the law of large numbers; more specifically, we cannot know exactly how well a predictive algorithm will work in practice (i.e. the "true risk") because we do not know the true distribution of the data, but we can instead estimate and optimize the performance of the algorithm on a known set of training data. The performance over the known set of training data is referred to as the "empirical risk".
+
+Background
+
+The following situation is a general setting of many supervised learning problems. There are two spaces of objects X and Y and we would like to learn a function \ h: X \to Y (often called hypothesis) which outputs an object y \in Y, given x \in X. To do so, there is a training set of n examples \ (x_1, y_1), \ldots, (x_n, y_n) where x_i \in X is an input and y_i \in Y is the corresponding response that is desired from  h(x_i).
+
+To put it more formally, assuming that there is a joint probability distribution P(x, y) over X and Y, and that the training set consists of n instances \ (x_1, y_1), \ldots, (x_n, y_n) drawn i.i.d. from P(x, y). The assumption of a joint probability distribution allows for the modelling of uncertainty in predictions (e.g. from noise in data) because y is not a deterministic function of  but rather a random variable with conditional distribution P(y | x) for a fixed x.
+
+It is also assumed that there is  a non-negative real-valued loss function L(\hat{y}, y) which measures how different the prediction \hat{y} of a hypothesis is from the true outcome y. For classification tasks, these loss functions can be scoring rules.
+
+The risk associated with hypothesis h(x) is then defined as the expectation of the loss function:
+
+R(h) = \mathbf{E}[L(h(x), y)] = \int L(h(x), y)\,dP(x, y).
+
+A loss function commonly used in theory is the 0-1 loss function: L(\hat{y}, y) = \begin{cases} 1 & \mbox{ if }\quad \hat{y} \ne y \\ 0 & \mbox{ if }\quad \hat{y} = y \end{cases}.
+
+The ultimate goal of a learning algorithm is to find a hypothesis  h^* among a fixed class of functions \mathcal{H} for which the risk R(h) is minimal:
+
+h^* = \underset{h \in \mathcal{H}}{\operatorname{arg\, min}}\, {R(h)}.
+
+For classification problems, the Bayes classifier is defined to be the classifier minimizing the risk defined with the 0–1 loss function.
+
+Formal definition
+
+In general, the risk R(h) cannot be computed because the distribution P(x, y) is unknown to the learning algorithm. However, given a sample of iid training data points, we can compute an estimate, called the empirical risk, by computing the average of the loss function over the training set; more formally, computing the expectation with respect to the empirical measure:
+
+\! R_\text{emp}(h) = \frac{1}{n} \sum_{i=1}^n L(h(x_i), y_i).
+
+The empirical risk minimization principle states that the learning algorithm should choose a hypothesis \hat{h} which minimizes the empirical risk over the hypothesis class \mathcal H:
+
+\hat{h} = \underset{h \in \mathcal{H}}{\operatorname{arg\, min}}\, R_{\text{emp}}(h).
+
+Thus, the learning algorithm defined by the empirical risk minimization principle consists in solving the above optimization problem.
+
+Properties
+
+Guarantees for the performance of empirical risk minimization depend strongly on the function class selected as well as the distributional assumptions made. In general, distribution-free methods are too coarse, and do not lead to practical bounds. However, they are still useful in deriving asymptotic properties of learning algorithms, such as consistency. In particular, distribution-free bounds on the performance of empirical risk minimization given a fixed function class can be derived using bounds on the VC complexity of the function class.
+
+For simplicity, considering the case of binary classification tasks, it is possible to bound the probability of the selected classifier, \phi_n being much worse than the best possible classifier \phi^*. Consider the risk L defined over the hypothesis class \mathcal C with growth function \mathcal S(\mathcal C, n) given a dataset of size n. Then, for every \epsilon > 0:
+
+\mathbb P \left (L(\phi_n) - L(\phi^*) > \epsilon \right ) \leq \mathcal 8S(\mathcal C, n) \exp\{-n\epsilon^2 / 32\}
+
+Similar results hold for regression tasks. This is sometimes referred to as the No free lunch theorem. Even though a specific learning algorithm may  provide the asymptotically optimal performance for any distribution, the finite sample performance is always poor for at least one data distribution. This means that no classifier can improve on the error for a given sample size for all distributions. Nevertheless, it can be solved efficiently when the minimal empirical risk is zero, i.e., data is linearly separable.
+
+In practice, machine learning algorithms cope with this issue either by employing a convex approximation to the 0–1 loss function (like hinge loss for SVM), which is easier to optimize, or by imposing assumptions on the distribution P(x, y) (and thus stop being agnostic learning algorithms to which the above result applies).
+
+In the case of convexification, Zhang's lemma  the excess risk of the original problem using the excess risk of the convexified problem. Minimizing the latter using convex optimization also allow to control the former.
+
+Tilted empirical risk minimization
+
+Tilted empirical risk minimization is a machine learning technique used to modify standard loss functions like squared error, by introducing a tilt parameter. This parameter dynamically adjusts the weight of data points during training, allowing the algorithm to focus on specific regions or characteristics of the data distribution. Tilted empirical risk minimization is particularly useful in scenarios with imbalanced data or when there is a need to emphasize errors in certain parts of the prediction space.
+
+See also
+
+M-estimator
+
+Maximum likelihood estimation
+
+References
+
+Further reading
+
+Category:Machine learning

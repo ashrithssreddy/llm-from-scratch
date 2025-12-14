@@ -1,0 +1,105 @@
+{{Multiple issues|
+
+}}
+
+The Ho–Kashyap algorithm is an iterative method in machine learning for finding a linear decision boundary that separates two linearly separable classes. It was developed by Yu-Chi Ho and Rangasami L. Kashyap in 1965, and usually presented as a problem in linear programming.
+
+Setup
+
+Given a training set consisting of samples from two classes, the Ho–Kashyap algorithm seeks to find a weight vector \mathbf{w} and a margin vector \mathbf{b} such that:
+
+\mathbf{Yw} = \mathbf{b}
+
+where \mathbf{Y} is the augmented data matrix with samples from both classes (with appropriate sign conventions, e.g., samples from class 2 are negated), \mathbf{w} is the weight vector to be determined, and \mathbf{b} is a positive margin vector.
+
+The algorithm minimizes the criterion function:
+
+J(\mathbf{w}, \mathbf{b}) = ||\mathbf{Yw} - \mathbf{b}||^2 subject to the constraint that \mathbf{b} > \mathbf{0} (element-wise).
+
+Given a problem of linearly separating two classes, we consider a dataset of elements \{(\mathbf{x_i}, y_i)\}_{i \in 1:N} where y_i \in \{-1, +1\}. Linearly separating them by a perceptron is equivalent to finding weight and bias \mathbf{w}, b for a perceptron, such that:\begin{bmatrix}
+
+y_1 \mathbf{x}_1 & 1 \\
+
+\vdots & \vdots \\
+
+y_N \mathbf{x}_N & 1 \\
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+\mathbf{w} \\ b
+
+\end{bmatrix} > 0
+
+Algorithm
+
+The idea of the Ho–Kashyap rule is as follows:
+
+Given any \mathbf{b}, the corresponding \mathbf{w} is known: It is simply \mathbf{w} = \mathbf{Y}^+ \mathbf{b}, where \mathbf{Y}^+ denotes the Moore–Penrose pseudoinverse of \mathbf{Y}.
+
+Therefore, it only remains to find \mathbf{b} by gradient descent.
+
+However, the gradient descent may sometimes decrease some of the coordinates of \mathbf{b}, which may cause some coordinates of \mathbf{b}  to become negative, which is undesirable. Therefore, whenever some coordinates of \mathbf{b} would have decreased, those coordinates are unchanged instead. As for the coordinates of \mathbf{b} that would increase, those would increase without issue.
+
+Formally, the algorithm is as follows:
+
+Initialization: Set \mathbf{b}(0) to an arbitrary positive vector, typically \mathbf{b}(0) = \mathbf{1} (a vector of ones). Set the iteration counter k = 0. Set \mathbf{w}(0) = \mathbf{Y}^+ \mathbf{b}(0)
+
+Loop until convergence, or until iteration counter exceeds some k_{max}.
+
+Error calculation: Compute the error vector: \mathbf{e}(k) = \mathbf{Yw}(k) - \mathbf{b}(k).
+
+Margin update: Update the margin vector: \mathbf{b}(k+1) = \mathbf{b}(k) + 2\eta_k (\mathbf{e}(k) + |\mathbf{e}(k)|) where \eta_k is a positive learning rate parameter, and |\mathbf{e}(k)| denotes the element-wise absolute value.
+
+Weight calculation: Compute the weight vector using the pseudoinverse: \mathbf{w}(k+1) = \mathbf{Y}^+ \mathbf{b}(k+1).
+
+Convergence check: If ||\mathbf{e}(k)|| \le \theta for some predetermined threshold \theta (close to zero), then return \mathbf{b}(k+1), \mathbf{w}(k+1).
+
+if \mathbf{e}(k) \le \mathbf{0} (all components non-positive), return "Samples not separable.".
+
+Return "Algorithm failed to converge in time.".
+
+Properties
+
+If the training data is linearly separable, the algorithm converges to a solution (where \mathbf{e}(k) = \mathbf{0}) in a finite number of iterations.
+
+If the data is not linearly separable, the algorithm may or may not ever reach the point where \mathbf{e}(k) = \mathbf{0}. However, if it does happen that \mathbf{e}(k) \le \mathbf{0} at some iteration, this proves non-separability.
+
+The convergence rate depends on the choice of the learning rate parameter \rho and the degree of linear separability of the data.
+
+Relationship to other algorithms
+
+Perceptron algorithm: Both seek linear separators. The perceptron updates weights incrementally based on individual misclassified samples, while Ho–Kashyap is a batch method that processes all samples to compute the pseudoinverse and updates based on an overall error vector.
+
+Linear discriminant analysis (LDA): LDA assumes underlying Gaussian distributions with equal covariances for the classes and derives the decision boundary from these statistical assumptions. Ho–Kashyap makes no explicit distributional assumptions and instead tries to solve a system of linear inequalities directly.
+
+Support vector machines (SVM): For linearly separable data, SVMs aim to find the maximum-margin hyperplane. The Ho–Kashyap algorithm finds a separating hyperplane but not necessarily the one with the maximum margin. If the data is not separable, soft-margin SVMs allow for some misclassifications by optimizing a trade-off between margin size and misclassification penalty, while Ho–Kashyap provides a least-squares solution.
+
+Variants
+
+Modified Ho–Kashyap algorithm changes weight calculation step \mathbf{w}(k+1) = \mathbf{Y}^+ \mathbf{b}(k+1) to \mathbf{w}(k+1) = \mathbf{w}(k) + \eta_k \mathbf{Y}^+ |\mathbf{e}(k)|.
+
+Kernel Ho–Kashyap algorithm: Applies kernel methods (the "kernel trick") to the Ho–Kashyap framework to enable non-linear classification by implicitly mapping data to a higher-dimensional feature space.
+
+See also
+
+Linear classifier
+
+Perceptron
+
+Pattern recognition
+
+Machine learning
+
+Support vector machine
+
+Moore–Penrose pseudoinverse
+
+References
+
+Category:Classification algorithms
+
+Category:Machine learning algorithms
+
+Category:Statistical classification

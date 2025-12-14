@@ -1,0 +1,175 @@
+In mathematics a radial basis function (RBF) is a real-valued function \varphi whose value depends only on the distance between the input and some fixed point, either the origin, so that \varphi(\mathbf{x}) = \hat\varphi(\left\|\mathbf{x}\right\|), or some other fixed point \mathbf{c}, called a center, so that \varphi(\mathbf{x}) = \hat\varphi(\left\|\mathbf{x}-\mathbf{c}\right\|). Any function \varphi that satisfies the property \varphi(\mathbf{x}) = \hat\varphi(\left\|\mathbf{x}\right\|) is a radial function. The distance is usually Euclidean distance, although other metrics are sometimes used. They are often used as a collection \{ \varphi_k \}_k which forms a basis for some function space of interest, hence the name.
+
+Sums of radial basis functions are typically used to approximate given functions. This approximation process can also be interpreted as a simple kind of neural network; this was the context in which they were originally applied to machine learning, in work by David Broomhead and David Lowe in 1988, which stemmed from Michael J. D. Powell's seminal research from 1977.
+
+RBFs are also used as a kernel in support vector classification. The technique has proven effective and flexible enough that radial basis functions are now applied in a variety of engineering applications.
+
+Definition
+
+A radial function is a function \varphi:[0,\infty) \to \mathbb{R}. When paired with a norm  \|\cdot\|:V \to [0,\infty) on a vector space, a function of the form  \varphi_\mathbf{c} = \varphi(\|\mathbf{x}-\mathbf{c}\|)  is said to be a radial kernel centered at  \mathbf{c} \in V . A radial function and the associated radial kernels are said to be radial basis functions if, for any finite set of nodes \{\mathbf{x}_k\}_{k=1}^n \subseteq V, all of the following conditions are true:
+
+{{bulleted list
+
+The kernels \varphi_{\mathbf{x}_1}, \varphi_{\mathbf{x}_2}, \dots, \varphi_{\mathbf{x}_n} are linearly independent (for example \varphi(r)=r^2 in V=\mathbb{R} is not a radial basis function)
+
+The kernels \varphi_{\mathbf{x}_1}, \varphi_{\mathbf{x}_2}, \dots, \varphi_{\mathbf{x}_n} form a basis for a Haar Space, meaning that the interpolation matrix (given below) is non-singular.
+
+}}
+
+{{NumBlk||
+
+\begin{bmatrix}
+
+\varphi(\|\mathbf{x}_1 - \mathbf{x}_1\|) & \varphi(\|\mathbf{x}_2 - \mathbf{x}_1\|) & \dots & \varphi(\|\mathbf{x}_n - \mathbf{x}_1\|) \\
+
+\varphi(\|\mathbf{x}_1 - \mathbf{x}_2\|) & \varphi(\|\mathbf{x}_2 - \mathbf{x}_2\|) & \dots & \varphi(\|\mathbf{x}_n - \mathbf{x}_2\|) \\
+
+\vdots & \vdots & \ddots & \vdots \\
+
+\varphi(\|\mathbf{x}_1 - \mathbf{x}_n\|) & \varphi(\|\mathbf{x}_2 - \mathbf{x}_n\|) & \dots & \varphi(\|\mathbf{x}_n - \mathbf{x}_n\|) \\
+
+\end{bmatrix}
+
+}}
+
+Examples
+
+Commonly used types of radial basis functions include (writing r = \left\|\mathbf{x} - \mathbf{x}_i\right\| and using \varepsilon  to indicate a shape parameter that can be used to scale the input of the radial kernel):
+
+{{bulleted list
+
+Infinitely Smooth RBFs
+
+These radial basis functions are from C^\infty(\mathbb{R}) and are strictly positive-definite functions that require tuning a shape parameter \varepsilon
+
+{{bulleted list
+
+Gaussian:
+
+{{NumBlk||\varphi(r) = e^{-(\varepsilon r)^2}, |}}
+
+for several choices of \varepsilon]]
+
+with several choices of \varepsilon]]
+
+Inverse quadratic:
+
+{{NumBlk||\varphi(r) = \dfrac{1}{1+(\varepsilon r)^2}, |}}
+
+Inverse multiquadric:
+
+{{NumBlk||\varphi(r) = \dfrac{1}{\sqrt{1 + (\varepsilon r)^2}},  |}}
+
+}}
+
+Other Infinitely Smooth RBFs
+
+These radial basis functions are also from C^\infty(\mathbb{R}) and require tuning a shape parameter \varepsilon, but they are not strictly positive definite.
+
+{{bulleted list
+
+Multiquadric:
+
+{{NumBlk||\varphi(r) = \sqrt{1 + (\varepsilon r)^2}, |}}
+
+RTH:
+
+{{NumBlk||\varphi(r) = r \tanh(\varepsilon r), |}}
+
+}}
+
+Polyharmonic spline:
+
+{{NumBlk||\begin{aligned}
+
+\varphi(r) &= r^k,& k&=1,3,5,\dotsc
+
+\\
+
+\varphi(r) &= r^k \ln(r),& k&=2,4,6,\dotsc
+
+\end{aligned} |}}
+
+For even-degree polyharmonic splines (k = 2,4,6,\dotsc), to avoid numerical problems at r = 0 where \ln(0) = -\infty, the computational implementation is often written as \varphi(r) = r^{k-1}\ln(r^r).
+
+Thin plate spline (a special polyharmonic spline):
+
+{{NumBlk||\varphi(r) = r^2 \ln(r), |}}
+
+Compactly Supported RBFs
+
+These RBFs are compactly supported and thus are non-zero only within a radius of 1 / \varepsilon, and thus have sparse differentiation matrices
+
+{{bulleted list |
+
+Bump function:
+
+{{NumBlk||
+
+\varphi(r) =
+
+\begin{cases}
+
+\exp\left( -\frac{1}{1 - (\varepsilon r)^2}\right) & \text{ for } r|}}
+
+}}
+
+}}
+
+Approximation
+
+Radial basis functions are typically used to build up function approximations of the form
+
+{{NumBlk||y(\mathbf{x}) = \sum_{i=1}^N w_i \, \varphi(\left\|\mathbf{x} - \mathbf{x}_i\right\|), |}}
+
+where the approximating function y(\mathbf{x}) is represented as a sum of N radial basis functions, each associated with a different center \mathbf{x}_i, and weighted by an appropriate coefficient w_i. The weights w_i can be estimated using the matrix methods of linear least squares, because the approximating function is linear in the weights w_i.
+
+Approximation schemes of this kind have been particularly used in time series prediction and control of nonlinear systems exhibiting sufficiently simple chaotic behaviour and 3D reconstruction in computer graphics (for example, hierarchical RBF and Pose Space Deformation).
+
+RBF Network
+
+The sum
+
+{{NumBlk||y(\mathbf{x}) = \sum_{i=1}^N w_i \, \varphi(\left\|\mathbf{x} - \mathbf{x}_i\right\|), |}}
+
+can also be interpreted as a rather simple single-layer type of artificial neural network called a radial basis function network, with the radial basis functions taking on the role of the activation functions of the network.  It can be shown that any continuous function on a compact interval can in principle be interpolated with arbitrary accuracy by a sum of this form, if a sufficiently large number N of radial basis functions is used.
+
+The approximant y(\mathbf{x}) is differentiable with respect to the weights w_i. The weights could thus be learned using any of the standard iterative methods for neural networks.
+
+Using radial basis functions in this manner yields a reasonable interpolation approach provided that the fitting set has been chosen such that it covers the entire range systematically (equidistant data points are ideal). However, without a polynomial term that is orthogonal to the radial basis functions, estimates outside the fitting set tend to perform poorly.
+
+RBFs for PDEs
+
+Radial basis functions are used to approximate functions and so can be used to discretize and numerically solve Partial Differential Equations (PDEs). This was first done in 1990 by E. J. Kansa who developed the first RBF based numerical method. It is called the Kansa method and was used to solve the elliptic Poisson equation and the linear advection-diffusion equation. The function values at points \mathbf{x} in the domain are approximated by the linear combination of RBFs:
+
+{{NumBlk||u(\mathbf{x}) = \sum_{i=1}^N \lambda_i \, \varphi(\left\|\mathbf{x} - \mathbf{x}_i\right\|),\quad  \mathbf{x}\in\R^d |}}
+
+The derivatives are approximated as such:
+
+{{NumBlk||\frac{\partial^n u(\textbf{x})}{\partial x^n} = \sum_{i=1}^N \lambda_i \, \frac{\partial^n}{\partial x^n}\varphi(\left\|\mathbf{x} - \mathbf{x}_i\right\|),\quad  \mathbf{x}\in\R^d |}}
+
+where N are the number of points in the discretized domain, d the dimension of the domain and \lambda the scalar coefficients that are unchanged by the differential operator.
+
+Different numerical methods based on Radial Basis Functions were developed thereafter. Some methods are the RBF-FD method, the RBF-QR method and the RBF-PUM method.
+
+See also
+
+Matérn covariance function
+
+Radial basis function interpolation
+
+Kansa method
+
+References
+
+Further reading
+
+Sirayanone, S., 1988, Comparative studies of kriging, multiquadric-biharmonic, and other methods for solving mineral resource problems, PhD. Dissertation, Dept. of Earth Sciences, Iowa State University, Ames, Iowa.
+
+Category:Artificial neural networks
+
+Category:Interpolation
+
+Category:Numerical analysis
+
+Category:1988 in artificial intelligence

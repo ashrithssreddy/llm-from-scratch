@@ -1,0 +1,31 @@
+The stochastic block model is a generative model for random graphs. This model tends to produce graphs containing communities, subsets of nodes characterized by being connected with one another with particular edge densities. For example, edges may be more common within communities than between communities. Its mathematical formulation was first introduced in 1983 in the field of social network analysis by Paul W. Holland et al. In a network of documents and words, Stochastic block model can identify topics: group of words with a similar meaning.
+
+Extensions to signed graphs
+
+Signed graphs allow for both favorable and adverse relationships and serve as a common model choice for various data analysis applications, e.g., correlation clustering. The stochastic block model can be trivially extended to signed graphs by assigning both positive and negative edge weights or equivalently using a difference of adjacency matrices of two stochastic block models.
+
+DARPA/MIT/AWS Graph Challenge: streaming stochastic block partition
+
+GraphChallenge encourages community approaches to developing new solutions for analyzing graphs and sparse data derived from social media, sensor feeds, and scientific data to enable relationships between events to be discovered as they unfold in the field. Streaming stochastic block partition is one of the challenges since 2017.
+
+Spectral clustering has demonstrated outstanding performance compared to the original and even improved
+
+base algorithm, matching its quality of clusters while being multiple orders of magnitude faster.
+
+See also
+
+blockmodeling
+
+for generating benchmark networks with communities
+
+References
+
+{{reflist|refs=
+
+}}
+
+Category:Random graphs
+
+Category:Networks
+
+Category:Blockmodeling

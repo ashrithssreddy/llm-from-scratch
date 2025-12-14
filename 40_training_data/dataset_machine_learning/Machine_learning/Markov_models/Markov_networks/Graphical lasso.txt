@@ -1,0 +1,39 @@
+In statistics, the graphical lasso is a penalized likelihood estimator for the precision matrix (also called the concentration matrix or inverse covariance matrix) of a multivariate elliptical distribution. Through the use of an L_1 penalty, it performs regularization to give a sparse estimate for the precision matrix. In the case of multivariate Gaussian distributions, sparsity in the precision matrix corresponds to conditional independence between the variables therefore implying a Gaussian graphical model.
+
+The graphical lasso was originally formulated to solve Dempster's covariance selection problem for the multivariate Gaussian distribution when observations were limited. Subsequently, the optimization algorithms to solve this problem were improved and extended  to other types of estimators and distributions.
+
+Setting
+
+Let S be the sample covariance matrix of an independent identically distributed sample from a multivariate Gaussian distribution X \sim N(\mu, \Sigma).
+
+We are interested in estimating the precision matrix \Sigma^{-1} = \Theta = (\Theta_{ij}).
+
+The graphical lasso estimator \hat{\Theta} is the maximiser of the L_1 penalised log-likelihood:
+
+\hat{\Theta} = \operatorname{argmax}_{\Theta \succ 0} \left(\log \det(\Theta) - \operatorname{tr}(S \Theta) - \lambda \sum_{i,j} |\Theta_{ij}| \right)
+
+where \lambda is a penalty parameter,
+
+\hat{\Theta} = \operatorname{argmax}_{\Theta \succ 0} \left(\log \det(\Theta) - \operatorname{tr}(S \Theta) - \lambda \sum_{i \neq j} |\Theta_{ij}| \right)
+
+Because the graphical lasso estimate is not invariant to scalar multiplication of the variables,
+
+it is important to normalize the data before applying the graphical lasso.
+
+Application
+
+To obtain the estimator in programs, users could use the R package glasso, GraphicalLasso() class in the scikit-learn Python library, or the skggm Python package (similar to scikit-learn).
+
+See also
+
+Graphical model
+
+Lasso (statistics)
+
+References
+
+Category:Normal distribution
+
+Category:Graphical models
+
+Category:Markov networks

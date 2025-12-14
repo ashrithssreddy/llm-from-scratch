@@ -1,0 +1,17 @@
+Grossberg network is an artificial neural network introduced by Stephen Grossberg. It is a self organizing, competitive network based on continuous time. Grossberg, a neuroscientist and a biomedical engineer, designed this network based on the human visual system.
+
+Shunting model
+
+The shunting model is one of Grossberg's neural network models, based on a Leaky integrator, described by the differential equation
+
+{dn\over dt} \; = \; -An \; + (B - n)E \; - (C + n)I,
+
+where n=n(t) represents the activation level of a neuron, E=E(t) and I=I(t) represent the excitatory and inhibitory inputs to the neuron, and A, B, and C are constants representing the leaky decay rate and the maximum and minimum activation levels.
+
+At equilibrium (where dn/dt=0), the activation n reaches the value
+
+n \; = \; {BE-CI\over A+E+I}.
+
+References
+
+Category:Artificial neural networks

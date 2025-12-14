@@ -1,0 +1,79 @@
+{{Infobox scientist
+
+name             = Nicolò Cesa-Bianchi
+
+image            = File:NCB 2023.jpg
+
+image_size       =
+
+birth_date       =
+
+birth_place      = Milan, Italy
+
+death_date       =
+
+death_place      =
+
+citizenship      =
+
+nationality      = Italian
+
+ethnicity        =
+
+field            = Computer Science
+
+work_institution = Università degli Studi di Milano
+
+alma_mater       = Università degli Studi di Milano
+
+doctoral_advisor = Alberto Bertoni
+
+prizes           =
+
+religion         =
+
+footnotes        =
+
+}}
+
+Nicolò Cesa-Bianchi () is an Italian computer scientist and Professor of Computer Science at the Department of Computer Science of the University of Milan.
+
+He is a researcher in the field of machine learning, and co-author of the books "Prediction, Learning, and Games" with Gabor Lugosi and "Regret analysis of stochastic and nonstochastic multi-armed bandit problems" with Sébastien Bubeck
+
+Education and career
+
+Cesa-Bianchi graduated in Computer Science from the University of Milan in 1988 where he received a PhD in Computer Science in 1993 supervised by Alberto Bertoni. During his PhD, he visited UC Santa Cruz where he worked with Manfred Warmuth and David Haussler. He did his postdoctoral studies at Graz University of Technology under the supervision of Wolfgang Maass.
+
+Research
+
+His research contributions focus on the following areas:
+
+design and analysis of machine learning algorithms, especially in online machine learning
+
+algorithms for multi-armed bandit problems, with applications to recommender systems and online auctions
+
+graph analytics, with applications to social networks and bioinformatics
+
+Awards and honors
+
+Cesa-Bianchi received a Google Research Award in 2010, a Xerox University Affairs Committee Award in 2011, a Criteo Faculty Award in 2017, a Google Faculty Award in 2018, and a IBM Academic Award in 2021.
+
+Since 2023 he is corresponding member of the Accademia dei Lincei.
+
+References
+
+Category:Living people
+
+Category:1963 births
+
+Category:Italian computer scientists
+
+Category:University of Milan alumni
+
+Category:Academic staff of the University of Milan
+
+Category:Machine learning researchers
+
+Category:Scientists from Milan
+
+Category:Members of the Lincean Academy

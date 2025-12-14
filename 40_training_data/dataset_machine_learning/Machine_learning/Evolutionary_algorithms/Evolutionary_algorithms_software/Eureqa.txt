@@ -1,0 +1,47 @@
+{{Infobox website
+
+name             = Eureqa
+
+favicon          =
+
+logo             =
+
+screenshot       =
+
+caption          =
+
+url              =
+
+commercial       = Yes
+
+registration     =
+
+owner            = Datarobot, Inc.
+
+authors          = Michael Schmidt and Hod Lipson
+
+launch_date      = November 2009
+
+alexa            =
+
+current_status   = Active
+
+revenue          =
+
+}}
+
+Eureqa was a proprietary modeling engine created in Cornell's Artificial Intelligence Lab and later commercialized by Nutonian, Inc. The software used genetic algorithms to determine mathematical equations that describe sets of data in their simplest form, a technique referred to as symbolic regression.
+
+Origin and development
+
+Since the 1970s, the primary way companies had performed data science was to hire data scientists and equip them with tools like R, Python, SAS, and SQL to execute predictive and statistical modeling. In 2007 Michael Schmidt, then a PhD student in Computational Biology at Cornell, along with his advisor Hod Lipson, developed Eureqa to help automate the curve fitting work of data scientists by creating a tool that would automatically search for the "best" mathematical model to fit a given dataset (where best is defined as the simplest model that can be found to achieve a given level of fit to the data).
+
+In November 2009 the program was made available to download as freeware.
+
+}}
+
+External links
+
+Category:Semantic Web
+
+Category:Evolutionary algorithms software

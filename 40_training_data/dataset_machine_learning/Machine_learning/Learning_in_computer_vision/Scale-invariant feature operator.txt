@@ -1,0 +1,9 @@
+In the fields of computer vision and image analysis, the scale-invariant feature operator (or SFOP) is an algorithm to detect local features in images. The algorithm was published by Förstner et al. in 2009.
+
+External links
+
+Project website at University of Bonn
+
+Category:Applications of computer vision
+
+Category:Learning in computer vision

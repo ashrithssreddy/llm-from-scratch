@@ -1,0 +1,19 @@
+{{Multiple issues|
+
+}}
+
+Sharpness Aware Minimization (SAM) is an optimization algorithm used in machine learning that aims to improve model generalization. The method seeks to find model parameters that are located in regions of the loss landscape with uniformly low loss values, rather than parameters that only achieve a minimal loss value at a single point. This approach is described as finding "flat" minima instead of "sharp" ones. The rationale is that models trained this way are less sensitive to variations between training and test data, which can lead to better performance on unseen data.
+
+The algorithm was introduced in a 2020 paper by a team of researchers including Pierre Foret, Ariel Kleiner, Hossein Mobahi, and Behnam Neyshabur. Some studies indicate that SAM and its variants can improve out-of-distribution (OOD) generalization, which is a model's ability to perform well on data from distributions not seen during training. Other areas where it has been applied include gradual domain adaptation and mitigating overfitting in scenarios with repeated exposure to training examples. The accuracy of the single gradient step approximation for finding the worst-case perturbation may also decrease during the training process.
+
+The effectiveness of SAM can also be domain-dependent. While it has shown benefits for computer vision tasks, its impact on other areas, such as GPT-style language models where each training example is seen only once, has been reported as limited in some studies. Furthermore, while SAM seeks flat minima, some research suggests that not all flat minima necessarily lead to good generalization. The algorithm also introduces the neighborhood size \rho as a new hyperparameter, which requires tuning. Other approaches use historical gradient information or apply SAM steps intermittently to lower the computational burden.
+
+To improve performance and robustness, variants have been developed that adapt the neighborhood size based on model parameter scales (Adaptive SAM or ASAM)
+
+Theoretical work continues to analyze the algorithm's behavior, including its implicit bias towards flatter minima and the development of broader frameworks for sharpness-aware optimization that use different measures of sharpness.
+
+References
+
+Category:Machine learning algorithms
+
+Category:Optimization algorithms and methods

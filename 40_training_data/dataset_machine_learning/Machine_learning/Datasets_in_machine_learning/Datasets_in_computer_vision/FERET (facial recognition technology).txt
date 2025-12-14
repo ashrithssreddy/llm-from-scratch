@@ -1,0 +1,79 @@
+The Facial Recognition Technology (FERET) program was a government-sponsored project that aimed to create a large, automatic face-recognition system for intelligence, security, and law enforcement purposes. The program began in 1993 under the combined leadership of Dr. Harry Wechsler at George Mason University (GMU) and Dr. Jonathon Phillips at the Army Research Laboratory (ARL) in Adelphi, Maryland and resulted in the development of the Facial Recognition Technology (FERET) database. The goal of the FERET program was to advance the field of face recognition technology by establishing a common database of facial imagery for researchers to use and setting a performance baseline for face-recognition algorithms.
+
+Potential areas where this face-recognition technology could be used include: By 2017, the FERET database has been used to train artificial intelligence programs and computer vision algorithms to identify and sort faces.
+
+History
+
+The origin of facial recognition technology is largely attributed to Woodrow Wilson Bledsoe and his work in the 1960s, when he developed a system to identify faces from a database of thousands of photographs. The FERET program first began as a way to unify a large body of face-recognition technology research under a standard database. Before the program's inception, most researchers created their own facial imagery database that was attuned to their own specific area of study. These personal databases were small and usually consisted of images from less than 50 individuals. The only notable exceptions were the following:
+
+Alex Pentland’s database of around 7500 facial images at the Massachusetts Institute of Technology (MIT)
+
+Joseph Wilder's database of around 250 individuals at Rutgers University
+
+Christoph von der Malsburg’s database of around 100 facial images at the University of Southern California (USC)
+
+The lack of a common database made it difficult to compare the results of face recognition studies in the scientific literature because each report involved different assumptions, scoring methods, and images.
+
+In September 1993, the FERET program was spearheaded by Dr. Harry Wechsler and Dr. Jonathon Phillips under the sponsorship of the U.S. Department of Defense Counterdrug Technology Development Program
+
+Phase I
+
+The first facial images for the FERET database were collected from August 1993 to December 1994, a time period known as Phase I. The pictures were initially taken with a 35-mm camera at both GMU and ARL facilities, and the same physical setup was used in each photography session to keep the images consistent. For each individual, the pictures were taken in sets, including two frontal views, a right and left profile, a right and left quarter profile, a right and left half profile, and sometimes at five extra locations. Therefore, a set of images consisted of 5 to 11 images per person. At the end of Phase I, the FERET database had collected 673 sets of images, resulting in over 5000 total images.
+
+At the end of Phase I, five organizations were given the opportunity to test their face-recognition algorithm on the newly created FERET database in order to compare how they performed against each other. There five principal investigators were:
+
+MIT, led by Alex Pentland
+
+Rutgers University, led by Joseph Wilder
+
+The Analytic Science Company (TASC), led by Gale Gordon
+
+The University of Illinois at Chicago (UIC) and the University of Illinois at Urbana-Champaign, led by Lewis Sadler and Thomas Huang
+
+USC, led by Christoph von der Malsburg
+
+During this evaluation, three different automatic tests were given to the principal investigators without human intervention:
+
+The large gallery test, which served to baseline how algorithms performed against a database when it has not been properly tuned.
+
+The false-alarm test, which tested how well the algorithm monitored an airport for suspected terrorists.
+
+The rotation test, which measured how well the algorithm performed when the images of an individual in the gallery had different poses compared to those in the probe set.
+
+For most of the test trials, the algorithms developed by USC and MIT managed to outperform the other three algorithms for the Phase I evaluation.
+
+Phase II
+
+Phase II began after Phase I, and during this time, the FERET database acquired more sets of facial images. By the start of the Phase II evaluation in March 1995, the database contained 1109 sets of images for a total of 8525 images of 884 individuals. During the second evaluation, the same algorithms from the Phase I evaluation were given a single test. However, the database now contained significantly more duplicate images (463, compared to the previous 60), making the test more challenging.
+
+Phase III
+
+Afterwards, the FERET program entered Phase III where another 456 sets of facial images were added to the database. The Phase III evaluation, which took place in September 1996, aimed to not only gauge the progress of the algorithms since the Phase I assessment but also identify the strengths and weaknesses of each algorithm and determine future objectives for research. By the end of 1996, the FERET database had accumulated a total of 14,126 facial images pertaining to 1199 different individuals as well as 365 duplicate sets of images.
+
+As a result of the FERET program, researchers were able to establish a common baseline for comparing different face-recognition algorithms and create a large standard database of facial images that is open for research.
+
+In 2003, DARPA released a high-resolution, 24-bit color version of the images in the FERET database (existing reference).
+
+References
+
+External links
+
+FERET NIST Website
+
+Color FERET Database
+
+FERET NIST Documents
+
+Category:Facial recognition software
+
+Category:Datasets in computer vision
+
+Category:Biometrics
+
+Category:Biometric databases
+
+Category:Machine learning task
+
+Category:Automatic identification and data capture
+
+Category:Surveillance

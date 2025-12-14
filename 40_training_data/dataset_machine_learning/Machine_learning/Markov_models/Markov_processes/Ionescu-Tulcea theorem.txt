@@ -1,0 +1,41 @@
+In the mathematical theory of probability, the Ionescu-Tulcea theorem, sometimes called the Ionesco Tulcea extension theorem, deals with the existence of probability measures for probabilistic events consisting of a countably infinite number of individual probabilistic events. In particular, the individual events may be independent or dependent with respect to each other. Thus, the statement goes beyond the mere existence of countable product measures. The theorem was proved by Cassius Ionescu-Tulcea in 1949.
+
+Statement of the theorem
+
+Suppose that  (\Omega_0, \mathcal A_0, P_0)  is a probability space and  (\Omega_i, \mathcal A_i)  for  i \in \N  is a sequence of measurable spaces. For each  i \in \N  let
+
+\kappa_i \colon (\Omega^{i-1}, \mathcal A^{i-1}) \to (\Omega_i, \mathcal A_i)
+
+be the Markov kernel derived from  (\Omega^{i-1}, \mathcal A^{i-1})  and  (\Omega_i, \mathcal A_i), , where
+
+\Omega^i:=\prod_{k=0}^i\Omega_k \text{ and } \mathcal A^i:= \bigotimes_{k=0}^i \mathcal A_k.
+
+Then there exists a sequence of probability measures
+
+P_i:=P_0 \otimes \bigotimes_{k=1}^i \kappa_k  defined on the product space for the sequence  (\Omega^i, \mathcal A^i) ,  i \in \N,
+
+and there exists a uniquely defined probability measure  P  on  \left(\prod_{k=0}^\infty \Omega_k, \bigotimes_{k=0}^\infty \mathcal A_k\right) , so that
+
+P_i(A)=P\left( A \times \prod_{k=i+1}^\infty \Omega_k \right)
+
+is satisfied for each  A \in \mathcal A^i  and  i \in\N . (The measure  P  has conditional probabilities equal to the stochastic kernels.)
+
+Applications
+
+The construction used in the proof of the Ionescu-Tulcea theorem is often used in the theory of Markov decision processes, and, in particular, the theory of Markov chains.
+
+See also
+
+Disintegration theorem
+
+Regular conditional probability
+
+Sources
+
+References
+
+Category:Markov processes
+
+Category:Stochastic processes
+
+Category:Theorems in probability theory

@@ -1,0 +1,93 @@
+{{Multiple issues|}}
+
+Dependency networks (DNs) are graphical models, similar to Markov networks, wherein each vertex (node) corresponds to a random variable and each edge captures dependencies among variables.
+
+Unlike Bayesian networks, DNs may contain cycles.
+
+Each node is associated to a conditional probability table, which determines the realization of the random variable given its parents.
+
+Markov blanket
+
+In a Bayesian network, the  Markov blanket of a node is the set of parents and children of that node, together with the children's parents.  The values of the parents and children of a node evidently give information about that node. However, its children's parents also have to be included in the Markov blanket, because they can be used to explain away the node in question. In a Markov random field, the Markov blanket for a node is simply its adjacent (or neighboring) nodes.  In a dependency network, the Markov blanket for a node is simply the set of its parents.
+
+Dependency network versus Bayesian networks
+
+Dependency networks have advantages and disadvantages with respect to Bayesian networks. In particular, they are easier to parameterize from data, as there are  efficient algorithms for learning both the structure and probabilities of a dependency network from data. Such algorithms are not available for Bayesian networks, for which the problem of determining the optimal structure is NP-hard. Nonetheless, a dependency network may be more difficult to construct using a knowledge-based approach driven by expert-knowledge.
+
+Dependency networks versus Markov networks
+
+Consistent dependency networks and Markov networks have the same representational power.   Nonetheless, it is possible to construct non-consistent dependency networks, i.e., dependency networks for which there is no compatible valid joint probability distribution. Markov networks, in contrast, are always consistent.
+
+Definition
+
+A consistent dependency network for a set of random variables \mathbf{X} = (X_1, \ldots, X_n) with joint distribution p(\mathbf{x}) is a pair (G,P) where G is a cyclic directed graph, where each of its nodes corresponds to a variable in \mathbf{X}, and P is a set of conditional probability distributions. The parents of node X_i, denoted \mathbf{Pa_i}, correspond to those variables \mathbf{Pa_i} \subseteq (X_1, \ldots, X_{i-1}, X_{i+1}, \ldots, X_n) that satisfy the following independence relationships
+
+p(x_i\mid\mathbf{pa_i}) = p(x_i\mid x_1, \ldots , x_{i-1}, x_{i+1}, \ldots, x_n) = p(x_i\mid\mathbf{x} - {x_i}).
+
+The dependency network is consistent in the sense that each local distribution can be obtained from the joint distribution p(\mathbf{x}). Dependency networks learned using large data sets with large sample sizes will  almost always be consistent.  A non-consistent network is a network for which there is no joint probability distribution compatible with the pair (G,P).  In that case, there is no joint probability distribution that satisfies the independence relationships subsumed by that pair.
+
+Structure and parameters learning
+
+Two important tasks in a dependency network are to learn its structure and probabilities from data. Essentially, the learning algorithm consists of independently performing a probabilistic regression or classification for each variable in the domain. It comes from observation that the local distribution for variable X_i in a dependency network is the conditional distribution p(x_i|\mathbf{x} - {x_i}), which can be estimated by any number of classification or regression techniques, such as methods using a probabilistic decision tree, a neural network or a probabilistic support-vector machine. Hence, for each variable X_i in domain X, we independently estimate its local distribution from data using a classification algorithm, even though it is a distinct method for each variable.
+
+Here, we will briefly show how probabilistic decision trees are used to estimate the local distributions. For each variable X_i in \mathbf{X}, a probabilistic decision tree is learned where X_i is the target variable and \mathbf{X} - X_i are the input variables. To learn a decision tree structure for X_i, the search algorithm begins with a singleton root node without children. Then, each leaf node in the tree is replaced with a binary split on some variable X_j in \mathbf{X} - X_i, until no more replacements increase the score of the tree.
+
+Probabilistic Inference
+
+A probabilistic inference is the task in which we wish to answer probabilistic queries of the form p(\mathbf{y\mid z}), given a graphical model for \mathbf{X}, where \mathbf{Y} (the 'target' variables) \mathbf{Z} (the 'input' variables) are disjoint subsets of \mathbf{X}. One of the alternatives for performing probabilistic inference is using Gibbs sampling. A naive approach for this uses an ordered Gibbs sampler, an important difficulty of which is that if either p(\mathbf{y\mid z}) or p(\mathbf{z}) is small, then many iterations are required for an accurate probability estimate. Another approach for estimating p(\mathbf{y\mid z}) when p(\mathbf{z}) is small is to use modified ordered Gibbs sampler, where \mathbf{Z = z} is fixed during Gibbs sampling.
+
+It may also happen that \mathbf{y} is rare, e.g. when \mathbf{Y} has many variables. So, the law of total probability along with the independencies encoded in a dependency network can be used to decompose the inference task into a set of inference tasks on single variables. This approach comes with the advantage that some terms may be obtained by direct lookup, thereby avoiding some Gibbs sampling.
+
+You can see below an algorithm that can be used for obtain p(\mathbf{y|z}) for a particular instance of \mathbf{y} \in \mathbf{Y} and \mathbf{z} \in \mathbf{Z}, where \mathbf{Y} and \mathbf{Z} are disjoint subsets.
+
+Algorithm 1:
+
+\mathbf{U := Y} (* the unprocessed variables *)
+
+\mathbf{P := Z} (* the processed and conditioning variables *)
+
+\mathbf{p := z} (* the values for \mathbf{P} *)
+
+While \mathbf{U} \neq \empty:
+
+Choose X_i \in \mathbf{U} such that X_i has no more parents in U than any variable in U
+
+If all the parents of X are in \mathbf{P}
+
+p(x_i|\mathbf{p}) := p(x_i|\mathbf{pa_i})
+
+Else
+
+Use a modified ordered Gibbs sampler to determine p(x_i|\mathbf{p})
+
+\mathbf{U := U} - X_i
+
+\mathbf{P := P} + X_i
+
+\mathbf{p := p} + x_i
+
+Returns the product of the conditionals p(x_i|\mathbf{p})
+
+Applications
+
+In addition to the applications to probabilistic inference, the following applications are in the category of Collaborative Filtering (CF), which is the task of predicting preferences. Dependency networks are a natural model class on which to base CF predictions, once an algorithm for this task only needs estimation of p(x_i = 1|\mathbf{x} - {x_i} = 0) to produce recommendations. In particular, these estimates may be obtained by a direct lookup in a dependency network.
+
+Predicting what movies a person will like based on his or her ratings of movies seen;
+
+Predicting what web pages a person will access based on his or her history on the site;
+
+Predicting what news stories a person is interested in based on other stories he or she read;
+
+Predicting what product a person will buy based on products he or she has already purchased and/or dropped into his or her shopping basket.
+
+Another class of useful applications for dependency networks is related to data visualization, that is, visualization of predictive relationships.
+
+See also
+
+Relational dependency network
+
+References
+
+Category:Graphical models
+
+Category:Algorithms

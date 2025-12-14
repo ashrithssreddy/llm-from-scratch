@@ -1,0 +1,91 @@
+{{Infobox academic
+
+name = Mihaela van der Schaar
+
+honorific suffix =
+
+image = Mihaela van der Schaar Jan 2019.jpg
+
+caption = Mihaela van der Schaar in January 2019
+
+workplaces = University of Cambridge
+
+University of California, Los Angeles
+
+University of Oxford
+
+University of California, Davis
+
+Philips Research Laboratories
+
+birth_date =
+
+nationality = Dutch
+
+alma_mater = Eindhoven University of Technology
+
+thesis_title = System and network constrained scalable video compression
+
+thesis_year = 2001
+
+doctoral_advisor = Jan Biemond
+
+discipline = Computer engineering
+
+sub_discipline = Machine learning
+
+Artificial intelligence
+
+website = vanderschaar-lab.com
+
+}}
+
+Mihaela van der Schaar  is the John Humphrey Plummer Professor of Machine Learning, AI, and Medicine at the University of Cambridge, where she is director of the Cambridge Centre for AI in Medicine (CCAIM), and a Chancellor's Professor of Electrical and Computer Engineering at the University of California, Los Angeles.
+
+Her research involves topics in signal and image processing, communication networks, network science, multimedia, game theory, distributed systems, machine learning, and AI. van der Schaar focuses on medical applications of computer engineering, including AI-enabled personalized medicine. She completed her PhD while simultaneously working as a researcher at Philips Research Laboratories.
+
+At Philips, van der Schaar helped develop the first algorithm for video streaming and, as their representative to the International Organization for Standardization from 1999 to 2003, led working groups which determined early standards for streaming.
+
+van der Schaar joined the faculty at the University of Cambridge in 2018. In November 2020, van der Schaar was named the director of the new Cambridge Centre for AI in Medicine, a research collaboration between the University of Cambridge, GlaxoSmithKline and AstraZeneca to study applications of machine learning to the medical profession.
+
+In response to the COVID-19 pandemic in April 2020, van der Schaar's research group was part of a collaboration with the UK National Health Service, which used machine learning to predict shortages of ICU beds and ventilators in English hospitals.
+
+As of 2020, van der Schaar has published over 250 academic journal articles and submitted over 275 conference papers, and her work has resulted in 35 US patents and contributed to over 45 international standards.
+
+As of 2022, van der Schaar's work has been cited over 23,000 times.
+
+Honours and awards
+
+van der Schaar was elected as a Fellow of the IEEE in 2009, and she has held a fellowship with the Alan Turing Institute since 2016.
+
+She has also received a National Science Foundation CAREER Award (2004),  the IEEE Darlington Award (2011), and the Oon Prize on Preventative Medicine from the University of Cambridge (2018).
+
+In 2019, a Nesta report determined that van der Schaar was the most-cited female AI researcher in the UK.
+
+References
+
+Category:1971 births
+
+Category:Living people
+
+Category:Eindhoven University of Technology alumni
+
+Category:Dutch expatriates in England
+
+Category:John Humphrey Plummer Professors
+
+Category:University of California, Los Angeles faculty
+
+Category:Academics of the University of Oxford
+
+Category:University of California, Davis faculty
+
+Category:Philips employees
+
+Category:Machine learning researchers
+
+Category:Fellows of the IEEE
+
+Category:Fellows of the Royal Society
+
+Category:Dutch women computer scientists

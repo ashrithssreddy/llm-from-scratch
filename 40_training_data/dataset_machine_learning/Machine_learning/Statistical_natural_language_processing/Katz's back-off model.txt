@@ -1,0 +1,55 @@
+Katz back-off is a generative n-gram language model that estimates the conditional probability of a word given its history in the n-gram. It accomplishes this estimation by backing off through progressively shorter history models under certain conditions. By doing so, the model with the most reliable information about a given history is used to provide the better results.
+
+The model was introduced in 1987 by Slava M. Katz. Prior to that, n-gram language models were constructed by training individual models for different n-gram orders using maximum likelihood estimation and then interpolating them together.
+
+Method
+
+The equation for Katz's back-off model is:
+
+\begin{align}
+
+& P_{bo} (w_i \mid w_{i-n+1} \cdots w_{i-1}) \\[4pt]
+
+= {} & \begin{cases}
+
+d_{w_{i-n+1} \cdots w_{i}} \dfrac{C(w_{i-n+1} \cdots w_{i-1}w_{i})}{C(w_{i-n+1} \cdots w_{i-1})} & \text{if } C(w_{i-n+1} \cdots w_i) > k \\[10pt]
+
+\alpha_{w_{i-n+1} \cdots w_{i-1}} P_{bo}(w_i \mid w_{i-n+2} \cdots w_{i-1}) & \text{otherwise}
+
+\end{cases}
+
+\end{align}
+
+where
+
+C(x) = number of times x appears in training
+
+wi = ith word in the given context
+
+Essentially, this means that if the n-gram has been seen more than k times in training, the conditional probability of a word given its history is proportional to the maximum likelihood estimate of that n-gram. Otherwise, the conditional probability is equal to the back-off conditional probability of the (n&nbsp;&minus;&nbsp;1)-gram.
+
+The more difficult part is determining the values for k, d and&nbsp;α.
+
+k is the least important of the parameters. It is usually chosen to be 0. However, empirical testing may find better values for k.
+
+d is typically the amount of discounting found by Good–Turing estimation. In other words, if Good–Turing estimates C as C^*, then d = \frac{C^*}{C}
+
+To compute \alpha, it is useful to first define a quantity β, which is the left-over probability mass for the (n&nbsp;&minus;&nbsp;1)-gram:
+
+\beta_{w_{i-n+1} \cdots w_{i -1}} = 1 - \sum_{ \{w_i : C(w_{i-n+1} \cdots w_{i}) > k \} } d_{w_{i-n+1} \cdots w_{i}} \frac{C(w_{i-n+1}\cdots w_{i-1} w_{i})}{C(w_{i-n+1} \cdots w_{i-1})}
+
+Then the back-off weight, α, is computed as follows:
+
+\alpha_{w_{i-n+1} \cdots w_{i -1}} = \frac{\beta_{w_{i-n+1} \cdots w_{i -1}}}        {\sum_{ \{ w_i : C(w_{i-n+1} \cdots w_{i}) \leq k \} } P_{bo}(w_i \mid w_{i-n+2} \cdots w_{i-1})}
+
+The above formula only applies if there is data for the "(n&nbsp;&minus;&nbsp;1)-gram". If not, the algorithm skips n-1 entirely and uses the Katz estimate for n-2. (and so on until an n-gram with data is found)
+
+Discussion
+
+This model generally works well in practice, but fails in some circumstances. For example, suppose that the bigram "a b" and the unigram "c" are very common, but the trigram "a b c" is never seen. Since "a b" and "c" are very common, it may be significant (that is, not due to chance) that "a b c" is never seen. Perhaps it's not allowed by the rules of the grammar. Instead of assigning a more appropriate value of 0, the method will back off to the bigram and estimate P(c&nbsp;|&nbsp;b), which may be too high.
+
+References
+
+Category:Language modeling
+
+Category:Statistical natural language processing

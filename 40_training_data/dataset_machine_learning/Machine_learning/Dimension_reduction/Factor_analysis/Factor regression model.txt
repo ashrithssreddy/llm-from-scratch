@@ -1,0 +1,67 @@
+Within statistical factor analysis, the factor regression model, or hybrid factor model, is a special multivariate model with the following form:
+
+\mathbf{y}_n= \mathbf{A}\mathbf{x}_n+   \mathbf{B}\mathbf{z}_n +\mathbf{c}+\mathbf{e}_n
+
+where,
+
+\mathbf{y}_n  is the n-th  G \times 1  (known) observation.
+
+\mathbf{x}_n  is the n-th sample  L_x  (unknown) hidden factors.
+
+\mathbf{A}  is the (unknown) loading matrix of the  hidden factors.
+
+\mathbf{z}_n  is the n-th sample  L_z  (known) design factors.
+
+\mathbf{B}  is the (unknown) regression coefficients of the design factors.
+
+\mathbf{c}  is a vector of (unknown) constant term or intercept.
+
+\mathbf{e}_n  is a vector of (unknown) errors, often white Gaussian noise.
+
+Relationship between factor regression model, factor model and regression model
+
+The factor regression model can be viewed as a combination of factor analysis model ( \mathbf{y}_n= \mathbf{A}\mathbf{x}_n+   \mathbf{c}+\mathbf{e}_n ) and regression model ( \mathbf{y}_n=   \mathbf{B}\mathbf{z}_n +\mathbf{c}+\mathbf{e}_n ).
+
+Alternatively, the model can be viewed as a special kind of factor model, the hybrid factor model
+
+\begin{align}
+
+& \mathbf{y}_n = \mathbf{A}\mathbf{x}_n+   \mathbf{B}\mathbf{z}_n +\mathbf{c}+\mathbf{e}_n \\
+
+= & \begin{bmatrix}
+
+\mathbf{A} & \mathbf{B}
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+\mathbf{x}_n \\
+
+\mathbf{z}_n\end{bmatrix} +\mathbf{c}+\mathbf{e}_n \\
+
+= & \mathbf{D}\mathbf{f}_n +\mathbf{c}+\mathbf{e}_n
+
+\end{align}
+
+where,  \mathbf{D}=\begin{bmatrix}
+
+\mathbf{A} & \mathbf{B}
+
+\end{bmatrix}  is the loading matrix of the hybrid factor model and  \mathbf{f}_n=\begin{bmatrix}
+
+\mathbf{x}_n \\
+
+\mathbf{z}_n\end{bmatrix}  are the factors, including the known factors and unknown factors.
+
+Software
+
+Open source software to perform factor regression is available.
+
+References
+
+Category:Factor analysis
+
+Category:Latent variable models
+
+Category:Regression models

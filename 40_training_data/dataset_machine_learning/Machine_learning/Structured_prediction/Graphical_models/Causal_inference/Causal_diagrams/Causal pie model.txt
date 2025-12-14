@@ -1,0 +1,11 @@
+In the field of epidemiology, the causal pie model, also known as Rothman's Model of Disease or Pie Wheel Model of Disease can be used to explain the causal mechanisms responsible for diseases.
+
+It was introduced as a conceptual model by Ken Rothman to communicate how constellations of component causes can lead to a sufficient cause to lead to a condition of interest and that reflection on these sets could improve epidemiological study design. A set of proposed causal mechanisms are represented as pie charts where each pie in the diagram represent a theoretical causal mechanism for a given disease, which is also called a sufficient cause.
+
+Each pie is made up of many component factors, otherwise known as component causes represented by sectors in the diagram. In this framework, each component cause represents an event or condition required for a given disease or outcome. A component cause that appears in every pie is called a necessary cause as the outcome cannot occur without it.
+
+References
+
+Category:Causal diagrams
+
+Category:Epidemiology

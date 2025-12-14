@@ -1,0 +1,29 @@
+In machine learning, a hyperparameter is a parameter that can be set in order to define any configurable part of a model's learning process. Hyperparameters can be classified as either model hyperparameters (such as the topology and size of a neural network) or algorithm hyperparameters (such as the learning rate and the batch size of an optimizer). These are named hyperparameters in contrast to parameters, which are characteristics that the model learns from the data.
+
+Hyperparameters are not required by every model or algorithm. Some simple algorithms such as ordinary least squares regression require none. However, the LASSO algorithm, for example, adds a regularization hyperparameter to ordinary least squares which must be set before training. Even models and algorithms without a strict requirement to define hyperparameters may not produce meaningful results if these are not carefully chosen. However, optimal values for hyperparameters are not always easy to predict. Some hyperparameters may have no meaningful effect, or one important variable may be conditional upon the value of another. Often a separate process of hyperparameter tuning is needed to find a suitable combination for the data and task.
+
+As well as improving model performance, hyperparameters can be used by researchers to introduce robustness and reproducibility into their work, especially if it uses models that incorporate random number generation.
+
+Considerations
+
+The time required to train and test a model can depend upon the choice of its hyperparameters. A hyperparameter is usually of continuous or integer type, leading to mixed-type optimization problems. The tunability of an algorithm, hyperparameter, or interacting hyperparameters is a measure of how much performance can be gained by tuning it. For an LSTM, while the learning rate followed by the network size are its most crucial hyperparameters, batching and momentum have no significant effect on its performance.
+
+Although some research has advocated the use of mini-batch sizes in the thousands, other work has found the best performance with mini-batch sizes between 2 and 32.
+
+Robustness
+
+An inherent stochasticity in learning directly implies that the empirical hyperparameter performance is not necessarily its true performance.
+
+Reinforcement learning algorithms, in particular, require measuring their performance over a large number of random seeds, and also measuring their sensitivity to choices of hyperparameters. In the absence of a robust infrastructure for this purpose, research code often evolves quickly and compromises essential aspects like bookkeeping and reproducibility. Online collaboration platforms for machine learning go further by allowing scientists to automatically share, organize and discuss experiments, data, and algorithms. Reproducibility can be particularly difficult for deep learning models. For example, research has shown that deep learning models depend very heavily even on the random seed selection of the random number generator.
+
+See also
+
+Hyper-heuristic
+
+Replication crisis
+
+References
+
+Category:Machine learning
+
+Category:Model selection

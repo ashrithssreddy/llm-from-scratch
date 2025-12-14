@@ -1,0 +1,57 @@
+In probability theory, lumpability is a method for reducing the size of the state space of some continuous-time Markov chains, first published by Kemeny and Snell.
+
+Definition
+
+Suppose that the complete state-space of a Markov chain is divided into disjoint subsets of states, where these subsets are denoted by ti. This forms  a partition \scriptstyle{T = \{ t_1, t_2, \ldots \}} of the states. Both the state-space and the collection of subsets may be either finite or countably infinite.
+
+A continuous-time Markov chain \{ X_i \} is lumpable with respect to the partition T if and only if, for any subsets ti and tj in the partition, and for any states n,n’ in subset ti,
+
+\sum_{m \in t_j} q(n,m) = \sum_{m \in t_j} q(n',m) ,
+
+where q(i,j) is the transition rate from state i to state j.
+
+Similarly, for a stochastic matrix P, P is a lumpable matrix on a partition T if and only if, for any subsets ti and tj in the partition, and for any states n,n’ in subset ti,
+
+\sum_{m \in t_j} p(n,m) = \sum_{m \in t_j} p(n',m) ,
+
+where p(i,j) is the probability of moving from state i to state j.
+
+Example
+
+Consider the matrix
+
+P = \begin{pmatrix}
+
+\frac{1}{2} & \frac{3}{8} & \frac{1}{16} & \frac{1}{16} \\
+
+\frac{7}{16} & \frac{7}{16} & 0 & \frac{1}{8} \\
+
+\frac{1}{16} & 0 & \frac{1}{2} & \frac{7}{16} \\
+
+0 & \frac{1}{16} & \frac{3}{8} & \frac{9}{16} \end{pmatrix}
+
+and notice it is lumpable on the partition t&nbsp;=&nbsp;{(1,2),(3,4)} so we write
+
+P_t = \begin{pmatrix}
+
+\frac{7}{8} & \frac{1}{8} \\
+
+\frac{1}{16} & \frac{15}{16} \end{pmatrix}
+
+and call Pt the lumped matrix of P on t.
+
+Successively lumpable processes
+
+In 2012, Katehakis and Smit discovered the Successively Lumpable processes for which the stationary probabilities can be obtained by successively computing the stationary probabilities of a propitiously constructed sequence of Markov chains. Each of the latter chains has a (typically much) smaller state space and this yields significant computational improvements.  These results have many applications reliability and queueing models and problems.
+
+Quasi–lumpability
+
+Franceschinis and Muntz introduced quasi-lumpability, a property whereby a small change in the rate matrix makes the chain lumpable.
+
+See also
+
+Nearly completely decomposable Markov chain
+
+References
+
+Category:Markov processes

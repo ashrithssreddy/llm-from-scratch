@@ -1,0 +1,41 @@
+The random surfing model is a graph model which describes the probability of a random user visiting a web page. The model attempts to predict the chance that a random internet surfer will arrive at a page by either clicking a link or by accessing the site directly, for example by directly entering the website's URL in the address bar. For this reason, an assumption is made that all users surfing the internet will eventually stop following links in favor of switching to another site completely. The model is similar to a Markov chain, where the chain's states are web pages the user lands on and transitions are equally probable links between these pages.
+
+Description
+
+]]
+
+A user navigates the internet in two primary ways; the user may access a site directly by entering the site's URL or clicking a bookmark, or the user may use a series of hyperlinks to get to the desired page. The random surfer model assumes that the link which the user selects next is picked at random. The model also assumes that the number of successive links is not infinite – the user will at some point lose interest and leave the current site for a completely new site.
+
+The random surfer model is presented as a series of nodes which indicate web pages that can be accessed at random by users. A new node is added to the a graph when a new website is published. The movement about the graphs nodes is modeled by choosing a start node at random, then performing a short and random traversal of the nodes, or random walk. This traversal is analogous to a user accessing a website, then following hyperlink t number of times, until the user either exits the page or accesses another site completely. Connections to other nodes in this graph are formed when outbound links are placed on the page.
+
+Graph definitions
+
+In the random surfing model, webgraphs are presented as a sequence of directed graphs G_t,t = 1,2,\ldots such that a graph G_t has t vertices and t edges. The process of defining graphs is parameterized with a probability p, thus we let q= 1-p.
+
+Nodes of the model arrive one at time, forming k connections to the existing graph G_t
+
+. In some models, connections represent directed edges, and in others, connections represent undirected edges. Models start with a single node v_0 and have k self-loops. v_t denotes a vertex added in the t^{th} step, and n denotes the total number of vertices.
+
+See also
+
+Avrim Blum
+
+PageRank
+
+Webgraph
+
+References
+
+External links
+
+Case study on random web surfers
+
+Data Mining and Analysis: Fundamental Concepts and Algorithms is freely available to download for personal use here
+
+Microsoft research on PageRank and the Random Surfer Model
+
+Paper on how Google web search implements PageRank to find relevant search results
+
+Category:Markov models
+
+Category:Directed graphs

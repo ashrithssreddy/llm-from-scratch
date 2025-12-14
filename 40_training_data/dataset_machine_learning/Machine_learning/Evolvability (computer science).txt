@@ -1,0 +1,55 @@
+The term evolvability is used for a recent framework of computational learning introduced by Leslie Valiant in his paper of the same name and described below. The aim of this theory is to model biological evolution and categorize which types of mechanisms are evolvable. Evolution is an extension of PAC learning and learning from statistical queries.
+
+General framework
+
+Let F_n\, and R_n\, be collections of functions on n\, variables. Given an ideal function f \in F_n, the goal is to find by local search a representation r \in R_n that closely approximates f\,. This closeness is measured by the performance \operatorname{Perf}(f,r) of r\, with respect to f\,.
+
+As is the case in the biological world, there is a difference between genotype and phenotype. In general, there can be multiple representations (genotypes) that correspond to the same function (phenotype). That is, for some r,r' \in R_n, with r \neq r'\,, still r(x) = r'(x)\, for all x \in X_n. However, this need not be the case. The goal then, is to find a representation that closely matches the phenotype of the ideal function, and the spirit of the local search is to allow only small changes in the genotype. Let the neighborhood N(r)\, of a representation r\, be the set of possible mutations of r\,.
+
+For simplicity, consider Boolean functions on X_n = \{-1,1\}^n\,, and let D_n\, be a probability distribution on X_n\,. Define the performance in terms of this. Specifically,
+
+\operatorname{Perf}(f,r) = \sum_{x \in X_n} f(x) r(x) D_n(x).
+
+Note that \operatorname{Perf}(f,r) = \operatorname{Prob}(f(x)=r(x)) - \operatorname{Prob}(f(x) \neq r(x)). In general, for non-Boolean functions, the performance will not correspond directly to the probability that the functions agree, although it will have some relationship.
+
+Throughout an organism's life, it will only experience a limited number of environments, so its performance cannot be determined exactly. The empirical performance is defined by
+
+\operatorname{Perf}_s(f,r) = \frac{1}{s} \sum_{x \in S} f(x)r(x),
+
+where S\, is a multiset of s\, independent selections from X_n\, according to D_n\,. If s\, is large enough, evidently \operatorname{Perf}_s(f,r) will be close to the actual performance \operatorname{Perf}(f,r).
+
+Given an ideal function f \in F_n, initial representation r \in R_n, sample size s\,, and tolerance t\,, the mutator \operatorname{Mut}(f,r,s,t) is a random variable defined as follows. Each r' \in N(r) is classified as beneficial, neutral, or deleterious, depending on its empirical performance. Specifically,
+
+r'\, is a beneficial mutation if \operatorname{Perf}_s(f,r') - \operatorname{Perf}_s(f,r) \geq t;
+
+r'\, is a neutral mutation if -t ;
+
+r'\, is a deleterious mutation if \operatorname{Perf}_s(f,r') - \operatorname{Perf}_s(f,r) \leq -t.
+
+If there are any beneficial mutations, then \operatorname{Mut}(f,r,s,t) is equal to one of these at random. If there are no beneficial mutations, then \operatorname{Mut}(f,r,s,t) is equal to a random neutral mutation. In light of the similarity to biology, r\, itself is required to be available as a mutation, so there will always be at least one neutral mutation.
+
+The intention of this definition is that at each stage of evolution, all possible mutations of the current genome are tested in the environment. Out of the ones who thrive, or at least survive, one is chosen to be the candidate for the next stage. Given r_0 \in R_n, we define the sequence r_0,r_1,r_2,\ldots by r_{i+1} = \operatorname{Mut}(f,r_i,s,t). Thus r_g\, is a random variable representing what r_0\, has evolved to after g\, generations.
+
+Let F\, be a class of functions, R\, be a class of representations, and D\, a class of distributions on X\,. We say that F\, is evolvable by R\, over D\, if there exists polynomials p(\cdot,\cdot), s(\cdot,\cdot), t(\cdot,\cdot), and g(\cdot,\cdot) such that for all n\, and all \epsilon > 0\,, for all ideal functions f \in F_n and representations r_0 \in R_n, with probability at least 1 - \epsilon\,,
+
+\operatorname{Perf}(f,r_{g(n,1/\epsilon)}) \geq 1-\epsilon,
+
+where the sizes of neighborhoods N(r)\, for r \in R_n\, are at most p(n,1/\epsilon)\,, the sample size is s(n,1/\epsilon)\,, the tolerance is t(1/n,\epsilon)\,, and the generation size is g(n,1/\epsilon)\,.
+
+F\, is evolvable over D\, if it is evolvable by some R\, over D\,.
+
+F\, is evolvable if it is evolvable over all distributions D\,.
+
+Results
+
+The class of conjunctions and the class of disjunctions are evolvable over the uniform distribution for short conjunctions and disjunctions, respectively.
+
+The class of parity functions (which evaluate to the parity of the number of true literals in a given subset of literals) are not evolvable, even for the uniform distribution.
+
+Evolvability implies PAC learnability.
+
+References
+
+{{citation|first=L. G.|last=Valiant|authorlink=Leslie Valiant|title=Evolvability|year=2006|id=}}.
+
+Category:Machine learning

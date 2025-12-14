@@ -1,0 +1,79 @@
+The Fowlkes–Mallows index  is an external evaluation method that is used to determine the similarity between two clusterings (clusters obtained after a clustering algorithm), and also a metric to measure confusion matrices. This measure of similarity could be either between two hierarchical clusterings or a clustering and a benchmark classification. A higher value for the Fowlkes–Mallows index indicates a greater similarity between the clusters and the benchmark classifications. It was invented by Bell Labs statisticians Edward Fowlkes and Collin Mallows in 1983.
+
+Preliminaries
+
+The Fowlkes–Mallows index, when results of two clustering algorithms are used to evaluate the results, is defined as
+
+FM = \sqrt{ PPV \cdot TPR}= \sqrt{ \frac {TP}{TP+FP} \cdot \frac{TP}{TP+FN}  }
+
+where  TP is the number of true positives, FP is the number of false positives, and FN is the number of false negatives. TPR is the true positive rate, also called sensitivity or recall, and PPV is the positive predictive rate, also known as precision.
+
+The minimum possible value of the Fowlkes–Mallows index is 0, which corresponds to the worst binary classification possible, where all the elements have been misclassified. And the maximum possible value of the Fowlkes–Mallows index is 1, which corresponds to the best binary classification possible, where all the elements have been perfectly classified.
+
+Definition
+
+Consider two hierarchical clusterings of n objects labeled A_1 and A_2. The trees A_1 and A_2 can be cut to produce k=2,\ldots,n-1 clusters for each tree (by either selecting clusters at a particular height of the tree or setting different strength of the hierarchical clustering). For each value of k, the following table can then be created
+
+M=[m_{i,j}]  \qquad   (i=1,\ldots,k \text{ and } j=1,\ldots,k)
+
+where m_{i,j} is of objects common between the ith cluster of A_1 and jth cluster of A_2. The Fowlkes–Mallows index for the specific value of k is then defined as
+
+B_k=\frac{T_k}{\sqrt{P_kQ_k}}
+
+where
+
+T_k=\sum_{i=1}^{k}\sum_{j=1}^{k}m_{i,j}^2-n
+
+P_k=\sum_{i=1}^{k}(\sum_{j=1}^{k}m_{i,j})^2-n
+
+Q_k=\sum_{j=1}^{k}(\sum_{i=1}^{k}m_{i,j})^2-n
+
+B_k can then be calculated for every value of k and the similarity between the two clusterings can be shown by plotting B_k versus k. For each k we have 0 \le B_k \le 1.
+
+Fowlkes–Mallows index can also be defined based on the number of points that are common or uncommon in the two hierarchical clusterings. If we define
+
+TP as the number of pairs of points that are present in the same cluster in both A_1 and A_2.
+
+FP as the number of  pairs of points that are present in the same cluster in A_1 but not in A_2.
+
+FN as the number of pairs of points that are present in the same cluster in A_2 but not in A_1.
+
+TN as the number of pairs of points that are in different clusters in both A_1 and A_2.
+
+Each pair of points is counted in exactly one of TP, FP, FN, or TN, so the sum of these equals the total number of pairs:
+
+TP+FP+FN+TN = {n\choose 2} = \frac{n(n-1)}{2}
+
+The Fowlkes–Mallows index for two clusterings can be defined as
+
+FM = \sqrt{ PPV \cdot TPR} = \sqrt{ \frac {TP}{TP+FP} \cdot \frac{TP}{TP+FN}  }
+
+where  TP is the number of true positives, FP is the number of false positives, and FN is the number of false negatives.
+
+TPR is the true positive rate, also called sensitivity or recall, and PPV is the positive predictive rate, also known as precision.
+
+The Fowlkes–Mallows index is the geometric mean of precision and recall.
+
+Discussion
+
+Since the index is directly proportional to the number of true positives, a higher index means greater similarity between the two clusterings used to determine the index. One basic way to test the validity of this index is to compare two clusterings that are unrelated to each other. Fowlkes and Mallows showed that on using two unrelated clusterings, the value of this index approaches zero as the number of total data points chosen for clustering increase; whereas the value for the Rand index for the same data quickly approaches 1 making Fowlkes–Mallows index a much more accurate representation for unrelated data. This index also performs well if noise is added to an existing dataset and their similarity compared. Fowlkes and Mallows showed that the value of the index decreases as the component of the noise increases. The index also showed similarity even when the noisy dataset had a different number of clusters than the clusters of the original dataset. Thus making it a reliable tool for measuring similarity between two clusters.
+
+Further reading
+
+See also
+
+F1 score
+
+Matthews correlation coefficient
+
+Confusion matrix
+
+References
+
+External links
+
+Implementation of Fowlkes–Mallows index  in R.
+
+Category:Clustering criteria
+
+Category:Bell Labs

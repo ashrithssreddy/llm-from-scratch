@@ -1,0 +1,65 @@
+In the mathematical theory of random processes, the Markov chain central limit theorem has a conclusion somewhat similar in form to that of the classic central limit theorem (CLT) of probability theory, but the quantity in the role taken by the variance in the classic CLT has a more complicated definition. See also the general form of Bienaymé's identity.
+
+Statement
+
+Suppose that:
+
+the sequence  X_1,X_2,X_3,\ldots  of random elements of some set is a Markov chain that has a stationary probability distribution; and
+
+the initial distribution of the process, i.e. the distribution of  X_1, is the stationary distribution, so that  X_1,X_2,X_3,\ldots are identically distributed. In the classic central limit theorem these random variables would be assumed to be independent, but here we have only the weaker assumption that the process has the Markov property; and
+
+g is some (measurable) real-valued function for which  \operatorname{var}(g(X_1))
+
+Now let
+
+\begin{align}
+
+\mu & = \operatorname E(g(X_1)), \\
+
+\widehat\mu_n & = \frac 1 n \sum_{k=1}^n g(X_k)\\
+
+\sigma^2 & := \lim_{n\to \infty} \operatorname{var}(\sqrt{n}\widehat\mu_n) = \lim_{n\to \infty} n \operatorname{var}(\widehat\mu_n) = \operatorname{var}(g(X_1)) + 2\sum_{k=1}^\infty \operatorname{cov}( g(X_1), g(X_{1+k})).
+
+\end{align}
+
+Then as  n \to\infty, we have
+
+\sqrt{n} (\hat{\mu}_n - \mu) \ \xrightarrow{\mathcal{D}} \ \text{Normal}(0, \sigma^2),
+
+where the decorated arrow indicates convergence in distribution.
+
+Monte Carlo Setting
+
+The Markov chain central limit theorem can be guaranteed for functionals of general state space Markov chains under certain conditions. In particular, this can be done with a focus on Monte Carlo settings. An example of the application in a MCMC (Markov Chain Monte Carlo) setting is the following:
+
+Consider a simple hard spheres model on a grid. Suppose X = \{1, \ldots, n_1\} \times \{1, \ldots, n_2 \} \subseteq Z^2. A proper configuration on X consists of coloring each point either black or white in such a way that no two adjacent points are white. Let \chi denote the set of all proper configurations on X, N_{\chi}(n_1, n_2) be the total number of proper configurations and π be the uniform distribution on \chi so that each proper configuration is equally likely. Suppose our goal is to calculate the typical number of white points in a proper configuration; that is, if W(x) is the number of white points in x \in \chi then we want the value of
+
+E_{\pi}W=\sum_{x \in \chi}\frac{W(x)}{N_\chi\bigl(n_1,n_2\bigr)}
+
+If n_1 and n_2 are even moderately large then we will have to resort to an approximation to E_{\pi}W . Consider the following Markov chain on \chi. Fix p \in (0, 1) and set X_1 = x_1 where x_1 \in \chi is an arbitrary proper configuration. Randomly choose a point (x, y) \in X and independently draw U \sim \mathrm{Uniform}(0, 1). If u \le p and all of the adjacent points are black then color (x, y) white leaving all other points alone. Otherwise, color (x, y) black and leave all other points alone. Call the resulting configuration X_1. Continuing in this fashion yields a Harris ergodic Markov chain \{X_1 , X_2 , X_3 , \ldots\} having \pi as its invariant distribution. It is now a simple matter to estimate E_{\pi} W with \overline{w_n}=\sum_{i=1}^{n} W(X_i)/n. Also, since \chi is finite (albeit potentially large) it is well known that X will converge exponentially fast to \pi which implies that a CLT holds for \overline{w_n}.
+
+Implications
+
+Not taking into account the additional terms in the variance which stem from correlations (e.g. serial correlations in markov chain monte carlo simulations) can result in the problem of pseudoreplication when computing e.g. the confidence intervals for the sample mean.
+
+References
+
+Sources
+
+Gordin, M. I. and Lifšic, B. A. (1978). "Central limit theorem for stationary Markov processes." Soviet Mathematics, Doklady, 19, 392–394. (English translation of Russian original).
+
+Geyer, Charles J. (2011). "Introduction to MCMC." In Handbook of Markov Chain Monte Carlo, edited by S. P. Brooks, A. E. Gelman, G. L. Jones, and X. L. Meng. Chapman & Hall/CRC, Boca Raton, pp.&nbsp;3–48.
+
+Category:Markov processes
+
+Category:Markov models
+
+Category:Stochastic processes
+
+Category:Stochastic models
+
+Category:Theorems in probability theory
+
+Category:Asymptotic theory (statistics)
+
+Category:Normal distribution

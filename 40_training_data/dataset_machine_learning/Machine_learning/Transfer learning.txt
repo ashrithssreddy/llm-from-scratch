@@ -1,0 +1,51 @@
+Transfer learning (TL) is a technique in machine learning (ML) in which knowledge learned from a task is re-used in order to boost performance on a related task. For example, for image classification, knowledge gained while learning to recognize cars could be applied when trying to recognize trucks. This topic is related to the psychological literature on transfer of learning, although practical ties between the two fields are limited. Reusing or transferring information from previously learned tasks to new tasks has the potential to significantly improve learning efficiency.
+
+Since transfer learning makes use of training with multiple objective functions it is related to cost-sensitive machine learning and multi-objective optimization.
+
+History
+
+In 1976, Bozinovski and Fulgosi published a paper addressing transfer learning in neural network training. The paper gives a mathematical and geometrical model of the topic. In 1981, a report considered the application of transfer learning to a dataset of images representing letters of computer terminals, experimentally demonstrating positive and negative transfer learning.
+
+In 1992, Lorien Pratt formulated the discriminability-based transfer (DBT) algorithm.
+
+By 1998, the field had advanced to include multi-task learning, along with more formal theoretical foundations. Influential publications on transfer learning include the book Learning to Learn in 1998, a 2009 survey and a 2019 survey.
+
+Ng said in his NIPS 2016 tutorial that TL would become the next driver of machine learning commercial success after supervised learning.
+
+In the 2020 paper, "Rethinking Pre-Training and self-training", Zoph et al. reported that pre-training can hurt accuracy, and advocate self-training instead.
+
+Definition
+
+The definition of transfer learning is given in terms of domains and tasks. A domain \mathcal{D} consists of: a feature space \mathcal{X} and a marginal probability distribution P(X), where X = \{x_1,...,x_n\}  \in \mathcal{X}. Given a specific domain, \mathcal{D} = \{\mathcal{X}, P(X)\}, a task consists of two components: a label space \mathcal{Y} and an objective predictive function f:\mathcal{X} \rightarrow \mathcal{Y}  . The function f is used to predict the corresponding label f(x) of a new instance x. This task, denoted by \mathcal{T} = \{\mathcal{Y}, f(x)\}, is learned from the training data consisting of pairs \{x_i, y_i\}, where x_i \in \mathcal{X} and y_i \in \mathcal{Y}.
+
+Given a source domain \mathcal{D}_S and learning task \mathcal{T}_S, a target domain \mathcal{D}_T and learning task \mathcal{T}_T, where \mathcal{D}_S \neq \mathcal{D}_T, or \mathcal{T}_S \neq \mathcal{T}_T, transfer learning aims to help improve the learning of the target predictive function f_T (\cdot) in \mathcal{D}_T using the knowledge in \mathcal{D}_S and \mathcal{T}_S. and Bayesian networks. Transfer learning has been applied to cancer subtype discovery, building utilization, general game playing, text classification, digit recognition, medical imaging and spam filtering.
+
+In 2020, it was discovered that, due to their similar physical natures, transfer learning is possible between electromyographic (EMG) signals from the muscles and classifying the behaviors of electroencephalographic (EEG) brainwaves, from the gesture recognition domain to the mental state recognition domain. It was noted that this relationship worked in both directions, showing that electroencephalographic can likewise be used to classify EMG. The experiments noted that the accuracy of neural networks and convolutional neural networks were improved through transfer learning both prior to any learning (compared to standard random weight distribution) and at the end of the learning process (asymptote). That is, results are improved by exposure to another domain. Moreover, the end-user of a pre-trained model can change the structure of fully-connected layers to improve performance.
+
+See also
+
+Crossover (genetic algorithm)
+
+Domain adaptation
+
+General game playing
+
+Multi-task learning
+
+Multitask optimization
+
+Transfer of learning in educational psychology
+
+Zero-shot learning
+
+Feature learning
+
+external validity
+
+References
+
+Sources
+
+{{cite book|url=|title=Learning to Learn|last1=Thrun|first1=Sebastian|last2=Pratt|first2=Lorien|date=6 December 2012|publisher=Springer Science & Business Media|isbn=978-1-4615-5529-2}}
+
+Category:Machine learning

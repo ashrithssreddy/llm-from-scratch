@@ -1,0 +1,49 @@
+The regression (or regressive) fallacy is an informal fallacy. It assumes that something has returned to normal because of corrective actions taken while it was abnormal. This fails to account for natural fluctuations. It is frequently a special kind of the post hoc fallacy.
+
+Explanation
+
+Things like golf scores, the earth's temperature, and chronic back pain fluctuate naturally and usually regress toward the mean. The logical flaw is to make predictions that expect exceptional results to continue as if they were average (see Representativeness heuristic). People are most likely to take action when variance is at its peak. Then after results become more normal they believe that their action was the cause of the change when in fact it was not causal.
+
+This use of the word "regression" was coined by Sir Francis Galton in a study from 1885 called "Regression Toward Mediocrity in Hereditary Stature". He showed that the height of children from very short or very tall parents would move toward the average. In fact, in any situation where two variables are less than perfectly correlated, an exceptional score on one variable may not be matched by an equally exceptional score on the other variable. The imperfect correlation between parents and children (height is not entirely heritable) means that the distribution of heights of their children will be centered somewhere between the average of the parents and the average of the population as whole. Thus, any single child can be more extreme than the parents, but the odds are against it.
+
+Examples
+
+When his pain got worse, he went to a doctor, after which the pain subsided a little. Therefore, he benefited from the doctor's treatment.
+
+The pain subsiding a little after it has gotten worse is more easily explained by regression toward the mean. Assuming the pain relief was caused by the doctor is fallacious.
+
+The student did exceptionally poorly last semester, so I punished him. He did much better this semester. Clearly, punishment is effective in improving students' grades.
+
+Often exceptional performances are followed by more normal performances, so the change in performance might better be explained by regression toward the mean. Incidentally, some experiments have shown that people may develop a systematic bias for punishment and against reward because of reasoning analogous to this example of the regression fallacy.
+
+The frequency of accidents on a road fell after a speed camera was installed. Therefore, the speed camera has improved road safety.
+
+Speed cameras are often installed after a road incurs an exceptionally high number of accidents, and this value usually falls (regression to mean) immediately afterward. Many speed camera proponents attribute this fall in accidents to the speed camera, without observing the overall trend.
+
+Some authors use the Sports Illustrated cover jinx as an example of a regression effect: extremely good performances are likely to be followed by less extreme ones, and athletes are chosen to appear on the cover of Sports Illustrated only after extreme performances. Attributing this to a "jinx" rather than regression, as some athletes reportedly believe, is an example of committing the regression fallacy.
+
+Misapplication
+
+On the other hand, dismissing valid explanations can lead to a worse situation. For example:
+
+After the Western Allies invaded Normandy, creating a second major front, German control of Europe waned. Clearly, the combination of the Western Allies and the USSR drove the Germans back.
+
+Fallacious evaluation: "Given that the counterattacks against Germany occurred only after they had conquered the greatest amount of territory under their control, regression toward the mean can explain the retreat of German forces from occupied territories as a purely random fluctuation that would have happened without any intervention on the part of the USSR or the Western Allies." However, this was not the case. The reason is that political power and occupation of territories is not primarily determined by random events, making the concept of regression toward the mean inapplicable (on the large scale).
+
+In essence, misapplication of regression toward the mean can reduce all events to a just-so story, without cause or effect. (Such misapplication takes as a premise that all events are random, as they must be for the concept of regression toward the mean to be validly applied.)
+
+Notes
+
+References
+
+External links
+
+Fallacy files: Regression fallacy
+
+Category:Causal fallacies
+
+Category:Cognitive biases
+
+Category:Misuse of statistics
+
+Category:Pseudoscience

@@ -1,0 +1,121 @@
+Bootstrap aggregating, also called bagging (from bootstrap aggregating) or bootstrapping, is a machine learning (ML) ensemble meta-algorithm designed to improve the stability and accuracy of ML classification and regression algorithms. It also reduces variance and overfitting. Although it is usually applied to decision tree methods, it can be used with any type of method. Bagging is a special case of the ensemble averaging approach.
+
+Description of the technique
+
+Given a standard training set D of size n, bagging generates m new training sets D_i, each of size n', by sampling from D uniformly and with replacement. By sampling with replacement, some observations may be repeated in each D_i. If n'=n, then for large n the set D_i is expected to have the fraction (1 - 1/e) (~63.2%) of the unique samples of D, the rest being duplicates. This kind of sample is known as a bootstrap sample. Sampling with replacement ensures each bootstrap is independent from its peers, as it does not depend on previous chosen samples when sampling. Then, m models are fitted using the above bootstrap samples and combined by averaging the output (for regression) or voting (for classification).
+
+Bagging leads to "improvements for unstable procedures", which include, for example, artificial neural networks, classification and regression trees, and subset selection in linear regression. On the other hand, it can mildly degrade the performance of stable methods such as k-nearest neighbors. They are primarily useful for classification as opposed to regression, which attempts to draw observed connections between statistical variables in a dataset. This makes random forests particularly useful in such fields as banking, healthcare, the stock market, and e-commerce where it is important to be able to predict future results based on past data. One of their applications would be as a useful tool for predicting cancer based on genetic factors, as seen in the above example.
+
+There are several important factors to consider when designing a random forest. If the trees in the random forests are too deep, overfitting can still occur due to over-specificity. If the forest is too large, the algorithm may become less efficient due to an increased runtime. Random forests also do not generally perform well when given sparse data with little variability.
+
+The algorithm may change significantly if there is a slight change to the data being bootstrapped and used within the forests. In other words, random forests are incredibly dependent on their datasets, changing these can drastically change the individual trees' structures.
+
+-
+
+Easy data preparation. Data is prepared by creating a bootstrap set and a certain number of decision trees to build a random forest that also utilizes feature selection, as mentioned in .
+
+Random Forests are more complex to implement than lone decision trees or other algorithms. This is because they take extra steps for bagging, as well as the need for recursion in order to produce an entire forest, which complicates implementation. Because of this, it requires much more computational power and computational resources.
+
+-
+
+Consisting of multiple decision trees, forests are able to more accurately make predictions than single trees.
+
+Requires much more time to train the data compared to decision trees. Having a large forest can quickly begin to decrease the speed in which one's program operates because it has to traverse much more data even though each tree is using a smaller set of samples and features.
+
+-
+
+Works well with non-linear data. As most tree based algorithms use linear splits, using an ensemble of a set of trees works better than using a single tree on data that has nonlinear properties (i.e. most real world distributions). Working well with non-linear data is a huge advantage because other data mining techniques such as single decision trees do not handle this as well.
+
+Much harder to interpret than single trees.  A single tree can be walked by hand (by a human) leading to a somewhat "explainable" understanding for the analyst of what the tree is actually doing.  As the number of trees and schemes grow for ensembling those trees into predictions, this reviewing becomes much more difficult if not impossible.
+
+-
+
+There is a lower risk of overfitting and runs efficiently on even large datasets. This is the result of the random forest's use of bagging in conjunction with random feature selection.
+
+Does not predict beyond the range of the training data. This is a con because while bagging is often effective, not all of the data is being considered, therefore it cannot predict an entire dataset.
+
+-
+
+The random forest classifier operates with a high accuracy and speed. Random forests are much faster than decision trees because of using a smaller dataset.
+
+To recreate specific results, it is necessary to keep track of the exact random seed used to generate the bootstrap sets. This may be important when collecting data for research or within a data mining class. Using random seeds is essential to the random forests, but can make it hard to support claims based on forests if there is a failure to record the seeds.
+
+-
+
+Deals with missing data and datasets with many outliers well. They deal with this by using binning, or by grouping values together to avoid values that are terribly far apart.
+
+}
+
+Algorithm (classification)
+
+For classification, use a training set D, Inducer I and the number of bootstrap samples m as input. Generate a classifier C^* as output
+
+Create m new training sets  D_i, from D with replacement
+
+Classifier C_i is built from each set D_i using I to determine the classification of set D_i
+
+Finally classifier C^* is generated by using the previously created set of classifiers C_i on the original dataset D, the classification predicted most often by the sub-classifiers C_i is the final classification
+
+for i = 1 to m {
+
+D' = bootstrap sample from D    (sample with replacement)
+
+Ci = I(D')
+
+}
+
+C*(x) = argmax #{i:Ci(x)=y}         (most often predicted label y)
+
+y∈Y
+
+Example: ozone data
+
+To illustrate the basic principles of bagging, below is an analysis on the relationship between ozone and temperature (data from Rousseeuw and Leroy (1986), analysis done in R).
+
+The relationship between temperature and ozone appears to be nonlinear in this dataset, based on the scatter plot. To mathematically describe this relationship, LOESS smoothers (with bandwidth 0.5) are used. Rather than building a single smoother for the complete dataset, 100 bootstrap samples were drawn. Each sample is composed of a random subset of the original data and maintains a semblance of the master set's distribution and variability. For each bootstrap sample, a LOESS smoother was fit. Predictions from these 100 smoothers were then made across the range of the data. The black lines represent these initial predictions. The lines lack agreement in their predictions and tend to overfit their data points: evident by the wobbly flow of the lines.
+
+By taking the average of 100 smoothers, each corresponding to a subset of the original dataset, we arrive at one bagged predictor (red line). The red line's flow is stable and does not overly conform to any data point(s).
+
+Advantages and disadvantages
+
+Advantages:
+
+Many weak learners aggregated typically outperform a single learner over the entire set, and have less overfit
+
+Reduces variance in high-variance low-bias weak learner, which can improve efficiency (statistics)
+
+Can be performed in parallel, as each separate bootstrap can be processed on its own before aggregation.
+
+Disadvantages:
+
+For a weak learner with high bias, bagging will also carry high bias into its aggregate
+
+Bootstrap aggregating was proposed by Leo Breiman who also coined the abbreviated term "bagging" (bootstrap aggregating). Breiman developed the concept of bagging in 1994 to improve classification by combining classifications of randomly generated training sets. He argued, "If perturbing the learning set can cause significant changes in the predictor constructed, then bagging can improve accuracy".
+
+See also
+
+Boosting (machine learning)
+
+Bootstrapping (statistics)
+
+Cross-validation (statistics)
+
+Out-of-bag error
+
+Random forest
+
+Random subspace method (attribute bagging)
+
+Resampled efficient frontier
+
+Predictive analysis: Classification and regression trees
+
+References
+
+Further reading
+
+Category:Ensemble learning
+
+Category:Machine learning algorithms
+
+Category:Computational statistics

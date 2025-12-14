@@ -1,0 +1,3 @@
+REDIRECT Loss_function#Quadratic loss function
+
+Category:Loss functions

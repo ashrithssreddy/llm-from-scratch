@@ -1,0 +1,63 @@
+{{Infobox company
+
+name                = Angoss Software Corporation
+
+logo                =
+
+type                = Private
+
+foundation          =
+
+location            = Toronto, Ontario, Canada
+
+area_served         = United StatesUK
+
+num_employees       = 150 (2015)
+
+industry            = Software
+
+homepage            =
+
+}}
+
+Angoss Software Corporation, headquartered in Toronto, Ontario, Canada, with offices in the United States and UK, acquired by Datawatch and now owned by Altair, was a provider of predictive analytics systems through software licensing and services. Angoss' customers represent industries including finance, insurance, mutual funds, retail, health sciences, telecom and technology. The company was founded in 1984, and publicly traded on the TSX Venture Exchange from 2008-2013 under the ticker symbol ANC.
+
+In June 2013, the private equity firm Peterson Partners acquired Angoss for $8.4 million.
+
+Software
+
+KnowledgeREADER is an integrated customer intelligence product combining visual text discovery and predictive analytics for customer experience management.
+
+KnowledgeSEEKER is a data mining product. Its features include data profiling, data visualization and decision tree analysis. It was first released in 1990.
+
+KnowledgeSTUDIO is a data mining and predictive analytics suite for the model development and deployment cycle. Its features include data profiling, data visualization, decision tree analysis, predictive modeling, implementation, scoring, validation, monitoring and scorecard development.
+
+KnowledgeEXCELERATOR is a visual data discovery software and prediction tool for business analysts and knowledge workers.
+
+StrategyBUILDER is an add-on module for KnowledgeSEEKER and KnowledgeSTUDIO and is a product to design, verify, and deploy predictive and business rules.
+
+See also
+
+List of statistical packages
+
+Predictive analytics
+
+See also
+
+FICO
+
+References
+
+External links
+
+Category:Companies formerly listed on the TSX Venture Exchange
+
+Category:Software companies of Canada
+
+Category:Companies established in 1993
+
+Category:Data mining and machine learning software
+
+Category:1993 establishments in Canada
+
+Category:Software companies established in 1993

@@ -1,0 +1,43 @@
+Audio inpainting (also known as audio interpolation) is an audio restoration task which deals with the reconstruction of missing or corrupted portions of a digital audio signal. Inpainting techniques are employed when parts of the audio have been lost due to various factors such as transmission errors, data corruption or errors during recording.
+
+The goal of audio inpainting is to fill in the gaps (i.e., the missing portions) in the audio signal seamlessly, making the reconstructed portions indistinguishable from the original content and avoiding the introduction of audible distortions or alterations. and spectral
+
+In this case, the goal of the reconstruction is to recover the lost information exactly.
+
+In long inpainting instead, with gaps in the order of hundreds of milliseconds or even seconds, this goal becomes unrealistic, since restoration techniques cannot rely on local information.
+
+Therefore, besides providing a coherent reconstruction, the algorithms need to generate new information that has to be semantically compatible with the surrounding context (i.e., the audio signal surrounding the gaps).
+
+The case of medium duration gaps lays between short and long inpainting.
+
+It refers to the reconstruction of tens of millisecond of missing data, a scale where the non-stationary characteristic of audio already becomes important.
+
+Definition
+
+Consider a digital audio signal \mathbf{x}. A corrupted version of \mathbf{x}, which is the audio signal presenting missing gaps to be reconstructed, can be defined as \mathbf{\tilde{x}} = \mathbf{m} \circ \mathbf{x}, where \mathbf{m} is a binary mask encoding the reliable or missing samples of \mathbf{x}, and \circ represents the element-wise product. the reconstructed audio signal can be found through an optimization problem that is formally expressed as
+
+\mathbf{\hat{x}}^* = \underset{\hat{\mathbf{X}}}{\text{argmin}} ~ L(\mathbf{m} \circ\mathbf{\hat{x}}, \mathbf{\tilde{x}}) + R(\mathbf{\hat{x}}).
+
+In particular, \mathbf{\hat{x}}^* is the optimal reconstructed audio signal and L is a distance measure term that computes the reconstruction accuracy between the corrupted audio signal and the estimated one. These methods interpolate or extrapolate the missing samples based on the neighboring values, by using mathematical functions to approximate the missing data. In particular, in autoregressive models the missing samples are completed through linear prediction. The autoregressive coefficients necessary for this prediction are learned from the surrounding audio data, specifically from the data adjacent to each gap. In this context, the aim is to find the sparse representation of the missing section of the signal that most accurately matches the surrounding, unaffected signal. or similarity graphs
+
+In GAN-based inpainting methods the generator acts as a context encoder and produces a plausible completion for the gap only given the available information surrounding it.
+
+Nonetheless, some works  demonstrated that, capturing the essence of an audio signal is also possible using only a few tens of seconds from a single training sample. This is done by overfitting a generative neural network to a single training audio signal. In this way, researchers were able to perform audio inpainting without exploiting large datasets.
+
+See also
+
+Audio forensics
+
+Audio restoration
+
+Image inpainting
+
+Packet loss concealment
+
+References
+
+Category:Machine learning
+
+Category:Deep learning
+
+Category:Digital signal processing

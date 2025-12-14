@@ -1,0 +1,85 @@
+{{Infobox scientist
+
+name                    = Ernst Dickmanns
+
+image =
+
+caption                 =
+
+birth_date              =
+
+birth_place             = Niederkassel, Germany
+
+death_date              =
+
+death_place             =
+
+residence               =
+
+nationality             = German
+
+field                   = Robotics and Artificial Intelligence
+
+work_institution        = Marshall Space Flight Center,  Bundeswehr University Munich
+
+alma_mater              = RWTH Aachen University
+
+doctoral_advisor        =
+
+known_for               = Autonomous car
+
+}}
+
+Ernst Dieter Dickmanns is a German pioneer of dynamic computer vision and of driverless cars. Dickmanns has been a professor at Bundeswehr University Munich (1975–2001), and visiting professor to Caltech and to MIT, teaching courses on "dynamic vision".
+
+Biography
+
+Dickmanns was born in 1936. He studied aerospace and aeronautics at RWTH Aachen (1956–1961), and control engineering at Princeton University (1964/65); from 1961 to 1975 he was associated with the German Aero-Space Research Establishment (now DLR) Oberpfaffenhofen, working in the fields of flight dynamics and trajectory optimization. In 1971/72 he spent a Post-Doc Research Associateship with the NASA-Marshall Space Flight Center, Huntsville (orbiter re-entry). From 1975 to 2001 he was with UniBw Munich, where he initiated the 'Institut fuer Flugmechanik und Systemdynamik' (IFS), the Institut fuer die 'Technik Autonomer Systeme' (TAS), and the research activities in machine vision for vehicle guidance.
+
+Pioneering work in autonomous driving
+
+In the early 1980s his team equipped a Mercedes-Benz van with cameras and other sensors. The 5-ton van was re-engineered that it was possible to control steering wheel, throttle, and brakes through computer commands based on real-time evaluation of image sequences. Software was written that translated the sensory data into appropriate driving commands. For safety reasons, initial experiments in Bavaria took place on streets without traffic. In 1986 the Robot Car "VaMoRs" managed to drive all by itself and by 1987 was capable of driving itself at speeds up to .
+
+One of the greatest challenges in high-speed autonomous driving arises through the rapidly changing visual street scenes. Back then, computers were much slower than they are today (~1% of 1%); therefore, sophisticated computer vision strategies were necessary to react in real time. The team of Dickmanns solved the problem through an innovative approach to dynamic vision. Spatiotemporal models were used right from the beginning, dubbed '4-D approach', which did not need storing previous images but nonetheless was able to yield estimates of all 3-D position and velocity components. Attention control including artificial saccadic movements of the platform carrying the cameras allowed the system to focus its attention on the most relevant details of the visual input. Kalman filters have been extended to perspective imaging and were used to achieve robust autonomous driving even in presence of noise and uncertainty. Feedback of prediction errors allowed bypassing the (ill-conditioned) inversion of perspective projection by least-squares parameter fits.
+
+When in 1986/83 the EUREKA-project 'PROgraMme for a European Traffic of Highest Efficiency and Unprecedented Safety' (PROMETHEUS) was initiated by the European car manufacturing industry (funding in the range of several hundred million Euros), the initially planned autonomous lateral guidance by buried cables was dropped and substituted by the much more flexible machine vision approach proposed by Dickmanns, and partially encouraged by his successes. Most of the major car companies participated; so did Dickmanns and his team in cooperation with the Daimler-Benz AG. Substantial progress was made in the following 7 years. In particular, Dickmanns' robot cars learned to drive in traffic under various conditions. An accompanying human driver with a "red button" made sure the robot vehicle could not get out of control and become a danger to the public. Since 1992, driving in public traffic was standard as final step in real-world testing. Several dozen Transputers, a special breed of parallel computers, were used to deal with the (by 1990s standards) enormous computational demands.
+
+Two culmination points were achieved in 1994/95, when Dickmanns´ re-engineered autonomous  S-Class Mercedes-Benz performed international demonstrations. The first was the final presentation of the PROMETHEUS project in October 1994 on Autoroute 1 near the airport Charles-de-Gaulle in Paris. With guests on board, the twin vehicles of Daimler-Benz (VITA-2) and UniBwM (VaMP) drove more than  on the three-lane highway in standard heavy traffic at speeds up to . Driving in free lanes, convoy driving with distance keeping depending on speed, and lane changes left and right with autonomous passing have been demonstrated; the latter required interpreting the road scene also in the rear hemisphere. Two cameras with different focal lengths for each hemisphere have been used in parallel for this purpose.
+
+The second culmination point was a  trip in the fall of 1995 from Munich in Bavaria to Odense in Denmark to a project meeting and back. Both longitudinal and lateral guidance were performed autonomously by vision. On highways, the robot achieved speeds exceeding  (there is no general speed limit on the Autobahn). Publications from Dickmann's research group indicate a mean autonomously driven  distance without resets of ~; the longest autonomously driven stretch reached . More than half of the resets required were achieved autonomously (no human intervention). This is particularly impressive considering that the system used black-and-white video-cameras and did not model situations like road construction sites with yellow lane markings; lane-changes at over , and other traffic with more than  relative speed have been handled. In total, 95% autonomous driving (by distance) was achieved.
+
+In the years 1994 to 2004 the elder 5-ton van 'VaMoRs' was used to develop the capabilities needed for driving on networks of minor (also unsealed) roads and for cross-country driving including avoidance of negative obstacles like ditches. Turning off onto crossroads of unknown width and intersection angles required a big effort, but has been achieved with "Expectation-based, Multi-focal, Saccadic vision" (EMS-vision). This vertebrate-type vision uses animation capabilities based on knowledge about subject classes (including the autonomous vehicle itself) and their potential behaviour in certain situations. This rich background is used for control of gaze and attention as well as for locomotion.
+
+Beside ground vehicle guidance, also applications of the 4-D approach to dynamic vision for unmanned air vehicles (conventional aircraft and helicopters) have been investigated. Autonomous visual landing approaches and landings have been demonstrated in hardware-in-the-loop simulations with visual/inertial data fusion. Real-world autonomous visual landing approaches till shortly before touchdown have been performed in 1992 with the twin-propeller aircraft Dornier 128 of the University of Brunswick at the airport there.
+
+Another success of this machine vision technology  was the first ever visually controlled grasping experiment of a free-floating object in weightlessness on board the Space Shuttle Columbia D2-mission in 1993 as part of the 'Rotex'-experiment of DLR.
+
+See also
+
+Driverless car
+
+References
+
+External links
+
+Numerous research papers of Ernst Dickmanns (Google Scholar)
+
+Dynamic Vision by Ernst D. Dickmanns
+
+Category:1936 births
+
+Category:Living people
+
+Category:People from Rhein-Sieg-Kreis
+
+Category:People from the Rhine Province
+
+Category:German artificial intelligence researchers
+
+Category:German computer scientists
+
+Category:Machine learning researchers
+
+Category:German roboticists
+
+Category:Academic staff of Bundeswehr University Munich

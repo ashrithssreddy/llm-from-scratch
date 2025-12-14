@@ -1,0 +1,59 @@
+Circular reporting, or false confirmation, is a situation in source criticism where a piece of information appears to come from multiple independent sources, but in reality comes from only one source. In many cases, the problem happens mistakenly through sloppy reporting or intelligence-gathering. However, the situation can also be intentionally contrived by the source or reporter as a way of reinforcing the widespread belief in its information.
+
+Circular reporting occurs in a variety of fields, including intelligence gathering,
+
+Examples
+
+1976 novel Roots
+
+Author Alex Haley grew up hearing the oral history that his family's first ancestor to enter the United States was a young man named Kunta Kinte, who lived near the Kamby Bolongo, or Gambia River, and was kidnapped into slavery when out gathering wood. As an adult, Haley researched his family genealogy for what would become the 1976 novel Roots: The Saga of an American Family, and he traveled to the Gambia in an attempt to confirm the family history of Kinte. Haley told the story of Kinte to a seminar of Gambian tribal experts, who searched for a griot—an oral historian—who might be able to confirm the story. Ultimately, Haley met a man named Kebba Fofana in the town of Juffure who was able to relate a story of Kunta Kinte that was strikingly similar to Haley's lifelong family history, an apparent confirmation that grounded Haley's novel (as well as the landmark 1977 miniseries adapted from the novel). After publication, however, it was discovered that griot oral histories were not reliable for dates before the 19th century, that Fofana was not a true griot, and that Fofana's confirmation of Haley's history was ultimately a retelling of the story Haley himself told Gambian experts.
+
+Iraq War
+
+In 2001, the Niger uranium forgeries, documents initially released by SISMI (the former military intelligence agency of Italy), seemed to depict an attempt made by Saddam Hussein in Iraq to purchase yellowcake uranium powder from Niger during the Iraq disarmament crisis. They were referenced by other intelligence agencies to convince their governments or public that such a purchase had taken place.
+
+In 2004, the Chairman of the US Senate Report on Pre-war Intelligence on Iraq told NBC's Tim Russert that a single informant, 'Curveball' "had really provided 98 percent of the assessment as to whether or not the Iraqis had a biological weapon." This was despite the fact that "nobody inside the U.S. government had ever actually spoken to the informant—except [for a single] Pentagon analyst, who concluded the man was an alcoholic and utterly useless as a source."
+
+Other examples
+
+In early 2012, a TV Tropes user named Tunafish claimed that a bug existed in Civilization that caused Gandhi to be much more aggressive. Tunafish did not provide any proof. The repetition of this false information led to the "Nuclear Gandhi" internet meme.
+
+In 2018, Shehroze Chaudhry was identified as an active member of the Islamic State who participated in the killing of several individuals, through reporting involving a New York Times podcast, among others. The podcast and other outlets referenced blog posts authored by Chaudhry starting in 2016. The podcast was taken by government officials and others as evidence of the crime; however, the original posts were unverified and later renounced by the author.
+
+On Wikipedia
+
+Wikipedia is sometimes criticized for being used as a source of circular reporting, particularly a variant where an unsourced claim in a Wikipedia article is repeated by a reliable source, often without citing the article; which is then added as a source to the claim on Wikipedia.
+
+History of citogenesis
+
+The first recorded use of the term citogenesis to describe this phenomenon was in November 2011, when Randall Munroe used it in an xkcd comic strip. The neologism is attributed as being a homophonic wordplay on 'cytogenesis', the formation, development and variation of biological cells.
+
+An article in the magazine Slate referenced the four-step process described in the comic, to raise awareness about citogenesis as facilitated by Wikipedia. This type of circular reporting has been described as particularly hard to catch because of the speed of revisions of modern webpages, and the lack of "as of" timestamps in citations and "last updated" timestamps on pages online.
+
+2008: A student arbitrarily added, "also known as....Brazilian Aardvarks" to the article on the coati, leading to subsequent commentary on the mammal that mentioned this nickname. Outlets repeating the nickname included The Independent, the Daily Express, the Metro, The Daily Telegraph, the Daily Mail, a book published by the University of Chicago, and a scholarly work published by the University of Cambridge.
+
+2008: A user by the name of "Lordvolton" (often mistakenly cited as Lordvoltron), added a fake "xeraflop" prefix to the Wikipedia page about floating point operations per second. It was then widely propagated in numerous sources.
+
+2009: The middle name "Wilhelm" was falsely added into Karl-Theodor zu Guttenberg's name. This was propagated by a raft of publications, including German and international press.
+
+2009: An incorrect release year of 1991 was added to the Wikipedia article of the Casio F-91W watch. The BBC repeated this in a 2011 article. Communication with primary sources repeatedly confirmed a 1989 release year, but because the BBC is usually a reliable secondary source, their use of 1991 made the misinformation difficult to remove. In 2019, KSNV cited this incident as another example of citogenesis. The correct year was only restored after that review, with the KSNV article becoming cited in the article to support restoring the 1989 release date.
+
+2014: A statement was anonymously added to the Wikipedia page on UK comedian Dave Gorman stating that he had "taken a career break for a sponsored hitchhike around the Pacific Rim countries". When this was questioned, an article published at a later date (September 2014) in The Northern Echo, a daily regional newspaper in North East England was cited as evidence. Gorman repudiated the claim in episode 3, season 4 of his UK television show Modern Life Is Goodish (first broadcast 22 November 2016).
+
+2022: A hoax article about Alan MacMasters, purported inventor of the toaster, was discovered to have been picked up in news media later used as citations.
+
+See also
+
+References
+
+Category:Causal fallacies
+
+Category:Communication of falsehoods
+
+Category:Criticism of journalism
+
+Category:Fake news
+
+Category:Literary criticism
+
+Category:Philosophical logic

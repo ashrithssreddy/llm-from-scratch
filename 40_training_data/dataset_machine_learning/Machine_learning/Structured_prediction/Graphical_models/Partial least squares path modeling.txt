@@ -1,0 +1,31 @@
+The partial least squares path modeling or partial least squares structural equation modeling (PLS-PM, PLS-SEM) is a method for structural equation modeling that allows estimation of complex cause-effect relationships in path models with latent variables.
+
+Overview
+
+PLS-PM
+
+is a component-based estimation approach that differs from the covariance-based structural equation modeling. Unlike covariance-based approaches to structural equation modeling, PLS-PM does not fit a common factor model to the data, it rather fits a composite model. In doing so, it maximizes the amount of variance explained (though what this means from a statistical point of view is unclear and PLS-PM users do not agree on how this goal might be achieved).
+
+In addition, by an adjustment PLS-PM is capable of consistently estimating certain parameters of common factor models as well, through an approach called consistent PLS-PM (PLSc-PM). A further related development is factor-based PLS-PM (PLSF), a variation of which employs PLSc-PM as a basis for the estimation of the factors in common factor models; this method significantly increases the number of common factor model parameters that can be estimated, effectively bridging the gap between classic PLS-PM and covariance‐based structural equation modeling.
+
+The PLS-PM structural equation model is composed of two sub-models: the measurement models and the structural model. The measurement models represent the relationships between the observed data and the latent variables. The structural model represents the relationships between the latent variables.
+
+An iterative algorithm solves the structural equation model by estimating the latent variables by using the measurement and structural model in alternating steps, hence the procedure's name, partial. The measurement model estimates the latent variables as a weighted sum of its manifest variables. The structural model estimates the latent variables by means of simple or multiple linear regression between the latent variables estimated by the measurement model. This algorithm repeats itself until convergence is achieved.
+
+PLS is viewed critically by several methodological researchers. A major point of contention has been the claim that PLS-PM can always be used with very small sample sizes. A recent study suggests that this claim is generally unjustified, and proposes two methods for minimum sample size estimation in PLS-PM. Another point of contention is the ad hoc way in which PLS-PM has been developed and the lack of analytic proofs to support its main feature: the sampling distribution of PLS-PM weights. However, PLS-PM is still considered preferable (over covariance‐based structural equation modeling) when it is unknown whether the data's nature is common factor- or composite-based.
+
+See also
+
+Partial least squares regression
+
+Principal component analysis
+
+Structural equation modeling
+
+References
+
+Category:Least squares
+
+Category:Graphical models
+
+Category:Structural equation models

@@ -1,0 +1,33 @@
+A hidden semi-Markov model (HSMM) is a statistical model with the same structure as a hidden Markov model except that the unobservable process is semi-Markov rather than Markov. This means that the probability of there being a change in the hidden state depends on the amount of time that has elapsed since entry into the current state. This is in contrast to hidden Markov models where there is a constant probability of changing state given survival in the state up to that time.
+
+For instance  modelled daily rainfall using a hidden semi-Markov model. If the underlying process (e.g. weather system) does not have a geometrically distributed duration, an HSMM may be more appropriate.
+
+Hidden semi-Markov models can be used in implementations of statistical parametric speech synthesis to model the probabilities of transitions between different states of encoded speech representations. They are often used along with other tools such artificial neural networks, connecting with other components of a full parametric speech synthesis system to generate the output waveforms.
+
+The model was first published by Leonard E. Baum and Ted Petrie in 1966.
+
+Statistical inference for hidden semi-Markov models is more difficult than in hidden Markov models, since algorithms like the Baum–Welch algorithm are not directly applicable, and must be adapted requiring more resources.
+
+See also
+
+Markov renewal process
+
+References
+
+Shun-Zheng Yu, "Hidden Semi-Markov Models: Theory, Algorithms and Applications", 1st Edition, 208 pages, Publisher: Elsevier, Nov. 2015 .
+
+Further reading
+
+.
+
+.
+
+.
+
+.
+
+External links
+
+Shun-Zheng Yu, HSMM – Online bibliography and Matlab source code
+
+Category:Hidden Markov models

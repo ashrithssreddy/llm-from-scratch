@@ -1,0 +1,267 @@
+) with a rectangular hole in the middle. Top-right: the original 2D manifold used to generate the 3D dataset. Bottom left and right: 2D recoveries of the manifold respectively using the LLE and Hessian LLE algorithms as implemented by the Modular Data Processing toolkit.]]
+
+Nonlinear dimensionality reduction, also known as manifold learning, is any of various related techniques that aim to project high-dimensional data, potentially existing across non-linear manifolds which cannot be adequately captured by linear decomposition methods, onto lower-dimensional latent manifolds, with the goal of either visualizing the data in the low-dimensional space, or learning the mapping (either from the high-dimensional space to the low-dimensional embedding or vice versa) itself. The techniques described below can be understood as generalizations of linear decomposition methods used for dimensionality reduction, such as singular value decomposition and principal component analysis.
+
+Applications of NLDR
+
+High dimensional data can be hard for machines to work with, requiring significant time and space for analysis. It also presents a challenge for humans, since it's hard to visualize or understand data in more than three dimensions. Reducing the dimensionality of a data set, while keeping its essential features relatively intact, can make algorithms more efficient and allow analysts to visualize trends and patterns.
+
+The reduced-dimensional representations of data are often referred to as "intrinsic variables". This description implies that these are the values from which the data was produced. For example, consider a dataset that contains images of a letter 'A', which has been scaled and rotated by varying amounts. Each image has 32×32 pixels. Each image can be represented as a vector of 1024 pixel values. Each row is a sample on a two-dimensional manifold in 1024-dimensional space (a Hamming space). The intrinsic dimensionality is two, because two variables (rotation and scale) were varied in order to produce the data. Information about the shape or look of a letter 'A' is not part of the intrinsic variables because it is the same in every instance. Nonlinear dimensionality reduction will discard the correlated information (the letter 'A') and recover only the varying information (rotation and scale). The image to the right shows sample images from this dataset (to save space, not all input images are shown), and a plot of the two-dimensional points that results from using a NLDR algorithm (in this case, Manifold Sculpting was used) to reduce the data into just two dimensions.
+
+By comparison, if principal component analysis, which is a linear dimensionality reduction algorithm, is used to reduce this same dataset into two dimensions, the resulting values are not so well organized. This demonstrates that the high-dimensional vectors (each representing a letter 'A') that sample this manifold vary in a non-linear manner.
+
+It should be apparent, therefore, that NLDR has several applications in the field of computer-vision. For example, consider a robot that uses a camera to navigate in a closed static environment. The images obtained by that camera can be considered to be samples on a manifold in high-dimensional space, and the intrinsic variables of that manifold will represent the robot's position and orientation.
+
+Invariant manifolds are of general interest for model order reduction in dynamical systems. In particular, if there is an attracting invariant manifold in the phase space, nearby trajectories will converge onto it and stay on it indefinitely, rendering it a candidate for dimensionality reduction of the dynamical system. While such manifolds are not guaranteed to exist in general, the theory of spectral submanifolds (SSM) gives conditions for the existence of unique attracting invariant objects in a broad class of dynamical systems.  Active research in NLDR seeks to unfold the observation manifolds associated with dynamical systems to develop modeling techniques.
+
+Some of the more prominent nonlinear dimensionality reduction techniques are listed below.
+
+Important concepts
+
+Sammon's mapping
+
+Sammon's mapping is one of the first and most popular NLDR techniques.
+
+(a broken line with red squares, 20 nodes). The first principal component is presented by a blue straight line. Data points are the small grey circles. For PCA, the Fraction of variance unexplained in this example is 23.23%, for SOM it is 6.86%.]]
+
+Self-organizing map
+
+The self-organizing map (SOM, also called Kohonen map) and its probabilistic variant generative topographic mapping (GTM) use a point representation in the embedded space to form a latent variable model based on a non-linear mapping from the embedded space to the high-dimensional space. These techniques are related to work on density networks, which also are based around the same probabilistic model.
+
+Kernel principal component analysis
+
+Perhaps the most widely used algorithm for dimensional reduction is kernel PCA. PCA begins by computing the covariance matrix of the m \times n matrix \mathbf{X}
+
+C = \frac{1}{m}\sum_{i=1}^m{\mathbf{x}_i\mathbf{x}_i^\mathsf{T}}.
+
+It then projects the data onto the first k eigenvectors of that matrix. By comparison, KPCA begins by computing the covariance matrix of the data after being transformed into a higher-dimensional space,
+
+C = \frac{1}{m}\sum_{i=1}^m{\Phi(\mathbf{x}_i)\Phi(\mathbf{x}_i)^\mathsf{T}}.
+
+It then projects the transformed data onto the first k eigenvectors of that matrix, just like PCA. It uses the kernel trick to factor away much of the computation, such that the entire process can be performed without actually computing \Phi(\mathbf{x}). Of course \Phi must be chosen such that it has a known corresponding kernel. Unfortunately, it is not trivial to find a good kernel for a given problem, so KPCA does not yield good results with some problems when using standard kernels. For example, it is known to perform poorly with these kernels on the Swiss roll manifold. However, one can view certain other methods that perform well in such settings (e.g., Laplacian Eigenmaps, LLE) as special cases of kernel PCA by constructing a data-dependent kernel matrix.
+
+KPCA has an internal model, so it can be used to map points onto its embedding that were not available at training time.
+
+Principal curves and manifolds
+
+171 countries in 4-dimensional space formed by the values of 4 indicators: gross product per capita, life expectancy, infant mortality, tuberculosis incidence. Different forms and colors correspond to various geographical locations. Red bold line represents the principal curve, approximating the dataset. This principal curve was produced by the method of elastic map. ]]
+
+Principal curves and manifolds give the natural geometric framework for nonlinear dimensionality reduction and extend the geometric interpretation of PCA by explicitly constructing an embedded manifold, and by encoding using standard geometric projection onto the manifold. This approach was originally proposed by Trevor Hastie in his 1984 thesis, which he formally introduced in 1989. This idea has been explored further by many authors.
+
+How to define the "simplicity" of the manifold is problem-dependent, however, it is commonly measured by the intrinsic dimensionality and/or the smoothness of the manifold. Usually, the principal manifold is defined as a solution to an optimization problem. The objective function includes a quality of data approximation and some penalty terms for the bending of the manifold. The popular initial approximations are generated by linear PCA and Kohonen's SOM.
+
+Laplacian eigenmaps
+
+Laplacian eigenmaps uses spectral techniques to perform dimensionality reduction. This technique relies on the basic assumption that the data lies in a low-dimensional manifold in a high-dimensional space.  This algorithm cannot embed out-of-sample points, but techniques based on Reproducing kernel Hilbert space regularization exist for adding this capability.  Such techniques can be applied to other nonlinear dimensionality reduction algorithms as well.
+
+Traditional techniques like principal component analysis do not consider the intrinsic geometry of the data. Laplacian eigenmaps builds a graph from neighborhood information of the data set. Each data point serves as a node on the graph and connectivity between nodes is governed by the proximity of neighboring points (using e.g. the k-nearest neighbor algorithm). The graph thus generated can be considered as a discrete approximation of the low-dimensional manifold in the high-dimensional space. Minimization of a cost function based on the graph ensures that points close to each other on the manifold are mapped close to each other in the low-dimensional space, preserving local distances. The eigenfunctions of the Laplace–Beltrami operator on the manifold serve as the embedding dimensions, since under mild conditions this operator has a countable spectrum that is a basis for square integrable functions on the manifold (compare to Fourier series on the unit circle manifold).  Attempts to place Laplacian eigenmaps on solid theoretical ground have met with some success, as under certain nonrestrictive assumptions, the graph Laplacian matrix has been shown to converge to the Laplace–Beltrami operator as the number of points goes to infinity. is a combination of the Floyd–Warshall algorithm with classic Multidimensional Scaling (MDS). Classic MDS takes a matrix of pair-wise distances between all points and computes a position for each point. Isomap assumes that the pair-wise distances are only known between neighboring points, and uses the Floyd–Warshall algorithm to compute the pair-wise distances between all other points. This effectively estimates the full matrix of pair-wise geodesic distances between all of the points. Isomap then uses classic MDS to compute the reduced-dimensional positions of all the points. Landmark-Isomap is a variant of this algorithm that uses landmarks to increase speed, at the cost of some accuracy.
+
+In manifold learning, the input data is assumed to be sampled from a low dimensional manifold that is embedded inside of a higher-dimensional vector space. The main intuition behind MVU is to exploit the local linearity of manifolds and create a mapping that preserves local neighbourhoods at every point of the underlying manifold.
+
+Locally-linear embedding
+
+Locally-linear Embedding (LLE) was presented at approximately the same time as Isomap. It has several advantages over Isomap, including faster optimization when implemented to take advantage of sparse matrix algorithms, and better results with many problems. LLE also begins by finding a set of the nearest neighbors of each point. It then computes a set of weights for each point that best describes the point as a linear combination of its neighbors. Finally, it uses an eigenvector-based optimization technique to find the low-dimensional embedding of points, such that each point is still described with the same linear combination of its neighbors. LLE tends to handle non-uniform sample densities poorly because there is no fixed unit to prevent the weights from drifting as various regions differ in sample densities. LLE has no internal model.
+
+The original data points X_i \in \R^D, and the goal of LLE is to embed each point X_i to some low-dimensional point Y_i \in \R^d, where d \ll D.
+
+LLE has two steps. In the first step, it computes, for each point X'i, the best approximation of X'i based on barycentric coordinates of its neighbors X'j. The original point is approximately reconstructed by a linear combination, given by the weight matrix W'ij, of its neighbors. The reconstruction error is:
+
+E(W) = \sum_i \left|\mathbf{X}_i - \sum_j {\mathbf{W}_{ij}\mathbf{X}_j}\right|^2
+
+The weights W'ij refer to the amount of contribution the point X'j has while reconstructing the point Xi. The cost function is minimized under two constraints:
+
+Each data point X'i is reconstructed only from its neighbors. That is, W_{ij} = 0 if point X'j is not a neighbor of the point Xi.
+
+The sum of every row of the weight matrix equals 1, that is,  \sum_j {\mathbf{W}_{ij}} = 1 .
+
+These two constraints ensure that W is unaffected by rotation and translation.
+
+In the second step, a neighborhood preserving map is created based the weights. Each point X_i \in \R^D is mapped onto a point Y_i \in \R^d by minimizing another cost:
+
+C(Y) = \sum_i \left|\mathbf{Y}_i - \sum_j {\mathbf{W}_{ij}\mathbf{Y}_j}\right|^{2}
+
+Unlike in the previous cost function, the weights Wij are kept fixed and the minimization is done on the points Yi to optimize the coordinates. This minimization problem can be solved by solving a sparse N X N eigenvalue problem (N being the number of data points), whose bottom d nonzero eigen vectors provide an orthogonal set of coordinates.
+
+The only hyperparameter in the algorithm is what counts as a "neighbor" of a point. Generally the data points are reconstructed from K nearest neighbors, as measured by Euclidean distance. In this case, the algorithm has only one integer-valued hyperparameter K, which can be chosen by cross validation.
+
+Hessian locally-linear embedding (Hessian LLE)
+
+Like LLE, Hessian LLE is also based on sparse matrix techniques. It tends to yield results of a much higher quality than LLE. Unfortunately, it has a very costly computational complexity, so it is not well-suited for heavily sampled manifolds. It has no internal model.
+
+Modified Locally-Linear Embedding (MLLE)
+
+Modified LLE (MLLE) is another LLE variant which uses multiple weights in each neighborhood to address the local weight matrix conditioning problem which leads to distortions in LLE maps. Loosely speaking the multiple weights are the local orthogonal projection of the original weights produced by LLE. The creators of this regularised variant are also the authors of Local Tangent Space Alignment (LTSA), which is implicit in the MLLE formulation when realising that the global optimisation of the orthogonal projections of each weight vector, in-essence, aligns the local tangent spaces of every data point. The theoretical and empirical implications from the correct application of this algorithm are far-reaching.
+
+Local tangent space alignment
+
+LTSA is based on the intuition that when a manifold is correctly unfolded, all of the tangent hyperplanes to the manifold will become aligned.  It begins by computing the k-nearest neighbors of every point.  It computes the tangent space at every point by computing the d-first principal components in each local neighborhood.  It then optimizes to find an embedding that aligns the tangent spaces.
+
+Maximum variance unfolding
+
+Maximum Variance Unfolding, Isomap and Locally Linear Embedding share a common intuition relying on the notion that if a manifold is properly unfolded, then variance over the points is maximized. Its initial step, like Isomap and Locally Linear Embedding, is finding the k-nearest neighbors of every point. It then seeks to solve the problem of maximizing the distance between all non-neighboring points, constrained such that the distances between neighboring points are preserved. The primary contribution of this algorithm is a technique for casting this problem as a semidefinite programming problem. Unfortunately, semidefinite programming solvers have a high computational cost. Like Locally Linear Embedding, it has no internal model.
+
+Autoencoders
+
+An autoencoder is a feed-forward neural network which is trained to approximate the identity function. That is, it is trained to map from a vector of values to the same vector. When used for dimensionality reduction purposes, one of the hidden layers in the network is limited to contain only a small number of network units. Thus, the network must learn to encode the vector into a small number of dimensions and then decode it back into the original space. Thus, the first half of the network is a model which maps from high to low-dimensional space, and the second half maps from low to high-dimensional space. Although the idea of autoencoders is quite old, training of deep autoencoders has only recently become possible through the use of restricted Boltzmann machines and stacked denoising autoencoders. Related to autoencoders is the NeuroScale algorithm, which uses stress functions inspired by multidimensional scaling and Sammon mappings (see above) to learn a non-linear mapping from the high-dimensional to the embedded space. The mappings in NeuroScale are based on radial basis function networks.
+
+Gaussian process latent variable models
+
+Gaussian process latent variable models (GPLVM) are probabilistic dimensionality reduction methods that use Gaussian Processes (GPs) to find a lower dimensional non-linear embedding of high dimensional data. They are an extension of the Probabilistic formulation of PCA. The model is defined probabilistically and the latent variables are then marginalized and parameters are obtained by maximizing the likelihood. Like kernel PCA they use a kernel function to form a non linear mapping (in the form of a Gaussian process). However, in the GPLVM the mapping is from the embedded(latent) space to the data space (like density networks and GTM) whereas in kernel PCA it is in the opposite direction. It was originally proposed for visualization of high dimensional data but has been extended to construct a shared manifold model between two observation spaces.
+
+GPLVM and its many variants have been proposed specially for human motion modeling, e.g., back constrained GPLVM, GP dynamic model (GPDM), balanced GPDM (B-GPDM) and topologically constrained GPDM. To capture the coupling effect of the pose and gait manifolds in the gait analysis, a multi-layer joint gait-pose manifolds was proposed.
+
+Other algorithms
+
+Relational perspective map
+
+Relational perspective map is a multidimensional scaling algorithm. The algorithm finds a configuration of data points on a manifold by simulating a multi-particle dynamic system on a closed manifold, where data points are mapped to particles and distances (or dissimilarity) between data points represent a repulsive force. As the manifold gradually grows in size the multi-particle system cools down gradually and converges to a configuration that reflects the distance information of the data points.
+
+Relational perspective map was inspired by a physical model in which positively charged particles move freely on the surface of a ball.  Guided by the Coulomb force between particles, the minimal energy configuration of the particles will reflect the strength of repulsive forces between the particles.
+
+The Relational perspective map was introduced in.
+
+The algorithm firstly used the flat torus as the image manifold, then it has been extended (in the software VisuMap to use other types of closed manifolds, like the sphere, projective space, and Klein bottle, as image manifolds.
+
+Contagion maps
+
+Contagion maps use multiple contagions on a network to map the nodes as a point cloud. In the case of the Global cascades model the speed of the spread can be adjusted with the threshold parameter  t \in [0,1] . For  t=0  the contagion map is equivalent to the Isomap algorithm.
+
+Curvilinear component analysis
+
+Curvilinear component analysis (CCA) looks for the configuration of points in the output space that preserves original distances as much as possible while focusing on small distances in the output space (conversely to Sammon's mapping which focus on small distances in original space).
+
+It should be noticed that CCA, as an iterative learning algorithm, actually starts with focus on large distances (like the Sammon algorithm), then gradually change focus to small distances. The small distance information will overwrite the large distance information, if compromises between the two have to be made.
+
+The stress function of CCA is related to a sum of right Bregman divergences.
+
+Curvilinear distance analysis
+
+CDA learns a smooth diffeomorphic mapping which transports the data onto a lower-dimensional linear subspace. The methods solves for a smooth time indexed vector field such that flows along the field which start at the data points will end at a lower-dimensional linear subspace, thereby attempting to preserve pairwise differences under both the forward and inverse mapping.
+
+Manifold alignment
+
+Manifold alignment takes advantage of the assumption that disparate data sets produced by similar generating processes will share a similar underlying manifold representation. By learning projections from each original space to the shared manifold, correspondences are recovered and knowledge from one domain can be transferred to another. Most manifold alignment techniques consider only two data sets, but the concept extends to arbitrarily many initial data sets.
+
+Diffusion maps
+
+Diffusion maps leverages the relationship between heat diffusion and a random walk (Markov Chain); an analogy is drawn between the diffusion operator on a manifold and a Markov transition matrix operating on functions defined on the graph whose nodes were sampled from the manifold. In particular, let a data set be represented by  \mathbf{X} = [x_1,x_2,\ldots,x_n] \in \Omega \subset \mathbf {R^D}. The underlying assumption of diffusion map is that the high-dimensional data lies on a low-dimensional manifold of dimension  \mathbf{d} . Let X represent the data set and  \mu  represent the distribution of the data points on X. Further, define a kernel which represents some notion of affinity of the points in X. The kernel  \mathit{k}  has the following properties
+
+k(x,y) = k(y,x),
+
+k is symmetric
+
+k(x,y) \geq 0\qquad \forall x,y, k
+
+k is positivity preserving
+
+Thus one can think of the individual data points as the nodes of a graph and the kernel k as defining some sort of affinity on that graph. The graph is symmetric by construction since the kernel is symmetric. It is easy to see here that from the tuple (X,k) one can construct a reversible Markov Chain. This technique is common to a variety of fields and is known as the graph Laplacian.
+
+For example, the graph K = (X,E) can be constructed using a Gaussian kernel.
+
+K_{ij} = \begin{cases}
+
+e^{-\|x_i -x_j\|^2_2/\sigma ^2} & \text{if } x_i \sim x_j \\
+
+0                          & \text{otherwise}
+
+\end{cases}
+
+In the above equation,  x_i \sim x_j  denotes that  x_i  is a nearest neighbor of x_j . Properly, Geodesic distance should be used to actually measure distances on the manifold. Since the exact structure of the manifold is not available, for the nearest neighbors the geodesic distance is approximated by euclidean distance. The choice  \sigma  modulates our notion of proximity in the sense that if  \|x_i - x_j\|_2 \gg \sigma  then  K_{ij} = 0  and if  \|x_i - x_j\|_2 \ll \sigma  then  K_{ij} = 1 . The former means that very little diffusion has taken place while the latter implies that the diffusion process is nearly complete. Different strategies to choose  \sigma  can be found in.
+
+In order to faithfully represent a Markov matrix,  K  must be normalized by the corresponding degree matrix  D :
+
+P = D^{-1}K.
+
+P  now represents a Markov chain.  P(x_i,x_j)  is the probability of transitioning from  x_i  to  x_j  in one time step. Similarly the probability of transitioning from  x_i  to  x_j  in t time steps is given by  P^t (x_i,x_j) . Here  P^t  is the matrix  P  multiplied by itself t times.
+
+The Markov matrix  P  constitutes some notion of local geometry of the data set X. The major difference between diffusion maps and principal component analysis is that only local features of the data are considered in diffusion maps as opposed to taking correlations of the entire data set.
+
+K  defines a random walk on the data set which means that the kernel captures some local geometry of data set. The Markov chain defines fast and slow directions of propagation through the kernel values. As the walk propagates forward in time, the local geometry information aggregates in the same way as local transitions (defined by differential equations) of the dynamical system.
+
+Nonlinear PCA
+
+Nonlinear PCA (NLPCA) uses backpropagation to train a multi-layer perceptron (MLP) to fit to a manifold. Unlike typical MLP training, which only updates the weights, NLPCA updates both the weights and the inputs. That is, both the weights and inputs are treated as latent values. After training, the latent inputs are a low-dimensional representation of the observed vectors, and the MLP maps from that low-dimensional representation to the high-dimensional observation space.
+
+Data-driven high-dimensional scaling
+
+Data-driven high-dimensional scaling (DD-HDS) is closely related to Sammon's mapping and curvilinear component analysis except that (1) it simultaneously penalizes false neighborhoods and tears by focusing on small distances in both original and output space, and that (2) it accounts for concentration of measure phenomenon by adapting the weighting function to the distance distribution.
+
+Manifold sculpting
+
+Manifold Sculpting uses graduated optimization to find an embedding. Like other algorithms, it computes the k-nearest neighbors and tries to seek an embedding that preserves relationships in local neighborhoods. It slowly scales variance out of higher dimensions, while simultaneously adjusting points in lower dimensions to preserve those relationships. If the rate of scaling is small, it can find very precise embeddings. It boasts higher empirical accuracy than other algorithms with several problems. It can also be used to refine the results from other manifold learning algorithms. It struggles to unfold some manifolds, however, unless a very slow scaling rate is used. It has no model.
+
+RankVisu
+
+RankVisu is designed to preserve rank of neighborhood rather than distance. RankVisu is especially useful on difficult tasks (when the preservation of distance cannot be achieved satisfyingly). Indeed, the rank of neighborhood is less informative than distance (ranks can be deduced from distances but distances cannot be deduced from ranks) and its preservation is thus easier.
+
+Topologically constrained isometric embedding
+
+Topologically constrained isometric embedding (TCIE) is an algorithm based on approximating geodesic distances after filtering geodesics inconsistent with the Euclidean metric. Aimed at correcting the distortions caused when Isomap is used to map intrinsically non-convex data, TCIE uses weight least-squares MDS in order to obtain a more accurate mapping. The TCIE algorithm first detects possible boundary points in the data, and during computation of the geodesic length marks inconsistent geodesics, to be given a small weight in the weighted stress majorization that follows.
+
+t-distributed stochastic neighbor embedding
+
+t-distributed stochastic neighbor embedding (t-SNE) is widely used. It is one of a family of stochastic neighbor embedding methods. The algorithm computes the probability that pairs of datapoints in the high-dimensional space are related, and then chooses low-dimensional embeddings which produce a similar distribution.
+
+Uniform manifold approximation and projection
+
+Uniform manifold approximation and projection (UMAP) is a nonlinear dimensionality reduction technique. It works in a similar fashion as the  t-SNE, where a main difrence in the inclusion of a repusion term to move far points away from each other.
+
+Methods based on proximity matrices
+
+A method based on proximity matrices is one where the data is presented to the algorithm in the form of a similarity matrix or a distance matrix. These methods all fall under the broader class of metric multidimensional scaling. The variations tend to be differences in how the proximity data is computed; for example, isomap, locally linear embeddings, maximum variance unfolding, and Sammon mapping (which is not in fact a mapping) are examples of metric multidimensional scaling methods.
+
+Software
+
+Waffles is an open source C++ library containing implementations of LLE, Manifold Sculpting, and some other manifold learning algorithms.
+
+UMAP.jl implements the method for the programming language Julia.
+
+The method has also been implemented in Python (code available on GitHub)
+
+See also
+
+Manifold hypothesis
+
+Spectral submanifold
+
+Taken's theorem
+
+Whitney embedding theorem
+
+Discriminant analysis
+
+Elastic map
+
+Feature learning
+
+Growing self-organizing map (GSOM)
+
+Self-organizing map (SOM)
+
+References
+
+Further reading
+
+External links
+
+Isomap
+
+Generative Topographic Mapping
+
+Mike Tipping's Thesis
+
+Gaussian Process Latent Variable Model
+
+Locally Linear Embedding
+
+Relational Perspective Map
+
+DD-HDS homepage
+
+RankVisu homepage
+
+Short review of Diffusion Maps
+
+Nonlinear PCA by autoencoder neural networks
+
+Category:Dimension reduction

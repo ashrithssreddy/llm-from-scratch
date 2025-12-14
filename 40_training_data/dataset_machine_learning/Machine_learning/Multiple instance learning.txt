@@ -1,0 +1,115 @@
+In machine learning, multiple-instance learning (MIL) is a type of supervised learning.  Instead of receiving a set of instances which are individually labeled, the learner receives a set of labeled bags, each containing many instances. In the simple case of multiple-instance binary classification, a bag may be labeled negative if all the instances in it are negative.  On the other hand, a bag is labeled positive if there is at least one instance in it which is positive.  From a collection of labeled bags, the learner tries to either (i) induce a concept that will label individual instances correctly or (ii) learn how to label bags without inducing the concept.
+
+Babenko (2008) gives a simple example for MIL. Imagine several people, and each of them has a key chain that contains few keys. Some of these people are able to enter a certain room, and some aren't. The task is then to predict whether a certain key or a certain key chain can get you into that room. To solve this problem we need to find the exact key that is common for all the "positive" key chains. If we can correctly identify this key, we can also correctly classify an entire key chain - positive if it contains the required key, or negative if it doesn't.
+
+Machine learning
+
+Depending on the type and variation in training data, machine learning can be roughly categorized into three frameworks: supervised learning, unsupervised learning, and reinforcement learning. Multiple instance learning (MIL) falls under the supervised learning framework, where every training instance has a label, either discrete or real valued. MIL deals with problems with incomplete knowledge of labels in training sets. More precisely, in multiple-instance learning, the training set consists of labeled "bags", each of which is a collection of unlabeled instances. A bag is positively labeled if at least one instance in it is positive, and is negatively labeled if all instances in it are negative. The goal of the MIL is to predict the labels of new, unseen bags.
+
+History
+
+Keeler et al., in his work in the early 1990s was the first one to explore the area of MIL. The actual term multi-instance learning was introduced in the middle of the 1990s, by Dietterich et al. while they were investigating the problem of drug activity prediction. They tried to create a learning system that could predict whether new molecule was qualified to make some drug, or not, through analyzing a collection of known molecules. Molecules can have many alternative low-energy states, but only one, or some of them, are qualified to make a drug. The problem arose because scientists could only determine if molecule is qualified, or not, but they couldn't say exactly which of its low-energy shapes are responsible for that.
+
+One of the proposed ways to solve this problem was to use supervised learning, and regard all the low-energy shapes of the qualified molecule as positive training instances, while all of the low-energy shapes of unqualified molecules as negative instances. Dietterich et al. showed that such method would have a high false positive noise, from all low-energy shapes that are mislabeled as positive, and thus wasn't really useful. which is a concrete test data of drug activity prediction and the most popularly used benchmark in multiple-instance learning. APR algorithm achieved the best result, but APR was designed with Musk data in mind.
+
+Problem of multi-instance learning is not unique to drug finding. In 1998, Maron and Ratan found another application of multiple instance learning to scene classification in machine vision, and devised Diverse Density framework. Given an image, an instance is taken to be one or more fixed-size subimages, and the bag of instances is taken to be the entire image. An image is labeled positive if it contains the target scene - a waterfall, for example - and negative otherwise. Multiple instance learning can be used to learn the properties of the subimages which characterize the target scene. From there on, these frameworks have been applied to a wide spectrum of applications, ranging from image concept learning and text categorization, to stock market prediction.
+
+Examples
+
+Take image classification for example . Given an image, we want to know its target class based on its visual content. For instance, the target class might be "beach", where the image contains both "sand" and "water". In MIL terms, the image is described as a bag X = \{X_1,..,X_N\}, where each X_i is the feature vector (called instance) extracted from the corresponding i-th region in the image and N is the total regions (instances) partitioning the image. The bag is labeled positive ("beach") if it contains both "sand" region instances and "water" region instances.
+
+Examples of where MIL is applied are:
+
+Molecule activity
+
+Predicting binding sites of Calmodulin binding proteins
+
+Predicting function for alternatively spliced isoforms ,
+
+Image classification
+
+Text or document categorization
+
+Predicting functional binding sites of MicroRNA targets
+
+Medical image classification
+
+Numerous researchers have worked on adapting classical classification techniques, such as support vector machines or boosting, to work within the context of multiple-instance learning.
+
+Definitions
+
+If the space of instances is \mathcal{X}, then the set of bags is the set of functions \mathbb{N}^\mathcal{X} = \{B: \mathcal{X} \rightarrow \mathbb{N} \}, which is isomorphic to the set of multi-subsets of \mathcal{X}. For each bag B \in \mathbb{N}^\mathcal{X} and each instance x \in \mathcal{X} , B(x) is viewed as the number of times x occurs in B. Let \mathcal{Y} be the space of labels, then a "multiple instance concept" is a map c: \mathbb{N}^\mathcal{X} \rightarrow \mathcal{Y}. The goal of MIL is to learn such a concept. The remainder of the article will focus on binary classification, where \mathcal{Y} = \{0, 1\}.
+
+Assumptions
+
+Most of the work on multiple instance learning, including Dietterich et al. (1997) and Maron & Lozano-Pérez (1997) early papers, make the assumption regarding the relationship between the instances within a bag and the class label of the bag. Because of its importance, that assumption is often called standard MI assumption.
+
+Standard assumption
+
+The standard assumption takes each instance x \in \mathcal{X} to have an associated label y \in \{0,1\} which is hidden to the learner. The pair (x,y) is called an "instance-level concept". A bag is now viewed as a multiset of instance-level concepts, and is labeled positive if at least one of its instances has a positive label, and negative if all of its instances have negative labels. Formally, let B = \{ (x_1, y_1), \ldots, (x_n, y_n) \} be a bag. The label of B is then c(B) = 1 - \prod_{i=1}^n (1 - y_i). Standard MI assumption is asymmetric, which means that if the positive and negative labels are reversed, the assumption has a different meaning. Because of that, when we use this assumption, we need to be clear which label should be the positive one.
+
+The standard assumption might be viewed as too strict, and therefore in the recent years, researchers tried to relax that position, which gave rise to other more loose assumptions. The reason for this is the belief that standard MIL assumption is appropriate for the Musk dataset, but since MIL can be applied to numerous other problems, some different assumptions could probably be more appropriate. Guided by that idea, Weidmann  formulated a hierarchy of generalized instance-based assumptions for MIL. It consists of the standard MI assumption and three types of generalized MI assumptions, each more general than the last, in the sense that the former can be obtained as a specific choice of parameters of the latter, standard \subset presence-based \subset threshold-based \subset count-based, with the count-based assumption being the most general and the standard assumption being the least general. (Note however, that any bag meeting the count-based assumption meets the threshold-based assumption which in turn meets the presence-based assumption which, again in turn, meet the standard assumption. In that sense it is also correct to state that the standard assumption is the weakest, hence most general, and the count-based assumption is the strongest, hence least general.) One would expect an algorithm which performs well under one of these assumptions to perform at least as well under the less general assumptions.
+
+Presence-, threshold-, and count-based assumptions
+
+The presence-based assumption is a generalization of the standard assumption, wherein a bag must contain all instances that belong to a set of required instance-level concepts in order to be labeled positive. Formally, let C_R \subseteq \mathcal{X} \times \mathcal{Y} be the set of required instance-level concepts, and let \#(B, c_i) denote the number of times the instance-level concept c_i occurs in the bag B. Then c(B) = 1 \Leftrightarrow \#(B, c_i) \geq 1 for all c_i \in C_R. Note that, by taking C_R to contain only one instance-level concept, the presence-based assumption reduces to the standard assumption.
+
+A further generalization comes with the threshold-based assumption, where each required instance-level concept must occur not only once in a bag, but some minimum (threshold) number of times in order for the bag to be labeled positive. With the notation above, to each required instance-level concept c_i \in C_R is associated a threshold l_i \in \mathbb{N}. For a bag B, c(B) = 1 \Leftrightarrow \#(B, c_i) \geq l_i for all c_i \in C_R.
+
+The count-based assumption is a final generalization which enforces both lower and upper bounds for the number of times a required concept can occur in a positively labeled bag. Each required instance-level concept c_i \in C_R has a lower threshold l_i \in \mathbb{N} and upper threshold u_i \in \mathbb{N} with l_i \leq u_i. A bag B is labeled according to c(B) = 1 \Leftrightarrow l_i \leq \#(B, c_i) \leq u_i for all c_i \in C_R.
+
+GMIL assumption
+
+Scott, Zhang, and Brown (2005)  describe another generalization of the standard model, which they call "generalized multiple instance learning" (GMIL). The GMIL assumption specifies a set of required instances Q \subseteq \mathcal{X}. A bag X is labeled positive if it contains instances which are sufficiently close to at least r of the required instances Q. and DD-SVM in 2004, and MILES in 2006
+
+Artificial neural networks
+
+Decision trees
+
+Boosting
+
+Post 2000, there was a movement away from the standard assumption and the development of algorithms designed to tackle the more general assumptions listed above. and MInD. MILES represents a bag by its similarities to instances in the training set, while MInD represents a bag by its distances to other bags.
+
+A modification of k-nearest neighbors (kNN) can also be considered a metadata-based algorithm with geometric metadata, though the mapping between bags and metadata features is not explicit. However, it is necessary to specify the metric used to compute the distance between bags. Wang and Zucker (2000)  suggest the (maximum and minimum, respectively) Hausdorff metrics for bags A and B:
+
+H(A,B) = \max \left\{ \max_A \min_B \| a - b \|, \max_B \min_A \| a - b \| \right\}
+
+h_1(A,B) = \min_A \min_B \| a - b \|
+
+They define two variations of kNN, Bayesian-kNN and citation-kNN, as adaptations of the traditional nearest-neighbor problem to the multiple-instance setting.
+
+Generalizations
+
+So far this article has considered multiple instance learning exclusively in the context of binary classifiers. However, the generalizations of single-instance binary classifiers can carry over to the multiple-instance case.
+
+One such generalization is the multiple-instance multiple-label problem (MIML), where each bag can now be associated with any subset of the space of labels. Formally, if \mathcal{X} is the space of features and \mathcal{Y} is the space of labels, an MIML concept is a map c: \mathbb{N}^\mathcal{X} \rightarrow 2^\mathcal{Y}. Zhou and Zhang (2006)  propose a solution to the MIML problem via a reduction to either a multiple-instance or multiple-concept problem.
+
+Another obvious generalization is to multiple-instance regression. Here, each bag is associated with a single real number as in standard regression. Much like the standard assumption, MI regression assumes there is one instance in each bag, called the "prime instance", which determines the label for the bag (up to noise). The ideal goal of MI regression would be to find a hyperplane which minimizes the square loss of the prime instances in each bag, but the prime instances are hidden. In fact, Ray and Page (2001)  show that finding a best fit hyperplane which fits one instance from each bag is intractable if there are fewer than three instances per bag, and instead develop an algorithm for approximation. Many of the algorithms developed for MI classification may also provide good approximations to the MI regression problem.
+
+See also
+
+Supervised learning
+
+Multi-label classification
+
+References
+
+Further reading
+
+Recent reviews of the MIL literature include:
+
+, which provides an extensive review and comparative study of the different paradigms,
+
+, which provides a thorough review of the different assumptions used by different paradigms in the literature.
+
+{{cite journal |doi=10.1016/j.tig.2014.05.005 |pmid=24951248 |pmc=4112133 |title=The emerging era of genomic data integration for analyzing splice isoform function |journal=Trends in Genetics |volume=30 |issue=8 |pages=340–7 |year=2014 |last1=Li |first1=Hong-Dong |last2=Menon |first2=Rajasree |last3=Omenn |first3=Gilbert S |last4=Guan |first4=Yuanfang |ref= }}
+
+{{cite journal |doi=10.1371/journal.pcbi.1003314 |pmid=24244129 |pmc=3820534 |title=Systematically Differentiating Functions for Alternatively Spliced Isoforms through Integrating RNA-seq Data |journal=PLOS Computational Biology |volume=9 |issue=11 |article-number=e1003314 |year=2013 |last1=Eksi |first1=Ridvan |last2=Li |first2=Hong-Dong |last3=Menon |first3=Rajasree |last4=Wen |first4=Yuchen |last5=Omenn |first5=Gilbert S |last6=Kretzler |first6=Matthias |last7=Guan |first7=Yuanfang |bibcode=2013PLSCB...9E3314E |doi-access=free |ref= }}
+
+{{cite book |doi=10.1145/2783258.2783380 |chapter=From Group to Individual Labels Using Deep Features |title=Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining - KDD '15 |pages=597–606 |year=2015 |last1=Kotzias |first1=Dimitrios |last2=Denil |first2=Misha |last3=De Freitas |first3=Nando |last4=Smyth |first4=Padhraic |isbn=978-1-4503-3664-2 |s2cid=7729996 |ref= }}
+
+{{cite journal |doi=10.1038/srep08004 |bibcode=2015NatSR...5.8004B |pmid=25614300 |pmc=4648438 |title=MBSTAR: Multiple instance learning for predicting specific functional binding sites in microRNA targets |journal=Scientific Reports |volume=5 |page=8004 |year=2015 |last1=Bandyopadhyay |first1=Sanghamitra |last2=Ghosh |first2=Dip |last3=Mitra |first3=Ramkrishna |last4=Zhao |first4=Zhongming |ref= }}
+
+{{cite book |doi=10.1007/978-3-319-66179-7_69 |chapter=Deep Multi-instance Networks with Sparse Label Assignment for Whole Mammogram Classification |title=Medical Image Computing and Computer-Assisted Intervention − MICCAI 2017 |volume=10435 |pages=603–11 |series=Lecture Notes in Computer Science |year=2017 |last1=Zhu |first1=Wentao |last2=Lou |first2=Qi |last3=Vang |first3=Yeeleng Scott |last4=Xie |first4=Xiaohui |arxiv=1612.05968 |isbn=978-3-319-66178-0 |s2cid=9623929 |ref= }}
+
+Category:Machine learning

@@ -1,0 +1,21 @@
+Aja Huang (; born 1978) is a Taiwanese computer scientist and expert on artificial intelligence. He works for DeepMind and was a member of the AlphaGo project.
+
+Born in 1978, Huang received a bachelor's degree from National Chiao Tung University in 2001, a master's degree from National Taiwan Normal University in 2003, and a Ph.D degree from National Taiwan Normal University in 2011. One of his doctoral supervisors was Rémi Coulom. He began to develop computer Go program Erica in 2004, which became the champion in the 2010 Computer Olympiad. and a major author of the paper on AlphaGo Zero in 2017. During the 2016 match AlphaGo v. Lee Sedol and the 2017 Future of Go Summit, Huang placed stones on the Go board for AlphaGo.
+
+References
+
+Category:1978 births
+
+Category:Living people
+
+Category:AlphaGo
+
+Category:Go (game) researchers
+
+Category:Taiwanese computer scientists
+
+Category:National Chiao Tung University alumni
+
+Category:National Taiwan Normal University alumni
+
+Category:DeepMind people

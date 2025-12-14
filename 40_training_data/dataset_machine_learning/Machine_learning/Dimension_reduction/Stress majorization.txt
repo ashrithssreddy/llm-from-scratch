@@ -1,0 +1,55 @@
+Stress majorization is an optimization strategy used in multidimensional scaling (MDS) where, for a set of n m-dimensional data items, a configuration X of n points in r (\ll m)-dimensional space is sought that minimizes the so-called stress function \sigma(X).  Usually r is 2 or 3, i.e. the (n\times r) matrix X lists points in 2- or 3-dimensional Euclidean space so that the result may be visualised (i.e. an MDS plot).  The function \sigma is a cost or loss function that measures the squared differences between ideal (m-dimensional) distances and actual distances in r-dimensional space.  It is defined as:
+
+\sigma(X)=\sum_{i
+
+where w_{ij}\ge 0 is a weight for the measurement between a pair of points (i,j), d_{ij}(X) is the euclidean distance between i and j and \delta_{ij} is the ideal distance between the points (their separation) in the m-dimensional data space.  Note that w_{ij} can be used to specify a degree of confidence in the similarity between points (e.g. 0 can be specified if there is no information for a particular pair).
+
+A configuration X which minimizes \sigma(X) gives a plot in which points that are close together correspond to points that are also close together in the original m-dimensional data space.
+
+There are many ways that  \sigma(X) could be minimized.  For example, Kruskal recommended an iterative steepest descent approach. However, a significantly better (in terms of guarantees on, and rate of, convergence) method for minimizing stress was introduced by Jan de Leeuw.  De Leeuw's iterative majorization method at each step minimizes a simple convex function which both bounds \sigma from above and touches the surface of \sigma at a point Z, called the supporting point.  In convex analysis such a function is called a majorizing function.  This iterative majorization process is also referred to as the SMACOF algorithm ("Scaling by MAjorizing a COmplicated Function").
+
+The SMACOF algorithm
+
+The stress function \sigma can be expanded as follows:
+
+\sigma(X)=\sum_{i
+
+Note that the first term is a constant C and the second term is quadratic in X (i.e. for the Hessian matrix V the second term is equivalent to trX'VX) and therefore relatively easily solved.  The third term is bounded by:
+
+\sum_{i
+
+where B(Z) has:
+
+b_{ij}=-\frac{w_{ij}\delta_{ij}}{d_{ij}(Z)} for d_{ij}(Z)\ne 0, i \ne j
+
+and b_{ij}=0 for d_{ij}(Z)=0, i\ne j
+
+and b_{ii}=-\sum_{j=1,j\ne i}^n b_{ij}.
+
+Proof of this inequality is by the Cauchy-Schwarz inequality, see Borg (pp.&nbsp;152–153).
+
+Thus, we have a simple quadratic function \tau(X,Z) that majorizes stress:
+
+\sigma(X)=C+\,\operatorname{tr}\, X'VX - 2 \,\operatorname{tr}\, X'B(X)X
+
+\le C+\,\operatorname{tr}\, X' V X - 2 \,\operatorname{tr}\, X'B(Z)Z = \tau(X,Z)
+
+The iterative minimization procedure is then:
+
+at the k^{th} step we set Z\leftarrow X^{k-1}
+
+X^k\leftarrow \min_X \tau(X,Z)
+
+stop if \sigma(X^{k-1})-\sigma(X^{k}) otherwise repeat.
+
+This algorithm has been shown to decrease stress monotonically (see de Leeuw That is, one can find a reasonably aesthetically appealing layout for a network or graph by minimizing a stress function over the positions of the nodes in the graph.  In this case, the \delta_{ij} are usually set to the graph-theoretic distances between nodes i and j and the weights w_{ij} are taken to be \delta_{ij}^{-\alpha}.  Here, \alpha is chosen as a trade-off between preserving long- or short-range ideal distances.  Good results have been shown for \alpha=2.
+
+References
+
+Category:Graph drawing
+
+Category:Dimension reduction
+
+Category:Mathematical optimization
+
+Category:Mathematical analysis

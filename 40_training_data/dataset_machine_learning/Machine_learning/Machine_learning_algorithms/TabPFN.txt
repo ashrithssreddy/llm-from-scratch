@@ -1,0 +1,33 @@
+{{Infobox software
+
+name = TabPFN
+
+developer = Noah Hollmann, Samuel Müller, Lennart Purucker, Arjun Krishnakumar, Max Körfer, Shi Bin Hoo, Robin Tibor Schirrmeister, Frank Hutter, Leo Grinsztajn, Klemens Flöge, Oscar Key & Sauraj Gambhir
+
+latest release version = v2.5
+
+latest release date =
+
+operating system = Linux, macOS, Microsoft Windows It is intended for supervised classification and regression analysis on small- to medium-sized datasets, e.g., up to 10,000 samples. Writing for ICLR blogs, McCarter states that the model has attracted attention due to its performance on small dataset benchmarks.
+
+Prior Labs, founded in 2024, aims to commercialize TabPFN.
+
+Overview and pre-training
+
+TabPFN supports classification, regression and generative tasks. models to model tabular data. TabPFN avoids benchmark contamination and costs of curating real-world data. TabPFN v2 handles numerical and categorical features, missing values, and supports tasks like regression and synthetic data generation. insurance risk classification, and metagenomics.
+
+Limitations
+
+TabPFN has been criticized for its "one large neural network is all you need" approach to modeling problems.
+
+See also
+
+XGBoost
+
+LightGBM
+
+CatBoost
+
+References
+
+Category:Machine learning algorithms

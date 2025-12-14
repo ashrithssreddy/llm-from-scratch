@@ -1,0 +1,91 @@
+Harold Kelley's covariation model (1967, 1971, 1972, 1973) is an attribution theory in which people make causal inferences to explain why other people and ourselves behave in a certain way. It is concerned with both social perception and self-perception (Kelley, 1973).
+
+The covariation principle states that, "an effect is attributed to the one of its possible causes with which, over time, it covaries" (Kelley, 1973:108). That is, a certain behaviour is attributed to potential causes that appear at the same time. This principle is useful when the individual has the opportunity to observe the behaviour over several occasions. Causes of an outcome can be attributed to the person (internal), the stimulus (external), the circumstance, or some combination of these factors (Hewstone et al., 1973). Attributions are made based on three criteria: Consensus, Distinctiveness, and Consistency (Kelley, 1973).
+
+Consensus
+
+Consensus is the co-variation of behavior across different people. If many people find Lisa attractive, the consensus is high. If only Arnold finds Lisa attractive, consensus is low. High consensus is attributed to the stimulus (in the above example, to Lisa), while low consensus is attributed to the person (in this case, Arnold).
+
+Distinctiveness
+
+Distinctiveness refers to how unique the behavior is to the particular situation. There is a low distinctiveness if an individual behaves similarly in all situations, and there exists a high distinctiveness when the person only shows the behaviour in particular situations. If the distinctiveness is high, one will attribute this behaviour more to the circumstance instead of person (Gilovich et al., 2005).
+
+Referring to the example of Dr. Stanton's complimenting Barry's work, if Dr. Stanton almost never compliments other people's work, he shows high distinctiveness. But if he compliments everybody's work, this is low distinctiveness, and one will attribute the behaviour to the person, in this case, Dr. Stanton (Orvis et al., 1975).
+
+Consistency
+
+Consistency is the covariation of behavior across time. If Jane is generous all the time, she shows high consistency. If Jane is rarely generous or is generous only at specific times, perhaps around the holidays, she shows low consistency. High consistency is attributed to the person (Jane is a generous person), while low consistency is attributed to the circumstance (the holidays make people generous).
+
+Making attributions using consensus, distinctiveness, and consistency
+
+According to Hewstone and Jaspars (1987), we are able to determine whether a person would likely make a personal (internal), stimulus (external) or circumstantial attribution by assessing the levels of consensus, distinctiveness, and consistency in a given situation:
+
+Low Consensus, Low Distinctiveness, High Consistency = Personal Attribution
+
+High Consensus, High Distinctiveness, High Consistency = Stimulus Attribution
+
+High Consensus, Low Distinctiveness, Low Consistency = Circumstance Attribution
+
+In reference to McArthur's study (1972), consider the following example: "John laughs at the comedian" This outcome could be caused by something in the person (John), the stimulus (the comedian) the circumstances (the comedy club on that night), or some combination of these factors (Hewstone et al., 1987).
+
+If John is the only person laughing at the comedian (low consensus), he laughs at the comedian at other comedy clubs (high consistency), and he laughs at other comedians (low distinctiveness), then the effect is seen as caused by something in the person (John).
+
+If everyone is laughing at the comedian (high consensus), John laughs at the comedian at other comedy clubs (high consistency), and he does not laugh at other comedians (high distinctiveness), then the effect is seen as caused by something in the stimulus (the comedian).
+
+If everyone is laughing at the comedian (high consensus), John doesn't laugh at the comedian at other comedy clubs (low consistency), and he laughs at other comedians at the club (low distinctiveness) then the effect is seen as caused by something in the circumstance (the comedy club on that night).
+
+Causal schema
+
+A causal schema refers to the way a person thinks about plausible causes in relation to a given effect. It provides him or her with the means of making causal attributions when the information provided is limited. The three causal schemata recognized by Kelley are Multiple Sufficient Causes, Multiple Necessary Causes, and Causal Schema for Compensatory Causes (Kelley, 1973).
+
+Multiple Sufficient Causes: He or she may believe that either cause A or cause B suffices to produce a given effect (Kelley et al., 1980). For example, if an athlete fails a drug test (effect), we reason that he or she may be attempting to cheat (cause A) or may have been tricked into taking a banned substance (cause B). Either cause sufficiently attributes to the effect (McLeod, 2010).
+
+Multiple Necessary Causes: Both A and B are necessary to produce a given effect (Kelley et al., 1980). For example, if an athlete wins a marathon (effect), we reason that he or she must be very fit (cause A), and highly motivated (cause B) (McLeod, 2010).
+
+Causal Schema for Compensatory Causes: The effect occurs if either A or B is maximally present, or if both A and B are moderately present. For example, success (effect) depends on high ability (cause A) or low task difficulty (cause B). Success will occur if either cause is highly present or if both are moderately present (Kelley 1973).
+
+Limitations
+
+Kelley's covariation model also has its limitations. The critique of the model mainly concerns the lack of distinction between intentional and unintentional behavior, and between reason and cause explanations (Malle, 1999).
+
+Intentional behavior occurs when there is a desire for an outcome, together with a belief that a certain behavior will lead to the desired outcome. These beliefs and desires are mental states acting as reasons behind an intention to act. When behavior is unintentional, the behavior is not explained by reasons, but rather by cause explanations not related to mental states of desire and belief. Malle (1999) found that whether behavior is intentional or unintentional predicts the type of explanation, and that the type of explanation presented predicts the judgement of intentionality.
+
+Malle (1999) also pointed at the differential effect of being an actor versus observer, the effect of the self-serving bias and the distinction between subjective and rational reasoning as important factors acting on attributions of behavior. This is not accounted for by the covariation model. Malle offers a new theoretical framework to give a broader and more comprehensive understanding of attributions of behavior.
+
+Notes
+
+References
+
+Gilovich, T., Keltner, D., & Nisbett, R. E. (2005). Social psychology. New York: Norton & Company.
+
+Hewstone, M., & Jaspars J. (1987). Covariation and causal attribution: A logical model of the intuitive analysis of variance. Journal of Personality and Social Psychology, 53, 4: 663-672
+
+Himmelfarb, S. (1972). Integration and attribution theories in personality impression formation. Journal of Personality and Social Psychology, 23:309-13.
+
+Kelley, H. H. (1967). Attribution theory in social psychology. In D. Levine (Ed.), Nebraska symposium on motivation. Lincoln: University of Nebraska Press.
+
+Kelley, H. H. (1971). Attribution in social interaction. New York: General Learning Press.
+
+Kelley, H. H. (1972). Causal schemata and the attribution process. New York: General Learning Press.
+
+Kelley, H. H. (1973). The processes of causal attribution. American Psychologist, 28, 107–128.
+
+Kelley, H. H., & Michela, J. L. (1980). Attribution theory and research. Annual Review of Psychology, 31, 457–501.
+
+Kelley, H. H., & Stahelski, A. J. (1970). The inference of intention from moves in the Prisoner's Dilemma Game. Journal of Experimental Social Psychology, 6, 401–419.
+
+Malle, B. F. (1999). How people explain behavior: A new theoretical framework. Personality and Social Psychology Review, 3, 23–48.
+
+McLeod, S. A. (2010). Attribution Theory. Retrieved from http://www.simplypsychology.org/attribution-theory.html
+
+McArthur, L. A. (1972). The how and what of why: Some determinants and consequences of causal attribution. Journal of Personality and Social Psychology, 22, 171–193.
+
+Orvis, B. R., Cunningham, J. D. & Kelley, H. H. (1975). A closer examination of causal inference: The roles of consensus, distinctiveness, and consistency information. Journal of Personality and Social Psychology, 32, 605–616.
+
+Valins, S. (1966). Cognitive effects of false heart-rate feedback. Journal of Personality and Social Psychology, 4, 400–408.
+
+Category:Attitude attribution
+
+Category:Causal inference
+
+Category:Conceptions of self

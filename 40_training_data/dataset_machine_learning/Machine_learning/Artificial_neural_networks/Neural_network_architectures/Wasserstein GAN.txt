@@ -1,0 +1,155 @@
+The Wasserstein Generative Adversarial Network (WGAN) is a variant of generative adversarial network (GAN) proposed in 2017 that aims to "improve the stability of learning, get rid of problems like mode collapse, and provide meaningful learning curves useful for debugging and hyperparameter searches".
+
+Compared with the original GAN discriminator, the Wasserstein GAN discriminator provides a better learning signal to the generator. This allows the training to be more stable when generator is learning distributions in very high dimensional spaces.
+
+Motivation
+
+The GAN game
+
+The original GAN method is based on the GAN game, a zero-sum game with 2 players: generator and discriminator. The game is defined over a probability space (\Omega, \mathcal B, \mu_{ref}), The generator's strategy set is the set of all probability measures \mu_G on (\Omega, \mathcal B), and the discriminator's strategy set is the set of measurable functions D: \Omega \to [0, 1].
+
+The objective of the game isL(\mu_G, D) := \mathbb{E}_{x\sim \mu_{ref}}[\ln D(x)] + \mathbb{E}_{x\sim \mu_G}[\ln (1-D(x))].
+
+The generator aims to minimize it, and the discriminator aims to maximize it.
+
+A basic theorem of the GAN game states that{{Math theorem
+
+math_statement = For any fixed generator strategy \mu_G, let the optimal reply be D^* = \arg\max_{D} L(\mu_G, D), then
+
+\begin{align}
+
+D^*(x) &= \frac{d\mu_{ref}}{d(\mu_{ref} + \mu_G)}\\
+
+L(\mu_G, D^*) &= 2D_{JS}(\mu_{ref}; \mu_G) - 2\ln 2,
+
+\end{align}
+
+where the derivative is the Radon–Nikodym derivative, and D_{JS} is the Jensen–Shannon divergence.
+
+name = Theorem
+
+note = the optimal discriminator computes the Jensen–Shannon divergence
+
+}}
+
+Repeat the GAN game many times, each time with the generator moving first, and the discriminator moving second. Each time the generator \mu_G changes, the discriminator must adapt by approaching the idealD^*(x) = \frac{d\mu_{ref}}{d(\mu_{ref} + \mu_G)}.
+
+Since we are really interested in \mu_{ref}, the discriminator function D is by itself rather uninteresting. It merely keeps track of the likelihood ratio between the generator distribution and the reference distribution. At equilibrium, the discriminator is just outputting \frac 12 constantly, having given up trying to perceive any difference.
+
+Concretely, in the GAN game, let us fix a generator \mu_G, and improve the discriminator step-by-step, with \mu_{D, t} being the discriminator at step t. Then we (ideally) haveL(\mu_G, \mu_{D, 1}) \leq L(\mu_G, \mu_{D, 2}) \leq \cdots \leq \max_{\mu_D} L(\mu_G, \mu_D) = 2D_{JS}(\mu_{ref} \|  \mu_G) - 2\ln 2,so we see that the discriminator is actually lower-bounding D_{JS}(\mu_{ref} \| \mu_G).
+
+Wasserstein distance
+
+Thus, we see that the point of the discriminator is mainly as a critic to provide feedback for the generator, about "how far it is from perfection", where "far" is defined as Jensen–Shannon divergence.
+
+Naturally, this brings the possibility of using a different criteria of farness. There are many possible divergences to choose from, such as the f-divergence family, which would give the f-GAN.
+
+The Wasserstein GAN is obtained by using the Wasserstein metric, which satisfies a "dual representation theorem" that renders it highly efficient to compute:
+
+{{Math theorem
+
+math_statement = When the probability space \Omega is a metric space, then
+
+for any fixed K > 0, W_1(\mu, \nu) = \frac 1 K\sup_{\|f\|_L \leq K} \mathbb{E}_{x\sim \mu}[f(x)] -\mathbb E_{y\sim \nu}[f(y)]
+
+where \|\cdot\|_L is the Lipschitz norm.
+
+name = Theorem
+
+note = Kantorovich-Rubenstein duality
+
+}}
+
+A proof can be found in the main page on Wasserstein metric.
+
+Definition
+
+By the Kantorovich-Rubenstein duality, the definition of Wasserstein GAN is clear:{{blockquote|A Wasserstein GAN game is defined by a probability space (\Omega, \mathcal B, \mu_{ref}), where \Omega is a metric space, and a constant K > 0.
+
+There are 2 players: generator and discriminator (also called "critic").
+
+The generator's strategy set is the set of all probability measures \mu_G on (\Omega, \mathcal B).
+
+The discriminator's strategy set is the set of measurable functions of type D: \Omega \to \R with bounded Lipschitz-norm: \|D\|_L \leq K.
+
+The Wasserstein GAN game is a zero-sum game, with objective functionL_{WGAN}(\mu_G, D) := \mathbb{E}_{x\sim \mu_G}[D(x)] -\mathbb E_{x\sim  \mu_{ref}}[D(x)].
+
+The generator goes first, and the discriminator goes second. The generator aims to minimize the objective, and the discriminator aims to maximize the objective:\min_{\mu_G} \max_{D} L_{WGAN}(\mu_G, D).}}
+
+By the Kantorovich-Rubenstein duality, for any generator strategy \mu_G, the optimal reply by the discriminator is D^*, such that  L_{WGAN}(\mu_G, D^*) = K \cdot W_1(\mu_G, \mu_{ref}).Consequently, if the discriminator is good, the generator would be constantly pushed to minimize  W_1(\mu_G, \mu_{ref}), and the optimal strategy for the generator is just  \mu_G = \mu_{ref}, as it should.
+
+Comparison with GAN
+
+In the Wasserstein GAN game, the discriminator provides a better gradient than in the GAN game.
+
+Consider for example a game on the real line where both \mu_G and \mu_{ref} are Gaussian. Then the optimal Wasserstein critic D_{WGAN} and the optimal GAN discriminator D are plotted as below:
+
+For fixed discriminator, the generator needs to minimize the following objectives:
+
+For GAN, \mathbb E_{x\sim \mu_G} [\ln(1-D(x))].
+
+For Wasserstein GAN, \mathbb E_{x\sim \mu_G} [D_{WGAN}(x)].
+
+Let \mu_G be parametrized by \theta, then we can perform stochastic gradient descent by using two unbiased estimators of the gradient:\nabla_{\theta} \mathbb E_{x\sim \mu_G} [\ln(1-D(x))] = \mathbb E_{x\sim \mu_G} [\ln(1-D(x))\cdot \nabla_{\theta} \ln\rho_{\mu_G}(x)]\nabla_{\theta} \mathbb E_{x\sim \mu_G} [D_{WGAN}(x)] = \mathbb E_{x\sim \mu_G} [D_{WGAN}(x)\cdot \nabla_{\theta} \ln\rho_{\mu_G}(x)]where we used the reparameterization trick.{{NoteTag|note=This is not how it is really done in practice, since
+
+\nabla _{\theta }\ln \rho _{\mu _{G}}(x)
+
+is in general intractable, but it is theoretically illuminating.|name=not really done in practice}}
+
+As shown, the generator in GAN is motivated to let its \mu_G "slide down the peak" of \ln(1-D(x)). Similarly for the generator in Wasserstein GAN.
+
+For Wasserstein GAN, D_{WGAN} has gradient 1 almost everywhere, while for GAN, \ln(1-D) has flat gradient in the middle, and steep gradient elsewhere. As a result, the variance for the estimator in GAN is usually much larger than that in Wasserstein GAN. See also Figure 3 of.
+
+Training Wasserstein GANs
+
+Training the generator in Wasserstein GAN is just gradient descent, the same as in GAN (or most deep learning methods), but training the discriminator is different, as the discriminator is now restricted to have bounded Lipschitz norm. There are several methods for this.
+
+Upper-bounding the Lipschitz norm
+
+Let the discriminator function D to be implemented by a multilayer perceptron:D = D_n \circ D_{n-1} \circ \cdots \circ D_1where D_i(x) = h(W_i x), and h:\R \to \R is a fixed activation function with \sup_x |h'(x)| \leq 1. For example, the hyperbolic tangent function h = \tanh satisfies the requirement.
+
+Then, for any x, let x_i = (D_i \circ D_{i-1} \circ \cdots \circ D_1)(x), we have by the chain rule:d D(x) = diag(h'(W_n x_{n-1})) \cdot W_n \cdot diag(h'(W_{n-1} x_{n-2})) \cdot W_{n-1}  \cdots diag(h'(W_1 x)) \cdot W_1 \cdot dxThus, the Lipschitz norm of D is upper-bounded by\|D \|_L \leq \sup_{x}\| diag(h'(W_n x_{n-1})) \cdot W_n \cdot diag(h'(W_{n-1} x_{n-2})) \cdot W_{n-1}  \cdots diag(h'(W_1 x)) \cdot W_1\|_Fwhere \|\cdot\|_s is the operator norm of the matrix, that is, the largest singular value of the matrix, that is, the spectral radius of the matrix (these concepts are the same for matrices, but different for general linear operators).
+
+Since \sup_x |h'(x)| \leq 1, we have \|diag(h'(W_i x_{i-1}))\|_s = \max_j |h'(W_i x_{i-1, j})| \leq 1, and consequently the upper bound:\|D \|_L \leq \prod_{i=1}^n \|W_i \|_sThus, if we can upper-bound operator norms \|W_i\|_s of each matrix, we can upper-bound the Lipschitz norm of D.
+
+Weight clipping
+
+Since for any m\times l matrix W, let c = \max_{i, j} |W_{i, j}|, we have\|W\|_s^2 = \sup_{\|x\|_2=1}\|W x\|_2^2 = \sup_{\|x\|_2=1}\sum_{i}\left(\sum_j W_{i, j} x_j\right)^2 = \sup_{\|x\|_2=1}\sum_{i, j, k}W_{ij}W_{ik}x_jx_k \leq c^2 ml^2by clipping all entries of W to within some interval [-c, c], we have can bound \|W\|_s.
+
+This is the weight clipping method, proposed by the original paper.
+
+Gradient penalty
+
+Instead of strictly bounding \|D\|_L, we can simply add a "gradient penalty" term for the discriminator, of form\mathbb{E}_{x\sim\hat\mu}[(\|\nabla D(x)\|_2 - a)^2]where \hat \mu is a fixed distribution used to estimate how much the discriminator has violated the Lipschitz norm requirement.
+
+The discriminator, in attempting to minimize the new loss function, would naturally bring \nabla D(x) close to a everywhere, thus making \|D\|_L \approx a.
+
+This is the gradient penalty method.
+
+Further reading
+
+From GAN to WGAN
+
+Wasserstein GAN and the Kantorovich-Rubinstein Duality
+
+Depth First Learning: Wasserstein GAN
+
+See also
+
+Generative adversarial network
+
+Wasserstein metric
+
+Earth mover's distance
+
+Transportation theory
+
+References
+
+Notes
+
+Category:Neural network architectures
+
+Category:Cognitive science
+
+Category:Unsupervised learning

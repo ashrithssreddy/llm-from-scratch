@@ -1,0 +1,89 @@
+{{Infobox scientist
+
+name              = Philipp Koehn
+
+image             =
+
+image_size        =
+
+caption           =
+
+birth_date        =
+
+birth_place       = Erlangen, Bavaria,  West Germany
+
+citizenship       = Germany, United States of America
+
+field             = computer science, natural language processing, machine translation, cross-language information retrieval
+
+work_institution  = University of Edinburgh, Johns Hopkins University
+
+alma_mater        = Albert Schweitzer High School (Erlangen), University of Erlangen-Nuremberg, University of Tennessee, University of Southern California
+
+doctoral_advisor  = Kevin Knight
+
+doctoral_students =
+
+known_for         = Europarl corpus, Moses
+
+prizes            = Finalist – 2013 EPO European Inventor Award
+
+}}
+
+Philipp Koehn (born 1 August 1971 in Erlangen, West Germany) is a computer scientist and researcher in the field of machine translation. His primary research interest is statistical machine translation and he is one of the inventors of a method called phrase based machine translation. This is a sub-field of statistical translation methods that employs sequences of words (or so-called "phrases") as the basis of translation, expanding the previous word based approaches. &nbsp;A 2003 paper which he authored with Franz Josef Och and Daniel Marcu called Statistical phrase-based translation has attracted wide attention in Machine translation community and has been cited over a thousand times. Phrase based methods are widely used in machine translation applications in industry.
+
+Philipp Koehn received his PhD in computer science in 2003 from the University of Southern California, where he worked at the Information Sciences Institute advised by Kevin Knight. After a year as a postdoctoral fellow under Michael Collins at the Massachusetts Institute of Technology, he joined the University of Edinburgh as a lecturer in the School of Informatics in 2005. He was appointed reader in 2010 and professor in 2012. In 2014, he was appointed professor at the computer science department of The Johns Hopkins University, where he is affiliated with the Center for Language and Speech Processing.
+
+Moses statistical machine translation decoder
+
+The Moses machine translation decoder is an open source project that was created by and is maintained under the guidance of Philipp Koehn. The Moses decoder is a platform for developing Statistical machine translation systems given a parallel corpus for any language pair.
+
+The decoder was mainly developed by Hieu Hoang and Philipp Koehn at the University of Edinburgh and extended during a Johns Hopkins University Summer Workshop and further developed under Euromatrix and GALE project funding. &nbsp;The decoder (which is part of a complete statistical machine translation toolkit) is the de facto benchmark for research in the field.
+
+Although Koehn continues to play a major role in the development of Moses, the Moses decoder was supported by the European Framework 6 projects Euromatrix, TC-Star, the European Framework 7 projects EuroMatrixPlus, Let's MT, META-NET and MosesCore and the DARPA GALE project, as well as several universities such as the University of Edinburgh, the University of Maryland, ITC-irst, Massachusetts Institute of Technology, and others. &nbsp;Substantial additional contributors to the Moses decoder include Hieu Hoang, Chris Dyer, Josh Schroeder, Marcello Federico, Richard Zens, and Wade Shen.
+
+Europarl corpus
+
+The Europarl corpus is a set of documents that consists of the proceedings of the European Parliament from 1996 to the present. &nbsp;The corpus has been compiled and expanded by a group of researchers led by Philipp Koehn at University of Edinburgh. &nbsp;The data that makes up the corpus was extracted from the website of the European Parliament and then prepared for linguistic research. &nbsp;The latest release (2012) comprised up to 60 million words per language, with 21 European languages represented: Romanic (French, Italian, Spanish, Portuguese, Romanian), Germanic (English, Dutch, German, Danish, Swedish), Slavic (Bulgarian, Czech, Polish, Slovak, Slovene), Finno-Ugric (Finnish, Hungarian, Estonian), Baltic (Latvian, Lithuanian), and Greek.
+
+Other interests and activities in chronological order
+
+Koehn is a professor at Johns Hopkins University where he continues his research into machine translation through his affiliation with the Center for Language and Speech Processing
+
+Koehn is a professor and chair of machine translation at the University of Edinburgh School of Informatics and contributes to its statistical machine translation group which organises workshops, seminars and project related to the subject.
+
+Koehn has consulted to SYSTRAN periodically between 2006 and 2011. &nbsp;SYSTRAN was acquired by CLSI, a Korean machine translation company in April 2014.
+
+Koehn worked for Facebook/META AI Research from 2018 to 2022.
+
+Koehn is also chief scientist for Omniscien Technologies and a shareholder in Omniscien Technologies since 2007. &nbsp;Omniscien Technologies is a private company developing and commercialising machine translation technologies.
+
+Koehn authored a book titled "Statistical Machine Translation" in 2009 and a book titled "Neural Machine Translation" in 2020.
+
+Awards and recognition
+
+2013: One of three finalists in the category of Research for the European Patent Office (EPO) 2013 European Inventor Award. Koehn was recognised for patent EP 1488338 B, Phrase-Based Joint Probability Model for Statistical Machine Translations, a translation model that uses mathematical probabilities to determine the most likely interpretation of chunks of text between foreign languages.
+
+2015: Koehn received the Award of Honor of the International Association for Machine Translation.
+
+2024: Koehn was named Fellow of the Association for Computational Linguistics (ACL).
+
+References
+
+Category:Academics of the University of Edinburgh
+
+Category:German computer scientists
+
+Category:Living people
+
+Category:1971 births
+
+Category:People from Erlangen
+
+Category:German expatriates in the United States
+
+Category:Johns Hopkins University faculty
+
+Category:Natural language processing researchers
+
+Category:University of Southern California alumni

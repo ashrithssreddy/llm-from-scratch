@@ -1,0 +1,47 @@
+In probability theory, a nearly completely decomposable (NCD) Markov chain is a Markov chain where the state space can be partitioned in such a way that movement within a partition occurs much more frequently than movement between partitions. Particularly efficient algorithms exist to compute the stationary distribution of Markov chains with this property.
+
+Definition
+
+Ando and Fisher define a completely decomposable matrix as one where "an identical rearrangement of rows and columns leaves a set of square submatrices on the principal diagonal and zeros everywhere else." A nearly completely decomposable matrix is one where an identical rearrangement of rows and columns leaves a set of square submatrices on the principal diagonal and small nonzeros everywhere else.
+
+Example
+
+A Markov chain with transition matrix
+
+P =
+
+\begin{pmatrix}
+
+\frac{1}{2} & \frac{1}{2} & 0 & 0 \\
+
+\frac{1}{2} & \frac{1}{2} & 0 & 0 \\
+
+0 & 0 & \frac{1}{2} & \frac{1}{2} \\
+
+0 & 0 & \frac{1}{2} & \frac{1}{2} \\
+
+\end{pmatrix} + \epsilon \begin{pmatrix}
+
+-\frac{1}{2} & 0 & \frac{1}{2} & 0 \\
+
+0 & -\frac{1}{2} & 0 & \frac{1}{2} \\
+
+\frac{1}{2} & 0 & -\frac{1}{2} & 0 \\
+
+0 & \frac{1}{2} & 0 & -\frac{1}{2} \\
+
+\end{pmatrix}
+
+is nearly completely decomposable if ε is small (say 0.1).
+
+Stationary distribution algorithms
+
+Special-purpose iterative algorithms have been designed for NCD Markov chains has been shown experimentally to be competitive and in some cases significantly faster.
+
+See also
+
+Lumpability
+
+References
+
+Category:Markov processes

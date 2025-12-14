@@ -1,0 +1,51 @@
+Noam Slonim (Hebrew: נעם סלונים; born in Jerusalem) is an Israeli computer scientist, specializing in Natural Language Processing and the application of Large language models. He is a Research Scientist at Google Research Israel (since September 2025) and formerly an IBM Distinguished Engineer. He founded and served as Principal Investigator of Project Debater and led Language Model Utilization at IBM Research.
+
+Beyond his scientific achievements, Slonim had a writing and media career. He was a writer for Season 4 of The Cameric Five TV comedy show, published a weekly column in Haaretz on brain science, and co-created and wrote the Israeli sitcom Puzzle. He was also the head writer for Seasons 2 and 3 of the sitcom Ha-movilim and featured in the 2020 documentary The Debater. In October 2025, his debut novel, Questionable Memories, was published by Kinneret Publishing Group.
+
+Education and research interests
+
+Slonim graduated from the Hebrew University of Jerusalem in 1996 with a B.S. degree in Computer Science, Physics, and Mathematics. In 2002 he completed Ph.D. summa cum laude at the Interdisciplinary Center for Neural Computation at the Hebrew University, under the supervision of Professor Naftali Tishby. His thesis focused on the theory and applications of the Information Bottleneck method. From 2003 till 2006 he did post-doctoral studies at the Lewis-Sigler Institute for Integrative Genomics at Princeton University, working with Professor Bill Bialek and Professor Saeed Tavazoie. He joined IBM Research in 2007. Slonim holds over 30 patents (granted or pending) and has co-authored more than 100 scientific publications.
+
+In 2025, he joined Google Research Israel as a research scientist.
+
+Research activities
+
+From 1998 to 2003 he worked on the theory and applications of the Information Bottleneck method, suggesting various cluster analysis algorithms inspired by this method, and demonstrating the practical value of these algorithms on various domains.
+
+From 2003 to 2006 he worked on developing Machine Learning algorithms that rely on Information Theory concepts, and applied these algorithms to the analysis of various types of Genomics data.
+
+In 2011 he proposed to develop the first Artificial Intelligence system that can meaningfully participate in a full live debate with an expert human debater. This work gave rise to Project Debater, that debated expert human debaters in several live events during 2018 and 2019. In 2020, Slonim delivered the opening keynote at the EMNLP conference, describing the IBM Research work on developing Project Debater. From 2022 to 2025, he led IBM Research efforts applying large language models to practical use cases; in 2025 he moved to Google Research Israel as a Research Scientist.
+
+Writing and video career
+
+In 1996 Slonim was a writer for Season 4 of The Cameric Five TV comedy show.
+
+In 1997–1998 he published a weekly column in Haaretz newspaper, focused on brain science research.
+
+In 1997–1999 he co-created and co-wrote the Israeli sitcom, Puzzle.
+
+In 2008–2010 he was the head writer of Season 2 and Season 3 of the Israeli Sitcom, Ha-movilim.
+
+In 2020 he was featured in the documentary The Debater, an official selection of the 2020 Copenhagen International Documentary Film Festival.
+
+In 2025, his debut novel, Questionable Memories, was published by Kinneret Publishing Group.
+
+References
+
+Category:Living people
+
+Category:1968 births
+
+Category:Israeli computer scientists
+
+Category:Hebrew University of Jerusalem School of Computer Science & Engineering alumni
+
+Category:Natural language processing researchers
+
+Category:Male television writers
+
+Category:Israeli columnists
+
+Category:Scientists from Jerusalem
+
+Category:Israeli television writers

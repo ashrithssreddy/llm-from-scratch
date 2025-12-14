@@ -1,0 +1,175 @@
+UPGMA (unweighted pair group method with arithmetic mean) is a simple agglomerative (bottom-up) hierarchical clustering method. It also has a weighted variant, WPGMA, and they are generally attributed to Sokal and Michener.
+
+Note that the unweighted term indicates that all distances contribute equally to each average that is computed and does not refer to the math by which it is achieved. Thus the simple averaging in WPGMA produces a weighted result and the proportional averaging in UPGMA produces an unweighted result (see the working example).
+
+Algorithm
+
+The UPGMA algorithm constructs a rooted tree (dendrogram) that reflects the structure present in a pairwise similarity matrix (or a dissimilarity matrix).
+
+At each step, the nearest two clusters are combined into a higher-level cluster. The distance between any two clusters \mathcal{A} and \mathcal{B}, each of size (i.e., cardinality)  and , is taken to be the average of all distances d(x,y) between pairs of objects x in \mathcal{A} and y in \mathcal{B}, that is, the mean distance between elements of each cluster:
+
+{1 \over }\sum_{x \in \mathcal{A}}\sum_{ y \in \mathcal{B}} d(x,y)
+
+In other words, at each clustering step, the updated distance between the joined clusters \mathcal{A} \cup \mathcal{B} and a new cluster X  is given by the proportional averaging of the d_{\mathcal{A},X} and d_{\mathcal{B},X} distances:
+
+d_{(\mathcal{A} \cup \mathcal{B}),X} = \frac
+
+The UPGMA algorithm produces rooted dendrograms and requires a constant-rate assumption - that is, it assumes an ultrametric tree in which the distances from the root to every branch tip are equal. When the tips are molecular data (i.e., DNA, RNA and protein) sampled at the same time, the ultrametricity assumption becomes equivalent to assuming a molecular clock.
+
+Working example
+
+This working example is based on a JC69 genetic distance matrix computed from the 5S ribosomal RNA sequence alignment of five bacteria: Bacillus subtilis (a), Bacillus stearothermophilus (b), Lactobacillus viridescens (c), Acholeplasma modicum (d), and Micrococcus luteus (e).
+
+First step
+
+First clustering
+
+Let us assume that we have five elements (a,b,c,d,e) and the following matrix D_1 of pairwise distances between them :
+
+In this example, D_1 (a,b)=17 is the smallest value of D_1, so we join elements a and b.
+
+First branch length estimation
+
+Let u denote the node to which a and b are now connected. Setting  \delta(a,u)=\delta(b,u)=D_1(a,b)/2  ensures that elements a and b are equidistant from u. This corresponds to the expectation of the ultrametricity hypothesis.
+
+The branches joining a and b to u then have lengths  \delta(a,u)=\delta(b,u)=17/2=8.5 (see the final dendrogram)
+
+First distance matrix update
+
+We then proceed to update the initial distance matrix D_1 into a new distance matrix D_2 (see below), reduced in size by one row and one column because of the clustering of a with b.
+
+Bold values in D_2 correspond to the new distances, calculated by averaging distances between each element of the first cluster (a,b) and each of the remaining elements:
+
+D_2((a,b),c)=(D_1(a,c) \times 1 + D_1(b,c) \times 1)/(1+1)=(21+30)/2=25.5
+
+D_2((a,b),d)=(D_1(a,d) + D_1(b,d))/2=(31+34)/2=32.5
+
+D_2((a,b),e)=(D_1(a,e) + D_1(b,e))/2=(23+21)/2=22
+
+Italicized values in D_2 are not affected by the matrix update as they correspond to distances between elements not involved in the first cluster.
+
+Second step
+
+Second clustering
+
+We now reiterate the three previous steps, starting from the new distance matrix D_2
+
+Here, D_2 ((a,b),e)=22 is the smallest value of D_2, so we join cluster (a,b) and element e.
+
+Second branch length estimation
+
+Let v denote the node to which (a,b) and e are now connected. Because of the ultrametricity constraint, the branches joining a or b to v, and e to v are equal and have the following length:
+
+\delta(a,v)=\delta(b,v)=\delta(e,v)=22/2=11
+
+We deduce the missing branch length:
+
+\delta(u,v)=\delta(e,v)-\delta(a,u)=\delta(e,v)-\delta(b,u)=11-8.5=2.5  (see the final dendrogram)
+
+Second distance matrix update
+
+We then proceed to update D_2 into a new distance matrix D_3 (see below), reduced in size by one row and one column because of the clustering of (a,b) with e. Bold values in D_3 correspond to the new distances, calculated by proportional averaging:
+
+D_3(((a,b),e),c)=(D_2((a,b),c) \times 2 + D_2(e,c) \times 1)/(2+1)=(25.5 \times 2 + 39 \times 1)/3=30
+
+Thanks to this proportional average, the calculation of this new distance accounts for the larger size of the (a,b) cluster (two elements) with respect to e (one element). Similarly:
+
+D_3(((a,b),e),d)=(D_2((a,b),d) \times 2 + D_2(e,d) \times 1)/(2+1)=(32.5 \times 2 + 43 \times 1)/3=36
+
+Proportional averaging therefore gives equal weight to the initial distances of matrix D_1. This is the reason why the method is unweighted, not with respect to the mathematical procedure but with respect to the initial distances.
+
+Third step
+
+Third clustering
+
+We again reiterate the three previous steps, starting from the updated distance matrix D_3.
+
+Here, D_3 (c,d)=28 is the smallest value of D_3, so we join elements c and d.
+
+Third branch length estimation
+
+Let w denote the node to which c and d are now connected.
+
+The branches joining c and d to w then have lengths  \delta(c,w)=\delta(d,w)=28/2=14 (see the final dendrogram)
+
+Third distance matrix update
+
+There is a single entry to update, keeping in mind that the two elements c and d each have a contribution of 1 in the average computation:
+
+D_4((c,d),((a,b),e))=(D_3(c,((a,b),e)) \times 1 + D_3(d,((a,b),e)) \times 1)/(1+1)=(30 \times 1 + 36 \times 1)/2=33
+
+Final step
+
+The final D_4 matrix is:
+
+So we join clusters ((a,b),e) and (c,d).
+
+Let r denote the (root) node to which ((a,b),e) and (c,d) are now connected.
+
+The branches joining ((a,b),e) and (c,d) to r then have lengths:
+
+\delta(((a,b),e),r)=\delta((c,d),r)=33/2=16.5
+
+We deduce the two remaining branch lengths:
+
+\delta(v,r)=\delta(((a,b),e),r)-\delta(e,v)=16.5-11=5.5
+
+\delta(w,r)=\delta((c,d),r)-\delta(c,w)=16.5-14=2.5
+
+The UPGMA dendrogram
+
+The dendrogram is now complete. It is ultrametric because all tips (a to e) are equidistant from r :
+
+\delta(a,r)=\delta(b,r)=\delta(e,r)=\delta(c,r)=\delta(d,r)=16.5
+
+The dendrogram is therefore rooted by r, its deepest node.
+
+Comparison with other linkages
+
+Alternative linkage schemes include single linkage clustering, complete linkage clustering, and WPGMA average linkage clustering. Implementing a different linkage is simply a matter of using a different formula to calculate inter-cluster distances during the distance matrix update steps of the above algorithm. Complete linkage clustering avoids a drawback of the alternative single linkage clustering method - the so-called chaining phenomenon, where clusters formed via single linkage clustering may be forced together due to single elements being close to each other, even though many of the elements in each cluster may be very distant to each other. Complete linkage tends to find compact clusters of approximately equal diameters.
+
+Uses
+
+In ecology, it is one of the most popular methods for the classification of sampling units (such as vegetation plots) on the basis of their pairwise similarities in relevant descriptor variables (such as species composition). For example, it has been used to understand the trophic interaction between marine bacteria and protists.
+
+In bioinformatics, UPGMA is used for the creation of phenetic trees (phenograms). UPGMA was initially designed for use in protein electrophoresis studies, but is currently most often used to produce guide trees for more sophisticated algorithms. This algorithm is for example used in sequence alignment procedures, as it proposes one order in which the sequences will be aligned. Indeed, the guide tree aims at grouping the most similar sequences, regardless of their evolutionary rate or phylogenetic affinities, and that is exactly the goal of UPGMA
+
+In phylogenetics, UPGMA assumes a constant rate of evolution (molecular clock hypothesis) and that all sequences were sampled at the same time, and is not a well-regarded method for inferring relationships unless this assumption has been tested and justified for the data set being used. Notice that even under a 'strict clock', sequences sampled at different times should not lead to an ultrametric tree.
+
+Time complexity
+
+A trivial implementation of the algorithm to construct the UPGMA tree has O(n^3) time complexity, and using a heap for each cluster to keep its distances from other cluster reduces its time to  O(n^2 \log n). Fionn Murtagh presented an O(n^2) time and space algorithm.
+
+See also
+
+Neighbor-joining
+
+Cluster analysis
+
+Single-linkage clustering
+
+Complete-linkage clustering
+
+Hierarchical clustering
+
+Models of DNA evolution
+
+Molecular clock
+
+References
+
+External links
+
+UPGMA clustering algorithm implementation in Ruby (AI4R)
+
+Example calculation of UPGMA using a similarity matrix
+
+Example calculation of UPGMA using a distance matrix
+
+Category:Bioinformatics algorithms
+
+Category:Computational phylogenetics
+
+Category:Cluster analysis algorithms
+
+Category:Phylogenetics

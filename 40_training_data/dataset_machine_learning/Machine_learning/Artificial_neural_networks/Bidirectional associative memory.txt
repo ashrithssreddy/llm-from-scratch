@@ -1,0 +1,25 @@
+Bidirectional associative memory (BAM) is a type of recurrent neural network. BAM was introduced by Bart Kosko in 1988. There are two types of associative memory, auto-associative and hetero-associative. BAM is hetero-associative, meaning given a pattern it can return another pattern which is potentially of a different size.  It is similar to the Hopfield network in that they are both forms of associative memory. However, Hopfield nets return patterns of the same size.
+
+It is said to be bi-directional as it can respond to inputs from either the input or the output layer.
+
+Topology
+
+A BAM contains two layers of neurons, which we shall denote X and Y. Layers X and Y are fully connected to each other. Once the weights have been established, input into layer X presents the pattern in layer Y, and vice versa.
+
+The layers can be connected in both directions (bidirectional) with the result the weight matrix sent from the X layer to the Y layer is W and the weight matrix for signals sent from the Y layer to the X layer is W^T. Thus, the weight matrix is calculated in both directions. (i.e. E(A,B) = -AMA^T).
+
+See also
+
+Autoassociative memory
+
+Self-organizing feature map
+
+References
+
+External links
+
+Bidirectional Associative Memory – Python source code for the Wiki article
+
+Bidirectional associative memories – ACM Portal Reference
+
+Category:Artificial neural networks

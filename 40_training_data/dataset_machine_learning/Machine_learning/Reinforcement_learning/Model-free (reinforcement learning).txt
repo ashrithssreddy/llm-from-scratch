@@ -1,0 +1,11 @@
+In reinforcement learning (RL), a model-free algorithm is an algorithm which does not estimate the transition probability distribution (and the reward function) associated with the Markov decision process (MDP), which, in RL, represents the problem to be solved. The transition probability distribution (or transition model) and the reward function are often collectively called the "model" of the environment (or MDP), hence the name "model-free". A model-free RL algorithm can be thought of as an "explicit" trial-and-error algorithm.
+
+Value function estimation is crucial for model-free RL algorithms. Unlike MC methods, temporal difference (TD) methods learn this function by reusing existing value estimates. TD learning has the ability to learn from an incomplete sequence of events without waiting for the final outcome. It can also approximate the future return as a function of the current state. Similar to MC, TD only uses experience to estimate the value function without knowing any prior knowledge of the environment dynamics. The advantage of TD lies in the fact that it can update the value function based on its current estimate. Therefore, TD learning algorithms can learn from incomplete episodes or continuing tasks in a step-by-step manner, while MC must be implemented in an episode-by-episode fashion.
+
+Distributional Soft Actor-Critic || Off-policy || Continuous || Continuous || Value distribution
+
+}
+
+References
+
+Category:Reinforcement learning

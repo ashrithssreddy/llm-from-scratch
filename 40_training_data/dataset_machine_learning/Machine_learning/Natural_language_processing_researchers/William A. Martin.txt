@@ -1,0 +1,97 @@
+{{Infobox scientist
+
+name = William Arthur Martin
+
+image =
+
+image_size =
+
+caption =
+
+birth_date =
+
+birth_place = Oklahoma City, Oklahoma
+
+death_date =
+
+death_place = Brookline, Massachusetts
+
+residence =
+
+citizenship =
+
+nationality = American
+
+fields = Electrical engineering
+
+workplaces = MIT
+
+alma_mater = MIT
+
+doctoral_advisor = Marvin Minsky
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students =
+
+known_for =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences =
+
+influenced =
+
+awards =
+
+signature =
+
+footnotes =
+
+}}
+
+William Arthur Martin (1938-1981) was a computer scientist from Oklahoma City, Oklahoma.
+
+After graduating from Northwest Classen High School, where he was a state wrestling champion, he attended MIT where he received a bachelor's degree (1960), master's (1962) and a Ph.D. (1967) in electrical engineering under supervision of Marvin Minsky, with a dissertation on Symbolic Mathematical Laboratory. Bill was appointed to the M.I.T. faculty in 1968 with a joint appointment at the Sloan School and the Electrical Engineering / Computer Science Department.  In 1975, he was promoted to Associate Professor and received tenure.  He was about to come up for Full Professor when he became ill in 1980; he was promoted posthumously.
+
+His research pulled him towards the Project MAC, which became the Laboratory for Computer Science and the Artificial Intelligence Laboratory, where he researched expert systems.
+
+Martin co-founded the Macsyma project in 1968 and directed it until 1971.  Macsyma later became a successful commercial product and is the core of the free Maxima system.
+
+Martin then worked in automatic programming, knowledge representation and  natural language processing.
+
+Like many M.I.T. professors, Bill did consulting work, including, for example, at Bolt, Beranek and Newman and at IBM.  He also started a small company with Peter Szolovits and Lowell Hawkinson called Knowledge & Language Technology (KLT), which did work for DARPA.
+
+M.I.T. has compiled a complete record of Bill's time as a student and faculty member, including a listing of publications, courses taught, and theses supervised, which can be found here.
+
+Martin married Susan Young Forbes in 1970 and together they had three sons: James Campbell (Jamie) born in 1974, Christopher Forbes (Tad) born in 1977, and Jonathan Gilbert (Jon) born in 1979.  His parents were Barbara Jane Sawhill Martin, a long-time first grade teacher at the Nichols Hills School, and Earl Martin, a teacher and Superintendent of Elementary Education for Oklahoma City.  He is survived by his wife, his sons, and his sister, Jane Ann Martin Slane.
+
+Bibliography
+
+External links
+
+Obituary from Tech Talk
+
+References
+
+Category:1981 deaths
+
+Category:1938 births
+
+Category:Scientists from Oklahoma City
+
+Category:American computer scientists
+
+Category:MIT Sloan School of Management faculty
+
+Category:Lisp (programming language) people
+
+Category:Natural language processing researchers
+
+Category:Computational linguistics researchers
+
+Category:20th-century American people

@@ -1,0 +1,57 @@
+In representation learning, knowledge graph embedding (KGE), also called knowledge representation learning (KRL), or multi-relation learning, is a machine learning task of learning a low-dimensional representation of a knowledge graph's entities and relations while preserving their semantic meaning.  Leveraging their embedded representation, knowledge graphs (KGs) can be used for various applications such as link prediction, triple classification, entity recognition, clustering, and relation extraction.
+
+Definition
+
+A knowledge graph \mathcal{G} = \{E, R, F\} is a collection of entities E
+
+, relations R, and facts F. A fact is a triple (h, r, t) \in F that denotes a link r \in R between the head h \in E and the tail t \in E of the triple. Another notation that is often used in the literature to represent a triple (or fact) is \langle \text{head}, \text{relation}, \text{tail} \rangle. This notation is called the Resource Description Framework (RDF). However, nowadays, people have to deal with the sparsity of data and the computational inefficiency to use them in a real-world application.
+
+The embedding of a knowledge graph is a function that translates each entity and each relation into a vector of a given dimension d, called embedding dimension.
+
+Embedding procedure
+
+All algorithms for creating a knowledge graph embedding follow the same approach. Given Q as the set of all ranked predictions of a model, it is possible to define three different performance indexes: Hits@K, MR, and MRR. In particular, this technique completes a triple inferring the missing entity or relation. as well as limitations of the conventional collaborative filtering method.
+
+Training this kind of recommender system requires a huge amount of information from the users; however, knowledge graph techniques can address this issue by using a graph already constructed over a prior knowledge of the item correlation and using the embedding to infer from it the recommendation. It is possible to use the task of link prediction to infer a new connection between an already existing drug and a disease by using a biomedical knowledge graph built leveraging the availability of massive literature and biomedical databases.  it was applied to the YAGO knowledge graph. This was the first application of KGE to a large scale knowledge graph.|535x535px]]
+
+Given a collection of triples (or facts) \mathcal{F} = \{ \langle \text{head}, \text{relation}, \text{tail} \rangle \}, the knowledge graph embedding model produces, for each entity and relation present in the knowledge graph a continuous vector representation. making this class of embedding models light, and easy to train even if they suffer from high-dimensionality and sparsity of data.
+
+DistMult: Since the embedding matrix of the relation is a diagonal matrix,: As DistMult uses a diagonal matrix to represent the relations embedding but adds a representation in the complex vector space and the hermitian product, it can distinguish symmetric and asymmetric facts. This approach is scalable to a large knowledge graph in terms of time and space cost.: This model encodes in the embedding the analogical structure of the knowledge graph to simulate inductive reasoning.: This model is the improvement of canonical polyadic decomposition (CP), in which an embedding vector for the relation and two independent embedding vectors for each entity are learned, depending on whether it is a head or a tail in the knowledge graph fact. HolE uses circular correlation to create an embedded representation of the knowledge graph, TuckER sees the knowledge graph as a tensor that could be decomposed using the Tucker decomposition in a collection of vectorsi.e., the embeddings of entities and relationswith a shared core. Each entity and relation has its own embedding dimension, and the size of the core tensor is determined by the shape of the entities and relations that interact. MEI introduces the multi-partition embedding interaction technique with the block term tensor format, which is a generalization of CP decomposition and Tucker decomposition. It divides the embedding vector into multiple partitions and learns the local interaction patterns from data instead of using fixed special patterns as in ComplEx or SimplE models. This enables MEI to achieve optimal efficiency—expressiveness trade-off, not just being fully expressive. MEIM goes beyond the block term tensor format to introduce the independent core tensor for ensemble boosting effects and the soft orthogonality for max-rank relational mapping, in addition to multi-partition embedding interaction. MEIM generalizes several previous models such as MEI and its subsumed models, RotaE, and QuatE.: Uses a scoring function that forces the embeddings to satisfy a simple vector sum equation in each fact in which they appear:  h + r = t.: A modification of TransE for representing types of relations, by using a hyperplane as a geometric space.: A modification of TransH that uses different spaces embedding entities versus relations,  In TransR, the head and the tail of a given fact could belong to two different types of entities. For example, in the fact(\text{Obama}, \text{president of}, \text{USA}), Obama is a person and USA is a country. All the translational models define a score function in their representation space, but they oversimplify this metric loss. This model is the result of the combination of TransE and of the structure embedding ''Crossover interactions can be used for related information selection, and could be very useful for the embedding procedure. The regularization term of TransE makes the entity embedding to build a spheric space, and consequently loses the translation properties of the geometric space. RotatE is inspired by the Euler's identity and involves the use of Hadamard product to represent a relation r as a rotation from the head h to the tail t
+
+in the complex space. ConvE is an embedding model that represents a good tradeoff expressiveness of deep learning models and computational expensiveness, ConvR is an adaptive convolutional network aimed to deeply represent all the possible interactions between the entities and the relations. ConvKB, to compute score function of a given triple (h, r, t), it produces an input [h; \mathcal{r}; t]of dimension d \times 3 without reshaping and passes it to series of convolutional filter of size 1 \times 3. CapsE implements a capsule network to model a fact (h, r, t). During the embedding procedure is commonly assumed that, similar entities has similar relations. WN18RR, More recently, it has been discussed that these datasets are far away from real-world applications, and other datasets should be integrated as a standard benchmark.
+
+Libraries
+
+See also
+
+Knowledge graph
+
+Embedding
+
+Machine learning
+
+Knowledge base
+
+Knowledge extraction
+
+Statistical relational learning
+
+Representation learning
+
+Graph embedding
+
+References
+
+External links
+
+Open Graph Benchmark - Stanford
+
+WordNet - Princeton
+
+Category:Knowledge graphs
+
+Category:Machine learning
+
+Category:Graph algorithms
+
+Category:Information science

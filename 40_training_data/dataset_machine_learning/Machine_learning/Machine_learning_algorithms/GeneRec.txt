@@ -1,0 +1,15 @@
+GeneRec is a generalization of the recirculation algorithm, and approximates Almeida-Pineda recurrent backpropagation. It is used as part of the Leabra algorithm for error-driven learning.
+
+The symmetric, midpoint version of GeneRec is equivalent to the contrastive Hebbian learning algorithm (CHL).
+
+See also
+
+Leabra
+
+O'Reilly (1996; Neural Computation)
+
+References
+
+Category:Neuroscience
+
+Category:Machine learning algorithms

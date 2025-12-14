@@ -1,0 +1,83 @@
+{{Infobox academic
+
+name               =
+
+image              =
+
+alt                =
+
+caption            =
+
+birth_name         = Ronald James Williams
+
+birth_date         =
+
+birth_place        = Los Angeles, California, USA
+
+death_date         =
+
+death_place        = Framingham, Massachusetts, USA
+
+nationality        =
+
+other_names        = Ron J. Williams
+
+awards             =
+
+education          = California Institute of TechnologyUCSD
+
+thesis_title       =
+
+thesis_url         =
+
+thesis_year        =
+
+doctoral_advisor   = Donald Werner Anderson
+
+academic_advisors  = David Rumelhart
+
+workplaces         = UCSDNortheastern University
+
+doctoral_students  =
+
+notable_students   =
+
+known_for          = BackpropagationTeacher forcingPolicy gradient method
+
+influenced         =
+
+signature          =
+
+}}
+
+Ronald James Williams (1945 – February 16, 2024) was an American mathematician and computer scientist who spent the majority of his career at Northeastern University. He is considered one of the pioneers of neural networks. In 1986, he co-authored the seminal paper in Nature on the backpropagation algorithm along with David Rumelhart and Geoffrey Hinton, which triggered a boom in neural network research.
+
+Education and career
+
+Williams was born in Southern California. He studied at California Institute of Technology as a undergraduate student and received a B.S. in mathematics there in 1966. He received his M.A. and Ph.D. in mathematics, both at University of California, San Diego (UCSD) in 1972 and 1975, respectively. His Ph.D. thesis was supervised by Donald Werner Anderson. He worked for a defense contractor for some time after graduation. From 1983 to 1986, Williams was a member of the Parallel Distributed Processing research group headed by David Rumelhart at the Institute for Cognitive Science at UCSD. In 1986, Williams accepted a professorship in computer science at Northeastern University in Boston, where he remained afterwards. and made important contributions to backpropagation through time. In reinforcement learning, Williams introduced the REINFORCE algorithm in 1992, which became the first policy gradient method.
+
+Besides his works on neural networks, Williams, together with Wenxu Tong and Mary Jo Ondrechen, developed Partial Order Optimum Likelihood (POOL), a machine learning method used in the prediction of active amino acids in protein structures. POOL is a maximum likelihood method with a monotonicity constraint and is a general predictor of properties that depend monotonically on the input features.
+
+References
+
+External links
+
+Home page of Ronald J. Williams
+
+Category:1945 births
+
+Category:2024 deaths
+
+Category:American computer scientists
+
+Category:Northeastern University faculty
+
+Category:California Institute of Technology alumni
+
+Category:University of California, San Diego alumni
+
+Category:Artificial intelligence researchers
+
+Category:Machine learning researchers
+
+Category:People from Los Angeles

@@ -1,0 +1,41 @@
+AlphaGo versus Fan Hui was a five-game Go match between European champion Fan Hui, a 2-dan (out of 9 dan possible) professional, and AlphaGo, a computer Go program developed by DeepMind, held at DeepMind's headquarters in London in October 2015. AlphaGo won all five games. This was the first time a computer Go program had beaten a professional human player on a full-sized board without handicap. This match was not disclosed to the public until 27 January 2016 to coincide with the publication of a paper in the journal Nature describing the algorithms AlphaGo used.
+
+Games
+
+Summary
+
+In this match, DeepMind used AlphaGo's distributed version with 1,202 CPUs and 176 GPUs For each game there was a one-hour set time limit for each player followed by three 30-second byo-yomi overtime periods.
+
+During this match, AlphaGo and Fan Hui also played another five informal games with shorter time control (each player having just three 30-second byo-yomi) and AlphaGo defeated Fan by three to two.
+
+Game 3
+
+Fan Hui (black) v. AlphaGo (white), 7 October 2015, AlphaGo won by resignation.
+
+Responses
+
+AlphaGo's victory shocked the Go community. Lee Sedol commented that AlphaGo reached the top of the amateur level in this match, but had not yet reached the professional level, and he could give AlphaGo one or two stones. Ke Jie and Mi Yuting thought that the strength of AlphaGo in this match was equal to that of a candidate for Go professional, and extremely close to the professional level, while Shi Yue thought that it already reached the professional level.
+
+Canadian AI specialist Jonathan Schaeffer, comparing AlphaGo with a "child prodigy" that lacked experience, considered this match "not yet a Deep Blue moment", and said that the real achievement would be "when the program plays a player in the true top echelon".
+
+See also
+
+AlphaGo versus Lee Sedol
+
+AlphaGo versus Ke Jie
+
+References
+
+Category:Computer Go games
+
+Category:2015 in go
+
+Category:October 2015 sports events in the United Kingdom
+
+Category:Sports competitions in London
+
+Category:AlphaGo
+
+Category:Human versus computer matches
+
+Category:2015 in London

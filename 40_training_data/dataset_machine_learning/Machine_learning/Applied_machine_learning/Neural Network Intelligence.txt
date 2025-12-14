@@ -1,0 +1,69 @@
+{{Infobox software
+
+name                   = NNI (Neural Network Intelligence)
+
+logo                   = Neural_Network_Intelligence_logo.svg
+
+screenshot             =
+
+screenshot size        =
+
+caption                =
+
+author                 = Microsoft Research
+
+developer              = Microsoft
+
+released               =
+
+latest release version = v2.10
+
+latest release date    =
+
+repo                   =
+
+programming language   = Python
+
+operating system       = Windows, macOS, Ubuntu
+
+platform               = Cross-platform
+
+genre                  = AutoML toolkit
+
+license                = MIT License
+
+website                =
+
+}}
+
+NNI (Neural Network Intelligence) is a free and open-source AutoML toolkit developed by Microsoft. It is used to automate feature engineering, model compression, neural architecture search, and hyper-parameter tuning.
+
+The source code is licensed under MIT License and available on GitHub.
+
+See also
+
+Machine learning
+
+ML.NET
+
+References
+
+Further reading
+
+External links
+
+Neural Network Intelligence - Microsoft Research
+
+Category:Applied machine learning
+
+Category:Free and open-source software
+
+Category:Microsoft free software
+
+Category:Microsoft Research
+
+Category:Open-source artificial intelligence
+
+Category:Software using the MIT license
+
+Category:2017 software

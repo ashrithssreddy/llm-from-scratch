@@ -1,0 +1,115 @@
+{{Infobox scientist
+
+name              = Eric Poe Xing
+
+image             =
+
+image_size        =
+
+caption           =
+
+birth_date        =
+
+birth_place       = Shanghai, China
+
+death_date        =
+
+death_place       =
+
+citizenship       =
+
+nationality       = American
+
+fields            = Computer ScienceMachine LearningComputational Biology
+
+workplaces        = Mohamed bin Zayed University of Artificial Intelligence  Carnegie Mellon University  Stanford University
+
+alma_mater        = Tsinghua UniversityRutgers UniversityUniversity of California, Berkeley
+
+thesis_title      = Probabilistic graphical models and algorithms for genomic analysis
+
+thesis_url        = https://www.cs.cmu.edu/~epxing/papers/thesis.pdf
+
+thesis_year       = 2004
+
+doctoral_advisor  = Richard KarpMichael I. JordanStuart J. Russell
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students  =
+
+known_for         =
+
+influences        =
+
+influenced        =
+
+awards            = IMS Fellow (2023)   ACM Fellow (2022)  ASA Fellow (2022)  Carnegie Institution for Science Award (2019)  IEEE Fellow (2018)  AAAI Fellow (2016)   Member of the DARPA (ISAT) Advisory Group (2011-2014)  Sloan Fellowship (2008-2010) NSF Career Award (2006-2011)
+
+signature         =
+
+website           =
+
+spouse            = Wei Wu
+
+}}
+
+Eric Poe Xing is an American computer scientist whose research spans machine learning, computational biology, and statistical methodology. Xing is founding President of the world’s first artificial intelligence university, Mohamed bin Zayed University of Artificial Intelligence (MBZUAI) and a Co-Founder and Chief Scientist of GenBio AI.
+
+As a professor in the Carnegie Mellon School of Computer Science, he was founding director of the Center for Machine Learning and Health at Carnegie Mellon University and the University of Pittsburgh Medical Center. He has served as a visiting associate professor at Stanford University, and as a visiting research professor at Facebook Inc. Xing is also the Founder, Chairman, and former Chief Scientist and CEO of Petuum Inc.
+
+Biography
+
+Xing received a B.Sc. in physics at Tsinghua University in 1993, and a Ph.D. in molecular biology at Rutgers University in 1999 and a Ph.D. in computer science at the University of California, Berkeley in 2004.
+
+Xing became a faculty member at Carnegie Mellon University in 2004, directing the SAILING Lab, whose research spans a broad spectrum of topics ranging from theoretical foundations to real-world applications in machine learning, distributed systems, computer vision, natural language processing, and computational biology. He became a tenured professor in 2011 and became a full professor in 2014.
+
+In 2010, Xing served as a visiting research professor at Meta, formerly known as Facebook, as well as a visiting professor at Stanford University’s Department of Statistics.
+
+Xing’s major research contribution lies in the foundational work of statistical machine learning methodology, including pioneering work in distance metric learning (DML); statistical models and analyses of networks and graphs; methods for learning and analyzing graphical models; and new system, theory, and algorithms for distributed machine learning, such as the development of the “parameter server”.
+
+Xing is a board member of the International Machine Learning Society. Starting in 2014, he served as the program chair and, in 2019, began duties as general chair of the International Conference of Machine Learning (ICML).
+
+In 2016, Xing co-founded Petuum Inc., a US-based startup dedicated to democratizing the ownership and use of AI systems and solutions and make even the most advanced AI technology accessible and affordable. In 2016 and 2017, Petuum was named by CB Insight as one of the AI 100 around the world. In 2017, Petuum raised $93 million in a round of venture funding from SoftBank. With his collaborators, Xing developed the Petuum framework for distributed machine learning with massive data, big models, and a wide spectrum of algorithms.
+
+In January 2021, Xing became President of the Mohamed bin Zayed University of Artificial Intelligence (MBZUAI).
+
+Honors and awards
+
+Xing is a recipient of the National Science Foundation (NSF) Career Award and the Alfred P. Sloan Research Fellowship.
+
+In 2016, he was elected a Fellow of the Association of Advancement of Artificial Intelligence (AAAI). In 2019, he was elected a Fellow of the Institute of Electrical and Electronics Engineers (IEEE) for “contributions to machine learning algorithms and systems”. In 2022, he was named as a Fellow of the American Statistical Association and a Fellow of the Association for Computing Machinery (ACM). In 2023, he became a Fellow of the Institute of Mathematical Statistics (IMS).
+
+See also
+
+Probabilistic graphical model
+
+References
+
+External links
+
+Eric Xing (at Carnegie Mellon University )
+
+Category:Living people
+
+Category:American artificial intelligence researchers
+
+Category:Machine learning researchers
+
+Category:Carnegie Mellon University faculty
+
+Category:Rutgers University alumni
+
+Category:Tsinghua University alumni
+
+Category:UC Berkeley College of Engineering alumni
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Fellows of the American Statistical Association
+
+Category:2022 fellows of the Association for Computing Machinery
+
+Category:Year of birth missing (living people)

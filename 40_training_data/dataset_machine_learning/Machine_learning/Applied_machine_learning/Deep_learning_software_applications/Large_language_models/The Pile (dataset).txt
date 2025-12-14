@@ -1,0 +1,155 @@
+{{Infobox dataset
+
+size= 886.03 GB
+
+type = Open-source
+
+language = English
+
+application = Training large language models
+
+creator = EleutherAI
+
+date_of_release =
+
+}}
+
+The Pile is an 886 GB diverse, open-source dataset of English text created as a training dataset for large language models (LLMs). It was constructed by EleutherAI in 2020 and publicly released on December 31 of that year. It is composed of 22 component sub-datasets. However, LLMs trained on more diverse datasets are better able to handle a wider range of situations after training. The creation of the Pile was motivated by the need for a large enough dataset that contained data from a wide variety of sources and styles of writing.
+
+Contents and filtering
+
+Machine learning algorithms do not learn all they can from data on the first pass, so it is common practice to train an AI model on the same data more than once with each pass through the entire dataset referred to as an "epoch". To indicate variation in the perceived quality of the data between the 22 sub-datasets that make up the Pile, each of them was assigned a different number of "epochs", which would affect relative frequencies at which samples would be drawn from each individual sub-dataset.
+
+-
+
+! Component !! Original size, GB !! Epochs !! Effective size, GB
+
+-
+
+Pile-CC || 243.87 || 1 || 243.87
+
+-
+
+PubMed Central* || 96.93 || 2 || 193.86
+
+-
+
+Books3 || 108.40 || 1.5 || 162.61
+
+-
+
+OpenWebText2* || 67.40 || 2 || 134.80
+
+-
+
+arXiv* || 60.36 || 2 || 120.71
+
+-
+
+GitHub* || 102.18 || 1 || 102.18
+
+-
+
+Free Law* || 54.92 || 1.5 || 82.39
+
+-
+
+Stack Exchange* || 34.57 || 2 || 69.14
+
+-
+
+USPTO Backgrounds* || 24.59 || 2 || 49.19
+
+-
+
+PubMed Abstracts* || 20.68 || 2 || 41.37
+
+-
+
+Gutenberg (PG-19) || 11.68 || 2.5 || 29.20
+
+-
+
+OpenSubtitles || 13.94 || 1.5 || 20.91
+
+-
+
+Wikipedia || 6.85 || 3 || 20.54
+
+-
+
+DeepMind Mathematics || 8.32 || 2 || 16.63
+
+-
+
+Ubuntu Freenode IRC logs* || 5.93 || 2 || 11.84
+
+-
+
+BookCorpus2* || 6.76 || 1.5 || 10.15
+
+-
+
+EuroParl || 4.93 || 2 || 9.85
+
+-
+
+Hacker News* || 4.19 || 2 || 8.38
+
+-
+
+YouTube Subtitles* || 4.01 || 2 || 8.02
+
+-
+
+PhilPapers* || 2.56 || 2 || 5.11
+
+-
+
+NIH ExPorter* || 2.03 || 2 || 4.07
+
+-
+
+Enron Emails || 0.95 || 2 || 1.89
+
+-
+
+! Total || 886.03 || || 1346.69
+
+}
+
+EleutherAI chose the datasets to try to cover a wide range of topics and styles of writing, including academic writing, which models trained on other datasets were found to struggle with. but has become widely used to train other models, including Microsoft's Megatron-Turing Natural Language Generation, Meta AI's Open
+
+Pre-trained Transformers, LLaMA, and Galactica, Stanford University's BioMedLM 2.7B, the Beijing Academy of Artificial Intelligence's
+
+Chinese-Transformer-XL, Yandex's YaLM 100B, and Apple's OpenELM.
+
+In addition to being used as a training dataset, the Pile can also be used as a benchmark to test models and score how well they perform on a variety of writing styles.
+
+Training on copyrighted works or derivatives
+
+The Books3 component of the dataset contains copyrighted material compiled from Bibliotik, a pirate website.
+
+In July 2023, the Danish anti-piracy group Rights Alliance took copies of The Pile down through DMCA notices. Books3 was removed from The Pile before a class action lawsuit was filed in 2024 by three authors seeking damages as copies of the original dataset were still copied and available on the web.
+
+Tens of thousands of YouTube videos had their subtitles scraped directly from YouTube and included in The Pile, which YouTube argued is against its terms of service.
+
+Common Pile v0.1
+
+In June 2025, Eleuther AI in partnership with the Poolside, Hugging Face, and the US Library of Congress and over two dozen researchers at 14 institutions including the University of Toronto, MIT, CMU, the Vector Institute and the Allen Institute for AI released Common Pile v0.1, a training dataset that contains only works where the licenses permit their use for training AI models. The intent is to show what is possible if ethically training AI systems while respecting copyrighted works. They found that the process of gathering the data could not be fully automated and was at times painstaking with humans verifying and annotating every entry and that resulting models could achieve impressive results even though they were still not comparable with frontier models.
+
+See also
+
+List of chatbots
+
+List of datasets for machine-learning research
+
+References
+
+Category:Datasets in machine learning
+
+Category:Statistical data sets
+
+Category:Large language models
+
+Category:Open-source artificial intelligence

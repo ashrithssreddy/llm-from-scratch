@@ -1,0 +1,177 @@
+Neuroevolution, or neuro-evolution, is a form of  artificial intelligence that uses evolutionary algorithms to generate artificial neural networks (ANN), parameters, and rules. It is most commonly applied in artificial life, general game playing and evolutionary robotics. The main benefit is that neuroevolution can be applied more widely than supervised learning algorithms, which require a syllabus of correct input-output pairs. In contrast, neuroevolution requires only a measure of a network's performance at a task. For example, the outcome of a game (i.e., whether one player won or lost) can be easily measured without providing labeled examples of desired strategies. Neuroevolution is commonly used as part of the reinforcement learning paradigm, and it can be contrasted with conventional deep learning techniques that use backpropagation (gradient descent on a neural network) with a fixed topology.
+
+Features
+
+Many neuroevolution algorithms have been defined. One common distinction is between algorithms that evolve only the strength of the connection weights for a fixed network topology (sometimes called conventional neuroevolution), and algorithms that evolve both the topology of the network and its weights (called TWEANNs, for Topology and Weight Evolving Artificial Neural Network algorithms).
+
+A separate distinction can be made between methods that evolve the structure of ANNs in parallel to its parameters (those applying standard evolutionary algorithms) and those that develop them separately (through memetic algorithms).
+
+Comparison with gradient descent
+
+Most neural networks use gradient descent rather than neuroevolution. However, around 2017 researchers at Uber stated they had found that simple structural neuroevolution algorithms were competitive with sophisticated modern industry-standard gradient-descent deep learning algorithms, in part because neuroevolution was found to be less likely to get stuck in local minima. In Science,
+
+journalist Matthew Hutson speculated that part of the reason neuroevolution is succeeding where it had failed before is due to the increased computational power available in the 2010s.
+
+It can be shown that there is a correspondence between neuroevolution and gradient descent.
+
+Direct and indirect encoding
+
+Evolutionary algorithms operate on a population of genotypes (also referred to as genomes). In neuroevolution, a genotype is mapped to a neural network phenotype that is evaluated on some task to derive its fitness.
+
+In direct encoding schemes the genotype directly maps to the phenotype. That is, every neuron and connection in the neural network is specified directly and explicitly in the genotype. In contrast, in indirect encoding schemes the genotype specifies indirectly how that network should be generated.
+
+Indirect encodings are often used to achieve several aims:
+
+modularity and other regularities;
+
+compression of phenotype to a smaller genotype, providing a smaller search space;
+
+mapping the search space (genome) to the problem domain.
+
+Taxonomy of embryogenic systems for indirect encoding
+
+Traditionally indirect encodings that employ artificial embryogeny (also known as artificial development) have been categorised along the lines of a grammatical approach versus a cell chemistry approach. The former evolves sets of rules in the form of grammatical rewrite systems. The latter attempts to mimic how physical structures emerge in biology through gene expression. Indirect encoding systems often use aspects of both approaches.
+
+Stanley and Miikkulainen
+
+Direct
+
+Genetic algorithm
+
+Network Weights
+
+-
+
+Cellular Encoding (CE) by F. Gruau, 1994
+
+Direct
+
+Evolutionary programming
+
+Structure and parameters (simultaneous, complexification)
+
+-
+
+EPNet by Yao and Liu, 1997
+
+Direct
+
+Evolutionary programming (combined with backpropagation and simulated annealing)
+
+Structure and parameters (mixed, complexification and simplification)
+
+-
+
+NeuroEvolution of Augmenting Topologies (NEAT) by Stanley and Miikkulainen, 2002
+
+Direct
+
+Genetic algorithm. Tracks genes with historical markings to allow crossover between different topologies, protects innovation via speciation.
+
+Structure and parameters
+
+-
+
+Hypercube-based NeuroEvolution of Augmenting Topologies (HyperNEAT) by Stanley, D'Ambrosio, Gauci, 2008 / Siebel and Sommer, 2007
+
+Direct and indirect, potentially embryogenic (Common Genetic Encoding
+
+Direct, includes constraint masks to restrict the search to specific topology / parameter manifolds.
+
+Evolutionary algorithm. Uses constraint masks to drastically reduce the search space through exploiting domain knowledge.
+
+Structure and parameters (separately, complexification, interactive)
+
+-
+
+Deus Ex Neural Network (DXNN) by Gene Sher, 2012
+
+Direct/Indirect, includes constraints, local tuning, and allows for evolution to integrate new sensors and actuators.
+
+Memetic algorithm. Evolves network structure and parameters on different time-scales.
+
+Structure and parameters (separately, complexification, interactive)
+
+-
+
+Spectrum-diverse Unified Neuroevolution Architecture (SUNA) by Danilo Vasconcellos Vargas, Junichi Murata (Download code)
+
+Direct, introduces the Unified Neural Representation (representation integrating most of the neural network features from the literature).
+
+Genetic Algorithm with a diversity preserving mechanism called Spectrum-diversity that scales well with chromosome size, is problem independent and focus more on obtaining diversity of high level behaviours/approaches. To achieve this diversity the concept of chromosome Spectrum is introduced and used together with a Novelty Map Population.
+
+Structure and parameters (mixed, complexification and simplification)
+
+-
+
+Modular Agent-Based Evolver (MABE) by Clifford Bohm, Arend Hintze, and others. (Download code)
+
+Direct or indirect encoding of Markov networks, Neural Networks, genetic programming, and other arbitrarily customizable controllers.
+
+Provides evolutionary algorithms, genetic programming algorithms, and allows customized algorithms, along with specification of arbitrary constraints.
+
+Evolvable aspects include the neural model and allows for the evolution of morphology and sexual selection among others.
+
+-
+
+Covariance Matrix Adaptation with Hypervolume Sorted Adaptive Grid Algorithm (CMA-HAGA) by Shahin Rostami, and others.
+
+Direct, includes an atavism feature which enables traits to disappear and re-appear at different generations.
+
+Multi-Objective Evolution Strategy with Preference Articulation (Computational Steering)
+
+Structure, weights, and biases.
+
+-
+
+GACNN evolutionary pressure-driven by Di Biasi et al,
+
+Direct
+
+Genetic algorithm, Single-Objective Evolution Strategy, specialized for Convolutional Neural Network
+
+Structure
+
+-
+
+Fast-DENSER by Assunção et al and others
+
+Indirect
+
+Grammatical evolution (Dynamic Structured Grammar Evolution)
+
+Structure and optimiser used for training
+
+}
+
+See also
+
+Automated machine learning (AutoML)
+
+Evolutionary computation
+
+NeuroEvolution of Augmenting Topologies (NEAT)
+
+HyperNEAT (A Generative version of NEAT)
+
+Evolutionary Acquisition of Neural Topologies (EANT/EANT2)
+
+References
+
+External links
+
+{{Cite web|url=https://beacon-center.org/blog/2012/08/13/evolution-101-neuroevolution/|title=Evolution 101: Neuroevolution  BEACON|website=beacon-center.org|language=en-US|access-date=2018-01-14}}
+
+(has downloadable papers on NEAT and applications)
+
+mature open source neuroevolution project implemented in C#/.Net.
+
+ANNEvolve is an Open Source AI Research Project (Downloadable source code in C and Python with a tutorial & miscellaneous writings and illustrations
+
+Web page on evolutionary learning with EANT/EANT2] (information and articles on EANT/EANT2 with applications to robot learning)
+
+NERD Toolkit. The Neurodynamics and Evolutionary Robotics Development Toolkit. A free, open source software collection for various experiments on neurocontrol and neuroevolution. Includes a scriptable simulator, several neuro-evolution algorithms (e.g. ICONE), cluster support, visual network design and analysis tools.
+
+Source code for the DXNN Neuroevolutionary system.
+
+Category:Evolutionary algorithms and artificial neuronal networks

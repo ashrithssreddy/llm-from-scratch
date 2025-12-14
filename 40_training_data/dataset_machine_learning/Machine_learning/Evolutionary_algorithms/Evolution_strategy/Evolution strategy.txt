@@ -1,0 +1,117 @@
+Evolution strategy (ES) from computer science is a subclass of evolutionary algorithms, which serves as an optimization technique. It uses the major genetic operators mutation, recombination and selection of parents.
+
+History
+
+The 'evolution strategy' optimization technique was created in the early 1960s and developed further in the 1970s and later by Ingo Rechenberg, Hans-Paul Schwefel and their co-workers.
+
+-
+
+1994 || Derandomized self-adaptation ES - Derandomized scheme of mutative step size control is used ||
+
+-
+
+1994 || CSA-ES - usage information from the old generations ||
+
+-
+
+2001 || CMA-ES ||
+
+-
+
+2006 || Weighted multi-recombination ES - usage of weighted recombination ||
+
+-
+
+2007 || Meta-ES - incremental aggregation of partial semantic structures ||
+
+-
+
+2008 || Natural ES - usage of natural gradient ||
+
+-
+
+2010 || Exponential natural ES - a simpler version of natural ES ||
+
+-
+
+2014 || Limited memory CMA-ES - time–memory complexity reduction by covariance matrix decomposition ||
+
+-
+
+2016 || Fitness inheritance CMA-ES - fitness evaluation computational cost reduction using fitness inheritance ||
+
+-
+
+2017 || RS-CMSA ES - usage of subpopulations ||
+
+-
+
+2017 || MA-ES - COV update and COV matrix square root are not used ||
+
+-
+
+2018 || Weighted ES - weighted recombination of general convex quadratic functions ||
+
+}
+
+Methods
+
+Evolution strategies use natural problem-dependent representations, so problem space and search space are identical. In common with evolutionary algorithms, the operators are applied in a loop. An iteration of the loop is called a generation. The sequence of generations is continued until a termination criterion is met.
+
+The special feature of the ES is the self-adaptation of mutation step sizes and the coevolution associated with it. The ES is briefly presented using the standard form, pointing out that there are many variants. The real-valued chromosome contains, in addition to the n decision variables, n' mutation step sizes {\sigma}_j, where: 1\leq j\leq n'\leq n. Often one mutation step size is used for all decision variables or each has its own step size. Mate selection to produce \lambda offspring is random, i.e. independent of fitness. First, new mutation step sizes are generated per mating by intermediate recombination of the parental {\sigma }_{j} with subsequent mutation as follows:
+
+{\sigma}'_j = \sigma_j \cdot e^{(\mathcal{N}(0,1)-\mathcal{N}_j(0,1))}
+
+where \mathcal{N}(0,1) is a normally distributed random variable with mean 0 and standard deviation 1. \mathcal{N}(0,1) applies to all {\sigma}'_j, while \mathcal{N}_j(0,1) is newly determined for each {\sigma}'_j. Next, discrete recombination of the decision variables is followed by a mutation using the new mutation step sizes as standard deviations of the normal distribution. The new decision variables  x_j'  are calculated as follows:
+
+x_j'=x_j+\mathcal{N}_j(0,{\sigma}_j')
+
+This results in an evolutionary search on two levels: First, at the problem level itself and second, at the mutation step size level. In this way, it can be ensured that the ES searches for its target in ever finer steps. However, there is also the danger of being able to skip larger invalid areas in the search space only with difficulty.
+
+Variants
+
+The ES knows two variants of best selection for the generation of the next parent population (\mu - number of parents, \lambda - number of offspring):
+
+Individual step sizes for each coordinate, or correlations between coordinates, which are essentially defined by an underlying covariance matrix, are controlled in practice either by self-adaptation or by covariance matrix adaptation (CMA-ES). In 2025, Chen et.al. proposed a multi-agent evolution strategy for consensus-based distributed optimization, where a novel step adaptation method is designed to help multiple agents control the step size cooperatively.
+
+See also
+
+Covariance matrix adaptation evolution strategy (CMA-ES)
+
+Derivative-free optimization
+
+Evolutionary computation
+
+Genetic algorithm
+
+Natural evolution strategy
+
+Evolutionary game theory
+
+References
+
+Bibliography
+
+Ingo Rechenberg (1971): Evolutionsstrategie &ndash; Optimierung technischer Systeme nach Prinzipien der biologischen Evolution (PhD thesis). Reprinted by Frommann-Holzboog (1973).
+
+Hans-Paul Schwefel (1974): Numerische Optimierung von Computer-Modellen (PhD thesis). Reprinted by Birkhäuser (1977).
+
+Hans-Paul Schwefel: Evolution and Optimum Seeking. New York: Wiley & Sons 1995.
+
+H.-G. Beyer and H.-P. Schwefel. Evolution Strategies: A Comprehensive Introduction. Journal Natural Computing, 1(1):3&ndash;52, 2002.
+
+Hans-Georg Beyer: The Theory of Evolution Strategies. Springer, April 27, 2001.
+
+Ingo Rechenberg: Evolutionsstrategie '94. Stuttgart: Frommann-Holzboog 1994.
+
+J. Klockgether and H. P. Schwefel (1970). Two-Phase Nozzle And Hollow Core Jet Experiments. AEG-Forschungsinstitut. MDH Staustrahlrohr Project Group. Berlin, Federal Republic of Germany. Proceedings of the 11th Symposium on Engineering Aspects of Magneto-Hydrodynamics, Caltech, Pasadena, Cal., 24.&ndash;26.3. 1970.
+
+M. Emmerich, O.M. Shir, and H. Wang: Evolution Strategies. In: Handbook of Heuristics, 1-31. Springer International Publishing (2018).
+
+Research centers
+
+Bionics & Evolutiontechnique at Technische Universität Berlin
+
+Chair of Algorithm Engineering (Ls11) &ndash; TU Dortmund University
+
+Collaborative Research Center 531 &ndash; TU Dortmund University

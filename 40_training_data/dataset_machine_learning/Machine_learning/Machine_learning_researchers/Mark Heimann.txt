@@ -1,0 +1,61 @@
+{{Infobox chess player
+
+country = United States
+
+image       = Mark_Heimann_Chess.jpg
+
+birth_date =
+
+birth_place = Pittsburgh, Pennsylvania
+
+title = Grandmaster (2025)
+
+peakrating = 2520 (September 2025)
+
+FideID = 2028441
+
+}}
+
+Mark A. Heimann is an American chess grandmaster and machine learning researcher.
+
+Chess career
+
+Heimann began playing chess at the age of 5 after his father bought him and his twin brother Alexander a chess set. He then won several national grade-level championships as well as the Pennsylvania and Ohio state championships in middle school and high school.
+
+In October 2007, he was ranked as the national #2 under-14 player, only behind future grandmaster Marc Tyler Arnold.
+
+In December 2012, he played for Washington University St. Louis' "A" team in the Pan-American Intercollegiate Chess Championships, where he was the second-most successful player, recording 4 wins, 1 draw, and 1 loss. The university's team also won the Division II championship title.
+
+In three tournaments between September and December 2022, Heimann earned three international master title norms, earning the international master title at the age of 29.
+
+In November 2024, he scored a GM norm at the U.S. Masters Chess Championship. He finished the event in joint-6th place. The following week, at the Saint Louis Masters tournament, he earned his final grandmaster norm and crossed 2500 in live rating, achieving the Grandmaster title. It was formally awarded to him in April 2025.
+
+Research career
+
+He obtained a bachelor's degree from Washington University in St. Louis in the School of Arts and Sciences and got his PhD from the University of Michigan. He is a machine learning researcher at Lawrence Livermore National Laboratory.
+
+Personal life
+
+Outside of chess and research, he also plays several instruments
+
+References
+
+Category:Living people
+
+Category:1993 births
+
+Category:Chess Grandmasters
+
+Category:Washington University in St. Louis alumni
+
+Category:University of Michigan alumni
+
+Category:Sportspeople from Pittsburgh
+
+Category:Lawrence Livermore National Laboratory staff
+
+Category:American twins
+
+Category:Machine learning researchers
+
+Category:21st-century American chess players

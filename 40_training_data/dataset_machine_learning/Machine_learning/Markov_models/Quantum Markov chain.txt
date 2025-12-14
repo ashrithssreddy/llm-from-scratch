@@ -1,0 +1,43 @@
+In mathematics, a quantum Markov chain is a noncommutative generalization of the classical Markov chain, in which the usual notions of probability are replaced by those of quantum probability. This framework was introduced by Luigi Accardi, who pioneered the use of quasi‐conditional expectations as the quantum analogue of classical conditional expectations.
+
+Introduction
+
+Broadly speaking, the theory of quantum Markov chains mirrors that of classical Markov chains with two essential modifications. First, the classical initial state is replaced by a density matrix (i.e. a density operator on a Hilbert space). Second, the sharp measurement described by projection operators is supplanted by positive operator valued measures. Central to this approach is the notion of a quasi‐conditional expectation—a completely positive map that generalizes the classical conditional expectation to the noncommutative setting—which was introduced by Accardi and his collaborators. A unification approach to quantum Markov chains is also provided by Luigi Accardi, Abdessatar Souissi, and El Gheteb Soueidy in their work, which further develops and consolidates the theory.
+
+Formal Statement
+
+More precisely, a quantum Markov chain is defined as a pair (E,\rho) where:
+
+\rho is a density matrix on a Hilbert space \mathcal{H};
+
+\mathcal{B}\subseteq B(\mathcal{H}) is a C*-algebra of bounded operators;
+
+E: \mathcal{B}\otimes\mathcal{B}\to\mathcal{B} is a quantum channel—that is, a completely positive trace-preserving (CPTP) map—which serves as a quasi‐conditional expectation.
+
+The quantum Markov condition is expressed by the requirement that
+
+\operatorname{Tr}\Big[\rho\, (b_1\otimes b_2)\Big] = \operatorname{Tr}\Big[\rho\, E(b_1,b_2)\Big]
+
+for all b_1,b_2\in \mathcal{B}.
+
+See also
+
+Quantum walk
+
+Measure-many automata
+
+References
+
+Accardi, L., Frigerio, A., & Lewis, J. T. (1982). Quantum stochastic processes. Publications of the Research Institute for Mathematical Sciences, 18, 97–133.
+
+Accardi, L., & Lu, Y. G. (1990). The unitary dilations of noncommutative Markov chains. Infinite Dimensional Analysis, Quantum Probability and Related Topics, 1(01), 13–27.
+
+Accardi, L., Souissi, A., & Soueidy, E. (2020). Quantum Markov chains: A unification approach. DOI:10.1142/S0219025720500162
+
+Gudder, Stanley. (2008). "Quantum Markov chains." Journal of Mathematical Physics, 49(7), 072105.
+
+Category:Exotic probabilities
+
+Category:Quantum information science
+
+Category:Markov models

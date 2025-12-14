@@ -1,0 +1,137 @@
+{{Infobox scientist
+
+name                      = John D. Lafferty
+
+image                     =
+
+image_size                =
+
+alt                       =
+
+caption                   =
+
+birth_date                =
+
+birth_place               =
+
+death_date                =
+
+death_place               =
+
+resting_place             =
+
+resting_place_coordinates =
+
+citizenship               =
+
+nationality               =
+
+fields                    = Computer ScienceMachine Learning
+
+workplaces                = Yale UniversityUniversity of ChicagoCarnegie Mellon UniversityIBM ResearchHarvard University
+
+alma_mater                = Princeton University (PhD, MA)Middlebury College (BA)
+
+thesis_title              =
+
+thesis_url                =
+
+thesis_year               =
+
+doctoral_advisor          =
+
+academic_advisors         =
+
+doctoral_students         = ChengXiang Zhai
+
+notable_students          = David Blei (Post Dr.)
+
+known_for                 = Conditional Random Fields
+
+author_abbrev_bot         =
+
+author_abbrev_zoo         =
+
+influences                =
+
+influenced                =
+
+awards                    = IEEE Fellow (2007)   Classic paper prizes of ICML (2013)  Test of Time Award of SIGIR (2014)
+
+signature                 =
+
+signature_alt             =
+
+website                   =
+
+footnotes                 =
+
+}}
+
+John D. Lafferty is an American scientist, Professor at Yale University and leading researcher in machine learning. He is best known for proposing the Conditional Random Fields with Andrew McCallum and Fernando C.N. Pereira. He previously taught at the University of Chicago as Louis Block Professor of Statistics and Computer Science,
+
+He was elected Fellow of IEEE in 2007 "for contributions to statistical pattern recognition and statistical language processing".
+
+Academic career
+
+Lafferty has held many positions, including: 1) program co-chair and general co-chair of the Neural Information Processing Systems (NIPS) Foundation conferences; 2) co-director of CMU's new Ph.D. Machine Learning Ph.D. Program; 3) associate editor of the Journal of Machine Learning Research and the Electronic Journal of Statistics; and 4) member of the Committee on Applied and Theoretical Statistics (CATS) of the National Research Council.
+
+He has also received numerous awards, including two Test-of-Time awards at the International Conference on Machine Learning (ICML) 2011 & 2012,
+
+The idea of statistical machine translation was born in the labs of IBM Research.
+
+2001. Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data.
+
+Test-of-Time Award of ICML 2011.
+
+2002. Diffusion Kernels on Graphs and Other Discrete Input Spaces.
+
+Test-of-Time Award of ICML 2012.
+
+2003. Semi-Supervised Learning Using Gaussian Fields and Harmonic Functions.
+
+Classic paper prizes of ICML 2013.
+
+2003. Beyond independent relevance: methods and evaluation metrics for subtopic retrieval.
+
+Test of Time Award of SIGIR 2014.
+
+2006. Dynamic topic models. ICML'06.
+
+See also
+
+Conditional Random Fields
+
+Dynamic topic model
+
+Diffusion Kernel
+
+References
+
+External links
+
+John D Lafferty UChicago  (at University of Chicago)
+
+John Lafferty: Teaching Computers to Learn
+
+Category:Living people
+
+Category:American artificial intelligence researchers
+
+Category:Machine learning researchers
+
+Category:University of Chicago faculty
+
+Category:Carnegie Mellon University faculty
+
+Category:Year of birth missing (living people)
+
+Category:Natural language processing researchers
+
+Category:American computer scientists
+
+Category:Yale University faculty
+
+Category:Middlebury College alumni
+
+Category:Princeton University alumni

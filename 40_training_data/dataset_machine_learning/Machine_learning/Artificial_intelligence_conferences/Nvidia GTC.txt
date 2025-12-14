@@ -1,0 +1,221 @@
+{{Infobox recurring event
+
+logo               =
+
+logo_size          = 200px
+
+logo_caption       = Logo since 2006
+
+date               = March & November
+
+frequency          = Semi-annual
+
+venue              = San Jose Convention Center
+
+location           = San Jose, California, U.S.
+
+founded            =
+
+last               =
+
+next               = Not Known
+
+participants       =
+
+attendance         = 25,000
+
+website            =
+
+footnotes          =
+
+organized          = Nvidia
+
+}}
+
+Nvidia GTC (GPU Technology Conference) is a global artificial intelligence (AI) conference for developers that brings together developers, engineers, researchers, inventors, and IT professionals. Topics focus on AI, computer graphics, data science, machine learning and autonomous machines. Each conference begins with a keynote from Nvidia CEO and founder Jensen Huang, followed by a variety of sessions and talks with experts from around the world.
+
+It originated in 2009 in San Jose, California, with an initial focus on the potential for solving computing challenges through GPUs. In recent years, the conference focus has shifted to various applications of artificial intelligence and deep learning, including: self-driving cars, healthcare, high performance computing, professional visualization, and Nvidia Deep Learning Institute (DLI) training.
+
+History
+
+The first GTC was held from September 30 to October 2, 2009 at the Fairmont San Jose hotel and attracted roughly 1,500 attendees.  The first GTC was so wildly popular that it ended up hosting "several hundred more people" than expected, forcing Nvidia to "shut down registration" at two weeks before the conference.
+
+Since GTC 2009, Nvidia has used the much larger San Jose Convention Center as GTC's primary venue.  Along with Nvidia, GTC's size and prominence greatly increased during the AI boom.
+
+According to Nvidia, Huang starts to plan his keynote address about two months before each GTC, to identify what announcements he will make and what things he will present or demonstrate on the stage.
+
+GTC 2025 drew about 25,000 attendees to San Jose.  By then, GTC and its host company had shifted focus so sharply from graphics to artificial intelligence that Huang himself called GTC the "Super Bowl of A.I."  Nvidia wrapped Downtown San Jose in its "neon green and black colors".  On March 18, Nvidia also held a night market inspired by Huang's well-known affection for Taiwanese night markets. Maybe first keynote ever in 3D; double precision n body simulation demo
+
+-
+
+2010 || Sep 20–23 || San Jose Convention Center, San Jose, CA || Jensen Huang; Sebastian Thrun, robotics at Stanford and engineer at Google; Klaus Schulten, computational biologist, Univ. of Illinois, Urbana-Champaign || DX11 Tessellation; Iray on 3DSMax; CUDA x86; Matlab CUDA Accelerated Parallel Computing Toolbox; CUDA roadmap revealed through Maxwell; Quadro graphics cards for video gaming
+
+-
+
+2011 || Dec 14–15 || China || Jensen Huang || CUDA
+
+-
+
+2012 || May 14–17 || San Jose || Jensen Huang; Iain Couzins (Human Brains and Crowd Behavior), and Part Time Scientists Robert Boehme and Wes Faler (Space) || Kepler microarchitecture; GeForce Grid (GeForce Now)
+
+-
+
+2013 || Mar 18–21 || San Jose || Jensen Huang; Erez Lieberman Aiden (genomics pioneer), Ralph V. Gilles (President and CEO of SRT Brand at Chrysler) || Face Works for facial animation
+
+-
+
+2014 || Mar 25 || San Jose || Jensen Huang; Dirk Van Gelder; Danny Nahmias, Adam Gazzaley; Oculus CEO Brandon (announced Facebook was acquiring) || NVLink; Pascal microarchitecture; Tegra mobile; Audi drives itself onto stage
+
+-
+
+2015 || Mar 17–20 || San Jose || Jensen Huang; Elon Musk; Jeff Dean; Andrew Ng; Andrej Karpathy (director of AI/Computer Vision at Tesla) || Nvidia Drive; Titan X; Voice recognition
+
+-
+
+2016 || Apr 4–8; Sep 28–29 || San Jose; Amsterdam || Jensen Huang || Pascal microarchitecture new version; DGX-1; Nvidia Drive PX2; iRay; DGX-2
+
+-
+
+2017 || May 8–11 || San Jose; Europe; Israel; Japan || Jensen Huang || Volta Supercomputer; ISAAC Robot Simulator
+
+-
+
+2018 || Mar 26–29 || San Jose; Europe; Israel; Japan || Jensen Huang || Clara for healthcare and biomedical research; ARM partnership announce for IoT; RAPIDS Demo
+
+-
+
+2019 || Mar 17–21 || San Jose; Europe; Israel; Japan || Jensen Huang || GauGAN for animation; Orin auto AI processor; Self-driving car partnership with Toyota; CUDA-X AI acceleration libraries adopted by PayPal, SAS, Walmart and Microsoft
+
+-
+
+2020 || Oct 5–9 || Digital || Jensen Huang || AI Supercomputer for Biomedical Research; Ampere GPUs for visual computing; A100; Artificial Intelligence for Edge and Cloud; ISAAC Demo
+
+-
+
+2021 || Apr 12–16 || Digital || Jensen Huang; Geoffrey Hinton; Yann LeCun; Yoshua Bengio || Grace; BMW Virtual Factory; Omniverse Enterprise; SDK for quantum simulations; DGX SuperPOD; Nvidia BlueField 3 DPU
+
+-
+
+2022
+
+Mar 21–24
+
+Digital
+
+Jensen Huang; Andrew Ng, Dale Durran, Doruk Sonmez
+
+Hopper architecture, H100 GPU, Jetson AGX Orin
+
+-
+
+2022
+
+Sep 19–22
+
+Digital
+
+Jensen Huang
+
+TBA
+
+-
+
+2023
+
+Mar 20–23
+
+Digital
+
+Jensen Huang
+
+TBA
+
+-
+
+2024
+
+Mar 18–21
+
+San Jose
+
+Jensen Huang
+
+Blackwell architecture
+
+-
+
+2025
+
+Mar 17–21
+
+San Jose
+
+Jensen Huang
+
+NVIDIA Isaac GR00T N1
+
+NVIDIA / General Motors Partnership
+
+-
+
+2025
+
+May 21-22
+
+Taipei, Taiwan
+
+Jensen Huang
+
+NVIDIA NVLink Fusion
+
+NVIDIA RTS PRO Servers
+
+Foxconn AI Factory in Partnership with NVIDIA and Taiwan
+
+-
+
+2025
+
+June 21-22
+
+Paris, France
+
+Jensen Huang
+
+TBA
+
+-
+
+2025
+
+October 27-29
+
+Washington D.C.
+
+Jensen Huang
+
+TBD - See
+
+-
+
+2026
+
+March 16-19
+
+San Jose
+
+Jensen Huang
+
+TBA (Date announced at GTC October 2025 Keynote )
+
+}
+
+See also
+
+List of artificial intelligence journals
+
+References
+
+Category:Artificial intelligence conferences
+
+Category:International business conferences

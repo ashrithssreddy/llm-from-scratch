@@ -1,0 +1,27 @@
+{{Infobox software
+
+title = Apertus
+
+developer =
+
+released =
+
+license = Apache 2.0
+
+website =
+
+}}
+
+Apertus is a Swiss public large language model, developed by the Swiss National AI Initiative (a collaboration between ETH Zurich, the Swiss National Supercomputing Centre, and the École Polytechnique Fédérale de Lausanne). It was released on September 2, 2025. The model was developed aiming to adhere to European copyright law, and is one of the first examples of a sovereign, public AI in the vein of AI nationalism. It is also the first large model to comply with the European Union's Artificial Intelligence Act. It was released under an Apache 2.0 license.
+
+See also
+
+List of large language models
+
+References
+
+External links
+
+Category:ETH Zurich
+
+Category:Large language models

@@ -1,0 +1,1085 @@
+This is a list of data science software and platforms used in data science, which includes programming languages, programming environments, machine learning frameworks, data engineering tools, statistical software, data analysis, plotting, MLOps systems, and more.
+
+Programming languages
+
+Data Analysis Expressions
+
+FreeMat
+
+GAUSS
+
+GNU Octave
+
+IDL
+
+Java
+
+JavaScript
+
+Julia
+
+MATLAB
+
+O-Matrix
+
+PV-WAVE
+
+Python
+
+R
+
+S
+
+Scilab language
+
+SAS language
+
+Scala
+
+SPARQL
+
+Speakeasy
+
+Swift
+
+Wolfram Language
+
+Development environments
+
+These interactive notebooks, IDEs, and platforms provide specialised development environments.
+
+Apache Zeppelin
+
+Architect — Eclipse (software)
+
+CoCalc
+
+Dataiku Data Science Studio
+
+FreeMat
+
+GNU Octave
+
+Google Colab
+
+DataSpell
+
+Jupyter Notebook / JupyterLab
+
+Kaggle Notebooks
+
+MATLAB
+
+O-Matrix
+
+PyCharm
+
+RStudio
+
+SAS (software) and SAS Studio
+
+Spyder
+
+Visual Studio Code
+
+Machine and deep learning software
+
+The Machine learning / deep learning tools support development in those fields.
+
+Apache Mahout
+
+Apache MXNet
+
+Apache SINGA
+
+BigDL
+
+Caffe
+
+CatBoost
+
+Chainer
+
+Data Analytics Acceleration Library
+
+Deeplearning4j
+
+Dlib
+
+Encog
+
+Flux
+
+Google JAX
+
+Keras
+
+LIBSVM
+
+LightGBM
+
+MATLAB + Deep Learning Toolbox
+
+Microsoft Cognitive Toolkit
+
+MindsDB
+
+MindSpore
+
+ML.NET
+
+Neural Designer
+
+Neural Network Intelligence
+
+oneAPI
+
+OpenNN
+
+PlaidML
+
+PyTorch
+
+QLattice
+
+Scikit-learn
+
+Shogun (toolbox)
+
+TensorFlow
+
+Theano
+
+Torch
+
+Tree-based pipeline optimization tool
+
+XGBoost
+
+Weka
+
+Wolfram Mathematica
+
+Data engineering
+
+Examples of Data engineering tools.
+
+Apache Airflow
+
+Apache Flink
+
+Apache Hadoop
+
+Apache Kafka
+
+Apache NiFi
+
+Apache Spark
+
+Dask
+
+Data build tool (dbt)
+
+Data mining
+
+Examples of Data mining tools.
+
+Free and open-source
+
+Carrot2
+
+Chemicalize.org
+
+ELKI
+
+General Architecture for Text Engineering (Gate)
+
+KNIME
+
+MOA
+
+mlpack
+
+NLTK
+
+OpenNN
+
+Orange
+
+PSPP
+
+R
+
+scikit-learn
+
+Torch
+
+UIMA
+
+Weka
+
+Proprietary
+
+Amazon SageMaker
+
+Angoss
+
+Google Cloud Platform
+
+LIONsolver
+
+Microsoft Analysis Services
+
+NetOwl
+
+Oracle Data Mining
+
+PSeven
+
+PolyAnalyst
+
+Qlucore
+
+RapidMiner
+
+SAS Enterprise Miner
+
+SPSS Modeler
+
+STATISTICA
+
+Tanagra
+
+Vertica
+
+Database management
+
+Data warehouses
+
+Data warehouse environments include:
+
+Amazon Redshift
+
+Snowflake
+
+Google BigQuery
+
+Microsoft Azure Synapse
+
+Teradata
+
+Vertica
+
+Data lakes
+
+Data lake environments include:
+
+Apache Hadoop
+
+Cloudera
+
+Databricks
+
+Delta Lake
+
+Amazon S3
+
+Google Cloud Storage
+
+Azure Data Lake
+
+Algorithms
+
+Apriori algorithm – frequent itemset mining and association rule learning in market basket analysis
+
+Backpropagation – algorithm for training artificial neural networks using gradient descent
+
+Decision Trees – tree-based algorithm for classification and regression
+
+Expectation–maximization algorithm – iterative procedure for maximum likelihood estimation with latent variables
+
+Gradient descent – iterative optimization algorithm for minimizing a loss function
+
+ID3 algorithm – used to generate a decision tree from a dataset
+
+K-Means – clustering algorithm based on minimizing within-cluster distances
+
+K-Nearest Neighbors (KNN) – instance-based learning and classification method
+
+Linear regression – estimation method for predicting a dependent variable based on independent variables
+
+Logistic regression – classification algorithm for predicting a binary outcome
+
+Naive Bayes – probabilistic classifier based on Bayes' theorem
+
+Ordinary least squares – estimation method for parameters in linear regression
+
+PageRank – graph-based algorithm for link analysis and search ranking
+
+Principal component analysis – technique to reduce high-dimensional data while preserving variance
+
+Q-learning – reinforcement learning algorithm for learning optimal actions
+
+Random forest – ensemble of decision trees for improved classification or regression
+
+Sequential minimal optimization – solver for training support vector machines
+
+Stochastic gradient descent – randomized variant of gradient descent for large-scale machine learning
+
+Support Vector Machines (SVM) – algorithm for finding a hyperplane to separate classes
+
+Statistical software
+
+Open-source
+
+ADaMSoft
+
+ADMB
+
+Chronux
+
+DAP
+
+Epi Info
+
+Fityk
+
+GNU Octave
+
+gretl
+
+Intrinsic Noise Analyzer
+
+jamovi
+
+JASP
+
+JMulTi
+
+Just another Gibbs sampler (JAGS)
+
+Mondrian
+
+Neurophysiological Biomarker Toolbox
+
+OpenBUGS
+
+OpenEpi
+
+OpenMx
+
+Ploticus
+
+PSPP
+
+Programming with Big Data in R
+
+R Commander
+
+Rattle GUI
+
+Revolution Analytics
+
+RStudio
+
+Salstat
+
+Scilab
+
+SciPy
+
+Simfit
+
+SOCR
+
+SOFA Statistics
+
+Stan
+
+Statistical Lab
+
+Public domain
+
+CSPro
+
+Dataplot
+
+Epi Map
+
+X-13ARIMA-SEATS
+
+Freeware
+
+BV4.1
+
+MINUIT
+
+WinBUGS
+
+Winpepi
+
+Proprietary
+
+Analytica
+
+ASReml
+
+BMDP
+
+DB Lytix
+
+EViews
+
+GAUSS
+
+Genedata
+
+GenStat
+
+GLIM
+
+GraphPad Prism
+
+Igor Pro
+
+IMSL Numerical Libraries
+
+JMP
+
+LIMDEP
+
+LISREL
+
+Maple
+
+Mathematica
+
+MATLAB
+
+MedCalc
+
+Microfit
+
+Minitab
+
+MLwiN
+
+NAG Numerical Library
+
+NCSS
+
+NLOGIT
+
+nQuery Sample Size Software
+
+O-Matrix
+
+PASS Sample Size Software
+
+Primer-E Primer
+
+Qlucore
+
+RATS
+
+S-PLUS
+
+SHAZAM
+
+SigmaStat
+
+SIMUL
+
+SmartPLS
+
+Speakeasy
+
+SPSS
+
+Stata
+
+StatCrunch
+
+Statgraphics
+
+Statistica
+
+StatsDirect
+
+StatXact
+
+SuperCROSS
+
+SYSTAT
+
+The Unscrambler
+
+WarpPLS
+
+World Programming System
+
+XploRe
+
+Data processing
+
+Tools for Data processing and analysis:
+
+AIDA
+
+Alteryx
+
+Apache Kudu
+
+Aphelion
+
+ClickHouse
+
+Cubes (OLAP server)
+
+DADiSP
+
+DAP
+
+Data Analysis Expressions
+
+Databricks
+
+Data Discovery and Query Builder
+
+Dataiku
+
+DIVA
+
+Dplyr
+
+Easystats
+
+Ecu.test
+
+EditGrid
+
+EgoNet
+
+Epi Info
+
+EViews
+
+Endrov
+
+Eye-Sys
+
+FlexPro
+
+FreeMat
+
+Fsc2
+
+GNU Octave
+
+ILNumerics
+
+Imc FAMOS
+
+InfiniteGraph
+
+Informatica
+
+Java Analysis Studio
+
+JMP
+
+Kirix Strata
+
+KnetMiner
+
+LabWindows/CVI
+
+LIONsolver
+
+MATLAB
+
+MagicPlot
+
+MetaboAnalyst
+
+MEX file
+
+Microsoft Analysis Services
+
+Monarch
+
+Moose (analysis)
+
+MountainsMap
+
+Natural Language Toolkit
+
+NetMiner
+
+Nirvana
+
+Ocean Data View
+
+OpenRefine
+
+OpenScientist
+
+Origin
+
+Pandas
+
+Paxata
+
+Pipeline Pilot
+
+Poimapper
+
+Polars
+
+PolyAnalyst
+
+PowerLab
+
+RCFile
+
+ROOT
+
+RRDtool
+
+SAS
+
+Seeq Corporation
+
+SekChek Local
+
+SensoMotoric Instruments
+
+Sisense
+
+SmartPLS
+
+Social network analysis software
+
+SolveIT
+
+Speakeasy (computational environment)
+
+SuperCROSS
+
+Tidyverse
+
+Trifacta
+
+Truviso
+
+WarpPLS
+
+XLfit
+
+Data and information visualization
+
+Software for Data visualization:
+
+Amira
+
+AnyChart
+
+Apache Superset
+
+Avizo
+
+Baudline
+
+BisQue (Bioimage Analysis and Management Platform)
+
+Calligra Sheets
+
+Catpac
+
+Chart.js
+
+Cloudera
+
+ColorBrewer
+
+COMPLEAT (bioinformatics tool)
+
+Creately
+
+D3js
+
+DataGraph
+
+DataScene
+
+DataViva
+
+Diagrams.net
+
+Epi Map
+
+Eye-Sys
+
+FlexPro
+
+FreeMat
+
+FusionCharts
+
+GeoGebra
+
+Gephi
+
+ggplot2
+
+Gnuplot
+
+Gliffy
+
+GRAPE
+
+GrADS
+
+Grace
+
+Grafana
+
+GraphPad Prism
+
+Graphviz
+
+HippoDraw
+
+Histcite
+
+IBM Cognos Analytics
+
+Imc FAMOS
+
+Infogram
+
+InfoZoom
+
+InfiniteGraph
+
+IGOR Pro
+
+Java Analysis Studio
+
+Jedox
+
+JFreeChart
+
+JMP
+
+Kig
+
+Kitware
+
+KnetMiner
+
+Kst
+
+LabPlot
+
+LabVIEW
+
+LabWindows/CVI
+
+Lavastorm Analytics
+
+LibreOffice
+
+LIONsolver
+
+LiSiCA
+
+MagicPlot
+
+Maple
+
+MathCad
+
+Mathematica
+
+MATLAB
+
+Maxima
+
+MedCalc
+
+MetaboAnalyst
+
+MEX file
+
+Microsoft Analysis Services
+
+Microsoft Excel
+
+Microsoft Power BI
+
+MicroStrategy
+
+Monarch
+
+Moose (analysis)
+
+MountainsMap
+
+Molecular Evolutionary Genetics Analysis
+
+Netvibes
+
+Numbers for Mac
+
+Ocean Data View
+
+OpenOffice.org Calc
+
+OpenScientist
+
+Origin
+
+ParaView
+
+PathVisio
+
+Perl Data Language
+
+PGPLOT
+
+ploticus
+
+Plotly
+
+plotutils
+
+Poimapper
+
+PolyAnalyst
+
+PowerLab
+
+Psychometric software
+
+Pyramid Analytics
+
+QtiPlot
+
+Qunb
+
+RGraph
+
+ROOT
+
+RRDtool
+
+SAS
+
+Seaborn
+
+Sisense
+
+SmartPLS
+
+Social network analysis software
+
+TAChart
+
+Tableau
+
+Teechart
+
+Tomviz
+
+Trade Space Visualizer
+
+Trendalyzer
+
+Truviso
+
+Vaa3D
+
+Visual.ly
+
+WarpPLS
+
+XLfit
+
+Plotting software
+
+Software for plotting data to support processing and visualise resuls.
+
+Analytica
+
+CricketGraph
+
+Data Desk
+
+DISLIN
+
+Earth sciences graphics software
+
+Generic Mapping Tools
+
+GraphCalc
+
+Grapher
+
+Gri graphical language
+
+Intel Array Visualizer
+
+IRows
+
+JASP
+
+Kst
+
+LabPlot
+
+MapleSim
+
+Mondrian
+
+MWorks
+
+NuCalc
+
+Pipeline Pilot
+
+Ploticus
+
+PLplot
+
+ProStat
+
+PSI-Plot
+
+Pyxplot
+
+SciDAVis
+
+TableCurve 2D
+
+TableCurve 3D
+
+Tecplot
+
+TinkerPlots
+
+TOPCAT
+
+TopoFusion
+
+Veusz
+
+VisIt
+
+Winplot
+
+Wolfram Mathematica
+
+Maps and geospatial visualization
+
+ArcGIS
+
+Carto
+
+Epi Map
+
+GeoDA
+
+Google Earth Engine
+
+Leaflet
+
+Mapbox
+
+MountainsMap
+
+QGIS
+
+Machine learning
+
+MLOps and model deployment:
+
+BentoML
+
+Data Version Control (DVC)
+
+Kubeflow
+
+MLflow
+
+Seldon Core
+
+Streamlit
+
+TensorFlow Serving
+
+Weights & Biases
+
+Data repositories
+
+Kaggle – platform for data science competitions, datasets, and notebooks.
+
+Zenodo – open-access repository supported by CERN and the EU.
+
+University of California, Irvine Machine Learning Repository
+
+OpenML – collaborative platform for sharing datasets, algorithms, and experiments.
+
+See also
+
+Business intelligence software
+
+List of data science journals
+
+List of R software and tools
+
+Lists of mathematical software and List of open-source software for mathematics
+
+List of numerical-analysis software and List of numerical analysis topics
+
+List of open-source data science software
+
+Common Crawl – nonprofit that crawls the web and freely provides its archives and datasets to the public under an MIT License
+
+References
+
+External links
+
+20 Tools for Data Scientists | Pragmatic Institute
+
+igorbarinov/awesome-data-engineering
+
+Category:Data science
+
+Category:Science software
+
+Category:Statistical software
+
+Category:Machine learning
+
+Category:Visualization software
+
+Category:Data analysis software
+
+Category:Data mining and machine learning software
+
+Category:Data mining
+
+Category:Big data
+
+Category:Database management systems
+
+Category:Data engineering
+
+Category:Lists of software
+
+Category:Software
+
+Category:Programming tools
+
+Category:Free and open-source software

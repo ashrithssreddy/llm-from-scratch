@@ -1,0 +1,69 @@
+{{Infobox scientist
+
+fields =
+
+image = Roberto Navigli.jpg
+
+alma_mater =
+
+workplaces = Sapienza University of Rome
+
+doctoral_advisors =
+
+known_for          =
+
+awards =
+
+website =
+
+}}
+
+Roberto Navigli (born 1978) is an Italian computer scientist and professor in the Department of Computer, Control and Management Engineering "Antonio Ruberti" at the Sapienza University of Rome, where he is also the director of the Sapienza NLP Group.
+
+Education
+
+Navigli obtained his Master of Science degree in Computer Science in 2001 at Sapienza University of Rome, followed, in 2007, by a PhD from the same institution, under the supervision of Paola Velardi. Navigli's doctoral thesis focused on devising and evaluating an innovative knowledge-based algorithm for Word Sense Disambiguation, named Structural Semantic Interconnections.
+
+Career and research
+
+Navigli's research focuses on Artificial Intelligence, specifically on enabling computers to understand and represent meaning across languages, making significant contributions to various fields within Natural Language Processing, including Word Sense Disambiguation, Entity Linking, Semantic Role Labeling and semantic parsing.
+
+In 2011, Navigli was granted a European Research Council (ERC) Starting Grant to create BabelNet, a multilingual knowledge graph and "the largest lexicon/encyclopedia/thesaurus/reference work on the web" that, using disambiguation algorithms, brings together knowledge from computational resources including WordNet, Wikipedia, Wiktionary and Wikidata, featuring in a Time magazine article as a prototype of "dictionary of the future". Being based on the notion of multilingual synset, BabelNet provides the multilingual inventory that enables Word Sense Disambiguation algorithms, such as Babelfy, to work in hundreds of languages simultaneously. to work on sentence-level, language-independent semantic representations, leading to the BabelNet Meaning Representation and its semantic parser, with the goal of creating 'the DNA of language'. These two ERC grants have been highlighted among the 15 projects through which the ERC transformed science. In 2024, together with Nobel Prize laureate Anne L'Huillier and Patrik Verstreken, he opened the European Union Research and Innovation Week.
+
+In 2016, Navigli founded Babelscape, a university spinoff company, focused on multilingual neuro-symbolic Natural Language Understanding. In 2025, he led the Babelscape team responsible for the development and production of the language capabilities of the robot Adriano, created for the Rome Chamber of Commerce, and referred to as "the first robotic employee in the [Italian] public administration.".
+
+In the field of generative artificial intelligence, he leads the development of Minerva, the first Large Language Model to be both pretrained from scratch and instructed in Italian, and released as open source. For his work on Minerva, in 2025 he received the Capo D'Orlando Prize.
+
+From 2013 to 2020, he was Associate Editor of the Artificial Intelligence journal. In 2025, he was General Chair of the Annual Meeting of the Association for Computational Linguistics,
+
+Awards and honors
+
+In 2025, Navigli was elected Fellow of the Association for the Advancement of Artificial Intelligence (AAAI) "for significant contributions to multilingual Natural Language Understanding, and development of widely recognized methods for knowledge resource construction, text disambiguation, and semantic parsing"; in 2024 he became Fellow of the European Association for Artificial Intelligence (EurAI) "for his seminal contributions to various areas of Natural Language Processing, including his pioneering work on multilingual and cross-lingual Natural Language Understanding", and in the same year he was named ELLIS Fellow at the European Laboratory for Learning and Intelligent Systems awarded to "high-caliber scientists advancing the field". In 2023, he was appointed Fellow of the Association for Computational Linguistics (ACL) "for significant contributions to multilingual lexical-semantic resources and a unifying vision for multilingual lexical and sentence-level semantics"
+
+In recognition of his work on BabelNet and "for groundbreaking work in overcoming language barriers through a multilingual lexicalised semantic network and ontology making use of heterogeneous data sources", he was awarded the META (Multilingual Europe Technology Alliance) Prize in 2015.
+
+Selected publications
+
+Roberto Navigli, Marco Pinto, Pasquale Silvestri, Dennis Rotondi, Simone Ciciliano, Alessandro Scirè. 2024. NounAtlas: Filling the Gap in Nominal Semantic Role Labeling. Proceedings of ACL, pp.&nbsp;16245–16258. ACL 2024 Outstanding Paper Award.
+
+}}
+
+Category:1978 births
+
+Category:Academic staff of the Sapienza University of Rome
+
+Category:European Research Council grantees
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Fellows of the Association for Computational Linguistics
+
+Category:Fellows of the European Association for Artificial Intelligence
+
+Category:Italian computer scientists
+
+Category:Living people
+
+Category:Natural language processing researchers
+
+Category:Sapienza University of Rome alumni

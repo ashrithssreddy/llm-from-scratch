@@ -1,0 +1,147 @@
+{{Infobox scientist
+
+honorific_prefix  =
+
+name              = Gregory Grefenstette
+
+honorific_suffix  =
+
+native_name       =
+
+native_name_lang  =
+
+image             =
+
+image_size        =
+
+image_upright     =
+
+alt               =
+
+caption           =
+
+birth_date        =
+
+birth_place       =
+
+death_date        =
+
+death_place       =
+
+death_cause       =
+
+resting_place     =
+
+resting_place_coordinates =
+
+other_names       =
+
+residence         =
+
+citizenship       =
+
+nationality       = American, French
+
+fields            = Computer ScienceArtificial IntelligenceNatural Language Processing & UnderstandingComputational Linguistics
+
+workplaces        = BiggerpanIHMCINRIAExaleadCEA
+
+patrons           =
+
+education         =
+
+alma_mater        = University of Pittsburgh  (Ph.D., 1993)
+
+thesis_title      = Exploring Automatic Thesaurus Generation (1993)
+
+thesis_url        =
+
+thesis_year       =
+
+doctoral_advisor  =
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students  =
+
+known_for         = Natural language processingSemantic maps
+
+influences        =
+
+influenced        =
+
+awards            = ACM Multimedia Grand Challenge
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+spouse            =
+
+partner           =
+
+children          =
+
+signature         =
+
+signature_alt     =
+
+website           =
+
+footnotes         =
+
+}}
+
+Gregory Grefenstette (born April 25, 1956) is a French-American researcher and professor of computer science, in particular of artificial intelligence and natural language processing. , he is the chief scientific officer at Biggerpan, a company developing a predictive contextual engine for the mobile web. Grefenstette is also a senior associate researcher at the Florida Institute for Human and Machine Cognition (IHMC).
+
+Biography
+
+Grefenstette was born in Pittsburgh in 1956. He started M.I.T. as an undergraduate and received his bachelor's degree at Stanford in 1978. He received a master's degree from Paris-Sud 1983 and a PhD in computer science from the University of Pittsburgh in 1993. From 1984 to 1989, he was an assistant professor at the University of Tours.
+
+Grefenstette's research primarily focuses on natural language processing. Following his PhD work on "Exploring Automatic Thesaurus Generation", he mostly addressed large-scale natural language processing problems and co-edited with Adam Kilgarriff a special issue of Computational Linguistics on using the Internet as a corpus for machine learning. Previous to his position at Biggerpan, Grefenstette was an Advanced Researcher at INRIA, the French national research institute in computer science, working on personal semantics. Prior to that, he was the chief science officer of Exalead, a search engine company, managing the OSEO QUAERO CMSE program on innovative multimedia indexing technologies. Grefenstette is also a former chief scientist at the Xerox Research Centre Europe (1993–2001), at Clairvoyance Corporation (2001–2004), and with the French CEA (2004–2008).
+
+Grefenstette has received 20 US patents, mostly based on his work at Xerox. With his research team, he has received awards for his work on semantic maps and won a three-year grant from the Lagardere Foundation in 2007. He has also authored four books and has been part of several journal publications. Referenced in many natural language processing research papers, Grefenstette is especially known for his work on cross-language information retrieval and distributional semantics.
+
+Selected works
+
+Books
+
+Major publications
+
+Source:
+
+Grefenstette, Gregory and Lawrence Muchemi. 2016. Determining the Characteristic Vocabulary for a Specialized Dictionary using Word2vec and a Directed Crawler, 10th Language Resources and Evaluation Conference
+
+Grefenstette, Gregory. 2016. Extracting Weighted Language Lexicons from Wikipedia.
+
+Awards
+
+2010 ACM Multimedia Grand Challenge Bronze award
+
+2009 ACM Multimedia Grand Challenge, most practical system award
+
+2007 three-year grant by Lagardere Foundation for work on semantic maps
+
+1978 ITT International Fellow to Belgium
+
+References
+
+Category:American artificial intelligence researchers
+
+Category:Florida Institute for Human and Machine Cognition people
+
+Category:1956 births
+
+Category:Living people
+
+Category:Natural language processing researchers
+
+Category:American computer scientists
+
+Category:French computer scientists
+
+Category:University of Pittsburgh alumni
+
+Category:Academic staff of the University of Tours

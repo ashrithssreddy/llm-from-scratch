@@ -1,0 +1,407 @@
+In deep learning, the transformer is an artificial neural network architecture based on the multi-head attention mechanism, in which text is converted to numerical representations called tokens, and each token is converted into a vector via lookup from a word embedding table. At each layer, each token is then contextualized within the scope of the context window with other (unmasked) tokens via a parallel multi-head attention mechanism, allowing the signal for key tokens to be amplified and less important tokens to be diminished.
+
+Transformers have the advantage of having no recurrent units, therefore requiring less training time than earlier recurrent neural architectures (RNNs) such as long short-term memory (LSTM). Later variations have been widely adopted for training large language models (LLMs) on large (language) datasets.
+
+The modern version of the transformer was proposed in the 2017 paper "Attention Is All You Need" by researchers at Google. but have found many applications since. They are used in large-scale natural language processing, computer vision (vision transformers), reinforcement learning, audio, multimodal learning, robotics, and even playing chess. It has also led to the development of pre-trained systems, such as generative pre-trained transformers (GPTs) and BERT (bidirectional encoder representations from transformers).
+
+History
+
+Predecessors
+
+For many years, sequence modelling and generation was done by using plain recurrent neural networks (RNNs). A well-cited early example was the Elman network (1990). In theory, the information from one token can propagate arbitrarily far down the sequence, but in practice the vanishing-gradient problem leaves the model's state at the end of a long sentence without precise, extractable information about preceding tokens.
+
+A key breakthrough was LSTM (1995), an RNN which used various innovations to overcome the vanishing gradient problem, allowing efficient learning of long-sequence modelling. One key innovation was the use of an attention mechanism which used neurons that multiply the outputs of other neurons, so-called multiplicative units. Neural networks using multiplicative units were later called sigma-pi networks or higher-order networks. LSTM became the standard architecture for long sequence modelling until the 2017 publication of transformers. However, LSTM still used sequential processing, like most other RNNs. Specifically, RNNs operate one token at a time from first to last; they cannot operate in parallel over all tokens in a sequence.
+
+Modern transformers overcome this problem, but unlike RNNs, they require computation time that is quadratic in the size of the context window. The linearly scaling fast weight controller (1992) learns to compute a weight matrix for further processing depending on the input. One of its two networks has "fast weights" or "dynamic links" (1981). A slow neural network learns by gradient descent to generate keys and values for computing the weight changes of the fast neural network which computes answers to queries.
+
+Attention with seq2seq
+
+The idea of encoder–decoder sequence transduction had been developed in the early 2010s; commonly cited as the originators that produced seq2seq are two concurrently published papers from 2014.
+
+A 380M-parameter model for machine translation uses two long short-term memories (LSTM).
+
+These early seq2seq models had no attention mechanism, and the state vector is accessible only after the last word of the source text was processed. Although in theory such a vector retains the information about the whole original sentence, in practice the information is poorly preserved. This is because the input is processed sequentially by one recurrent network into a fixed-size output vector, which is then processed by another recurrent network into an output. If the input is long, then the output vector would not be able to contain all relevant information, degrading the output. As evidence, reversing the input sentence improved seq2seq translation.
+
+The RNN search model introduced an attention mechanism to seq2seq for machine translation to solve the bottleneck problem (of the fixed-size output vector), allowing the model to process long-distance dependencies more easily. The name is because it "emulates searching through a source sentence during decoding a translation".
+
+In 2016, Google Translate was revamped to Google Neural Machine Translation, which replaced the previous model based on statistical machine translation. The new model was a seq2seq model where the encoder and the decoder were both 8 layers of bidirectional LSTM. It took nine months to develop, and it outperformed the statistical approach, which took ten years to develop.
+
+Parallelizing attention
+
+Seq2seq models with attention (including self-attention) still suffered from the same issue with recurrent networks, which is that they are hard to parallelize, which prevented them from being accelerated on GPUs. In 2016, decomposable attention applied a self-attention mechanism to feedforward networks, which are easy to parallelize, and achieved SOTA result in textual entailment with an order of magnitude fewer parameters than LSTMs. One of its authors, Jakob Uszkoreit, suspected that attention without recurrence would be sufficient for language translation, thus the title "attention is all you need". That hypothesis was against conventional wisdom at the time, and even his father Hans Uszkoreit, a well-known computational linguist, was skeptical.
+
+In 2017, the original (100M-sized) encoder–decoder transformer model was proposed in the "Attention is all you need" paper. At the time, the focus of the research was on improving seq2seq for machine translation, by removing its recurrence to process all tokens in parallel, but preserving its dot-product attention mechanism to keep its text processing performance.
+
+AI boom era
+
+As early as spring 2017, even before the "Attention is all you need" preprint was published, one of the co-authors applied the "decoder-only" variation of the architecture to generate fictitious Wikipedia articles. Transformer architecture is now used alongside many generative models that contribute to the ongoing AI boom.
+
+In language modelling, ELMo (2018) was a bi-directional LSTM that produces contextualized word embeddings, improving upon the line of research from bag of words and word2vec. It was followed by BERT (2018), an encoder-only transformer model. In 2019 October, Google started using BERT to process search queries. In 2020, Google Translate replaced the previous RNN-encoder–RNN-decoder model by a transformer-encoder–RNN-decoder model.
+
+Starting in 2018, the OpenAI GPT series of decoder-only transformers became state of the art in natural language generation. In 2022, a chatbot based on GPT-3, ChatGPT, became unexpectedly popular, triggering a boom around large language models.
+
+Since 2020, transformers have been applied in modalities beyond text, including the vision transformer, speech recognition, and multimodal. The vision transformer, in turn, stimulated new developments in convolutional neural networks. Image and video generators like DALL-E (2021), Stable Diffusion 3 (2024), and Sora (2024), use transformers to analyse input data (like text prompts) by breaking it down into "tokens" and then calculating the relevance between each token using self-attention, which helps the model understand the context and relationships within the data.
+
+Training
+
+Methods for stabilizing training
+
+The plain transformer architecture had difficulty in converging. In the original paper,
+
+Pretrain-finetune
+
+Transformers typically are first pretrained by self-supervised learning on a large generic dataset, followed by supervised fine-tuning on a small task-specific dataset. The pretrain dataset is typically an unlabeled large corpus, such as The Pile. Tasks for pretraining and fine-tuning commonly include:
+
+language modeling documents a large number of natural language pretraining tasks. Some examples are:
+
+restoring or repairing incomplete or corrupted text. For example, the input, "Thank youme to your partyweek", might generate the output, "Thank you for inviting me to your party last week".
+
+translation between natural languages (machine translation)
+
+judging the pragmatic acceptability of natural language. For example, the following sentence might be judged "not acceptable", because even though it is syntactically well-formed, it is improbable in ordinary human usage: The course is jumping well.
+
+Note that while each of these tasks is trivial or obvious for human native speakers of the language (or languages), they have typically proved challenging for previous generations of machine learning architecture.
+
+Tasks
+
+In general, there are 3 classes of language modelling tasks: "masked", "autoregressive", and "prefixLM".
+
+Positional encoding
+
+A positional encoding is a fixed-size vector representation of the relative positions of tokens within a sequence: it provides the transformer model with information about where the words are in the input sequence. This induces a bias towards the order of the input sequence, so that, for example, the input sequence "man bites dog" is processed differently from "dog bites man".
+
+The positional encoding is defined as a function of type f: \R \to \R^d, where d is a positive even integer. The full positional encoding defined in the original paper
+
+Both the encoder and decoder layers have a feed-forward neural network for additional processing of their outputs and contain residual connections and layer normalization steps. filter size (BERT), The computations for each attention head can be performed in parallel, which allows for fast processing. The outputs for the attention layer are concatenated to pass into the feedforward neural network layers.
+
+Concretely, let the multiple attention heads be indexed by i, then we have\text{MultiheadAttention}(Q, K, V) = \text{Concat}_{i \in [n_{\text{heads}}]}(\text{Attention}(XW^Q_i, XW^K_i, XW^V_i)) W^O where the matrix X is the concatenation of word embeddings, and the matrices W^Q_i, W^K_i, W^V_i are "projection matrices" owned by individual attention head i, and W^O is a final projection matrix owned by the whole multihead attention head.
+
+It is theoretically possible for each attention head to have a different head dimension d_{\text{head}}, but that is rarely the case in practice.
+
+As an example, in the smallest GPT-2 model, there are only self-attention mechanisms. It has the following dimensions:d_{\text{emb}} = 768, n_{\text{head}} = 12, d_{\text{head}} = 64Since 12 \times 64 = 768, its output projection matrix W^O \in \R^{(12 \times 64) \times 768} is a square matrix.
+
+Masked attention
+
+The transformer architecture is constructed to calculate output tokens iteratively. Assuming t = 0 refers to the calculation of the first output token i = 0, for step t > 0, the output token i = 0 shall remain constant. This ensures properties of the model similar to autoregressive models.
+
+Encoder
+
+An encoder consists of an embedding layer, followed by multiple encoder layers.
+
+Each encoder layer consists of two major components: a self-attention mechanism and a feed-forward layer. It takes an input as a sequence of input vectors, applies the self-attention mechanism, to produce an intermediate sequence of vectors, then applies the feed-forward layer for each vector individually. Schematically, we have:\begin{aligned}
+
+\text{given input vectors } & h_0, h_1, \dots\\
+
+\text{combine them into a matrix } H &= \begin{bmatrix} h_0 \\ h_1 \\ \vdots \end{bmatrix} \\
+
+\text{EncoderLayer}(H) &= \begin{bmatrix} \text{FFN}(\text{MultiheadAttention}(H, H, H)_0) \\ \text{FFN}(\text{MultiheadAttention}(H, H, H)_1) \\ \vdots \end{bmatrix} \\
+
+\end{aligned}
+
+where \text{FFN} stands for "feed-forward network". We can more succinctly write it as\text{EncoderLayer}(H) = \text{FFN}(\text{MultiheadAttention}(H, H, H))
+
+with the implicit convention that the \text{FFN} is applied to each row of the matrix individually.
+
+The encoder layers are stacked. The first encoder layer takes the sequence of input vectors from the embedding layer, producing a sequence of vectors. This sequence of vectors is processed by the second encoder, and so on. The output from the final encoder layer is then used by the decoder.
+
+As the encoder processes the entire input all at once, every token can attend to every other token (all-to-all attention), so there is no need for causal masking.
+
+Decoder
+
+A decoder consists of an embedding layer, followed by multiple decoder layers, followed by an un-embedding layer.
+
+Each decoder consists of three major components: a causally masked self-attention mechanism, a cross-attention mechanism, and a feed-forward neural network. The decoder functions in a similar fashion to the encoder, but an additional attention mechanism is inserted which instead draws relevant information from the encodings generated by the encoders. This mechanism can also be called the encoder–decoder attention. was found to be easier to train, requiring no warm-up, leading to faster convergence.
+
+input: Encoder input t_e
+
+Decoder input t_d
+
+output: Array of probability distributions, with shape (decoder vocabulary size x length(decoder output sequence))
+
+/* encoder */
+
+z_e ← encoder.tokenizer(t_e)
+
+for each t in 1:length(z_e) do
+
+z_e[t] ← encoder.embedding(z_e[t]) + encoder.positional_embedding(t)
+
+for each l in 1:length(encoder.layers) do
+
+layer ← encoder.layers[l]
+
+/* first sublayer */
+
+z_e_copy ← copy(z_e)
+
+for each t in 1:length(z_e) do
+
+z_e[t] ← layer.layer_norm(z_e[t])
+
+z_e ← layer.multihead_attention(z_e, z_e, z_e)
+
+for each t in 1:length(z_e) do
+
+z_e[t] ← z_e[t] + z_e_copy[t]
+
+/* second sublayer */
+
+z_e_copy ← copy(z_e)
+
+for each t in 1:length(z_e) do
+
+z_e[t] ← layer.layer_norm(z_e[t])
+
+z_e ← layer.feedforward(z_e)
+
+for each t in 1:length(z_e) do
+
+z_e[t] ← z_e[t] + z_e_copy[t]
+
+for each t in 1:length(z_e) do
+
+z_e[t] ← encoder.final_layer_norm(z_e[t])
+
+/* decoder */
+
+z_d ← decoder.tokenizer(t_d)
+
+for each t in 1:length(z_d) do
+
+z_d[t] ← decoder.embedding(z_d[t]) + decoder.positional_embedding(t)
+
+for each l in 1:length(decoder.layers) do
+
+layer ← decoder.layers[l]
+
+/* first sublayer */
+
+z_d_copy ← copy(z_d)
+
+for each t in 1:length(z_d) do
+
+z_d[t] ← layer.layer_norm(z_d[t])
+
+z_d ← layer.masked_multihead_attention(z_d, z_d, z_d)
+
+for each t in 1:length(z_d) do
+
+z_d[t] ← z_d[t] + z_d_copy[t]
+
+/* second sublayer */
+
+z_d_copy ← copy(z_d)
+
+for each t in 1:length(z_d) do
+
+z_d[t] ← layer.layer_norm(z_d[t])
+
+z_d ← layer.multihead_attention(z_d, z_e, z_e)
+
+for each i in 1:length(z_d) do
+
+z_d[t] ← z_d[t] + z_d_copy[t]
+
+/* third sublayer */
+
+z_d_copy ← copy(z_d)
+
+for each t in 1:length(z_d) do
+
+z_d[t] ← layer.layer_norm(z_d[t])
+
+z_d ← layer.feedforward(z_d)
+
+for each t in 1:length(z_d) do
+
+z_d[t] ← z_d[t] + z_d_copy[t]
+
+z_d ← decoder.final_layer_norm(z_d)
+
+output_distributions ← []
+
+for each t in 1:length(z_d) do
+
+output_distributions.append(decoder.unembed(z_d[t]))
+
+return output_distributions
+
+Terminology
+
+The transformer architecture, being modular, allows variations. Several common variations are described here.
+
+An "encoder-only" transformer applies the encoder to map an input text into a sequence of vectors that represent the input text. This is usually used for text embedding and representation learning for downstream applications. BERT is encoder-only. They are less often used currently, as they were found to be not significantly better than training an encoder–decoder transformer, then taking just the encoder.
+
+There are also mixed seq2seq models. For example, in 2020, Google Translate replaced the previous RNN-encoder–RNN-decoder model with a transformer-encoder–RNN-decoder model, as transformer-based decoders did not appear to significantly increase quality unlike the encoder, while the RNN decoder was much faster. both GPT-1 and BERT
+
+Alternative activation functions are often used in combination with Gated Linear Units in the feedforward module. which is used in the Llama series. Other examples include CapsuleNorm ScaleNorm, or FixNorm.
+
+The original transformer paper reported using a learned positional encoding, but finding it not superior to the sinusoidal one. found that causal masking itself provides enough signal to a transformer decoder that it can learn to implicitly perform absolute positional encoding without the positional encoding module.
+
+RoPE
+
+RoPE (rotary positional embedding), is best explained by considering a list of 2-dimensional vectors [(x^{(1)}_1, x^{(2)}_1), (x^{(1)}_2, x^{(2)}_2), (x^{(1)}_3, x^{(2)}_3), ...]. Now pick some angle \theta. Then RoPE encoding is\text{RoPE}\big(x^{(1)}_m, x^{(2)}_m, m\big) =
+
+\begin{pmatrix}    \cos m \theta & - \sin m \theta \\
+
+\sin m \theta & \cos m \theta    \end{pmatrix}
+
+\begin{pmatrix}    x^{(1)}_m \\    x^{(2)}_m \\    \end{pmatrix}  =    \begin{pmatrix}    x^{(1)}_m \cos m\theta - x^{(2)}_m \sin m \theta \\    x^{(2)}_m \cos m\theta + x^{(1)}_m \sin m \theta \\    \end{pmatrix}
+
+Equivalently, if we write the 2-dimensional vectors as complex numbers z_m := x^{(1)}_m + i x^{(2)}_m, then RoPE encoding is just multiplication by an angle:\text{RoPE}\big(z_m, m\big) = e^{i m\theta} z_m
+
+For a list of 2n-dimensional vectors, a RoPE encoder is defined by a sequence of angles \theta^{(1)}, ..., \theta^{(n)}. Then the RoPE encoding is applied to each pair of coordinates.
+
+The benefit of RoPE is that the dot-product between two vectors depends on their relative location only:
+
+\text{RoPE}\big(x, m\big)^T\text{RoPE}\big(y, n\big)
+
+=
+
+\text{RoPE}\big(x, m+k\big)^T\text{RoPE}\big(y, n+k\big)
+
+for any integer k.
+
+ALiBi
+
+ALiBi (Attention with Linear Biases) is not a replacement for the positional encoder on the original transformer. Instead, it is an additional positional encoder that is directly plugged into the attention mechanism. Specifically, the ALiBi attention mechanism is\begin{align}
+
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^\mathrm{T}}{\sqrt{d_k}} + s B\right)V
+
+\end{align}Here, s is a real number ("scalar"), and B is the linear bias matrix defined byB = \begin{pmatrix}
+
+0 & 1 & 2 & 3 & \cdots \\
+
+-1 & 0 & 1 & 2 & \cdots \\
+
+-2 & -1 & 0 & 1 & \cdots \\
+
+-3 & -2 & -1 & 0 & \cdots \\
+
+\vdots & \vdots & \vdots & \vdots & \ddots \\
+
+\end{pmatrix}
+
+in other words, B_{i, j} = j - i. The idea being that the linear bias matrix is a softened mask. Just as 0 represent full attention paid, and -\infty represents no attention paid, the linear bias matrix increases attention paid in one direction and decreases attention paid in the other direction.
+
+ALiBi allows pretraining on short context windows, then fine-tuning on longer context windows. Since it is directly plugged into the attention mechanism, it can be combined with any positional encoder that is plugged into the "bottom" of the entire network (which is where the sinusoidal encoder on the original transformer, as well as RoPE and many others, are located).
+
+Relative Position Encodings
+
+Relative Position Encodings is similar to ALiBi, but more generic:\begin{align}
+
+\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^\mathrm{T}}{\sqrt{d_k}} + B\right)V
+
+\end{align}where B is a Toeplitz matrix, that is, B_{i, j} = B_{i', j'} whenever i-j = i'-j'. This is contrasted with the original sinusoidal positional encoding, which is an "absolute positional encoding".
+
+Efficient implementation
+
+The transformer model has been implemented in standard deep learning frameworks such as TensorFlow and PyTorch. Transformers is a library produced by Hugging Face that supplies transformer-based architectures and pretrained models.
+
+If a transformer is used with a baked-in prompt, such as ["You are a customer support agent..."], then the key and value vectors can be computed for the prompt, and saved on disk. The saving in compute is significant when the model is used for many short real-time interactions, such as in online chatbots.
+
+FlashAttention
+
+FlashAttention is an algorithm that implements the transformer attention mechanism efficiently on a GPU. It is a communication-avoiding algorithm that performs matrix multiplications in blocks, such that each block fits within the cache of a GPU, and by careful management of the blocks it minimizes data copying between GPU caches (as data movement is slow). See the page on softmax for details.
+
+An improved version, FlashAttention-2, was developed to cater to the rising demand for language models capable of handling longer context lengths. It offers enhancements in work partitioning and parallelism, enabling it to achieve up to 230 TFLOPs/s on A100 GPUs (FP16/BF16), a 2x speed increase over the original FlashAttention.
+
+Key advancements in FlashAttention-2 include the reduction of non-matmul FLOPs, improved parallelism over the sequence length dimension, better work partitioning between GPU warps, and added support for head dimensions up to 256 and multi-query attention (MQA) and grouped-query attention (GQA).
+
+Benchmarks revealed FlashAttention-2 to be up to 2x faster than FlashAttention and up to 9x faster than a standard attention implementation in PyTorch. Future developments include optimization for new hardware like H100 GPUs and new data types like FP8.
+
+FlashAttention-4 focuses on pipelining to increase instruction throughput, and was developed to perform particularly well on Blackwell GPUs.
+
+Multi-Query Attention
+
+Multi-Query Attention changes the Multihead Attention mechanism. Whereas normally,
+
+\text{MultiheadAttention}(Q, K, V) = \text{Concat}_{i \in [n_{\text{heads}}]}\left(\text{Attention}(XW^Q_i, XW^K_i, XW^V_i)\right) W^Owith Multi-Query Attention, there is just one W^K, W^V, thus:
+
+\text{MultiQueryAttention}(Q, K, V) = \text{Concat}_{i \in [n_{\text{heads}}]}\left(\text{Attention}(XW^Q_i, XW^K, XW^V)\right) W^O
+
+This has a neutral effect on model quality and training speed, but increases inference speed.
+
+More generally, grouped-query attention (GQA) partitions attention heads into groups, each of which shares the key-value pair. MQA is GQA with one group, while standard Multihead Attention is GQA with the maximal number of groups.
+
+]]
+
+Multihead Latent Attention (MLA) is a low-rank approximation to standard MHA. Specifically, each hidden vector, before entering the attention mechanism, is first projected to two low-dimensional spaces ("latent space"), one for query and one for key-value (KV vector). This design minimizes the KV cache, as only the low-dimensional KV vector needs to be cached. is a method to accelerate token decoding. Similarly to speculative execution in CPUs, future tokens are computed quickly, then verified. If the quickly computed tokens are incorrect, they are discarded and computed slowly.
+
+The key factor in speculative decoding is that a transformer decoder can verify faster than it can decode, in the following sense.
+
+Suppose we have two transformer models like GPT-3 and GPT-3-small, both with a context window size of 512. To generate an entire context window autoregressively with greedy decoding with GPT-3, it must be run for 512 times, each time generating a token x_1, x_2, ..., x_{512}, taking time 512 T_{\text{GPT-3}}. However, if we had some educated guess for the values of these tokens, we could verify all of them in parallel, in one run of the model, by checking that each x_t is indeed the token with the largest log-likelihood in the t-th output.
+
+In speculative decoding, a smaller model or some other simple heuristic is used to generate a few speculative tokens that are subsequently verified by the larger model. For example, suppose we use GPT-3-small to generate four speculative tokens: \tilde{x}_1, \tilde{x}_2, \tilde{x}_3, \tilde{x}_4. This only takes 4 T_{\text{GPT-3-small}}. These tokens are then run through the larger GPT-3 in one go. Suppose that \tilde{x}_1 and \tilde{x}_2 are verified by GPT-3 as what it would have picked, then those are kept, but \tilde{x}_3 is not, so \tilde{x}_3, \tilde{x}_4 are discarded, and GPT-3 is run on those. This would take 4 T_{\text{GPT-3-small}} + 3 T_{\text{GPT-3}}, which might be shorter than 4 T_{\text{GPT-3}}.
+
+For non-greedy decoding, similar ideas apply, except the speculative tokens are accepted or rejected stochastically, in a way that guarantees the final output distribution is the same as if speculative decoding was not used.
+
+In Multi-Token Prediction, a single forward pass creates a final embedding vector, which then is un-embedded into a token probability. However, that vector can then be further processed by another transformer block to predict the next token, and so on for arbitrarily many steps into the future. This trades off accuracy for speed, since each new token costs just one more transformer block, rather than the entire stack.
+
+Sub-quadratic transformers
+
+Training transformer-based architectures can be expensive, especially for long inputs. Many methods have been developed to attempt to address the issue. In the image domain, Swin transformer is an efficient architecture that performs attention inside shifting windows. In the audio domain, SepTr decouples the attention in time and frequency domains. Long Range Arena (2020) is a standard benchmark for comparing the behavior of transformer architectures over long inputs.
+
+Alternative attention graphs
+
+The standard attention graph is either all-to-all or causal, both of which scales as O(N^2) where N is the number of tokens in a sequence.
+
+Reformer (2020) reduces the computational load from O(N^2) to O(N\ln N) by using locality-sensitive hashing and reversible layers.
+
+Sparse attention uses attention graphs that grows slower than O(N^2). For example, BigBird (2020) uses random small-world networks which grows as O(N).
+
+Ordinary transformers require a memory size that is quadratic in the size of the context window. Attention-free transformers reduce this to a linear dependence while still retaining the advantages of a transformer by linking the key to the value.
+
+Random Feature Attention
+
+Random Feature Attention (2021) uses Fourier random features:\varphi(x) = \frac{1}{\sqrt D}[\cos\langle w_1, x\rangle, \sin\langle w_1, x\rangle, \cdots \cos\langle w_D, x\rangle, \sin\langle w_D, x\rangle]^Twhere w_1, ..., w_D are independent samples from the normal distribution N(0, \sigma^2 I). This choice of parameters satisfy \mathbb E[\langle \varphi(x), \varphi(y)\rangle] = e^{-\frac{\|x-y\|^2}{2\sigma^2}}, or e^{\langle x, y\rangle/\sigma^2} = \mathbb E[\langle e^{\|x\|^2/2\sigma^2} \varphi(x), e^{\|y\|^2/2\sigma^2}\varphi(y)\rangle] \approx \langle e^{\|x\|^2/2\sigma^2} \varphi(x), e^{\|y\|^2/2\sigma^2}\varphi(y)\rangle Consequently, the one-headed attention, with one query, can be written as
+
+\text{Attention}(q, K, V) = \text{softmax}\left(\frac{qK^\mathrm{T}}{\sqrt{d_k}}\right)V
+
+\approx \frac{\varphi(q)^T \sum_i e^{\|k_i\|^2/2\sigma^2}\varphi(k_i) v_i^T}{\varphi(q)^T \sum_i e^{\|k_i\|^2/2\sigma^2}\varphi(k_i)}where \sigma = d_K^{1/4}. Similarly for multiple queries, and for multihead attention.
+
+This approximation can be computed in linear time, as we can compute the matrix \varphi(k_i) v_i^T first, then multiply it with the query. In essence, we have managed to obtain a more precise version of \text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^\mathrm{T}}{\sqrt{d_k}}\right)V \approx Q(K^TV/\sqrt{d_k})
+
+Performer (2022) uses the same Random Feature Attention, but w_1, ..., w_D are first independently sampled from the normal distribution N(0, \sigma^2 I), then they are Gram-Schmidt processed.
+
+Multimodality
+
+Transformers can also be used/adapted for modalities (input or output) beyond just text, usually by finding a way to "tokenize" the modality.
+
+Multimodal models can either be trained from scratch, or by finetuning. A 2022 study found that transformers pretrained only on natural language can be finetuned on only 0.03% of parameters and become competitive with LSTMs on a variety of logical and visual tasks, demonstrating transfer learning. The LLaVA was a vision-language model composed of a language model (Vicuna-13B) and a vision model (ViT-L/14), connected by a linear layer. Only the linear layer is finetuned.
+
+Vision transformers and later Whisper follow the same pattern for speech recognition, first turning the speech signal into a spectrogram, which is then treated like an image, i.e. broken down into a series of patches, turned into vectors and treated like embedding vector of tokens in a standard transformer.
+
+Perceivers are a variant of transformers designed for multimodality.
+
+For image generation, notable architectures are DALL-E 1 (2021), Parti (2022), Phenaki (2023), and Muse (2023). Unlike later models, DALL-E is not a diffusion model. Instead, it uses a decoder-only transformer that autoregressively generates a text, followed by the token representation of an image, which is then converted by a variational autoencoder to an image. Parti is an encoder–decoder transformer, where the encoder processes a text prompt, and the decoder generates a token representation of an image. Muse is an encoder-only transformer that is trained to predict masked image tokens from unmasked image tokens. During generation, all input tokens are masked, and the highest-confidence predictions are included for the next iteration, until all tokens are predicted.
+
+writing computer code based on requirements expressed in natural language.
+
+speech-to-text
+
+Beyond traditional NLP, the transformer architecture has had success in other applications, such as:
+
+biological sequence analysis
+
+video understanding
+
+protein folding (such as AlphaFold)
+
+evaluating chess board positions. Using static evaluation alone (that is, with no Minimax search) transformer achieved an Elo of 2895, putting it at grandmaster level.
+
+See also
+
+Notes
+
+References
+
+Further reading
+
+Alexander Rush, The Annotated transformer , Harvard NLP group, 3 April 2018
+
+Category:Google software
+
+Category:Neural network architectures
+
+Category:2017 in artificial intelligence

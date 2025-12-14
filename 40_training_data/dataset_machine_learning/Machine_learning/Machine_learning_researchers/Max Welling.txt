@@ -1,0 +1,73 @@
+{{Infobox scientist
+
+name = Max Welling
+
+image =
+
+caption = Max Welling
+
+birth_date =
+
+birth_place =
+
+residence =
+
+nationality = Dutch
+
+death_date =
+
+death_place =
+
+field = Machine learning, Quantum mechanics
+
+erdos_number =
+
+work_institution = University of Amsterdam
+
+alma_mater = Utrecht University
+
+doctoral_advisor = Gerard 't Hooft
+
+doctoral_students =
+
+known_for = Bayesian Inference, Generative modeling, Deep Learning, Variational autoencoders, Graph Convolutional Networks, Group-Equivariant Convolutional Networks
+
+societies =
+
+prizes = NSF Career Award (2005), Dean’s Mid-Career Award for Research (2008), ECCV Koenderink Prize (2010), ICML Best Paper Award (2012), ICLR Best Paper Award (2017)
+
+spouse =
+
+children =
+
+religion =
+
+handedness =
+
+website = Website of Max Welling
+
+footnotes =
+
+}}
+
+Max Welling (born 1968) is a Dutch computer scientist in machine learning at the University of Amsterdam. In August 2017, the university spin-off Scyfer BV, co-founded by Welling, was acquired by Qualcomm. He has since then served as a Vice President of Technology at Qualcomm Netherlands. He is also a Distinguished Scientist at Microsoft Research AI4Science, based in Amsterdam.
+
+Welling received his PhD in physics with a thesis on quantum gravity under the supervision of Nobel laureate Gerard 't Hooft (1998) at the Utrecht University. He has published over 250 peer-reviewed articles in machine learning, computer vision, statistics and physics, and has most notably invented variational autoencoders (VAEs), together with Diederik P Kingma.
+
+References
+
+Category:Living people
+
+Category:Academic staff of the University of Amsterdam
+
+Category:Utrecht University alumni
+
+Category:Dutch computer scientists
+
+Category:Qualcomm people
+
+Category:1968 births
+
+Category:Machine learning researchers
+
+Category:Microsoft people

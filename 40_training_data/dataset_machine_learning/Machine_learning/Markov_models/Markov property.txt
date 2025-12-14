@@ -1,0 +1,127 @@
+for times 0 ≤ t ≤ 2. Brownian motion has the Markov property, as the displacement of the particle does not depend on its past displacements.]]
+
+In probability theory and statistics, the term Markov property refers to the memoryless property of a stochastic process, which means that its future evolution is independent of its history. It is named after the Russian mathematician  Andrey Markov. The term strong Markov property is similar to the Markov property, except that the meaning of "present" is defined in terms of a random variable known as a stopping time.
+
+The term Markov assumption is used to describe a model where the Markov property is assumed to hold, such as a hidden Markov model.
+
+A Markov random field extends this property to two or more dimensions or to random variables defined for an interconnected network of items. An example of a model for such a field is the Ising model.
+
+A discrete-time stochastic process satisfying the Markov property is known as a Markov chain.
+
+Introduction
+
+A stochastic process has the Markov property if the conditional probability distribution of future states of the process (conditional on both past and present values) depends only upon the present state; that is, given the present, the future does not depend on the past. A process with this property is said to be Markov or Markovian and known as a Markov process. Two famous classes of Markov process are the Markov chain and Brownian motion.
+
+Note that there is a subtle, often overlooked and very important point that is often missed in the plain English statement of the definition: the statespace of the process is constant through time. The conditional description involves a fixed "bandwidth". For example, without this restriction we could augment any process to one which includes the complete history from a given initial condition and it would be made to be Markovian. But the state space would be of increasing dimensionality over time and does not meet the definition.
+
+History
+
+Definition
+
+Let (\Omega,\mathcal{F},P) be a probability space with a filtration (\mathcal{F}_s,\ s \in I), for some (totally ordered) index set I; and let (S,\Sigma) be a measurable space. An (S,\Sigma)-valued stochastic process X=\{X_t:\Omega \to S\}_{t\in I} adapted to the filtration is said to possess the Markov property if, for each A \in \Sigma  and each s,t\in I with s,
+
+P(X_t \in A \mid \mathcal{F}_s) = P(X_t \in A\mid X_s).
+
+In the case where S is a discrete set with the discrete sigma algebra and I = \mathbb{N}, this can be reformulated as follows:
+
+P(X_{n+1}=x_{n+1}\mid X_n=x_n, \dots, X_1=x_1)=P(X_{n+1}=x_{n+1}\mid X_n=x_n) \text{ for all } n \in \mathbb{N}.
+
+In other words, the distribution of X at time n+1 depend solely on the state of X at time n and is independent of the state of the process at any time previous to n, which corresponds precisely to the intuition described in the introduction.
+
+If I=[0,\infty), then X is called time-homogeneous if for all t,s\geq 0 the weak Markov property holds:
+
+P(X_{t+s}\in A\mid \mathcal F_s)=P(X_t\in A\mid X_0=x)|_{x=X_s}=:P^{X_s}(X_t\in A).
+
+The newly introduced probability measure P^x(X_t\in \cdot), x\in S, has the following intuition: It gives the probability that the process X lies in some set at time t, when it was started in x at time zero. The function P_t(x,A):= P^x(X_t\in A), (t,x,A)\in \R_+\times S\times \Sigma, is also called the transition function of X and the collection (P_t)_{t\geq 0} its transition semigroup.
+
+Alternative formulations
+
+There exists multiple alternative formulations of the elementary Markov property described above. The following are all equivalent:
+
+For all t\geq 0 the \sigma-algebras \mathcal F_t and \mathcal F_t' := \sigma(X_s:s\geq t) are conditionally independent given X_t. In other words, for all A\in \mathcal F_t, B\in\mathcal F_t':
+
+P(A\cap B\mid X_t)=P(A\mid X_t)P(B\mid X_t).
+
+For all t\geq 0, B\in\mathcal F_t':
+
+P(B\mid \mathcal F_t)=P(B\mid X_t).
+
+For all t\geq 0, A\in\mathcal F_t:
+
+P(A\mid\mathcal F_t^')=P(A\mid X_t).
+
+For all t\geq 0 and Y:\Omega\rightarrow \mathbb{R} bounded and \mathcal F_t'-measurable
+
+\operatorname{E}[Y\mid\mathcal{F}_t]=\operatorname{E}[Y\mid X_t].
+
+For all t\geq s\geq 0 and f:S\rightarrow \mathbb{R} bounded and measurable
+
+\operatorname{E}[f(X_t)\mid\mathcal{F}_s]=\operatorname{E}[f(X_t)\mid X_s ].
+
+For all t\geq s\geq 0 and f:S\rightarrow \mathbb{R} continuous with compact support
+
+\operatorname{E}[f(X_t)\mid\mathcal{F}_s]=\operatorname{E}[f(X_t)\mid X_s ].
+
+For all 0\leq s_1 and f:S\rightarrow \mathbb{R} continuous with compact support
+
+\operatorname{E}[f(X_t)\mid X_s,X_{s_n},...,X_{s_1}]=\operatorname{E}[f(X_t)\mid X_s].
+
+If there exists a so-called shift-semigroup (\theta_t)_{t\geq 0}, i.e., functions \theta_t:\Omega\to\Omega such that
+
+\theta_0=\mathrm{id}_\Omega,
+
+\theta_t\circ \theta_s = \theta_{t+s} \quad\forall s,t\geq 0  (semigroup property),
+
+X_t\circ\theta_s = X_{t+s} \quad\forall s,t\geq 0 ,
+
+then the Markov property is equivalent to: The converse is in general not true.
+
+The strong Markov property only leads to non-trivial results in continuous time (i.e., results which do not hold with merely the Markov property), as in the discrete case the strong and the elementary Markov property are equivalent.
+
+Feller property
+
+Although the strong Markov property is in general stronger than the elementary Markov property, it is fulfilled by Markov processes with sufficiently "nice" regularity properties.
+
+A continuous time Markov process is said to have the Feller property, if its transition semigroup (P_t)_{t\geq 0} (see above) fulfills
+
+Stochastic processes
+
+Many prominent stochastic processes are Markov processes: The Brownian motion, the Brownian bridge, the stochastic exponential, the Ornstein-Uhlenbeck process and the Poisson process have the Markov property.
+
+More generally, any semimartingale X with values in \R^n that is given by the stochastic differential equation
+
+X_t = X_0 + \sum_{i=1}^d \Big[\int_0^t g_i(X_s)ds + \int_0^t f_i(X_s)dB_s^i \Big],
+
+where B=(B^1,...,B^d) is a d-dimensional Brownian motion and f_1,...,f_d,g_1,...,g_d:\R^n\to\R^n are autonomous (i.e., they do not depend on time) Lipschitz functions, is time-homogeneous and has the strong Markov property. Iff_1,...,f_d,g_1,...,g_d are not autonomous, then X still has the elementary Markov property.
+
+Applications
+
+Forecasting
+
+In the fields of predictive modelling and probabilistic forecasting, the Markov property is considered desirable since it may enable the reasoning and resolution of the problem that otherwise would not be possible to be resolved because of its intractability. Such a model is known as a Markov model.
+
+Markov Chain Monte Carlo
+
+An application of the Markov property in a generalized form is in Markov chain Monte Carlo computations in the context of Bayesian statistics.
+
+See also
+
+Causal Markov condition
+
+Chapman–Kolmogorov equation
+
+Hysteresis
+
+Markov blanket
+
+Markov chain
+
+Markov decision process
+
+Markov model
+
+References
+
+Category:Markov models
+
+Category:Markov processes

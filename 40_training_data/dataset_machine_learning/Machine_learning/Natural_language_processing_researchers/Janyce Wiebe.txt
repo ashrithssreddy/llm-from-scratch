@@ -1,0 +1,49 @@
+Janyce Marbury Wiebe (1959–2018) was an American computer science specializing in natural language processing and known for her work on subjectivity, sentiment analysis, opinion mining, discourse processing, and word-sense disambiguation.
+
+Early life and education
+
+Wiebe was born in 1959, in Albany, New York. She majored in English at the Binghamton University, graduating in 1981, and completed a Ph.D. in computer science in 1990, at the University at Buffalo. Her dissertation, Recognizing Subjective Sentences: A Computational Investigation of Narrative Text, was supervised by philosopher William J. Rapaport.
+
+Career
+
+After postdoctoral research at the University of Toronto, she became an assistant professor at New Mexico State University in 1992. In 2000, she moved to the University of Pittsburgh, where she became a professor of computer science and director of the Intelligent Systems Program.
+
+Recognition
+
+Wiebe was named a Fellow of the Association for Computational Linguistics in 2015.
+
+Death
+
+She died of leukemia on December 10, 2018.
+
+References
+
+{{reflist|refs=
+
+}}
+
+External links
+
+Home page
+
+Category:1959 births
+
+Category:2018 deaths
+
+Category:People from Albany, New York
+
+Category:American computer scientists
+
+Category:American women computer scientists
+
+Category:Natural language processing researchers
+
+Category:University at Buffalo alumni
+
+Category:New Mexico State University faculty
+
+Category:University of Pittsburgh faculty
+
+Category:Fellows of the Association for Computational Linguistics
+
+Category:Deaths from leukemia

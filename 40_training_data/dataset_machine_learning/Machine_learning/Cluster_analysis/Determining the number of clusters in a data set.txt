@@ -1,0 +1,125 @@
+Determining the number of clusters in a data set, a quantity often labelled k as in the k-means algorithm, is a frequent problem in data clustering, and is a distinct issue from the process of actually solving the clustering problem.
+
+For a certain class of clustering algorithms (in particular k-means, k-medoids and expectation–maximization algorithm), there is a parameter commonly referred to as k that specifies the number of clusters to detect. Other algorithms such as DBSCAN and OPTICS algorithm do not require the specification of this parameter; hierarchical clustering avoids the problem altogether.
+
+The correct choice of k is often ambiguous, with interpretations depending on the shape and scale of the distribution of points in a data set and the desired clustering resolution of the user. In addition, increasing k without penalty will always reduce the amount of error in the resulting clustering, to the extreme case of zero error if each data point is considered its own cluster (i.e., when k equals the number of data points, n). Intuitively then, the optimal choice of k will strike a balance between maximum compression of the data using a single cluster, and maximum accuracy by assigning each data point to its own cluster. If an appropriate value of k is not apparent from prior knowledge of the properties of the data set, it must be chosen somehow. There are several categories of methods for making this decision.
+
+Several internal clustering scores can be employed to determine the best number of clusters in a dataset: Silhouette coefficient, Davies-Bouldin index, Dunn index, Calinski-Harabasz index, Shannon entropy, and Gap statistic, among others.
+
+Elbow method
+
+The elbow method looks at the percentage of explained variance as a function of the number of clusters:
+
+One should choose a number of clusters so that adding another cluster does not give much better modeling of the data.
+
+More precisely, if one plots the percentage of variance explained by the clusters against the number of clusters, the first clusters will add much information (explain a lot of variance), but at some point the marginal gain will drop, giving an angle in the graph. The number of clusters is chosen at this point, hence the "elbow criterion".
+
+In most datasets, this "elbow" is ambiguous, making this method subjective and unreliable. Because the scale of the axes is arbitrary, the concept of an angle is not well-defined, and even on uniform random data, the curve produces an "elbow", making the method rather unreliable.
+
+Percentage of variance explained is the ratio of the between-group variance to the total variance, also known as an F-test. A slight variation of this method plots the curvature of the within group variance.
+
+The method can be traced to speculation by Robert L. Thorndike in 1953.
+
+While the idea of the elbow method sounds simple and straightforward, other methods (as detailed below) give better results.
+
+X-means clustering
+
+In statistics and data mining, X-means clustering is a variation of k-means clustering that refines cluster assignments by repeatedly attempting subdivision, and keeping the best resulting splits, until a criterion such as the Akaike information criterion (AIC) or Bayesian information criterion (BIC) is reached.
+
+Information criterion approach
+
+Another set of methods for determining the number of clusters are information criteria, such as the Akaike information criterion (AIC), Bayesian information criterion (BIC), or the deviance information criterion (DIC) &mdash; if it is possible to make a likelihood function for the clustering model.
+
+For example: The k-means model is "almost" a Gaussian mixture model and one can construct a likelihood for the  Gaussian mixture model and thus also determine information criterion values.
+
+Information–theoretic approach
+
+Rate distortion theory has been applied to choosing k called the "jump" method, which determines the number of clusters that maximizes efficiency while minimizing error by information-theoretic standards. The strategy of the algorithm is to generate a distortion curve for the input data by running a standard clustering algorithm such as k-means for all values of k between 1 and n, and computing the distortion (described below) of the resulting clustering. The distortion curve is then transformed by a negative power chosen based on the dimensionality of the data.  Jumps in the resulting values then signify reasonable choices for k, with the largest jump representing the best choice.
+
+The distortion of a clustering of some input data is formally defined as follows: Let the data set be modeled as a p-dimensional random variable, X, consisting of a mixture distribution of G components with common covariance, . If we let  c_1 \ldots c_K  be a set of K cluster centers, with  c_X  the closest center to a given sample of X, then the minimum average distortion per dimension when fitting the K centers to the data is:
+
+d_K = \frac{1}{p} \min_{c_1 \ldots c_K}{E[(X - c_X)^T\Gamma^{-1}(X - c_X)]}
+
+This is also the average Mahalanobis distance per dimension between X and the closest cluster center  c_X. Because the minimization over all possible sets of cluster centers is prohibitively complex, the distortion is computed in practice by generating a set of cluster centers using a standard clustering algorithm and computing the distortion using the result. The pseudo-code for the jump method with an input set of p-dimensional data points X is:
+
+JumpMethod(X):
+
+Let Y = (p/2)
+
+Init a list D, of size n+1
+
+Let D = 0
+
+For k = 1 ... n:
+
+Cluster X with k clusters (e.g., with k-means)
+
+Let d = Distortion of the resulting clustering
+
+D[k] = d^(-Y)
+
+Define J(i) = D[i] - D[i-1]
+
+Return the k between 1 and n that maximizes J(k)
+
+The choice of the transform power  Y = (p/2)  is motivated by asymptotic reasoning using results from rate distortion theory. Let the data X have a single, arbitrarily p-dimensional Gaussian distribution, and let fixed K = \lfloor\alpha^p\rfloor, for some  greater than zero. Then the distortion of a clustering of K clusters in the limit as p goes to infinity is  \alpha^{-2} . It can be seen that asymptotically, the distortion of a clustering to the power (-p/2) is proportional to \alpha^p, which by definition is approximately the number of clusters K. In other words, for a single Gaussian distribution, increasing K beyond the true number of clusters, which should be one, causes a linear growth in distortion. This behavior is important in the general case of a mixture of multiple distribution components.
+
+Let X be a mixture of G p-dimensional Gaussian distributions with common covariance. Then for any fixed K less than G, the distortion of a clustering as p goes to infinity is infinite. Intuitively, this means that a clustering of less than the correct number of clusters is unable to describe asymptotically high-dimensional data, causing the distortion to increase without limit. If, as described above, K is made an increasing function of p, namely, K = \lfloor\alpha^p\rfloor, the same result as above is achieved, with the value of the distortion in the limit as p goes to infinity being equal to \alpha^{-2}. Correspondingly, there is the same proportional relationship between the transformed distortion and the number of clusters, K.
+
+Putting the results above together, it can be seen that for sufficiently high values of p, the transformed distortion d_K^{-p/2} is approximately zero for K &lt; G, then jumps suddenly and begins increasing linearly for K &ge; G. The jump algorithm for choosing K makes use of these behaviors to identify the most likely value for the true number of clusters.
+
+Although the mathematical support for the method is given in terms of asymptotic results, the algorithm has been empirically verified to work well in a variety of data sets with reasonable dimensionality. In addition to the localized jump method described above, there exists a second algorithm for choosing K using the same transformed distortion values known as the broken line method. The broken line method identifies the jump point in the graph of the transformed distortion by doing a simple least squares error line fit of two line segments, which in theory will fall along the x-axis for K &lt; G, and along the linearly increasing phase of the transformed distortion plot for K &ge; G. The broken line method is more robust than the jump method in that its decision is global rather than local, but it also relies on the assumption of Gaussian mixture components, whereas the jump method is fully non-parametric and has been shown to be viable for general mixture distributions.
+
+Silhouette method
+
+The average silhouette of the data is another useful criterion for assessing the natural number of clusters. The silhouette of a data instance is a measure of how closely it is matched to data within its cluster and how loosely it is matched to data of the neighboring cluster, i.e., the cluster whose average distance from the datum is lowest. A silhouette close to 1 implies the datum is in an appropriate cluster, while a silhouette close to −1 implies the datum is in the wrong cluster. Optimization techniques such as genetic algorithms are useful in determining the number of clusters that gives rise to the largest silhouette.
+
+It is also possible to re-scale the data in such a way that the silhouette is more likely to be maximized at the correct number of clusters.
+
+Cross-validation
+
+One can also use the process of cross-validation to analyze the number of clusters. In this process, the data is partitioned into v parts. Each of the parts is then set aside at turn as a test set, a clustering model computed on the other v&nbsp;−&nbsp;1 training sets, and the value of the objective function (for example, the sum of the squared distances to the centroids for k-means) calculated for the test set. These v values are calculated and averaged for each alternative number of clusters, and the cluster number selected such that further increase in number of clusters leads to only a small reduction in the objective function.
+
+Finding number of clusters in text databases
+
+When clustering text databases with the cover coefficient on a document collection defined by a document by term D matrix (of size m×n, where m is the number of documents and n is the number of terms), the number of clusters can roughly be estimated by the formula
+
+\tfrac {mn} t
+
+where t is the number of non-zero entries in D. Note that in D each row and each column must contain at least one non-zero element.
+
+Analyzing the kernel matrix
+
+Kernel matrix defines the proximity of the input information. For example, in Gaussian radial basis function, it determines the dot product of the inputs in a higher-dimensional space, called feature space. It is believed that the data become more linearly separable in the feature space, and hence, linear algorithms can be applied on the data with a higher success.
+
+The kernel matrix can thus be analyzed in order to find the optimal number of clusters. The method proceeds by the eigenvalue decomposition of the kernel matrix. It will then analyze the eigenvalues and eigenvectors to obtain a measure of the compactness of the input distribution. Finally, a plot will be drawn, where the elbow of that plot indicates the optimal number of clusters in the data set. Unlike previous methods, this technique does not need to perform any clustering a-priori. It directly finds the number of clusters from the data.
+
+The gap statistics
+
+Robert Tibshirani, Guenther Walther, and Trevor Hastie proposed estimating the number of clusters in a data set via the gap statistic.
+
+The gap statistics, based on theoretical grounds, measures how far is the pooled within-cluster sum of squares around the cluster centers from the sum of squares expected under the null reference distribution of data.
+
+The expected value is estimated by simulating null reference data of characteristics of the original data, but lacking any clusters in it.
+
+The optimal number of clusters is then estimated as the value of k for which the observed sum of squares falls farthest below the null reference.
+
+Unlike many previous methods, the gap statistics can tell us that there is no value of k for which there is a good clustering, but the reliability depends on how plausible the assumed null distribution (e.g., a uniform distribution) is on the given data. This tends to work well in synthetic settings, but cannot handle difficult data sets with, e.g., uninformative attributes well because it assumes all attributes to be equally important.
+
+The gap statistics is implemented as the clusGap function in the cluster package in R.
+
+Further reading
+
+References
+
+External links
+
+Clustergram – cluster diagnostic plot – for visual diagnostics of choosing the number of (k) clusters (R code)
+
+Eight methods for determining an optimal k value for k-means analysis – Answer on stackoverflow containing R code for several methods of computing an optimal value of k for k-means cluster analysis
+
+Category:Cluster analysis
+
+Category:Clustering criteria
+
+Category:Articles with example pseudocode

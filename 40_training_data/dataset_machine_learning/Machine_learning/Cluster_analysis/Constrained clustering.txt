@@ -1,0 +1,25 @@
+In computer science, constrained clustering is a class of semi-supervised learning algorithms. Typically, constrained clustering incorporates either a set of must-link constraints, cannot-link constraints, or both, with a data clustering algorithm. A cluster in which the members conform to all must-link and cannot-link constraints is called a chunklet.
+
+Types of constraints
+
+Both a must-link and a cannot-link constraint define a relationship between two data instances. Together, the sets of these constraints act as a guide for which a constrained clustering algorithm will attempt to find chunklets (clusters in the dataset which satisfy the specified constraints).
+
+A must-link constraint is used to specify that the two instances in the must-link relation should be associated with the same cluster.
+
+A cannot-link constraint is used to specify that the two instances in the cannot-link relation should not be associated with the same cluster.
+
+Some constrained clustering algorithms will abort if no such clustering exists which satisfies the specified constraints. Others will try to minimize the amount of constraint violation should it be impossible to find a clustering which satisfies the constraints. Constraints could also be used to guide the selection of a clustering model among several possible solutions.
+
+Examples
+
+Examples of constrained clustering algorithms include:
+
+COP K-means
+
+CMWK-Means (Constrained Minkowski Weighted K-Means)
+
+References
+
+Category:Cluster analysis algorithms
+
+Category:Cluster analysis

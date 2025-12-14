@@ -1,0 +1,171 @@
+{{Infobox U.S. legislation
+
+shorttitle        = Tools to Address Known Exploitation by Immobilizing Technological Deepfakes on Websites and Networks
+
+othershorttitles  =
+
+longtitle         = An Act to require covered platforms to remove nonconsensual intimate visual deceptions, and for other purposes.
+
+colloquialacronym = TAKE IT DOWN
+
+nickname          =
+
+enacted by        = 119th
+
+announced in      =
+
+effective date    = May 19, 2025
+
+public law url    =
+
+cite public law   =
+
+cite statutes at large =
+
+acts amended    =
+
+acts repealed   =
+
+title amended   =
+
+sections created =
+
+sections amended =
+
+leghisturl      =
+
+introducedin    = Senate
+
+introducedbill  = S. 146
+
+introducedby    = Ted Cruz (R–TX)
+
+introduceddate  = January 16, 2025
+
+committees      = Senate Committee on Commerce, Science, and Transportation
+
+passedbody1     = Senate
+
+passeddate1     = February 13, 2025
+
+passedvote1     = by unanimous consent
+
+passedbody2     = House
+
+passedas2       =
+
+passeddate2     = April 28, 2025
+
+passedvote2     = 409–2
+
+conferencedate  =
+
+passedbody3     =
+
+passeddate3     =
+
+passedvote3     =
+
+agreedbody3     =
+
+agreeddate3     =
+
+agreedvote3     =
+
+agreedbody4     =
+
+agreeddate4     =
+
+agreedvote4     =
+
+passedbody4     =
+
+passeddate4     =
+
+passedvote4     =
+
+signedpresident = Donald Trump
+
+signeddate      = May 19, 2025
+
+unsignedpresident =
+
+unsigneddate    =
+
+vetoedpresident =
+
+vetoeddate      =
+
+overriddenbody1 =
+
+overriddendate1 =
+
+overriddenvote1 =
+
+overriddenbody2 =
+
+overriddendate2 =
+
+overriddenvote2 =
+
+amendments      =
+
+SCOTUS cases    =
+
+}}
+
+The Tools to Address Known Exploitation by Immobilizing Technological Deepfakes on Websites and Networks Act, or TAKE IT DOWN Act, is a United States law aimed for dealing with non-consensual intimate imagery (sometimes called "revenge porn") or deepfakes posted to online sites and social media applications, typically made with assistance through artificial intelligence. The bill was introduced by Senator Ted Cruz in June 2024, passed both houses by near unanimous votes by April 2025, and was signed into law by President Donald Trump on May 19, 2025.
+
+Background and introduction
+
+Senator Ted Cruz first proposed the Take It Down Act in June 2024 after a 2023 incident where several Aledo, Texas, high school students were subjected to sexual harassment when another student had taken seemingly innocent photos of them, but then posted photo-manipulated pictures of the students on Snapchat via an anonymous account, using existing software to make them appear nude. While Texas had laws to deal with deepfake videos, there was no regulation to punish the use of manipulated photos. After several months, Cruz contacted Snapchat directly, and the photos were removed within an hour. Cruz said "It should not take a sitting senator getting on the phone to take these down. If [the students] were Taylor Swift, they would be pulled down and should be. But they also should be pulled down for every teenager in Texas. You should have the same right. And that demonstrates that Snapchat knows exactly how to pull it down."
+
+Though the bill was first introduced for passage by unanimous consent in September 2024, its passage was blocked by Cory Booker; a spokesperson for Booker stated that Booker had objected to the bill in its current state and had been seeking to work with Cruz to modify it. During the following two months, Booker worked with Cruz to add amendments to the bill to specify which types of websites were subject to takedown requests and requiring users of these sites to be aware of this regulation once it came into force, and subsequently became a co-sponsor of the bill. The bill passed the Senate unanimously in December 2024. Cruz urged for the House of Representatives to vote on the bill before the end of the session. The bill did not get reintroduced before the end of the 118th United States Congress term.
+
+Upon the start of the 119th Congress, Cruz re-introduced the bill, now with 20 co-sponsors, and it passed unanimously in February 2025. In the House, the bill was introduced by Representative María Elvira Salazar and passed the House's Committee on Energy and Commerce in early April 2025. It passed the full House on a 409–2 vote on April 28, 2025.
+
+President Donald Trump had expressed support for the bill following his election to his second term.
+
+Criticism
+
+The TAKE IT DOWN Act has drawn concerns from First Amendment-related groups such as the Center for Democracy & Technology, the Authors Guild, Demand Progress Action, the Electronic Frontier Foundation (EFF), Fight for the Future, the Freedom of the Press Foundation, New America's Open Technology Institute, Public Knowledge, and TechFreedom. The EFF also said that president Donald Trump has supported the bill but also that he would use it to his own ends to remove content critical of himself.
+
+Related legislation
+
+Senator Klobuchar had introduced, beginning in 2022, the Stopping Harmful Image Exploitation and Limiting Distribution (SHIELD Act), which would bolster law enforcement tools to investigate and charge those that publish NCII with harsher penalties for NCII related to minors. The bill had passed through the Senate in 2024, but failed to pass through the House, but Klobuchar since reintroduced the bill in the Senate in February 2025.
+
+Representative Alexandria Ocasio-Cortez has introduced the
+
+Disrupt Explicit Forged Images and Non-Consensual Edits (DEFIANCE) Act, which would provide victims of NCII the ability to seek civil damages from those that created the images. The bill has had bipartisan support in both houses, and while it had cleared the Senate in 2024, failed to pass the House. Ocasio-Cortez reintroduced the bill after the passage of TAKE IT DOWN in May 2025.
+
+See also
+
+Artificial intelligence controversies
+
+Taylor Swift deepfake pornography controversy
+
+References
+
+External links
+
+TAKE IT DOWN Act as amended (PDF/details) in the GPO Statute Compilations collection
+
+TAKE IT DOWN Act as enacted (PDF/details) in the US Statutes at Large
+
+S. 146 on Congress.gov
+
+Category:Acts of the 119th United States Congress
+
+Category:Internet law in the United States
+
+Category:Privacy law in the United States
+
+Category:Deepfakes
+
+Category:Internet censorship in the United States
+
+Category:Personality rights
+
+Category:Ted Cruz
+
+Category:Melania Trump

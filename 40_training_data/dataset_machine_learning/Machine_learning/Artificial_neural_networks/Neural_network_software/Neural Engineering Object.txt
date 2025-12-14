@@ -1,0 +1,29 @@
+Neural Engineering Object (Nengo) is a graphical and scripting software for simulating large-scale neural systems. As the neural network software Nengo is a tool for modelling neural networks with applications in cognitive science, psychology, artificial intelligence and neuroscience.
+
+History
+
+Some form of Nengo has existed since 2003. Originally developed as a Matlab script under the name NESim (Neural Engineering Simulator), it was later moved to a Java implementation under the name NEO, and then eventually Nengo. The first three generations of Nengo developed with a focus on developing a powerful modelling tool with a simple interface, and scripting system. As the tool became increasingly useful the limitations of the system in terms of speed led to development of a back-end agnostic API. This most recent iteration of Nengo defines a specific Python-based scripting API with back-ends targeting Numpy, OpenCL and Neuromorphic hardware such as Spinnaker. This newest iteration also comes with an interactive GUI to help with the quick prototyping of neural models.
+
+Nengo uses a custom license which allows free personal and research use, but a paid license is required for commercial purposes.
+
+Theoretical Background
+
+Nengo is built upon two theoretic underpinnings, the Neural Engineering Framework (NEF) and the Semantic Pointer Architecture (SPA).
+
+Neural Engineering Framework
+
+Nengo differs primarily from other modelling software in the way it models connections between neurons and their strengths. Using the NEF, Nengo allows defining connection weights between populations of spiking neurons by specifying the function to be computed, instead of forcing the weights to be set manually, or use a learning rule to configure them from a random start. That being said, these aforementioned traditional modelling methods are still available in Nengo.
+
+Semantic Pointer Architecture
+
+To represent symbols in Nengo, SPA is used. Many aspects of human cognition are easier to model using symbols. In Nengo, these are presented as vectors with a set of operations associated to them. These vectors and their operations are called SPA. SPA has been used to model human linguistic search and task planning.
+
+Applications
+
+Notable developments accomplished using the Nengo software have occurred in many fields, and Nengo has been used and cited in over 100 publications. An important development to note is Spaun, a network of 6.6 million artificial spiking neurons (a small number compared to the number in the human brain), which uses groups of these neurons to complete cognitive tasks via flexible coordination. Spaun is the world's largest functional brain model, and can be used to test hypotheses in neuroscience.
+
+References
+
+Further reading
+
+Category:Neural network software

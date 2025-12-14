@@ -1,0 +1,75 @@
+{{Infobox scientist
+
+name              = Sophia Ananiadou
+
+image             = Sophia Ananiadou P1010708 (13870338265).jpg
+
+image_size        =
+
+other_names       = Sofia Ananiadou
+
+workplaces        = University of ManchesterManchester Metropolitan UniversityUniversity of SalfordUniversity of Manchester Institute of Science and Technology
+
+education         = Lycée français St Joseph, Athens
+
+alma_mater        = University of Athens (BA)Paris VII (DEA)Paris IV (DEA)University of Manchester Institute of Science and Technology (PhD)
+
+thesis_url        = https://ethos.bl.uk/OrderDetails.do?uin=uk.bl.ethos.277200
+
+thesis_title      = Towards a methodology for automatic term recognition
+
+thesis_year       = 1988
+
+known_for         = Biomedical text mining
+
+awards            = Daiwa Adrian Prize (2004)
+
+website           =
+
+}}
+
+Sophia Ananiadou is a Greek-British computer scientist and computational linguist. She led the development of and directs the National Centre for Text Mining (NaCTeM) in the United Kingdom.
+
+Her research focusses on biomedical text mining and natural language processing enable exploration of historical archives, allow semantic search of biomedical literature, reduce human effort in screening search hits for production of systematic reviews, enable enrichment of metabolic pathway models with evidence from the literature, allow discovery of risk in the construction industry from health and safety incident reports and enable interoperability of components in text mining workflows.
+
+Education
+
+Ananiadou was educated at the Lycée français St Joseph in Athens, Greece (1969–1975). She received a Bachelor of Arts (Ptychion) from the University of Athens (1979), a Master of Advanced Studies (DEA) in Linguistics from Paris VII, Jussieu, France (1980), a DEA in Literature from Paris IV, Sorbonne, France (1984) and a PhD in Computational linguistics from the University of Manchester Institute of Science and Technology (UMIST), in 1988. University of Manchester.
+
+She is a senior lead researcher of the ARCHIMEDES research unit of the Athena Research Centre, Greece. ARCHIMEDES is a research and innovation hub fostering international collaboration and knowledge exchange on Artificial Intelligence and Data Science.
+
+On February 7, 2025, she was appointed a member of the Artificial Intelligence Sectoral Scientific Council of the Greek Ministry of Development (announcement of appointment in Greek).
+
+She is also a Visiting Distinguished Research Fellow in the Knowledge and Information Research Team at the Artificial Intelligence Research Center (AIRC), Japan, which is a research unit of the Japanese National Institute of Advanced Industrial Science and Technology (AIST).
+
+In addition, she was appointed to the honorary position of Adjunct Professor of Wuhan University, People's Republic of China, for the period October 2025 to October 2028, collaborating with the School of Artificial Intelligence.
+
+Ananiadou has published since 1986, has an h-index of 77 She is also ranked number 1 internationally in text mining by ScholarGPS. In addition, she is included in the Stanford/Elsevier Top 2% Scientist Rankings for 2025. Ananiadou received a Diplôme de traducteur (Diploma of Translator) from the Institut français d'Athènes, Greece (1979) and a Certificate in Counselling from the University of Salford, UK (2004).
+
+Awards and honours
+
+In 2019, in recognition of her contributions in Artificial Intelligence and text mining for Biomedicine, Ananiadou received an honorary doctorate from the University of the Aegean, on the 20th anniversary of its Department of Mediterranean Studies, Rhodes.
+
+Ananiadou received the Unstructured Information Management Architecture (UIMA) innovation award from IBM three years running (2006, 2007 & 2008). She was awarded the Daiwa Adrian Prize in 2004 and also received a Japan Trust award from the Ministry of Education, Japan in 1997.
+
+Since 2021, she is a member and, since 2024, a Fellow, of the ELLIS Society, the professional society of the cross-national European Laboratory for Learning and Intelligent Systems.
+
+Ananiadou served as vice president (VP) of the European Association for Terminology from 1997 to 1999.
+
+At the 28th International Conference on Computational Linguistics (COLING 2020), she received, with M. Li and H. Takamura, an Outstanding Paper designation for the paper "A Neural Model for Aggregating Coreference Annotation in Crowdsourcing".
+
+References
+
+Category:Living people
+
+Category:British women computer scientists
+
+Category:Academics of the University of Manchester
+
+Category:British computer scientists
+
+Category:1957 births
+
+Category:Greek computer scientists
+
+Category:Natural language processing researchers

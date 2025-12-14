@@ -1,0 +1,13 @@
+Auto-WEKA is an automated machine learning system based on Weka by Chris Thornton, Frank Hutter, Holger H. Hoos and Kevin Leyton-Brown. An extended version was published as Auto-WEKA 2.0. Auto-WEKA was named the first prominent AutoML system in a neutral comparison study.
+
+It received the test-of-time award of the SIGKDD conference in 2023.
+
+Description
+
+Auto-WEKA introduced the Combined Algorithm Selection and Hyperparameter optimization (CASH) problem, that extends both the Algorithm selection problem and the Hyperparameter optimization problem, by searching for the best algorithm and also its hyperparameters for a given dataset. Baratchi et al. state that "[T]he real power of AutoML was unlocked through the definition of the combined algorithm selection and hyperparameter optimisation problem".
+
+The CASH for formalism was picked up and also extended by later AutoML systems and methods such as Auto-sklearn, ATM,  AutoPrognosis, MCPS, MOSAIC, naive AutoML and ADMM.
+
+References
+
+Category:Data mining and machine learning software

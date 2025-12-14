@@ -1,0 +1,19 @@
+The Facial Images National Database (FIND) was a project managed by the United Kingdom's National Policing Improvement Agency. The database was a collection of mugshots both from still and from video image sources. It was also designed to keep track of scars, tattoos, and similar markings on persons within the database to increase efficiency in identification. It was intended that FIND would provide national access to images of individuals who have been arrested for a criminal offence, linking the image with the criminal data held on the Police National Computer.
+
+The pilot went live on 6 November 2006, with Lancashire, West Yorkshire and Merseyside contributing and viewing images. Greater Manchester, North Wales, Devon and Cornwall, Thames Valley, British Transport Police (BTP) North Eastern Region, as well as one of the Metropolitan Police specialist units and eBorders had read only access to the system.
+
+The forward plan for FIND included the addition of facial recognition software (much like the United States' FERET database) to the system. Due to budget pressures, the project was cancelled in early 2008, but this decision was under review in October 2008.
+
+References
+
+Category:Biometric databases
+
+Category:Datasets in computer vision
+
+Category:Facial recognition
+
+Category:Government databases in the United Kingdom
+
+Category:Law enforcement in the United Kingdom
+
+Category:Law enforcement databases

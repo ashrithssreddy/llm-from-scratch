@@ -1,0 +1,45 @@
+In probability theory, the mixing time of a Markov chain is the time until the Markov chain is "close" to its steady state distribution.
+
+More precisely, a fundamental result about Markov chains is that a finite state irreducible aperiodic chain has a unique stationary distribution   and, regardless of the initial state, the time-t distribution of the chain converges to   as t tends to infinity.  Mixing time refers to any of several variant formalizations of the idea: how large must t be until the time-t distribution is approximately ?  One variant, total variation distance mixing time, is defined as the smallest t such that the total variation distance of probability measures is small:
+
+t_{\operatorname{mix}}(\varepsilon) = \min \left\{ t \geq 0 : \max_{x \in S} \Big[ \max_{A \subseteq S} \left|\Pr(X_t \in A \mid X_0 = x) - \pi(A) \right|\Big] \leq \varepsilon \right\}.
+
+Choosing a different \varepsilon, as long as \varepsilon , can only change the mixing time up to a constant factor (depending on \varepsilon) and so one often fixes \varepsilon = 1/4 and simply writes t_{\mathrm{mix}}.
+
+This is the sense in which  proved that the number of riffle shuffles needed to mix an ordinary 52 card deck is 7.  Mathematical theory focuses on how mixing times change as a function of the size of the structure underlying the chain.  For an n-card deck, the number of riffle shuffles needed grows as 1.5 \log_2 n.  The most developed theory concerns randomized algorithms for #P-complete algorithmic counting problems such as the number of graph colorings of a given n vertex graph.  Such problems can, for sufficiently large number of colors, be answered using the Markov chain Monte Carlo method and showing that the mixing time grows only as n \log(n) .  This example and the shuffling example possess the rapid mixing property, that the mixing time grows at most polynomially fast in \log(number of states of the chain).  Tools for proving rapid mixing include arguments based on conductance and the method of coupling.  In broader uses of the Markov chain Monte Carlo method, rigorous justification of simulation results would require a theoretical bound on mixing time, and many interesting practical cases have resisted such theoretical analysis.
+
+See also
+
+Mixing (mathematics) for a formal definition of mixing
+
+References
+
+.
+
+.
+
+{{citation
+
+| last = Jerrum | first = Mark
+
+| doi = 10.1002/rsa.3240070205
+
+| issue = 2
+
+| journal = Random Structures & Algorithms
+
+| mr = 1369061
+
+| pages = 157–165
+
+| title = A very simple algorithm for estimating the number of -colorings of a low-degree graph
+
+| volume = 7
+
+| year = 1995}}.
+
+.
+
+.
+
+Category:Markov processes

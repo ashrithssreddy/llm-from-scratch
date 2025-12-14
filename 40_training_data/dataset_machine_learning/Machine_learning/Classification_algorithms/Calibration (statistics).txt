@@ -1,0 +1,47 @@
+There are two main uses of the term calibration in statistics that denote special types of statistical inference problems. Calibration can mean
+
+a reverse process to regression, where instead of a future dependent variable being predicted from known explanatory variables, a known observation of the dependent variables is used to predict a corresponding explanatory variable;
+
+procedures in statistical classification to determine class membership probabilities which assess the uncertainty of a given new observation belonging to each of the already established classes.
+
+In addition, calibration is used in statistics with the usual general meaning of calibration. For example, model calibration can be also used to refer to Bayesian inference about the value of a model's parameters, given some data set, or more generally to any type of fitting of a statistical model. As Philip Dawid puts it, "a forecaster is well calibrated if, for example, of those events to which he assigns a probability 30 percent, the long-run proportion that actually occurs turns out to be 30 percent."
+
+In classification
+
+Calibration in classification means transforming classifier scores into class membership probabilities. An overview of calibration methods for two-class and multi-class classification tasks is given by Gebel (2009). A classifier might separate the classes well, but be poorly calibrated, meaning that the estimated class probabilities are far from the true class probabilities. In this case, a calibration step may help improve the estimated probabilities. A variety of metrics exist that are aimed to measure the extent to which a classifier produces well-calibrated probabilities. Foundational work includes the Expected Calibration Error (ECE). Into the 2020s, variants include the Adaptive Calibration Error (ACE) and the Test-based Calibration Error (TCE), which address limitations of the ECE metric that may arise when classifier scores concentrate on narrow subset of the [0,1] range.
+
+A 2020s advancement in calibration assessment is the introduction of the Estimated Calibration Index (ECI). The ECI extends the concepts of the Expected Calibration Error (ECE) to provide a more nuanced measure of a model's calibration, particularly addressing overconfidence and underconfidence tendencies. Originally formulated for binary settings, the ECI has been adapted for multiclass settings, offering both local and global insights into model calibration. This framework aims to overcome some of the theoretical and interpretative limitations of existing calibration metrics. Through a series of experiments, Famiglini et al. demonstrate the framework's effectiveness in delivering a more accurate understanding of model calibration levels and discuss strategies for mitigating biases in calibration assessment. An online tool has been proposed to compute both ECE and ECI. The following univariate calibration methods exist for transforming classifier scores into class membership probabilities in the two-class case:
+
+Assignment value approach, see Garczarek (2002)
+
+Bayes approach, see Bennett (2002)
+
+Isotonic regression, see  Zadrozny and Elkan (2002)
+
+Platt scaling (a form of logistic regression), see Lewis and Gale (1994) and Platt (1999)
+
+Bayesian Binning into Quantiles (BBQ) calibration, see Naeini, Cooper, Hauskrecht (2015)
+
+Beta calibration, see Kull, Filho, Flach (2017)
+
+In probability prediction and forecasting
+
+In prediction and forecasting, a Brier score is sometimes used to assess prediction accuracy of a set of predictions, specifically that the magnitude of the assigned probabilities track the relative frequency of the observed outcomes.  Philip E. Tetlock employs the term "calibration" in this sense in his 2015 book Superforecasting.  This differs from accuracy and precision.  For example, as expressed by Daniel Kahneman, "if you give all events that happen a probability of .6 and all the events that don't happen a probability of .4, your discrimination is perfect but your calibration is miserable". This can be known as "inverse regression"; there is also sliced inverse regression. The following multivariate calibration methods exist for transforming classifier scores into class membership probabilities in the case with classes count greater than two:
+
+Reduction to binary tasks and subsequent pairwise coupling, see Hastie and Tibshirani (1998)
+
+Dirichlet calibration, see Gebel (2009)
+
+Example
+
+One example is that of dating objects, using observable evidence such as tree rings for dendrochronology or carbon-14 for radiometric dating.  The observation is caused by the age of the object being dated, rather than the reverse, and the aim is to use the method for estimating dates based on new observations. The problem is whether the model used for relating known ages with observations should aim to minimise the error in the observation, or minimise the error in the date.  The two approaches will produce different results, and the difference will increase if the model is then used for extrapolation at some distance from the known results.
+
+See also
+
+Conformal prediction
+
+References
+
+Category:Regression analysis
+
+Category:Statistical classification

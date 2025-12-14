@@ -1,0 +1,11 @@
+Extremal Ensemble Learning (EEL) is a machine learning algorithmic paradigm for graph partitioning. EEL creates an ensemble of partitions and then uses information contained in the ensemble to find new and improved partitions. The ensemble evolves and learns how to form improved partitions through extremal updating procedure. The final solution is found by achieving consensus among its member partitions about what the optimal partition is.
+
+Reduced-Network Extremal Ensemble Learning (RenEEL)
+
+A particular implementation of the EEL paradigm is the Reduced-Network Extremal Ensemble Learning (RenEEL) scheme for partitioning a graph.
+
+References
+
+Category:Machine learning algorithms
+
+Category:Graph algorithms

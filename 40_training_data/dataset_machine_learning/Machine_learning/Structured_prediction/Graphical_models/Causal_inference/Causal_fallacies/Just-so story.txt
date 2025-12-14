@@ -1,0 +1,51 @@
+In science and philosophy, a just-so story is an untestable narrative explanation for a cultural practice, a biological trait, or behavior of humans or other animals. The pejorative It has been used to criticize evolutionary explanations of traits that have been proposed to be adaptations, particularly in the evolution–creation debates and in debates regarding research methods in sociobiology
+
+However, the first widely acknowledged use of the phrase in the modern and pejorative sense seems to have originated in 1978 with Stephen Jay Gould, a prominent paleontologist and popular science writer. Gould expressed deep skepticism as to whether evolutionary psychology could ever provide objective explanations for human behavior, even in principle; additionally, even if it were possible to do so, Gould did not think that it could be proven in a properly scientific way.  Similarly, Robert Kurzban suggested that "The goal should not be to expel stories from science, but rather to identify the stories that are also good explanations." In his book The Triumph of Sociobiology, John Alcock suggested that the term just-so story as applied to proposed evolved adaptations is "one of the most successful derogatory labels ever invented". In a response to Gould's criticism, John Tooby and Leda Cosmides argued that the "just-so" accusation is unsubstantiated as it claims evolutionary psychologists are only interested in facts already known, when in reality evolutionary psychology is interested in what can be predicted from already known information as a means of pursuing unknown avenues of research. Thus evolutionary psychology has predictive utility, meaning it is not composed of just-so stories. Steve Stewart-Williams argues that all scientific hypotheses are just-so stories prior to being tested, yet the accusation is seldom levelled at other fields. He agrees that evolutionary explanations can potentially be made up for almost anything, but he argues the same could be said of competing approaches, such as sociocultural explanations, so in his view this is not a useful criticism. In 2001 interview, Leda Cosmides argued:
+
+There is nothing wrong with explaining facts that are already known: no one faults a physicist for explaining why stars shine or apples fall toward earth. But evolutionary psychology would not be very useful if it were only capable of providing explanations after the fact, because almost nothing about the mind is known or understood: there are few facts, at the moment, to be explained! The strength of an evolutionary approach is that it can aid discovery: it allows you to generate predictions about what programs the mind might contain, so that you can conduct experiments to see if they in fact exist.....[W]hat about evolutionary explanations of phenomena that are already known? Those who have a professional knowledge of evolutionary biology know that it is not possible to cook up after the fact explanations of just any trait. There are important constraints on evolutionary explanation. More to the point, every decent evolutionary explanation has testable predictions about the design of the trait. For example, the hypothesis that pregnancy sickness is a byproduct of prenatal hormones predicts different patterns of food aversions than the hypothesis that it is an adaptation that evolved to protect the fetus from pathogens and plant toxins in food at the point in embryogenesis when the fetus is most vulnerable – during the first trimester. Evolutionary hypotheses – whether generated to discover a new trait or to explain one that is already known – carry predictions about the design of that trait. The alternative – having no hypothesis about adaptive function – carries no predictions whatsoever. So which is the more constrained and sober scientific approach?
+
+Al-Shawaf et al. argue that many evolutionary psychology hypotheses are formed in a "top-down" approach; a theory is used to generate a hypothesis and predictions are then made from this hypothesis. This method makes it generally impossible to engage in just-so storytelling because the hypothesis and predictions are made a priori, based on the theory. By contrast, the "bottom-up" approach, whereby an observation is made and a hypothesis is generated to explain the observation, could potentially be a form of just-so storytelling if no novel predictions were developed from the hypothesis. Provided novel, testable predictions are made from the hypothesis, then it cannot be argued that the hypothesis is a just-so story. Al-Shawaf et al. argue that the just-so accusation is a result of the fact that, like other evolutionary sciences, evolutionary psychology is partially a historical discipline. However, the authors argue that if this made evolutionary psychology nothing but just-so storytelling, then other partially historical scientific disciplines such as astrophysics, geology or cosmology would also be just-so storytelling. What makes any scientific discipline, not just partially historical ones, valid is their ability to make testable novel predictions in the present day. Evolutionary psychologists do not need to travel back in time to test their hypotheses, as their hypotheses yield predictions about what we would expect to see in the modern world.
+
+Lisa DeBruine argues that evolutionary psychology can generate testable, novel predictions. She gives an example of evolved navigation theory, which hypothesised that people will overestimate vertical distances relative to horizontal ones and, in particular, vertical distances seen from above relative to those seen from below, because of the perceived danger of falling from a height. The predictions of this hypothesis were confirmed, although the facts were unknown until evolved navigation theory tested them, demonstrating that evolutionary psychology can correctly make novel predictions.
+
+Berry et al. argue that critics of adaptationist "just so stories" are often guilty of creating "just not so stories", uncritically accepting any alternative explanation provided it is not the adaptationist one. Furthermore, the authors argue that Gould's use of the term "adaptive function" is overly restrictive, as they insist it must refer to the original adaptive function the trait evolved for. According to the authors, this is a nonsensical requirement, because if an adaptation was then used for a new, different, adaptive function, then this makes the trait an adaptation because it remains in the population because it helps organisms with this new function. Thus the trait's original purpose is irrelevant because it has been co-opted for a new purpose and maintains itself within the species because it increases reproductive success of members of the species who have it (versus those who may have lost it for some reason); nature is blind to the original "intended" function of the trait.
+
+David Buss argued that while Gould's "just-so story" criticism is that the data that an evolutionary psychology adaptationist hypothesis explains could be equally explained by different hypotheses (such as exaptationist or co-opted spandrel hypotheses), Gould failed to meet the relevant evidentiary burdens with regards to these alternative hypotheses. According to Buss, co-opted exaptationist and spandrel hypotheses have an additional evidentiary burden compared to adaptationist hypotheses, as they must identify both the original adaptational functionality and the later co-opted functionality, while proposals that something is a co-opted byproduct must identify what the trait was a byproduct of and what caused it to be co-opted; so, it is not sufficient simply to propose an alternative exaptationist, functionless byproduct or spandrel hypothesis to the adaptationist one without these further evidences. Buss argues that Gould's failure to do this made his contrary assertion itself nothing more than a just-so story. Adam Hunt similarly criticizes just-so stories as 'reasoning from the conclusion'.
+
+Alternatives in evolutionary developmental biology
+
+How the Snake Lost Its Legs: Curious Tales from the Frontier of Evo-Devo is a 2014 book on evolutionary developmental biology by Lewis I. Held, Jr. The title pays a “factual homage to Rudyard Kipling's fanciful Just So Stories."
+
+See also
+
+Demarcation problem, philosophical question of distinguishing science and non-science
+
+Factoid
+
+False etymology, similar phenomenon in linguistics
+
+Ipse dixit
+
+Origin myth
+
+Pourquoi story
+
+Richard Lewontin, who accused neo-Darwinists of telling just-so stories
+
+Social dominance theory
+
+Testing hypotheses suggested by the data
+
+Urban legend
+
+Woozle effect
+
+References
+
+Category:Causal fallacies
+
+Category:Figures of speech
+
+Category:Pejorative terms
+
+Category:Urban legends

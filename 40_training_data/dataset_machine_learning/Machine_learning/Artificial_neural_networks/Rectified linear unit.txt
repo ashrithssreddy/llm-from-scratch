@@ -1,0 +1,195 @@
+(green) functions near x = 0]]
+
+In the context of artificial neural networks, the rectifier or ReLU (rectified linear unit) activation function is an activation function defined as the non-negative part of its argument, i.e., the ramp function:
+
+\operatorname{ReLU}(x) = x^+ = \max(0, x) = \frac{x+|x|}{2} = \begin{cases}
+
+x & \text{if } x > 0, \\
+
+0 & x \le 0
+
+\end{cases}
+
+where x is the input to a neuron. This is analogous to half-wave rectification in electrical engineering.
+
+ReLU is one of the most popular activation functions for artificial neural networks, and finds application in computer vision and speech recognition using deep neural nets and computational neuroscience.
+
+History
+
+The ReLU was first used by Alston Householder in 1941 as a mathematical abstraction of biological neural networks.
+
+Kunihiko Fukushima in 1969 used ReLU in the context of visual feature extraction in hierarchical neural networks. Thirty years later, Hahnloser et al. argued that ReLU approximates the biological relationship between neural firing rates and input current, in addition to enabling recurrent neural network dynamics to stabilise under weaker criteria.
+
+Prior to 2010, most activation functions used were the logistic sigmoid (which is inspired by probability theory; see logistic regression) and its more numerically efficient counterpart, the hyperbolic tangent. Around 2010, the use of ReLU became common again.
+
+Jarrett et al. (2009) noted that rectification by either absolute or ReLU (which they called "positive part") was critical for object recognition in convolutional neural networks (CNNs), specifically because it allows average pooling without neighboring filter outputs cancelling each other out. They hypothesized that the use of sigmoid or tanh was responsible for poor performance in previous CNNs.
+
+Nair and Hinton (2010) made a theoretical argument that the softplus activation function should be used, in that the softplus function numerically approximates the sum of an exponential number of linear models that share parameters. They then proposed ReLU as a good approximation to it. Specifically, they began by considering a single binary neuron in a Boltzmann machine that takes x as input, and produces 1 as output with probability \sigma(x) = \frac{1}{1 + e^{-x}}. They then considered extending its range of output by making infinitely many copies of it X_1, X_2, X_3, \dots, that all take the same input, offset by an amount 0.5, 1.5, 2.5, \dots, then their outputs are added together as \sum_{i=1}^\infty X_i. They then demonstrated that \sum_{i=1}^\infty X_i is approximately equal to \mathcal N(\log(1+e^x), \sigma(x)), which is also approximately equal to \operatorname{ReLU}(\mathcal N( x, \sigma(x))), where \mathcal N stands for the gaussian distribution.
+
+They also argued for another reason for using ReLU: that it allows "intensity equivariance" in image recognition. That is, multiplying input image by a constant k multiplies the output also. In contrast, this is false for other activation functions like sigmoid or tanh. They found that ReLU activation allowed good empirical performance in restricted Boltzmann machines.
+
+Glorot et al (2011) argued that ReLU has the following advantages over sigmoid or tanh:
+
+ReLU is more similar to biological neurons' responses in their main operating regime.
+
+ReLU avoids vanishing gradients.
+
+ReLU is cheaper to compute.
+
+ReLU creates sparse representation naturally, because many hidden units output exactly zero for a given input.
+
+They also found empirically that deep networks trained with ReLU can achieve strong performance without unsupervised pre-training, especially on large, purely supervised tasks.
+
+f(x) = \begin{cases}
+
+x & x > 0, \\
+
+\alpha x & x \le 0,
+
+\end{cases} \qquad
+
+f'(x) = \begin{cases}
+
+1 & x > 0, \\
+
+\alpha & x \le 0.
+
+\end{cases}
+
+The same function can also be expressed without the piecewise notation as:
+
+f(x) = \frac{1+\alpha}{2} x+\frac{1-\alpha}{2} |x|
+
+Parametric ReLU (PReLU, 2016) takes this idea further by making \alpha a learnable parameter along with the other network parameters.
+
+Note that for \alpha \le 1, this is equivalent to
+
+f(x) = \max(x, \alpha x)
+
+and thus has a relation to "maxout" networks.
+
+f(x) = [\operatorname{ReLU}(x), \operatorname{ReLU}(-x)].
+
+Smooth variants
+
+Softplus
+
+]]
+
+A smooth approximation to the rectifier is the analytic function
+
+f(x) = \ln(1 + e^x),\qquad
+
+f'(x) = \frac{e^{x}}{1 + e^{x}} = \frac{1}{1 + e^{-x}}
+
+which is called the softplus (2000) For large negative x it is roughly \ln 1, so just above 0, while for large positive x it is roughly \ln(e^x), so just above x.
+
+This function can be approximated as:
+
+\ln\left(1 + e^x \right) \approx \begin{cases} \ln2, & x=0,\\[6pt] \frac x {1-e^{-x/\ln2}}, & x\neq 0 \end{cases}
+
+By making the change of variables x = y\ln(2), this is equivalent to
+
+\log_2(1 + 2^y) \approx \begin{cases} 1,& y=0,\\[6pt] \frac{y}{1-e^{-y}}, & y\neq 0\end{cases}
+
+A sharpness parameter k may be included:
+
+f(x) = \frac{\ln(1 + e^{kx})} k, \qquad f'(x) = \frac{e^{kx}}{1 + e^{kx}} = \frac{1}{1 + e^{-kx}}
+
+The derivative of softplus is the logistic function. This in turn can be viewed as a smooth approximation of the derivative of the rectifier, the Heaviside step function.
+
+The multivariable generalization of single-variable softplus is the LogSumExp with the first argument set to zero:
+
+\operatorname{LSE_0}^+(x_1, \dots, x_n) := \operatorname{LSE}(0, x_1, \dots, x_n) = \ln(1 + e^{x_1} + \cdots + e^{x_n})
+
+The LogSumExp function is
+
+\operatorname{LSE}(x_1, \dots, x_n) = \ln(e^{x_1} + \cdots + e^{x_n})
+
+and its gradient is the softmax; the softmax with the first argument set to zero is the multivariable generalization of the logistic function. Both LogSumExp and softmax are used in machine learning.
+
+ELU
+
+Exponential linear units (2015) smoothly allow negative values. This is an attempt to make the mean activations closer to zero, which speeds up learning. It has been shown that ELUs can obtain higher classification accuracy than ReLUs.
+
+f(x) = \begin{cases}
+
+x & x > 0, \\
+
+\alpha \left(e^x - 1\right) & x \le 0
+
+\end{cases} \qquad
+
+f'(x) = \begin{cases}
+
+1 & x > 0, \\
+
+\alpha e^x & x \le 0
+
+\end{cases}
+
+In these formulas, \alpha is a hyperparameter to be tuned with the constraint \alpha \geq 0.
+
+Given the same interpretation of \alpha, ELU can be viewed as a smoothed version of a shifted ReLU (SReLU), which has the form f(x) = \max(- \alpha, x).
+
+Gaussian-error linear unit (GELU)
+
+GELU (2016) is a smooth approximation to the rectifier:
+
+f(x) = x \Phi(x),
+
+f'(x) = x \Phi'(x) + \Phi(x)
+
+where \Phi(x) = P(X \leqslant x) is the cumulative distribution function of the standard normal distribution.
+
+This activation function is illustrated in the figure at the start of this article. It has a "bump" with negative derivative to the left of x f(x) = x \tanh\big(\operatorname{softplus}(x)\big),
+
+where \tanh(x) is the hyperbolic tangent, and \operatorname{softplus}(x) is the softplus function.
+
+Mish was obtained by experimenting with functions similar to Swish (SiLU, see above). It is non-monotonic (has a "bump") like Swish. The main new feature is that it exhibits a "self-regularizing" behavior attributed to a term in its first derivative.
+
+Squareplus
+
+Squareplus (2021) is the function
+
+f(x) = \frac{x + \sqrt{x^2 + b}}{2}
+
+where b \geq 0 is a hyperparameter that determines the "size" of the curved region near x = 0. (For example, letting b = 0 yields ReLU, and letting b = 4 yields the metallic mean function.)
+
+Squareplus shares many properties with softplus: It is monotonic, strictly positive, approaches 0 as x \to -\infty, approaches the identity as x \to +\infty, and is C^\infty smooth. However, squareplus can be computed using only algebraic functions, making it well-suited for settings where computational resources or instruction sets are limited. Additionally, squareplus requires no special consideration to ensure numerical stability when x is large.
+
+DELU
+
+ExtendeD Exponential Linear Unit (DELU, 2023) is an activation function which is smoother within the neighborhood of zero and sharper for bigger values, allowing better allocation of neurons in the learning process for higher performance. Thanks to its unique design, it has been shown that DELU may obtain higher classification accuracy than ReLU and ELU.
+
+f(x) = \begin{cases}
+
+x & x > x_c, \\
+
+(e^{ax} - 1)/b & x \le x_c
+
+\end{cases} \qquad
+
+f'(x) = \begin{cases}
+
+1 & x > x_c, \\
+
+(a / b) e^{ax} & x \le x_c
+
+\end{cases}
+
+In these formulas, a, b and x_c are hyperparameter values which could be set as default constraints a = 1, b = 2 and x_c = 1.25643, as done in the original work.
+
+See also
+
+Softmax function
+
+Sigmoid function
+
+Tobit model
+
+Layer (deep learning)
+
+References
+
+Category:Artificial neural networks

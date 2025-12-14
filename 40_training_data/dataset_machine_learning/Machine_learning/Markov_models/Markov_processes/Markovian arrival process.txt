@@ -1,0 +1,103 @@
+In queueing theory, a discipline within the mathematical theory of probability, a Markovian arrival process (MAP or MArP) is a mathematical model for the time between job arrivals to a system. The simplest such process is a Poisson process where the time between each arrival is exponentially distributed.
+
+The processes were first suggested by Marcel F. Neuts in 1979.
+
+Definition
+
+A Markov arrival process is defined by two matrices, D0 and D1 where elements of D0 represent hidden transitions and elements of D1 observable transitions. The block matrix Q below is a transition rate matrix for a continuous-time Markov chain.
+
+Q=\left[\begin{matrix}
+
+D_{0}&D_{1}&0&0&\dots\\
+
+0&D_{0}&D_{1}&0&\dots\\
+
+0&0&D_{0}&D_{1}&\dots\\
+
+\vdots & \vdots & \ddots & \ddots & \ddots
+
+\end{matrix}\right]\; .
+
+The simplest example is a Poisson process where D0&nbsp;=&nbsp;−λ and D1&nbsp;=&nbsp;λ where there is only one possible transition, it is observable, and occurs at rate λ. For Q to be a valid transition rate matrix, the following restrictions apply to the Di
+
+\begin{align}
+
+0\leq [D_{1}]_{i,j}&
+
+Special cases
+
+Phase-type renewal process
+
+The phase-type renewal process is a Markov arrival process with phase-type distributed sojourn between arrivals. For example, if an arrival process has an interarrival time distribution PH(\boldsymbol{\alpha},S) with an exit vector denoted \boldsymbol{S}^{0}=-S\boldsymbol{1}, the arrival process has generator matrix,
+
+Q=\left[\begin{matrix}
+
+S&\boldsymbol{S}^{0}\boldsymbol{\alpha}&0&0&\dots\\
+
+0&S&\boldsymbol{S}^{0}\boldsymbol{\alpha}&0&\dots\\
+
+0&0&S&\boldsymbol{S}^{0}\boldsymbol{\alpha}&\dots\\
+
+\vdots&\vdots&\ddots&\ddots&\ddots\\
+
+\end{matrix}\right]
+
+Generalizations
+
+Batch Markov arrival process
+
+The batch Markovian arrival process (BMAP) is a generalisation of the Markovian arrival process by allowing more than one arrival at a time. The homogeneous case has rate matrix,
+
+Q=\left[\begin{matrix}
+
+D_{0}&D_{1}&D_{2}&D_{3}&\dots\\
+
+0&D_{0}&D_{1}&D_{2}&\dots\\
+
+0&0&D_{0}&D_{1}&\dots\\
+
+\vdots & \vdots & \ddots & \ddots & \ddots
+
+\end{matrix}\right]\; .
+
+An arrival of size k occurs every time a transition occurs in the sub-matrix D_{k}. Sub-matrices D_{k} have elements of \lambda_{i,j}, the rate of a Poisson process, such that,
+
+0\leq [D_{k}]_{i,j}
+
+0\leq [D_{0}]_{i,j}
+
+[D_{0}]_{i,i}
+
+and
+
+\sum^{\infty}_{k=0}D_{k}\boldsymbol{1}=\boldsymbol{0}
+
+Markov-modulated Poisson process
+
+The Markov-modulated Poisson process or MMPP where m Poisson processes are switched between by an underlying continuous-time Markov chain. If each of the m Poisson processes has rate λi and the modulating continuous-time Markov has  m&nbsp;×&nbsp;m transition rate matrix R, then the MAP representation is
+
+\begin{align}
+
+D_{1} &= \operatorname{diag}\{\lambda_{1},\dots,\lambda_{m}\}\\
+
+D_{0} &=R-D_1.
+
+\end{align}
+
+Fitting
+
+A MAP can be fitted using an expectation–maximization algorithm.
+
+Software
+
+KPC-toolbox a library of MATLAB scripts to fit a MAP to data.
+
+See also
+
+Rational arrival process
+
+References
+
+Category:Queueing theory
+
+Category:Markov processes

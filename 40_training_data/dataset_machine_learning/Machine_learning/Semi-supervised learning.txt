@@ -1,0 +1,7 @@
+REDIRECT Weak supervision
+
+{{Redirect category shell|
+
+}}
+
+Category:Machine learning

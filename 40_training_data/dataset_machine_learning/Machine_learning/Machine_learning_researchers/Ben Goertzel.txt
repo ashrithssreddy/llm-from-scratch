@@ -1,0 +1,131 @@
+{{Infobox person
+
+name               = Ben Goertzel
+
+image              = Ben Goertzel (CEO and FounderSingularityNET) (54921528929) (cropped).jpg
+
+alt                =
+
+caption            = Goertzel in 2025
+
+birth_name         =
+
+birth_date         =
+
+death_date         =
+
+death_place        =
+
+nationality        =
+
+other_names        =
+
+children           =
+
+father             = Ted Goertzel
+
+known_for          =
+
+occupation         = CEO and founder of SingularityNET
+
+website            =
+
+}}
+
+Ben Goertzel is a computer scientist, artificial intelligence (AI) researcher, and businessman. He helped popularize the term artificial general intelligence (AGI).
+
+Early life and education
+
+Three of Goertzel's Jewish great-grandparents immigrated to New York from Lithuania and Poland (in the Russian Empire). Goertzel's father is Ted Goertzel, a former professor of sociology at Rutgers University. Goertzel left high school after the tenth grade to attend Bard College at Simon's Rock, where he graduated with a bachelor's degree in Quantitative Studies. Goertzel graduated with a PhD in mathematics from Temple University under the supervision of Avi Lin in 1990, at age 23.
+
+Career
+
+Goertzel is the founder and CEO of SingularityNET, a project which was founded to distribute artificial intelligence data via blockchains. He is a leading developer of the OpenCog framework for artificial general intelligence.
+
+He once received a grant from Jeffrey Epstein.
+
+Goertzel was the Chief Scientist of Hanson Robotics, the company that created the Sophia robot. As of 2018, Sophia's architecture includes scripting software, a chat system, and OpenCog, an AI system designed for general reasoning. Experts in the field have treated the project mostly as a PR stunt, stating that Hanson's claims that Sophia was "basically alive" are "grossly misleading" because the project does not involve AI technology, while Yann LeCun, a seminal figure of the field then serving as Meta's chief AI scientist, made several unflattering remarks, before depicting the project as "complete bullshit".
+
+Views on AI
+
+In May 2007, Goertzel spoke at a Google tech talk about his approach to creating artificial general intelligence. He defines intelligence as the ability to detect patterns in the world and in the agent itself, measurable in terms of emergent behavior of "achieving complex goals in complex environments". A "baby-like" artificial intelligence is initialized, then trained as an agent in a simulated or virtual world such as Second Life to produce a more powerful intelligence. Knowledge is represented in a network whose nodes and links carry probabilistic truth values as well as "attention values", with the attention values resembling the weights in a neural network. Several algorithms operate on this network, the central one being a combination of a probabilistic inference engine and a custom version of evolutionary programming.
+
+The 2012 documentary The Singularity by independent filmmaker Doug Wolens discussed Goertzel's views on AGI.
+
+In 2023 Goertzel postulated that artificial intelligence could replace up to 80 percent of human jobs in the coming years "without having an AGI, by my guess. Not with ChatGPT exactly as a product. But with systems of that nature". At the Web Summit 2023 in Rio de Janeiro, Goertzel spoke out against efforts to curb AI research and that AGI is only a few years away. Goertzel's belief is that AGI will be a net positive for humanity by assisting with societal problems such as, but not limited to, climate change.
+
+Bibliography
+
+References
+
+External links
+
+Personal website
+
+Ben Goertzel at arXiv.org
+
+TEDxBerkeley – "Decentralized AI" (video: 16min, March 2019)
+
+SingularityNET
+
+Category:1966 births
+
+Category:Living people
+
+Category:20th-century American mathematicians
+
+Category:21st-century American mathematicians
+
+Category:American agnostics
+
+Category:American roboticists
+
+Category:American technology company founders
+
+Category:American people of Brazilian-Jewish descent
+
+Category:American artificial intelligence researchers
+
+Category:Human–computer interaction researchers
+
+Category:American technology writers
+
+Category:Machine learning researchers
+
+Category:Brazilian people of Jewish descent
+
+Category:American bioinformaticians
+
+Category:Jewish agnostics
+
+Category:American futurologists
+
+Category:Data miners
+
+Category:People from Rio de Janeiro (city)
+
+Category:Brazilian emigrants to the United States
+
+Category:New York University alumni
+
+Category:Temple University alumni
+
+Category:Academic staff of the University of Waikato
+
+Category:University of New Mexico faculty
+
+Category:Academic staff of the University of Western Australia
+
+Category:College of Staten Island faculty
+
+Category:University of Nevada, Las Vegas faculty
+
+Category:Academic staff of Xiamen University
+
+Category:Singularitarians
+
+Category:Cosmists
+
+Category:Critics of conspiracy theories
+
+Category:American transhumanists

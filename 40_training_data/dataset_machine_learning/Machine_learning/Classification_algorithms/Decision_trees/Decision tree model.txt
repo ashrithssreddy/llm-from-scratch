@@ -1,0 +1,73 @@
+In computational complexity theory, the decision tree model is the model of computation in which an algorithm can be considered to be a decision tree, i.e. a sequence of queries or tests that are done adaptively, so the outcome of previous tests can influence the tests performed next.
+
+Typically, these tests have a small number of outcomes (such as a yes–no question) and can be performed quickly (say, with unit computational cost), so the worst-case time complexity of an algorithm in the decision tree model corresponds to the depth of the corresponding tree. This notion of computational complexity of a problem or an algorithm in the decision tree model is called its decision tree complexity or query complexity.
+
+Decision tree models are instrumental in establishing lower bounds for the complexity of certain classes of computational problems and algorithms. Several variants of decision tree models have been introduced, depending on the computational model and type of query algorithms are allowed to perform.
+
+For example, a decision tree argument is used to show that a comparison sort of n items must make n\log(n) comparisons. For comparison sorts, a query is a comparison of two items a,b, with two outcomes (assuming no items are equal): either a  or a > b. Comparison sorts can be expressed as decision trees in this model, since such sorting algorithms only perform these types of queries.
+
+Comparison trees and lower bounds for sorting
+
+Decision trees are often employed to understand algorithms for sorting and other similar problems; this was first done by Ford and Johnson.
+
+For example, many sorting algorithms are comparison sorts, which means that they only gain information about an input sequence x_1,x_2,\ldots,x_n via local comparisons: testing whether x_i , x_i = x_j, or x_i > x_j. Assuming that the items to be sorted are all distinct and comparable, this can be rephrased as a yes-or-no question: is x_i > x_j?
+
+These algorithms can be modeled as binary decision trees, where the queries are comparisons: an internal node corresponds to a query, and the node's children correspond to the next query when the answer to the question is yes or no. For leaf nodes, the output corresponds to a permutation \pi that describes how the input sequence was scrambled from the fully ordered list of items. (The inverse of this permutation, \pi^{-1}, re-orders the input sequence.)
+
+One can show that comparison sorts must use \Omega(n\log(n)) comparisons through a simple argument: for an algorithm to be correct, it must be able to output every possible permutation of n elements; otherwise, the algorithm would fail for that particular permutation as input. So, its corresponding decision tree must have at least as many leaves as permutations: n! leaves. Any binary tree with at least n! leaves has depth at least \log_2(n!) = \Omega(n\log_2(n)), so this is a lower bound on the run time of a comparison sorting algorithm. In this case, the existence of numerous comparison-sorting algorithms having this time complexity, such as mergesort and heapsort, demonstrates that the bound is tight.
+
+This argument does not use anything about the type of query, so it in fact proves a lower bound for any sorting algorithm that can be modeled as a binary decision tree. In essence, this is a rephrasing of the information-theoretic argument that a correct sorting algorithm must learn at least \log_2(n!) bits of information about the input sequence. As a result, this also works for randomized decision trees as well.
+
+Other decision tree lower bounds do use that the query is a comparison. For example, consider the task of only using comparisons to find the smallest number among n numbers. Before the smallest number can be determined, every number except the smallest must "lose" (compare greater) in at least one comparison. So, it takes at least n-1 comparisons to find the minimum. (The information-theoretic argument here only gives a lower bound of \log(n).) A similar argument works for general lower bounds for computing order statistics. and Reingold, are often used for proving lower bounds in computational geometry. For example, Ben-Or showed that element uniqueness (the task of computing f: \mathbb{R}^n \to \{0,1\}, where f(x) is 0 if and only if there exist distinct coordinates i, j such that x_i = x_j) requires an algebraic decision tree of depth \Omega(n\log(n)). This was first shown for linear decision models by Dobkin and Lipton. They also show a n^2 lower bound for linear decision trees on the knapsack problem, generalized to algebraic decision trees by Steele and Yao.
+
+Boolean decision tree complexities
+
+For Boolean decision trees, the task is to compute the value of an n-bit Boolean function f: \{0,1\}^n \to \{0,1\} for an input x \in \{0,1\}^n. The queries correspond to reading a bit of the input, x_i, and the output is f(x). Each query may be dependent on previous queries. There are many types of computational models using decision trees that could be considered, admitting multiple complexity notions, called complexity measures.
+
+Deterministic decision tree
+
+If the output of a decision tree is f(x), for all x\in \{0,1\}^n, the decision tree is said to "compute" f. The depth of a tree is the maximum number of queries that can happen before a leaf is reached and a result obtained. D(f), the deterministic decision tree complexity of f is the smallest depth among all deterministic decision trees that compute f.
+
+Randomized decision tree
+
+One way to define a randomized decision tree is to add additional nodes to the tree, each controlled by a probability p_i.  Another equivalent definition is to define it as a distribution over deterministic decision trees.  Based on this second definition, the complexity of the randomized tree is defined as the largest depth among all the trees in the support of the underlying distribution.  R_2(f) is defined as the complexity of the lowest-depth randomized decision tree whose result is f(x) with probability at least 2/3 for all x\in \{0,1\}^n (i.e., with bounded 2-sided error).
+
+R_2(f) is known as the Monte Carlo randomized decision-tree complexity, because the result is allowed to be incorrect with bounded two-sided error.  The Las Vegas decision-tree complexity R_0(f) measures the expected depth of a decision tree that must be correct (i.e., has zero-error).  There is also a one-sided bounded-error version which is denoted by R_1(f).
+
+Nondeterministic decision tree
+
+The nondeterministic decision tree complexity of a function is known more commonly as the certificate complexity of that function. It measures the number of input bits that a nondeterministic algorithm would need to look at in order to evaluate the function with certainty.
+
+Formally, the certificate complexity of f at x is the size of the smallest subset of indices S \subseteq [n] such that, for all y \in \{0,1\}^n, if y_i = x_i for all i \in S, then f(y) = f(x). The certificate complexity of f is the maximum certificate complexity over all x. The analogous notion where one only requires the verifier to be correct with 2/3 probability is denoted RC(f).
+
+Quantum decision tree
+
+The quantum decision tree complexity Q_2(f) is the depth of the lowest-depth quantum decision tree that gives the result f(x) with probability at least 2/3 for all x\in \{0,1\}^n .  Another quantity, Q_E(f), is defined as the depth of the lowest-depth quantum decision tree that gives the result f(x) with probability 1 in all cases (i.e. computes f exactly).  Q_2(f) and Q_E(f) are more commonly known as quantum query complexities, because the direct definition of a quantum decision tree is more complicated than in the classical case. Similar to the randomized case, we define Q_0(f) and Q_1(f).
+
+These notions are typically bounded by the notions of degree and approximate degree. The degree of f, denoted \deg(f), is the smallest degree of any polynomial p satisfying f(x) = p(x) for all x \in \{0,1\}^n. The approximate degree of f, denoted \widetilde{\deg}(f), is the smallest degree of any polynomial p satisfying p(x) \in [0,1/3] whenever f(x) = 0 and p(x) \in [2/3, 1] whenever f(x) = 1.
+
+Beals et al. established that Q_0(f) \geq \deg(f)/2 and Q_2(f) \geq \widetilde{\deg}(f)/2.
+
+Relationships between Boolean function complexity measures
+
+It follows immediately from the definitions that for all n-bit Boolean functions f,Q_2(f) \leq R_2(f) \leq R_1(f) \leq R_0(f) \leq D(f) \leq n, and Q_2(f) \leq Q_0(f) \leq D(f) \leq n. Finding the best upper bounds in the converse direction is a major goal in the field of query complexity.
+
+All of these types of query complexity are polynomially related. Blum and Impagliazzo, Hartmanis and Hemachandra, and Tardos independently discovered that D(f) \leq R_0(f)^2. Noam Nisan found that the Monte Carlo randomized decision tree complexity is also polynomially related to deterministic decision tree complexity: D(f) = O(R_2(f)^3).  (Nisan also showed that D(f) = O(R_1(f)^2).) A tighter relationship is known between the Monte Carlo and Las Vegas models: R_0(f) = O(R_2(f)^2 \log R_2(f)). This relationship is optimal up to polylogarithmic factors. As for quantum decision tree complexities, D(f) = O(Q_2(f)^4), and this bound is tight. improving a quartic bound due to Beals et al.
+
+See also
+
+Comparison sort
+
+Decision tree
+
+Aanderaa–Karp–Rosenberg conjecture
+
+References
+
+Surveys
+
+Category:Computational complexity theory
+
+Category:Models of computation
+
+Category:Decision trees

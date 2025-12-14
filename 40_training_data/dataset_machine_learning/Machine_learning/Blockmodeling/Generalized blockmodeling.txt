@@ -1,0 +1,41 @@
+In generalized blockmodeling, the blockmodeling is done by "the translation of an equivalence type into a set of permitted block types", which differs from the conventional blockmodeling, which is using the indirect approach. It's a special instance of the direct blockmodeling approach.
+
+Generalized blockmodeling was introduced in 1994 by Patrick Doreian, Vladimir Batagelj and Anuška Ferligoj.
+
+Definition
+
+Generalized blockmodeling approach is a direct one, "where the optimal partition(s) is (are) identified based on minimal values of a compatible criterion function defined by the difference between empirical blocks and corresponding ideal blocks". At the same time, the much broader set of block types is introduced (while in conventional blockmodeling only certain types are used). The conventional blockmodeling is inductive due to nonspecification of neither the clusters or the location of block types, while in generalized blockmodeling the blockmodel is specified with more detail than just the permition of certain block types (e.g., prespecification). Further, it's possible to define departures from the permitted (ideal) blocktype, using criterion function.
+
+Using local optimization procedure, firstly the initial clustering (with specified number of clusters is done, based on random creation. How the clusters are neighboring to each other, is based on two transformations:
+
+1) a vertex is moved from one to another cluster or
+
+2) a pair of vertices is interchanged between two different clusters.
+
+This process of transformation steps is repeated many times, until only the best fitting partitions (with the minimized value of the criterion function) are kept as blockmodels for the future exploration of the network.),
+
+identifying structure from incomplete network information,
+
+most of generalized blockmodeling is based on binary networks, but there is also development in the field of valued networks,
+
+criterion function is minimized for a specified blockmodel, with results in issues of evaluating statistically, based on the structural data alone,
+
+problems regarding three dimensional network data,
+
+problems regarding the evolution of fundamental network structure.
+
+Book
+
+The book with the same title, Generalized blockmodeling, written by Patrick Doreian, Vladimir Batagelj and Anuška Ferligoj, was in 2007 awarded the Harrison White Outstanding Book Award by the Mathematical Sociology Section of American Sociological Association.
+
+See also
+
+Generative model
+
+References
+
+Selected bibliography
+
+Patrick Doreian, Vladimir Batagelj, Anuška Ferligoj, Mark Granovetter (Series Editor), Generalized Blockmodeling (Structural Analysis in the Social Sciences), Cambridge University Press 2004 ()
+
+Category:Blockmodeling

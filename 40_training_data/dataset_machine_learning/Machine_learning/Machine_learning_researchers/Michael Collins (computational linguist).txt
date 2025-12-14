@@ -1,0 +1,83 @@
+{{Infobox scientist
+
+image                   =
+
+image_size              = 150px
+
+name                    = Michael J. Collins
+
+birth_date              =
+
+birth_place             =  London
+
+death_date              =
+
+death_place             =
+
+citizenship             = UK
+
+nationality             =
+
+ethnicity               =
+
+field                   = Computational linguistics, Machine learning
+
+work_institution        = Columbia University
+
+alma_mater              = Cambridge UniversityUniversity of Pennsylvania
+
+doctoral_advisor        = Mitch Marcus
+
+doctoral_students       =
+
+known_for               = Statistical parsing, Structured perceptron
+
+author_abbreviation_bot =
+
+author_abbreviation_zoo =
+
+prizes                  =
+
+religion                =
+
+footnotes               =
+
+}}
+
+Michael J. Collins (born 4 March 1970) is a researcher in the field of computational linguistics. He is the Vikram S. Pandit Professor of Computer Science at Columbia University.
+
+His research interests are in natural language processing as well as machine learning and he has made important contributions in statistical parsing and in statistical machine learning. In his studies Collins covers a wide range of topics such as parse re-ranking, tree kernels, semi-supervised learning, machine translation and exponentiated gradient algorithms with a general focus on discriminative models and structured prediction. One notable contribution is a state-of-the-art parser for the Penn Wall Street Journal corpus. As of 11 November 2015, his works have been cited 16,020 times, and he has an h-index of 47.
+
+Collins worked as a researcher at AT&T Labs between January 1999 and November 2002, and later held the positions of assistant and associate professor at M.I.T. Since January 2011, he has been a professor at Columbia University. In 2011, he was named a fellow of the Association for Computational Linguistics.
+
+References
+
+External links
+
+Parser for Penn Wall Street Journal corpus
+
+Collins's Columbia website
+
+Category:Machine learning researchers
+
+Category:Columbia University people
+
+Category:Columbia University faculty
+
+Category:Columbia School of Engineering and Applied Science faculty
+
+Category:English computer scientists
+
+Category:Artificial intelligence researchers
+
+Category:Living people
+
+Category:1971 births
+
+Category:Corpus linguists
+
+Category:Fellows of the Association for Computational Linguistics
+
+Category:Natural language processing researchers
+
+Category:Computational linguistics researchers

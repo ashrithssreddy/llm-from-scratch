@@ -1,0 +1,15 @@
+Exploratory blockmodeling is an (inductive) approach (or a group of approaches) in blockmodeling regarding the specification of an ideal blockmodel. This approach, also known as hypotheses-generating, is the simplest approach, as it "merely involves the definition of the block types permitted as well as of the number of clusters." With this approach, researcher usually defines the best possible blockmodel, which then represent the base for the analysis of the whole network.
+
+This approach is usually based on:
+
+previous analyses and theoretical considerations,
+
+using stricker blockmodel and block types, where the structural equivalence is stricker than the regular equivalence and
+
+using smaller number of classes.
+
+The opposite approach is called a confirmatory blockmodeling.
+
+References
+
+Category:Blockmodeling

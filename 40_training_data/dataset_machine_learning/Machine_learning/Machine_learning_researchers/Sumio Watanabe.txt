@@ -1,0 +1,69 @@
+is a Japanese mathematician and engineer working in probability theory, applied algebraic geometry and Bayesian statistics. He is currently a professor at Tokyo Institute of Technology in the Department of Computational Intelligence and Systems Science. He is the author of the text, Algebraic Geometry and Statistical Learning Theory, which proposes a generalization of Fisher's regular statistical theory to singular statistical models.
+
+{{Infobox scientist
+
+name              = Sumio Watanabe
+
+image             =
+
+image_size        =
+
+alt               =
+
+caption           =
+
+birth_date        = 31 March 1959
+
+birth_place       = Nakano, Nagano, Japan
+
+death_date        =
+
+death_place       =
+
+nationality       =
+
+fields            = Mathematics
+
+workplaces        = Tokyo Institute of TechnologyGifu University
+
+alma_mater        = Kyoto University (M.S., 1984)Tokyo Institute of Technology (Ph.D., 1993)
+
+doctoral_advisor  =
+
+doctoral_students =
+
+known_for         = Watanabe-Akaike information criterionsingular statistical models
+
+awards            = Ichimura Prize for Science (2006)
+
+}}
+
+Books
+
+Mathematical Theory of Bayesian Statistics, CRC Press, 2018, ISBN 9781482238068
+
+Algebraic Geometry and Statistical Learning Theory, Cambridge University Press, 2009.
+
+References
+
+External links
+
+Algebraic Geometrical Method in Singular Statistical Estimation. Presentation at Algebraic Statistics Seminar, MSRI, December 17, 2008 (video)
+
+Category:20th-century Japanese mathematicians
+
+Category:21st-century Japanese mathematicians
+
+Category:1959 births
+
+Category:Living people
+
+Category:Academic staff of Tokyo Institute of Technology
+
+Category:Tokyo Institute of Technology alumni
+
+Category:Machine learning researchers
+
+Category:People from Nakano, Tokyo
+
+Category:Mathematicians from Tokyo

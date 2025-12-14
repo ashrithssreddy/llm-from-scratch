@@ -1,0 +1,169 @@
+{{Infobox software
+
+name                   = Stata
+
+logo                   = stata_logo_med_blue.png
+
+screenshot             = Stata19.png
+
+caption                = Stata 19 on Windows
+
+author                 = William Gould
+
+developer              = StataCorp
+
+released               =
+
+latest release version = 19.0
+
+latest release date    =
+
+programming language   = C
+
+operating system       = Windows, macOS, Linux
+
+genre                  = Statistical analysisNumerical analysis
+
+license                = Proprietary
+
+website                =
+
+}}
+
+Stata (, , alternatively , occasionally stylized as STATA) is a general-purpose statistical software package developed by StataCorp for data manipulation, visualization, statistics, and automated reporting. It is used by researchers in many fields, including biomedicine, economics, epidemiology, and sociology.
+
+Stata was initially developed by Computing Resource Center in California and the first version was released in 1985. In 1993, the company moved to College Station, Texas and was renamed Stata Corporation, now known as StataCorp. The current version is Stata 19, released in April 2025.
+
+Technical overview and terminology
+
+User interface
+
+From its creation, Stata has always employed an integrated command-line interface. Starting with version 8.0, Stata has included a graphical user interface which uses menus and dialog boxes to give access to many built-in commands. The dataset can be viewed or edited in spreadsheet format. From version 11 on, other commands can be executed while the data browser or editor is opened.
+
+Data structure and storage
+
+Until the release of version 16, Stata could only open a single dataset at any one time. Stata allows for flexibility with assigning data types to data. Its compress command automatically reassigns data to data types that take up less memory without loss of information. Stata utilizes integer storage types which occupy only one or two bytes rather than four, and single-precision (4 bytes) rather than double-precision (8 bytes) is the default for floating-point numbers.
+
+Stata's proprietary output language is known as SMCL, which stands for Stata Markup and Control Language and is pronounced "smickle".
+
+Stata's data format is always tabular in format. Stata refers to the columns of tabular data as variables.
+
+Data format compatibility
+
+Stata can import data in a variety of formats. This includes ASCII data formats (such as CSV or databank formats) and spreadsheet formats (including various Excel formats).
+
+Stata's proprietary file formats have changed over time, although not every Stata release includes a new dataset format. Every version of Stata can read all older dataset formats, and can write both the current and most recent previous dataset format, using the saveold command. Thus, the current Stata release can always open datasets that were created with older versions, but older versions cannot read newer format datasets.
+
+Stata can read and write SAS XPORT format datasets natively, using the fdause and fdasave commands.
+
+Some other econometric applications, including gretl, can directly import Stata file formats.
+
+History
+
+The development of Stata began in 1984, initially by William (Bill) Gould and later by Sean Becketti. The software was intended to compete with statistical programs for personal computers such as SYSTAT and MicroTSP. Certain developments have proved to be particularly important and continue to shape the user experience today, including extensibility, platform independence, and the active user community. ado-files followed in Stata 2.1, allowing a user-written program to be automatically loaded into memory. Many user-written ado-files are submitted to the Statistical Software Components Archive hosted by Boston College. StataCorp added an ssc command to allow community-contributed programs to be added directly within Stata. More recent editions of Stata allow users to call Python scripts using commands, as well as allowing Python IDEs like Jupyter Notebooks to import Stata commands. Although Stata does not support R natively, there are user-written extensions to use R scripts in Stata.
+
+User community
+
+A number of important developments were initiated by Stata's active user community. Whereas Stata/MP allows for built-in parallel processing of certain commands, Stata/SE and Stata/BE are bottlenecked and limit usage to only one single core. Stata/MP runs certain commands about 2.4 times faster, roughly 60% of theoretical maximum efficiency, when running parallel processes on four CPU cores compared to SE or BE versions.
+
+Example code
+
+The following set of commands revolve around simple data management.
+
+sysuse auto                 // Open the included auto dataset
+
+browse                      // Browse the dataset (opens the Data Editor window)
+
+describe                    // Describes the dataset and associated variables
+
+summarize                   // Summary information about numerical variables
+
+codebook make foreign       // Summary information about the make (string) and foreign (numeric) variables
+
+browse if missing(rep78)    // Browse only observations with missing data for variable rep78
+
+list make if missing(rep78) // List makes of the cars with missing data for variable rep78
+
+The next set of commands move onto descriptive statistics.
+
+summarize price, detail          // Detailed summary statistics for variable price
+
+tabulate foreign                 // One-way frequency table for variable foreign
+
+tabulate rep78 foreign, row      // Two-way frequency table for variables rep78 and foreign
+
+summarize mpg if foreign == 1    // Summary information about mpg if the car is foreign (the "==" sign tests for equality)
+
+by foreign, sort: summarize mpg  // As above, but using the "by" prefix.
+
+tabulate foreign, summarize(mpg) // As above, but using the tabulate command.
+
+A simple hypothesis test:
+
+ttest mpg, by(foreign) // T-test for difference in means for domestic vs. foreign cars
+
+Graphing data:
+
+twoway (scatter mpg weight)                     // Scatter plot showing relationship between mpg and weight
+
+twoway (scatter mpg weight), by(foreign, total) // Three graphs for domestic, foreign, and all cars
+
+Linear regression:
+
+generate wtsq = weight^2                      // Create a new variable for weight squared
+
+regress mpg weight wtsq foreign, vce(robust)  // Linear regression of mpg on weight, wtsq, and foreign
+
+predict mpghat                                // Create a new variable contained the predicted values of mpg
+
+twoway (scatter mpg weight) (line mpghat weight, sort), by(foreign) // Graph data and fitted line
+
+See also
+
+List of statistical packages
+
+Comparison of statistical packages
+
+Data analysis
+
+Descriptive statistics
+
+References
+
+Further reading
+
+External links
+
+Stata Journal
+
+Stata Press
+
+Stata Technical Bulletin
+
+Statistical Software Components Archive
+
+Category:1985 software
+
+Category:Proprietary software programmed in C
+
+Category:Proprietary commercial software for Linux
+
+Category:Science software for Linux
+
+Category:Data mining and machine learning software
+
+Category:Statistical software
+
+Category:Statistical programming languages
+
+Category:Econometrics software
+
+Category:Time series software
+
+Category:Data warehousing
+
+Category:Extract, transform, load tools
+
+Category:Mathematical optimization software
+
+Category:Numerical software

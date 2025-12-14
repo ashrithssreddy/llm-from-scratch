@@ -1,0 +1,75 @@
+Neural gas is an artificial neural network, inspired by the self-organizing map and introduced in 1991 by Thomas Martinetz and Klaus Schulten. The neural gas is a simple algorithm for finding optimal data representations based on feature vectors. The algorithm was coined "neural gas" because of the dynamics of the feature vectors during the adaptation process, which distribute themselves like a gas within the data space. It is applied where data compression or vector quantization is an issue, for example speech recognition, image processing or pattern recognition. As a robustly converging alternative to the k-means clustering it is also used for cluster analysis.
+
+Algorithm
+
+Suppose we want to model a probability distribution P(x) of data vectors x using a finite number of feature vectors w_i, where
+
+i = 1,\cdots,N.
+
+For each time step t
+
+Sample data vector x from P(x)
+
+Compute the distance between x and each feature vector. Rank the distances.
+
+Let i_0 be the index of the closest feature vector, i_1 the index of the second closest feature vector, and so on.
+
+Update each feature vector by: w_{i_k}^{t+1} = w_{i_k}^{t} + \varepsilon\cdot  e^{-k/\lambda}\cdot (x-w_{i_k}^{t}), k = 0, \cdots, N-1
+
+In the algorithm, \varepsilon can be understood as the learning rate, and \lambda as the neighborhood range. \varepsilon and \lambda are reduced with increasing t so that the algorithm converges after many adaptation steps.
+
+The adaptation step of the neural gas can be interpreted as gradient descent on a cost function. By adapting not only the closest feature vector but all of them with a step size decreasing with increasing distance order, compared to (online) k-means clustering a much more robust convergence of the algorithm can be achieved. The neural gas model does not delete a node and also does not create new nodes.
+
+Comparison with SOM
+
+Compared to self-organized map, the neural gas model does not assume that some vectors are neighbors. If two vectors happen to be close together, they would tend to move together, and if two vectors happen to be apart, they would tend to not move together. In contrast, in an SOM, if two vectors are neighbors in the underlying graph, then they will always tend to move together, no matter whether the two vectors happen to be neighbors in the Euclidean space.
+
+The name "neural gas" is because one can imagine it to be what an SOM would be like if there is no underlying graph, and all points are free to move without the bonds that bind them together.
+
+Variants
+
+A number of variants of the neural gas algorithm exists in the literature so as to mitigate some of its shortcomings. More notable is perhaps Bernd Fritzke's growing neural gas, but also one should mention further elaborations such as the Growing When Required network and also the incremental growing neural gas. A performance-oriented approach that avoids the risk of overfitting is the Plastic Neural gas model.
+
+Growing neural gas
+
+Fritzke describes the growing neural gas (GNG) as an incremental network model that learns topological relations by using a "Hebb-like learning rule", demonstrating its capabilities for clustering data incrementally. The GNG is initialized with two randomly positioned nodes which are initially connected with a zero age edge and whose errors are set to 0. Since in the GNG input data is presented sequentially one by one, the following steps are followed at each iteration:
+
+It is calculating the errors (distances) between the two closest nodes to the current input data.
+
+The error of the winner node (only the closest one) is respectively accumulated.
+
+The winner node and its topological neighbors (connected by an edge) are moving towards the current input by different fractions of their respective errors.
+
+The age of all edges connected to the winner node are incremented.
+
+If the winner node and the second-winner are connected by an edge, such an edge is set to 0. Else, an edge is created between them.
+
+If there are edges with an age larger than a threshold, they are removed. Nodes without connections are eliminated.
+
+If the current iteration is an integer multiple of a predefined frequency-creation threshold, a new node is inserted between the node with the largest error (among all) and its topological neighbor presenting the highest error. The link between the former and the latter nodes is eliminated (their errors are decreased by a given factor) and the new node is connected to both of them. The error of the new node is initialized as the updated error of the node which had the largest error (among all).
+
+The accumulated error of all nodes is decreased by a given factor.
+
+If the stopping criterion is not met, the algorithm takes a following input. The criterion might be a given number of epochs, i.e., a pre-set number of times where all data is presented, or the reach of a maximum number of nodes.
+
+Incremental growing neural gas
+
+Another neural gas variant inspired by the GNG algorithm is the incremental growing neural gas (IGNG). The authors propose the main advantage of this algorithm to be "learning new data (plasticity) without degrading the previously trained network and forgetting the old input data (stability)." and analog hardware were actually designed.
+
+References
+
+Further reading
+
+T. Martinetz, S. Berkovich, and K. Schulten. "Neural-gas" Network for Vector Quantization and its Application to Time-Series Prediction. IEEE-Transactions on Neural Networks, 4(4):558–569, 1993.
+
+External links
+
+DemoGNG.js Javascript simulator for Neural Gas (and other network models)
+
+Java Competitive Learning Applications  Unsupervised Neural Networks (including Self-organizing map) in Java with source codes.
+
+formal description of Neural gas algorithm
+
+A GNG and GWR Classifier implementation in Matlab
+
+Category:Artificial neural networks

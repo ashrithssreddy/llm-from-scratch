@@ -1,0 +1,101 @@
+In the statistical analysis of observational data, propensity score matching (PSM) is a statistical matching technique that attempts to estimate the effect of a treatment, policy, or other intervention by accounting for the covariates that predict receiving the treatment. PSM attempts to reduce the bias due to confounding variables that could be found in an estimate of the treatment effect obtained from simply comparing outcomes among units that received the treatment versus those that did not.
+
+Paul R. Rosenbaum and Donald Rubin introduced the technique in 1983, defining the propensity score as the conditional probability of a unit (e.g., person, classroom, school) being assigned to the treatment, given a set of observed covariates.
+
+The possibility of bias arises because a difference in the treatment outcome (such as the average treatment effect) between treated and untreated groups may be caused by a factor that predicts treatment rather than the treatment itself. In randomized experiments, the randomization enables unbiased estimation of treatment effects; for each covariate, randomization implies that treatment-groups will be balanced on average, by the law of large numbers. Unfortunately, for observational studies, the assignment of treatments to research subjects is typically not random. Matching attempts to reduce the treatment assignment bias, and mimic randomization, by creating a sample of units that received the treatment that is comparable on all observed covariates to a sample of units that did not receive the treatment.
+
+The "propensity" describes how likely a unit is to have been treated, given its covariate values. The stronger the confounding of treatment and covariates, and hence the stronger the bias in the analysis of the naive treatment effect, the better the covariates predict whether a unit is treated or not. By having units with similar propensity scores in both treatment and control, such confounding is reduced.
+
+For example, one may be interested to know the consequences of smoking. An observational study is required since it is unethical to randomly assign people to the treatment 'smoking'. The treatment effect estimated by simply comparing those who smoked to those who did not smoke would be biased by any factors that predict smoking (e.g.: gender and age). PSM attempts to control for these biases by making the groups receiving treatment and not-treatment comparable with respect to the control variables.
+
+PSM employs a predicted probability of group membership—e.g., treatment versus control group—based on observed predictors, usually obtained from logistic regression to create a counterfactual group. Propensity scores may be used for matching or as covariates, alone or with other matching variables or covariates.
+
+General procedure
+
+1. Estimate propensity scores, e.g. with logistic regression:
+
+Dependent variable: Z = 1, if unit participated (i.e. is member of the treatment group); Z = 0, if unit did not participate (i.e. is member of the control group).
+
+Choose appropriate confounders (variables hypothesized to be associated with both treatment and outcome)
+
+Obtain an estimation for the propensity score: predicted probability p or the log odds, log[p/(1&nbsp;−&nbsp;p)].
+
+2. Match each participant to one or more nonparticipants on propensity score, using one of these methods:
+
+Nearest neighbor matching
+
+Optimal full matching: match each participants to unique non-participant(s) so as to minimize the total distance in propensity scores between participants and their matched non-participants. This method can be combined with other matching techniques.
+
+Caliper matching: comparison units within a certain width of the propensity score of the treated units get matched, where the width is generally a fraction of the standard deviation of the propensity score
+
+Radius matching: all matches within a particular radius are used – and reused between treatment units.
+
+Kernel matching: same as radius matching, except control observations are weighted as a function of the distance between the treatment observation's propensity score and control match propensity score. One example is the Epanechnikov kernel. Radius matching is a special case where a uniform kernel is used.
+
+Mahalanobis metric matching in conjunction with PSM.
+
+Stratification matching.
+
+Difference-in-differences matching (kernel and local linear weights).
+
+Exact matching.
+
+3. Check that covariates are balanced across treatment and comparison groups within strata of the propensity score.
+
+Use standardized differences or graphs to examine distributions
+
+If covariates are not balanced, return to steps 1 or 2 and modify the procedure
+
+4. Estimate effects based on new sample
+
+Typically: a weighted mean of within-match average differences in outcomes between participants and non-participants.
+
+Use analyses appropriate for non-independent matched samples if more than one nonparticipant is matched to each participant
+
+Formal definitions
+
+Basic settings
+
+The basic case
+
+Disadvantages
+
+PSM has been shown to increase model "imbalance, inefficiency, model dependence, and bias," which is not the case with most other matching methods. The insights behind the use of matching still hold but should be applied with other matching methods; propensity scores also have other productive uses in weighting and doubly robust estimation.
+
+Like other matching procedures, PSM estimates an average treatment effect from observational data. The key advantages of PSM were, at the time of its introduction, that by using a linear combination of covariates for a single score, it balances treatment and control groups on a large number of covariates without losing a large number of observations. If units in the treatment and control were balanced on a large number of covariates one at a time, large numbers of observations would be needed to overcome the "dimensionality problem" whereby the introduction of a new balancing covariate increases the minimum necessary number of observations in the sample geometrically.
+
+One disadvantage of PSM is that it only accounts for observed (and observable) covariates and not latent characteristics. Factors that affect assignment to treatment and outcome but that cannot be observed cannot be accounted for in the matching procedure. As the procedure only controls for observed variables, any hidden bias due to latent variables may remain after matching. Another issue is that PSM requires large samples, with substantial overlap between treatment and control groups.
+
+General concerns with matching have also been raised by Judea Pearl, who has argued that hidden bias may actually increase because matching on observed variables may unleash bias due to dormant unobserved confounders. Similarly, Pearl has argued that bias reduction can only be assured (asymptotically) by modelling the qualitative causal relationships between treatment, outcome, observed and unobserved covariates. Confounding occurs when the experimenter is unable to control for alternative, non-causal explanations for an observed relationship between independent and dependent variables. Such control should satisfy the "backdoor criterion" of Pearl. optmatch, or other packages.
+
+SAS: The PSMatch procedure, and macro OneToManyMTCH match observations based on a propensity score.
+
+Stata: several commands implement propensity score matching, including the user-written psmatch2. Stata version 13 and later also offers the built-in command teffects psmatch.
+
+SPSS: A dialog box for Propensity Score Matching is available from the IBM SPSS Statistics menu (Data/Propensity Score Matching), and allows the user to set the match tolerance, randomize case order when drawing samples, prioritize exact matches, sample with or without replacement, set a random seed, and maximize performance by increasing processing speed and minimizing memory usage.
+
+Python: PsmPy, a library for propensity score matching in python
+
+See also
+
+Rubin causal model
+
+Ignorability
+
+Heckman correction
+
+Matching (statistics)
+
+Inverse probability weighting
+
+References
+
+Bibliography
+
+Category:Regression analysis
+
+Category:Epidemiology
+
+Category:Observational study
+
+Category:Causal inference

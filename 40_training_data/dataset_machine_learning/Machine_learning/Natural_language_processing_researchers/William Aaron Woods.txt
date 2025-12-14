@@ -1,0 +1,151 @@
+{{Infobox scientist
+
+name              =
+
+native_name       =
+
+native_name_lang  =
+
+image             =
+
+image_size        =
+
+alt               =
+
+caption           =
+
+birth_date        =
+
+birth_place       =
+
+death_date        =
+
+death_place       =
+
+resting_place             =
+
+resting_place_coordinates =
+
+other_names       =
+
+residence         =
+
+citizenship       =
+
+nationality       =
+
+fields            =
+
+workplaces        = AlphabetSun MicrosystemsITA SoftwareBBN TechnologiesON TechnologyApplied Expert Systems, Inc.Ohio Wesleyan UniversityHarvard University
+
+alma_mater        = Ohio Wesleyan UniversityHarvard University
+
+thesis_title      = Semantics for a Question Answering System
+
+thesis_url        = https://www.proquest.com/docview/302312832
+
+thesis_year       = 1968
+
+doctoral_advisor  = Susumu Kuno
+
+academic_advisors =
+
+doctoral_students = Steven SalzbergSemantic networksKnowledge representation and reasoning
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+awards            = Association for Computational Linguistics Lifetime Achievement Award
+
+signature         =
+
+signature_alt     =
+
+website           =
+
+footnotes         =
+
+spouse            =
+
+children          =
+
+}}
+
+William Aaron Woods (born June 17, 1942), generally known as Bill Woods, is a researcher in natural language processing, continuous speech understanding, knowledge representation, and knowledge-based search technology. He is currently a Software Engineer at Google.
+
+Education
+
+Woods received a bachelor's degree from Ohio Wesleyan University (1964) and a Master's (1965) and Ph.D. (1968) in applied mathematics from Harvard University, where he then served as an assistant professor and later as a Gordon McKay Professor of the Practice of Computer Science.
+
+Research
+
+Woods built one of the first natural language question answering systems (LUNAR) to answer questions about the Apollo 11 Moon rocks for the NASA Manned Spacecraft Center while he was at Bolt Beranek and Newman (BBN) is a widely cited critical review of early work in semantic networks.  This paper has been cited in the context of querying and natural language processing approaches that make use of Semantic Networks and general knowledge modeling. The paper attempts to clarify notions of meaning and semantics in computational systems. Woods further elaborated on the issues and how they relate to contemporary systems in "Meaning and Links" (2007).
+
+Awards
+
+Woods has received many honors:
+
+1978, Fulbright Fellowship
+
+1990, Fellow of the American Association for Artificial Intelligence
+
+1992, Fellow of the American Association for the Advancement of Science
+
+2010, Association for Computational Linguistics Lifetime Achievement Award
+
+Selected works
+
+"The Lunar Sciences Natural Language Information System: Final Report" (with R. M. Kaplan and B.L. Nash-Webber),  BBN Report No. 2378, Bolt Beranek and Newman Inc., Cambridge, MA 02138, June, 1972. (Available from the National Technical Reports Library of NTIS as N72-28984.)
+
+Speech-Understanding Systems:  Final Report of a Study Group, (with A. Newell, chairman, et al. .), North-Holland/American Elsevier, 1973.
+
+"An Experimental parsing System for Transition Network Grammars", in R. Rustin (ed.), Natural Language Processing, New York:  Algorithmics Press, 1973.
+
+"Progress in Natural Language Understanding:  An Application to Lunar Geology,"  AFIPS Conference Proceedings 42 (1973 National Computer Conference and Exposition).
+
+"What's in a Link:  Foundations for Semantic Networks" in D. Bobrow and A. Collins (eds.), Representation and Understanding: Studies in Cognitive Science, New York:  Academic Press, 1975.   Reprinted in R. Brachman and H. Levesque (eds.), Readings in Knowledge Representation, San Mateo: Morgan Kaufmann, 1985.  Also reprinted in Allan Collins and Edward E. Smith (eds.), Readings in Cognitive Science, San Mateo: Morgan Kaufmann, 1988.
+
+"Procedural Semantics as a Theory of Meaning" in A. Joshi, B. L. Webber and I. Sag (eds.), Elements of Discourse Understanding, Cambridge University Press, 1981.
+
+"Optimal Search Strategies for Speech Understanding Control", Artificial Intelligence 18:3:295-326, May 1982.
+
+"What's Important About Knowledge Representation?," IEEE Computer 16:10, October 1983.
+
+"Artificial Intelligence", in Lisa Taylor (ed.), The Phenomenon of Change, New York: Rizzoli, 1984.
+
+Computer Speech Processing, (ed. with Frank Fallside), Prentice-Hall International (UK) Ltd., 1985.
+
+"Understanding Subsumption and Taxonomy: A Framework for Progress," in John Sowa (ed.), Principles of Semantic Networks: Explorations in the Representation of Knowledge, San Mateo:Morgan Kaufmann, 1991, pp 45–94.
+
+"Conceptual Indexing: A Better Way to Organize Knowledge," Technical Report SMLI TR-97-61, Sun Microsystems Laboratories, Mountain View, CA, April, 1997.
+
+"Linguistic Knowledge can Improve Information Retrieval," with Lawrence A. Bookman, Ann Houston, Robert J. Kuhns, Paul Martin, and Stephen Green, Proceedings of ANLP-2000, Seattle, WA, May 1–3, 2000, (Final version with author's introduction is reprinted in Sun Labs' anniversary volume, Sun Microsystems Laboratories: The First Ten Years, 1991-2001.)
+
+"Meaning and Links: a Semantic Odyssey," AI Magazine 28:4 (Winter 2007). full text
+
+References
+
+External links
+
+Category:Living people
+
+Category:Natural language processing
+
+Category:1942 births
+
+Category:Harvard John A. Paulson School of Engineering and Applied Sciences alumni
+
+Category:Natural language processing researchers
+
+Category:Ohio Wesleyan University alumni
+
+Category:Presidents of the Association for Computational Linguistics
+
+Category:Fellows of the American Association for the Advancement of Science
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence

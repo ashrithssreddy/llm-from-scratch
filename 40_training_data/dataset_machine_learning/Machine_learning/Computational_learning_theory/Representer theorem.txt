@@ -1,0 +1,183 @@
+For computer science, in statistical learning theory, a representer theorem is any of several related results stating that a minimizer f^{*} of a regularized empirical risk functional defined over a reproducing kernel Hilbert space can be represented as a finite linear combination of kernel products evaluated on the input points in the training set data.
+
+Formal statement
+
+The following Representer Theorem and its proof are due to Schölkopf, Herbrich, and Smola:
+
+Theorem: Consider a positive-definite real-valued kernel k : \mathcal{X} \times \mathcal{X} \to \R on a non-empty set \mathcal{X} with a corresponding reproducing kernel Hilbert space H_k.  Let there be given
+
+a training sample (x_1, y_1), \dotsc, (x_n, y_n) \in \mathcal{X} \times \R,
+
+a strictly increasing real-valued function g \colon [0, \infty) \to \R, and
+
+an arbitrary error function E \colon (\mathcal{X} \times \R^2)^n \to \R \cup \lbrace \infty \rbrace,
+
+which together define the following regularized empirical risk functional on H_k:
+
+f \mapsto E\left( (x_1, y_1, f(x_1)), \ldots, (x_n, y_n, f(x_n)) \right) + g\left( \lVert f \rVert \right).
+
+Then, any minimizer of the empirical risk
+
+f^{*} = \underset{f\in H_k}{\operatorname{arg min}} \left\lbrace E\left( (x_1, y_1, f(x_1)), \ldots, (x_n, y_n, f(x_n)) \right) + g\left( \lVert f \rVert \right) \right \rbrace, \quad (*)
+
+admits a representation of the form:
+
+f^{*}(\cdot) = \sum_{i = 1}^n \alpha_i k(\cdot, x_i),
+
+where \alpha_i \in \R for all 1 \le i \le n.
+
+Proof:
+
+Define a mapping
+
+\begin{align}
+
+\varphi \colon \mathcal{X} &\to H_k\\
+
+\varphi(x) &= k(\cdot, x)
+
+\end{align}
+
+(so that \varphi(x) = k(\cdot, x) is itself a map \mathcal{X} \to \R).  Since k is a reproducing kernel, then
+
+\varphi(x)(x') = k(x', x) = \langle \varphi(x'), \varphi(x) \rangle,
+
+where \langle \cdot, \cdot \rangle is the inner product on H_k.
+
+Given any x_1, \ldots, x_n, one can use orthogonal projection to decompose any f \in H_k into a sum of two functions, one lying in \operatorname{span} \left \lbrace \varphi(x_1), \ldots, \varphi(x_n) \right \rbrace, and the other lying in the orthogonal complement:
+
+f = \sum_{i = 1}^n \alpha_i \varphi(x_i) + v,
+
+where \langle v, \varphi(x_i) \rangle = 0 for all i.
+
+The above orthogonal decomposition and the reproducing property together show that applying f to any training point x_j produces
+
+f(x_j) = \left \langle \sum_{i = 1}^n \alpha_i \varphi(x_i) + v, \varphi(x_j) \right \rangle = \sum_{i = 1}^n \alpha_i \langle \varphi(x_i), \varphi(x_j) \rangle,
+
+which we observe is independent of v.  Consequently, the value of the error function E in (*) is likewise independent of v.  For the second term (the regularization term), since v is orthogonal to \sum_{i = 1}^n \alpha_i \varphi(x_i) and g is strictly monotonic, we have
+
+\begin{align}
+
+g\left( \lVert f \rVert \right) &= g \left(  \lVert \sum_{i = 1}^n \alpha_i \varphi(x_i) + v \rVert \right) \\
+
+&= g \left( \sqrt{  \lVert \sum_{i = 1}^n \alpha_i \varphi(x_i)  \rVert^2 + \lVert v \rVert^2} \right) \\
+
+&\ge g \left(  \lVert \sum_{i = 1}^n \alpha_i \varphi(x_i) \rVert \right).
+
+\end{align}
+
+Therefore, setting v = 0 does not affect the first term of (*), while it strictly decreases the second term.  Consequently, any minimizer f^{*} in (*) must have v = 0, i.e., it must be of the form
+
+f^{*}(\cdot) = \sum_{i = 1}^n \alpha_i \varphi(x_i) = \sum_{i = 1}^n \alpha_i k(\cdot, x_i),
+
+which is the desired result.
+
+Generalizations
+
+The Theorem stated above is a particular example of a family of results that are collectively referred to as "representer theorems"; here we describe several such.
+
+The first statement of a representer theorem was due to Kimeldorf and Wahba for the special case in which
+
+\begin{align}
+
+E\left( (x_1, y_1, f(x_1)), \ldots,  (x_n, y_n, f(x_n)) \right) &= \frac{1}{n} \sum_{i = 1}^n (f(x_i) - y_i)^2, \\
+
+g(\lVert f \rVert) &= \lambda \lVert f \rVert^2
+
+\end{align}
+
+for \lambda > 0.  Schölkopf, Herbrich, and Smola generalized this result by relaxing the assumption of the squared-loss cost and allowing the regularizer to be any strictly monotonically increasing function g(\cdot) of the Hilbert space norm.
+
+It is possible to generalize further by augmenting the regularized empirical risk functional through the addition of unpenalized offset terms.  For example, Schölkopf, Herbrich, and Smola also consider the minimization
+
+\tilde{f}^{*} = \operatorname{arg min} \left\lbrace E\left( (x_1, y_1, \tilde{f}(x_1)),  \ldots,  (x_n, y_n, \tilde{f}(x_n)) \right) + g\left( \lVert f \rVert \right) \mid \tilde{f} = f  + h \in H_k \oplus  \operatorname{span} \lbrace \psi_p \mid 1 \le p \le M \rbrace  \right \rbrace, \quad (\dagger)
+
+i.e., we consider functions of the form \tilde{f} = f + h, where f \in H_k and h is an unpenalized function lying in the span of a finite set of real-valued functions \lbrace \psi_p \colon \mathcal{X} \to \R \mid 1 \le p \le M \rbrace.  Under the assumption that the n \times M matrix \left( \psi_p(x_i) \right)_{ip} has rank M, they show that the minimizer \tilde{f}^{*} in (\dagger)
+
+admits a representation of the form
+
+\tilde{f}^{*}(\cdot) = \sum_{i = 1}^n \alpha_i k(\cdot, x_i) + \sum_{p = 1}^M \beta_p \psi_p(\cdot)
+
+where \alpha_i, \beta_p \in \R and the \beta_p are all uniquely determined.
+
+The conditions under which a representer theorem exists were investigated by Argyriou, Micchelli, and Pontil, who proved the following:
+
+Theorem: Let \mathcal{X} be a nonempty set, k a positive-definite real-valued kernel on \mathcal{X} \times \mathcal{X} with corresponding reproducing kernel Hilbert space H_k, and let R \colon H_k \to \R be a differentiable regularization function.  Then given a training sample (x_1, y_1), \ldots, (x_n, y_n) \in \mathcal{X} \times \R and an arbitrary error function E \colon (\mathcal{X} \times \R^2)^m \to \R \cup \lbrace \infty \rbrace, a minimizer
+
+f^{*} = \underset{f\in H_k} {\operatorname{arg min}} \left\lbrace E\left( (x_1, y_1, f(x_1)), \ldots,  (x_n, y_n, f(x_n)) \right) + R(f) \right \rbrace \quad (\ddagger)
+
+of the regularized empirical risk admits a representation of the form
+
+f^{*}(\cdot) = \sum_{i = 1}^n \alpha_i k(\cdot, x_i),
+
+where \alpha_i \in \R for all 1 \le i \le n, if and only if there exists a nondecreasing function h \colon [0, \infty) \to \R for which
+
+R(f) = h(\lVert f \rVert).
+
+Effectively, this result provides a necessary and sufficient condition on a differentiable regularizer R(\cdot) under which the corresponding regularized empirical risk minimization (\ddagger) will have a representer theorem.  In particular, this shows that a broad class of regularized risk minimizations (much broader than those originally considered by Kimeldorf and Wahba) have representer theorems.
+
+Applications
+
+Representer theorems are useful from a practical standpoint because they dramatically simplify the regularized empirical risk minimization problem (\ddagger).  In most interesting applications, the search domain H_k for the minimization will be an infinite-dimensional subspace of L^2(\mathcal{X}), and therefore the search (as written) does not admit implementation on finite-memory and finite-precision computers.  In contrast, the representation of f^{*}(\cdot) afforded by a representer theorem reduces the original (infinite-dimensional) minimization problem to a search for the optimal n-dimensional vector of coefficients \alpha = (\alpha_1, \ldots, \alpha_n) \in \R^n; \alpha can then be obtained by applying any standard function minimization algorithm.  Consequently, representer theorems provide the theoretical basis for the reduction of the general machine learning problem to algorithms that can actually be implemented on computers in practice.
+
+The following provides an example of how to solve for the minimizer whose existence is guaranteed by the representer theorem. This method works for any positive definite kernel K, and allows us to transform a complicated (possibly infinite dimensional) optimization problem into a simple linear system that can be solved numerically.
+
+Assume that we are using a least squares error function
+
+E[(x_1, y_1, f(x_1)), \dots, (x_n, y_n, f(x_n))] := \sum_{i=1}^n (y_i - f(x_i))^2
+
+and a regularization function
+
+g(x) = \lambda x^2
+
+for some \lambda > 0. By the representer theorem, the minimizer
+
+f^* = \underset{f \in \mathcal{H}}{\operatorname{argmin}} \Big\{ E[(x_1, y_1, f(x_1)), \dots, (x_n, y_n, f(x_n))] + g(\|f\|_{\mathcal{H}}) \Big\} = \underset{f \in \mathcal{H}}{\operatorname{argmin}} \left\{ \sum_{i=1}^n (y_i - f(x_i))^2 + \lambda \|f\|_{\mathcal{H}}^2 \right\}
+
+has the form
+
+f^*(x) = \sum_{i=1}^n \alpha_i^* k(x, x_i)
+
+for some \alpha^* = (\alpha_1^*, \dots, \alpha_n^*) \in \mathbb{R}^n. Noting that
+
+\|f\|_{\mathcal{H}}^2
+
+= \Big\langle \sum_{i=1}^n \alpha_i^* k(\cdot, x_i), \sum_{j=1}^n \alpha_j^* k(\cdot, x_j) \Big\rangle_{\mathcal{H}}
+
+= \sum_{i=1}^n \sum_{j=1}^n \alpha_i^* \alpha_j^* \big\langle  k(\cdot, x_i), k(\cdot, x_j) \big\rangle_{\mathcal{H}}
+
+= \sum_{i=1}^n \sum_{j=1}^n \alpha_i^* \alpha_j^* k(x_i, x_j),
+
+we see that \alpha^* has the form
+
+\alpha^*
+
+= \underset{\alpha \in \mathbb{R}^n}{\operatorname{argmin}} \left\{ \sum_{i=1}^n \left(y_i - \sum_{j=1}^n \alpha_j k(x_i, x_j)\right)^2 + \lambda \|f\|_{\mathcal{H}}^2 \right\}
+
+= \underset{\alpha \in \mathbb{R}^n}{\operatorname{argmin}} \left\{ \|y - A \alpha\|^2 + \lambda \alpha^\intercal A \alpha \right\}.
+
+where A_{ij} = k(x_i, x_j) and y = (y_1, \dots, y_n). This can be factored out and simplified to
+
+\alpha^* = \underset{\alpha \in \mathbb{R}^n}{\operatorname{argmin}}
+
+\left\{ \alpha^\intercal(A^\intercal A + \lambda A)\alpha - 2 \alpha^\intercal A^\intercal  y \right\}.
+
+Since A^\intercal A + \lambda A is positive definite, there is indeed a single global minimum for this expression. Let F(\alpha) = \alpha^\intercal(A^\intercal A + \lambda A)\alpha - 2 \alpha^\intercal A^\intercal  y  and note that F is convex. Then \alpha^*, the global minimum, can be solved by setting \nabla_{\alpha} F = 0. Recalling that all positive definite matrices are invertible, we see that
+
+\nabla_{\alpha} F = 2(A^\intercal A + \lambda A)\alpha^* - 2A^\intercal  y = 0 \Longrightarrow \alpha^* = (A^\intercal A + \lambda A)^{-1}A^\intercal  y,
+
+so the minimizer may be found via a linear solve.
+
+See also
+
+Mercer's theorem
+
+Kernel methods
+
+References
+
+Category:Computational learning theory
+
+Category:Theoretical computer science
+
+Category:Hilbert spaces

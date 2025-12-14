@@ -1,0 +1,29 @@
+Synchronous context-free grammars (SynCFG or SCFG; not to be confused with stochastic CFGs) are a type of formal grammar designed for use in transfer-based machine translation. Rules in these grammars apply to two languages at the same time, capturing grammatical structures that are each other's translations.
+
+The theory of SynCFGs borrows from syntax-directed transduction and syntax-based machine translation, modeling the reordering of clauses that occurs when translating a sentence by correspondences between phrase-structure rules in the source and target languages. Performance of SCFG-based MT systems has been found comparable with, or even better than, state-of-the-art phrase-based machine translation systems.
+
+Several algorithms exist to perform translation using SynCFGs.
+
+Formalism
+
+Rules in a SynCFG are superficially similar to CFG rules, except that they specify the structure of two phrases at the same time; one in the source language (the language being translated) and one in the target language. Numeric indices indicate correspondences between non-terminals in both constituent trees. Chiang gives the Chinese/English example:
+
+(yu  you , have  with )
+
+This rule indicates that an  phrase can be formed in Chinese with the structure "yu  you ", where  and  are variables standing in for subphrases; and that the corresponding structure in English is "have  with " where  and  are independently translated to English.
+
+Software
+
+cdec, MT decoding package that supports SynCFGs
+
+Joshua, a machine translation decoding system written in Java
+
+References
+
+Category:Formal languages
+
+Category:Machine translation
+
+Category:Natural language parsing
+
+Category:Statistical natural language processing

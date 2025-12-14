@@ -1,0 +1,87 @@
+{{Infobox scientist
+
+name              = Yves A. Lussier
+
+image             = Yves-A-Lussier.jpg#
+
+image_size        =
+
+known_for         = -co-founder of Development Purkinje (Purkinje Incorporated) -co-Founder and 2009 Chair AMIA Summit on Translational Bioinformatics-VigiLens Health Monitor
+
+birth_place       = Montreal, Quebec, Canada
+
+alma_mater        = Columbia UniversityUniversité de SherbrookeUniversité Laval
+
+workplaces        = University of UtahUniversity of ArizonaUniversity of Illinois Hospital & Health Sciences SystemThe University of ChicagoColumbia UniversityCentre Hospitalier de l'Université de Sherbrooke (CHUS)
+
+academic_advisors = James J. Cimino, Carol Friedman, Roger Côté
+
+doctoral_students =
+
+notable_students  =
+
+field             = Precision medicine, Translational bioinformatics, Personal Genomics, Personalized medicine, Cancer and Biomedical Informatics, Biomedical Ontologies, Medical Language Processing
+
+prizes            =
+
+footnotes         = websites University-of-Arizona, lussierlab.org
+
+}}
+
+Yves A. Lussier is a physician-scientist conducting research in Precision medicine,  Translational bioinformatics and Personal Genomics. As a co-founder of Purkinje, he pioneered the commercial use of controlled medical vocabulary organized as directed semantic networks in electronic medical records, as well as Pen computing for clinicians.
+
+Career
+
+Lussier works in both clinical medicine and biomedical informatics. He is a Professor and Chair at the Department of Biomedical Informatics at the University of Utah.
+
+Lussier served as Director of Technology transfer and Assist Prof. at Columbia University Depts. of Medicine and of Biomedical Informatics, Center for Computational Biology and Bioinformatics (C2B2) and Columbia Joint Center for Systems Biology from 2001-6. He was the Faculty Speaker at the PhD convocation of Columbia University in 2004. Lussier is a recipient of three IBM Faculty Awards. He was Associate Professor of Medicine at The University of Chicago, he directed of Center for Biomedical Informatics (CBI), was Associate Director for Informatics of the Cancer Center, and joint Director for Informatics of University of Chicago Cancer Center from 2006-2011. He was Professor of Medicine,  Bioengineering and Pharmaceutical Sciences at The University of Illinois at Chicago,  Assistant Vice President for Health Affairs at the University of Illinois Hospital and Health Science System, Associate Director for Informatics of the Illinois Cancer Center, and Faculty Director of the Center for Research Informatics (core facility) from 2011-13. He was also a Professor of Medicine  at the University of Arizona,  Associate Vice President (Chief knowledge officer) at the University of Arizona Health Sciences, Associate Director of BIO5, and Associate Director for Informatics and Precision medicine of the UA Cancer Center.
+
+From 2006-2013, Lussier served as Fellow of the Institute for Genomics and Systems Biology and of the Computation Institute. He was appointed as the General Chair of the 2009 American Medical Informatics Association (AMIA) Summit on Translational Bioinformatics and has made a significant contribution to the emerging field of translational bioinformatics and personalized medicine. He serves on the editorial board of the Journal of Biomedical Informatics, Journal of the American Medical Informatics Association, and on the Journal of Personalized Medicine. He cumulated over 130 publications  as well as multiple commencement, conference keynote lectureships and 300 abstract communications and invited lectures. and was awarded the title of Ambassador for Health Science of the University of Sherbrooke in 2017
+
+Awards and honours
+
+Inducted Fellow, American College of Medical Informatics (2005) 2004 1st recipient, Columbia University Faculty Mentoring Award
+
+Outstanding Paper Awards, 2008(2), 2009, 2010, 2011 Summit for Translational Bioinformatics AMIA
+
+Distinguished paper award 2011 AMIA
+
+Best papers awards, Translational Bioinformatics Conference 2012 and 2013
+
+Ambassador for Health Science of the University of Sherbrooke in 2017.
+
+References
+
+Other sources
+
+External links
+
+Lussier’s Software
+
+Lussier's Homepage
+
+Article describing Lussier's 3rd IBM Faculty Award
+
+Category:Canadian bioinformaticians
+
+Category:Academics from Montreal
+
+Category:Columbia University alumni
+
+Category:Columbia University faculty
+
+Category:Université Laval alumni
+
+Category:Université de Sherbrooke alumni
+
+Category:Academic staff of the Université de Sherbrooke
+
+Category:University of Chicago faculty
+
+Category:University of Illinois Chicago faculty
+
+Category:Living people
+
+Category:Year of birth missing (living people)
+
+Category:Natural language processing researchers

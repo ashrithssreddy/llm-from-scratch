@@ -1,0 +1,71 @@
+Blockmodeling is a set or a coherent framework, that is used for analyzing social structure and also for setting procedure(s) for partitioning (clustering) social network's units (nodes, vertices, actors), based on specific patterns, which form a distinctive structure through interconnectivity. It is primarily used in statistics, machine learning and network science.
+
+As an empirical procedure, blockmodeling assumes that all the units in a specific network can be grouped together to such extent to which they are equivalent. Regarding equivalency, it can be structural, regular or generalized. Using blockmodeling, a network can be analyzed using newly created blockmodels, which transforms large and complex network into a smaller and more comprehensible one. At the same time, the blockmodeling is used to operationalize social roles.
+
+While some contend that the blockmodeling is just clustering methods, Bonacich and McConaghy state that "it is a theoretically grounded and algebraic approach to the analysis of the structure of relations". Blockmodeling's unique ability lies in the fact that it considers the structure not just as a set of direct relations, but also takes into account all other possible compound relations that are based on the direct ones.
+
+The principles of blockmodeling were first introduced by Francois Lorrain and Harrison C. White in 1971. According to Batagelj, the primary "goal of blockmodeling is to reduce a large, potentially incoherent network to a smaller comprehensible structure that can be interpreted more readily". Blockmodeling was at first used for analysis in sociometry and psychometrics, but has now spread also to other sciences.
+
+Definition
+
+A network as a system is composed of (or defined by) two different sets: one set of units (nodes, vertices, actors) and one set of links between the units. Using both sets, it is possible to create a graph, describing the structure of the network.
+
+During blockmodeling, the researcher is faced with two problems: how to partition the units (e.g., how to determine the clusters (or classes), that then form vertices in a blockmodel) and then how to determine the links in the blockmodel (and at the same time the values of these links).
+
+In the social sciences, the networks are usually social networks, composed of several individuals (units) and selected social relationships among them (links). Real-world networks can be large and complex; blockmodeling is used to simplify them into smaller structures that can be easier to interpret. Specifically, blockmodeling partitions the units into clusters and then determines the ties among the clusters. At the same time, blockmodeling can be used to explain the social roles existing in the network, as it is assumed that the created cluster of units mimics (or is closely associated with) the units' social roles. These links (connections) can be directed or undirected; there can be multiple links between the same pair of objects or they can have weights on them. If there are not any multiple links in a network, it is called a simple network.
+
+A matrix representation of a graph is composed of ordered units, in rows and columns, based on their names. The ordered units with similar patterns of links are partitioned together in the same clusters. Clusters are then arranged together so that units from the same clusters are placed next to each other, thus preserving interconnectivity. In the next step, the units (from the same clusters) are transformed into a blockmodel. With this, several blockmodels are usually formed, one being core cluster and others being cohesive; a core cluster is always connected to cohesive ones, while cohesive ones cannot be linked together. Clustering of nodes is based on the equivalence, such as structural and regular.
+
+Different approaches
+
+Regarding what kind of network is undergoing blockmodeling, a different approach is necessary. Networks can be one–mode or two–mode. In the former all units can be connected to any other unit and where units are of the same type, while in the latter the units are connected only to the unit(s) of a different type.
+
+prespecified blockmodeling.
+
+According to Brusco and Steinley (2011), the blockmodeling can be categorized (using a number of dimensions):
+
+deterministic or stochastic blockmodeling,
+
+one–mode or two–mode networks,
+
+signed or unsigned networks,
+
+exploratory or confirmatory blockmodeling.
+
+Blockmodels
+
+Blockmodels (sometimes also block models) are structures in which:
+
+vertices (e.g., units, nodes) are assembled within a cluster, with each cluster identified as a vertex; from such vertices a graph can be constructed;
+
+combinations of all the links (ties), represented in a block as a single link between positions, while at the same time constructing one tie for each block. In a case, when there are no ties in a block, there will be no ties between the two positions that define the block.
+
+Computer programs can partition the social network according to pre-set conditions. When empirical blocks can be reasonably approximated in terms of ideal blocks, such blockmodels can be reduced to a blockimage, which is a representation of the original network, capturing its underlying 'functional anatomy'. Thus, blockmodels can "permit the data to characterize their own structure", and at the same time not seek to manifest a preconceived structure imposed by the researcher.
+
+Blockmodels can be created indirectly or directly, based on the construction of the criterion function. Indirect construction refers to a function, based on "compatible (dis)similarity measure between paris of units", while the direct construction is "a function measuring the fit of real blocks induced by a given clustering to the corresponding ideal blocks with perfect relations within each cluster and between clusters according to the considered types of connections (equivalence)".
+
+Types
+
+Blockmodels can be specified regarding the intuition, substance or the insight into the nature of the studied network; this can result in such models as follows:
+
+StOCNET (Tom Snijders),...
+
+CONCOR,
+
+Model and Model2 (Vladimir Batagelj),
+
+See also
+
+Stochastic block model
+
+Mathematical sociology
+
+Role assignment
+
+Multiobjective blockmodeling
+
+Blockmodeling linked networks
+
+References
+
+Category:Network science

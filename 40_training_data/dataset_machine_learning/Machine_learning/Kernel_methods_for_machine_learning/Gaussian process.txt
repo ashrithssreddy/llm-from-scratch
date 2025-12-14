@@ -1,0 +1,237 @@
+In probability theory and statistics, a Gaussian process is a stochastic process (a collection of random variables indexed by time or space), such that every finite collection of those random variables has a multivariate normal distribution. The distribution of a Gaussian process is the joint distribution of all those (infinitely many) random variables, and as such, it is a distribution over functions with a continuous domain, e.g. time or space.
+
+The concept of Gaussian processes is named after Carl Friedrich Gauss because it is based on the notion of the Gaussian distribution (normal distribution). Gaussian processes can be seen as an infinite-dimensional generalization of multivariate normal distributions.
+
+Gaussian processes are useful in statistical modelling, benefiting from properties inherited from the normal distribution. For example, if a random process is modelled as a Gaussian process, the distributions of various derived quantities can be obtained explicitly. Such quantities include the average value of the process over a range of times and the error in estimating the average using sample values at a small set of times. While exact models often scale poorly as the amount of data increases, multiple approximation methods have been developed which often retain good accuracy while drastically reducing computation time.
+
+Definition
+
+A time continuous stochastic process \left\{X_t ; t\in T\right\} is Gaussian if and only if for every finite set of indices t_1,\ldots,t_k in the index set T
+
+\mathbf{X}_{t_1, \ldots, t_k} = (X_{t_1}, \ldots, X_{t_k})
+
+is a multivariate Gaussian random variable.
+
+As the sum of independent and Gaussian distributed random variables is again Gaussian distributed, that is the same as saying every linear combination of  (X_{t_1}, \ldots, X_{t_k})  has a univariate Gaussian (or normal) distribution.
+
+Using characteristic functions of random variables with i denoting the imaginary unit such that i^2 =-1, the Gaussian property can be formulated as follows: \left\{X_t ; t\in T\right\} is Gaussian if and only if, for every finite set of indices t_1,\ldots,t_k, there are real-valued \sigma_{\ell j}, \mu_\ell with \sigma_{jj} > 0 such that the following equality holds for all s_1,s_2,\ldots,s_k\in\mathbb{R},
+
+{ \mathbb E }\left[\exp\left(i \sum_{\ell=1}^k s_\ell \, \mathbf{X}_{t_\ell}\right)\right] = \exp \left(-\tfrac{1}{2} \sum_{\ell, j} \sigma_{\ell j} s_\ell s_j + i \sum_\ell \mu_\ell s_\ell\right),
+
+or  { \mathbb E } \left[ {\mathrm e}^{ i\, \mathbf{s}\, (\mathbf{X}_t - \mathbf{\mu}) } \right] = {\mathrm e}^{  - \mathbf{s}\, \sigma\, \mathbf{s}/2 }.
+
+The numbers \sigma_{\ell j} and \mu_\ell can be shown to be the covariances and means of the variables in the process.
+
+Variance
+
+The variance of a Gaussian process is finite at any time t, formally
+
+\operatorname{var}[X(t)] = { \mathbb E } \left[\left|X(t)-\operatorname{E}[X(t)]\right|^2\right]
+
+Stationarity
+
+For general stochastic processes strict-sense stationarity implies wide-sense stationarity but not every wide-sense stationary stochastic process is strict-sense stationary. However, for a Gaussian stochastic process the two concepts are equivalent.  A simple example of this representation is
+
+X_t = \cos(at)\, \xi_1 + \sin(at)\, \xi_2
+
+where \xi_1 and \xi_2 are independent random variables with  the standard normal distribution.
+
+Covariance functions
+
+A key fact of Gaussian processes is that they can be completely defined by their second-order statistics. Thus, if a Gaussian process is assumed to have mean zero, defining the covariance function completely defines the process' behaviour. Importantly the non-negative definiteness of this function enables its spectral decomposition using the Karhunen–Loève expansion. Basic aspects that can be defined through the covariance function are the process' stationarity, isotropy, smoothness and periodicity.
+
+Stationarity refers to the process' behaviour regarding the separation of any two points x and x'. If the process is stationary, the covariance function depends only on x-x'. For example, the Ornstein–Uhlenbeck process is stationary.
+
+If the process depends only on |x-x'|, the Euclidean distance (not the direction) between x and x',  then the process is considered isotropic. A process that is concurrently stationary and isotropic is considered to be homogeneous; in practice these properties reflect the differences (or rather the lack of them) in the behaviour of the process given the location of the observer.
+
+Ultimately Gaussian processes translate as taking priors on functions and the smoothness of these priors can be induced by the covariance function.
+
+Continuity
+
+For a Gaussian process, continuity in probability is equivalent to mean-square continuity
+
+and continuity with probability one is equivalent to sample continuity.
+
+The latter implies, but is not implied by, continuity in probability.
+
+Continuity in probability holds if and only if the mean and autocovariance are continuous functions. In contrast, sample continuity was challenging even for stationary Gaussian processes (as probably noted first by Andrey Kolmogorov), and more challenging for more general processes.
+
+As usual, by a sample continuous process one means a process that admits a sample continuous modification.
+
+Stationary case
+
+For a stationary Gaussian process X=(X_t)_{t\in\R}, some conditions on its spectrum are sufficient for sample continuity, but fail to be necessary. A necessary and sufficient condition, sometimes called Dudley–Fernique theorem, involves the function \sigma defined by
+
+\sigma(h) = \sqrt{ {\mathbb E} \left[ \left( X(t+h) - X(t) \right)^2 \right] }
+
+(the right-hand side does not depend on t due to stationarity). Continuity of X in probability is equivalent to continuity of \sigma at 0. When convergence of \sigma(h) to 0 (as h\to 0) is too slow, sample continuity of X may fail. Convergence of the following integrals matters:
+
+I(\sigma) = \int_0^1 \frac{ \sigma(h) }{ h \sqrt{ \log(1/h) } } \, dh = \int_0^\infty 2\sigma( e^{-x^2}) \, dx ,
+
+these two integrals being equal according to integration by substitution  h = e^{-x^2},  x = \sqrt{\log(1/h)} . The first integrand need not be bounded as h\to 0+, thus the integral may converge (I(\sigma)) or diverge (I(\sigma)=\infty). Taking for example \sigma( e^{-x^2}) = \tfrac{1}{x^a} for large x, that is, \sigma(h) = (\log(1/h))^{-a/2} for small h, one obtains I(\sigma) when a>1, and I(\sigma)=\infty when 0
+
+In these two cases the function \sigma is increasing on [0,\infty), but generally it is not. Moreover, the condition
+
+{{block indent | em = 1.5 | text = &nbsp; there exists \varepsilon > 0 such that \sigma is monotone on [0,\varepsilon]}}
+
+does not follow from continuity of \sigma and the evident relations \sigma(h) \ge 0 (for all h) and \sigma(0) = 0.
+
+Some history.
+
+There exist sample continuous processes X such that I(\sigma)=\infty; they violate condition (*). An example found by Marcus and Shepp  From now on, let \mathcal{H}(R) be a reproducing kernel Hilbert space with positive definite kernel R.
+
+Driscoll's zero-one law is a result characterizing the sample functions generated by a Gaussian process:
+
+\lim_{n\to\infty} \operatorname{tr}[K_n R_n^{-1}]
+
+where K_n and R_n are the covariance matrices of all possible pairs of n points, implies
+
+\Pr[f \in \mathcal{H}(R)] = 1.
+
+Moreover,
+
+\lim_{n\to\infty} \operatorname{tr}[K_n R_n^{-1}] = \infty
+
+implies
+
+\Pr[f \in \mathcal{H}(R)] = 0.
+
+This has significant implications when K = R, as
+
+\lim_{n \to \infty} \operatorname{tr}[R_n R_n^{-1}] = \lim_{n\to\infty}\operatorname{tr}[I] = \lim_{n \to \infty} n = \infty.
+
+As such, almost all sample paths of a mean-zero Gaussian process with positive definite kernel K will lie outside of the Hilbert space \mathcal{H}(K).
+
+Linearly constrained Gaussian processes
+
+For many applications of interest some pre-existing knowledge about the system at hand is already given. Consider e.g. the case where the output of the Gaussian process corresponds to a magnetic field; here, the real magnetic field is bound by Maxwell's equations and a way to incorporate this constraint into the Gaussian process formalism would be desirable as this would likely improve the accuracy of the algorithm.
+
+A method on how to incorporate linear constraints into Gaussian processes already exists:
+
+Consider the (vector valued) output function f(x) which is known to obey the linear constraint (i.e. \mathcal{F}_X is a linear operator)
+
+\mathcal{F}_X(f(x)) = 0.
+
+Then the constraint \mathcal{F}_X can be fulfilled by choosing f(x) = \mathcal{G}_X(g(x)), where g(x) \sim \mathcal{GP}(\mu_g, K_g) is modelled as a Gaussian process, and finding \mathcal{G}_X such that
+
+\mathcal{F}_X(\mathcal{G}_X(g)) = 0 \qquad \forall g.
+
+Given \mathcal{G}_X and using the fact that Gaussian processes are closed under linear transformations, the Gaussian process for f obeying constraint \mathcal{F}_X becomes
+
+f(x) = \mathcal{G}_X g \sim \mathcal{GP} ( \mathcal{G}_X \mu_g, \mathcal{G}_X K_g \mathcal{G}_{X'}^\mathsf{T} ).
+
+Hence, linear constraints can be encoded into the mean and covariance function of a Gaussian process.
+
+Applications
+
+A Gaussian process can be used as a prior probability distribution over functions in Bayesian inference. Given any set of N points in the desired domain of the functions, take a multivariate Gaussian whose covariance matrix parameter is the Gram matrix of those N points with some desired kernel, and sample from that Gaussian.  For solution of the multi-output prediction problem, Gaussian process regression for vector-valued function was developed. In this method, a 'big' covariance is constructed, which describes the correlations between all the input and output variables taken in N points  in the desired domain. This approach was elaborated in detail for the matrix-valued Gaussian processes and generalised to processes with 'heavier tails' like Student-t processes.
+
+Inference of continuous values with a Gaussian process prior is known as Gaussian process regression, or kriging; extending Gaussian process regression to multiple target variables is known as cokriging. Gaussian processes are thus useful as a powerful non-linear multivariate interpolation tool. Kriging is also used to extend Gaussian process in the case of mixed integer inputs.
+
+Gaussian processes are also commonly used to tackle numerical analysis problems such as numerical integration, solving differential equations, or optimisation in the field of probabilistic numerics.
+
+Gaussian processes can also be used in the context of mixture of experts models, for example. The underlying rationale of such a learning framework consists in the assumption that a given mapping cannot be well captured by a single Gaussian process model. Instead, the observation space is divided into subsets, each of which is characterized by a different mapping function; each of these is learned via a different Gaussian process component in the postulated mixture.
+
+Gaussian process prediction, or Kriging
+
+When concerned with a general Gaussian process regression problem (Kriging), it is assumed that for a Gaussian process f observed at coordinates x, the vector of values  is just one sample from a multivariate Gaussian distribution of dimension equal to number of observed coordinates . Therefore, under the assumption of a zero-mean distribution, , where  is the covariance matrix between all possible pairs  for a given set of hyperparameters θ. Works on sparse Gaussian processes, that usually are based on the idea of building a representative set for the given process f, try to circumvent this issue. The kriging method can be used in the latent level of a nonlinear mixed-effects model for a spatial functional prediction: this technique is called the latent kriging. Other classes of scalable Gaussian process for analyzing massive datasets have emerged from the Vecchia approximation and Nearest Neighbor Gaussian Processes (NNGP).
+
+Often, the covariance has the form K(\theta, x,x') = \frac{1}{\sigma^2} \tilde{K}(\theta,x,x'), where \sigma^2 is a scaling parameter. Examples are the Matérn class covariance functions. If this scaling parameter \sigma^2 is either known or unknown (i.e. must be marginalized), then the posterior probability, p(\theta \mid D), i.e. the probability for the hyperparameters \theta given a set of data pairs D of observations of x and f(x), admits an analytical expression.
+
+Bayesian neural networks as Gaussian processes
+
+Bayesian neural networks are a particular type of Bayesian network that results from treating deep learning and artificial neural network models probabilistically, and assigning a prior distribution to their parameters. Computation in artificial neural networks is usually organized into sequential layers of artificial neurons. The number of neurons in a layer is called the layer width. As layer width grows large, many Bayesian neural networks reduce to a Gaussian process with a closed form compositional kernel. This Gaussian process is called the Neural Network Gaussian Process (NNGP) (not to be confused with the Nearest Neighbor Gaussian Process ). It allows predictions from Bayesian neural networks to be more efficiently evaluated, and provides an analytic tool to understand deep learning models.
+
+Physical applications
+
+Gaussian processes have found increasing applications in many domains of the natural sciences due to their statistical modelling properties. Molecular property prediction has employed these process models in small molecular datasets due to their inference capabilities and computational costs. They are also being increasingly used as surrogate models for force field optimization.
+
+Astrophysics
+
+Gaussian processes have also found extensive use in astrophysical and astronomical settings. Gaussian processes can model correlated noise, a specific type of non-Gaussian noise dependent on some underlying unknown distribution correlated with observed values. This type of noise is often present in astronomical signals as instrumental systematics or as intrinsic to the observed object as a result of physical processes. Correlated noise is often a consideration for exoplanet transit events, and Gaussian processes have been used to de-trend these transit light curves (at timescales greater than that of the transit) to allow detection of weaker, more short-lived signals. These processes have also been used to disentangle planetary signals from stellar activity indicators inside radial velocity data, another method of exoplanet detection. This is done by training the Gaussian process model to optimize the hyperparameters of the kernel until it accurately recreates the noise components of the radial velocity data, which ultimately allows it to determine which signals are best defined as strictly periodic (which the planet should be) and which signals are best represented by the evolving, quasi-periodic kernel (which the star should be). Correlated noise produced by active regions on a star's photosphere (as a result of magnetic field interactions) can be of similar timescales as transit events, and Gaussian process models which handle sparsely sampled data are used to confirm exoplanet detections especially around young stars.
+
+The variability of rotating, magnetically active Sun-like stars can be modeled fairly accurately using Gaussian processes. \text{K}_\text{QP}(x,x') = \alpha^2 \exp \left( - \frac{d^2}{2\lambda_{1}^2} - \Gamma \sin^2\left[ \frac{\pi d}{\lambda_{2}}\right]\right) where parameter  \alpha  is amplitude,  \lambda_1  is period, and  \lambda_2  is decoherence timescale. This covariance function allows for the limited but feasible determination of stellar periods as a result of parameter  \lambda_1  but lacks physical information about where these active regions are on the star observed.
+
+Gaussian processes are also used in the analysis of individual and populations of active galactic nuclei (AGNs) due to their stochastic variability in the optical and radio parts of the electromagnetic spectrum.
+
+Other astrophysical applications of Gaussian processes include models for pulsar timing and dispersion measure, gravitational wave structure and detector uncertainty (notably in the LIGO-Virgo-KAGRA collaboration), transient classification, and quasi-periodic oscillations.
+
+Computational issues
+
+In practical applications, Gaussian process models are often evaluated on a grid leading to multivariate normal distributions. Using these models for prediction or parameter estimation using maximum likelihood requires evaluating a multivariate Gaussian density, which involves calculating the determinant and the inverse of the covariance matrix. Both of these operations have cubic computational complexity which means that even for grids of modest sizes, both operations can have a prohibitive computational cost. This drawback led to the development of multiple approximation methods.
+
+See also
+
+Bayes linear statistics
+
+Bayesian interpretation of regularization
+
+Kriging
+
+Gaussian free field
+
+Gauss–Markov process
+
+Gradient-enhanced kriging (GEK)
+
+Student's t-process
+
+References
+
+External links
+
+Literature
+
+The Gaussian Processes Web Site, including the text of Rasmussen and Williams' Gaussian Processes for Machine Learning
+
+A Review of Gaussian Random Fields and Correlation Functions
+
+Efficient Reinforcement Learning using Gaussian Processes
+
+Software
+
+GPML: A comprehensive Matlab toolbox for GP regression and classification
+
+STK: a Small (Matlab/Octave) Toolbox for Kriging and GP modeling
+
+Kriging module in UQLab framework (Matlab)
+
+CODES Toolbox: implementations of Kriging, variational kriging and multi-fidelity models (Matlab)
+
+Matlab/Octave function for stationary Gaussian fields
+
+Yelp MOE – A black box optimization engine using Gaussian process learning
+
+ooDACE  – A flexible object-oriented Kriging Matlab toolbox.
+
+GPstuff – Gaussian process toolbox for Matlab and Octave
+
+GPy – A Gaussian processes framework in Python
+
+GSTools - A geostatistical toolbox, including Gaussian process regression, written in Python
+
+Interactive Gaussian process regression demo
+
+Basic Gaussian process library written in C++11
+
+scikit-learn – A machine learning library for Python which includes Gaussian process regression and classification
+
+SAMBO Optimization library for Python supports sequential optimization driven by Gaussian process regressor from scikit-learn.
+
+- The Kriging toolKit (KriKit) is developed at the Institute of Bio- and Geosciences 1 (IBG-1) of Forschungszentrum Jülich (FZJ)
+
+Video tutorials
+
+[http://videolectures.net/gpip06_mackay_gpb Gaussian Process Basics by David MacKay
+
+Learning with Gaussian Processes by Carl Edward Rasmussen
+
+Bayesian inference and Gaussian processes by Carl Edward Rasmussen
+
+Category:Stochastic processes
+
+Category:Kernel methods for machine learning
+
+Category:Nonparametric Bayesian statistics
+
+Category:Normal distribution

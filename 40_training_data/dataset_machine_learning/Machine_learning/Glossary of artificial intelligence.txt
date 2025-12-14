@@ -1,0 +1,613 @@
+This glossary of artificial intelligence is a list of definitions of terms and concepts relevant to the study of artificial intelligence (AI), its subdisciplines, and related fields. Related glossaries include Glossary of computer science, Glossary of robotics, Glossary of machine vision, and Glossary of logic.
+
+A
+
+{{defn|A  and   which is used in many fields of  due to its completeness, optimality, and optimal efficiency.}}
+
+{{defn|A high-level knowledge-representation framework that can be used to solve problems declaratively based on . It extends normal  by allowing some predicates to be incompletely defined, declared as abducible predicates.}}
+
+{{defn|A form of logical inference which starts with an observation or set of observations then seeks to find the simplest and most likely explanation. This process, unlike deductive reasoning, yields a plausible conclusion but does not positively verify it. abductive inference,}}
+
+{{defn|The removal of a component of an AI system. An ablation study aims to determine the contribution of a component to an AI system by removing the component, and then analyzing the resultant performance of the system.}}
+
+{{defn|The process of removing physical, spatial, or temporal details or attributes in the study of objects or systems in order to more closely attend to other details of interest}}
+
+{{defn|A language for specifying state transition systems, and is commonly used to create formal models of the effects of actions on the world. Action languages are commonly used in the  and robotics domains, where they describe how actions affect the states of systems over time, and may be used for automated planning.}}
+
+{{defn|An area of  concerned with creation and modification of software agent's knowledge about effects and preconditions of the actions that can be executed within its environment. This knowledge is usually represented in logic-based action description language and used as the input for automated planners.}}
+
+{{defn|In , the activation function of a node defines the output of that node given an input or set of inputs.}}
+
+{{defn|A kind of  that is based on Takagi–Sugeno fuzzy inference system. The technique was developed in the early 1990s. Since it integrates both neural networks and  principles, it has potential to capture the benefits of both in a single framework. Its inference system corresponds to a set of fuzzy IF–THEN rules that have learning capability to approximate nonlinear functions. Hence, ANFIS is considered to be a universal estimator. For using the ANFIS in a more efficient and optimal way, one can use the best parameters obtained by genetic algorithm.}}
+
+{{defn|In computer science, specifically in  related to , a heuristic function is said to be admissible if it never overestimates the cost of reaching the goal, i.e. the cost it estimates to reach the goal is not higher than the lowest possible cost from the current point in the path.}}
+
+{{defn|The study and development of systems and devices that can recognize, interpret, process, and simulate human affects. Affective computing is an interdisciplinary field spanning computer science, psychology, and cognitive science.}}
+
+{{defn|A blueprint for software agents and  systems, depicting the arrangement of components. The architectures implemented by  are referred to as cognitive architectures.}}
+
+{{defn|A class of microprocessor or computer system designed as hardware acceleration for  applications, especially , , and .}}
+
+{{defn|In the field of artificial intelligence, the most difficult problems are informally known as AI-complete or AI-hard, implying that the difficulty of these computational problems is equivalent to that of solving the central artificial intelligence problem—making computers as intelligent as people, or . To call a problem AI-complete reflects an attitude that it would not be solved by a simple specific algorithm.}}
+
+{{defn|A property of an  which relates to the number of computational resources used by the algorithm. An algorithm must be analyzed to determine its resource usage, and the efficiency of an algorithm can be measured based on usage of different resources. Algorithmic efficiency can be thought of as analogous to engineering productivity for a repeating or continuous process.}}
+
+{{defn|An  that can return a valid solution to a problem even if it is interrupted before it ends.}}
+
+{{defn|Any intelligence demonstrated by machines, in contrast to the natural intelligence displayed by humans and other animals. In computer science, AI research is defined as the study of "": any device that perceives its environment and takes actions that maximize its chance of successfully achieving its goals. Colloquially, the term "artificial intelligence" is applied when a machine mimics "cognitive" functions that humans associate with other human minds, such as "learning" and "problem solving".}}
+
+{{defn|An international, nonprofit, scientific society devoted to promote research in, and responsible use of, . AAAI also aims to increase public understanding of artificial intelligence (AI), improve the teaching and training of AI practitioners, and provide guidance for research planners and funders concerning the importance and potential of current AI developments and future directions.}}
+
+{{defn|In , asymptotic computational complexity is the usage of asymptotic analysis for the estimation of computational complexity of  and computational problems, commonly associated with the usage of the big O notation.}}
+
+{{defn|-based attention is a mechanism mimicking cognitive attention. It calculates "soft" weights for each word, more precisely for its embedding, in the context window. It can do it either in parallel (such as in ) or sequentially (such as in recursive neural networks). "Soft" weights can change during each runtime, in contrast to "hard" weights, which are (pre-)trained and fine-tuned and remain frozen afterwards. Multiple attention heads are used in transformer-based large language models.}}
+
+{{defn|An interactive experience of a real-world environment where the objects that reside in the real-world are "augmented" by computer-generated perceptual information, sometimes across multiple sensory modalities, including visual, auditory, haptic, somatosensory, and olfactory.}}
+
+{{defn|A type of  used to learn  of unlabeled data (). A common implementation is the variational autoencoder (VAE).}}
+
+{{defn| A field of  (ML) which aims to automatically configure an ML system to maximize its performance (e.g,  accuracy).}}
+
+{{defn|A branch of  that concerns the realization of strategies or action sequences, typically for execution by , autonomous robots and unmanned vehicles. Unlike classical control and  problems, the solutions are complex and must be discovered and optimized in multidimensional space. Planning is also related to decision theory.}}
+
+{{defn|An area of computer science and mathematical logic dedicated to understanding different aspects of reasoning. The study of automated reasoning helps produce computer programs that allow computers to reason completely, or nearly completely, automatically. Although automated reasoning is considered a sub-field of , it also has connections with theoretical computer science, and even philosophy.}}
+
+{{defn|The self-managing characteristics of distributed computing resources, adapting to unpredictable changes while hiding intrinsic complexity to operators and users. Initiated by IBM in 2001, this initiative ultimately aimed to develop computer systems capable of self-management, to overcome the rapidly growing complexity of computing systems management, and to reduce the barrier that complexity poses to further growth.}}
+
+{{defn|A vehicle that is capable of sensing its environment and moving with little or no human input.}}
+
+{{defn|A robot that performs behaviors or tasks with a high degree of autonomy. Autonomous robotics is usually considered to be a subfield of , robotics, and information engineering.}}
+
+B
+
+{{defn|A method used in  to calculate a gradient that is needed in the calculation of the weights to be used in the network. Backpropagation is shorthand for "the backward propagation of errors", since an error is computed at the output and distributed backwards throughout the network's layers. It is commonly used to train , a term referring to neural networks with more than one .}}
+
+{{defn|A gradient-based technique for training , proposed in a 1996 paper written by Christoph Goller and Andreas Küchler.}}
+
+{{defn|A gradient-based technique for training certain types of , such as Elman networks. The algorithm was independently derived by numerous researchers.}}
+
+{{defn|An inference method described colloquially as working backward from the goal. It is used in automated theorem provers, inference engines, proof assistants, and other  applications.}}
+
+{{defn|A simplifying representation used in natural language processing and information retrieval (IR). In this model, a text (such as a sentence or a document) is represented as the bag (multiset) of its words, disregarding grammar and even word order but keeping multiplicity. The bag-of-words model has also been used for . The bag-of-words model is commonly used in methods of document classification where the (frequency of) occurrence of each word is used as a  for training a .}}
+
+{{defn|In computer vision, the bag-of-words model (BoW model) can be applied to image classification, by treating  as words. In document classification, a bag of words is a sparse vector of occurrence counts of words; that is, a sparse histogram over the vocabulary. In computer vision, a bag of visual words is a vector of occurrence counts of a vocabulary of local image features.}}
+
+{{defn|A technique for improving the performance and stability of . It is a technique to provide any layer in a neural network with inputs that are zero mean/unit variance. Batch normalization was introduced in a 2015 paper. It is used to normalize the input layer by adjusting and scaling the activations.}}
+
+{{defn|A population-based  which was developed by Pham, Ghanbarzadeh and et al. in 2005. It mimics the food foraging behaviour of honey bee colonies. In its basic version the algorithm performs a kind of neighborhood search combined with global search, and can be used for both combinatorial optimization and continuous optimization. The only condition for the application of the bees algorithm is that some measure of distance between the solutions is defined. The effectiveness and specific abilities of the bees algorithm have been proven in a number of studies.}}
+
+{{defn|The informatics of behaviors so as to obtain behavior intelligence and behavior insights.}}
+
+{{defn|A mathematical model of plan execution used in computer science, robotics, control systems and video games. They describe switchings between a finite set of tasks in a modular fashion. Their strength comes from their ability to create very complex tasks composed of simple tasks, without worrying how the simple tasks are implemented. BTs present some similarities to hierarchical state machines with the key difference that the main building block of a behavior is a task rather than a state. Its ease of human understanding make BTs less error-prone and very popular in the game developer community. BTs have shown to generalize several other control architectures.}}
+
+{{defn|A software model developed for programming . Superficially characterized by the implementation of an agent's beliefs, desires and intentions, it actually uses these concepts to solve a particular problem in agent programming. In essence, it provides a mechanism for separating the activity of selecting a plan (from a plan library or an external planner application) from the execution of currently active plans. Consequently, BDI agents are able to balance the time spent on deliberating about plans (choosing what to do) and executing those plans (doing it). A third activity, creating the plans in the first place (planning), is not within the scope of the model, and is left to the system designer and programmer.}}
+
+{{defn|In statistics and , the bias–variance tradeoff is the property of a set of predictive models whereby models with a lower bias in parameter estimation have a higher variance of the parameter estimates across samples, and vice versa.}}
+
+{{defn|A term used to refer to data sets that are too large or complex for traditional data-processing application software to adequately deal with. Data with many cases (rows) offer greater statistical power, while data with higher complexity (more attributes or columns) may lead to a higher false discovery rate.}}
+
+{{defn|A mathematical notation that describes the limiting behavior of a function when the argument tends towards a particular value or infinity. It is a member of a family of notations invented by Paul Bachmann, Edmund Landau, and others, collectively called Bachmann–Landau notation or asymptotic notation.}}
+
+{{defn|A tree data structure in which each node has at most two children, which are referred to as the ' and the '. A recursive definition using just set theory notions is that a (non-empty) binary tree is a tuple (L, S, R), where L and R are binary trees or the empty set and S is a singleton set. Some authors allow the binary tree to be the empty set as well.}}
+
+{{defn|An  approach based on the blackboard architectural model, where a common knowledge base, the "blackboard", is iteratively updated by a diverse group of specialist knowledge sources, starting with a problem specification and ending with a solution. Each knowledge source updates the blackboard with a partial solution when its internal constraints match the blackboard state. In this way, the specialists work together to solve the problem.}}
+
+{{defn|A type of stochastic recurrent neural network and Markov random field.  Boltzmann machines can be seen as the stochastic, generative counterpart of Hopfield networks.}}
+
+{{defn|The problem of determining if there exists an interpretation that satisfies a given Boolean formula. In other words, it asks whether the variables of a given Boolean formula can be consistently replaced by the values TRUE or FALSE in such a way that the formula evaluates to TRUE. If this is the case, the formula is called satisfiable. On the other hand, if no such assignment exists, the function expressed by the formula is FALSE for all possible variable assignments and the formula is unsatisfiable. For example, the formula "a AND NOT b" is satisfiable because one can find the values a&nbsp;&nbsp;TRUE and b&nbsp;&nbsp;FALSE, which make (a AND NOT b)&nbsp;&nbsp;TRUE. In contrast, "a AND NOT a" is unsatisfiable.}}
+
+{{defn|A   metaheuristic for primarily reducing , by training models sequentially, each one correcting the errors of its predecessor.}}
+
+{{defn|A   metaheuristic for primarily reducing , by training multiple models independently and averaging their predictions.}}
+
+{{defn|A technology that employs the latest findings in neuroscience. The term was first introduced by the Artificial Intelligence Laboratory in Zurich, Switzerland, in the context of the ROBOY project. Brain Technology can be employed in robots, know-how management systems and any other application with self-learning capabilities. In particular, Brain Technology applications allow the visualization of the underlying learning architecture often coined as "know-how maps".}}
+
+{{defn|In computing, tree data structures, and game theory, the number of children at each , the outdegree. If this value is not uniform, an average branching factor can be calculated.}}
+
+C
+
+{{defn|A  system that is a type of  (ANN) that can be used to better model hierarchical relationships. The approach is an attempt to more closely mimic biological neural organization.}}
+
+{{defn|A computer program or an  which conducts a conversation via auditory or textual methods.}}
+
+{{defn|A field of robotics that attempts to invoke cloud technologies such as cloud computing, cloud storage, and other Internet technologies centred on the benefits of converged infrastructure and shared services for robotics. When connected to the cloud, robots can benefit from the powerful computation, storage, and communication resources of modern data center in the cloud, which can process and share information from various robots or agent (other machines, smart objects, humans, etc.). Humans can also delegate tasks to robots remotely through networks. Cloud computing technologies enable robot systems to be endowed with powerful capability whilst reducing costs through cloud technologies. Thus, it is possible to build lightweight, low cost, smarter robots have intelligent "brain" in the cloud. The "brain" consists of data center, knowledge base, task planners, , information processing, environment models, communication support, etc.}}
+
+{{defn|The task of grouping a set of objects in such a way that objects in the same group (called a cluster) are more similar (in some sense) to each other than to those in other groups (clusters). It is a main task of exploratory data mining, and a common technique for statistical data analysis, used in many fields, including , pattern recognition, image analysis, information retrieval, bioinformatics, data compression, and computer graphics.}}
+
+{{defn|An incremental system for hierarchical conceptual clustering. COBWEB was invented by Professor Douglas H. Fisher, currently at Vanderbilt University. COBWEB incrementally organizes observations into a classification tree. Each node in a classification tree represents a class (concept) and is labeled by a probabilistic concept that summarizes the attribute-value distributions of objects classified under the node. This classification tree can be used to predict missing attributes or the class of a new object.}}
+
+{{defn|In general, the term cognitive computing has been used to refer to new hardware and/or software that mimics the functioning of the human brain and helps to improve human decision-making. In this sense, CC is a new type of computing with the goal of more accurate models of how the human brain/mind senses, reasons, and responds to stimulus.}}
+
+{{defn|A type of  using a divide and conquer strategy in which the responses of multiple neural networks (experts) are combined into a single response.  The combined response of the committee machine is supposed to be superior to those of its constituent experts. Compare ensembles of classifiers.}}
+
+{{defn|In  research, commonsense knowledge consists of facts about the everyday world, such as "Lemons are sour", that all humans are expected to know. The first AI program to address common sense knowledge was Advice Taker in 1959 by John McCarthy.}}
+
+{{defn|A branch of artificial intelligence concerned with simulating the human ability to make presumptions about the type and essence of ordinary situations they encounter every day.}}
+
+{{defn|A multidisciplinary endeavour that includes the fields of , cognitive psychology, philosophy, and the arts.}}
+
+{{defn|The integration of cybernetics and  techniques.}}
+
+{{defn|A branch of computational linguistics and  which uses computers in humor research.}}
+
+{{defn|In computer science, computational learning theory (or just learning theory) is a subfield of  devoted to studying the design and analysis of  algorithms.}}
+
+{{defn|A branch of neuroscience which employs mathematical models, theoretical analysis and abstractions of the brain to understand the principles that govern the development, structure, physiology, and cognitive abilities of the nervous system.}}
+
+{{defn|The study of  for performing number theoretic computations.}}
+
+{{defn|The interface between statistics and .}}
+
+{{defn|Design automation usually refers to electronic design automation, or Design Automation which is a Product Configurator. Extending Computer-Aided Design (CAD), automated design and computer-automated design are concerned with a broader range of applications, such as automotive engineering, civil engineering, composite material design, control engineering, dynamic system identification and optimization, financial systems, industrial equipment,  systems, steel construction, structural optimisation, and the invention of novel systems. More recently, traditional CAD simulation is seen to be transformed to CAutoD by biologically inspired , including heuristic search techniques such as evolutionary computation, and  algorithms.}}
+
+{{defn|See .}}
+
+{{defn|The theory, experimentation, and engineering that form the basis for the design and use of computers. It involves the study of  that process, store, and communicate digital information. A computer scientist specializes in the theory of computation and the design of computational systems.}}
+
+{{defn|An interdisciplinary scientific field that deals with how computers can be made to gain high-level understanding from digital images or videos. From the perspective of engineering, it seeks to automate tasks that the human visual system can do.}}
+
+{{defn|In  and , the concept drift means that the statistical properties of the target variable, which the model is trying to predict, change over time in unforeseen ways. This causes problems because the predictions become less accurate as time passes.}}
+
+{{defn|An approach in the fields of cognitive science, that hopes to explain mental phenomena using .}}
+
+{{defn|In the study of path-finding problems in , a heuristic function is said to be consistent, or monotone, if its estimate is always less than or equal to the estimated distance from any neighboring vertex to the goal, plus the cost of reaching that neighbor.}}
+
+{{defn|A  and inference framework that augments the learning of conditional (probabilistic or discriminative) models with declarative constraints.}}
+
+{{defn|A form of constraint programming, in which logic programming is extended to include concepts from constraint satisfaction. A constraint logic program is a logic program that contains constraints in the body of clauses. An example of a clause including a constraint is . In this clause,  is a constraint; A(X,Y), B(X), and C(Y) are literals as in regular logic programming. This clause states one condition under which the statement A(X,Y) holds: X+Y is greater than zero and both B(X) and C(Y) are true.}}
+
+{{defn|A language whose phonology, grammar, and vocabulary are consciously devised, instead of having developed naturally. Constructed languages may also be referred to as artificial, planned, or invented languages.}}
+
+{{defn|In , a convolutional neural network (CNN, or ConvNet) is a class of deep  most commonly applied to image analysis. CNNs use a variation of multilayer perceptrons designed to require minimal preprocessing. They are also known as shift invariant or space invariant artificial neural networks (SIANN), based on their shared-weights architecture and translation invariance characteristics.}}
+
+{{defn|In  and , a genetic operator used to combine the genetic information of two parents to generate new offspring. It is one way to stochastically generate new solutions from an existing population, and analogous to the crossover that happens during sexual reproduction in biological organisms. Solutions can also be generated by cloning an existing solution, which is analogous to asexual reproduction. Newly generated solutions are typically  before being added to the population.}}
+
+D
+
+{{defn|A computer go program developed by Facebook, based on  techniques using a convolutional neural network. Its updated version Darkfores2 combines the techniques of its predecessor with Monte Carlo tree search. The MCTS effectively takes tree search methods commonly seen in computer chess programs and randomizes them. With the update, the system is known as Darkfmcts3.}}
+
+{{defn|The Dartmouth Summer Research Project on Artificial Intelligence was the name of a 1956 summer workshop now considered by many (though not all) to be the seminal event for  as a field.}}
+
+{{defn|Data augmentation in data analysis are techniques used to increase the amount of data. It helps reduce  when training a learning .}}
+
+{{defn|The process of integrating multiple data sources to produce more consistent, accurate, and useful information than that provided by any individual data source.}}
+
+{{defn|The process of combining data residing in different sources and providing users with a unified view of them. This process becomes significant in a variety of situations, which include both commercial (such as when two similar companies need to merge their databases) and scientific (combining research results from different bioinformatics repositories, for example) domains. Data integration appears with increasing frequency as the volume (that is, big data) and the need to share existing data explodes. It has become the focus of extensive theoretical work, and numerous open problems remain unsolved.}}
+
+{{defn|The process of discovering patterns in large data sets involving methods at the intersection of , statistics, and database systems.}}
+
+{{defn|An interdisciplinary field that uses scientific methods, processes, algorithms and systems to extract knowledge and insights from data in various forms, both structured and unstructured, similar to data mining. Data science is a "concept to unify statistics, data analysis, , and their related methods" in order to "understand and analyze actual phenomena" with data. It employs techniques and theories drawn from many fields within the context of mathematics, statistics, information science, and computer science.}}
+
+{{defn|A system used for reporting and data analysis. DWs are central repositories of integrated data from one or more disparate sources. They store current and historical data in one single place}}
+
+{{defn|A declarative  language that syntactically is a subset of . It is often used as a query language for deductive databases. In recent years, Datalog has found new application in data integration, information extraction, networking, program analysis, security, and cloud computing.}}
+
+{{defn|In the case of -based  or , the type of decision boundary that the network can learn is determined by the number of  in the network. If it has no hidden layers, then it can only learn linear problems. If it has one hidden layer, then it can learn any continuous function on compact subsets of Rn as shown by the Universal approximation theorem, thus it can have an arbitrary decision boundary.}}
+
+{{defn|Uses a decision tree (as a predictive model) to go from observations about an item (represented in the branches) to conclusions about the item's target value (represented in the leaves). It is one of the predictive modeling approaches used in statistics, data mining and .}}
+
+{{defn|A programming paradigm—a style of building the structure and elements of computer programs—that expresses the logic of a computation without describing its control flow.}}
+
+{{defn|A type of  inference engine. It takes as input a set of declarations in a frame language about a domain such as medical research or molecular biology. For example, the names of classes, sub-classes, properties, and restrictions on allowable values.}}
+
+{{defn|A subset of  that focuses on utilizing  to perform tasks such as , , and . The field takes inspiration from biological neuroscience and is centered around stacking artificial neurons into layers and "training" them to process data. The adjective "deep" refers to the use of multiple layers (ranging from three to several hundred or thousands) in the network. Methods used can be either , , or .}}
+
+{{defn|A British  company founded in September 2010, currently owned by Alphabet Inc. The company is based in London, with research centres in Canada, France, and the United States. Acquired by Google in 2014, the company has created a  that learns how to play video games in a fashion similar to that of humans, as well as a neural Turing machine, or a neural network that may be able to access an external memory like a conventional Turing machine, resulting in a computer that mimics the short-term memory of the human brain. The company made headlines in 2016 after its AlphaGo program beat human professional Go player Lee Sedol, the world champion, in a five-game match, which was the subject of a documentary film. A more general program, AlphaZero, beat the most powerful programs playing Go, chess, and shogi (Japanese chess) after a few days of play against itself using .}}
+
+{{defn|A   proposed by Martin Ester, Hans-Peter Kriegel, Jörg Sander, and Xiaowei Xu in 1996.}}
+
+{{defn|A family of formal knowledge representation languages. Many DLs are more expressive than propositional logic but less expressive than first-order logic. In contrast to the latter, the core reasoning problems for DLs are (usually) , and efficient decision procedures have been designed and implemented for these problems. There are general, spatial, temporal, spatiotemporal, and fuzzy descriptions logics, and each description logic features a different balance between DL expressivity and  complexity by supporting different sets of mathematical constructors.}}
+
+{{defn|In , diffusion models, also known as diffusion probabilistic models or score-based generative models, are a class of latent variable models. They are Markov chains trained using variational inference. The goal of diffusion models is to learn the latent structure of a dataset by modeling the way in which data points diffuse through the latent space. In computer vision, this means that a neural network is trained to denoise images blurred with Gaussian noise by learning to reverse the diffusion process. It mainly consists of three major components: the forward process, the reverse process, and the sampling procedure. Three examples of generic diffusion modeling frameworks used in computer vision are denoising diffusion probabilistic models, noise conditioned score networks, and stochastic differential equations.}}
+
+{{defn|An  for finding the shortest paths between nodes in a weighted graph, which may represent, for example, road networks.}}
+
+{{defn|The process of reducing the number of random variables under consideration by obtaining a set of principal variables. It can be divided into feature selection and feature extraction.}}
+
+{{defn|A subfield of  research dedicated to the development of distributed solutions for problems. DAI is closely related to and a predecessor of the field of .}}
+
+{{defn|A phenomenon in statistics and  where a model with a small number of parameters and a model with an extremely large number of parameters have a small test error, but a model whose number of parameters is about the same as the number of data points used to train the model will have a large error. This phenomenon has been considered surprising, as it contradicts assumptions about  in classical machine learning.}}
+
+{{defn|A  technique for reducing  in  by preventing complex co-adaptations on training data.}}
+
+E
+
+{{defn|A learning method in which the system tries to construct a general, input-independent target function during training of the system, as opposed to lazy learning, where  beyond the training data is delayed until a query is made to the system.}}
+
+{{defn|A  technique often used when training a  model with an iterative method such as gradient descent.}}
+
+{{defn|A test which gauges whether a computer-based synthesized voice can tell a joke with sufficient skill to cause people to laugh. It was proposed by film critic Roger Ebert at the 2011 TED conference as a challenge to software developers to have a computerized voice master the inflections, delivery, timing, and intonations of a speaking human. The test is similar to the Turing test proposed by Alan Turing in 1950 as a way to gauge a computer's ability to exhibit intelligent behavior by generating performance indistinguishable from a human being.}}
+
+{{defn|A recurrent neural network with a sparsely connected  (with typically 1% connectivity). The connectivity and weights of hidden neurons are fixed and randomly assigned. The weights of output neurons can be learned so that the network can (re)produce specific temporal patterns. The main interest of this network is that although its behaviour is non-linear, the only weights that are modified during training are for the synapses that connect the hidden neurons to output neurons. Thus, the error function is quadratic with respect to the parameter vector and can be differentiated easily to a linear system.}}
+
+{{defn|An  that interacts with the environment through a physical body within that environment. Agents that are represented graphically with a body, for example a human or a cartoon animal, are also called embodied agents, although they have only virtual, not physical, embodiment.}}
+
+{{defn|A sub-area of  concerned with how an  ought to take actions in an environment so as to minimize some error feedback. It is a type of .}}
+
+{{defn|The use of multiple  algorithms to obtain better predictive performance than could be obtained from any of the constituent learning algorithms alone.}}
+
+{{defn|In , particularly in the creation of , an epoch is training the model for one cycle through the full training dataset. Small models are typically trained for as many epochs as it takes to reach the best performance on the validation dataset. The largest models may train for only one epoch.}}
+
+{{defn|A subset of , a generic population-based metaheuristic optimization . An EA uses mechanisms inspired by biological evolution, such as reproduction, mutation, recombination, and selection. Candidate solutions to the optimization problem play the role of individuals in a population, and the fitness function determines the quality of the solutions (see also loss function). Evolution of the population then takes place after the repeated application of the above operators.}}
+
+{{defn|A family of  for global optimization inspired by biological evolution, and the subfield of  and soft computing studying these algorithms. In technical terms, they are a family of population-based trial and error problem solvers with a metaheuristic or stochastic optimization character.}}
+
+{{defn|Evolving classification functions are used for  and  in the field of  and , typically employed for data stream mining tasks in dynamic and changing environments.}}
+
+{{defn|The hypothesis that substantial progress in  (AGI) could someday result in human extinction or some other unrecoverable global catastrophe.}}
+
+{{defn|A computer system that emulates the decision-making ability of a human expert. Expert systems are designed to solve complex problems by reasoning through bodies of knowledge, represented mainly as if–then rules rather than through conventional procedural code.}}
+
+F
+
+{{defn|An individual measurable property or characteristic of a phenomenon. In  and image processing, a feature is a piece of information about the content of an image; typically about whether a certain region of the image has certain properties. Features may be specific structures in an image (such as points, edges, or objects), or the result of a general neighborhood operation or feature detection applied to the image.}}
+
+{{defn|In , pattern recognition, and image processing, feature extraction starts from an initial set of measured data and builds derived values () intended to be informative and non-redundant, facilitating the subsequent learning and  steps, and in some cases leading to better human interpretations.}}
+
+{{defn|In ,  learning or representation learning is a set of techniques that allows a system to automatically discover the representations needed for feature detection or  from raw data. This replaces manual feature engineering and allows a machine to both learn the features and use them to perform a specific task.}}
+
+{{defn|In  and statistics, feature selection, also known as variable selection, attribute selection or variable subset selection, is the process of selecting a subset of relevant  (variables, predictors) for use in model construction.}}
+
+{{defn|A  technique that allows for training models on multiple devices with decentralized data, thus helping preserve the privacy of individual users and their data.}}
+
+{{defn|A collection of formal systems used in mathematics, philosophy, linguistics, and computer science. First-order logic uses quantified variables over non-logical objects and allows the use of sentences that contain variables, so that rather than propositions such as Socrates is a man one can have expressions in the form "there exists X such that X is Socrates and X is a man" and there exists is a quantifier while X is a variable. This distinguishes it from propositional logic, which does not use quantifiers or relations.}}
+
+{{defn|One of the two main methods of reasoning when using an inference engine and can be described logically as repeated application of modus ponens. Forward chaining is a popular implementation strategy for expert systems, businesses and production rule systems. The opposite of forward chaining is . Forward chaining starts with the available data and uses inference rules to extract more data (from an end user, for example) until a goal is reached. An inference engine using forward chaining searches the inference rules until it finds one where the antecedent (If clause) is known to be true. When such a rule is found, the engine can conclude, or infer, the consequent (Then clause), resulting in the addition of new information to its data.}}
+
+{{defn|An artificial intelligence data structure used to divide knowledge into substructures by representing "stereotyped situations". Frames are the primary data structure used in artificial intelligence .}}
+
+{{defn|The problem of finding adequate collections of axioms for a viable description of a robot environment.}}
+
+{{defn|A hypothetical  (AGI) that would have a positive effect on humanity. It is a part of the ethics of artificial intelligence and is closely related to machine ethics. While machine ethics is concerned with how an artificially intelligent agent should behave, friendly artificial intelligence research is focused on how to practically bring about this behaviour and ensuring it is adequately constrained.}}
+
+{{defn|The study of postulating possible, probable, and preferable futures and the worldviews and myths that underlie them.}}
+
+{{defn|A control system based on —a mathematical system that analyzes analog input values in terms of logical variables that take on continuous values between 0 and 1, in contrast to classical or digital logic, which operates on discrete values of either 1 or 0 (true or false, respectively).}}
+
+{{defn|A rule used within  to infer an output based on input variables.}}
+
+{{defn|In classical set theory, the membership of elements in a set is assessed in binary terms according to a bivalent condition — an element either belongs or does not belong to the set. By contrast, fuzzy set theory permits the gradual assessment of the membership of elements in a set; this is described with the aid of a membership function valued in the real unit interval [0,&nbsp;1]. Fuzzy sets generalize classical sets, since the indicator functions (aka characteristic functions) of classical sets are special cases of the membership functions of fuzzy sets, if the latter only take values 0 or 1. In fuzzy set theory, classical bivalent sets are usually called crisp sets. The fuzzy set theory can be used in a wide range of domains in which information is incomplete or imprecise, such as bioinformatics.}}
+
+G
+
+{{defn|General game playing is the design of artificial intelligence programs to be able to run and play more than one game successfully.}}
+
+{{defn|The concept that humans, other animals, and  use past learning in present situations of learning if the conditions in the situations are regarded as similar.}}
+
+{{defn|For  applications in  and statistical learning theory, generalization error (also known as the out-of-sample error or the risk) is a measure of how accurately a learning algorithm is able to predict outcomes for previously unseen data.}}
+
+{{defn|A class of  systems. Two  contest with each other in a zero-sum game framework.}}
+
+{{defn|Generative artificial intelligence is artificial intelligence capable of generating text, images, or other media in response to prompts. Generative AI models  the patterns and structure of their input training data and then generate new data that has similar characteristics, typically using -based  .}}
+
+{{defn|A  based on the  architecture that generates text. It is first pretrained to predict the next token in texts (a token is typically a word, subword, or punctuation). After their pretraining, GPT models can generate human-like text by repeatedly predicting the token that they would expect to follow. GPT models are usually also fine-tuned, for example with  to reduce  or harmful behaviour, or to format the output in a conversationnal format.}}
+
+{{defn|A metaheuristic inspired by the process of natural selection that belongs to the larger class of evolutionary algorithms (EA). Genetic algorithms are commonly used to generate high-quality solutions to optimization and search problems by relying on bio-inspired operators such as mutation, crossover and selection.}}
+
+{{defn|A  optimization  based on the behaviour of glowworms (also known as fireflies or lightning bugs).}}
+
+{{defn|A  technique based on  in a functional space, where the target is pseudo-residuals instead of residuals as in traditional boosting.}}
+
+{{defn|In computer science, a graph is an abstract data type that is meant to implement the undirected graph and directed graph concepts from mathematics; specifically, the field of .}}
+
+{{defn|In mathematics, and more specifically in , a graph is a structure amounting to a set of objects in which some pairs of the objects are in some sense "related". The objects correspond to mathematical abstractions called vertices (also called nodes or points) and each of the related pairs of vertices is called an edge (also called an arc or line).}}
+
+{{defn|A database that uses graph structures for semantic queries with nodes, edges, and properties to represent and store data. A key concept of the system is the graph (or edge or relationship), which directly relates data items in the store a collection of nodes of data and edges representing the relationships between the nodes. The relationships allow data in the store to be linked together directly, and in many cases retrieved with one operation. Graph databases hold the relationships between data as a priority. Querying relationships within a graph database is fast because they are perpetually stored within the database itself. Relationships can be intuitively visualized using graph databases, making it useful for heavily inter-connected data.}}
+
+H
+
+{{defn|A technique designed for solving a problem more quickly when classic methods are too slow, or for finding an approximate solution when classic methods fail to find any exact solution. This is achieved by trading optimality, completeness, accuracy, or precision for speed. In a way, it can be considered a shortcut. A heuristic function, also called simply a heuristic, is a function that ranks alternatives in  at each branching step based on available information to decide which branch to follow. For example, it may approximate the exact solution.}}
+
+{{defn|A layer of neurons in an  that is neither an input layer nor an output layer.}}
+
+{{defn|A  search method that seeks to automate the process of selecting, combining, generating, or adapting several simpler heuristics (or components of such heuristics) to efficiently solve computational search problems, often by the incorporation of  techniques. One of the motivations for studying hyper-heuristics is to build systems which can handle classes of problems rather than solving just one problem.}}
+
+{{defn|A parameter that can be set in order to define any configurable part of a  model's learning process.}}
+
+{{defn|The process of choosing a set of optimal  for a learning .}}
+
+{{defn|A decision boundary in   that partitions the input space into two or more sections, with each section corresponding to a unique class label.}}
+
+I
+
+{{defn|A professional society of the Institute of Electrical and Electronics Engineers (IEEE) focussing on "the theory, design, application, and development of biologically and linguistically motivated computational paradigms emphasizing , connectionist systems, genetic algorithms, evolutionary programming, fuzzy systems, and hybrid intelligent systems in which these paradigms are contained".}}
+
+{{defn|A method of , in which input data is continuously used to extend the existing model's knowledge i.e. to further train the model. It represents a dynamic technique of  and  that can be applied when training data becomes available gradually over time or its size is out of system memory limits. Algorithms that can facilitate incremental learning are known as incremental machine learning algorithms.}}
+
+{{defn|A possible outcome of humanity building  (AGI). AGI would be capable of recursive self-improvement leading to rapid emergence of ASI (artificial superintelligence), the limits of which are unknown, at the time of the technological singularity.}}
+
+{{defn|An autonomous entity which acts, directing its activity towards achieving goals (i.e. it is an agent), upon an environment using observation through sensors and consequent actuators (i.e. it is intelligent). Intelligent agents may also  or use knowledge to achieve their goals. They may be very simple or very complex.}}
+
+{{defn|A class of control techniques that use various  computing approaches like neural networks, Bayesian probability, , , , evolutionary computation and genetic algorithms.}}
+
+{{defn|A software agent that can perform tasks or services for an individual based on verbal commands. Sometimes the term "chatbot" is used to refer to virtual assistants generally or specifically accessed by online chat (or in some cases online chat programs that are exclusively for entertainment purposes). Some virtual assistants are able to interpret human speech and respond via synthesized voices. Users can ask their assistants questions, control home automation devices and media playback via voice, and manage other basic tasks such as email, to-do lists, and calendars with verbal commands.}}
+
+{{defn|An assignment of meaning to the symbols of a . Many formal languages used in mathematics, logic, and theoretical computer science are defined in solely syntactic terms, and as such do not have any meaning until they are given some interpretation. The general study of interpretations of formal languages is called formal semantics.}}
+
+{{defn|An intelligent agent is intrinsically motivated to act if the information content alone, of the experience resulting from the action, is the motivating factor. Information content in this context is measured in the information theory sense as quantifying uncertainty. A typical intrinsic motivation is to search for unusual (surprising) situations, in contrast to a typical extrinsic motivation such as the search for food. Intrinsically motivated artificial agents display behaviours akin to exploration and curiosity.}}
+
+{{defn|A graphical breakdown of a question that dissects it into its different components vertically and that progresses into details as it reads to the right.  Issue trees are useful in problem solving to identify the root causes of a problem as well as to identify its potential solutions. They also provide a reference point to see how each piece fits into the whole picture of a problem.}}
+
+J
+
+{{defn|A method used in  to extract marginalization in general graphs. In essence, it entails performing belief propagation on a modified graph called a junction tree. The graph is called a tree because it branches into different sections of data; nodes of variables are the branches.}}
+
+K
+
+{{defn|In , kernel methods are a class of algorithms for pattern analysis, whose best known member is the  (SVM). The general task of pattern analysis is to find and study general types of relations (e.g., , rankings, principal components, correlations, ) in datasets.}}
+
+{{defn|A well-known knowledge representation system in the tradition of semantic networks and frames; that is, it is a frame language. The system is an attempt to overcome semantic indistinctness in semantic network representations and to explicitly represent conceptual information as a structured inheritance network.}}
+
+{{defn|A non-parametric  method first developed by Evelyn Fix and Joseph Hodges in 1951, and later expanded by Thomas Cover. about how humans solve problems and represent knowledge in order to design formalisms that will make complex systems easier to design and build. Knowledge representation and reasoning also incorporates findings from logic to automate various kinds of reasoning, such as the application of rules or the relations of sets and subsets. Examples of knowledge representation formalisms include semantic nets, systems architecture, frames, rules, and ontologies. Examples of automated reasoning engines include inference engines, theorem provers, and classifiers.}}
+
+{{defn|A method of vector quantization, originally from signal processing, that aims to partition n observations into k  in which each observation belongs to the cluster with the nearest mean (cluster centers or cluster centroid), serving as a prototype of the cluster.}}
+
+L
+
+{{defn|A  with a large number of parameters (typically at least a billion) that are adjusted during training. Due to its size, it requires a lot of data and computing capability to train. Large language models are usually based on the  architecture.}}
+
+{{defn|In , lazy learning is a learning method in which  of the training data is, in theory, delayed until a query is made to the system, as opposed to in eager learning, where the system tries to generalize the training data before receiving queries.}}
+
+{{defn|A family of programming languages with a long history and a distinctive, fully parenthesized prefix notation.}}
+
+{{defn|A type of programming paradigm which is largely based on formal logic. Any program written in a logic  is a set of sentences in logical form, expressing facts and rules about some problem domain. Major logic programming language families include ,  (ASP), and .}}
+
+{{defn|An artificial  architecture used in the field of . Unlike standard feedforward neural networks, LSTM has feedback connections that make it a "general purpose computer" (that is, it can compute anything that a  can). It can not only process single data points (such as images), but also entire sequences of data (such as speech or video).}}
+
+M
+
+{{defn|A discrete time stochastic control process. It provides a mathematical framework for modeling decision making in situations where outcomes are partly random and partly under the control of a decision maker. MDPs are useful for studying optimization problems solved via dynamic programming and .}}
+
+{{defn|In mathematics, computer science, and operations research, the selection of a best element (with regard to some criterion) from some set of available alternatives.}}
+
+{{defn|The scientific study of  and statistical models that computer systems use in order to perform a specific task effectively without using explicit instructions, relying on patterns and inference instead.}}
+
+{{defn|A general field of study of  and systems for audio understanding by machine.}}
+
+{{defn|The capability of a computer system to interpret data in a manner that is similar to the way humans use their senses to relate to the world around them.}}
+
+{{defn|A multidisciplinary branch of engineering that focuses on the engineering of both electrical and mechanical systems, and also includes a combination of robotics, electronics, computer, telecommunications, systems, control, and product engineering.}}
+
+{{defn|Allows for an in-depth insight into the molecular mechanisms of a particular organism. In particular, these models correlate the genome with molecular physiology.}}
+
+{{defn|In computer science and mathematical optimization, a metaheuristic is a higher-level procedure or heuristic designed to find, generate, or select a heuristic (partial ) that may provide a sufficiently good solution to an optimization problem, especially with incomplete or imperfect information or limited computation capacity. Metaheuristics sample a set of solutions which is too large to be completely sampled.}}
+
+{{defn|In propositional logic, modus ponens is a rule of inference. It can be summarized as "P implies Q and P is asserted to be true, therefore Q must be true."}}
+
+{{defn|In computer science, Monte Carlo tree search (MCTS) is a heuristic  for some kinds of decision processes.}}
+
+{{defn|A computerized system composed of multiple interacting . Multi-agent systems can solve problems that are difficult or impossible for an individual agent or a monolithic system to solve. Intelligence may include methodic, functional, procedural approaches, algorithmic search or .}}
+
+{{defn|In , a multilayer perceptron (MLP) is a name for a modern feedforward  consisting of fully connected neurons with nonlinear , organized in layers, notable for being able to distinguish data that is not linearly separable.}}
+
+{{defn|An early  expert system that used  to identify bacteria causing severe infections, such as bacteremia and meningitis, and to recommend antibiotics, with the dosage adjusted for patient's body weight – the name derived from the antibiotics themselves, as many antibiotics have the suffix "-mycin". The MYCIN system was also used for the diagnosis of blood clotting diseases.}}
+
+N
+
+{{defn|In , naive Bayes classifiers are a family of simple probabilistic classifiers based on applying Bayes' theorem with strong (naive) independence assumptions between the .}}
+
+{{defn|In programming languages, name binding is the association of entities (data and/or code) with identifiers. An identifier bound to an object is said to reference that object. Machine languages have no built-in notion of identifiers, but name-object bindings as a service and notation for the programmer is implemented by programming languages. Binding is intimately connected with scoping, as scope determines which names bind to which objects – at which locations in the program code (lexically) and in which one of the possible execution paths (temporally). Use of an identifier id in a context that establishes a binding for id is called a binding (or defining) occurrence. In all other occurrences (e.g., in expressions, assignments, and subprogram calls), an identifier stands for what it is bound to; such occurrences are called applied occurrences.}}
+
+{{defn|An approach to machine translation that uses a large  to predict the likelihood of a sequence of words, typically modeling entire sentences in a single integrated model.}}
+
+{{defn|A neural network can refer to either a neural circuit of biological neurons (sometimes also called a biological neural network),  a network of artificial neurons or nodes in the case of an artificial neural network. Artificial neural networks are used for solving  (AI) problems; they model connections of biological neurons as weights between nodes. A positive weight reflects an excitatory connection, while negative values mean inhibitory connections. All inputs are modified by a weight and summed. This activity is referred to as a linear combination. Finally, an  controls the amplitude of the output. For example, an acceptable range of output is usually between 0 and 1, or it could be −1 and 1.}}
+
+{{defn|A recurrent neural network model. NTMs combine the fuzzy pattern matching capabilities of  with the algorithmic power of programmable computers. An NTM has a neural network controller coupled to external memory resources, which it interacts with through attentional mechanisms. The memory interactions are differentiable end-to-end, making it possible to optimize them using gradient descent. An NTM with a long short-term memory (LSTM) network controller can infer simple algorithms such as copying, sorting, and associative recall from examples alone.}}
+
+{{defn|Combinations of  and .}}
+
+{{defn|A direct communication pathway between an enhanced or wired brain and an external device. BCI differs from neuromodulation in that it allows for bidirectional information flow. BCIs are often directed at researching, mapping, assisting, augmenting, or repairing human cognitive or sensory-motor functions.}}
+
+{{defn|A concept describing the use of very-large-scale integration (VLSI) systems containing electronic analog circuits to mimic neuro-biological architectures present in the nervous system. In recent times, the term neuromorphic has been used to describe analog, digital, mixed-mode analog/digital VLSI, and software systems that implement models of neural systems (for perception, motor control, or multisensory integration). The implementation of neuromorphic computing on the hardware level can be realized by oxide-based memristors, spintronic memories, threshold switches, and transistors.}}
+
+{{defn|An  that, even for the same input, can exhibit different behaviors on different runs, as opposed to a deterministic algorithm.}}
+
+{{defn|Nouvelle AI differs from  by aiming to produce robots with intelligence levels similar to insects. Researchers believe that intelligence can emerge organically from simple behaviors as these intelligences interacted with the "real world", instead of using the constructed worlds which symbolic AIs typically needed to have programmed into them.}}
+
+{{defn|In , NP (nondeterministic polynomial time) is a complexity class used to classify decision problems. NP is the set of decision problems for which the problem instances, where the answer is "yes", have proofs verifiable in polynomial time.}}
+
+{{defn|In , a problem is NP-complete when it can be solved by a restricted class of brute force search algorithms and it can be used to simulate any other problem with a similar algorithm. More precisely, each input to the problem should be associated with a set of solutions of polynomial length, whose validity can be tested quickly (in polynomial time), such that the output for any input is "yes" if the solution set is non-empty and "no" if it is empty.}}
+
+{{defn|In , the defining property of a class of problems that are, informally, "at least as hard as the hardest problems in NP". A simple example of an NP-hard problem is the subset sum problem.}}
+
+O
+
+{{defn|The problem-solving principle that states that when presented with competing hypotheses that make the same predictions, one should select the solution with the fewest assumptions; the principle is not meant to filter out hypotheses that make different predictions. The idea is attributed to the English Franciscan friar William of Ockham ( 1287–1347), a scholastic philosopher and theologian.}}
+
+{{defn|A  training approach in which a model is trained on a fixed dataset that is not updated during the learning process.}}
+
+{{defn|A method of  in which data becomes available in a sequential order and is used to update the best predictor for future data at each step, as opposed to batch learning techniques which generate the best predictor by learning on the entire training data set at once. Online learning is a common technique used in areas of machine learning where it is computationally infeasible to train over the entire dataset, requiring the need of out-of-core algorithms. It is also used in situations where it is necessary for the algorithm to dynamically adapt to new patterns in the data, or when the data itself is generated as a function of time.}}
+
+{{defn|The for-profit corporation OpenAI LP, whose parent organization is the non-profit organization OpenAI Inc that conducts research in the field of  (AI) with the stated aim to promote and develop  in such a way as to benefit humanity as a whole.}}
+
+{{defn|A project that aims to build an  artificial intelligence framework. OpenCog Prime is an architecture for robot and virtual embodied cognition that defines a set of interacting components designed to give rise to human-equivalent  (AGI) as an emergent phenomenon of the whole system.}}
+
+{{defn|A type of computer software in which source code is released under an license in which the copyright holder grants users the rights to study, change, and distribute the software to anyone and for any purpose. Open-source software may be developed in an collaborative public manner. Open-source software is a prominent example of open collaboration.}}
+
+{{defn|"The production of an analysis that corresponds too closely or exactly to a particular set of data, and may therefore fail to fit to additional data or predict future observations reliably". In other words, an overfitted model memorizes training data details but cannot  to new data. Conversely, an underfitted model is too simple to capture the complexity of the training data.}}
+
+P
+
+{{defn|A generalization of a  (MDP). A POMDP models an agent decision process in which it is assumed that the system dynamics are determined by an MDP, but the agent cannot directly observe the underlying state. Instead, it must maintain a probability distribution over the set of possible states, based on a set of observations and observation probabilities, and the underlying MDP.}}
+
+{{defn|The plotting, by a computer application, of the shortest route between two points. It is a more practical variant on solving mazes. This field of research is based heavily on  for finding a shortest path on a weighted graph.}}
+
+{{defn|An  for  of binary .}}
+
+{{defn|A variety of statistical techniques from data mining, predictive modelling, and , that analyze current and historical facts to make predictions about future or otherwise unknown events.}}
+
+{{defn|A programming paradigm in which probabilistic models are specified and inference for these models is performed automatically. It represents an attempt to unify probabilistic modeling and traditional general-purpose programming in order to make the former easier and more widely applicable. It can be used to create systems that help make decisions in the face of uncertainty. Programming languages used for probabilistic programming are referred to as "Probabilistic programming languages" (PPLs).}}
+
+{{defn|A , which comprises a set of instructions that produce various kinds of output. Programming languages are used in computer programming to implement .}}
+
+{{defn|A  language associated with artificial intelligence and computational linguistics.  Prolog has its roots in first-order logic, a formal logic, and unlike many other programming languages, Prolog is intended primarily as a declarative programming language: the program logic is expressed in terms of relations, represented as facts and rules. A computation is initiated by running a query over these relations.}}
+
+{{defn|A   for training an 's decision function to accomplish difficult tasks.}}
+
+{{defn|An interpreted, high-level, general-purpose  created by Guido van Rossum and first released in 1991. Python's design philosophy emphasizes code readability with its notable use of significant whitespace. Its language constructs and object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.}}
+
+{{defn|A  library based on the Torch library, used for applications such as  and , originally developed by Meta AI and now part of the Linux Foundation umbrella.}}
+
+Q
+
+{{defn|A model-free   for learning the value of an action in a particular state.}}
+
+{{defn|In philosophy and artificial intelligence (especially ), the qualification problem is concerned with the impossibility of listing all of the preconditions required for a real-world action to have its intended effect. It might be posed as how to deal with the things that prevent me from achieving my intended result. It is strongly connected to, and opposite the ramification side of, the frame problem.}}
+
+R
+
+{{defn|A  and free software environment for statistical computing and graphics supported by the R Foundation for Statistical Computing.{{refn | R language and environment
+
+R Foundation
+
+The R Core Team asks authors who use R in their data analysis to cite the software using:
+
+R Core Team (2016). R: A language and environment for statistical computing. R Foundation for Statistical Computing, Vienna, Austria. URL https://R-project.org/.
+
+}} The R language is widely used among statisticians and data miners for developing statistical software{{refn | widely used
+
+}} and data analysis.}}
+
+{{defn|In the field of mathematical modeling, a radial basis function network is an  that uses radial basis functions as . The output of the network is a linear combination of radial basis functions of the inputs and neuron parameters. Radial basis function networks have many uses, including function approximation, time series prediction, , and system control. They were first formulated in a 1988 paper by Broomhead and Lowe, both researchers at the Royal Signals and Radar Establishment.}}
+
+{{defn|An ensemble learning method for , , and other tasks that operates by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees. Random decision forests correct for decision trees' habit of  to their training set.}}
+
+{{defn|A class of  where connections between nodes form a directed graph along a temporal sequence. This allows it to exhibit temporal dynamic behavior. Unlike feedforward neural networks, RNNs can use their internal state (memory) to process sequences of inputs. This makes them applicable to tasks such as unsegmented, connected handwriting recognition or speech recognition.}}
+
+{{defn|A set of statistical processes for estimating the relationships between a dependent variable (often called the outcome or response variable, or label in ) and one or more error-free independent variables (often called regressors, predictors, covariates, explanatory variables, or ). The most common form of regression analysis is linear regression, in which one finds the line (or a more complex linear combination) that most closely fits the data according to a specific mathematical criterion.}}
+
+{{defn|A set of techniques such as , , and L1 and L2 regularization to reduce  when training a learning .}}
+
+{{defn|An area of  concerned with how software agents ought to take actions in an environment so as to maximize some notion of cumulative reward. Reinforcement learning is one of three basic machine learning paradigms, alongside  and . It differs from supervised learning in that labelled input/output pairs need not be presented, and sub-optimal actions need not be explicitly corrected. Instead the focus is finding a balance between exploration (of uncharted territory) and exploitation (of current knowledge).}}
+
+{{defn|A technique that involve training a "reward model" to predict how humans rate the quality of generated content, and then training a  model to satisfy this reward model via . It can be used for example to make the generative AI model more truthful or less harmful.}}
+
+{{defn|See .}}
+
+{{defn|A framework for computation that may be viewed as an extension of . Typically an input signal is fed into a fixed (random) dynamical system called a reservoir and the dynamics of the reservoir map the input to a higher dimension. Then a simple readout mechanism is trained to read the state of the reservoir and map it to the desired output. The main benefit is that training is performed only at the readout stage and the reservoir is fixed. Liquid-state machines and echo state networks are two major types of reservoir computing.}}
+
+{{defn|A family of World Wide Web Consortium (W3C) specifications originally designed as a metadata data model. It has come to be used as a general method for conceptual description or modeling of information that is implemented in web resources, using a variety of syntax notations and data serialization formats. It is also used in knowledge management applications.}}
+
+{{defn|A generative stochastic  that can learn a probability distribution over its set of inputs.}}
+
+{{defn|A pattern matching  for implementing rule-based systems. The algorithm was developed to efficiently apply many rules or patterns to many objects, or facts, in a knowledge base. It is used to determine which of the system's rules should fire based on its data store, its facts.}}
+
+S
+
+{{defn|Any  which solves the search problem, namely, to retrieve information stored within some data structure, or calculated in the search space of a problem domain, either with discrete or continuous values.}}
+
+{{defn|The stage of a  in which individual genomes are chosen from a population for later breeding (using the crossover operator).}}
+
+{{defn|A knowledge base that represents semantic relations between concepts in a network. This is often used as a form of knowledge representation. It is a directed or undirected graph consisting of vertices, which represent concepts, and edges, which represent semantic relations between concepts, mapping or connecting semantic fields.}}
+
+{{defn|A piece of software able to infer logical consequences from a set of asserted facts or axioms. The notion of a semantic reasoner generalizes that of an inference engine, by providing a richer set of mechanisms to work with. The inference rules are commonly specified by means of an ontology language, and often a description logic language. Many reasoners use first-order predicate logic to perform reasoning; inference commonly proceeds by  and .}}
+
+{{defn|In programming language theory, semantics is the field concerned with the rigorous mathematical study of the meaning of . It does so by evaluating the meaning of syntactically valid strings defined by a specific programming language, showing the computation involved. In such a case that the evaluation would be of syntactically invalid strings, the result would be non-computation. Semantics describes the processes a computer follows when executing a program in that specific language. This can be shown by describing the relationship between the input and output of a program, or an explanation of how the program will be executed on a certain platform, hence creating a model of computation.}}
+
+{{defn|A  training paradigm characterized by using a combination of a small amount of human-labeled data (used exclusively in ), followed by a large amount of unlabeled data (used exclusively in ).}}
+
+{{defn|An extension of Hoare logic, a way of reasoning about programs. The assertion language of separation logic is a special case of the logic of bunched implications (BI).}}
+
+{{defn|An area of  closely related to  and , but the goal is to learn from a similarity function that measures how similar or related two objects are. It has applications in ranking, in recommendation systems, visual identity tracking, face verification, and speaker verification.}}
+
+{{defn|The application of engineering to the development of software in a systematic method.}}
+
+{{defn|An RDF query language—that is, a semantic query language for databases—able to retrieve and manipulate data stored in Resource Description Framework (RDF) format.}}
+
+{{defn|A  method aimed at finding a sparse representation of the input data in the form of a linear combination of basic elements as well as those basic elements themselves.}}
+
+{{defn|An  that more closely mimics a natural neural network. In addition to neuronal and synaptic state, SNNs incorporate the concept of time into their Operating Model.}}
+
+{{defn|In information technology and computer science, a program is described as stateful if it is designed to remember preceding events or user interactions; the remembered information is called the state of the system.}}
+
+{{defn|In  and statistics, classification is the problem of identifying to which of a set of categories (sub-populations) a new observation belongs, on the basis of a training set of data containing observations (or instances) whose category membership is known. Examples are assigning a given email to the "spam" or "non-spam" class, and assigning a diagnosis to a given patient based on observed characteristics of the patient (sex, blood pressure, presence or absence of certain symptoms, etc.). Classification is an example of pattern recognition.}}
+
+{{defn|A   for learning a  policy.}}
+
+{{defn|A subdiscipline of artificial intelligence and  that is concerned with domain models that exhibit both uncertainty (which can be dealt with using statistical methods) and complex, relational structure. Note that SRL is sometimes called Relational Machine Learning (RML) in the literature. Typically, the knowledge representation formalisms developed in SRL use (a subset of) first-order logic to describe relational properties of a domain in a general manner (universal quantification) and draw upon probabilistic graphical models (such as Bayesian networks or Markov networks) to model the uncertainty; some also build upon the methods of inductive logic programming.}}
+
+{{defn|Any optimization method that generates and uses random variables. For stochastic problems, the random variables appear in the formulation of the optimization problem itself, which involves random objective functions or random constraints. Stochastic optimization methods also include methods with random iterates. Some stochastic optimization methods use random iterates to solve stochastic problems, combining both meanings of stochastic optimization. Stochastic optimization methods generalize deterministic methods for deterministic problems.}}
+
+{{defn|An approach used in computer science as a semantic component of natural language understanding. Stochastic models generally use the definition of segments of words as basic semantic units for the semantic models, and in some cases involve a two layered approach.}}
+
+{{defn|A hypothetical  that possesses intelligence far surpassing that of the brightest and most gifted human minds. Superintelligence may also refer to a property of problem-solving systems (e.g., superintelligent language translators or engineering assistants) whether or not these high-level intellectual competencies are embodied in agents that act within the physical world. A superintelligence may or may not be created by an  and be associated with a .}}
+
+{{defn|The  task of learning a function that maps an input to an output based on example input-output pairs. It infers a function from  consisting of a set of training examples.  In supervised learning, each example is a pair consisting of an input object (typically a vector) and a desired output value (also called the supervisory signal). A supervised learning algorithm analyzes the training data and produces an inferred function, which can be used for mapping new examples. An optimal scenario will allow for the algorithm to correctly determine the class labels for unseen instances. This requires the learning algorithm to  from the training data to unseen situations in a "reasonable" way (see inductive bias).}}
+
+{{defn|In , support vector machines (SVMs, also support vector networks) are  models with associated learning  that analyze data used for  and .}}
+
+{{defn|The collective behavior of decentralized, self-organized systems, either natural or artificial. The expression was introduced in the context of cellular robotic systems.}}
+
+{{defn|The term for the collection of all methods in  research that are based on high-level "symbolic" (human-readable) representations of problems, logic, and .}}
+
+{{defn|An alternative term for  which emphasizes that the intelligence of machines need not be an imitation or in any way artificial; it can be a genuine form of intelligence.}}
+
+T
+
+{{defn|A hypothetical point in the future when technological growth becomes uncontrollable and irreversible, resulting in unfathomable changes to human civilization.}}
+
+{{defn|A class of model-free  methods which learn by bootstrapping from the current estimate of the value function. These methods sample from the environment, like Monte Carlo methods, and perform updates based on current estimates, like dynamic programming methods.}}
+
+{{defn|A theory of brain function (particularly that of the cerebellum) that provides a mathematical model of the transformation of sensory space-time coordinates into motor coordinates and vice versa by cerebellar neuronal networks. The theory was developed as a geometrization of brain function (especially of the central nervous system) using tensors.}}
+
+{{defn|A free and  software library for dataflow and differentiable programming across a range of tasks. It is a symbolic math library, and is also used for  applications such as .}}
+
+{{defn|In theoretical computer science and mathematics, the theory of computation is the branch that deals with how efficiently problems can be solved on a model of computation, using an . The field is divided into three major branches: automata theory and languages, computability theory, and , which are linked by the question: "What are the fundamental capabilities and limitations of computers?".}}
+
+{{defn|A  for choosing actions that addresses the exploration-exploitation dilemma in the multi-armed bandit problem. It consists in choosing the action that maximizes the expected reward with respect to a randomly drawn belief.}}
+
+{{defn|The computational complexity that describes the amount of time it takes to run an . Time complexity is commonly estimated by counting the number of elementary operations performed by the algorithm, supposing that each elementary operation takes a fixed amount of time to perform. Thus, the amount of time taken and the number of elementary operations performed by the algorithm are taken to differ by at most a constant factor.}}
+
+{{defn|A  technique in which knowledge learned from a task is reused in order to boost performance on a related task. For example, for image classification, knowledge gained while learning to recognize cars could be applied when trying to recognize trucks.}}
+
+{{defn|A type of  architecture that exploits a multi-head . Transformers address some of the limitations of , and became widely used in , although it can also process other types of data such as images in the case of vision transformers.}}
+
+{{defn|An international philosophical movement that advocates for the transformation of the human condition by developing and making widely available sophisticated technologies to greatly enhance human intellect and physiology.}}
+
+{{defn|In theoretical computer science, a transition system is a concept used in the study of computation. It is used to describe the potential behavior of . It consists of states and transitions between states, which may be labeled with labels chosen from a set; the same label may appear on more than one transition. If the label set is a singleton, the system is essentially unlabeled, and a simpler definition that omits the labels is possible.}}
+
+{{defn|In , the language TQBF is a  consisting of the true quantified Boolean formulas. A (fully) quantified Boolean formula is a formula in quantified propositional logic where every variable is quantified (or bound), using either existential or universal quantifiers, at the beginning of the sentence. Such a formula is equivalent to either true or false (since there are no free variables). If such a formula evaluates to true, then that formula is in the language TQBF. It is also known as QSAT (Quantified ).}}
+
+{{defn|A mathematical model of computation describing an abstract machine that manipulates symbols on a strip of tape according to a table of rules. Despite the model's simplicity, it is capable of implementing any .}}
+
+{{defn|A test of a machine's ability to exhibit intelligent behaviour equivalent to, or indistinguishable from, that of a human, developed by Alan Turing in 1950. Turing proposed that a human evaluator would judge natural language conversations between a human and a machine designed to generate human-like responses. The evaluator would be aware that one of the two partners in conversation is a machine, and all participants would be separated from one another. The conversation would be limited to a text-only channel such as a computer keyboard and screen so the result would not depend on the machine's ability to render words as speech. If the evaluator cannot reliably tell the machine from the human, the machine is said to have passed the test. The test results do not depend on the machine's ability to give correct answers to questions, only how closely its answers resemble those a human would give.}}
+
+{{defn|In , a set of rules that assigns a property called type to the various constructs of a computer program, such as variables, expressions, functions, or modules. These types formalize and enforce the otherwise implicit categories the programmer uses for algebraic data types, data structures, or other components (e.g. "string", "array of float", "function returning boolean"). The main purpose of a type system is to reduce possibilities for bugs in computer programs by defining interfaces between different parts of a computer program, and then checking that the parts have been connected in a consistent way. This checking can happen statically (at compile time), dynamically (at run time), or as a combination of static and dynamic checking. Type systems have other purposes as well, such as expressing business rules, enabling certain compiler optimizations, allowing for multiple dispatch, providing a form of documentation, etc.}}
+
+U
+
+{{defn|A type of self-organized Hebbian learning that helps find previously unknown patterns in data set without pre-existing labels. It is also known as self-organization and allows modeling probability densities of given inputs. It is one of the three basic paradigms of , alongside  and .  has also been described and is a hybridization of supervised and unsupervised techniques.}}
+
+V
+
+{{defn|A type of microprocessor designed to accelerate  tasks.}}
+
+{{defn|}}
+
+W
+
+{{defn|A question-answering computer system capable of answering questions posed in natural language, developed in IBM's DeepQA project by a research team led by principal investigator David Ferrucci. Watson was named after IBM's first CEO, industrialist Thomas J. Watson.}}
+
+{{defn| that is focused on one narrow task.}}
+
+{{defn|See .}}
+
+{{defn|A representation of a word in . Typically, the representation is a real-valued vector that encodes the meaning of the word in such a way that words that are closer in the vector space are expected to be similar in meaning.}}
+
+X
+
+{{defn|Short for eXtreme Gradient Boosting, XGBoost is an open-source software library which provides a   framework for multiple programming languages.}}
+
+References
+
+Works cited
+
+Notes
+
+Artificial intelligence
+
+Category:Machine learning
+
+Artificial intelligence
+
+Category:Wikipedia glossaries using description lists

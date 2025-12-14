@@ -1,0 +1,51 @@
+Cover's theorem is a statement in computational learning theory and is one of the primary theoretical motivations for the use of non-linear kernel methods in machine learning applications. It is so termed after the information theorist Thomas M. Cover who stated it in 1965, referring to it as counting function theorem.
+
+Let the number of homogeneously linearly separable sets of N points in d dimensions be defined as a counting function C(N, d)  of the number of points N and the dimensionality d. The theorem states that C(N, d) = 2 \sum_{k=0}^{d-1}\binom{N-1}{k} .
+
+It requires, as a necessary and sufficient condition, that the points are in general position. Simply put, this means that the points should be as linearly independent (non-aligned) as possible. This condition is satisfied "with probability 1" or almost surely for random point sets, while it may easily be violated for real data, since these are often structured along smaller-dimensionality manifolds within the data space.
+
+The function C(N,d) follows two different regimes depending on the relationship between N and d.
+
+For N \le d + 1, the function is exponential in N. This essentially means that any set of labelled points in general position and in number no larger than the dimensionality + 1 is linearly separable; in jargon, it is said that a linear classifier shatters any point set with N\le d+1. This limiting quantity is also known as the Vapnik-Chervonenkis dimension of the linear classifier.
+
+For N > d + 1, the counting function starts growing less than exponentially. This means that, given a sample of fixed size N, for larger dimensionality d it is more probable that a random set of labelled points is linearly separable. Conversely, with fixed dimensionality, for larger sample sizes the number of linearly separable sets of random points will be smaller, or in other words the probability to find a linearly separable sample will decrease with N.
+
+A consequence of the theorem is that given a set of training data that is not linearly separable, one can with high probability transform it into a training set that is linearly separable by projecting it into a higher-dimensional space via some non-linear transformation, or:
+
+Proof
+
+By induction with the recursive relationC(N+1,d) = C(N,d) + C(N,d-1).To show that, with fixed N, increasing d may turn a set of points from non-separable to separable, a deterministic mapping may be used: suppose there are N points. Lift them onto the vertices of the simplex in the N-1 dimensional real space. Since every partition of the samples into two sets is separable by a linear separator, the property follows., the points becomes linearly separable. Note that in this case and in many other cases it will not be necessary to lift the points to the 99 dimensional space as assumed in the explanation.]]
+
+Other theorems
+
+The 1965 paper contains multiple theorems.
+
+Theorem 6: Let X \cup\{y\}=\left\{x_1, x_2, \cdots, x_N, y\right\} be in \phi-general position in d-space, where \phi=\left(\phi_1, \phi_2, \cdots, \phi_d\right). Then y is ambiguous with respect to C(N, d-1) dichotomies of X relative to the class of all \phi-surfaces.
+
+Corollary: If each of the \phi-separable dichotomies of X has equal probability, then the probability A(N, d) that y is ambiguous with respect to a random \phi-separable dichotomy of X is \frac{C(N,d-1)}{C(N,d)}.
+
+If N/d \to \beta, then at the limit of N \to \infty, this probability converges to \lim_N A(N, d) = \begin{cases}
+
+1, & 0 \leq \beta \leq 2 \\
+
+\frac{1}{\beta-1}, & \beta \geq 2
+
+\end{cases}.
+
+This can be interpreted as a bound on the memory capacity of a single perceptron unit. The d is the number of input weights into the perceptron. The formula states that at the limit of large d, the perceptron would almost certainly be able to memorize up to 2d binary labels, but almost certainly fail to memorize any more than that.
+
+See also
+
+Support vector machine
+
+Kernel method
+
+References
+
+(Section 3.5)
+
+Category:Computational learning theory
+
+Category:Statistical classification
+
+Category:Artificial neural networks

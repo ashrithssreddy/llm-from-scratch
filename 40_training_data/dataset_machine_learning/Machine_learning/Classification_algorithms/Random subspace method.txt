@@ -1,0 +1,33 @@
+In machine learning the random subspace method, also called attribute bagging or feature bagging, is an ensemble learning method that attempts to reduce the correlation between estimators in an ensemble by training them on random samples of features instead of the entire feature set.
+
+Motivation
+
+In ensemble learning one tries to combine the models produced by several learners into an ensemble that performs better than the original learners. One way of combining learners is bootstrap aggregating or bagging, which shows each learner a randomly sampled subset of the training points so that the learners will produce different models that can be sensibly averaged. In bagging, one samples training points with replacement from the full training set.
+
+The random subspace method is similar to bagging except that the features ("attributes", "predictors", "independent variables") are randomly sampled, with replacement, for each learner. Informally, this causes individual learners to not over-focus on features that appear highly predictive/descriptive in the training set, but fail to be as predictive for points outside that set. For this reason, random subspaces are an attractive choice for high-dimensional problems where the number of features is much larger than the number of training points, such as learning from fMRI data or gene expression data.
+
+The random subspace method has been used for decision trees; when combined with "ordinary" bagging of decision trees, the resulting models are called random forests. It has also been applied to linear classifiers, support vector machines, nearest neighbours and other types of classifiers. This method is also applicable to one-class classifiers. The random subspace method has also been applied to the portfolio selection problem showing its superiority to the conventional resampled portfolio essentially based on Bagging.
+
+To tackle high-dimensional sparse problems, a framework named Random Subspace Ensemble (RaSE) was developed. RaSE combines weak learners trained in random subspaces with a two-layer structure and iterative process. RaSE has been shown to enjoy appealing theoretical properties and practical performance.
+
+Algorithm
+
+An ensemble of models employing the random subspace method can be constructed using the following algorithm:
+
+Let the number of training points be N and the number of features in the training data be D.
+
+Let L be the number of individual models in the ensemble.
+
+For each individual model l, choose n (n < N) to be the number of input points for l.  It is common to have only one value of n for all the individual models.
+
+For each individual model l, create a training set by choosing d features from D with replacement and train the model.
+
+Now, to apply the ensemble model to an unseen point, combine the outputs of the L individual models by majority voting or by combining the posterior probabilities.
+
+Footnotes
+
+References
+
+Category:Classification algorithms
+
+Category:Ensemble learning

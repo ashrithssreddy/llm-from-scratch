@@ -1,0 +1,29 @@
+Evolutionary image processing (EIP) is a sub-area of digital image processing. Evolutionary algorithms (EA) are used to optimize and solve various image processing problems. Evolutionary image processing thus represents the combination of evolutionary optimization and digital image processing. EAs have been used for several decades in computer science to optimize various problems. The application in image processing, on the other hand, is still a relatively new field of research. This is primarily due to the technological development of computer systems, as EIP is a relatively computationally intensive process. Evolutionary computer vision (ECV) is an application of EIP for computer vision. It has been shown that genetic programming (GP) as a subclass of EAs is particularly useful for image processing.
+
+Genetic programming for image processing
+
+In evolutionary image processing, genetic programming optimizes the arrangement of different image-processing operators for specific outputs or task performance. As of 2021, in comparison to popular and well developed convolutional neural networks, GP is an emerging technique for feature learning. In particular, GP has been used for developing accurate classifiers for object detection, classification of medical images, and optical character recognition. GP has multiple advantages in case of image processing. They include:
+
+The GP output is a program or a collection of programs in the form of mathematical expressions, which are easy to interpret after simplification and conversion to normal notation.
+
+The GP needs considerable time for evolution of GP based classifiers. However, the resulting GP tree needs very short execution time in the testing.
+
+GP fitness function is flexible and can be adapted according to the problem to be solved.
+
+The disadvantages of GP for image processing include:
+
+Computational cost for evolution of GP based classifiers is very high.
+
+A large dataset is required for the training.
+
+Due to their stochastic nature, a solution is not guaranteed.
+
+See also
+
+List of genetic algorithm applications
+
+References
+
+Category:Applications of evolutionary algorithms
+
+Category:Image processing

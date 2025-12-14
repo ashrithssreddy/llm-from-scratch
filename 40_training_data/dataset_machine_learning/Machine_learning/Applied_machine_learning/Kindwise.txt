@@ -1,0 +1,71 @@
+{{Infobox company
+
+name = FlowerChecker
+
+logo =
+
+type =
+
+industry = Machine learning
+
+fate =
+
+predecessor =
+
+successor =
+
+founded =
+
+founder =
+
+defunct =
+
+hq_location_city = Brno
+
+hq_location_country = Czech Republic
+
+area_served =
+
+products = plant.id, insect.id, mushroom.id, plant.health, crop.health
+
+owner =
+
+num_employees =
+
+num_employees_year =
+
+parent =
+
+website =
+
+}}
+
+FlowerChecker, also known as Kindwise,  is a company that uses machine learning to identify natural objects from images. This includes plants and their diseases, but also insects and mushrooms. It is based in Brno, Czech Republic. It was founded in 2014 by Ondřej Veselý, Jiří Řihák, and Ondřej Vild, at the time Ph.D. students.
+
+Features & Tools
+
+FlowerChecker offers multiple products.
+
+Plant.id is a machine learning-based plant identification API launched in 2018, with the plant disease identification API, plant.health, released in April 2022. or urban trees from remote-sensing imagery.
+
+Other products include insect.id, mushroom.id and crop.health are machine learning-based identification APIs for the identification of insects, fungi and economically important plants, respectively, and include also online public demos.
+
+The FlowerChecker app was discontinued in October 2024 after 10 years of successful operation. In 2020, an academic study comparing ten free automated image recognition apps showed that plant.id's performance excelled in most of the parameters studied. In a subsequent study, plant.id was utilized to evaluate urban forest biodiversity using remote-sensing imagery, achieving the highest accuracy in tree species identification among compared methods.
+
+Research activities
+
+Flowerchecker cooperates with the Nature Conservation Agency of the Czech Republic on a biodiversity mapping project.
+
+In 2025, it received funding for the development of a technology for the removal of invasive species.
+
+References
+
+Category:Applied machine learning
+
+Category:Czech companies established in 2014
+
+Category:Software companies of the Czech Republic
+
+Category:Android (operating system) software
+
+Category:IOS software

@@ -1,0 +1,67 @@
+In potential theory (the study of harmonic functions) and functional analysis, Dirichlet forms generalize the Laplacian (the mathematical operator on scalar fields). Dirichlet forms can be defined on any measure space, without the need for mentioning partial derivatives. This allows mathematicians to study the Laplace equation and heat equation on spaces that are not manifolds, for example, fractals. The benefit on these spaces is that one can do this without needing a gradient operator, and in particular, one can even weakly define a "Laplacian" in this manner if starting with the Dirichlet form.
+
+Definition
+
+When working on  \mathbb{R}^n , the "classical" Dirichlet form is given by:
+
+\mathcal{E}(u, v ) = \int_{\R^n} \nabla u(x) \cdot \nabla v(x) \; dx
+
+where one often discusses \mathcal{E}(u) := \mathcal{E}(u, u) = \|\nabla u\|_2^2  which is often referred to as the "energy" of the function u(x), see Dirichlet Energy.
+
+More generally, a Dirichlet form is a Markovian closed symmetric form on an L2-space. In particular, a Dirichlet form on a measure space  (X,\mathcal{A},\mu) is a bilinear function
+
+\mathcal{E}: D\times D \to \mathbb{R}
+
+such that
+
+D is a dense subset of L^2(\mu).
+
+\mathcal{E} is symmetric, that is \mathcal{E}(u,v)=\mathcal{E}(v,u) for every u,v \in D.
+
+\mathcal{E}(u,u) \geq 0 for every u \in D.
+
+The set D equipped with the inner product defined by (u,v)_{\mathcal{E}} := (u,v)_{L^2(\mu)} + \mathcal{E}(u,v) is a real Hilbert space.
+
+For every u \in D we have that u_* = \min (\max(u,  0) , 1) \in D and \mathcal{E}(u_*,u_*)\leq \mathcal{E}(u,u).
+
+In other words, a Dirichlet form is nothing but a non negative symmetric bilinear form defined on a dense subset of L^2(X, \mu) such that 4) and 5) hold.
+
+Alternatively, the quadratic form u \mapsto \mathcal{E}(u,u) itself is known as the Dirichlet form and it is still denoted by \mathcal{E}, so \mathcal{E}(u) := \mathcal{E}(u,u).
+
+Harmonic functions
+
+Functions that minimize the energy given certain boundary conditions are called harmonic, and the associated Laplacian (weak or not) will be zero on the interior, as expected.
+
+For example, let \mathcal{E} be standard Dirichlet form defined for u \in H^1(\mathbb{R}^n) as
+
+\mathcal{E}(u) = \int_{\R^n} |\nabla u|^2\;dx
+
+Then a harmonic function in the standard sense, i.e. such that \Delta u = 0, will have \mathcal{E}(u) = 0 as can be seen with integration by parts.
+
+As an alternative example, the standard graph Dirichlet form is given by:
+
+\mathcal{E}_G(u, v) = \sum_{x \sim y} ((u(x) - u(y))(v(x) - v(y))
+
+where  x \sim y  means they are connected by an edge. Let a subset of the vertex set be chosen, and call it the boundary of the graph. Assign a Dirichlet boundary condition (choose real numbers for each boundary vertex). One can find a function that minimizes the graph energy, and it will be harmonic. In particular, it will satisfy the averaging property, which is embodied by the graph Laplacian, that is, if u_G(x) is a graph harmonic then  \Delta_G u_G(x) = \sum_{y \sim x} (u_G(y) - u_G(x)) = 0  which is equivalent to the averaging property  u_G(x) = \frac{1}\sum_{y \sim x} u_G(y) .
+
+Technically, such objects are studied in abstract potential theory, based on the classical Dirichlet's principle. The theory of Dirichlet forms originated in the work of  on Dirichlet spaces.
+
+Integral kernels
+
+Another example of a Dirichlet form is given by
+
+\mathcal{E}(u) = \iint_{\R^n \times \R^n} (u(y)-u(x))^2 k(x,y) \, dx \, dy
+
+where k: \R^n \times \R^n \to \R is some non-negative symmetric integral kernel.
+
+If the kernel k satisfies the bound k(x,y) \leq \Lambda |x-y|^{-n-s}, then the quadratic form is bounded in {{nowrap|\dot H^{s/2}.}} If moreover, \lambda |x-y|^{-n-s} \leq k(x,y), then the form is comparable to the norm in \dot H^{s/2} squared and in that case the set D \subset L^2(\R^n) defined above is given by H^{s/2}(\mathbb{R}^n). Thus Dirichlet forms are natural generalizations of the Dirichlet integrals
+
+\mathcal{E}(u) = \int (A\nabla u,\nabla u) \; dx,
+
+where A(x) is a positive symmetric matrix. The Euler-Lagrange equation of a Dirichlet form is a non-local analogue  of an elliptic equations in divergence form. Equations of this type are studied using variational methods and they are expected to satisfy similar properties.
+
+}}
+
+.
+
+Category:Markov processes

@@ -1,0 +1,63 @@
+The generalized Hebbian algorithm, also known in the literature as Sanger's rule, is a linear feedforward neural network for unsupervised learning with applications primarily in principal components analysis. First defined in 1989, it is similar to Oja's rule in its formulation and stability, except it can be applied to networks with multiple outputs.  The name originates because of the similarity between the algorithm and a hypothesis made by Donald Hebb about the way in which synaptic strengths in the brain are modified in response to experience, i.e., that changes are proportional to the correlation between the firing of pre- and post-synaptic neurons.
+
+Theory
+
+Consider a problem of learning a linear code for some data. Each data is a multi-dimensional vector x \in \R^n, and can be (approximately) represented as a linear sum of linear code vectors w_1, \dots, w_m. When m = n, it is possible to exactly represent the data. If m , it is possible to approximately represent the data. To minimize the L2 loss of representation, w_1, \dots, w_m should be the highest principal component vectors.
+
+The generalized Hebbian algorithm is an iterative algorithm to find the highest principal component vectors, in an algorithmic form that resembles unsupervised Hebbian learning in neural networks.
+
+Consider a one-layered neural network with n input neurons and m output neurons y_1, \dots, y_m. The linear code vectors are the connection strengths, that is, w_{ij} is the synaptic weight or connection strength between the j-th input and i-th output neurons.
+
+The generalized Hebbian algorithm learning rule is of the form
+
+\,\Delta w_{ij} ~ = ~ \eta y_i \left(x_j - \sum_{k=1}^{i} w_{kj} y_k \right)
+
+where \eta is the learning rate parameter.
+
+Derivation
+
+In matrix form, Oja's rule can be written
+
+\,\frac{\text{d} w(t)}{\text{d} t} ~ = ~ w(t) Q - \mathrm{diag} [w(t) Q w(t)^{\mathrm{T}}] w(t),
+
+and the Gram-Schmidt algorithm is
+
+\,\Delta w(t) ~ = ~ -\mathrm{lower} [w(t) w(t)^{\mathrm{T}}] w(t),
+
+where  is any matrix, in this case representing synaptic weights, {{math|Q  η x xT}} is the autocorrelation matrix, simply the outer product of inputs,  is the function that sets all matrix elements outside of the diagonal equal to 0, and  is the function that sets all matrix elements on or above the diagonal equal to 0. We can combine these equations to get our original rule in matrix form,
+
+\,\Delta w(t) ~ = ~ \eta(t) \left(\mathbf{y}(t) \mathbf{x}(t)^{\mathrm{T}} - \mathrm{LT}[\mathbf{y}(t)\mathbf{y}(t)^{\mathrm{T}}] w(t)\right),
+
+where the function  sets all matrix elements above the diagonal equal to 0, and note that our output {{math|y(t)  w(t) x(t)}} is a linear neuron.
+
+Oja's rule is the special case where m = 1. One can think of the generalized Hebbian algorithm as iterating Oja's rule.
+
+With Oja's rule, w_1 is learned, and it has the same direction as the largest principal component vector is learned, with length determined by E[x_j] = E[w_{1j} y_1] for all j , where the expectation is taken over all input-output pairs. In other words, the length of the vector w_1 is such that we have an autoencoder, with the latent code y_1 = \sum_i w_{1i} x_i   , such that E[\| x - y_1 w_1 \|^2]  is minimized.
+
+When m = 2 , the first neuron in the hidden layer of the autoencoder still learns as described, since it is unaffected by the second neuron. So, after the first neuron and its vector w_1 has converged, the second neuron is effectively running another Oja's rule on the modified input vectors, defined by x' = x - y_1w_1 , which we know is the input vector with the first principal component removed. Therefore, the second neuron learns to code for the second principal component.
+
+By induction, this results in finding the top-m  principal components for arbitrary m .
+
+Applications
+
+The generalized Hebbian algorithm is used in applications where a self-organizing map is necessary, or where a feature or principal components analysis can be used. Examples of such cases include artificial intelligence and speech and image processing.
+
+Its importance comes from the fact that learning is a single-layer process—that is, a synaptic weight changes only depending on the response of the inputs and outputs of that layer, thus avoiding the multi-layer dependence associated with the backpropagation algorithm. It also has a simple and predictable trade-off between learning speed and accuracy of convergence as set by the learning rate parameter . performed the generalized Hebbian algorithm on 8-by-8 patches of photos of natural scenes, and found that it results in Fourier-like features. The features are the same as the principal components found by principal components analysis, as expected, and that, the features are determined by the 64\times 64 variance matrix of the samples of 8-by-8 patches. In other words, it is determined by the second-order statistics of the pixels in images. They criticized this as insufficient to capture higher-order statistics which are necessary to explain the Gabor-like features of simple cells in the primary visual cortex.
+
+See also
+
+Hebbian learning
+
+Factor analysis
+
+Contrastive Hebbian learning
+
+Oja's rule
+
+BCM theory
+
+References
+
+Category:Hebbian theory
+
+Category:Artificial neural networks

@@ -1,0 +1,19 @@
+The fallacy of the single cause, also known as complex cause, causal oversimplification, causal reductionism, root cause fallacy, and reduction fallacy, is an informal fallacy of questionable cause that occurs when it is assumed that there is a single, simple cause of an outcome when in reality it may have been caused by a number of only jointly sufficient causes.
+
+Fallacy of the single cause can be logically reduced to: "X caused Y; therefore, X was the only cause of Y" (although A,B,C...etc. also contributed to Y.)
+
+Causal oversimplification is a specific kind of false dilemma where conjoint possibilities are ignored. In other words, the possible causes are assumed to be "A xor B xor C" when "A and B and C" or "A and B and not C" (etc.) are not taken into consideration; i.e. the "or" is not exclusive.
+
+See also
+
+List of cognitive biases
+
+List of fallacies
+
+Essentialism – View that entities have identifying attributes, which can be confused for causes
+
+References
+
+Category:Causal fallacies
+
+Category:Propaganda techniques

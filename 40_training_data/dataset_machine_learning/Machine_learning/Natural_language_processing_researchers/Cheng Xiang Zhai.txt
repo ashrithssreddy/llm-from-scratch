@@ -1,0 +1,123 @@
+{{Infobox scientist
+
+name              = ChengXiang Zhai
+
+image             =
+
+image_size        =
+
+alt               =
+
+caption           =
+
+birth_date        =
+
+birth_place       =
+
+death_date        =
+
+death_place       =
+
+resting_place             =
+
+resting_place_coordinates =
+
+residence         =
+
+citizenship       =
+
+nationality       =
+
+fields            = Information RetrievalText MiningNatural Language ProcessingMachine LearningBioinformatics
+
+workplaces        = University of Illinois at Urbana-Champaign
+
+alma_mater        = Nanjing UniversityCarnegie Mellon University
+
+thesis_title      = Risk Minimization and Language Modeling in Text Retrieval
+
+thesis_url        =
+
+thesis_year       =
+
+doctoral_advisor  = John D. Lafferty
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students  =
+
+known_for         =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+awards            =
+
+signature         =
+
+signature_alt     =
+
+website           =
+
+footnotes         =
+
+spouse            =
+
+}}
+
+ChengXiang Zhai is a computer scientist. He is a Donald Biggar Willett Professor in Engineering in the Department of Computer Science at the University of Illinois at Urbana-Champaign.
+
+Biography
+
+Zhai received the BS (1984), MS (1987, under Guoliang Zheng), and PhD (1990, under Jiafu Xu) in Computer Science from Nanjing University. He spent 1990 to 1993 working at Nanjing University's State Key Laboratory for Novel Software Technology. In 1993, he left for America to pursue a second PhD, this time at Carnegie Mellon University (CMU) with David A. Evans. Evans then left to spend more time with the company ClariTech. Zhai obtained from CMU a MS (1997) in computational linguistics and then started working with John Lafferty. He finally received from CMU a PhD in Language and Information Technologies in 2002.
+
+Since then, he has been an Assistant Professor (2002–2008), Associate Professor (2008–2013), Professor (2013–2018), and Donald Biggar Willett Professor (2018–) at the UIUC Department of Computer Science. He also holds joint appointments with the Carl R. Woese Institute for Genomic Biology, Department of Statistics, and School of Information Sciences at UIUC.
+
+ACM SIGIR Academy inductee, 2021
+
+ACM Fellow, 2017, "for contributions to information retrieval and text data mining."
+
+ACM SIGIR Test of Time Award, 2016, for paper A study of smoothing methods for language models applied to Ad Hoc information retrieval
+
+ACM SIGIR Test of Time Award, 2016, for paper Document language models, query models, and risk minimization for information retrieval
+
+ACM SIGIR Test of Time Award, 2014, for paper Beyond independent relevance: methods and evaluation metrics for subtopic retrieval
+
+ACM Distinguished Member, 2009
+
+Presidential Early Career Award for Scientists and Engineers (PECASE), 2004, "for his work on user-centered, adaptive intelligent information access. His techniques expect to improve search-engine performance, support better information organization and enable understanding of large volumes of information. Zhai's work in information retrieval is expected to enhance curricula and provide new educational tools for the growing information technology workforce."
+
+ACM SIGIR Best Paper Award, 2004, for paper A formal study of information retrieval heuristics
+
+Personal
+
+Zhai's son Alex has earned three medals at the International Mathematical Olympiad.
+
+References
+
+Category:American computer scientists
+
+Category:University of Illinois Urbana-Champaign faculty
+
+Category:Nanjing University alumni
+
+Category:Carnegie Mellon University alumni
+
+Category:Living people
+
+Category:Year of birth missing (living people)
+
+Category:2017 fellows of the Association for Computing Machinery
+
+Category:Natural language processing researchers
+
+Category:Recipients of the Presidential Early Career Award for Scientists and Engineers
+
+Category:Long stubs with short prose

@@ -1,0 +1,99 @@
+{{Infobox software
+
+name = scikit-mutliflow
+
+logo = Scikit-multiflow-logo.png
+
+screenshot =
+
+caption =
+
+collapsible =
+
+author = Jacob Montiel, Jesse Read, Albert Bifet, Talel Abdessalem
+
+developer = The scikit-mutliflow development team and the open research community
+
+released =
+
+latest release version = 0.5.3
+
+latest release date =
+
+latest preview version =
+
+latest preview date =
+
+repo = https://github.com/scikit-multiflow/scikit-multiflow
+
+programming language = Python, Cython
+
+operating system = Linux, macOS, Windows
+
+platform =
+
+size =
+
+language =
+
+genre = Library for machine learning
+
+license = BSD 3-clause license
+
+website =
+
+}}
+
+scikit-mutliflow (also known as skmultiflow) is a free and open source software machine learning library for multi-output/multi-label and stream data written in Python.
+
+Overview
+
+scikit-multiflow allows to easily design and run experiments and to extend existing stream learning algorithms. compatible with the stream learning setting, Pandas for data manipulation, Numpy and SciPy.
+
+Components
+
+The scikit-multiflow is composed of the following sub-packages:
+
+anomaly_detection: anomaly detection methods.
+
+data: data stream methods including methods for batch-to-stream conversion and generators.
+
+drift_detection: methods for concept drift detection.
+
+evaluation: evaluation methods for stream learning.
+
+lazy: methods in which generalisation of the training data is delayed until a query is received, i.e., neighbours-based methods such as kNN.
+
+meta: meta learning (also known as ensemble) methods.
+
+neural_networks: methods based on neural networks.
+
+prototype: prototype-based learning methods.
+
+rules: rule-based learning methods.
+
+transform: perform data transformations.
+
+trees: tree-based methods, e.g. Hoeffding trees which are a type of decision tree for data streams.
+
+History
+
+scikit-multiflow started as a collaboration between researchers at Télécom Paris (Institut Polytechnique de Paris) and École Polytechnique. Development is currently carried by the University of Waikato, Télécom Paris,  École Polytechnique and the open research community.
+
+See also
+
+Massive Online Analysis (MOA)
+
+MEKA
+
+References
+
+External links
+
+Category:Data mining and machine learning software
+
+Category:Free statistical software
+
+Category:Free software programmed in Python
+
+Category:Python (programming language) scientific libraries

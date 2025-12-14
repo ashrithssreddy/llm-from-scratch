@@ -1,0 +1,9 @@
+Balanced clustering is a special case of clustering where, in the strictest sense, cluster sizes are constrained to \lfloor {n\over k}\rfloor or \lceil{n \over k}\rceil, where n is the number of points and k is the number of clusters. A typical algorithm is balanced k-means, which minimizes mean square error (MSE). Another type of balanced clustering called balance-driven clustering has a two-objective cost function that minimizes both the imbalance and the MSE. Typical cost functions are ratio cut and Ncut. Balanced clustering can be used for example in scenarios where freight has to be delivered to n locations with k cars. It is then preferred that each car delivers to an equal number of locations.
+
+Software
+
+There exists implementations for balanced k-means and Ncut
+
+References
+
+Category:Clustering criteria

@@ -1,0 +1,75 @@
+{{Infobox software
+
+name                   = RevoScaleR
+
+title                  = RevoScaleR
+
+logo                   =
+
+logo caption           =
+
+screenshot             =
+
+caption                =
+
+collapsible            =
+
+author                 = Microsoft
+
+developer              =
+
+released               =
+
+discontinued           =
+
+latest release version =
+
+latest release date    =
+
+latest preview version =
+
+latest preview date    =
+
+programming language   = Python
+
+operating system       =
+
+platform               = Windows, Linux
+
+size                   =
+
+language               = R
+
+language footnote      =
+
+status                 =
+
+genre                  =
+
+license                =
+
+website                =
+
+}}
+
+RevoScaleR is a machine learning package in R created by Microsoft. It is available as part of Machine Learning Server, Microsoft R Client, and Machine Learning Services in Microsoft SQL Server 2016.
+
+The package contains functions for creating linear model, logistic regression, random forest, decision tree and boosted decision tree, and K-means, in addition to some summary functions for inspecting and visualizing data.
+
+Concepts
+
+Many R packages are designed to analyze data that can fit in the memory of the machine and usually do not make use of parallel processing. RevoScaleR was designed to address these limitations. The functions in RevoScaleR orientate around three main abstraction concepts that users can specify to process large amount of data that might not fit in memory and exploit parallel resources to speed up the analysis.
+
+Compute Contexts
+
+A compute context refers to the location where the computation on the data happens. It could be "local" (on the client machine) or "remote" (on a data platform such as a SQL server, or Spark). Pushing the computation to a remote server allows people to take advantage of the greater compute resources that a remote machine may have. If the data being analyzed reside on the same machine, using a remote compute context also removes the need to pull data across the network onto the client machine.
+
+}}
+
+External links
+
+Samples for using revoscalepy and microsoftml
+
+Category:Applied machine learning
+
+Category:Microsoft software

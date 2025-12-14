@@ -1,0 +1,153 @@
+{{Infobox scientist
+
+name = Vladimir N. Vapnik
+
+image =
+
+image_size =
+
+alt =
+
+caption =
+
+birth_date =
+
+birth_place = Tashkent, Uzbek SSR
+
+death_date =
+
+death_place =
+
+resting_place =
+
+resting_place_coordinates =
+
+residence =
+
+citizenship =
+
+nationality =
+
+fields = Machine learningStatistics
+
+workplaces = Facebook Artificial Intelligence ResearchVencore LabsNEC Laboratories AmericaAdaptive Systems Research
+
+Department, AT&T Bell LaboratoriesRoyal Holloway, University of LondonColumbia University
+
+alma_mater = Institute of Control Sciences, Russian Academy of SciencesUzbek State University
+
+thesis_title =
+
+thesis_url =
+
+thesis_year =
+
+doctoral_advisor = Alexander Lerner
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students =
+
+known_for = Vapnik–Chervonenkis theoryVapnik–Chervonenkis dimensionSupport-vector machineSupport-vector clustering algorithmStatistical learning theoryStructural risk minimization
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences =
+
+influenced =
+
+awards = Kolmogorov Medal (2018)IEEE John von Neumann Medal (2017)Kampé de Fériet Award (2014)C&C Prize (2013)Benjamin Franklin Medal (2012) IEEE Frank Rosenblatt Award (2012)IEEE Neural Networks Pioneer Award (2010)  Paris Kanellakis Award (2008)Fellow of the U.S. National Academy of Engineering (2006)Gabor Award, International Neural Network Society (2005)Alexander Humboldt Research Award (2003)
+
+signature =
+
+signature_alt =
+
+website =
+
+footnotes =
+
+spouse =
+
+}}
+
+Vladimir Naumovich Vapnik (; born 6 December 1936) is a statistician, researcher, and academic. He is one of the main developers of the Vapnik–Chervonenkis theory of statistical learning and the co-inventor of the support-vector machine method and support-vector clustering algorithms.
+
+Early life and education
+
+Vladimir Vapnik was born to a Jewish family in the Soviet Union. He received his master's degree in mathematics from the Uzbek State University, Samarkand, Uzbek SSR in 1958 and Ph.D in statistics at the Institute of Control Sciences, Moscow in 1964. He worked at this institute from 1961 to 1990 and became Head of the Computer Science Research Department. which enabled the algorithm to categorize inputs without labels—becoming one of the most ubiquitous data clustering applications in use. Vapnik left AT&T in 2002 and joined NEC Laboratories in Princeton, New Jersey, where he worked in the Machine Learning group. He also holds a Professor of Computer Science and Statistics position at Royal Holloway, University of London since 1995, as well as a position as Professor of Computer Science at Columbia University, New York City since 2003. As of February 1, 2021, he has an h-index of 86 and, overall, his publications have been cited 226597 times. His book on "The Nature of Statistical Learning Theory" alone has been cited 91650 times.
+
+On November 25, 2014, Vapnik joined Facebook Artificial Intelligence Research (now Meta AI), where he is working alongside his longtime collaborators Jason Weston, Léon Bottou, Ronan Collobert, and Yann LeCun.
+
+In 2016, he also joined Peraton Labs.
+
+Honors and awards
+
+Vladimir Vapnik was inducted into the U.S. National Academy of Engineering in 2006. He received the 2005 Gabor Award from the International Neural Network Society, the 2008 Paris Kanellakis Award, the 2010 Neural Networks Pioneer Award, the 2012 IEEE Frank Rosenblatt Award, the 2012 Benjamin Franklin Medal in Computer and Cognitive Science from the Franklin Institute, the 2013 C&C Prize from the NEC C&C Foundation, the 2014 Kampé de Fériet Award, the 2017
+
+IEEE John von Neumann Medal. In 2018, he received the Kolmogorov Medal from University of London and delivered the Kolmogorov Lecture. In 2019, Vladimir Vapnik received
+
+BBVA Foundation Frontiers of Knowledge Award.
+
+Selected publications
+
+On the uniform convergence of relative frequencies of events to their probabilities, co-author A. Y. Chervonenkis, 1971
+
+Necessary and sufficient conditions for the uniform convergence of means to their expectations, co-author A. Y. Chervonenkis, 1981
+
+Estimation of Dependences Based on Empirical Data, 1982
+
+The Nature of Statistical Learning Theory, 1995
+
+Statistical Learning Theory (1998). Wiley-Interscience, .
+
+Estimation of Dependences Based on Empirical Data, Reprint 2006 (Springer), also contains a philosophical essay on Empirical Inference Science, 2006
+
+See also
+
+Alexey Chervonenkis
+
+References
+
+External links
+
+Photograph of Professor Vapnik
+
+Vapnik's brief biography from the Computer Learning Research Centre, Royal Holloway
+
+Interview by Lex Fridman
+
+Category:Academics of Royal Holloway, University of London
+
+Category:Living people
+
+Category:Columbia University faculty
+
+Category:Columbia School of Engineering and Applied Science faculty
+
+Category:Machine learning researchers
+
+Category:Soviet emigrants to the United States
+
+Category:Soviet computer scientists
+
+Category:Soviet mathematicians
+
+Category:American mathematicians
+
+Category:American computer scientists
+
+Category:Russian Jews
+
+Category:Members of the United States National Academy of Engineering
+
+Category:1936 births
+
+Category:Jewish Russian scientists
+
+Category:Scientists at Bell Labs
+
+Category:The Benjamin Franklin Medal in Computer and Cognitive Science laureates

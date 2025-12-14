@@ -1,0 +1,31 @@
+Frederick J. Damerau (December 25, 1931 – January 27, 2009) was a pioneer of research on natural language processing and data mining.
+
+After earning his B.A. from Cornell University in 1953, he spent most of his career at IBM, in the Thomas J. Watson Research Center. He holds a PhD from Yale University.
+
+One of his most influential and ground-breaking papers was "A technique for computer detection and correction of spelling errors" published in 1964.  He also developed and patented for IBM the first algorithm for placing hyphens automatically in words.
+
+In 1971 he published the book "Markov Models and Linguistic Theory : An Experimental Study of a Model for English."
+
+After being active in research for over four decades, Fred Damerau died on January 27, 2009.
+
+See also
+
+Damerau–Levenshtein distance
+
+References
+
+External links
+
+cornellalumnimagazine.com
+
+Category:2009 deaths
+
+Category:1931 births
+
+Category:IBM employees
+
+Category:Place of birth missing
+
+Category:Cornell University alumni
+
+Category:Natural language processing researchers

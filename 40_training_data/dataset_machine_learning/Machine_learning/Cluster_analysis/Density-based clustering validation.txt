@@ -1,0 +1,65 @@
+Density-Based Clustering Validation (DBCV) is a metric designed to assess the quality of clustering solutions, particularly for density-based clustering algorithms like DBSCAN, Mean shift, and OPTICS.
+
+This metric is particularly suited for identifying concave and nested clusters, where traditional metrics such as the Silhouette coefficient, Davies–Bouldin index, or Calinski–Harabasz index often struggle to provide meaningful evaluations.
+
+Unlike traditional validation measures, which often rely on compact and well-separated clusters, DBCV index evaluates how well clusters are defined in terms of local density variations and structural coherence.
+
+This metric was introduced in 2014 by David Moulavi and colleagues in their work. It utilizes density connectivity principles to quantify clustering structures, making it especially effective at detecting arbitrarily shaped clusters in concave datasets, where traditional metrics may be less reliable.
+
+The DBCV index has been employed for clustering analysis in bioinformatics, ecology, techno-economy, and health informatics
+
+, as well as in numerous other fields.
+
+Definition
+
+DBCV index evaluates clustering structures by analyzing the relationships between data points within and across clusters. Given a dataset X = {x_1,x_2,...,x_n}, a density-based algorithm partitions it into K  clusters {C_1,C_2,...,C_n}. Each point belongs to a specific cluster, denoted as Cluster(X_i)
+
+A key concept in DBCV index is the notion of density-connected paths. Two points within the same cluster are considered density-connected if there exists a sequence of intermediate points linking them, where each consecutive pair meets a predefined density criterion. The density-based distance between two points is determined by identifying the optimal path that minimizes the maximum local reachability distance along its trajectory.
+
+DBCV index extends the Silhouette coefficient by redefining cluster cohesion and separation using density-based distances:
+
+Within-cluster density distance measures how closely a point is related to other members of its cluster:
+
+a_i = \frac{1} \sum_{x_j \in C} d_{\text{density}}(x_i, x_j) \right).
+
+Using these measures, the DBCV index is computed as:
+
+DBCV = \frac{1}{n} \sum_{i=1}^{n} \frac{b_i - a_i}{\max(a_i, b_i)}
+
+Explanation
+
+DBCV index values range between −1 and +1:
+
++1: Strongly cohesive and well-separated clusters.
+
+0: Ambiguous clustering structure.
+
+−1: Poorly formed clusters or incorrect assignments.
+
+By leveraging density-based distances instead of traditional Euclidean measures, DBCV index provides a more robust evaluation of clustering performance in datasets with irregular or non-spherical distributions.
+
+See also
+
+Cluster analysis
+
+DBSCAN
+
+Silhouette coefficient
+
+Dunn index
+
+Calinski-Harabasz index
+
+Davies–Bouldin index
+
+References
+
+Implementations
+
+Python DBCV Implementation by Felipe Alves Siqueira
+
+R DBCV Implementation by Pablo Andretta Jaskowiak
+
+References
+
+Category:Cluster analysis

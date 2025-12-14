@@ -1,0 +1,51 @@
+Mittens is a chess engine developed by Chess.com. It was released on January 1, 2023, alongside four other engines, all of them given cat-related names. The engine became a viral sensation in the chess community due to exposure through content made by chess streamers and a social media marketing campaign, later contributing to record levels of traffic to the Chess.com website and causing issues with database scalability.
+
+Mittens was given a rating of one point by Chess.com, although it was evidently stronger than that. Various chess masters played matches against the engine, with players such as Hikaru Nakamura and Levy Rozman drawing and losing their games respectively. A month after its release, Mittens was removed from the website on February 1, as expected through Chess.com's monthly bot cycles. In December 2023, Mittens was brought back in a group of Chess.com's most popular bots of 2023. In January 2024, Mittens was removed again.
+
+Release
+
+Mittens was released on January 1, 2023, as part of a New Year event on Chess.com. It was one of five engines released, all with names related to cats. The other engines released were named Scaredy Cat, rated 800; Angry Cat, rated 1000; Mr. Grumpers, rated 1200 and Catspurrov (a pun on Garry Kasparov), rated 1400. As part of the announcement, a picture of each engine was accompanied by a short description of its character. The description given for Mittens suggested that the engine was hiding something,
+
+Of the five engines released, Mittens was by far the most popular.
+
+Design
+
+left]]
+
+Mittens was conceptualized by Chess.com employee Will Whalen. Mittens trash talked its opponents with a selection of voice lines: these lines included quotes from J. Robert Oppenheimer, Vincent van Gogh and Friedrich Nietzsche, as well as the 1967 film Le Samouraï. The engine's "personality" was devised by a writing team headed by Sean Becker, and Marija Casic provided the engine's graphics. Mittens' strategy was to slowly grind down an opponent, a tactic likened to the playing style of Anatoly Karpov. Becker stated that the design team believed it would be "way more demoralizing and funny" for the engine to play this way. In particular, Nakamura's game against the engine lasted 166 moves; he was playing as White. Bok, Benjamin Finegold and Rozman later went on to win against Mittens, the latter with engine assistance from Stockfish. Magnus Carlsen publicly refused to play the engine, calling it a "transparent marketing trick" and "a soulless computer".
+
+Impact
+
+Mittens went viral in the chess community due to its concept and design: according to an announcement by Chess.com, a combined total of 120 million games were played against the cat engines over the course of January, with around 40 million played against Mittens. The popularity of the engine was helped by the social media exposure created by Chess.com. Chess streamers like Rozman and Nakamura helped cultivate this by creating content around the engine. A video by Nakamura entitled "Mittens the chess bot will make you quit chess" gained over 3.5 million views on YouTube. According to The Wall Street Journal, the popularity spike was more than the similar surge following the release of Netflix's The Queen's Gambit. |name=Instability reasons|group=lower-alpha}} Chess.com stated that they would have to upgrade their servers and invest more in cloud computing to solve the problems caused by the website's popularity surge.
+
+On February 1, 2023, Mittens and the other cat engines were removed from the computer section of Chess.com. They were replaced with five new engines themed around artificial intelligence. A tweet was posted on the Mittens's Twitter account after the engine's removal, reading "This is just the beginning. Goodbye for now."
+
+Notes
+
+References
+
+Primary sources
+
+These sources are published by Chess.com, and are indicated in this article by a double dagger (‡):
+
+Secondary sources
+
+External links
+
+Hamilton College interview with Will Whalen
+
+Category:Chess engines
+
+Category:Internet properties established in 2023
+
+Category:2023 in chess
+
+Category:Free web software
+
+Category:2023 software
+
+Category:Applied machine learning
+
+Category:Fictional cats
+
+Category:Chess.com

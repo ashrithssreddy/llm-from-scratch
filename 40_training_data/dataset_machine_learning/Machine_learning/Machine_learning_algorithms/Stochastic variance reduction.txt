@@ -1,0 +1,151 @@
+(Stochastic) variance reduction is an algorithmic approach to minimizing functions that can be decomposed into finite sums. By exploiting the finite sum structure, variance reduction techniques are able to achieve convergence rates that are impossible to achieve with methods that treat the objective as an infinite sum, as in the classical Stochastic approximation setting.
+
+Variance reduction approaches are widely used for training machine learning models such as logistic regression and support vector machines as these problems have finite-sum structure and uniform conditioning that make them ideal candidates for variance reduction.
+
+Finite sum objectives
+
+A function f is considered to have finite sum structure if it can be decomposed into a summation or average:
+
+f(x) = \frac{1}{n}\sum_{i=1}^n f_i(x),
+
+where the function value and derivative of each f_i can be queried independently. Although variance reduction methods can be applied for any positive n and any f_i structure, their favorable theoretical and practical properties arise when n is large compared to the condition number of each f_i, and when the f_i have similar (but not necessarily identical) Lipschitz smoothness and strong convexity constants.
+
+The finite sum structure should be contrasted with the stochastic approximation setting which deals with functions of the form  f(\theta) = \operatorname E_{\xi} [F(\theta,\xi)]
+
+which is the expected value of a function depending on a random variable \xi . Any finite sum problem can be optimized using a stochastic approximation algorithm by using F(\cdot,\xi)=f_\xi.
+
+Rapid Convergence
+
+Stochastic variance reduced methods without acceleration are able to find a minima of f within accuracy \epsilon>, i.e. f(x)-f(x_*)\leq \epsilon in a number of steps of the order:
+
+O \left( \left( \frac{L}{\mu} + n \right)\log \left( \frac{1}{\epsilon} \right)\right).
+
+The number of steps depends only logarithmically on the level of accuracy required, in contrast to the stochastic approximation framework, where the number of steps
+
+O\bigl( L/(\mu \epsilon)\bigr) required grows proportionally to the accuracy required.
+
+Stochastic variance reduction methods converge almost as fast as the gradient descent method's O\bigl( (L/\mu)\log(1/\epsilon) \bigr) rate, despite using only a stochastic gradient, at a 1/n lower cost than gradient descent.
+
+Accelerated methods in the stochastic variance reduction framework achieve even faster convergence rates, requiring only
+
+O \left( \left( \sqrt{\frac{nL}{\mu}} + n \right)\log \left( \frac{1}{\epsilon} \right)\right)
+
+steps to reach \epsilon accuracy, potentially \sqrt{n} faster than non-accelerated methods. Lower complexity bounds. for the finite sum class establish that this rate is the fastest possible for smooth strongly convex problems.
+
+Approaches
+
+Variance reduction approaches fall within four main categories: table averaging methods, full-gradient snapshot methods, recursive estimator methods (e.g., SARAH), and dual methods. Each category contains methods designed for dealing with convex, non-smooth, and non-convex problems, each differing in hyper-parameter settings and other algorithmic details.
+
+SAGA
+
+In the SAGA method, the prototypical table averaging approach, a table of size n is maintained that contains the last gradient witnessed for each f_i term, which we denote g_i. At each step, an index i is sampled, and a new gradient \nabla f_i(x_k) is computed. The iterate x_k is updated with:
+
+x_{k+1} = x_k - \gamma \left[ \nabla f_i(x_k) - g_i + \frac{1}{n}\sum_{i=1}^n g_i \right],
+
+and afterwards table entry i is updated with g_i=\nabla f_i(x_k).
+
+SAGA is among the most popular of the variance reduction methods due to its simplicity, easily adaptable theory, and excellent performance. It is the successor of the SAG method, improving on its flexibility and performance.
+
+SVRG
+
+The stochastic variance reduced gradient method (SVRG), the prototypical snapshot method, uses a similar update except instead of using the average of a table it instead uses a full-gradient that is reevaluated at a snapshot point \tilde{x} at regular intervals of m\geq n iterations. The update becomes:
+
+x_{k+1} = x_k - \gamma [\nabla f_i(x_k) - \nabla f_i(\tilde{x}) + \nabla f(\tilde{x})],
+
+This approach requires two stochastic gradient evaluations per step, one to compute \nabla f_i(x_k) and one to compute \nabla f_i(\tilde{x}), where-as table averaging approaches need only one.
+
+Despite the high computational cost, SVRG is popular as its simple convergence theory is highly adaptable to new optimization settings. It also has lower storage requirements than tabular averaging approaches, which make it applicable in many settings where tabular methods can not be used.
+
+SARAH
+
+The SARAH (stochastic recursive gradient) method maintains a recursive estimator of the gradient rather than storing a table of past gradients (as in SAGA) or computing periodic full-gradient snapshots (as in SVRG). At the start of an inner loop, a full gradient is computed at a reference point \tilde{x}: v_0=\nabla f(\tilde{x}). For inner iterations, with a sampled index i_k, the gradient estimator and iterate are updated by:
+
+v_k = \nabla f_{i_k}(x_k) - \nabla f_{i_k}(x_{k-1}) + v_{k-1}, \qquad x_{k+1} = x_k - \gamma v_k.
+
+This recursion requires two component-gradient evaluations per step \nabla f_{i_k}(x_k) and \nabla f_{i_k}(x_{k-1}) but does not need to store per-sample gradients, resulting in lower memory cost than table-averaging methods. SARAH admits linear convergence for strongly convex functions and has been extended to more general nonconvex and composite problems.
+
+SDCA
+
+Exploiting the dual representation of the objective leads to another variance reduction approach that is particularly suited to finite-sums where each term has a structure that makes computing the convex conjugate f_{i}^{*}, or its proximal operator tractable. The standard SDCA method considers finite sums that have additional structure compared to generic finite sum setting:
+
+f(x) = \frac{1}{n}\sum_{i=1}^n f_i(x^Tv_i) + \frac{\lambda}{2}\|x\|^2,
+
+where each f_i is 1 dimensional and each v_i is a data point associated with f_i.
+
+SDCA solves the dual problem:
+
+\max_{\alpha \in \mathbb{R}^n}
+
+-\frac{1}{n}\sum_{i=1}^n f_{i}^{*}(-\alpha_i)-\frac{\lambda}{2}
+
+\left \|
+
+\frac{1}{\lambda n}\sum_{i=1}^n \alpha_i v_i
+
+\right \|^2,
+
+by a stochastic coordinate ascent procedure, where at each step the objective is optimized with respect to a randomly chosen coordinate \alpha_i, leaving all other coordinates the same. An approximate primal solution x can be recovered from the \alpha values:
+
+x = \frac{1}{\lambda n}\sum_{i=1}^n \alpha_i v_i.
+
+This method obtains similar theoretical rates of convergence to other stochastic variance reduced methods, while avoiding the need to specify a step-size parameter. It is fast in practice when \lambda is large, but significantly slower than the other approaches when \lambda is small.
+
+Accelerated approaches
+
+Accelerated variance reduction methods are built upon the standard methods above. The earliest approaches make use of proximal operators to accelerate convergence, either approximately or exactly. Direct acceleration approaches have also been developed.
+
+Catalyst acceleration
+
+The catalyst framework uses any of the standard methods above as an inner optimizer to approximately solve a proximal operator:
+
+x_k \approx \text{argmin}_x \left \{
+
+f(x) + \frac{\kappa}{2} \| x - y_{k-1}  \|^2
+
+\right \}
+
+after which it uses an extrapolation step to determine the next  y:
+
+y_k = x_k +\beta_k (x_k - x_{k-1})
+
+The catalyst method's flexibility and simplicity make it a popular baseline approach. However, it doesn't achieve the optimal rate of convergence among accelerated methods; it is potentially slower by up to a log factor in the hyper-parameters.
+
+Point-SAGA
+
+Proximal operations may also be applied directly to the f_i terms to yield an accelerated method. The Point-SAGA method replaces the gradient operations in SAGA with proximal operator evaluations, result in a simple, direct acceleration method:
+
+x_{k+1} = \text{prox}^\gamma_j\left(z_k \triangleq x_k +\gamma \left[ g_{j} - \frac{1}{n} \sum_{i=1}^n g_i \right] \right),
+
+with the table update g_j = \frac{1}{\gamma}(z_k - x_{k+1}) performed after each step. Here \text{prox}^\gamma_j is defined as the proximal operator for the jth term:
+
+\text{prox}^\gamma_j(y) = \text{argmin}_x \left \{
+
+f_j(x) + \frac{1}{2\gamma} \| x - y \|^2
+
+\right \}.
+
+Unlike other known accelerated methods, Point-SAGA requires only a single iterate sequence x to be maintained between steps, and it has the advantage of only having a single tunable parameter \gamma. It obtains the optimal accelerated rate of convergence for strongly convex finite-sum minimization without additional log factors.
+
+See also
+
+Stochastic gradient descent
+
+Coordinate descent
+
+Online machine learning
+
+Proximal operator
+
+Stochastic optimization
+
+Stochastic approximation
+
+References
+
+Category:Stochastic optimization
+
+Category:Gradient methods
+
+Category:Machine learning algorithms
+
+Category:Convex optimization

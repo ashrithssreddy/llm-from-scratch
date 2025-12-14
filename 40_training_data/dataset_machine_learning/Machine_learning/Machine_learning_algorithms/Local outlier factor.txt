@@ -1,0 +1,37 @@
+In anomaly detection, the local outlier factor (LOF) is an algorithm proposed by Markus M. Breunig, Hans-Peter Kriegel, Raymond T. Ng and Jörg Sander in 2000 for finding anomalous data points by measuring the local deviation of a given data point with respect to its neighbours.
+
+LOF shares some concepts with DBSCAN and OPTICS such as the concepts of "core distance" and "reachability distance", which are used for local density estimation.
+
+Basic idea
+
+The local outlier factor is based on a concept of a local density, where locality is given by k nearest neighbors, whose distance is used to estimate the density. By comparing the local density of an object to the local densities of its neighbors, one can identify regions of similar density, and points that have a substantially lower density than their neighbors. These are considered to be outliers.
+
+The local density is estimated by the typical distance at which a point can be "reached" from its neighbors. The definition of "reachability distance" used in LOF is an additional measure to produce more stable results within clusters. The "reachability distance" used by LOF has some subtle details that are often found incorrect in secondary sources, e.g., in the textbook of Ethem Alpaydin.
+
+Formal definition
+
+Let k\text{-distance}(A) be the distance of the object A to the k-th nearest neighbor. Note that the set of the k nearest neighbors includes all objects at this distance, which can in the case of a "tie" be more than k objects. We denote the set of k nearest neighbors as .
+
+This distance is used to define what is called reachability distance:
+
+\text{reachability-distance}_k(A,B)=\max\{k \text{-distance}(B), d(A,B)\}
+
+In words, the reachability distance of an object A from B is the true distance between the two objects, but at least the k\text{-distance} of B. Objects that belong to the k nearest neighbors of B (the "core" of B, see DBSCAN cluster analysis) are considered to be equally distant. The reason for this is to reduce the statistical fluctuations between all points A close to B, where increasing the value for k increases the smoothing effect. and on processed classification benchmark data.
+
+The LOF family of methods can be easily generalized and then applied to various other problems, such as detecting outliers in geographic data, video streams or authorship networks. runs LOF on multiple projections and combines the results for improved detection qualities in high dimensions. This is the first ensemble learning approach to outlier detection, for other variants see ref.
+
+Local Outlier Probability (LoOP) is a method derived from LOF but using inexpensive local statistics to become less sensitive to the choice of the parameter k. In addition, the resulting values are scaled to a value range of .
+
+Interpreting and Unifying Outlier Scores proposes a normalization of the LOF outlier scores to the interval  using statistical scaling to increase usability and can be seen an improved version of the LoOP ideas.
+
+On Evaluation of Outlier Rankings and Outlier Scores proposes methods for measuring similarity and diversity of methods for building advanced outlier detection ensembles using LOF variants and other algorithms and improving on the Feature Bagging approach discussed above.
+
+Local outlier detection reconsidered: a generalized view on locality with applications to spatial, video, and network outlier detection discusses the general pattern in various local outlier detection methods (including, e.g., LOF, a simplified version of LOF and LoOP) and abstracts from this into a general framework. This framework is then applied, e.g., to detecting outliers in geographic data, video streams and authorship networks.
+
+References
+
+Category:Statistical outliers
+
+Category:Data mining
+
+Category:Machine learning algorithms

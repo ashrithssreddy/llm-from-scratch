@@ -1,0 +1,75 @@
+In statistics the mean squared prediction error (MSPE), also known as mean squared error of the predictions, of a smoothing, curve fitting, or regression procedure is the expected value of the squared prediction errors (PE), the square difference between the fitted values implied by the predictive function \widehat{g} and the values of the (unobservable) true value g. It is an inverse measure of the explanatory power of \widehat{g}, and can be used in the process of cross-validation of an estimated model.
+
+Knowledge of g would be required in order to calculate the MSPE exactly; in practice, MSPE is estimated.
+
+Formulation
+
+If the smoothing or fitting procedure has projection matrix (i.e., hat matrix) L, which maps the observed values vector y to predicted values vector \hat{y}=Ly, then PE and MSPE are formulated as:
+
+\operatorname{PE_i}=g(x_i)-\widehat{g}(x_i),
+
+\operatorname{MSPE}=\operatorname{E}\left[\operatorname{PE}_i^2\right]=\sum_{i=1}^n \operatorname{PE}_i^2/n.
+
+The MSPE can be decomposed into two terms: the squared bias (mean error) of the fitted values and the variance of the fitted values:
+
+\operatorname{MSPE}=\operatorname{ME}^2 + \operatorname{VAR},
+
+\operatorname{ME}=\operatorname{E}\left[ \widehat{g}(x_i) - g(x_i)\right]
+
+\operatorname{VAR}=\operatorname{E}\left[\left(\widehat{g}(x_i) - \operatorname{E}\left[{g}(x_i)\right]\right)^2\right].
+
+The quantity {{math|SSPEnMSPE}} is called sum squared prediction error.
+
+The root mean squared prediction error is the square root of MSPE: {{math|RMSPE}}.
+
+Computation of MSPE over out-of-sample data
+
+The mean squared prediction error can be computed exactly in two contexts. First, with a data sample of length n, the data analyst may run the regression over only q of the data points (with q y_i=g(x_i)+\sigma\varepsilon_i where \varepsilon_i\sim\mathcal{N}(0,1), one may write
+
+n\cdot\operatorname{MSPE}(L)=g^{\text{T}}(I-L)^{\text{T}}(I-L)g+\sigma^2\operatorname{tr}\left[L^{\text{T}} L\right].
+
+Using in-sample data values, the first term on the right side is equivalent to
+
+\sum_{i=1}^n\left(\operatorname{E}\left[g(x_i)-\widehat{g}(x_i)\right]\right)^2
+
+=\operatorname{E}\left[\sum_{i=1}^n\left(y_i-\widehat{g}(x_i)\right)^2\right]-\sigma^2\operatorname{tr}\left[\left(I-L\right)^T\left(I-L\right)\right].
+
+Thus,
+
+n\cdot\operatorname{MSPE}(L)=\operatorname{E}\left[\sum_{i=1}^n\left(y_i-\widehat{g}(x_i)\right)^2\right]-\sigma^2\left(n-\operatorname{tr}\left[L\right]\right).
+
+If \sigma^2 is known or well-estimated by \widehat{\sigma}^2, it becomes possible to estimate MSPE by
+
+n\cdot\operatorname{\widehat{MSPE}}(L)=\sum_{i=1}^n\left(y_i-\widehat{g}(x_i)\right)^2-\widehat{\sigma}^2\left(n-\operatorname{tr}\left[L\right]\right).
+
+Colin Mallows advocated this method in the construction of his model selection statistic Cp, which is a normalized version of the estimated MSPE:
+
+C_p=\frac{\sum_{i=1}^n\left(y_i-\widehat{g}(x_i)\right)^2}{\widehat{\sigma}^2}-n+2p.
+
+where p the number of estimated parameters p and \widehat{\sigma}^2 is computed from the version of the model that includes all possible regressors.
+
+That concludes this proof.
+
+See also
+
+Akaike information criterion
+
+Bias-variance tradeoff
+
+Mean squared error
+
+Errors and residuals in statistics
+
+Law of total variance
+
+Mallows's Cp
+
+Model selection
+
+References
+
+Category:Point estimation performance
+
+Category:Statistical deviation and dispersion
+
+Category:Loss functions

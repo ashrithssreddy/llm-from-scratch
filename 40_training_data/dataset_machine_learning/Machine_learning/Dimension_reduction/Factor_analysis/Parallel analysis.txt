@@ -1,0 +1,27 @@
+Parallel analysis, also known as Horn's parallel analysis, is a statistical method used to determine the number of components to keep in a principal component analysis or factors to keep in an exploratory factor analysis. It is named after psychologist John L. Horn, who created the method, publishing it in the journal Psychometrika in 1965. The method compares the eigenvalues generated from the data matrix to the eigenvalues generated from a Monte-Carlo simulated matrix created from random data of the same size.
+
+Evaluation and comparison with alternatives
+
+Parallel analysis is regarded as one of the more accurate methods for determining the number of factors or components to retain. In particular, unlike early approaches to dimensionality estimation (such as examining scree plots), parallel analysis has the virtue of an objective decision criterion. Since its original publication, multiple variations of parallel analysis have been proposed. Other methods of determining the number of factors or components to retain in an analysis include the scree plot, Kaiser rule, or Velicer's MAP test.
+
+Anton Formann provided both theoretical and empirical evidence that parallel analysis's application might not be appropriate in many cases since its performance is influenced by sample size, item discrimination, and type of correlation coefficient.
+
+An extensive 2022 simulation study by Haslbeck and van Bork found that parallel analysis was among the best-performing existing methods, but was slightly outperformed by their proposed prediction error-based approach.
+
+Implementation
+
+Parallel analysis has been implemented in JASP, SPSS, SAS, STATA, and MATLAB and in multiple packages for the R programming language, including the psych multicon, hornpa, and paran packages. Parallel analysis can also be conducted in Mplus version 8.0 and forward.
+
+See also
+
+Scree plot
+
+Exploratory factor analysis § Selecting the appropriate number of factors
+
+Marchenko-Pastur distribution
+
+References
+
+Category:Multivariate statistics
+
+Category:Factor analysis

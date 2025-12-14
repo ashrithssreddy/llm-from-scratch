@@ -1,0 +1,99 @@
+Fitness proportionate selection, also known as roulette wheel selection or spinning wheel selection, is a selection technique used in evolutionary algorithms for selecting potentially useful solutions for recombination.
+
+Method
+
+In fitness proportionate selection, as in all selection methods, the fitness function assigns a fitness to possible solutions or chromosomes.  This fitness level is used to associate a probability of selection with each individual chromosome. If f_i is the fitness of individual i in the population, its probability of being selected is
+
+p_i = \frac{f_i}{\Sigma_{j=1}^{N} f_j},
+
+where N is the number of individuals in the population.
+
+This could be imagined similar to a Roulette wheel in a casino. Usually a proportion of the wheel is assigned to each of the possible selections based on their fitness value. This could be achieved by dividing the fitness of a selection by the total fitness of all the selections, thereby normalizing them to 1. Then a random selection is made similar to how the roulette wheel is rotated.
+
+While candidate solutions with a higher fitness will be less likely to be eliminated, there is still a chance that they may be eliminated because their probability of selection is less than 1 (or 100%).  Contrast this with a less sophisticated selection algorithm, such as truncation selection, which will eliminate a fixed percentage of the weakest candidates. With fitness proportionate selection there is a chance some weaker solutions may survive the selection process. This is because even though the probability that the weaker solutions will survive is low, it is not zero which means it is still possible they will survive; this is an advantage, because there is a chance that even weak solutions may have some features or characteristics which could prove useful following the recombination process.
+
+The analogy to a roulette wheel can be envisaged by imagining a roulette wheel in which each candidate solution represents a pocket on the wheel; the size of the pockets are proportionate to the probability of selection of the solution.  Selecting N chromosomes from the population is equivalent to playing N games on the roulette wheel, as each candidate is drawn independently.
+
+The naive implementation is carried out by first generating the cumulative probability distribution (CDF) over the list of individuals using a probability proportional to the fitness of the individual. A uniform random number from the range [0,1) is chosen and the inverse of the CDF for that number gives an individual. This corresponds to the roulette ball falling in the bin of an individual with a probability proportional to its width. The "bin" corresponding to the inverse of the uniform random number can be found most quickly by using a binary search over the elements of the CDF. It takes in the O(log n) time to choose an individual. A faster alternative that generates individuals in O(1) time will be to use the alias method.
+
+In 2011, a very simple algorithm was introduced that is based on "stochastic acceptance". The algorithm randomly selects an individual (say i) and accepts the selection with probability f_i/f_M, where f_M is the maximum fitness in the population. Certain analysis indicates that the stochastic acceptance version has a considerably better performance than versions based on linear or binary search, especially in applications where fitness values might change during the run. While the behavior of this algorithm is typically fast, some fitness distributions (such as exponential distributions) may require O(n) iterations in the worst case. This algorithm also requires more random numbers than binary search.
+
+Pseudocode
+
+For example, if you have a population with fitnesses [1, 2, 3, 4], then the sum is (1 + 2 + 3 + 4 = 10).  Therefore, you would want the probabilities or chances to be [1/10, 2/10, 3/10, 4/10] or [0.1, 0.2, 0.3, 0.4].  If you were to visually normalize this between 0.0 and 1.0, it would be grouped like below with [red = 1/10, green = 2/10, blue = 3/10, black = 4/10]:
+
+0.1 ]
+
+0.2 \
+
+0.3 /
+
+0.4 \
+
+0.5 |
+
+0.6 /
+
+0.7 \
+
+0.8 |
+
+0.9 |
+
+1.0 /
+
+Using the above example numbers, this is how to determine the probabilities:
+
+sum_of_fitness = 10
+
+previous_probability = 0.0
+
+= previous_probability + (fitness / sum_of_fitness) = 0.0 + (1 / 10) = 0.1
+
+previous_probability = 0.1
+
+= previous_probability + (fitness / sum_of_fitness) = 0.1 + (2 / 10) = 0.3
+
+previous_probability = 0.3
+
+= previous_probability + (fitness / sum_of_fitness) = 0.3 + (3 / 10) = 0.6
+
+previous_probability = 0.6
+
+= previous_probability + (fitness / sum_of_fitness) = 0.6 + (4 / 10) = 1.0
+
+The last index should always be 1.0 or close to it.  Then this is how to randomly select an individual:
+
+random_number # Between 0.0 and 1.0
+
+if random_number 1
+
+else if random_number 2
+
+else if random_number 3
+
+else if random_number 4
+
+end if
+
+Other methods
+
+Other selection techniques, such as stochastic universal sampling or tournament selection, are often used in practice. This is because they have less stochastic noise, or are fast, easy to implement and have a constant selection pressure.
+
+See also
+
+Reward-based selection
+
+Stochastic universal sampling
+
+References
+
+External links
+
+C implementation (.tar.gz; see selector.cxx) WBL
+
+Example on Roulette wheel selection
+
+An outline of implementation of the O(1) version
+
+Category:Selection (evolutionary algorithm)

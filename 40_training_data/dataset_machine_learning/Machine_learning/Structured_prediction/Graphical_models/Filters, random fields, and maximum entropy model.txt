@@ -1,0 +1,9 @@
+In the domain of physics and probability, the filters, random fields, and maximum entropy (FRAME) model is a Markov random field model (or a Gibbs distribution) of stationary spatial processes, in which the energy function is the sum of translation-invariant potential functions that are one-dimensional non-linear transformations of linear filter responses. The FRAME model was originally developed by Song-Chun Zhu, Ying Nian Wu, and David Mumford for modeling stochastic texture patterns, such as grasses, tree leaves, brick walls, water waves, etc. This model is the maximum entropy distribution that reproduces the observed marginal histograms of responses from a bank of filters (such as Gabor filters or Gabor wavelets), where for each filter tuned to a specific scale and orientation, the marginal histogram is pooled over all the pixels in the image domain. The FRAME model is also proved to be equivalent to the micro-canonical ensemble, which was named the Julesz ensemble. Gibbs sampler is adopted to synthesize texture images by drawing samples from the FRAME model.
+
+The original FRAME model is homogeneous for texture modeling. Xie et al. proposed the sparse FRAME model, which is an inhomogeneous generalization of the original FRAME model, for the purpose of modeling object patterns, such as animal bodies, faces, etc.  It is a non-stationary Markov random field model that reproduces the observed statistical properties of filter responses at a subset of selected locations, scales and orientations. The sparse FRAME model can be considered a deformable template.
+
+The deep FRAME model  is a deep generalization of  the original FRAME model. Instead of using linear filters as in the original FRAME model, Lu et al. uses the filters at a certain convolutional layer of a pre-learned ConvNet. 3D volumetric shape patterns
+
+References
+
+Category:Graphical models

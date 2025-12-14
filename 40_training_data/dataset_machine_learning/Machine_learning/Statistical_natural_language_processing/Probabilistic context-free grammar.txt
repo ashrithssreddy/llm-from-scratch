@@ -1,0 +1,71 @@
+In theoretical linguistics and computational linguistics, probabilistic context free grammars (PCFGs) extend context-free grammars, similar to how hidden Markov models extend regular grammars. Each production is assigned a probability. The probability of a derivation (parse) is the product of the probabilities of the productions used in that derivation. These probabilities can be viewed as parameters of the model, and for large problems it is convenient to learn these parameters via machine learning. A probabilistic grammar's validity is constrained by context of its training dataset.
+
+PCFGs originated from grammar theory, and have application in areas as diverse as natural language processing to the study the structure of RNA molecules and design of programming languages. Designing efficient PCFGs has to weigh factors of scalability and generality. Issues such as grammar ambiguity must be resolved. The grammar design affects results accuracy. Grammar parsing algorithms have various time and memory requirements.
+
+Definitions
+
+Derivation:  The process of recursive generation of strings from a grammar.
+
+Parsing: Finding a valid derivation using an automaton.
+
+Parse Tree: The alignment of the grammar to a sequence.
+
+An example of a parser for PCFG grammars is the pushdown automaton. The algorithm parses grammar nonterminals from left to right in a stack-like manner. This brute-force approach is not very efficient. In RNA secondary structure prediction variants of the Cocke–Younger–Kasami (CYK) algorithm provide more efficient alternatives to grammar parsing than pushdown automata.
+
+Formal definition
+
+Similar to a CFG, a probabilistic context-free grammar   can be defined by a quintuple:
+
+G = (M, T, R, S, P)
+
+where
+
+is the set of non-terminal symbols
+
+is the set of terminal symbols
+
+is the set of production rules
+
+is the start symbol
+
+is the set of probabilities on production rules
+
+Relation with hidden Markov models
+
+PCFGs models extend context-free grammars the same way as hidden Markov models extend regular grammars.
+
+The Inside-Outside algorithm is an analogue of the Forward-Backward algorithm. It computes the total probability of all derivations that are consistent with a given sequence, based on some PCFG.  This is equivalent to the probability of the PCFG generating the sequence, and is intuitively a measure of how consistent the sequence is with the given grammar. The Inside-Outside algorithm is used in model parametrization to estimate prior frequencies observed from training sequences in the case of RNAs.
+
+Dynamic programming variants of the CYK algorithm find the Viterbi parse of a RNA sequence for a PCFG model.  This parse is the most likely derivation of the sequence by the given PCFG.
+
+Grammar construction
+
+Context-free grammars are represented as a set of rules inspired from attempts to model natural languages. (or sum ) of all rule weights in the tree.  Each rule weight is included as often as the rule is used in the tree.  A special case of WCFGs are PCFGs, where the weights are (logarithms of ) probabilities.
+
+An extended version of the CYK algorithm can be used to find the "lightest" (least-weight) derivation of a string given some WCFG.
+
+When the tree weight is the product of the rule weights, WCFGs and PCFGs can express the same set of probability distributions. As a consequence, most applications of formal language theory to protein analysis have been mainly restricted to the production of grammars of lower expressive power to model simple functional patterns based on local interactions. Since protein structures commonly display higher-order dependencies including nested and crossing relationships, they clearly exceed the capabilities of any CFG.
+
+}}
+
+External links
+
+Rfam Database
+
+Infernal
+
+The Stanford Parser: A statistical parser
+
+pyStatParser
+
+Category:Bioinformatics
+
+Category:Formal languages
+
+Category:Language modeling
+
+Category:Natural language parsing
+
+Category:Statistical natural language processing
+
+Category:Probabilistic models

@@ -1,0 +1,113 @@
+{{About|the rhetorical argument|the novel|The Slippery SlopeThe Slippery Slope|the film|Slippery SlopeSlippery Slope}}
+
+.|alt=Black and white cartoon of a tall woman in a tailcoat and knee-length skirt, and a short man delicately holding a bouquet. They stand together in front of a robed female reverend, about to be married. Behind the couple are two similarly attired same-sex pairs.]]
+
+In a slippery slope argument, a course of action is rejected because the slippery slope advocate believes it will lead to a chain reaction resulting in an undesirable end or ends. The core of the slippery slope argument is that a specific decision under debate is likely to result in unintended consequences. The strength of such an argument depends on whether the small step really is likely to lead to the effect. This is quantified in terms of what is known as the warrant (in this case, a demonstration of the process that leads to the significant effect).
+
+This type of argument is sometimes used as a form of fearmongering in which the probable consequences of a given action are exaggerated in an attempt to scare the audience. When the initial step is not demonstrably likely to result in the claimed effects, this is called the slippery slope fallacy. This is a type of informal fallacy, and is a subset of continuum fallacy, in that it ignores the possibility of middle ground and assumes a discrete transition from category A to category B. Other idioms for the slippery slope fallacy are the thin edge of the wedge, domino fallacy (as a form of domino effect argument) or dam burst, and various other terms that are sometimes considered distinct argument types or reasoning flaws, such as the camel's nose in the tent, parade of horribles, boiling frog, and snowball effect.
+
+Slopes, arguments, and fallacies
+
+Some writers distinguish between a slippery slope  and a slippery slope . A slippery slope  can be represented by a series of conditional statements, namely:
+
+The idea being that through a series of intermediate steps,  will imply . Some writers point out that strict necessity isn't required and it can still be characterized as a slippery slope if at each stage the next step is plausible. With strict implication,  will imply , but if at each step the probability is 90%, for example, then the more steps there are, the less likely it becomes that  will cause .
+
+A slippery slope  is typically a negative argument where there is an attempt to discourage someone from taking a course of action because if they do it will lead to some unacceptable conclusion. Some writers point out that an argument with the same structure might be used in a positive way in which someone is encouraged to take the first step because it leads to a desirable conclusion.
+
+If someone is  of using a slippery slope argument then it is being suggested they are guilty of fallacious reasoning, and while they are claiming that  implies , for whatever reason, this is not the case. In logic and critical thinking textbooks, slippery slopes and slippery slope arguments are normally discussed as a form of , although there may be an acknowledgement that non-fallacious forms of the argument can also exist.
+
+Types of argument
+
+Different writers have classified slippery slope arguments in different and often contradictory ways, One type has been called the causal slippery slope, and the distinguishing feature of this type is that the various steps leading from p to z are events with each event being the cause of the next in the sequence. The second type might be called the judgmental slippery slope with the idea being that the 'slope' does not consist of a series of events but is such that, for whatever reason, if a person makes one particular judgment they will rationally have to make another and so on. The judgmental type may be further sub-divided into conceptual slippery slopes and decisional slippery slopes.
+
+Conceptual slippery slopes, which Trudy Govier calls the fallacy of slippery assimilation, are closely related to the sorites paradox. So, in the context of talking about slippery slopes, Merilee Salmon writes: "The slippery slope is an ancient form of reasoning. According to van Fraassen (The Scientific Image), the argument is found in Sextus Empiricus that incest is not immoral, on the grounds that 'touching your mother's big toe with your little finger is not immoral, and all the rest differs only by degree.
+
+Decisional slippery slopes are similar to conceptual slippery slopes in that they rely on there being a continuum with no clear dividing lines such that if you decide to accept one position or course of action then there will, either now or in the future, be no rational grounds for not accepting the next position or course of action in the sequence.
+
+The difficulty in classifying slippery slope arguments is that there is no clear consensus in the literature as to how terminology should be used. It has been said that whilst these two fallacies "have a relationship which may justify treating them together", they are also distinct, and "the fact that they share a name is unfortunate".
+
+Metaphor and its alternatives
+
+The metaphor of the "slippery slope" dates back at least to Cicero's essay Laelius de Amicitia (XII.41).  The title character Gaius Laelius Sapiens uses the metaphor to describe the decline of the Republic upon the impending election of Gaius Gracchus: "Affairs soon move on, for they glide readily down the path of ruin when once they have taken a start."
+
+Thin end of a wedge
+
+Walton suggests Alfred Sidgwick should be credited as the first writer on informal logic to describe what would today be called a slippery slope argument.
+
+Sidgwick says this is "popularly known as the objection to a thin end of a wedge" but might be classified now as a decisional slippery slope. However, the wedge metaphor also captures the idea that unpleasant end result is a wider application of a principle associated with the initial decision which is often a feature of decisional slippery slopes due to their incremental nature but may be absent from causal slippery slopes.
+
+Domino fallacy
+
+T. Edward Damer, in his book Attacking Faulty Reasoning, describes what others might call a causal slippery slope but says:
+
+Instead Damer prefers to call it the domino fallacy. Howard Kahane suggests that the domino variation of the fallacy has gone out of fashion because it was tied to the domino theory for the United States becoming involved in the war in Vietnam and although the U.S. lost that war, "it is primarily communist dominoes that have fallen". and that "in German writing dam burst and slippery slope arguments are treated as broadly synonymous. In particular the structural analyses of slippery slope arguments derived from English writing are largely transferred directly to the dam burst argument."
+
+Bruce Waller says it is lawyers who often call it the "parade of horribles" argument while politicians seem to favor "the camel's nose is in the tent".
+
+The 1985 best-selling children's book If You Give a Mouse a Cookie by Laura Joffe Numeroff and Felicia Bond popularized the general idea of the slippery slope for recent generations.
+
+Defining features of slippery slope arguments
+
+Given the disagreement over what constitutes a genuine slippery slope argument, it is to be expected that there are differences in the way they are defined. Lode says that "although all SSAs share certain features, they are a family of related arguments rather than a class of arguments whose members all share the same form."
+
+Those who hold that slippery slopes are causal generally give a simple definition, provide some appropriate examples and perhaps add some discussion as to the difficulty of determining whether the argument is reasonable or fallacious. Most of the more detailed analysis of slippery slopes has been done by those who hold that genuine slippery slopes are of the decisional kind.
+
+Lode, having claimed that SSAs are not a single class of arguments whose members all share the same form, nevertheless goes on to suggest the following common features.
+
+Walton adds the requirement that there must be a loss of control. He says, there are four basic components:
+
+See also
+
+Appeal to probability
+
+Boiling frog
+
+Broccoli mandate
+
+Broken windows theory
+
+Butterfly effect
+
+Creeping normality
+
+Euthanasia and the slippery slope
+
+First they came ...
+
+Foot-in-the-door technique
+
+Gateway drug theory
+
+Normalization of deviance
+
+Overton window
+
+Precautionary principle
+
+Precedent
+
+Reductio ad absurdum
+
+Salami slicing tactics
+
+Shifting baseline
+
+Snowball effect
+
+Splitting (psychology)
+
+Trivial objections
+
+References
+
+Category:Rhetorical techniques
+
+Category:Metaphors referring to places
+
+Category:Causal fallacies
+
+Category:Inductive fallacies
+
+Category:Legal doctrines and principles
+
+Category:American legal terminology

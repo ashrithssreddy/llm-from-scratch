@@ -1,0 +1,137 @@
+In experiments, a spillover is an indirect effect on a subject not directly treated by the experiment.  These effects are useful for policy analysis but complicate the statistical analysis of experiments.
+
+Analysis of spillover effects involves relaxing the non-interference assumption, or SUTVA (Stable Unit Treatment Value Assumption). This assumption requires that subject is revelation of its potential outcomes depends only on that subject is own treatment status, and is unaffected by another subject j's treatment status. In ordinary settings where the researcher seeks to estimate the average treatment effect (\widehat{ATE}), violation of the non-interference assumption means that traditional estimators for the ATE, such as difference-in-means, may be biased. However, there are many real-world instances where a unit's revelation of potential outcomes depend on another unit's treatment assignment, and analyzing these effects may be just as important as analyzing the direct effect of treatment.
+
+One solution to this problem is to redefine the causal estimand of interest by redefining a subject's potential outcomes in terms of one's own treatment status and related subjects' treatment status. The researcher can then analyze various estimands of interest separately. One important assumption here is that this process captures all patterns of spillovers, and that there are no unmodeled spillovers remaining (ex. spillovers occur within a two-person household but not beyond).
+
+Once the potential outcomes are redefined, the rest of the statistical analysis involves modeling the probabilities of being exposed to treatment given some schedule of treatment assignment, and using inverse probability weighting (IPW) to produce unbiased (or asymptotically unbiased) estimates of the estimand of interest.
+
+Examples of spillover effects
+
+Spillover effects can occur in a variety of different ways. Common applications include the analysis of social network spillovers and geographic spillovers. Examples include the following:
+
+Communication: An intervention that conveys information about a technology or product can influence the take-up decisions of others in their network if it diffuses beyond the initial user.
+
+Competition: Job placement assistance for young job seekers may influence the job market prospects of individuals who did not receive the training but are competing for the same jobs.
+
+Contagion: Receiving deworming drugs can decrease other's likelihood of contracting the disease.
+
+Deterrence: Information about government audits in specific municipalities can spread to nearby municipalities.
+
+Displacement: A hotspot policing intervention that increases policing presence on a given street can lead to the displacement of crime onto nearby untreated streets.
+
+Reallocation of resources: A hotspot policing intervention that increases policing presence on a given street can decrease police presence on nearby streets.
+
+Social comparison: A program that randomizes individuals to receive a voucher to move to a new neighborhood can additionally influence the control group's beliefs about their housing conditions.
+
+In such examples, treatment in a randomized-control trial can have a direct effect on those who receive the intervention and also a spillover effect on those who were not directly treated.
+
+Statistical issues
+
+Estimating spillover effects in experiments introduces three statistical issues that researchers must take into account.
+
+Relaxing the non-interference assumption
+
+One key assumption for unbiased inference is the non-interference assumption, which posits that an individual's potential outcomes are only revealed by their own treatment assignment and not the treatment assignment of others. This assumption has also been called the Individualistic Treatment Response or the stable unit treatment value assumption. Non-interference is violated when subjects can communicate with each other about their treatments, decisions, or experiences, thereby influencing each other's potential outcomes. If the non-interference assumption does not hold, units no longer have just two potential outcomes (treated and control), but a variety of other potential outcomes that depend on other units’ treatment assignments, which complicates the estimation of the average treatment effect.
+
+Estimating spillover effects requires relaxing the non-interference assumption. This is because a unit's outcomes depend not only on its treatment assignment but also on the treatment assignment of its neighbors. The researcher must posit a set of potential outcomes that limit the type of interference. As an example, consider an experiment that sends out political information to undergraduate students to increase their political participation. If the study population consists of all students living with a roommate in a college dormitory, one can imagine four sets of potential outcomes, depending on whether the student or their partner received the information (assume no spillover outside of each two-person room):
+
+Y0,0 refers to an individual's potential outcomes when they are not treated (0) and neither was their roommate (0).
+
+Y0,1 refers to an individual's potential outcome when they are not treated (0) but their roommate was treated (1).
+
+Y1,0 refers to an individual's potential outcome when they are treated (1) but their roommate was not treated (0).
+
+Y1,1 refers to an individual's potential outcome when they are treated (1) and their roommate was treated (1).
+
+Now an individual's outcomes are influenced by both whether they received the treatment and whether their roommate received the treatment. We can estimate one type of spillover effect by looking at how one's outcomes change depending on whether their roommate received the treatment or not, given the individual did not receive treatment directly. This would be captured by the difference Y0,1- Y0,0. Similarly, we can measure how ones’ outcomes change depending on their roommate's treatment status, when the individual themselves are treated. This amounts to taking the difference Y1,1- Y1,0.
+
+While researchers typically embrace experiments because they require less demanding assumptions, spillovers can be “unlimited in extent and impossible to specify in form.”  The researcher must make specific assumptions about which types of spillovers are operative. One can relax the non-interference assumption in various ways depending on how spillovers are thought to occur in a given setting. One way to model spillover effects is a binary indicator for whether an immediate neighbor was also treated, as in the example above. One can also posit spillover effects that depend on the number of immediate neighbors that were also treated, also known as k-level effects.
+
+Using randomization inference for hypothesis testing
+
+In experimental settings where treatment is randomized, we can use randomization inference to test for the existence of spillover effects. The key advantage of this approach is that randomization inference is finite-sample valid, without requiring correct model specification or normal asymptotics. To be specific, consider the aforementioned example experiment in college dorm rooms, and suppose we want to test:
+
+H_0: Y_{0,1} = Y_{0,0}
+
+This hypothesis posits that there is no spillover effect on students who don't receive the information (i.e., students who are in control in the experiment). Rejecting this hypothesis implies that even when students don't receive the information message directly, they still may receive it indirectly from treated roommates; hence, there is a spillover effect.
+
+To test a hypothesis like H_0 we can apply a conditional Fisher randomization test. Let R_{ij}=1 be an indicator denoting that students i,j are roommates, where we assumed for simplicity that each student has exactly one roommate. Suppose this is a completely randomized design and let D_i denote the binary treatment of student i. Then:
+
+Define I_1 = \{ i : \sum_j R_{ij} (1-D_i) D_j = 1\} and I_0 = \{ i : \sum_j R_{ij} (1-D_i) (1-D_j) = 1\}.
+
+Calculate an estimate of the spillover effect: T(I_1, I_0) = \big|\frac{\sum_{i\in I_1} Y_i}{ |I_1| } - \frac{\sum_{i\in I_0} Y_i}{ |I_0| }\big|. This is the test statistic.
+
+For l = 1, 2, \ldots, L
+
+Randomly shuffle units between I_1, I_0 producing new randomized sets I_1^{(l)}, I_0^{(l)} akin to the permutation test.
+
+Recalculate the test statistic T^{(l)} = T(I_1^{(l)}, I_0^{(l)}).
+
+Calculate the randomization p-value:
+
+\mathrm{pval} =  \frac{1}{L+1}[ 1 + \sum_l 1(T^{(l)} > T^{obs}) ].
+
+To explain this procedure, in Step 1, we define the sub-populations of interest:  I_1 is the set of students who are in control but their roommate is treated,
+
+and I_0 are the students in control with their roommates also in control. These are known as "focal units".
+
+In Step 2, we define an estimate of the spillover effect as \bar Y_{0,1} - \bar Y_{0,0}, the difference in outcomes between populations I_1, I_0.
+
+Crucially, in randomization inference, we don't need to derive the sampling distribution of this estimator. The validity of the procedure stems from Step 3 where we resample treatment according to the true experimental variation (here, simply permuting the "exposures" 01 and 00) while keeping the outcomes fixed under the null. Finally, in Step 4 we calculate the randomization p-value. The 1/(L+1) term is a finite-sample correction to avoid issues with repeated test statistic values.
+
+As mentioned before, the randomization p-value is valid for any finite sample size and does not rely on correct model specification.
+
+This randomization procedure can be extended to arbitrary designs and more general definitions of spillover effects, although care must be taken to properly account for the interference structure between all pairs of units.
+
+The above procedure can also be used to obtain an interval estimate of a constant spillover effect through test inversion. Moreover, the same procedure could be modified for testing whether the "average" spillover effect is zero by using an appropriately studentized test statistic in Step 2.
+
+Exposure mappings
+
+The next step after redefining the causal estimand of interest is to characterize the probability of spillover exposure for each subject in the analysis, given some vector of treatment assignment. Aronow and Samii (2017) present a method for obtaining a matrix of exposure probabilities for each unit in the analysis.
+
+First, define a diagonal matrix with a vector of treatment assignment probabilities \mathbf { P } = \operatorname{diag} \left( p_{\mathbf z_1} , p_{\mathbf z_2} , \dots , p_{\mathbf{z}_} \right).
+
+Second, define an indicator matrix \mathbf{I} of whether the unit is exposed to spillover or not. This is done by using an adjacency matrix as shown on the right, where information regarding a network can be transformed into an indicator matrix. This resulting indicator matrix will contain values of d_k, the realized values of a random binary variable D_i = f \left( \mathbf { Z } , \theta_i \right), indicating whether that unit has been exposed to spillover or not.
+
+Third, obtain the sandwich product \mathbf {I}_k \mathbf { P } \mathbf {I}_k^{\prime}, an N&nbsp;×&nbsp;N matrix which contains two elements: the individual probability of exposure \pi _ { i } \left( d _ { k } \right)on the diagonal, and the joint exposure probabilities \pi _ { i j } \left( d _ { k } \right)on the off diagonals:
+
+\mathbf {I}_k \mathbf { P } \mathbf {I}_k^\prime = \left[ \begin{array} {cccc} { \pi_1(d_k) } & \pi_{12} (d_k) & \cdots & \pi_{1N} (d_k) \\ \pi_{21}(d_k) & \pi_2(d_k) & \cdots & \pi_{2N}(d_k) \\ \vdots & \vdots & \ddots & \\ \pi_{N1}(d_k) & \pi_{N2}(d_k) & { } & \pi_N ( d_k) \end{array} \right]In a similar fashion, the joint probability of exposure of i being in exposure condition d_k and j being in a different exposure condition d_lcan be obtained by calculating \mathbf { I } _ { k } \mathbf { P } \mathbf { I } _ { l } ^ { \prime }:
+
+\mathbf { I } _ { k } \mathbf { P } \mathbf { I } _ { l } ^ { \prime } = \left[ \begin{array} { c c c c } { 0 } & { \pi _ { 12 } \left( d _ { k } , d _ { l } \right) } & { \dots } & { \pi _ { 1 N } \left( d _ { k } , d _ { l } \right) } \\ { \pi _ { 21 } \left( d _ { k } , d _ { l } \right) } & { 0 } & { \ldots } & { \pi _ { 2 N } \left( d _ { k } , d _ { l } \right) } \\ { \vdots } & { \vdots } & { \ddots } & { } \\ \pi_{N1} (d_k, d_l ) & \pi_{N2} (d_k, d_l) & & 0 \end{array} \right]Notice that the diagonals on the second matrix are 0 because a subject cannot be simultaneously exposed to two different exposure conditions at once, in the same way that a subject cannot reveal two different potential outcomes at once.
+
+The obtained exposure probabilities \pithen can be used for inverse probability weighting (IPW, described below), in an estimator such as the Horvitz–Thompson estimator.
+
+One important caveat is that this procedure excludes all units whose probability of exposure is zero (ex. a unit that is not connected to any other units), since these numbers end up in the denominator of the IPW regression.
+
+Need for inverse probability weights
+
+Estimating spillover effects requires additional care: although treatment is directly assigned, spillover status is indirectly assigned and can lead to differential probabilities of spillover assignment for units. For example, a subject with 10 friend connections is more likely to be indirectly exposed to treatment as opposed to a subject with just one friend connection. Not accounting for varying probabilities of spillover exposure can bias estimates of the average spillover effect.
+
+Figure 1 displays an example where units have varying probabilities of being assigned to the spillover condition. Subfigure A displays a network of 25 nodes where the units in green are eligible to receive treatment. Spillovers are defined as sharing at least one edge with a treated unit. For example, if node 16 is treated, nodes 11, 17, and 21 would be classified as spillover units. Suppose three of these six green units are selected randomly to be treated, so that \binom{6}{3}=20 different sets of treatment assignments are possible. In this case, subfigure B displays each node's probability of being assigned to the spillover condition. Node 3 is assigned to spillover in 95% of the randomizations because it shares edges with three units that are treated. This node will only be a control node in 5% of randomizations: that is, when the three treated nodes are 14, 16, and 18. Meanwhile, node 15 is assigned to spillover only 50% of the time—if node 14 is not directly treated, node 15 will not be assigned to spillover.
+
+Using inverse probability weights
+
+When analyzing experiments with varying probabilities of assignment, special precautions should be taken. These differences in assignment probabilities may be neutralized by inverse-probability-weighted (IPW) regression, where each observation is weighted by the inverse of its likelihood of being assigned to the treatment condition observed using the Horvitz-Thompson estimator. This approach addresses the bias that might arise if potential outcomes were systematically related to assignment probabilities. The downside of this estimator is that it may be fraught with sampling variability if some observations are accorded a high amount of weight (i.e. a unit with a low probability of being spillover is assigned to the spillover condition by chance).
+
+Regression approaches
+
+In non-experimental settings, estimating the variability of a spillover effect creates additional difficulty. When the research study has a fixed unit of clustering, such as a school or household, researchers can use traditional standard error adjustment tools like cluster-robust standard errors, which allow for correlations in error terms within clusters but not across them. In other settings, however, there is no fixed unit of clustering. In order to conduct hypothesis testing in these settings, the use of randomization inference is recommended. This technique allows one to generate p-values and confidence intervals even when spillovers do not adhere to a fixed unit of clustering but nearby units tend to be assigned to similar spillover conditions, as in the case of fuzzy clustering.
+
+See also
+
+Social multiplier effect
+
+References
+
+Category:Design of experiments
+
+Category:Survey methodology
+
+Category:Asymptotic analysis
+
+Category:Statistical inference
+
+Category:Causal inference
+
+Category:Systems analysis

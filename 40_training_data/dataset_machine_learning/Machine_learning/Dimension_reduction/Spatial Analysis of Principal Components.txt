@@ -1,0 +1,35 @@
+Spatial Principal Component Analysis (sPCA) is a multivariate statistical technique that complements the traditional Principal Component Analysis (PCA) by incorporating spatial information into the analysis of genetic variation. While traditional PCA can be used to find spatial patterns, it focuses on reducing data dimensionality by identifying uncorrelated principal components that capture maximum variance, thus often lacking power to identify non-trivial spatial genetic patterns. By accounting for spatial autocorrelation, sPCA is able to uncover spatial patterns in the data and find the spatial structure of datasets where observations are either geographically or topologically linked. This statistical power improvement allows the investigation of cryptic spatial patterns of genetic variability otherwise overlooked.
+
+sPCA has been applied in various fields, including geography, ecology and genetics.
+
+Details
+
+sPCA modifies the PCA framework by integrating spatial weights, typically in the form of connectivity matrices or spatial adjacency graphs. It identifies principal components (PCs) that maximize both genentic variance and spatial autocorreation, as measured by Moran's I. The method decomposes variance into two components:
+
+Global structures, correspond to positive autocorrelation, that is, reflect broad-scale spatial patterns where similar values cluster over large regions.
+
+Local structures, correspond to negative autocorrelation, that is, capture fine-scale spatial variations or localized patterns.
+
+The core of sPCA relies on the eigenanalysis of a spatially weighted covariance or correlation matrix. The spatial weight matrix can be constructed using techniques such as Delaunay triangulation, nearest-neighbor graphs, or distance-based criteria.
+
+Applications of sPCA should be used only as an explorative tool.
+
+Genetics: Population structure and gene flow analysis while allowing for spatial autocorrelation considerations.
+
+Biogeography: To identify historical dispersal routes, and barriers to gene flow, providing insights into species distribution patterns and evolutionary history.
+
+Software/Source Code
+
+sPCA implementations are available in R in adegenet and ntbox .
+
+These tools facilitate the application of sPCA by providing functions for constructing spatial weight matrices, performing eigenanalysis, and obtaining spatial principal components in an easy-to-read form.
+
+References
+
+Category:Matrix decompositions
+
+Category:Dimension reduction
+
+Category:Spatial analysis
+
+Category:Bioinformatics algorithms

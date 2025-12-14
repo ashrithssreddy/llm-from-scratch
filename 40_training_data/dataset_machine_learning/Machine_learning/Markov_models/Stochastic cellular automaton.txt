@@ -1,0 +1,65 @@
+A stochastic cellular automaton (SCA), also known as a probabilistic cellular automaton (PCA), is a type of computational model. It consists of a grid of cells, where each cell has a particular state (e.g., "on" or "off"). The states of all cells evolve in discrete time steps according to a set of rules.
+
+Unlike a standard cellular automaton where the rules are deterministic (fixed), the rules in a stochastic cellular automaton are probabilistic. This means a cell's next state is determined by chance, according to a set of probabilities that depend on the states of neighboring cells.
+
+Despite the simple, local, and random nature of the rules, these models can produce complex global patterns through processes like emergence and self-organization. They are used to model a wide variety of real-world phenomena where randomness is a factor, such as the spread of forest fires, the dynamics of disease epidemics, or the simulation of ferromagnetism in physics (see Ising model).
+
+As a mathematical object, a stochastic cellular automaton is a discrete-time random dynamical system. It is often analyzed within the frameworks of interacting particle systems and Markov chains, where it may be called a system of locally interacting Markov chains. See  for a more detailed introduction.
+
+Formal definition
+
+From the perspective of probability theory, a stochastic cellular automaton is a discrete-time Markov process. The configuration of all cells at a given time is a state \eta in a product space E=\prod_{k \in G} S_k. Here, G is a graph representing the grid of cells (e.g., \mathbb{Z}^d), and each S_k is the finite set of possible states for the cell k (e.g., S_k = \{0, 1\}).
+
+The transition probability, which defines the dynamics, has a product form:
+
+P(d\sigma | \eta) = \bigotimes_{k \in G} p_k(d\sigma_k | \eta)
+
+where \sigma is the next configuration and p_k(d\sigma_k | \eta) is a probability distribution on S_k.
+
+Locality is a key requirement, meaning the probability of a cell k changing its state depends only on the states of its neighbors. This is expressed as p_k(d\sigma_k | \eta) = p_k(d\sigma_k | \eta_{V_k}), where V_k is a finite neighborhood of cell k and \eta_{V_k} are the states of the cells in that neighborhood. See  for a more detailed introduction from this point of view.
+
+Examples of stochastic cellular automaton
+
+Majority cellular automaton
+
+There is a version of the majority cellular automaton with probabilistic updating rules. See the Toom's rule.
+
+Relation to lattice random fields
+
+PCA may be used to simulate the Ising model of ferromagnetism in statistical mechanics.
+
+between probabilistic cellular automata and the cellular Potts model in particular when it is implemented in parallel.
+
+Non Markovian generalization
+
+The Galves–Löcherbach model is an example of a generalized PCA with a non Markovian aspect.
+
+References
+
+Further reading
+
+.
+
+.
+
+.
+
+.
+
+.
+
+Category:Cellular automata
+
+Category:Lattice models
+
+Category:Self-organization
+
+Category:Complex systems theory
+
+Category:Spatial processes
+
+Category:Markov models
+
+Category:Stochastic processes
+
+Category:Models of computation

@@ -1,0 +1,17 @@
+EDLUT (Event-Driven LookUp Table) is a computer application for simulating networks of spiking neurons.
+
+It was developed in the University of Granada and source code was released under GNU GPL version 3.
+
+EDLUT uses event-driven simulation scheme and lookup tables to efficiently simulate medium or large spiking neural networks.
+
+This allows this application to simulate detailed biological neuron models and to interface with experimental setups (such as a robotic arm) in real time.
+
+References
+
+Category:Neuroscience software
+
+Category:Neural network software
+
+Category:Software using the GNU General Public License
+
+Category:University of Granada

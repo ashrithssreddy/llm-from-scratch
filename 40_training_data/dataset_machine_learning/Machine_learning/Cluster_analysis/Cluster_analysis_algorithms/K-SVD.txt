@@ -1,0 +1,71 @@
+In applied mathematics, k-SVD is a dictionary learning algorithm for creating a dictionary for sparse representations, via a singular value decomposition approach. k-SVD is a generalization of the k-means clustering method, and it works by iteratively alternating between sparse coding the input data based on the current dictionary, and updating the atoms in the dictionary to better fit the data. It is structurally related to the expectation–maximization (EM) algorithm. k-SVD can be found widely in use in applications such as image processing, audio processing, biology, and document analysis.
+
+k-SVD algorithm
+
+k-SVD is a kind of generalization of k-means, as follows. The k-means clustering  can be also regarded as a method of sparse representation. That is, finding the best possible codebook  to represent the data samples \{y_i\}^M_{i=1}  by nearest neighbor, by solving
+
+\quad  \min \limits _{D, X}  \{ \|Y - DX\|^2_F\} \qquad \text{subject to } \forall i, x_i = e_k \text{ for some } k.
+
+which is nearly equivalent to
+
+\quad  \min \limits _{D, X} \{ \|Y - DX\|^2_F\} \qquad \text{subject to }\quad \forall i , \|x_i\|_0 = 1
+
+which is k-means that allows "weights".
+
+The letter F denotes the Frobenius norm. The sparse representation term x_i = e_k enforces k-means algorithm to use only one atom (column) in dictionary D. To relax this constraint, the target of the k-SVD algorithm is to represent the signal as a linear combination of atoms in D.
+
+The k-SVD algorithm follows the construction flow of the k-means algorithm. However, in contrast to k-means,  in order to achieve a linear combination of atoms in D, the sparsity term of the constraint is relaxed so that the number of nonzero entries of each column x_i can be more than 1, but less than a number T_0.
+
+So, the objective function becomes
+
+\quad  \min \limits _{D, X} \{ \|Y - DX\|^2_F \} \qquad \text{subject to } \quad \forall i \;,  \|x_i\|_0 \le T_0.
+
+or in another objective form
+
+\quad  \min \limits _{D, X}  \sum_{i} \|x_i\|_0  \qquad \text{subject to } \quad \forall i \;,  \|Y - DX\|^2_F \le \epsilon.
+
+In the k-SVD algorithm, the D is first fixed and the best coefficient matrix X is found. As finding the truly optimal X is hard, we use an approximation pursuit method. Any algorithm such as OMP, the orthogonal matching pursuit can be used for the calculation of the coefficients, as long as it can supply a solution with a fixed and predetermined number of nonzero entries T_0.
+
+After the sparse coding task, the next is to search for a better dictionary D. However, finding the whole dictionary all at a time is impossible, so the process is to update only one column of the dictionary D each time, while fixing X. The update of the k-th column is done by rewriting the penalty term as
+
+\|Y - DX\|^2_F =  \left\| Y - \sum_{j = 1}^K d_j x^\text{T}_j\right\|^2_F = \left\| \left(Y - \sum_{j \ne k} d_j x^\text{T}_j \right)  -  d_k x^\text{T}_k \right\|^2_F = \| E_k - d_k x^\text{T}_k\|^2_F
+
+where x_k^\text{T} denotes the k-th row of X.
+
+By decomposing the multiplication DX into sum of K rank 1 matrices, we can assume the other K-1 terms are assumed fixed, and the k-th remains unknown.  After this step, we can solve the minimization problem by approximating the E_k term with a  rank -1 matrix using singular value decomposition, then update d_k with it. However, the new solution for the vector x^\text{T}_k is not guaranteed to be sparse.
+
+To cure this problem, define  \omega_k  as
+
+\omega_k = \{i \mid 1 \le i \le N , x^\text{T}_k(i) \ne 0\},
+
+which points to examples \{ y_i \}_{i=1}^N  that use atom d_k (also the entries of x_i that is nonzero). Then, define \Omega_k as a matrix  of size N\times|\omega_k|, with ones on the (i,\omega_k(i))\text{th} entries and zeros otherwise. When multiplying \tilde{x}^\text{T}_k = x^\text{T}_k\Omega_k, this shrinks the row vector x^\text{T}_k by discarding the zero entries. Similarly, the multiplication \tilde{Y}_k = Y\Omega_k is the subset of the examples that are currently using the d_k atom. The same effect can be seen on \tilde{E}_k = E_k\Omega_k.
+
+So the minimization problem as mentioned before becomes
+
+\| E_k\Omega_k - d_k x^\text{T}_k\Omega_k\|^2_F =  \| \tilde{E}_k - d_k \tilde{x}^\text{T}_k\|^2_F
+
+and can be done by directly using SVD. SVD decomposes \tilde{E}_k into  U\Delta V^\text{T}. The solution for d_k is the first column of U, the coefficient  vector \tilde{x}^\text{T}_k as the first column of V \times \Delta (1, 1). After updating the whole dictionary, the process then turns to iteratively solve X, then iteratively solve D.
+
+Limitations
+
+Choosing an appropriate "dictionary" for a dataset is a non-convex problem, and k-SVD operates by an iterative update which does not guarantee to find the global optimum. However, this is common to other algorithms for this purpose, and k-SVD works fairly well in practice.
+
+See also
+
+Sparse approximation
+
+Singular value decomposition
+
+Matrix norm
+
+k-means clustering
+
+Low-rank approximation
+
+References
+
+Category:Norms (mathematics)
+
+Category:Linear algebra
+
+Category:Cluster analysis algorithms

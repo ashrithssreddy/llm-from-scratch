@@ -1,0 +1,41 @@
+, the Markov boundary of node A includes its parents, children and the other parents of all of its children.]]
+
+In statistics and machine learning, a Markov blanket of a random variable is a set of variables that renders the variable conditionally independent of all other variables in the system. This concept is central in probabilistic graphical models and feature selection. If a Markov blanket is minimal—meaning that no variable in it can be removed without losing this conditional independence—it is called a Markov boundary. Identifying a Markov blanket or boundary allows for efficient inference and helps isolate relevant variables for prediction or causal reasoning. The terms Markov blanket and Markov boundary were coined by Judea Pearl in 1988. A Markov blanket may be derived from the structure of a probabilistic graphical model such as a Bayesian network or Markov random field.
+
+Markov blanket
+
+A Markov blanket of a random variable Y in a random variable set \mathcal{S}=\{X_1,\ldots,X_n\} is any subset \mathcal{S}_1 of \mathcal{S}, conditioned on which other variables are independent with Y:
+
+Y \perp\!\!\!\perp \mathcal{S} \smallsetminus \mathcal{S}_1 \mid \mathcal{S}_1
+
+It means that \mathcal{S}_1 contains at least all the information one needs to infer Y, where the variables in \mathcal{S} \smallsetminus \mathcal{S}_1 are redundant.
+
+In general, a given Markov blanket is not unique. Any set in \mathcal{S} that contains a Markov blanket is also a Markov blanket itself. Specifically, \mathcal{S} is a Markov blanket of Y in \mathcal{S}.
+
+Example
+
+In a Bayesian network, the Markov blanket of a node consists of its parents, its children, and its children's other parents (i.e., co-parents). Knowing the values of these nodes makes the target node conditionally independent of the rest of the network. In a Markov random field, the Markov blanket of a node is simply its immediate neighbors.
+
+Markov condition
+
+The concept of a Markov blanket is rooted in the Markov condition, which states that in a probabilistic graphical model, each variable is conditionally independent of its non-descendants given its parents. When there are multiple Markov boundaries, quantities measuring causal effect could fail.
+
+See also
+
+Andrey Markov
+
+Free energy minimisation
+
+Moral graph
+
+Separation of concerns
+
+Causality
+
+Causal inference
+
+Notes
+
+Category:Bayesian networks
+
+Category:Markov networks

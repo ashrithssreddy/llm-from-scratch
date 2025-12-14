@@ -1,0 +1,29 @@
+Evolution window is the narrow band of the mutation step size σ, where significant progress toward the fitness/objective function's optimum was observed in evolution strategies.
+
+There are three well-known methods to adapt the mutation step size σ in evolution strategies:
+
+(1/5-th) Success Rule
+
+Self-Adaptation (for example through log-normal mutations)
+
+Cumulative Step Size Adaptation (CSA)
+
+On simple functions all of them have been empirically shown to keep the step size within the evolution window.
+
+See also
+
+Bionics
+
+Cybernetics
+
+Evolutionary Algorithm
+
+Optimization (mathematics)
+
+References
+
+H.-G. Beyer. Toward a Theory of Evolution Strategies: Self-Adaptation. Evolutionary Computation, 3(3), 311-347.
+
+Ingo Rechenberg: Evolutionsstrategie '94. Stuttgart: Frommann-Holzboog 1994.
+
+Category:Evolution strategy

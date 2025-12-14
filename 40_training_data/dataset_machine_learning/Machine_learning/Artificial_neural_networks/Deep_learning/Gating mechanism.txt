@@ -1,0 +1,127 @@
+In neural networks, the gating mechanism is an architectural motif for controlling the flow of activation and gradient signals. They are most prominently used in recurrent neural networks (RNNs), but have also found applications in other architectures.
+
+RNNs
+
+Gating mechanisms are the centerpiece of long short-term memory (LSTM). They were proposed to mitigate the vanishing gradient problem often encountered by regular RNNs.
+
+An LSTM unit contains three gates:
+
+An input gate, which controls the flow of new information into the memory cell
+
+A forget gate, which controls how much information is retained from the previous time step
+
+An output gate, which controls how much information is passed to the next layer.
+
+The equations for LSTM are:
+
+\begin{aligned}
+
+\mathbf{I}_t &= \sigma(\mathbf{X}_t \mathbf{W}_{xi} + \mathbf{H}_{t-1} \mathbf{W}_{hi} + \mathbf{b}_i) \\
+
+\mathbf{F}_t &= \sigma(\mathbf{X}_t \mathbf{W}_{xf} + \mathbf{H}_{t-1} \mathbf{W}_{hf} + \mathbf{b}_f) \\
+
+\mathbf{O}_t &= \sigma(\mathbf{X}_t \mathbf{W}_{xo} + \mathbf{H}_{t-1} \mathbf{W}_{ho} + \mathbf{b}_o) \\
+
+\tilde{\mathbf{C}}_t &= \tanh(\mathbf{X}_t \mathbf{W}_{xc} + \mathbf{H}_{t-1} \mathbf{W}_{hc} + \mathbf{b}_c) \\
+
+\mathbf{C}_t &= \mathbf{F}_t \odot \mathbf{C}_{t-1} + \mathbf{I}_t \odot \tilde{\mathbf{C}}_t \\
+
+\mathbf{H}_t &= \mathbf{O}_t \odot \tanh(\mathbf{C}_t)
+
+\end{aligned}
+
+Here, \odot represents elementwise multiplication.
+
+File:LSTM 1.svg
+
+File:LSTM 0.svg
+
+File:LSTM 2.svg
+
+File:LSTM 3.svg
+
+The gated recurrent unit (GRU) simplifies the LSTM. Compared to the LSTM, the GRU has just two gates: a reset gate and an update gate. GRU also merges the cell state and hidden state. The reset gate roughly corresponds to the forget gate, and the update gate roughly corresponds to the input gate. The output gate is removed.
+
+There are several variants of GRU. One particular variant has these equations:
+
+\begin{aligned}
+
+\mathbf{R}_t &= \sigma(\mathbf{X}_t \mathbf{W}_{xr} + \mathbf{H}_{t-1} \mathbf{W}_{hr} + \mathbf{b}_r) \\
+
+\mathbf{Z}_t &= \sigma(\mathbf{X}_t \mathbf{W}_{xz} + \mathbf{H}_{t-1} \mathbf{W}_{hz} + \mathbf{b}_z) \\
+
+\tilde{\mathbf{H}}_t &= \tanh(\mathbf{X}_t \mathbf{W}_{xh} + (\mathbf{R}_t \odot \mathbf{H}_{t-1}) \mathbf{W}_{hh} + \mathbf{b}_h) \\
+
+\mathbf{H}_t &= \mathbf{Z}_t \odot \mathbf{H}_{t-1}  + (1 - \mathbf{Z}_t) \odot \tilde{\mathbf{H}}_t
+
+\end{aligned}
+
+File:Gated Recurrent Unit 1.svg
+
+File:Gated Recurrent Unit 2.svg
+
+File:Gated Recurrent Unit 3.svg
+
+Gated Linear Unit
+
+Gated Linear Units (GLUs) adapt the gating mechanism for use in feedforward neural networks, often within transformer-based architectures. They are defined as:
+
+\mathrm{GLU}(a,b)=a \odot \sigma(b)
+
+where a,b are the first and second inputs, respectively. \sigma represents the sigmoid activation function.
+
+Replacing \sigma with other activation functions leads to variants of GLU:
+
+\begin{aligned}
+
+\mathrm{ReGLU}(a, b) &=  a \odot \text{ReLU}(b)\\
+
+\mathrm{GEGLU}(a, b) &=  a \odot \text{GELU}(b)\\
+
+\mathrm{SwiGLU}(a, b, \beta) &=  a \odot \text{Swish}_\beta(b)
+
+\end{aligned}
+
+where ReLU, GELU, and Swish are different activation functions.
+
+In transformer models, such gating units are often used in the feedforward modules. For a single vector input, this results in:
+
+\begin{aligned}
+
+\operatorname{GLU}(x, W, V, b, c) & =\sigma(x W+b) \odot(x V+c) \\
+
+\operatorname{Bilinear}(x, W, V, b, c) & =(x W+b) \odot(x V+c) \\
+
+\operatorname{ReGLU}(x, W, V, b, c) & =\max (0, x W+b) \odot(x V+c) \\
+
+\operatorname{GEGLU}(x, W, V, b, c) & =\operatorname{GELU}(x W+b) \odot(x V+c) \\
+
+\operatorname{SwiGLU}(x, W, V, b, c, \beta) & =\operatorname{Swish}_\beta(x W+b) \odot(x V+c)
+
+\end{aligned}
+
+Other architectures
+
+Gating mechanism is used in highway networks, which were designed by unrolling an LSTM.
+
+Channel gating uses a gate to control the flow of information through different channels inside a convolutional neural network (CNN).
+
+See also
+
+Recurrent neural network
+
+Long short-term memory
+
+Gated recurrent unit
+
+Transformer
+
+Activation function
+
+References
+
+Further reading
+
+Category:Neural network architectures
+
+Category:Deep learning

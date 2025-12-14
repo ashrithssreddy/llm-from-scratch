@@ -1,0 +1,27 @@
+A genetic operator is an operator used in evolutionary algorithms (EA) to guide the algorithm towards a solution to a given problem. There are three main types of operators (mutation, crossover and selection), which must work in conjunction with one another in order for the algorithm to be successful. Genetic operators are used to create and maintain genetic diversity (mutation operator), combine existing solutions (also known as chromosomes) into new solutions (crossover) and select between solutions (selection). For combinatorial problems, however, these and other operators tailored to permutations are frequently used by other EAs.
+
+Mutation (or mutation-like) operators are said to be unary operators, as they only operate on one chromosome at a time. In contrast, crossover operators are said to be binary operators, as they operate on two chromosomes at a time, combining two existing chromosomes into one new chromosome.
+
+Operators
+
+Genetic variation is a necessity for the process of evolution. Genetic operators used in evolutionary algorithms are analogous to those in the natural world: survival of the fittest, or selection; reproduction (crossover, also called recombination); and mutation.
+
+Selection
+
+Selection operators give preference to better candidate solutions (chromosomes), allowing them to pass on their 'genes' to the next generation (iteration) of the algorithm. The best solutions are determined using some form of objective function (also known as a 'fitness function' in evolutionary algorithms), before being passed to the crossover operator. Different methods for choosing the best solutions exist, for example, fitness proportionate selection and tournament selection. A further or the same selection operator is used to determine the individuals for being selected to form the next parental generation. The selection operator may also ensure that the best solution(s) from the current generation always become(s) a member of the next generation without being altered; this is known as elitism or elitist selection.
+
+Crossover
+
+Crossover is the process of taking more than one parent solutions (chromosomes) and producing a child solution from them. By recombining portions of good solutions, the evolutionary algorithm is more likely to create a better solution.
+
+Mutation
+
+The mutation operator encourages genetic diversity amongst solutions and attempts to prevent the evolutionary algorithm converging to a local minimum by stopping the solutions becoming too close to one another. In mutating the current pool of solutions, a given solution may change between slightly and entirely from the previous solution. By mutating the solutions, an evolutionary algorithm can reach an improved solution solely through the mutation operator.
+
+Combining operators
+
+While each operator acts to improve the solutions produced by the evolutionary algorithm working individually, the operators must work in conjunction with each other for the algorithm to be successful in finding a good solution. Using the selection operator on its own will tend to fill the solution population with copies of the best solution from the population. If the selection and crossover operators are used without the mutation operator, the algorithm will tend to converge to a local minimum, that is, a good but sub-optimal solution to the problem. Using the mutation operator on its own leads to a random walk through the search space. Only by using all three operators together can the evolutionary algorithm become a noise-tolerant global search algorithm, yielding good solutions to the problem at hand.
+
+References
+
++

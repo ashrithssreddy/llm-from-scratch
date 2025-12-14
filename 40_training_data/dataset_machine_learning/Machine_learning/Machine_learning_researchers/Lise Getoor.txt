@@ -1,0 +1,109 @@
+{{Infobox scientist
+
+name                    = Lise Getoor
+
+image                   = Lise_Getoor_UMD_2011.jpg
+
+caption                 = Getoor in 2011
+
+birth_date              =
+
+birth_place             = Seattle, Washington, US
+
+death_date              =
+
+death_place             =
+
+work_institution        =
+
+alma_mater              =
+
+doctoral_advisor        = Daphne Koller
+
+academic_advisors       = Stuart J. Russell
+
+doctoral_students       =
+
+known_for               =
+
+awards                  =
+
+website                 =
+
+field                   =
+
+author_abbreviation_bot =
+
+author_abbreviation_zoo =
+
+}}
+
+Lise Getoor is an American computer scientist who is a distinguished professor and Baskin Endowed chair in the Computer Science and Engineering department, at the University of California, Santa Cruz, and an adjunct professor in the Computer Science Department at the University of Maryland, College Park.
+
+Her primary research interests are in machine learning and reasoning with uncertainty, applied to graphs and structured data.
+
+She also works in data integration, social network analysis and visual analytics. She has edited a book on Statistical relational learning that is a main reference in this domain.
+
+She has published many highly cited papers in academic journals and conference proceedings.
+
+She has also served as action editor for the Machine Learning Journal, JAIR associate editor, and TKDD associate editor.
+
+She received her Ph.D. from Stanford University, her M.S. from UC Berkeley, and her B.S. from UC Santa Barbara.
+
+Prior to joining University of California, Santa Cruz, she was a professor at the University of Maryland, College Park until November 2013.
+
+Recognition
+
+Getoor has multiple best paper awards, an NSF Career Award, and is an Association for the Advancement of Artificial Intelligence (AAAI) Fellow.
+
+In 2019, she was elected as an ACM Fellow "for contributions to machine learning, reasoning under uncertainty, and responsible data science",
+
+was selected as a Distinguished Alumna of the UC Santa Barbara Computer Science Department,
+
+was awarded the UCSC WiSE Chancellor's Achievement Award for Diversity,
+
+and was selected to give the UC Santa Cruz Faculty Research Lecture 2018-19, one of the highest recognitions given to UC faculty.
+
+She was named an IEEE Fellow in 2021, "for contributions to machine learning and reasoning under uncertainty". In October 2022, Getoor was elected a Fellow of the American Association for the Advancement of Science (AAAS). In 2024, she was named a Fellow of the American Academy of Arts and Sciences (AAA&S).
+
+Also in 2024, she received the ACM SIGKDD Innovation Award recognizing individuals with outstanding technical innovations in the field of Knowledge Discovery and Data Mining that have had a lasting impact in advancing the theory and practice of the field.
+
+Personal life
+
+Getoor's father was mathematician Ronald Getoor (1929–2017).
+
+References
+
+Category:Living people
+
+Category:American women computer scientists
+
+Category:American computer scientists
+
+Category:Machine learning researchers
+
+Category:American artificial intelligence researchers
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Fellows of the American Association for the Advancement of Science
+
+Category:2019 fellows of the Association for Computing Machinery
+
+Category:Fellows of the IEEE
+
+Category:Logic programming researchers
+
+Category:American women logicians
+
+Category:Stanford University alumni
+
+Category:University of California, Santa Cruz faculty
+
+Category:University of Maryland, College Park faculty
+
+Category:Women systems scientists
+
+Category:Year of birth missing (living people)
+
+Category:21st-century American women

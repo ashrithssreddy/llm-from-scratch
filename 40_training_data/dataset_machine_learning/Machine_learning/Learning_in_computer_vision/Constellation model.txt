@@ -1,0 +1,87 @@
+The constellation model is a probabilistic, generative model for category-level object recognition in computer vision. Like other part-based models, the constellation model attempts to represent an object class by a set of N parts under mutual geometric constraints. Because it considers the geometric relationship between different parts, the constellation model differs significantly from appearance-only, or "bag-of-words" representation models, which explicitly disregard the location of image features.
+
+The problem of defining a generative model for object recognition is difficult. The task becomes significantly complicated by factors such as background clutter, occlusion, and variations in viewpoint, illumination, and scale. Ideally, we would like the particular representation we choose to be robust to as many of these factors as possible.
+
+In category-level recognition, the problem is even more challenging because of the fundamental problem of intra-class variation. Even if two objects belong to the same visual category, their appearances may be significantly different. However, for structured objects such as cars, bicycles, and people, separate instances of objects from the same category are subject to similar geometric constraints. For this reason, particular parts of an object such as the headlights or tires of a car still have consistent appearances and relative positions. The Constellation Model takes advantage of this fact by explicitly modeling the relative location, relative scale, and appearance of these parts for a particular object category. Model parameters are estimated using an unsupervised learning algorithm, meaning that the visual concept of an object class can be extracted from an unlabeled set of training images, even if that set contains "junk" images or instances of objects from multiple categories. It can also account for the absence of model parts due to appearance variability, occlusion, clutter, or detector error.
+
+History
+
+The idea for a "parts and structure" model was originally introduced by Fischler and Elschlager in 1973. This model has since been built upon and extended in many directions. The Constellation Model, as introduced by Dr. Perona and his colleagues, was a probabilistic adaptation of this approach.
+
+In the late '90s, Burl et al. revisited the Fischler and Elschlager model for the purpose of face recognition. In their work, Burl et al. used manual selection of constellation parts in training images to construct a statistical model for a set of detectors and the relative locations at which they should be applied. In 2000, Weber et al.  made the significant step of training the model using a more unsupervised learning process, which precluded the necessity for tedious hand-labeling of parts. Their algorithm was particularly remarkable because it performed well even on cluttered and occluded image data. Fergus et al. then improved upon this model by making the learning step fully unsupervised, having both shape and appearance learned simultaneously, and accounting explicitly for the relative scale of parts.
+
+The method of Weber and Welling et al.
+
+In the first step, a standard interest point detection method, such as Harris corner detection, is used to generate interest points. Image features generated from the vicinity of these points are then clustered using k-means or another appropriate algorithm. In this process of vector quantization, one can think of the centroids of these clusters as being representative of the appearance of distinctive object parts. Appropriate feature detectors are then trained using these clusters, which can be used to obtain a set of candidate parts from images. to find salient regions in the image over both location (center) and scale (radius). Thus, in addition to location information X\, this method also extracts associated scale information S\,. Fergus et al. then normalize the squares bounding these circular regions to 11 x 11 pixel patches, or equivalently, 121-dimensional vectors in the appearance space. These are then reduced to 10-15 dimensions by principal component analysis, giving the appearance information A\,.
+
+Model structure
+
+Given a particular object class model with parameters \Theta\,, we must decide whether or not a new image contains an instance of that class. This is accomplished by making a Bayesian decision,
+
+R = \frac{p(\mbox{Object}|X,S,A)}{p(\mbox{No object}|X,S,A)}
+
+= \frac{p(X,S,A|\mbox{Object})p(\mbox{Object})}{p(X,S,A|\mbox{No object})p(\mbox{No object})}
+
+\approx \frac{p(X,S,A|\Theta)p(\mbox{Object})}{p(X,S,A|\Theta_{bg})p(\mbox{No object})}
+
+where \Theta_{bg} is the background model. This ratio is compared to a threshold T\, to determine object presence/absence.
+
+The likelihoods are factored as follows:
+
+p(X,S,A|\Theta) = \sum_{h \in H} p(X,S,A,h|\Theta) =
+
+\sum_{h \in H} \underbrace{ p(A|X,S,h,\Theta) }_{\mbox{Appearance}} \underbrace{ p(X|S,h,\Theta) }_{\mbox{Shape}} \underbrace{ p(S|h,\Theta) }_{\mbox{Rel. Scale}} \underbrace{ p(h|\Theta) }_{\mbox{Other}}
+
+Appearance
+
+Each part p\, has an appearance modeled by a Gaussian density in the appearance space, with mean and covariance parameters \Theta_p^{app} = \{c_p,V_p\}, independent of other parts' densities. The background model has parameters \Theta_{bg}^{app} = \{c_{bg},V_{bg}\}. Fergus et al. assume that, given detected features, the position and appearance of those features are independent. Thus, p(A|X,S,h,\Theta) = p(A|h,\Theta)\,. The ratio of the appearance terms reduces to
+
+\frac{p(A|X,S,h,\Theta)}{p(A|X,S,h,\Theta_{bg})} = \frac{p(A|h,\Theta)}{p(A|h,\Theta_{bg})}
+
+= \prod_{p=1}^P \left ( \frac{G(A(h_p)|c_p,V_p)}{G(A(h_p)|c_{bg},V_{bg})} \right )^{b_p}
+
+Recall from Weber et al. that h\, is the hypothesis for the indices of foreground parts, and b\, is the binary vector giving the occlusion state of each part in the hypothesis.
+
+Shape
+
+Shape is represented by a joint Gaussian density of part locations within a particular hypothesis, after those parts have been transformed into a scale-invariant space. This transformation precludes the need to perform an exhaustive search over scale. The Gaussian density has parameters \Theta^{\mbox{shape}} = \{\mu,\Sigma\}\,. The background model \Theta_{bg}\, is assumed to be a uniform distribution over the image, which has area \alpha\,. Letting f\, be the number of foreground parts,
+
+\frac{p(X|S,h,\Theta)}{p(X|S,h,\Theta_{bg})} = G(X(h)|\mu,\Sigma)\alpha^f
+
+Relative scale
+
+The scale of each part p\, relative to a reference frame is modeled by a Gaussian density with parameters \Theta^{\mbox{scale}} = \{t_p,U_p\}\,. Each part is assumed to be independent of other parts. The background model \Theta_{bg}\, assumes a uniform distribution over scale, within a range r\,.
+
+\frac{p(S|h,\Theta)}{p(S|h,\Theta_{bg})} = \prod_{p=1}^P G(S(h_p)|t_p,U_p)^{d_p} r^f
+
+Occlusion and statistics of feature detection
+
+\frac{p(h|\Theta)}{p(h|\Theta_{bg})} = \frac{p_{\mbox{Poiss}}(n|M)}{p_{\mbox{Poiss}}(N|M)} \frac{1}{^nC_r(N,f)} p(b|\Theta)
+
+The first factor models the number of features detected using a Poisson distribution, which has mean M. The second factor serves as a "book-keeping" factor for the hypothesis variable. The last factor is a probability table for all possible occlusion patterns.
+
+Learning
+
+The task of learning the model parameters \Theta = \{\mu,\Sigma,c,V,M,p(b|\Theta),t,U\}\, is accomplished by expectation maximization. This is carried out in a spirit similar to that of Weber et al. Details and formulas for the E-step and M-step can be seen in the literature. For each of these datasets, the Constellation Model is able to capture the "essence" of the object class in terms of appearance and/or shape. For example, face and motorbike datasets generate very tight shape models because objects in those categories have very well-defined structure, whereas spotted cats vary significantly in pose, but have a very distinctive spotted appearance. Thus, the model succeeds in both cases. It is important to note that the Constellation Model does not generally account for significant changes in orientation. Thus, if the model is trained on images of horizontal airplanes, it will not perform well on, for instance, images of vertically oriented planes unless the model is extended to account for this sort of rotation explicitly.
+
+In terms of computational complexity, the Constellation Model is very expensive. If N\, is the number of feature detections in the image, and P\, the number of parts in the object model, then the hypothesis space H\, is O(N^P)\,. Because the computation of sufficient statistics in the E-step of expectation maximization necessitates evaluating the likelihood for every hypothesis, learning becomes a major bottleneck operation. For this reason, only values of P \le 6 have been used in practical applications, and the number of feature detections N\, is usually kept within the range of about 20-30 per image.
+
+Variations
+
+One variation that attempts to reduce complexity is the star model proposed by Fergus et al. The reduced dependencies of this model allows for learning in O(N^2P)\, time instead of O(N^P)\,. This allows for a greater number of model parts and image features to be used in training. Because the star model has fewer parameters, it is also better at avoiding the problem of over-fitting when trained on fewer images.
+
+References
+
+External links
+
+L. Fei-fei. Object categorization: the constellation models. Lecture Slides. (2005) (link not working)
+
+See also
+
+Part-based models
+
+One-shot learning in computer vision
+
+Category:Learning in computer vision
+
+Category:Probabilistic models

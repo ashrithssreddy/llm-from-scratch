@@ -1,0 +1,81 @@
+{{Infobox software
+
+name = DeepArt
+
+logo = DeepArt logo.png
+
+logo alt =
+
+screenshot = Lillies in Green (49989104882).jpg
+
+caption = Lillies in Green, taken in the Deadwater Valley, processed by DeepArt using the CAG green colours style
+
+screenshot alt =
+
+collapsible =
+
+author = Matthias Bethge, Alex Ecker, Leon Gatys, Łukasz Kidziński, Michał Warchoł
+
+developer = DeepArt UG (haftungsbeschränkt)
+
+released =
+
+discontinued = yes
+
+latest release version =
+
+latest release date =
+
+latest preview version =
+
+latest preview date =
+
+programming language =
+
+operating system = Web application
+
+platform =
+
+size =
+
+language =
+
+language count =
+
+language footnote =
+
+genre = Photo and video
+
+license = Freeware
+
+website =
+
+standard =
+
+AsOf =
+
+}}
+
+DeepArt or DeepArt.io was a website that allowed users to create artistic images by using an algorithm to redraw one image using the stylistic elements of another image. with a Neural Style Transfer algorithm that was developed by several of its creators to separate style elements from a piece of art, an open source algorithm from the paper  "A Neural Algorithm of Artistic Style". The tool allowed users to create imitation works of art using the style of various artists. The neural algorithm was used by the Deep Art website to create a representation of an image provided by the user by using the 'style' of another image provided by the user.
+
+The site went down some time in or after August 2022. A similar program, Prisma, is an iOS and Android app that was based on the same open source programming that underlay DeepArt.
+
+See also
+
+Computational creativity
+
+References
+
+External links
+
+Website
+
+Category:Algorithmic art
+
+Category:Deep learning software applications
+
+Category:Android (operating system) software
+
+Category:IOS software
+
+Category:2015 software

@@ -1,0 +1,17 @@
+In multivariate analysis, canonical correspondence analysis (CCA) is an ordination technique that determines axes from the response data as a unimodal combination of measured predictors. CCA is commonly used in ecology in order to extract gradients that drive the composition of ecological communities. CCA extends correspondence analysis (CA) with regression, in order to incorporate predictor variables.
+
+History
+
+CCA was developed in 1986 by Cajo ter Braak  and implemented in the program CANOCO, an extension of DECORANA. To date, CCA is one of the most popular multivariate methods in ecology, despite the availability of contemporary alternatives. CCA was originally derived and implemented using an algorithm of weighted averaging, though Legendre & Legendre (1998) derived an alternative algorithm.
+
+Assumptions
+
+The requirements of a CCA are that the samples are random and independent. Also, the data are categorical and that the independent variables are consistent within the sample site and error-free. The original publication states the need for equal species tolerances, equal species maxima, and equispaced or uniformly distributed species optima and site scores.
+
+See also
+
+Canonical correlation analysis (CANCOR)
+
+References
+
+Category:Dimension reduction

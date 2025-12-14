@@ -1,0 +1,49 @@
+The Emotion Machine: Commonsense Thinking, Artificial Intelligence, and the Future of the Human Mind is a 2006 book by cognitive scientist Marvin Minsky that elaborates and expands on Minsky's ideas as presented in his earlier book Society of Mind (1986).
+
+Minsky argues that emotions are different ways to think that our mind uses to increase our intelligence. He challenges the distinction between emotions and other kinds of thinking. His main argument is that emotions are "ways to think" for different "problem types" that exist in the world, and that the brain has rule-based mechanisms (selectors) that turn on emotions to deal with various problems. The book reviews the accomplishments of AI, why modelling an AI is difficult in terms of replicating the behaviors of humans, if and how AIs think, and in what manner they might experience struggles and pleasures.
+
+Reviews
+
+In a review for The Washington Post, neurologist Richard Restak states that:
+
+Outline
+
+Minsky outlines the book as follows:
+
+"We are born with many mental resources."
+
+"We learn from interacting with others."
+
+"Emotions are different Ways to Think."
+
+"We learn to think about our recent thoughts."
+
+"We learn to think on multiple levels."
+
+"We accumulate huge stores of commonsense knowledge."
+
+"We switch among different Ways to Think."
+
+"We find multiple ways to represent things."
+
+"We build multiple models of ourselves."
+
+References
+
+External links
+
+Marvin Minsky  at MIT
+
+Other reviews
+
+Science and Evolution - Books and Reviews
+
+Technology Review
+
+Category:2006 non-fiction books
+
+Category:Books about cognition
+
+Category:Artificial neural networks
+
+Category:Non-fiction books about artificial intelligence

@@ -1,0 +1,71 @@
+{{multiple issues|
+
+}}
+
+Conditional random fields (CRFs) are a class of statistical modeling methods often applied in pattern recognition and machine learning and used for structured prediction. Whereas a classifier predicts a label for a single sample without considering "neighbouring" samples, a CRF can take context into account. To do so, the predictions are modelled as a graphical model, which represents the presence of dependencies between the predictions. The kind of graph used depends on the application. For example, in natural language processing, "linear chain" CRFs are popular, for which each prediction is dependent only on its immediate neighbours. In image processing, the graph typically connects locations to nearby and/or similar locations to enforce that they receive similar predictions.
+
+Other examples where CRFs are used are: labeling or parsing of sequential data for natural language processing or biological sequences, part-of-speech tagging, shallow parsing, named entity recognition, gene finding, peptide critical functional region finding, and object recognition and image segmentation in computer vision.
+
+Description
+
+CRFs are a type of discriminative undirected probabilistic graphical model.
+
+Lafferty, McCallum and Pereira
+
+However, there exist special cases for which exact inference is feasible:
+
+If the graph is a chain or a tree, message passing algorithms yield exact solutions. The algorithms used in these cases are analogous to the forward-backward and Viterbi algorithm for the case of HMMs.
+
+If the CRF only contains pair-wise potentials and the energy is submodular, combinatorial min cut/max flow algorithms yield exact solutions.
+
+If exact inference is impossible, several algorithms can be used to obtain approximate solutions. These include:
+
+Loopy belief propagation
+
+Alpha expansion
+
+Mean field inference
+
+Linear programming relaxations
+
+Parameter learning
+
+Learning the parameters \theta is usually done by maximum likelihood learning for p(Y_i|X_i; \theta). If all nodes have exponential family distributions and all nodes are observed during training, this optimization is convex. since their computational cost increases exponentially with k.
+
+However, another recent advance has managed to ameliorate these issues by leveraging concepts and tools from the field of Bayesian nonparametrics. Specifically, the CRF-infinity approach constitutes a CRF-type model that is capable of learning infinitely-long temporal dynamics in a scalable fashion. This is effected by introducing a novel potential function for CRFs that is based on the Sequence Memoizer (SM), a nonparametric Bayesian model for learning infinitely-long dynamics in sequential observations. To render such a model computationally tractable, CRF-infinity employs a mean-field approximation of the postulated novel potential functions (which are driven by an SM). This allows for devising efficient approximate training and inference algorithms for the model, without undermining its capability to capture and model temporal dependencies of arbitrary length.
+
+There exists another generalization of CRFs, the semi-Markov conditional random field (semi-CRF), which models variable-length segmentations of the label sequence Y. This provides much of the power of higher-order CRFs to model long-range dependencies of the Y_{i}, at a reasonable computational cost.
+
+Finally, large-margin models for structured prediction, such as the structured Support Vector Machine can be seen as an alternative training procedure to CRFs.
+
+Latent-dynamic conditional random field
+
+Latent-dynamic conditional random fields (LDCRF) or discriminative probabilistic latent variable models (DPLVM) are a type of CRFs for sequence tagging tasks. They are latent variable models that are trained discriminatively.
+
+In an LDCRF, like in any sequence tagging task, given a sequence of observations x = x_1,\dots,x_n, the main problem the model must solve is how to assign a sequence of labels y = y_1,\dots,y_n from one finite set of labels . Instead of directly modeling (y|x) as an ordinary linear-chain CRF would do, a set of latent variables h is "inserted" between x and y using the chain rule of probability:
+
+P(\mathbf{y} | \mathbf{x}) = \sum_\mathbf{h} P(\mathbf{y}|\mathbf{h}, \mathbf{x}) P(\mathbf{h} | \mathbf{x})
+
+This allows capturing latent structure between the observations and labels. While LDCRFs can be trained using quasi-Newton methods, a specialized version of the perceptron algorithm called the latent-variable perceptron has been developed for them as well, based on Collins' structured perceptron algorithm. These models find applications in computer vision, specifically gesture recognition from video streams and shallow parsing.
+
+See also
+
+Hammersley–Clifford theorem
+
+Maximum entropy Markov model (MEMM)
+
+References
+
+Further reading
+
+McCallum, A.: Efficiently inducing features of conditional random fields. In: Proc. 19th Conference on Uncertainty in Artificial Intelligence. (2003)
+
+Wallach, H.M.: Conditional random fields: An introduction. Technical report MS-CIS-04-21, University of Pennsylvania (2004)
+
+Sutton, C., McCallum, A.: An Introduction to Conditional Random Fields for Relational Learning. In "Introduction to Statistical Relational Learning". Edited by Lise Getoor and Ben Taskar. MIT Press. (2006) Online PDF
+
+Klinger, R., Tomanek, K.: Classical Probabilistic Models and Conditional Random Fields. Algorithm Engineering Report TR07-2-013, Department of Computer Science, Dortmund University of Technology, December 2007. ISSN 1864-4503. Online PDF
+
+Category:Graphical models
+
+Category:Machine learning

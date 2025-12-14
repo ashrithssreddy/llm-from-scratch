@@ -1,0 +1,95 @@
+A residual neural network (also referred to as a residual network or ResNet) is a deep learning architecture in which the layers learn residual functions with reference to the layer inputs. It was developed in 2015 for image recognition, and won the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) of that year.
+
+As a point of terminology, "residual connection" refers to the specific architectural motif of , where f is an arbitrary neural network module. The motif had been used previously (see §History for details). However, the publication of ResNet made it widely popular for feedforward networks, appearing in neural networks that are seemingly unrelated to ResNet.
+
+The residual connection stabilizes the training and convergence of deep neural networks with hundreds of layers, and is a common motif in deep neural networks, such as transformer models (e.g., BERT, and GPT models such as ChatGPT), the AlphaGo Zero system, the AlphaStar system, and the AlphaFold system.
+
+Mathematics
+
+Residual connection
+
+In a multilayer neural network model, consider a subnetwork with a certain number of stacked layers (e.g., 2 or 3). Denote the underlying function performed by this subnetwork as H(x), where x is the input to the subnetwork. Residual learning re-parameterizes this subnetwork and lets the parameter layers represent a "residual function" F(x)=H(x)-x. The output y of this subnetwork is then represented as:
+
+y = F(x) + x
+
+The operation of "+ \ x" is implemented via a "skip connection" that performs an identity mapping to connect the input of the subnetwork with its output. This connection is referred to as a "residual connection" in later work. The function F(x) is often represented by matrix multiplication interlaced with activation functions and normalization operations (e.g., batch normalization or layer normalization). As a whole, one of these subnetworks is referred to as a "residual block". In an LSTM without a forget gate, an input x_t is processed by a function F and added to a memory cell c_t, resulting in c_{t+1} = c_t + F(x_t). An LSTM with a forget gate essentially functions as a highway network.
+
+To stabilize the variance of the layers' inputs, it is recommended to replace the residual connections x + f(x) with x/L + f(x), where L is the total number of residual layers.
+
+Projection connection
+
+If the function F is of type F: \R^n \to \R^m where n \neq m, then F(x) + x is undefined. To handle this special case, a projection connection is used:
+
+y = F(x) + P(x)
+
+where P is typically a linear projection, defined by P(x) = Mx where M is a m \times n matrix. The matrix is trained via backpropagation, as is any other parameter of the model.
+
+Signal propagation
+
+The introduction of identity mappings facilitates signal propagation in both forward and backward paths.
+
+Forward propagation
+
+If the output of the \ell-th residual block is the input to the (\ell+1)-th residual block (assuming no activation function between blocks), then the (\ell+1)-th input is:
+
+x_{\ell+1} = F(x_{\ell}) + x_{\ell}
+
+Applying this formulation recursively, e.g.:
+
+\begin{align} x_{\ell+2} & = F(x_{\ell+1}) + x_{\ell+1} \\
+
+& = F(x_{\ell+1}) + F(x_{\ell}) + x_{\ell}
+
+\end{align}
+
+yields the general relationship:
+
+x_{L} = x_{\ell} + \sum_{i=\ell}^{L-1} F(x_{i})
+
+where L is the index of a residual block and \ell is the index of some earlier block. This formulation suggests that there is always a signal that is directly sent from a shallower block \ell to a deeper block L.
+
+Backward propagation
+
+The residual learning formulation provides the added benefit of mitigating the vanishing gradient problem to some extent. However, it is crucial to acknowledge that the vanishing gradient issue is not the root cause of the degradation problem, which is tackled through the use of normalization. To observe the effect of residual blocks on backpropagation, consider the partial derivative of a loss function \mathcal{E} with respect to some residual block input x_{\ell}. Using the equation above from forward propagation for a later residual block L>\ell:
+
+All transformer architectures include residual connections. Indeed, very deep transformers cannot be trained without them.
+
+The original ResNet paper made no claim on being inspired by biological systems. However, later research has related ResNet to biologically-plausible algorithms.
+
+A study published in Science in 2023 disclosed the complete connectome of an insect brain (specifically that of a fruit fly larva). This study discovered "multilayer shortcuts" that resemble the skip connections in artificial neural networks, including ResNets.
+
+History
+
+Previous work
+
+Residual connections were noticed in neuroanatomy, such as Lorente de No (1938). McCulloch and Pitts (1943) proposed artificial neural networks and considered those with residual connections.
+
+In 1961, Frank Rosenblatt described a three-layer multilayer perceptron (MLP) model with skip connections. The model was referred to as a "cross-coupled system", and the skip connections were forms of cross-coupled connections.
+
+During the late 1980s, "skip-layer" connections were sometimes used in neural networks. Examples include: Lang and Witbrock (1988) trained a fully connected feedforward network where each layer skip-connects to all subsequent layers, like the later DenseNet (2016). In this work, the residual connection was the form  where P is a randomly-initialized projection connection. They termed it a "short-cut connection". An early neural language model used residual connections and named them "direct connections".
+
+Degradation problem
+
+Sepp Hochreiter discovered the vanishing gradient problem in 1991 and argued that it explained why the then-prevalent forms of recurrent neural networks did not work for long sequences. He and Schmidhuber later designed the LSTM architecture to solve this problem, which has a "cell state" c_t that can function as a generalized residual connection. The highway network (2015) applied the idea of an LSTM unfolded in time to feedforward neural networks, resulting in the highway network. ResNet is equivalent to an open-gated highway network.
+
+During the early days of deep learning, there were attempts to train increasingly deep models. Notable examples included the AlexNet (2012), which had 8 layers, and the VGG-19 (2014), which had 19 layers. However, stacking too many layers led to a steep reduction in training accuracy, known as the "degradation" problem.
+
+Subsequent work
+
+Wide Residual Network (2016) found that using more channels and fewer layers than the original ResNet improves performance and GPU-computational efficiency, and that a block with two 3×3 convolutions is superior to other configurations of convolution blocks.
+
+DenseNet (2016) connects the output of each layer to the input to each subsequent layer:
+
+x_{\ell+1} = F(x_1, x_2, \dots, x_{\ell-1}, x_{\ell})
+
+Stochastic depth is a regularization method that randomly drops a subset of layers and lets the signal propagate through the identity skip connections. Also known as DropPath, this regularizes training for deep models, such as vision transformers.
+
+ResNeXt (2017) combines the Inception module with ResNet.
+
+Squeeze-and-Excitation Networks (2018) added squeeze-and-excitation (SE) modules to ResNet. An SE module is applied after a convolution, and takes a tensor of shape \R^{H \times W \times C} (height, width, channels) as input. Each channel is averaged, resulting in a vector of shape \R^C. This is then passed through a multilayer perceptron (with an architecture such as linear-ReLU-linear-sigmoid) before it is multiplied with the original tensor. It won the ILSVRC in 2017.
+
+References
+
+Category:Neural network architectures
+
+Category:Deep learning

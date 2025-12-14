@@ -1,0 +1,129 @@
+{{Multiple issues|
+
+}}
+
+{{Infobox software
+
+name = XLNet
+
+logo =
+
+screenshot =
+
+screenshot size =
+
+caption =
+
+author = Google AI
+
+developer =
+
+released =
+
+latest release version =
+
+latest release date =
+
+repo = https://github.com/zihangdai/xlnet/
+
+programming language =
+
+operating system =
+
+replaces =
+
+replaced_by =
+
+genre =
+
+license = Apache-2.0
+
+website =
+
+}}
+
+The XLNet was an autoregressive Transformer designed as an improvement over BERT, with 340M parameters and trained on 33 billion words. It was released on 19 June 2019, under the Apache 2.0 license. It achieved state-of-the-art results on a variety of natural language processing tasks, including language modeling, question answering, and natural language inference.
+
+Architecture
+
+The main idea of XLNet is to model language autoregressively like the GPT models, but allow for all possible permutations of a sentence. Concretely, consider the following sentence:My dog is cute.In standard autoregressive language modeling, the model would be tasked with predicting the probability of each word, conditioned on the previous words as its context:
+
+We factorize the joint probability of a sequence of words  x_1, \ldots, x_T using the chain rule:
+
+\Pr(x_1, \ldots, x_T) = \Pr(x_1) \Pr(x_2 | x_1) \Pr(x_3 | x_1, x_2) \ldots \Pr(x_T | x_1, \ldots, x_{T-1}).
+
+For example, the sentence "My dog is cute" is factorized as:
+
+\Pr(\text{My}, \text{dog}, \text{is}, \text{cute}) = \Pr(\text{My}) \Pr(\text{dog} | \text{My}) \Pr(\text{is} | \text{My}, \text{dog}) \Pr(\text{cute} | \text{My}, \text{dog}, \text{is}).
+
+Schematically, we can write it as
+
+\texttt{ } \texttt{ } \texttt{ } \texttt{ } \to \text{My } \texttt{ } \texttt{ } \texttt{ } \to \text{My dog }\texttt{ } \texttt{ } \to \text{My dog is }\texttt{ } \to \text{My dog is cute}.
+
+However, for XLNet, the model is required to predict the words in a randomly generated order. Suppose we have sampled a randomly generated order 3241, then schematically, the model is required to perform the following prediction task:
+
+\texttt{ } \texttt{ } \texttt{ } \texttt{ }
+
+\to \texttt{ } \texttt{ } \text{is }\texttt{ }
+
+\to \texttt{ } \text{dog is }\texttt{ }
+
+\to \texttt{ }\text{dog is cute}
+
+\to \text{My dog is cute}
+
+By considering all permutations, XLNet is able to capture longer-range dependencies and better model the bidirectional context of words.
+
+Two-Stream Self-Attention
+
+To implement permutation language modeling, XLNet uses a two-stream self-attention mechanism. The two streams are:
+
+Content stream: This stream encodes the content of each word, as in standard causally masked self-attention.
+
+Query stream: This stream encodes the content of each word in the context of what has gone before. In more detail, it is a masked cross-attention mechanism, where the queries are from the query stream, and the key-value pairs are from the content stream.
+
+The content stream uses the causal maskM_{\text{causal}} = \begin{bmatrix}
+
+0 & -\infty & -\infty & \dots  & -\infty \\
+
+0 & 0 & -\infty & \dots  & -\infty \\
+
+0 & 0 & 0 & \dots  & -\infty \\
+
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+
+0 & 0 & 0 & \dots  & 0
+
+\end{bmatrix}
+
+permuted by a random permutation matrix to P M_{\text{causal}} P^{-1}
+
+.
+
+The query stream uses the cross-attention mask P (M_{\text{causal}} - \infty I) P^{-1}
+
+, where the diagonal is subtracted away specifically to avoid the model "cheating" by looking at the content stream for what the current masked token is.
+
+Like the causal masking for GPT models, this two-stream masked architecture allows the model to train on all tokens in one forward pass.
+
+Training
+
+Two models were released:
+
+See also
+
+BERT (language model)
+
+Transformer (machine learning model)
+
+Generative pre-trained transformer
+
+References
+
+Category:Google software
+
+Category:Large language models
+
+Category:Software using the Apache license
+
+Category:2019 software

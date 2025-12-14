@@ -1,0 +1,255 @@
+Least-squares support-vector machines (LS-SVM) for statistics and in statistical modeling, are least-squares versions of support-vector machines (SVM), which are a set of related supervised learning methods that analyze data and recognize patterns, and which are used for classification and regression analysis.  In this version one finds the solution by solving a set of linear equations instead of a convex quadratic programming (QP) problem for classical SVMs. Least-squares SVM classifiers were proposed by Johan Suykens and Joos Vandewalle. LS-SVMs are a class of kernel-based learning methods.
+
+From support-vector machine to least-squares support-vector machine
+
+Given a training set  \{ x_i ,y_i \}_{i = 1}^N with input data  x_i \in \mathbb{R}^n and corresponding binary class labels y_i \in \{ -1, +1 \}, the SVM classifier, according to Vapnik's original formulation, satisfies the following conditions:
+
+\begin{cases}
+
+w^T \phi (x_i ) + b \ge 1, & \text{if } \quad y_i  =  +1, \\
+
+w^T \phi (x_i ) + b \le  - 1, & \text{if } \quad y_i  =  -1,
+
+\end{cases}
+
+which is equivalent to
+
+y_i \left[ {w^T \phi (x_i ) + b} \right] \ge 1,\quad i = 1, \ldots, N,
+
+where \phi(x) is the nonlinear map from original space to the high- or infinite-dimensional space.
+
+Inseparable data
+
+In case such a separating hyperplane does not exist, we introduce so-called slack variables \xi_i such that
+
+\begin{cases}
+
+y_i \left[ {w^T \phi (x_i ) + b} \right] \ge 1 - \xi _i , & i = 1, \ldots, N, \\
+
+\xi _i  \ge 0, & i = 1, \ldots, N.
+
+\end{cases}
+
+According to the structural risk minimization principle, the risk bound is minimized by the following minimization problem:
+
+\min J_1 (w,\xi )=\frac{1}{2}w^T w + c\sum\limits_{i = 1}^N \xi_i ,
+
+\text{Subject to } \begin{cases}
+
+y_i \left[ {w^T \phi (x_i ) + b} \right] \ge 1 - \xi _i , & i = 1, \ldots, N, \\
+
+\xi _i  \ge 0, & i = 1, \ldots ,N ,
+
+\end{cases}
+
+To solve this problem, we could construct the Lagrangian function:
+
+L_1(w,b,\xi,\alpha,\beta)=\frac{1}{2}w^T w + c\sum\limits_{i = 1}^N {\xi _i } - \sum\limits_{i=1}^N \alpha_i \left\{ y_i \left[ {w^T \phi (x_i ) + b} \right] - 1 + \xi _i \right\} - \sum\limits_{i=1}^N \beta_i \xi_i,
+
+where \alpha_i \ge 0,\ \beta _i \ge 0\ (i = 1, \ldots, N) are the Lagrangian multipliers. The optimal point will be in the saddle point of the Lagrangian function, and then we obtain
+
+{{NumBlk|::| \begin{cases}
+
+\frac{ \partial L_1 }{\partial w} = 0\quad  \to \quad w = \sum\limits_{i = 1}^N \alpha _i y_i \phi (x_i )  ,\\
+
+\frac{\partial L_1 }{\partial b} = 0\quad  \to \quad \sum\limits_{i = 1}^N \alpha _i y_i = 0 ,\\
+
+\frac{\partial L_1 }{\partial \xi _i } = 0\quad  \to \quad \alpha _i +\beta_i = c,\;i = 1, \ldots ,N \quad  \to \quad 0 \le \alpha _i \le c,\;i = 1, \ldots ,N.
+
+\end{cases} |}}
+
+By substituting w by its expression in the Lagrangian formed from the appropriate objective and constraints, we will get the following quadratic programming problem:
+
+\max Q_1(\alpha) = -\frac{1}{2}\sum\limits_{i,j = 1}^N {\alpha _i \alpha _j y_i y_j K(x_i ,x_j )}  + \sum\limits_{i = 1}^N \alpha_i,
+
+where K(x_i ,x_j ) = \left\langle \phi (x_i ), \phi (x_j) \right\rangle is called the kernel function. Solving this QP problem subject to constraints in (), we will get the hyperplane in the high-dimensional space and hence the classifier in the original space.
+
+Least-squares SVM formulation
+
+The least-squares version of the SVM classifier is obtained by reformulating the minimization problem as
+
+\min J_2(w,b,e) = \frac{\mu}{2} w^T w + \frac{\zeta}{2}\sum\limits_{i = 1}^N e_i^2,
+
+subject to the equality constraints
+
+y_i \left[ {w^T \phi (x_i ) + b} \right] = 1 - e_{i} ,\quad i = 1, \ldots ,N .
+
+The least-squares SVM (LS-SVM) classifier formulation above implicitly corresponds to a regression interpretation with binary targets y_i = \pm 1.
+
+Using y_i^2 = 1, we have
+
+\sum\limits_{i = 1}^N e_i^2 = \sum\limits_{i = 1}^N (y_i e_i)^2 = \sum\limits_{i = 1}^N e_i^2 = \sum\limits_{i = 1}^N \left( y_i - (w^T \phi(x_i) + b) \right)^2,
+
+with  e_i = y_i - (w^T \phi(x_i) + b). Notice, that this error would also make sense for least-squares data fitting, so that the same end results holds for the regression case.
+
+Hence the LS-SVM classifier formulation is equivalent to
+
+J_2(w,b,e) = \mu E_W + \zeta E_D
+
+with E_W = \frac{1}{2} w^T w and E_D = \frac{1}{2} \sum\limits_{i = 1}^N e_i^2 = \frac{1}{2} \sum\limits_{i = 1}^N \left(y_i - (w^T \phi(x_i) + b) \right)^2.
+
+Both \mu and \zeta should be considered as hyperparameters to tune the amount of regularization versus the sum squared error. The solution does only depend on the ratio \gamma = \zeta / \mu, therefore the original formulation uses only \gamma as tuning parameter. We use both \mu and \zeta as parameters in order to provide a Bayesian interpretation to LS-SVM.
+
+The solution of LS-SVM regressor will be obtained after we construct the Lagrangian function:
+
+\begin{cases}
+
+L_2 (w,b,e,\alpha )\; = J_2 (w,e) - \sum\limits_{i = 1}^N \alpha _i \left\{ { \left[ {w^T \phi (x_i ) + b} \right] + e_i - y_i } \right\}  ,\\
+
+\quad \quad \quad \quad \quad \; = \frac{1}{2}w^T w + \frac{\gamma }{2} \sum\limits_{i = 1}^N e_i^2 - \sum\limits_{i = 1}^N \alpha _i \left\{ \left[ w^T \phi (x_i ) + b \right] + e_i -y_i \right\} ,
+
+\end{cases}
+
+where \alpha_i \in \mathbb{R} are the Lagrange multipliers. The conditions for optimality are
+
+\begin{cases}
+
+\frac{\partial L_2 }{\partial w} = 0\quad  \to \quad w = \sum\limits_{i = 1}^N \alpha _i \phi (x_i ) , \\
+
+\frac{\partial L_2 }{\partial b} = 0\quad  \to \quad \sum\limits_{i = 1}^N \alpha _i   = 0 ,\\
+
+\frac{\partial L_2 }{\partial e_i } = 0\quad  \to \quad \alpha _i  =  \gamma e_i ,\;i = 1, \ldots ,N ,\\
+
+\frac{\partial L_2 }{\partial \alpha _i } = 0\quad  \to \quad y_i  = w^T \phi (x_i ) + b + e_i ,\,i = 1, \ldots ,N .
+
+\end{cases}
+
+Elimination of w and e will yield a linear system instead of a quadratic programming problem:
+
+\left[ \begin{matrix}
+
+0 & 1_N^T  \\
+
+1_N & \Omega  + \gamma ^{ - 1} I_N
+
+\end{matrix} \right] \left[ \begin{matrix}
+
+b  \\
+
+\alpha
+
+\end{matrix} \right] = \left[ \begin{matrix}
+
+0  \\
+
+Y
+
+\end{matrix} \right] ,
+
+with Y = [y_1 , \ldots ,y_N ]^T, 1_N  = [1, \ldots ,1]^T and \alpha  = [\alpha _1 , \ldots ,\alpha _N ]^T. Here, I_N is an N \times N identity matrix, and \Omega  \in \mathbb{R}^{N \times N} is the kernel matrix defined by \Omega _{ij}  = \phi (x_i )^T \phi (x_j ) = K(x_i ,x_j ).
+
+Kernel function K
+
+For the kernel function K(•, •) one typically has the following choices:
+
+Linear kernel : K(x,x_i ) = x_i^T x,
+
+Polynomial kernel of degree d: K(x,x_i ) = \left( {1 + x_i^T x/c} \right)^d ,
+
+Radial basis function RBF kernel : K(x,x_i ) = \exp \left( { - \left\| {x - x_i } \right\|^2 /\sigma ^2 } \right),
+
+MLP kernel : K(x,x_i ) = \tanh \left( {k\,x_i^T x + \theta } \right),
+
+where d, c, \sigma, k and \theta are constants. Notice that the Mercer condition holds for all c, \sigma \in \mathbb{R}^+ and d \in N values in the polynomial and RBF case, but not for all possible choices of k and \theta in the MLP case. The scale parameters c, \sigma and k determine the scaling of the inputs in the polynomial, RBF and MLP kernel function. This scaling is related to the bandwidth of the kernel in statistics, where it is shown that the bandwidth is an important parameter of the generalization behavior of a kernel method.
+
+Bayesian interpretation for LS-SVM
+
+A Bayesian interpretation of the SVM has been proposed by Smola et al. They showed that the use of different kernels in SVM can be regarded as defining different prior probability distributions on the functional space, as P[f] \propto \exp \left( { - \beta \left\| {\hat Pf} \right\|^2 } \right). Here \beta>0 is a constant and \hat{P} is the regularization operator corresponding to the selected kernel.
+
+A general Bayesian evidence framework was developed by MacKay, and MacKay has used it to the problem of regression, forward neural network and classification network. Provided data set D, a model \mathbb{M} with parameter vector w and a so-called hyperparameter or regularization parameter \lambda, Bayesian inference is constructed with 3 levels of inference:
+
+In level 1, for a given value of \lambda, the first level of inference infers the posterior distribution of w by Bayesian rule
+
+p(w|D,\lambda ,\mathbb{M}) \propto p(D|w,\mathbb{M})p(w|\lambda ,\mathbb{M}).
+
+The second level of inference determines the value of \lambda, by maximizing
+
+p(\lambda |D,\mathbb{M}) \propto p(D|\lambda ,\mathbb{M})p(\lambda |\mathbb{M}).
+
+The third level of inference in the evidence framework ranks different models by examining their posterior probabilities
+
+p(\mathbb{M}|D) \propto p(D|\mathbb{M})p(\mathbb{M}).
+
+We can see that Bayesian evidence framework is a unified theory for learning the model and model selection.
+
+Kwok used the Bayesian evidence framework to interpret the formulation of SVM and model selection. And he also applied Bayesian evidence framework to support vector regression.
+
+Now, given the data points  \{ x_i ,y_i \} _{i = 1}^N and the hyperparameters \mu and \zeta of the model \mathbb{M}, the model parameters w and b are estimated by maximizing the posterior p(w,b|D,\log \mu ,\log \zeta ,\mathbb{M}). Applying Bayes’ rule, we obtain
+
+p(w,b|D,\log \mu ,\log \zeta ,\mathbb{M}) = \frac{{p(D|w,b,\log \mu ,\log \zeta ,\mathbb{M})p(w,b|\log \mu ,\log \zeta ,\mathbb{M})}}{{p(D|\log \mu ,\log \zeta ,\mathbb{M})}},
+
+where p(D|\log \mu ,\log \zeta ,\mathbb{M}) is a normalizing constant such the integral over all possible w and b is equal to 1.
+
+We assume w and b are independent of the hyperparameter \zeta, and are conditional independent, i.e., we assume
+
+p(w,b|\log \mu ,\log \zeta ,\mathbb{M}) = p(w|\log \mu ,\mathbb{M})p(b|\log \sigma _b ,\mathbb{M}).
+
+When \sigma _b  \to \infty, the distribution of b will approximate a uniform distribution. Furthermore, we assume w and b are Gaussian distribution, so we obtain the a priori distribution of w and b with \sigma _b  \to \infty to be
+
+\begin{array}{l}
+
+p(w,b|\log \mu ,) = \left( {\frac{\mu }} \right)^{\frac{2}} \exp \left( { - \frac{\mu }{2}w^T w} \right)\frac{1}{{\sqrt {2\pi \sigma _b } }}\exp \left( { - \frac} \right) \\
+
+\quad \quad \quad \quad \quad \quad \quad  \propto \left( {\frac{\mu }} \right)^{\frac{2}} \exp \left( { - \frac{\mu }{2}w^T w} \right)
+
+\end{array} .
+
+Here n_f is the dimensionality of the feature space, same as the dimensionality of w.
+
+The probability of p(D|w,b,\log \mu ,\log \zeta ,\mathbb{M}) is assumed to depend only on w,b,\zeta and \mathbb{M}. We assume that the data points are independently identically distributed (i.i.d.), so that:
+
+p(D|w,b,\log \zeta ,\mathbb{M}) = \prod\limits_{i = 1}^N {p(x_i ,y_i |w,b,\log \zeta ,\mathbb{M})} .
+
+In order to obtain the least square cost function, it is assumed that the probability of a data point is proportional to:
+
+p(x_i ,y_i |w,b,\log \zeta ,\mathbb{M}) \propto p(e_i |w,b,\log \zeta ,\mathbb{M}) .
+
+A Gaussian distribution is taken for the errors e_i  = y_i  - (w^T \phi (x_i ) + b) as:
+
+p(e_i |w,b,\log \zeta ,\mathbb{M}) = \sqrt {\frac{\zeta }} \exp \left( { - \frac{2}} \right) .
+
+It is assumed that the w and b are determined in such a way that the class centers \hat m_ -  and \hat m_ + are mapped onto the target -1 and +1, respectively. The projections w^T \phi (x) + b of the class elements \phi(x) follow a multivariate Gaussian distribution, which have variance 1/ \zeta.
+
+Combining the preceding expressions, and neglecting all constants, Bayes’ rule becomes
+
+p(w,b|D,\log \mu ,\log \zeta ,\mathbb{M}) \propto \exp ( - \frac{\mu }{2}w^T w - \frac{\zeta }{2}\sum\limits_{i = 1}^N {e_i^2 } ) = \exp ( - J_2 (w,b)) .
+
+The maximum posterior density estimates w_{MP} and b_{MP} are then obtained by minimizing the negative logarithm of (26), so we arrive (10).
+
+References
+
+Bibliography
+
+J. A. K. Suykens, T. Van Gestel, J. De Brabanter, B. De Moor, J. Vandewalle, Least Squares Support Vector Machines, World Scientific Pub. Co., Singapore, 2002.
+
+Suykens J. A. K., Vandewalle J., Least squares support vector machine classifiers, Neural Processing Letters, vol. 9, no. 3, Jun. 1999, pp.&nbsp;293–300.
+
+Vladimir Vapnik. The Nature of Statistical Learning Theory. Springer-Verlag, 1995.
+
+MacKay, D. J. C., Probable networks and plausible predictions—A review of practical Bayesian methods for supervised neural networks. Network: Computation in Neural Systems, vol. 6, 1995, pp.&nbsp;469–505.
+
+External links
+
+www.esat.kuleuven.be/sista/lssvmlab/ "Least squares support vector machine Lab (LS-SVMlab) toolbox contains Matlab/C implementations for a number of LS-SVM algorithms".
+
+www.kernel-machines.org "Support Vector Machines and Kernel based methods (Smola & Schölkopf)".
+
+www.gaussianprocess.org "Gaussian Processes: Data modeling using Gaussian Process priors over functions for regression and classification (MacKay, Williams)".
+
+www.support-vector.net "Support Vector Machines and kernel based methods (Cristianini)".
+
+dlib: Contains a least-squares SVM implementation for large-scale datasets.
+
+Category:Support vector machines
+
+Category:Classification algorithms
+
+Category:Statistical classification
+
+Category:Least squares
+
+Category:1999 in artificial intelligence
+
+Category:Regression analysis
+
+Category:Kernel methods for machine learning

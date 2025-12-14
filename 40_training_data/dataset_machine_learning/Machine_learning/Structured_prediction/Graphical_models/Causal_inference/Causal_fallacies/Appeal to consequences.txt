@@ -1,0 +1,67 @@
+Appeal to consequences, also known as argumentum ad consequentiam (Latin for "argument to the consequence"), is an argument that concludes a hypothesis (typically a belief) to be either true or false based on whether the premise leads to desirable or undesirable consequences. This is based on an appeal to emotion and is a type of informal fallacy, since the desirability of a premise's consequence does not make the premise true. Moreover, in categorizing consequences as either desirable or undesirable, such arguments inherently contain subjective points of view.
+
+In logic, appeal to consequences refers only to arguments that assert a conclusion's truth value (true or false) without regard to the formal preservation of the truth from the premises; appeal to consequences does not refer to arguments that address a premise's consequential desirability (good or bad, or right or wrong) instead of its truth value. Therefore, an argument based on appeal to consequences is valid in long-term decision making (which discusses possibilities that do not exist yet in the present) and abstract ethics, and in fact such arguments are the cornerstones of many moral theories, particularly related to consequentialism. Appeal to consequences also should not be confused with argumentum ad baculum, which is the bringing up of 'artificial' consequences (i.e. punishments) to argue that an action is wrong.
+
+General form
+
+An argument based on appeal to consequences generally has one of two forms:
+
+Positive form
+
+If P, then Q will occur.
+
+Q is desirable.
+
+Therefore, P is true.
+
+It is closely related to wishful thinking in its construction.
+
+Examples
+
+"Real estate markets will continue to rise this year: home owners enjoy the capital gains."
+
+"Humans will travel faster than light: faster-than-light travel would be beneficial for space travel."
+
+Negative form
+
+If P, then Q will occur.
+
+Q is undesirable.
+
+Therefore, P is false.
+
+Appeal to force (argumentum ad baculum) is a special instance of this form.
+
+This form somewhat resembles modus tollens but is both different and fallacious, since "Q is undesirable" is not equivalent to "Q is false".
+
+Example
+
+"If the six men win, it will mean that the police are guilty of perjury, that they are guilty of violence and threats, that the confessions were invented and improperly admitted in evidence and the convictions were erroneous... This is such an appalling vista that every sensible person in the land would say that it cannot be right that these actions should go any further." Lord Denning in his judgment on the Birmingham Six.
+
+In law
+
+In law, an argument from inconvenience or argumentum ab inconvenienti, is a valid type of appeal to consequences. Such an argument would seek to show that a proposed action would have unreasonably inconvenient consequences, as for example a law that would require a person wishing to lend money against a security to first ascertain the borrower's title to the property by inquiring in every single courthouse in the country.
+
+See also
+
+Affirming the consequent
+
+Appeal to fear
+
+Appeal to worse problems
+
+Argumentum ad hominemcircumstantial form
+
+Pascal's wager
+
+Utilitarianism
+
+Notes
+
+Consequences
+
+Category:Causal fallacies
+
+Category:Consequentialism
+
+Category:Relevance fallacies

@@ -1,0 +1,13 @@
+Confirmatory blockmodeling is a deductive approach in blockmodeling, where a blockmodel (or part of it) is prespecify before the analysis, and then the analysis is fit to this model. When only a part of analysis is prespecify (like individual cluster(s) or location of the block types), it is called partially confirmatory blockmodeling.
+
+This is so-called indirect approach, where the blockmodeling is done on the blockmodel fitting (e.g., a priori hypothesized blockmodel).
+
+Opposite approach to the confirmatory blockmodeling is an inductive exploratory blockmodeling.
+
+References
+
+See also
+
+prespecific blockmodeling
+
+Category:Blockmodeling

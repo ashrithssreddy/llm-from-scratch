@@ -1,0 +1,147 @@
+Clustering is the problem of partitioning data points into groups based on their similarity.  Correlation clustering provides a method for clustering a set of objects into the optimum number of clusters without specifying that number in advance.
+
+Description of the problem
+
+In machine learning, correlation clustering or cluster editing operates in a scenario where the relationships between the objects are known instead of the actual representations of the objects. For example, given a weighted graph G=(V,E) where the edge weight indicates whether two nodes are similar (positive edge weight) or different (negative edge weight), the task is to find a clustering that either maximizes agreements (sum of positive edge weights within a cluster plus the absolute value of the sum of negative edge weights between clusters) or minimizes disagreements (absolute value of the sum of negative edge weights within a cluster plus the sum of positive edge weights across clusters). Unlike other clustering algorithms this does not require choosing the number of clusters k in advance because the objective, to minimize the sum of weights of the cut edges, is independent of the number of clusters.
+
+It may not be possible to find a perfect clustering, where all similar items are in a cluster while all dissimilar ones are in different clusters. If the graph indeed admits a perfect clustering, then simply deleting all the negative edges and finding the connected components in the remaining graph will return the required clusters. Davis found a necessary and sufficient condition for this to occur: no cycle may contain exactly one negative edge.
+
+But, in general a graph may not have a perfect clustering. For example, given nodes a,b,c such that a,b and a,c are similar while b,c are dissimilar, a perfect clustering is not possible. In such cases, the task is to find a clustering that maximizes the number of agreements (number of + edges inside clusters plus the number of − edges between clusters) or minimizes the number of disagreements (the number of − edges inside clusters plus the number of + edges between clusters). This problem of maximizing the agreements is NP-complete (multiway cut problem reduces to maximizing weighted agreements and the problem of partitioning into triangles can be reduced to the unweighted version).
+
+Formal Definitions
+
+Let G=(V,E) be a graph with nodes V and edges E. A clustering of G is a partition of its node set \Pi=\{\pi_1,\dots,\pi_k\} with V=\pi_1 \cup \dots \cup \pi_k and \pi_i \cap \pi_j = \emptyset for i \neq j.
+
+For a given clustering \Pi, let \delta(\Pi) = \{\{u,v\} \in E \mid \{u, v\} \not \subseteq \pi \;\forall \pi \in \Pi\} denote the subset of edges of G whose endpoints are in different subsets of the clustering \Pi.
+
+Now, let w\colon E \to \R_{\geq 0}  be a function that assigns a non-negative weight to each edge of the graph and let E = E^+ \cup E^-  be a partition of the edges into attractive (E^+) and repulsive (E^-) edges.
+
+The minimum disagreement correlation clustering problem is the following optimization problem:
+
+\begin{align}
+
+&\underset{\Pi}{\operatorname{minimize}}& & \sum_{e \in E^+ \cap \delta(\Pi)} w_e + \sum_{e \in E^- \setminus \delta(\Pi)} w_e \;.
+
+\end{align}
+
+Here, the set E^+ \cap \delta(\Pi) contains the attractive edges whose endpoints are in different components with respect to the clustering \Pi and the set E^- \setminus \delta(\Pi)  contains the repulsive edges whose endpoints are in the same component with respect to the clustering \Pi.
+
+Together these two sets contain all edges that disagree with the clustering \Pi.
+
+Similarly to the minimum disagreement correlation clustering problem, the maximum agreement correlation clustering problem is defined as
+
+\begin{align}
+
+&\underset{\Pi}{\operatorname{maximize}}& & \sum_{e \in E^+ \setminus \delta(\Pi)} w_e + \sum_{e \in E^- \cap \delta(\Pi)} w_e \;.
+
+\end{align}
+
+Here, the set E^+ \setminus \delta(\Pi) contains the attractive edges whose endpoints are in the same component with respect to the clustering \Pi and the set E^- \cap \delta(\Pi)  contains the repulsive edges whose endpoints are in different components with respect to the clustering \Pi.
+
+Together these two sets contain all edges that agree with the clustering \Pi.
+
+Instead of formulating the correlation clustering problem in terms of non-negative edge weights and a partition of the edges into attractive and repulsive edges the problem is also formulated in terms of positive and negative edge costs without partitioning the set of edges explicitly.
+
+For given weights w\colon E \to \R_{\geq 0}  and a given partition E = E^+ \cup E^-  of the edges into attractive and repulsive edges, the edge costs can be defined by
+
+\begin{align}
+
+c_e =
+
+\begin{cases}
+
+\;\;w_e & \text{if } e \in E^+ \\
+
+-w_e & \text{if } e \in E^-
+
+\end{cases}
+
+\end{align}
+
+for all e \in E.
+
+An edge whose endpoints are in different clusters is said to be cut.
+
+The set \delta(\Pi) of all edges that are cut is often called a multicut of G.
+
+The minimum cost multicut problem is the problem of finding a clustering \Pi of G such that the sum of the costs of the edges whose endpoints are in different clusters is minimal:
+
+\begin{align}
+
+&\underset{\Pi}{\operatorname{minimize}}& & \sum_{e \in \delta(\Pi)} c_e \;.
+
+\end{align}
+
+Similar to the minimum cost multicut problem, coalition structure generation in weighted graph games is the problem of finding a clustering such that the sum of the costs of the edges that are not cut is maximal:
+
+\begin{align}
+
+&\underset{\Pi}{\operatorname{maximize}}& & \sum_{e \in E \setminus \delta(\Pi)} c_e \;.
+
+\end{align}
+
+This formulation is also known as the clique partitioning problem.
+
+It can be shown that all four problems that are formulated above are equivalent.
+
+This means that a clustering that is optimal with respect to any of the four objectives is optimal for all of the four objectives.
+
+Algorithms
+
+Bansal et al. discuss the NP-completeness proof and also present both a constant factor approximation algorithm and polynomial-time approximation scheme to find the clusters in this setting. Ailon et al. propose a randomized 3-approximation algorithm for the same problem.
+
+CC-Pivot(G=(V,E+,E−))
+
+Pick random pivot i &isin; V
+
+Set C=\{i\}, V'=Ø
+
+For all j &isin; V, j &ne; i;
+
+If (i,j) &isin; E+ then
+
+Add j to C
+
+Else (If (i,j) &isin; E−)
+
+Add j to V'
+
+Let G' be the subgraph induced by V'
+
+Return clustering C,CC-Pivot(G')
+
+The authors show that the above algorithm is a 3-approximation algorithm for correlation clustering. The best polynomial-time approximation algorithm known at the moment for this problem achieves a ~2.06 approximation by rounding a linear program, as shown by Chawla, Makarychev, Schramm, and Yaroslavtsev.
+
+Karpinski and Schudy proved existence of a polynomial time approximation scheme (PTAS) for that problem on complete graphs and fixed number of clusters.
+
+Optimal number of clusters
+
+In 2011, it was shown by Bagon and Galun
+
+that the optimization of the correlation clustering functional is closely related to well known discrete optimization methods.
+
+In their work they proposed a probabilistic analysis of the underlying implicit model that allows the correlation clustering functional to estimate the underlying number of clusters.
+
+This analysis suggests the functional assumes a uniform prior over all possible partitions regardless of their number of clusters.
+
+Thus, a non-uniform prior over the number of clusters emerges.
+
+Several discrete optimization algorithms are proposed in this work that scales gracefully with the number of elements (experiments show results with more than 100,000 variables).
+
+The work of Bagon and Galun also evaluated the effectiveness of the recovery of the underlying number of clusters in several applications.
+
+Correlation clustering (data mining)
+
+Correlation clustering also relates to a different task, where correlations among attributes of feature vectors in a high-dimensional space are assumed to exist guiding the clustering process. These correlations may be different in different clusters, thus a global decorrelation cannot reduce this to traditional (uncorrelated) clustering.
+
+Correlations among subsets of attributes result in different spatial shapes of clusters. Hence, the similarity between cluster objects is defined by taking into account the local correlation patterns. With this notion, the term has been introduced in  simultaneously with the notion discussed above.
+
+Different methods for correlation clustering of this type are discussed in  and the relationship to different types of clustering is discussed in. See also Clustering high-dimensional data.
+
+Correlation clustering (according to this definition) can be shown to be closely related to biclustering. As in biclustering, the goal is to identify groups of objects that share a correlation in some of their attributes; where the correlation is usually typical for the individual clusters.
+
+References
+
+Category:Cluster analysis
+
+Category:Computational problems in graph theory

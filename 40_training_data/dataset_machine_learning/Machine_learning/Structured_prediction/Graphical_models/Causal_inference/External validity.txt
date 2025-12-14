@@ -1,0 +1,83 @@
+External validity is the validity of applying the conclusions of a scientific study outside the context of that study. In other words, it is the extent to which the results of a study can generalize or transport to other situations, people, stimuli, and times. Generalizability refers to the applicability of a predefined sample to a broader population while transportability refers to the applicability of one sample to another target population.
+
+In establishing external validity, scholars tend to identify the "scope" of the study, which refers to the applicability or limitations of the theory or argument of the study. In most cases, generalizability is limited when the effect of one factor (i.e. the independent variable) depends on other factors. Therefore, all threats to external validity can be described as statistical interactions. Some examples include:
+
+Aptitude by treatment interaction: The sample may have certain features that interact with the independent variable, limiting generalizability. For example, comparative psychotherapy studies often employ specific samples (e.g. volunteers, highly depressed, no comorbidity). If psychotherapy is found effective for these sample patients, will it also be effective for non-volunteers or the mildly depressed or patients with concurrent other disorders? If not, the external validity of the study would be limited.
+
+Situation by treatment interactions: All situational specifics (e.g. treatment conditions, time, location, lighting, noise, treatment administration, investigator, timing, scope and extent of measurement, etc.)  of a study potentially limit generalizability.
+
+Pre-test by treatment interactions: If cause-effect relationships can only be found when pre-tests are carried out, then this also limits the generality of the findings. This sometimes goes under the label "sensitization", because the pretest makes people more sensitive to the manipulation of the treatment.
+
+Note that a study's external validity is limited by its internal validity. If a causal inference made within a study is invalid, then generalizations of that inference to other contexts will also be invalid.
+
+Cook and Campbell made the crucial distinction between generalizing to some population and generalizing across subpopulations defined by different levels of some background factor. Lynch has argued that it is almost never possible to generalize to meaningful populations except as a snapshot of history, but it is possible to test the degree to which the effect of some cause on some dependent variable generalizes across subpopulations that vary in some background factor. That requires a test of whether the treatment effect being investigated is moderated by interactions with one or more background factors.
+
+Disarming threats
+
+Whereas enumerating threats to validity may help researchers avoid unwarranted generalizations, many of those threats can be disarmed, or neutralized in a systematic way, so as to enable a valid generalization. Specifically, experimental findings from one population can be "re-processed", or "re-calibrated" so as to circumvent population differences and produce valid generalizations in a second population,  where experiments cannot be performed. Pearl and Bareinboim they derived a necessary and sufficient condition for a problem instance to enable a valid generalization, and devised algorithms that automatically produce the needed re-calibration, whenever such exists. This reduces the external validity problem to an exercise in graph theory, and has led some philosophers to conclude that the problem is now solved.
+
+An important variant of the external validity problem deals with selection bias, also known as sampling bias—that is, bias created when studies are conducted on non-representative samples of the intended population. For example, if a clinical trial is conducted on college students, an investigator may wish to know whether the results generalize to the entire population, where attributes such as age, education, and income differ substantially from those of a typical student. The graph-based method of Bareinboim and Pearl identifies conditions under which sample selection bias can be circumvented and, when these conditions are met, the method constructs an unbiased estimator of the average causal effect in the entire population. The main difference between generalization from improperly sampled studies and generalization across disparate populations lies in the fact that disparities among populations are usually caused by preexisting factors, such as age or ethnicity, whereas selection bias is often caused by post-treatment conditions, for example, patients dropping out of the study, or patients selected by severity of injury. When selection is governed by post-treatment factors, unconventional re-calibration methods are required to ensure bias-free estimation, and these methods are readily obtained from the problem's
+
+graph.
+
+Examples
+
+If age is judged to be a major factor causing treatment effect to vary from individual to individual, then age differences between the sampled students and the general population would lead to a biased estimate of the average treatment effect in that population. Such bias can be corrected though by a simple re-weighing procedure: We take the age-specific effect in the student  subpopulation and compute its average using the age distribution in the general population. This would give us an unbiased estimate of the average treatment effect in the population. If, on the other hand, the relevant factor  that distinguishes the study sample from the general population is in itself affected by the treatment, then a different re-weighing scheme  need be invoked.  Calling this factor Z, we again average the z-specific effect of X on Y in the experimental sample, but now we weigh it by the "causal effect" of X on Z. In other words, the new weight is the proportion of units attaining level Z=z had treatment X=x been administered to the entire population.  This interventional probability, often written using Do-calculus P(Z=z|do(X=x)), can sometimes be estimated from
+
+observational studies in the general population.
+
+A typical example of this nature occurs when Z is a mediator between the treatment and outcome, For instance, the treatment may be a cholesterol-reducing drug, Z may be cholesterol level, and Y life expectancy. Here, Z is both affected by the treatment and a major factor in determining the outcome, Y. Suppose that subjects selected for the experimental study
+
+tend to have higher cholesterol levels than is typical in the general population. To estimate the average effect of the drug on survival in the entire population, we first compute the z-specific treatment effect in the experimental study, and then average it using P(Z=z|do(X=x)) as a weighting function. The estimate obtained will be bias-free even when Z and Y are confounded—that is, when there is an unmeasured common factor that affects both Z and Y.
+
+The precise conditions ensuring the validity of this and other weighting schemes are formulated in Bareinboim and Pearl, 2016 Attempts to increase internal validity may also limit the generalizability of the findings, and vice versa.
+
+This situation has led many researchers call for "ecologically valid" experiments. By that they mean that experimental procedures should resemble "real-world" conditions. They criticize the lack of ecological validity in many laboratory-based studies with a focus on artificially controlled and constricted environments. Some researchers think external validity and ecological validity are closely related in the sense that causal inferences based on ecologically valid research designs often allow for higher degrees of generalizability than those obtained in an artificially produced lab environment. However, this again relates to the distinction between generalizing to some population (closely related to concerns about ecological validity) and generalizing across subpopulations that differ on some background factor. Some findings produced in ecologically valid research settings may hardly be generalizable, and some findings produced in highly controlled settings may claim near-universal external validity. Thus, external and ecological validity are independent—a study may possess external validity but not ecological validity, and vice versa.
+
+Qualitative research
+
+Within the qualitative research paradigm, external validity is replaced by the concept of transferability. Transferability is the ability of research results to transfer to situations with similar parameters, populations and characteristics.
+
+In experiments
+
+It is common for researchers to claim that experiments are by their nature low in external validity. Some claim that many drawbacks can occur when following the experimental method. By the virtue of gaining enough control over the situation so as to randomly assign people to conditions and rule out the effects of extraneous variables, the situation can become somewhat artificial and distant from real life.
+
+There are two kinds of generalizability at issue:
+
+The extent to which we can generalize from the situation constructed by an experimenter to real-life situations (generalizability across situations), Thus, field studies are not by their nature high in external validity and laboratory studies are not by their nature low in external validity.  It depends in both cases whether the particular treatment effect studied would change with changes in background factors that are held constant in that study. If one's study is "unrealistic" on the level of some background factor that does not interact with the treatments, it has no effect on external validity. It is only if an experiment holds some background factor constant at an unrealistic level and if varying that background factor would have revealed a strong Treatment x Background factor interaction, that external validity is threatened.  To solve this problem, social psychologists attempt to increase the generalizability of their results by making their studies as realistic as possible.  As noted above, this is in the hope of generalizing to some specific population. Realism per se does not help the make statements about whether the results would change if the setting were somehow more realistic, or if study participants were placed in a different realistic setting. If only one setting is tested, it is not possible to make statements about generalizability across settings.
+
+Psychological realism is heightened if people find themselves engrossed in a real event.  To accomplish this, researchers sometimes tell the participants a cover story—a false description of the study's purpose.  If however, the experimenters were to tell the participants the purpose of the experiment then such a procedure would be low in psychological realism.  In everyday life, no one knows when emergencies are going to occur and people do not have time to plan responses to them.  This means that the kinds of psychological processes triggered would differ widely from those of a real emergency, reducing the psychological realism of the study.
+
+Many researchers address this problem by studying basic psychological processes that make people susceptible to social influence, assuming that these processes are so fundamental that they are universally shared.  Some social psychologist processes do vary in different cultures and in those cases, diverse samples of people have to be studied.
+
+Replications
+
+The ultimate test of an experiment's external validity is replication — conducting the study over again, generally with different subject populations or in different settings.  Researchers will often use different methods, to see if they still get the same results.
+
+When many studies of one problem are conducted, the results can vary.  Several studies might find an effect of the number of bystanders on helping behaviour, whereas a few do not.  To make sense out of this, there is a statistical technique called meta-analysis that averages the results of two or more studies to see if the effect of an independent variable is reliable.  A meta analysis essentially tells us the probability that the findings across the results of many studies are attributable to chance or to the independent variable. If an independent variable is found to have an effect in only one of 20 studies, the meta-analysis will tell you that that one study was an exception and that, on average, the independent variable is not influencing the dependent variable.  If an independent variable is having an effect in most of the studies, the meta-analysis is likely to tell us that, on average, it does influence the dependent variable.
+
+There can be reliable phenomena that are not limited to the laboratory.  For example, increasing the number of bystanders has been found to inhibit helping behaviour with many kinds of people, including children, university students, and future ministers; in small towns and large cities in the U.S.; in a variety of settings, such as psychology laboratories, city streets, and subway trains; and with a variety of types of emergencies, such as seizures, potential fires, fights, and accidents, as well as with less serious events, such as having a flat tire. Many of these replications have been conducted in real-life settings where people could not possibly have known that an experiment was being conducted.
+
+Basic dilemma of the social psychologist
+
+When conducting experiments in psychology, some believe that there is always a trade-off between internal and external validity—
+
+having enough control over the situation to ensure that no extraneous variables are influencing the results and to randomly assign people to conditions, and
+
+ensuring that the results can be generalized to everyday life.
+
+Some researchers believe that a good way to increase external validity is by conducting field experiments.  In a field experiment, people's behavior is studied outside the laboratory, in its natural setting.  A field experiment is identical in design to a laboratory experiment, except that it is conducted in a real-life setting.  The participants in a field experiment are unaware that the events they experience are in fact an experiment.  Some claim that the external validity of such an experiment is high because it is taking place in the real world, with real people who are more diverse than a typical university student sample. However, as real-world settings differ dramatically, findings in one real-world setting may or may not generalize to another real-world setting.
+
+See also
+
+Construct validity
+
+Content validity
+
+Statistical conclusion validity
+
+Transfer learning
+
+Notes
+
+Category:Causal inference

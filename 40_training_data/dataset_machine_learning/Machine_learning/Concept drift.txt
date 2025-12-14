@@ -1,0 +1,133 @@
+In predictive analytics, data science, machine learning and related fields, concept drift or drift is an evolution of data that invalidates the data model. It happens when the statistical properties of the target variable, which the model is trying to predict, change over time in unforeseen ways. This causes problems because the predictions become less accurate as time passes. Drift detection and drift adaptation are of paramount importance in the fields that involve dynamically changing data and data models.
+
+Predictive model decay
+
+In machine learning and predictive analytics this drift phenomenon is called concept drift. In machine learning, a common element of a data model are the statistical properties, such as probability distribution of the actual data. If they deviate from the statistical properties of the training data set, then the learned predictions may become invalid, if the drift is not addressed.
+
+Data configuration decay
+
+Another important area is software engineering, where three types of data drift affecting data fidelity may be recognized. Changes in the software environment ("infrastructure drift") may invalidate software infrastructure configuration. "Structural drift" happens when the data schema changes, which may invalidate databases. "Semantic drift" is changes in the meaning of data while the structure does not change. In many cases this may happen in complicated applications when many independent developers introduce changes without proper awareness of the effects of their changes in other areas of the software system.
+
+For many application systems, the nature of data on which they operate are subject to changes for various reasons, e.g., due to changes in business model, system updates, or switching the platform on which the system operates.
+
+"Data drift" may also refer to inconsistency of data elements between several replicas of a database. The reasons can be difficult to identify. A simple drift detection is to run checksum regularly. However the remedy may be not so easy.
+
+Examples
+
+The behavior of the customers in an online shop may change over time. For example, if weekly merchandise sales are to be predicted, and a predictive model has been developed that works satisfactorily. The model may use inputs such as the amount of money spent on advertising, promotions being run, and other metrics that may affect sales. The model is likely to become less and less accurate over time – this is concept drift. In the merchandise sales application, one reason for concept drift may be seasonality, which means that shopping behavior changes seasonally. Perhaps there will be higher sales in the winter holiday season than during the summer, for example. Concept drift generally occurs when the covariates that comprise the data set begin to explain the variation of your target set less accurately — there may be some confounding variables that have emerged, and that one simply cannot account for, which renders the model accuracy to progressively decrease with time. Generally, it is advised to perform health checks as part of the post-production analysis and to re-train the model with new assumptions upon signs of concept drift.
+
+Possible remedies
+
+To prevent deterioration in prediction accuracy because of concept drift, reactive and tracking solutions can be adopted.  Reactive solutions retrain the model in reaction to a triggering mechanism, such as a change-detection test or control charts from statistical process control, to explicitly detect concept drift as a change in the statistics of the data-generating process. When concept drift is detected, the current model is no longer up-to-date and must be replaced by a new one to restore prediction accuracy. A shortcoming of reactive approaches is that performance may decay until the change is detected. Tracking solutions seek to track the changes in the concept by continually updating the model. Methods for achieving this include online machine learning, frequent retraining on the most recently observed samples, and maintaining an ensemble of classifiers where one new classifier is trained on the most recent batch of examples and replaces the oldest classifier in the ensemble.
+
+Contextual information, when available, can be used to better explain the causes of the concept drift: for instance, in the sales prediction application, concept drift might be compensated by adding information about the season to the model. By providing information about the time of the year, the rate of deterioration of your model is likely to decrease, but concept drift is unlikely to be eliminated altogether. This is because actual shopping behavior does not follow any static, finite model. New factors may arise at any time that influence shopping behavior, the influence of the known factors or their interactions may change.
+
+Concept drift cannot be avoided for complex phenomena that are not governed by fixed laws of nature. All processes that arise from human activity, such as socioeconomic processes, and biological processes are likely to experience concept drift. Therefore, periodic retraining, also known as refreshing, of any model is necessary.
+
+Remedy methods
+
+DDM (Drift Detection Method): detects drift by monitoring the model's error rate over time. When the error rate passes a set threshold, it enters a warning phase, and if it passes another threshold, it enters a drift phase.
+
+EDDM (Early Drift Detection Method): improves DDM's detection rate by tracking the average distance between two errors instead of only the error rate.
+
+ADWIN (Adaptive Windowing): dynamically stores a window of recent data and warns the user if it detects a significant change between the statistics of the window's earlier data compared to more recent data.
+
+KSWIN (Kolmogorov–Smirnov Windowing): detects drift based on the Kolmogorov-Smirnov statistical test.
+
+DDM and EDDM: Concept Drift Detection
+
+online supervised methods that rely on sequential error monitoring to estimate the evolving error rate.
+
+ADWIN and KSWIN: Windowing
+
+maintain a "window", a subset of the most recent data, of the data stream, which it checks for statistical differences across the window.
+
+Several studies on Windows malware model detection as an evolving data stream and track how performance changes as time passes.
+
+Related problems appear in spam filtering, fraud detection and intrusion detection, where adversaries change content, patterns of activity or network behavior to evade models trained on historical data. In these settings drift can be gradual, as new types of spam or fraud emerge, or abrupt, after a sudden shift in attack techniques. Common strategies to remain effective include updating models with recent labelled examples, using ensembles that give more weight to classifiers trained on newer data, and designing features that are less sensitive to superficial changes in how attacks are carried out.
+
+Research on machine learning for security has also shown that not handling concept drift correctly during evaluation can lead to a lot of bias. Researchers studied 30 learning-based security systems and found that many detectors were only tested in short time periods or lab-only. This ignores temporal correlations, non-stationarity, and the way attacks change in the real world, which can make these systems seem much more effective than they really are when they are put to use. The authors point out ways that people can snoop on time, like using features from newer malware samples when training models that are supposed to work on older data, calculating normalization statistics, or embeddings on the whole dataset. They also talk about using old benchmark datasets that don't train models for current threats
+
+These behavior changes do not always happen organically; attackers can introduce them intentionally. The primary causes of concept drift are adversarial attacks because slight, carefully crafted changes to malware by the attacker will affect the input-label relationship, leading to models misclassifying malware as benign. Adversarial attacks generally fall into two settings: white-box and black-box. In white-box settings, an attacker fully accesses the model with its architecture, parameters, and gradients. One example in white-box would be those attacks in which an attacker uses gradient-based approaches to build slight perturbations to a sample, causing its misclassification. On the other extreme are black-box attacks. An adversary knows the input and output of the model but not its inner workings. Attackers can probe the model's outputs—sometimes sending thousands of slightly varied inputs—until something slips past the detector, or they train a substitute model and then generate adversarial examples that transfer to the original system. These tactics gradually shift the patterns a model observes, accelerating drift and making previously reliable defenses far less effective.
+
+These attacker-driven manipulations not only cause concept drift but also reveal the weaknesses of modern learning techniques such as transfer learning. Transfer learning enables defenders to take an existing model, pre-trained for some other task, and fine-tune it rather than training from scratch. This has considerably increased success across diverse domains such as image classification and natural language processing. For malware detection, for instance, Microsoft and Intel recently demonstrated that converting malware binaries into grayscale images enables malware detection using pre-trained vision models, yielding strong performance—for example, 87% recall with only 0.1% false positives. While such an approach reduces the training time and computational cost drastically, it naturally brings one important drawback: the base model architecture is often publicly known. An adversary may use this fact and create adversarial examples designed to exploit the known weaknesses of the underlying model, which then enables those manipulations to "transfer" to the newly trained malware detector. In this regard, transfer learning offers the significant advantages of co-opting prior work while also running the risk of inheriting vulnerabilities that attackers can readily exploit.
+
+In addition to rapidly evolving attacks, ML based defenses face a known issue of acquiring accurate data or labels. Label aggregators may encounter difficulty when labeling new samples, and initially these labels can be incorrect. As time passes, the labels typically stabilize toward their ground truth. This process can take anywhere from days to years. This is considered a contributing factor to concept drift because during this time the original labels may be updated, new attacks may be produced, or new classes may appear. This phenomenon is called delayed labels, and it contributes to the broader causes of concept drift. Therefore, delayed labels are often taken into account when building defense solutions and their evaluations. To detect drift between labels and sample mappings, drift detectors are commonly used during evaluation.
+
+See also
+
+Data stream mining
+
+Data mining
+
+Snyk, a company whose portfolio includes drift detection in software applications
+
+Further reading
+
+Many papers have been published describing algorithms for concept drift detection. Only reviews, surveys and overviews are here:
+
+Reviews
+
+External links
+
+Software
+
+Frouros: An open-source Python library for drift detection in machine learning systems.
+
+NannyML: An open-source Python library for detecting univariate and multivariate distribution drift and estimating machine learning model performance without ground truth labels.
+
+RapidMiner: Formerly Yet Another Learning Environment (YALE): free open-source software for knowledge discovery, data mining, and machine learning also featuring data stream mining, learning time-varying concepts, and tracking drifting concept. It is used in combination with its data stream mining plugin (formerly concept drift plugin).
+
+EDDM (Early Drift Detection Method): free open-source implementation of drift detection methods in Weka.
+
+MOA (Massive Online Analysis): free open-source software specific for mining data streams with concept drift. It contains a prequential evaluation method, the EDDM concept drift methods, a reader of ARFF real datasets, and artificial stream generators as SEA concepts, STAGGER, rotating hyperplane, random tree, and random radius based functions. MOA supports bi-directional interaction with Weka.
+
+Datasets
+
+Real
+
+USP Data Stream Repository, 27 real-world stream datasets with concept drift compiled by Souza et al. (2020). Access
+
+Airline, approximately 116 million flight arrival and departure records (cleaned and sorted) compiled by E. Ikonomovska. Reference: Data Expo 2009 Competition  Special Session on "Concept Drift, Domain Adaptation & Learning in Dynamic Environments" @IEEE IJCNN 2014
+
+2013
+
+RealStream Real-World Challenges for Data Stream Mining Workshop-Discussion at the ECML PKDD 2013, Prague, Czech Republic.
+
+LEAPS 2013 The 1st International Workshop on Learning stratEgies and dAta Processing in nonStationary environments
+
+2011
+
+LEE 2011 Special Session on Learning in evolving environments and its application on real-world problems at ICMLA'11
+
+HaCDAIS 2011 The 2nd International Workshop on Handling Concept Drift in Adaptive Information Systems
+
+ICAIS 2011 Track on Incremental Learning
+
+IJCNN 2011 Special Session on Concept Drift and Learning Dynamic Environments
+
+CIDUE 2011 Symposium on Computational Intelligence in Dynamic and Uncertain Environments
+
+2010
+
+HaCDAIS 2010 International Workshop on Handling Concept Drift in Adaptive Information Systems: Importance, Challenges and Solutions
+
+ICMLA10 Special Session on Dynamic learning in non-stationary environments
+
+SAC 2010 Data Streams Track at ACM Symposium on Applied Computing
+
+SensorKDD 2010 International Workshop on Knowledge Discovery from Sensor Data
+
+StreamKDD 2010 Novel Data Stream Pattern Mining Techniques
+
+Concept Drift and Learning in Nonstationary Environments at IEEE World Congress on Computational Intelligence
+
+MLMDS'2010 Special Session on Machine Learning Methods for Data Streams at the 10th International Conference on Intelligent Design and Applications, ISDA'10
+
+References
+
+Category:Data mining
+
+Category:Machine learning
+
+Category:Data analysis

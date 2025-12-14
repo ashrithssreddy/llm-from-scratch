@@ -1,0 +1,121 @@
+In probability, a discrete-time Markov chain (DTMC) is a sequence of random variables, known as a stochastic process, in which the value of the next variable depends only on the value of the current variable, and not any variables in the past. For instance, a machine may have two states, A and E. When it is in state A, there is a 40% chance of it moving to state E and a 60% chance of it remaining in state A. When it is in state E, there is a 70% chance of it moving to A and a 30% chance of it staying in E. The sequence of states of the machine is a Markov chain. If we denote the chain by X_0, X_1, X_2, ... then X_0 is the state which the machine starts in and X_{10} is the random variable describing its state after 10 transitions. The process continues forever, indexed by the natural numbers.
+
+An example of a stochastic process which is not a Markov chain is the model of a machine which has states A and E and moves to A from either state with 50% chance if it has ever visited A before, and 20% chance if it has never visited A before (leaving a 50% or 80% chance that the machine moves to E). This is because the behavior of the machine depends on the whole history—if the machine is in E, it may have a 50% or 20% chance of moving to A, depending on its past values. Hence, it does not have the Markov property.
+
+A Markov chain can be described by a stochastic matrix, which lists the probabilities of moving to each state from any individual state. From this matrix, the probability of being in a particular state n steps in the future can be calculated. A Markov chain's state space can be partitioned into communicating classes that describe which states are reachable from each other (in one transition or in many). Each state can be described as transient or recurrent, depending on the probability of the chain ever returning to that state. Markov chains can have properties including periodicity, reversibility and stationarity. A continuous-time Markov chain is like a discrete-time Markov chain, but it moves states continuously through time rather than as discrete time steps. Other stochastic processes can satisfy the Markov property, the property that past behavior does not affect the process, only the present state.
+
+Definition
+
+A discrete-time Markov chain is a sequence of random variables X_0, X_1, X_2, ... with the Markov property, namely that the probability of moving to the next state depends only on the present state and not on the previous states:
+
+\Pr(X_{n+1}=x\mid X_1=x_1, X_2=x_2, \ldots, X_n=x_n) = \Pr(X_{n+1}=x\mid X_n=x_n), if both conditional probabilities are well defined, that is, if \Pr(X_1=x_1,\ldots,X_n=x_n)>0.
+
+The possible values of Xi form a countable set S called the state space of the chain.
+
+Markov chains are often described by a sequence of directed graphs, where the edges of graph n are labeled by the probabilities of going from one state at time n to the other states at time n&nbsp;+&nbsp;1, \Pr(X_{n+1}=x\mid X_n=x_n). The same information is represented by the transition matrix from time n to time n&nbsp;+&nbsp;1. However, Markov chains are frequently assumed to be time-homogeneous (see variations below), in which case the graph and matrix are independent of n and are thus not presented as sequences.
+
+These descriptions highlight the structure of the Markov chain that is independent of the initial distribution \Pr(X_1=x_1). When time-homogeneous, the chain can be interpreted as a state machine assigning a probability of hopping from each vertex or state to an adjacent one. The probability \Pr(X_n=x\mid X_1=x_1) of the machine's state can be analyzed as the statistical behavior of the machine with an element x_1 of the state space as input, or as the behavior of the machine with the initial distribution \Pr(X_1=y)=[x_1=y] of states as input, where [P] is the Iverson bracket.
+
+Variations
+
+Time-homogeneous Markov chains (or stationary Markov chains) are processes where
+
+\Pr(X_{n+1}=x\mid X_n=y) = \Pr(X_n=x\mid X_{n-1}=y)
+
+for all n. The probability of the transition is independent of n. A state is final if and only if its communicating class is closed.
+
+A Markov chain is said to be irreducible if its state space is a single communicating class; in other words, if it is possible to get to any state from any state.
+
+Periodicity
+
+A state i has period k if any return to state i must occur in multiples of k time steps. Formally, the period of state i is defined as
+
+k = \gcd\{ n > 0: \Pr(X_n = i \mid X_0 = i) > 0\}
+
+(where \gcd is the greatest common divisor) provided that this set is not empty. Otherwise the period is not defined.
+
+Reversible Markov chain
+
+A Markov chain is said to be reversible if there is a probability distribution  over its states such that
+
+\pi_i \Pr(X_{n+1} = j \mid X_{n} = i) = \pi_j \Pr(X_{n+1} = i \mid X_{n} = j)
+
+for all times n and all states i and j. This condition is known as the detailed balance condition (or local balance equation).
+
+Considering a fixed arbitrary time n and using the shorthand
+
+p_{ij} = \Pr(X_{n+1} = j \mid X_n = i)\,,
+
+the detailed balance equation can be written more compactly as
+
+\pi_i p_{ij} = \pi_j p_{ji}\,. Clearly the total amount of money  each person has remains the same after the time-step, since every dollar spent is balanced by a corresponding dollar received. This can be shown more formally by the equality
+
+\sum_i \pi_i p_{ij} = \sum_i \pi_j p_{ji} = \pi_j \sum_i p_{ji} = \pi_j\,,
+
+which essentially states that the total amount of money person j receives (including from himself) during the time-step equals the amount of money he pays others, which equals all the money he initially had because it was assumed that all money is spent (that is, pji sums to 1 over i). The assumption is a technical one, because the money not really used is simply thought of as being paid from person j to himself (that is, pjj is not necessarily zero).
+
+As n was arbitrary, this reasoning holds for any n, and therefore for reversible Markov chains  is always a steady-state distribution of Pr(X'n+1&nbsp;=&nbsp;j&nbsp;|&nbsp;X'n&nbsp;=&nbsp;i) for every&nbsp;n.
+
+If the Markov chain begins in the steady-state distribution, that is, if \Pr(X_0=i)=\pi_i, then \Pr(X_n=i)=\pi_i for all n and the detailed balance equation can be written as
+
+\Pr(X_{n} = i, X_{n+1} = j) = \Pr(X_{n+1} = i, X_{n} = j)\,.
+
+The left- and right-hand sides of this last equation are identical except for a reversing of the time indices n and&nbsp;n&nbsp;+&nbsp;1.
+
+Kolmogorov's criterion gives a necessary and sufficient condition for a Markov chain to be reversible directly from the transition matrix probabilities. The criterion requires that the products of probabilities around every closed loop are the same in both directions around the loop.
+
+Reversible Markov chains are common in Markov chain Monte Carlo (MCMC) approaches because the detailed balance equation for a desired distribution  necessarily implies that the Markov chain has been constructed so that  is a steady-state distribution. Even with time-inhomogeneous Markov chains, where multiple transition matrices are used, if each such transition matrix exhibits detailed balance with the desired  distribution, this necessarily implies that  is a steady-state distribution of the Markov chain.
+
+Closest reversible Markov chain
+
+For any time-homogeneous Markov chain given by a transition matrix P \in \mathbb{R}^{n \times n}, any norm ||\cdot || on  \mathbb{R}^{n \times n} which is induced by a scalar product, and any probability vector \pi, there exists a unique transition matrix P^* which is reversible according to \pi
+
+and which is closest to P according to the norm  ||\cdot ||. The matrix P^* can be computed by solving a quadratic-convex optimization problem.
+
+For example, consider the following Markov chain:
+
+This Markov chain is not reversible. According to the  Frobenius Norm  the closest reversible Markov chain according to \pi = \left(\frac{1}{3},\frac{1}{3},\frac{1}{3}\right) can be computed as
+
+If we choose the probability vector randomly as \pi=\left( \frac{1}{4}, \frac{1}{4}, \frac{1}{2} \right), then the closest reversible Markov chain according to the Frobenius norm is approximately given by
+
+Stationary distributions
+
+A distribution \pi is a stationary distribution of the Markov chain with stochastic matrix P if and only if \pi P = \pi. This can be written as: in which case the unique such distribution is given by \pi_i=\frac{1}{M_i} where M_i=\mathbb{E}(T_i) is the mean recurrence time of i.
+
+\begin{align}
+
+k_i^A = 0 & \text{ for } i \in A\\
+
+-\sum_{j \in S} q_{ij} k_j^A = 1&\text{ for } i \notin A.
+
+\end{align}
+
+Ergodic theorem
+
+An instance of ergodic theory, the ergodic theorem states that for an irreducible aperiodic Markov chain, for any two states i and j,
+
+p_{i,j}^{(n)}\rightarrow \frac{1}{M_j} as n\rightarrow \infty.
+
+Notes
+
+References
+
+A. A. Markov (1971). "Extension of the limit theorems of probability theory to a sum of variables connected in a chain". reprinted in Appendix B of: R. Howard. Dynamic Probabilistic Systems, volume 1: Markov Chains. John Wiley and Sons.
+
+Leo Breiman (1992)  Probability. Original edition published by Addison-Wesley; reprinted by Society for Industrial and Applied Mathematics . (See Chapter 7)
+
+J. L. Doob (1953) Stochastic Processes. New York: John Wiley and Sons .
+
+S. P. Meyn and R. L. Tweedie (1993) Markov Chains and Stochastic Stability. London: Springer-Verlag . online: MCSS . Second edition to appear, Cambridge University Press, 2009.
+
+Classical text. cf Chapter 6 Finite Markov Chains pp.&nbsp;384ff.
+
+John G. Kemeny & J. Laurie Snell (1960) Finite Markov Chains, D. van Nostrand Company
+
+E. Nummelin. "General irreducible Markov chains and non-negative operators". Cambridge University Press, 1984, 2004.
+
+Seneta, E. Non-negative matrices and Markov chains. 2nd rev. ed., 1981, XVI, 288 p., Softcover Springer Series in Statistics. (Originally published by Allen & Unwin Ltd., London, 1973)
+
+zh-yue:離散時間馬可夫鏈
+
+Category:Markov processes

@@ -1,0 +1,65 @@
+{{Infobox file format
+
+icon          = Lyra codec logo.png
+
+developer     = Google
+
+type          = speech codec
+
+extension = .lyra
+
+released      =
+
+latest_release_version = 1.3.2
+
+latest_release_date =
+
+free          = Yes (Apache-2.0)
+
+}}
+
+Lyra is a lossy audio codec developed by Google that is designed for compressing speech at very low bitrates. Unlike most other audio formats, it compresses data using a machine learning-based algorithm.
+
+Features
+
+The Lyra codec is designed to transmit speech in real-time when bandwidth is severely restricted, such as over slow or unreliable network connections. It runs at fixed bitrates of 3.2, 6, and 9&nbsp;kbit/s and it is intended to provide better quality than codecs that use traditional waveform-based algorithms at similar bitrates. Lyra imposes 20&nbsp;ms of latency due to its frame size. Ian Buckley at MakeUseOf said, "It succeeds in creating almost eerie levels of audio reproduction with bitrates as low as 3&nbsp;kbps." Google claims that it reproduces natural-sounding speech, and that Lyra at 3&nbsp;kbit/s beats Opus at 8&nbsp;kbit/s.
+
+Lyra was first announced in February 2021,
+
+Support
+
+Implementations
+
+Google's implementation is available on GitHub under the Apache License. Written in C++, it is optimized for 64-bit ARM but also runs on x86, on either Android or Linux.
+
+Applications
+
+Google Meet uses Lyra to transmit sound for video chats when bandwidth is limited.
+
+References
+
+External links
+
+Lyra: A New Very Low-Bitrate Codec for Speech Compression  Google blog post with a demonstration comparing codecs
+
+See also
+
+Satin (codec), an AI-based codec developed by Microsoft
+
+Comparison of audio coding formats
+
+Speech coding
+
+Videotelephony
+
+Category:Speech codecs
+
+Category:Lossy compression algorithms
+
+Category:Software using the Apache license
+
+Category:Google software
+
+Category:Machine learning
+
+Category:2021 software

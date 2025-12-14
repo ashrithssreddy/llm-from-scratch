@@ -1,0 +1,83 @@
+{{Infobox software
+
+name                   = geWorkbench
+
+logo                   = GeworkbenchLogo.png
+
+logo size              = 250px
+
+screenshot             =
+
+caption                =
+
+developer              = Columbia University,First Genetic TrustNational Cancer Institute
+
+released               =
+
+latest release version = 2.6.0.3
+
+latest release date    =
+
+programming language   =
+
+operating system       = Windows, Linux, Mac OS X
+
+platform               = x86
+
+language               = English
+
+genre                  = Genome data analysis
+
+license                = BSD-like
+
+website                =
+
+}}
+
+geWorkbench (genomics Workbench) is an open-source software platform for integrated genomic data analysis.  It is a desktop application written in the programming language Java. geWorkbench uses a component architecture. , there are more than 70 plug-ins available, providing for the visualization and analysis of gene expression, sequence, and structure data.
+
+geWorkbench is the Bioinformatics platform of MAGNet, the National Center for the Multi-scale Analysis of Genomic and Cellular Networks, one of the 8 National Centers for Biomedical Computing funded through the NIH Roadmap (NIH Common Fund). Many systems and structure biology tools developed by MAGNet investigators are available as geWorkbench plugins.
+
+Features
+
+Computational analysis tools such as t-test, hierarchical clustering, self-organizing maps, regulatory network reconstruction, BLAST searches, pattern-motif discovery, protein structure prediction, structure-based protein annotation, etc.
+
+Visualization of gene expression (heatmaps, volcano plot), molecular interaction networks (through Cytoscape), protein sequence and protein structure data (e.g., MarkUs).
+
+Integration of gene and pathway annotation information from curated sources as well as through Gene Ontology enrichment analysis.
+
+Component integration through platform management of inputs and outputs.  Among data that can be shared between components are expression datasets, interaction networks, sample and marker (gene) sets and sequences.
+
+Dataset history tracking - complete record of data sets used and input settings.
+
+Integration with 3rd party tools such as GenePattern, Cytoscape, and Genomespace.
+
+Demonstrations of each feature described can be found at GeWorkbench-web Tutorials.
+
+Versions
+
+geWorkbench is open-source software that can be downloaded and installed locally.  A zip file of the released version Java source is also available.
+
+Prepackaged installer versions also exist for Windows, Macintosh, and Linux.
+
+References
+
+External links
+
+, includes installation, tutorials, FAQs, known issues
+
+- geworkbench release downloads
+
+- geWorkbench plugins
+
+Category:Bioinformatics software
+
+Category:Software using the BSD license
+
+Category:Cluster analysis
+
+Category:Systems biology
+
+Category:Protein structure
+
+Category:Gene expression

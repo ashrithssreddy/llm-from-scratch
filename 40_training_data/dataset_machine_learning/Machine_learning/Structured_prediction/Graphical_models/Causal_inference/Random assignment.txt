@@ -1,0 +1,33 @@
+{{Multiple issues|
+
+}}
+
+Random assignment or random placement is an experimental technique for assigning human participants or animal subjects to different groups in an experiment (e.g., a treatment group versus a control group) using randomization, such as by a chance procedure (e.g., flipping a coin) or a random number generator. This ensures that each participant or subject has an equal chance of being placed in any group. Random sampling is recruiting participants in a way that they represent a larger population.
+
+Peirce's experiment inspired other researchers in psychology and education, which developed a research tradition of randomized experiments in laboratories and specialized textbooks in the eighteen-hundreds. Ronald A. Fisher advocated randomization in his book on experimental design (1935).
+
+See also
+
+Asymptotic theory (statistics)
+
+References
+
+Charles S. Peirce, "Illustrations of the Logic of Science" (1877–1878)
+
+Charles S. Peirce, "A Theory of Probable Inference" (1883)
+
+http://psychclassics.yorku.ca/Peirce/small-diffs.htm
+
+Basic Psychology by Gleitman, Fridlund, and Reisberg.
+
+"What statistical testing is, and what it is not," Journal of Experimental Education, 1993, vol 61, pp.&nbsp;293–316 by Shaver.
+
+External links
+
+Experimental Random Assignment Tool:
+
+Category:Causal inference
+
+Category:Design of experiments
+
+Category:Experiments

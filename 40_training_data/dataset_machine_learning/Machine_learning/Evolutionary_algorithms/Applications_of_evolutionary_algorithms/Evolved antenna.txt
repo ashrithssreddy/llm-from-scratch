@@ -1,0 +1,25 @@
+spacecraft antenna.  This complicated shape was found by an evolutionary computer design program to create the best radiation pattern.]]
+
+In radio communications, an evolved antenna is an antenna designed fully or substantially by an automatic computer design program that uses an evolutionary algorithm that mimics Darwinian evolution. This procedure has been used since the early 2000s to design antennas for mission-critical applications involving stringent, conflicting, or unusual design requirements, such as unusual radiation patterns, for which none of the many existing antenna types are adequate.
+
+Process
+
+The computer program starts with simple antenna shapes, then adds or modifies elements in a semirandom manner to create a number of new candidate antenna shapes. These are then evaluated to determine how well they fulfill the design requirements, and a numerical score is computed for each.  Then, in a step similar to natural selection, a portion of the candidate antennas with the worst scores are discarded, leaving a smaller population of the highest-scoring designs. Using these antennas, the computer repeats the procedure, generating a successive population (using operators such as mutation, crossover, and selection) from which the higher-scoring designs are selected. After a number of iterations, the population of antennas is evaluated and the highest-scoring design is chosen. The resulting antenna often outperforms the best manual designs, because it has a complicated asymmetric shape that could not have been found with traditional manual design methods.
+
+The first evolved antenna designs appeared in the mid-1990s from the work of Michielssen, Altshuler, Linden, Haupt, and Rahmat-Samii. Most practitioners use the genetic algorithm technique or some variant thereof to evolve antenna designs.
+
+An example of an evolved antenna is an X-band antenna evolved for a 2006 NASA mission called Space Technology 5 (ST5). The mission's objective was to demonstrate innovative technologies of potential use in future space missions. Each satellite had two communication antennas to talk to ground stations - an evolved antenna with unusual structure, and a more standard, quadrifilar helix antenna. The former was evolved to meet a challenging set of mission requirements, notably the combination of wide beamwidth for a circularly polarized wave and wide impedance bandwidth to cover the up and down link frequencies at X-band. Both antennas were fabricated by the Physical Science Laboratory at New Mexico State University. Their external appearance  was essentially identical in that a foam radome covered the radiating elements. The ST5 mission successfully launched on March 22, 2006, and operated for the mission period before being decommissioned by NASA, and so this evolved antenna represents the world's first artificially-evolved object to fly in space. Other evolved antennas were subsequently used on the Lunar Atmosphere and Dust Environment Explorer spacecraft.
+
+References
+
+External links
+
+at NASA Ames Research Center
+
+[https://link.springer.com/chapter/10.1007%2F0-387-23254-0_18?LI=true A paper given by Lohn, Hornby, and Linden at the Genetic Programming Theory Practice 2004 Workshop.
+
+Category:Radio frequency antenna types
+
+Category:Applications of evolutionary algorithms
+
+Category:Antennas (radio)

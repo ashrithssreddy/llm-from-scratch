@@ -1,0 +1,21 @@
+In probability theory, Foster's theorem, named after Gordon Foster, is used to draw conclusions about the positive recurrence of Markov chains with countable state spaces. It uses the fact that positive recurrent Markov chains exhibit a notion of "Lyapunov stability" in terms of returning to any state while starting from it within a finite time interval.
+
+Theorem
+
+Consider an irreducible discrete-time Markov chain on a countable state space S having a transition probability matrix P with elements p_{ij} for pairs i, j in S. Foster's theorem states that the Markov chain is positive recurrent if and only if there exists a Lyapunov function V: S \to \mathbb{R}, such that V(i) \geq 0 \text{ } \forall \text{ } i \in S and
+
+\sum_{j \in S}p_{ij}V(j)  for i \in F
+
+\sum_{j \in S}p_{ij}V(j) \leq V(i) - \varepsilon for all  i \notin F
+
+for some finite set F and strictly positive \varepsilon.
+
+Related links
+
+Lyapunov optimization
+
+References
+
+Category:Theorems about stochastic processes
+
+Category:Markov processes

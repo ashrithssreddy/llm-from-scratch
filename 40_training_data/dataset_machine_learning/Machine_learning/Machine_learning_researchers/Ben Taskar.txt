@@ -1,0 +1,87 @@
+{{Infobox scientist
+
+name                    = Ben Taskar
+
+image                   = Prof. Ben Taskar.jpg
+
+caption                 =
+
+birth_date              = March 3, 1977
+
+birth_place             =
+
+death_date              =
+
+death_place             =
+
+residence               =
+
+citizenship             =
+
+nationality             =
+
+ethnicity               =
+
+field                   = Computer Science, Machine Learning and Statistical relational learning
+
+workplaces              = University of Pennsylvania, and University of Washington, Seattle
+
+known_for               = Statistical relational learning, Graphical models
+
+alma_mater              = Stanford University
+
+doctoral_advisor        = Daphne Koller
+
+academic_advisors       =
+
+doctoral_students       =
+
+author_abbreviation_bot =
+
+author_abbreviation_zoo =
+
+awards                  =
+
+religion                =
+
+website           =
+
+footnotes               =
+
+}}
+
+Ben Taskar (March 3, 1977 – November 18, 2013) was a professor and researcher in the area of machine learning and applications to computational linguistics and computer vision.  He was a Magerman Term Associate Professor for Computer and Information Science at University of Pennsylvania. He co-directed PRiML: Penn Research in Machine Learning, a joint venture between the School of Engineering and Wharton. He was also a Distinguished Research Fellow at the Annenberg Center for Public Policy. At the University of Washington, he held the Boeing Professorship.
+
+He was the first person to define Max-margin Markov networks and a pioneer in statistical relational learning.
+
+Ben Taskar died of an apparent heart attack on the night of November 17, 2013, at the age of 36.
+
+Bibliography
+
+References
+
+Sources
+
+Ben Taskar memorial, UW CSE News
+
+UW computer science professor Ben Taskar passes away at 36 news, Geek Wire
+
+Category:2013 deaths
+
+Category:American computer scientists
+
+Category:Machine learning researchers
+
+Category:American artificial intelligence researchers
+
+Category:Logic programming researchers
+
+Category:University of California, Berkeley faculty
+
+Category:University of Pennsylvania faculty
+
+Category:University of Washington faculty
+
+Category:Stanford University alumni
+
+Category:1977 births

@@ -1,0 +1,23 @@
+Expectation propagation (EP) is a technique in Bayesian machine learning.
+
+EP finds approximations to a probability distribution. It uses an iterative approach that uses the factorization structure of the target distribution.  It differs from other Bayesian approximation approaches such as variational Bayesian methods.
+
+More specifically, suppose we wish to approximate an intractable probability distribution p(\mathbf{x}) with a tractable distribution q(\mathbf{x}). Expectation propagation achieves this approximation by minimizing the Kullback–Leibler divergence \mathrm{KL}(p||q). Variational Bayesian methods minimize \mathrm{KL}(q||p) instead.
+
+If q(\mathbf{x}) is a Gaussian \mathcal{N}(\mathbf{x}|\mu, \Sigma), then \mathrm{KL}(p||q) is minimized with \mu and \Sigma being equal to the mean of p(\mathbf{x}) and the covariance of p(\mathbf{x}), respectively; this is called moment matching.
+
+Applications
+
+Expectation propagation via moment matching plays a vital role in approximation for indicator functions that appear when deriving the message passing equations for TrueSkill.
+
+References
+
+External links
+
+Minka's EP papers
+
+List of papers using EP
+
+Category:Machine learning
+
+Category:Bayesian statistics

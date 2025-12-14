@@ -1,0 +1,105 @@
+{{Infobox scientist
+
+name              =
+
+image             = Katie Bouman answers questions about the Event Horizon Telescope project.jpg
+
+caption           = Bouman speaking about the Event Horizon Telescope in 2019
+
+birth_name        = Katherine Louise Bouman
+
+birth_date        =
+
+birth_place       =
+
+nationality       = American
+
+fields            =
+
+workplaces        =
+
+alma_mater        =
+
+thesis_title      = Extreme Imaging via Physical Model Inversion: Seeing Around Corners and Imaging Black Holes
+
+thesis_url        = https://dspace.mit.edu/handle/1721.1/113998
+
+thesis_year       = 2017
+
+doctoral_advisor  = William T. Freeman
+
+known_for         = CHIRP algorithm
+
+awards            =
+
+website           =
+
+footnotes         =
+
+}}
+
+Katherine Louise Bouman (;
+
+The California Institute of Technology, which hired Bouman as an assistant professor in June 2019, awarded her a named professorship in 2020. In 2021, asteroid 291387 Katiebouman was  after her.
+
+As a high school student, Bouman conducted imaging research at Purdue University. She graduated from West Lafayette Junior-Senior High School in 2007.
+
+At MIT, she was a member of the MIT Computer Science and Artificial Intelligence Laboratory (CSAIL). This group also worked closely with MIT's Haystack Observatory and with the Event Horizon Telescope. She was supported by a National Science Foundation Graduate Fellowship. Her master's thesis, Estimating Material Properties of Fabric through the Observation of Motion, was awarded the Ernst Guillemin Award for best Master's Thesis in electrical engineering. Her Ph.D. dissertation, Extreme imaging via physical model inversion: seeing around corners and imaging black holes, was supervised by William T. Freeman.
+
+Research and career
+
+After earning her doctorate, Bouman joined Harvard University as a postdoctoral fellow on the Event Horizon Telescope Imaging team.
+
+and published in April 2019]]
+
+Bouman joined Event Horizon Telescope project in 2013. She led the development of an algorithm for imaging black holes, known as Continuous High-resolution Image Reconstruction using Patch priors (CHIRP). CHIRP inspired image validation procedures used in acquiring the first image of a black hole in April 2019, and Bouman played a significant role in the project by verifying images, selecting parameters for filtering images taken by the Event Horizon Telescope, and participating in the development of a robust imaging framework that compared the results of different image reconstruction techniques. Her group is analyzing the Event Horizon Telescope's images to learn more about general relativity in a strong gravitational field.
+
+Bouman received significant media attention after a photo, showing her reaction to the detection of the black hole shadow in the EHT images, went viral. Some people in the media and on the Internet misleadingly implied that Bouman was a "lone genius" behind the image. Bouman also became the target of online harassment, to the extent that her colleague Andrew Chael made a statement on Twitter criticizing "awful and sexist attacks on my colleague and friend", including attempts to undermine her contributions by crediting him solely with work accomplished by the team.
+
+Bouman joined the California Institute of Technology (Caltech) as an assistant professor in June 2019, where she works on new systems for computational imaging using computer vision and machine learning. In 2024, she was promoted to associate professor of computing and mathematical sciences, electrical engineering and astronomy as well as a Rosenberg Scholar. Bouman received a named professorship at Caltech in 2020.
+
+Recognition
+
+She was recognized as one of the BBC's 100 women of 2019. In 2024, Bouman was awarded a Sloan Research Fellowship.
+
+References
+
+{{reflist|refs=
+
+}}
+
+External links
+
+Event Horizon Telescope, C-SPAN, May 16, 2019
+
+Category:Living people
+
+Category:1989 births
+
+Category:American computer scientists
+
+Category:California Institute of Technology faculty
+
+Category:MIT School of Engineering alumni
+
+Category:People from West Lafayette, Indiana
+
+Category:University of Michigan College of Engineering alumni
+
+Category:American women computer scientists
+
+Category:Harvard Fellows
+
+Category:21st-century American scientists
+
+Category:Computer vision researchers
+
+Category:Machine learning researchers
+
+Category:21st-century American engineers
+
+Category:21st-century American women engineers
+
+Category:21st-century American women academics
+
+Category:21st-century American academics

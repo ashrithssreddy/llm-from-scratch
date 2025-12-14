@@ -1,0 +1,111 @@
+{{Infobox scientist
+
+name              = Yejin Choi
+
+native_name       = 최예진
+
+native_name_lang  = ko
+
+image             = File:Yejin Choi © John D. and Catherine T. MacArthur Foundation–used with permission.jpg
+
+caption           = © John D. and Catherine T. MacArthur Foundation–used with permission.
+
+birth_date        = |
+
+birth_place       = South Korea
+
+alma_mater        = Seoul National University (BS)Cornell University (PhD)
+
+workplaces        = University of WashingtonStony Brook University
+
+thesis_title      = Fine-grained opinion analysis : structure-aware approaches
+
+thesis_url        = https://ecommons.cornell.edu/server/api/core/bitstreams/ab091269-9e69-4ac1-ab10-075740fab0ba/content
+
+thesis_year       = 2010
+
+doctoral_advisor  = Claire Cardie
+
+prizes            = MacArthur Fellow (2022)
+
+website           =
+
+module            =
+
+}}
+
+Yejin Choi (; born 1977) is the Dieter Schwarz Foundation Professor and Senior Fellow at the Department of Computer Science at Stanford University and the Stanford Institute for Human-Centered Artificial Intelligence (HAI) respectively. Her research considers natural language processing and computer vision.
+
+Early life and education
+
+Choi is from South Korea. She attended Seoul National University. After earning a bachelor's degree in Computer Science, Choi moved to the United States, where she joined Cornell University as a graduate student. There she worked with Claire Cardie on natural language processing. After earning her doctorate, Choi joined Stony Brook University as an Assistant Professor of Computer Science. At Stony Brook University Choi developed a statistical technique to identify fake hotel reviews.
+
+Research and career
+
+In 2018 Choi joined the Allen Institute for AI. Her research looks to endow computers with a statistical understanding of written language. She became interested in neural networks and their application in artificial intelligence. She started to assemble a knowledge base that became known as the atlas of machine commonsense (ATOMIC). By the time she had finished the creation of ATOMIC, the language model generative Pre-trained Transformer 2 (GPT-2) had been released. ATOMIC does not make use of linguistic rules, but combines the representations of different languages within a neural network. For example, one study demonstrated that female film characters are portrayed as less powerful than their male counterparts. Choi is also a scientific advisor to French research group Kyutai which is being funded by Xavier Niel, Rodolphe Saadé, Eric Schmidt, and others.
+
+In 2025, Stanford HAI announced the appointment of Choi as senior fellow and the Dieter Schwarz Foundation HAI Professor and Professor of Computer Science at Stanford University.
+
+Awards and honours
+
+2013 International Conference on Computer Vision Marr Prize
+
+2016 Institute of Electrical and Electronics Engineers AI One to Watch
+
+2018 Anita Borg Early Career Award
+
+2021 Conference on Neural Information Processing Systems Outstanding Paper Award
+
+2021 Association for Computational Linguistics Test-of-time Paper Award
+
+2021 Conference on Computer Vision and Pattern Recognition Longuet-Higgins Prize
+
+2022 North American Chapter of the Association for Computational Linguistics Best Paper Award
+
+2022 International Conference on Machine Learning Outstanding Paper Award
+
+2022 MacArthur Fellowship
+
+2023 Association for Computational Linguistics Best Paper Award
+
+2023 TIME100 AI 2023
+
+2023 Empirical Methods in Natural Language Processing Outstanding Paper Award
+
+2025 Association for Computational Linguistics Outstanding Paper Award
+
+2025 Association for Computational Linguistics Best Demo Paper Award
+
+2025 TIME100 AI 2025
+
+Select publications
+
+References
+
+Category:Living people
+
+Category:MacArthur Fellows
+
+Category:South Korean women computer scientists
+
+Category:South Korean computer scientists
+
+Category:21st-century South Korean women scientists
+
+Category:Seoul National University alumni
+
+Category:Cornell University alumni
+
+Category:Stony Brook University faculty
+
+Category:University of Washington Paul G. Allen School of Computer Science & Engineering faculty
+
+Category:Natural language processing researchers
+
+Category:Artificial intelligence researchers
+
+Category:Fellows of the Association for Computational Linguistics
+
+Category:21st-century South Korean scientists
+
+Category:1977 births

@@ -1,0 +1,73 @@
+{{Infobox software
+
+title = Qwen
+
+logo = Qwen Logo.svg
+
+logo_upright = 1.15
+
+screenshot = Qwen 3 chatbot example screenshot.webp
+
+screenshot_upright = 1.15
+
+collapsible = yes
+
+caption = Screenshot of an example of a Qwen 3 answer describing Wikipedia, with the "Thinking" feature enabled
+
+developer = Alibaba Cloud
+
+released =
+
+latest release version = Qwen3-Max /	Qwen3-235B-A22B /	Qwen3-Next /
+
+repo =
+
+programming language = Python
+
+operating system =
+
+genre = Large language model, chatbot
+
+license = Apache-2.0Qwen Research LicenseQwen License
+
+website =
+
+}}
+
+Qwen (also known as Tongyi Qianwen, ; pinyin: Tōngyì Qiānwèn) is a family of large language models developed by Alibaba Cloud. Many Qwen variants are distributed as open‑weight models under the Apache‑2.0 license, while others are served through Alibaba Cloud.
+
+In July 2024, South China Morning Post reported that benchmarking platform SuperCLUE ranked Qwen2‑72B‑Instruct behind OpenAI's GPT‑4o and Anthropic’s Claude 3.5 Sonnet and ahead of other Chinese models.
+
+The model's architecture was based on the Llama architecture developed by Meta AI. All models except the 72B variant are licensed under the Apache 2.0 license. Qwen-VL-Max is Alibaba's flagship vision model as of 2024, and is sold by Alibaba Cloud at a cost of US$0.41 per million input tokens.
+
+On March 24, 2025, Alibaba launched Qwen2.5-VL-32B-Instruct as a successor to the Qwen2.5-VL model. It was released under the Apache 2.0 license.
+
+On March 26, 2025, Qwen2.5-Omni-7B was released under the Apache 2.0 license and made available through chat.qwen.ai, as well as platforms like Hugging Face, GitHub, and ModelScope.
+
+On September 5, 2025, Alibaba launched Qwen3-Max. According to Alibaba's official X account, it outperforms other foundation non-reasoning models such as Qwen3-235B-A22B-Instruct-2507, Kimi K2, Claude 4 Opus Non-thinking, and DeepSeek V3.1.  While it was not available from the start, thinking mode was released to the public in the first part of November 2025.
+
+On September 10, 2025, Qwen3-Next was released under the Apache 2.0 license and made available through chat.qwen.ai, as well as platforms like Hugging Face and Model Scope. Qwen3-Next includes two post-trained Instruct and Thinking models. Qwen3-Next was created with a new model-architecture called Qwen3-Next, in the belief that Context Length Scaling and Total Parameter Scaling are two major trends in the future of large models. Qwen3-Next introduces several key improvements over the Qwen3 architecture: a hybrid attention mechanism, a highly sparse mixture-of-experts (MoE) structure, training-stability-friendly optimizations, and a multi-token prediction mechanism for faster inference. Based on the Qwen3-Next architecture, a model with 80B total parameters and 3B active parameters was created. The Qwen3-Next model performs comparable to, or in some cases better than, Qwen3-32b while using less than 10% of its training cost (in GPU hours). In inference, especially with contexts greater than 32K tokens, it reaches greater than 10x higher throughput. Qwen3.5 will use a refined version of the Qwen3-Next architecture.
+
+On September 22, 2025, Qwen3-Omni was release under the Apache 2.0 license and made available through chat.qwen.ai, as well as platforms like Hugging Face and Model Scope. Qwen3-Omni is a mixed/multimodal model that can process text, images, audio, and video, and deliver real-time streaming responses in both text and natural speech.
+
+See also
+
+List of large language models
+
+References
+
+External links
+
+Category:Alibaba Group
+
+Category:Large language models
+
+Category:Open-source artificial intelligence
+
+Category:Software using the Apache license
+
+Category:Generative pre-trained transformers
+
+Category:2023 in artificial intelligence
+
+Category:2023 software

@@ -1,0 +1,105 @@
+Theory-driven evaluation (also theory-based evaluation) is an umbrella term for any approach to program evaluation – quantitative, qualitative, or mixed method – that develops a theory of change and uses it to design, implement, analyze, and interpret findings from an evaluation. More specifically, an evaluation is theory-driven if it:
+
+formulates a theory of change using some combination of social science, lived experience, and program-related professionals' expertise;
+
+develops and prioritizes evaluation questions using the theory;
+
+uses the theory to guide the design and implementation of the evaluation;
+
+uses the theory to operationalize contextual, process, and outcome variables;
+
+provides a causal explanation of how and why outcomes were achieved, including whether the program worked and/or had any unintended consequences (desirable or harmful); and
+
+explains what factors moderate outcomes.
+
+By investigating the mechanisms leading to outcomes, theory-driven approaches facilitate learning to improve programs and how they are implemented, and help knowledge to accumulate – including across ostensibly different programs. This is in contrast to methods-driven "black box" evaluations, which focus on following the steps of a method (for instance, randomized experiment or focus group) and only assess whether a program achieves its intended outcomes. Theory-driven approaches can also improve the validity of evaluations, for instance leading to more precise estimates of impact in randomized controlled trials.
+
+History
+
+Theory-driven evaluation emerged in the 1970s and 80s in response to the limitations of methods-driven "black box" evaluations. The term theory-driven evaluation was coined by Huey T. Chen and Peter H. Rossi. Chen (1990) wrote the first comprehensive introduction to conducting theory-driven evaluations, for example explaining how to develop a program theory of change and the different types of design. Its origins have been traced to a book by Carol Weiss (1972) and a rarely-cited article by Carol Taylor Fitz-Gibbon and Lynn Lyons Morris (1975). However, "the first published use of what we would recognize as program theory" was in an evaluation of training programs, by Don Kirkpatrick in 1959.
+
+Funnell and Rogers (2011, pp. 23–24) comment on the confused nomenclature of the field, enumerating 22 approaches such as theory-based evaluation and program theory-driven evaluation science that are equivalent to or overlap significantly with theory-driven evaluation. The first definition of theory-based evaluation, by Fitz-Gibbon and Morris (1975), is near-identical to theory-driven evaluation:
+
+A theory-based evaluation of a program is one in which the selection of program features to evaluate is determined by an explicit conceptualization of the program in terms of a theory […] which attempts to explain how the program produces the desired effects. The theory might be psychological […] or social psychological […] or philosophical […]. The essential characteristic is that the theory points out a causal relationship between a process A and an outcome B.
+
+Consequently, the terms theory-driven and theory-based evaluation are often used interchangeably in the literature. However, theory-based evaluation is sometimes interpreted more narrowly to mean qualitative or small-n case study-based evaluations conducted without a comparison group, for example using process tracing or qualitative comparative analysis.
+
+What is meant by "theory"?
+
+The theory of theory-driven evaluation seeks to be as close as possible to the causes of a social problem and site of intervention. This is in contrast to a "global" or "grand" theory, that tries to provide an overarching understanding of society, or a metaphysical theory about the nature of social reality. Chen and Rossi (1983) illustrate as follows:
+
+It advances evaluation practice very little to adopt one or another of current global theories in attacking, say, the problem of juvenile delinquency, but it does help a great deal to understand the authority structure in schools and the mechanisms of peer group influence and parental discipline in designing and evaluating a program that is supposed to reduce disciplinary problems in schools. [...T]he theory-driven perspective is closer to what econometricians call "model specification" than are more complicated and more abstract and general theories.
+
+A distinction is also drawn between normative theory, concerning what a program is supposed to do and how it should be implemented, and causal theory, which specifies how the program is thought to work. There can then be two broad ways in which a program fails to lead to the desired outcomes: (1) a program may be implemented as intended according to the normative theory; however, it turns out that the causal theory is incorrect; or (2) the causal theory is correct; however, the program was not implemented correctly.
+
+Graphical causal models (GCMs) may be used to formalize causal theories and design, e.g., theory-driven quasi-experiments. One of the advantages of GCMs is that they can be used to automatically determine which variables need to be statistically adjusted or matched on, to estimate the causal effect of a program.
+
+Chen's action model/change model schema
+
+Chen's action model/change model schema provides an example of how a program theory and its context are conceptualized. The elements of the schema are then completed for each particular program.
+
+The change model specifies how an intervention of a program leads to outcomes via determinants, also known as intermediate or mediating variables.
+
+The action model specifies how staff and delivery organizations deliver the intervention to beneficiaries:
+
+The target population includes a specification of who participants are and how they are recruited.
+
+The implementing organization (for instance a clinic or school) and its staff of implementers (for instance therapists or teachers) are responsible for allocating resources, training, and delivering the interventions.
+
+Intervention and service delivery protocols would include therapy manuals or subject curricula.
+
+Associated organizations and community partners refers to organisations other than the implementing organisation. In the case of a psychotherapy intervention, this may include schools or general practitioners who advertise the program or refer beneficiaries to it.
+
+Ecological context refers to aspects of the environment, for instance family, friends, co-workers, other students, etc., that may moderate the effects of a program.
+
+Theory-driven methods
+
+The full-range of research methods has been argued to apply. Chen (2015) provides examples using randomized experiments, quasi-experimental designs, process and outcome monitoring, and qualitative methods. Although proponents of theory-driven evaluation are critical of "black box" experiments, Chen and Rossi (1983, p. 292) argue that theory-driven experiments are possible and desirable:
+
+[A]dvocates of the black box experimental paradigm often neglect the fact that after randomization exogenous variables are still correlated with outcome variables. Knowing how such exogenous factors affect outcomes makes it possible to construct more precise estimates of experimental effects by controlling for such exogenous variables.
+
+It has been argued that theory-driven evaluation focusses too much on statistical approaches, such as randomized experiments, quasi-experiments, and structural equation modelling; however, a case has also been made for the importance of qualitative methods, particularly when developing program theories and understanding implementation.
+
+There is also methodological debate concerning whether realist evaluations, considered a particular kind of theory-driven approach, may include randomized controlled trials in any form. Some evaluators think they may and conduct what they call "realist trials". Others argue that a realist trial is an "oxymoron", and recommend instead calling them "theory-oriented trials". A 2023 review of purported realist trials concluded that whether they are really realist depends on "ontological and epistemological" commitments of evaluators and that differences "cannot be resolved" by reviewing studies conducted.
+
+Examples
+
+Examples discussed in a 2011 systematic review of 45 theory-driven evaluations include:
+
+An evaluation of the Fort Bragg Child and Adolescent Mental Health Demonstration, a managed mental health care system with a single point of entry, which used individual interviews, focus groups, and document review to assist the development of a theory of change. The theory explained why it was thought that an integrated care system would be more cost-effective than a fragmented system.
+
+An evaluation of a board game created to help teach secondary school business education. This evaluation developed a theory of change and used it to select measures and design regression analyses of process and outcome.
+
+An evaluation of a garbage reduction program. The program attempted to encourage residents to reduce the volume of garbage they produce by reducing the frequency of collection; however, an unintended negative consequence identified by the evaluation was that residents produced the same volume as before, simply storing their garbage in their homes on non-collection days. This effect was identified using an comparative interrupted time series analysis with autoregressive integrated moving average (ARIMA).
+
+A 2014 review of theory-driven evaluation in school psychology highlighted two illustrative examples:
+
+An evaluation of conjoint behavioral consultation, a "strength-based intervention focused on building behavioral and social competence in children". The evaluation tested a theory of change using a cluster-randomised controlled trial and mediation analysis.
+
+An evaluation of repeated reading and vocabulary previewing which tested causal theory using case study methodology, an adapted alternating treatments design with six students.
+
+References
+
+Category:Evaluation
+
+Category:Evaluation methods
+
+Category:Evidence-based practices
+
+Category:Psychological methodology
+
+Category:Research
+
+Category:Design of experiments
+
+Category:Causal inference
+
+Category:Social research
+
+Category:Observational study
+
+Category:Impact assessment
+
+Category:Qualitative research
+
+Category:Research methods

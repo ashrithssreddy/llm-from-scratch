@@ -1,0 +1,105 @@
+{{Infobox person
+
+pre-nominals       =
+
+name               = Shlomo Argamon
+
+post-nominals      =
+
+image              =
+
+alt                =
+
+caption            =
+
+birth_date         =
+
+birth_place        =
+
+nationality        =
+
+other_names        =
+
+citizenship        =
+
+education          = B.S. applied mathematics, MPhil, Ph.D. computer science
+
+alma_mater         = Carnegie-Mellon University, Yale University
+
+occupation         = Artificial Intelligence, Computational linguistics
+
+employer           = Touro University System
+
+organization       =
+
+agent              =
+
+known_for          = Computational stylistics
+
+notable_works      =
+
+title              = Associate Provost for Artificial Intelligence, Professor of Computer Science
+
+website            =
+
+}}
+
+Shlomo Argamon (born 1967) is an American/Israeli computer scientist and forensic linguist. He is the associate provost for artificial intelligence and professor of computer science at Touro University.
+
+Education
+
+Shlomo Argamon received his B.S. in applied mathematics from Carnegie-Mellon University and his MPhil and Ph.D. in computer science from Yale University, supervised by Drew McDermott. He spent two years doing postdoctoral research under a Fulbright Foundation fellowship with Sarit Kraus at Bar-Ilan University in Ramat Gan, Israel.
+
+Research
+
+Since the late 1990s, Argamon has worked primarily on computational linguistics and machine learning, focusing on the analysis of non-denotational meaning, including computational analysis of language stylistics, sentiment analysis, and metaphor analysis. He has also published well-cited research on active learning (machine learning), metalearning, and robotic mapping.
+
+Computational stylistics
+
+Argamon is best known for his work on computational stylistics, particularly author profiling. Together with Moshe Koppel and others, he has shown how statistical analysis of word usage can determine an author's age, sex, native language, and personality type with high accuracy in English-language texts. His work also has shown how textual features indicating differences between male and female authorship are consistent between languages and across time.
+
+Argamon also developed computational stylistic methods that provide insights into the meaning of stylistic differences. One of his key innovations for this purpose is the development of computational stylistic analysis using systemic functional linguistics. For example, together with Jeff Dodick and Paul Chase, he examined whether there are clear and consistent differences between scientific method in experimental sciences and historical sciences. Their work showed how using systemic functional features in computational stylistic analysis provides evidence for multiple scientific methodologies of the sorts posited previously by philosophers of science.
+
+Linguistics for cybersecurity
+
+Argamon has pushed for the increased use of linguistic analysis for attribution of cybersecurity attacks. He has pointed out how linguistic attribution techniques can be used to good effect on natural language texts that arise in different attack scenarios, and has provided analyses for high-profile cases such as the Sony Pictures hack, the Democratic National Committee cyber attacks, and the Shadow Brokers NSA leak.
+
+Data science
+
+In 2013, Argamon founded the Illinois Institute of Technology Master of Data Science program, which he directed until 2019. The program seeks to teach students "to think about the real problems that need to be solved, not to simply find technical solutions." Argamon views data scientists as "sensemakers", whose job is not merely to produce analytic results, but to help their clients make sense of a complex, uncertain, and fast-changing world through rigorous analysis and explanation of the data.
+
+Honors
+
+Fellow of the British Computer Society.
+
+Distinguished Lecturer in Forensic Linguistics, Centre for Forensic Linguistics, Aston University, 2014.
+
+Fulbright Foundation Postdoctoral Fellow, 1994–1996.
+
+Hertz Foundation Doctoral Fellow, 1990–1994.
+
+References
+
+Category:1967 births
+
+Category:Living people
+
+Category:American people of Israeli descent
+
+Category:American artificial intelligence researchers
+
+Category:Carnegie Mellon University alumni
+
+Category:Computational linguistics researchers
+
+Category:American data scientists
+
+Category:Israeli computer scientists
+
+Category:Israeli people of American-Jewish descent
+
+Category:Linguists from the United States
+
+Category:Machine learning researchers
+
+Category:Yale Graduate School of Arts and Sciences alumni

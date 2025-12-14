@@ -1,0 +1,69 @@
+In machine learning (ML), a learning curve (or training curve) is a graphical representation that shows how a model's performance on a training set (and usually a validation set) changes with the number of training iterations (epochs) or the amount of training data.
+
+Typically, the number of training epochs or training set size is plotted on the x-axis, and the value of the loss function (and possibly some other metric such as the cross-validation score) on the y-axis.
+
+Synonyms include error curve, experience curve, improvement curve and generalization curve.
+
+More abstractly, learning curves plot the difference between learning effort and predictive performance, where "learning effort" usually means the number of training samples, and "predictive performance" means accuracy on testing samples.
+
+Learning curves have many useful purposes in ML, including:
+
+choosing model parameters during design,
+
+adjusting optimization to improve convergence,
+
+and diagnosing problems such as overfitting (or underfitting).
+
+Learning curves can also be tools for determining how much a model benefits from adding more training data, and whether the model suffers more from a variance error or a bias error. If both the validation score and the training score converge to a certain value, then the model will no longer significantly benefit from more training data.
+
+Formal definition
+
+When creating a function to approximate the distribution of some data, it is necessary to define a loss function L(f_\theta(X), Y) to measure how good the model output is (e.g., accuracy for classification tasks or mean squared error for regression). We then define an optimization process which finds model parameters \theta such that L(f_\theta(X), Y) is minimized, referred to as \theta^*.
+
+Training curve for amount of data
+
+If the training data is
+
+\{x_1, x_2, \dots, x_n \}, \{ y_1, y_2, \dots y_n \}
+
+and the validation data is
+
+\{ x_1', x_2', \dots x_m' \}, \{ y_1', y_2', \dots y_m' \},
+
+a learning curve is the plot of the two curves
+
+i \mapsto L(f_{\theta^*(X_i, Y_i)}(X_i), Y_i )
+
+i \mapsto L(f_{\theta^*(X_i, Y_i)}(X_i'), Y_i' )
+
+where X_i = \{ x_1, x_2, \dots x_i \}
+
+Training curve for number of iterations
+
+Many optimization algorithms are iterative, repeating the same step (such as backpropagation) until the process converges to an optimal value. Gradient descent is one such algorithm. If \theta_i^* is the approximation of the optimal \theta after i steps, a learning curve is the plot of
+
+i \mapsto L(f_{\theta_i^*(X, Y)}(X), Y)
+
+i \mapsto L(f_{\theta_i^*(X, Y)}(X'), Y')
+
+See also
+
+Overfitting
+
+Bias–variance tradeoff
+
+Model selection
+
+Cross-validation (statistics)
+
+Validity (statistics)
+
+Verification and validation
+
+Double descent
+
+References
+
+Category:Model selection
+
+Category:Machine learning

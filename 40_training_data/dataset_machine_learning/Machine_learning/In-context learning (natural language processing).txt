@@ -1,0 +1,17 @@
+REDIRECT Prompt engineering#In-context learning
+
+See also
+
+Prompt engineering
+
+Fine-tuning (machine learning)
+
+Chain-of-thought prompting
+
+References
+
+Category:Natural language processing
+
+Category:Machine learning
+
+Category:Language modeling

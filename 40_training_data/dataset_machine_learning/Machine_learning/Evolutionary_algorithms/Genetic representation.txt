@@ -1,0 +1,81 @@
+In computer programming, genetic representation is a way of presenting solutions/individuals in evolutionary computation methods. The term encompasses both the concrete data structures and data types used to realize the genetic material of the candidate solutions in the form of a genome, and the relationships between search space and problem space. In the simplest case, the search space corresponds to the problem space (direct representation). The choice of problem representation is tied to the choice of genetic operators, both of which have a decisive effect on the efficiency of the optimization. Genetic representation can encode appearance, behavior, physical qualities of individuals. Difference in genetic representations is one of the major criteria drawing a line between known classes of evolutionary computation.
+
+Terminology is often analogous with natural genetics. The block of computer memory that represents one candidate solution is called an individual. The data in that block is called a chromosome. Each chromosome consists of genes. The possible values of a particular gene are called alleles. A programmer may represent all the individuals of a population using binary encoding, permutational encoding, encoding by tree, or any one of several other representations.
+
+Representations in some popular evolutionary algorithms
+
+Genetic algorithms (GAs) are typically linear representations; these are often, but not always, binary. in general and genetic algorithms in particular, although the implementation of crossover is more complex in this case.
+
+Evolution strategy uses linear real-valued representations, e.g., an array of real values. It uses mostly gaussian mutation and blending/averaging crossover.
+
+Genetic programming (GP) pioneered tree-like representations and developed genetic operators suitable for such representations. Tree-like representations are used in GP to represent and evolve functional programs with desired properties.
+
+Human-based genetic algorithm (HBGA) offers a way to avoid solving hard representation problems by outsourcing all genetic operators to outside agents, in this case, humans. The algorithm has no need for knowledge of a particular fixed genetic representation as long as there are enough external agents capable of handling those representations, allowing for free-form and evolving genetic representations.
+
+Common genetic representations
+
+binary array
+
+integer or real-valued array
+
+binary tree
+
+natural language
+
+parse tree
+
+directed graph
+
+Distinction between search space and problem space
+
+Analogous to biology, EAs distinguish between problem space (corresponds to phenotype) and search space (corresponds to genotype). The problem space contains concrete solutions to the problem being addressed, while the search space contains the encoded solutions. The mapping from search space to problem space is called genotype-phenotype mapping. The genetic operators are applied to elements of the search space, and for evaluation, elements of the search space are mapped to elements of the problem space via genotype-phenotype mapping.
+
+Relationships between search space and problem space
+
+The importance of an appropriate choice of search space for the success of an EA application was recognized early on. The following requirements can be placed on a suitable search space and thus on a suitable genotype-phenotype mapping:
+
+Completeness
+
+All possible admissible solutions must be contained in the search space.
+
+Redundancy
+
+When more possible genotypes exist than phenotypes, the genetic representation of the EA is called redundant. In nature, this is termed a degenerate genetic code. In the case of a redundant representation, neutral mutations are possible. These are mutations that change the genotype but do not affect the phenotype. Thus, depending on the use of the genetic operators, there may be phenotypically unchanged offspring, which can lead to unnecessary fitness determinations, among other things. Since the evaluation in real-world applications usually accounts for the lion's share of the computation time, it can slow down the optimization process. In addition, this can cause the population to have higher genotypic diversity than phenotypic diversity, which can also hinder evolutionary progress.
+
+In biology, the Neutral Theory of Molecular Evolution states that this effect plays a dominant role in natural evolution. This has motivated researchers in the EA community to examine whether neutral mutations can improve EA functioning by giving populations that have converged to a local optimum a way to escape that local optimum through genetic drift. This is discussed controversially and there are no conclusive results on neutrality in EAs. On the other hand, there are other proven measures to handle premature convergence.
+
+Locality
+
+The locality of a genetic representation corresponds to the degree to which distances in the search space are preserved in the problem space after genotype-phenotype mapping. That is, a representation has a high locality exactly when neighbors in the search space are also neighbors in the problem space. In order for successful schemata not to be destroyed by genotype-phenotype mapping after a minor mutation, the locality of a representation must be high.
+
+Scaling
+
+In genotype-phenotype mapping, the elements of the genotype can be scaled (weighted) differently. The simplest case is uniform scaling: all elements of the genotype are equally weighted in the phenotype. A common scaling is exponential. If integers are binary coded, the individual digits of the resulting binary number have exponentially different weights in representing the phenotype.
+
+Example: The number 90 is written in binary (i.e., in base two) as 1011010. If now one of the front digits is changed in the binary notation, this has a significantly greater effect on the coded number than any changes at the rear digits (the selection pressure has an exponentially greater effect on the front digits).
+
+For this reason, exponential scaling has the effect of randomly fixing the "posterior" locations in the genotype before the population gets close enough to the optimum to adjust for these subtleties.
+
+Hybridization and repair in genotype-phenotype mapping
+
+When mapping the genotype to the phenotype being evaluated, domain-specific knowledge can be used to improve the phenotype and/or ensure that constraints are met. This is a commonly used method to improve EA performance in terms of runtime and solution quality. It is illustrated below by two of the three examples.
+
+Examples
+
+Example of a direct representation
+
+An obvious and commonly used encoding for the traveling salesman problem and related tasks is to number the cities to be visited consecutively and store them as integers in the chromosome. The genetic operators must be suitably adapted so that they only change the order of the cities (genes) and do not cause deletions or duplications. Thus, the gene order corresponds to the city order and there is a simple one-to-one mapping.
+
+Example of a complex genotype-phenotype mapping
+
+In a scheduling task with heterogeneous and partially alternative resources to be assigned to a set of subtasks, the genome must contain all necessary information for the individual scheduling operations or it must be possible to derive them from it. In addition to the order of the subtasks to be executed, this includes information about the resource selection. A phenotype then consists of a list of subtasks with their start times and assigned resources. In order to be able to create this, as many allocation matrices must be created as resources can be allocated to one subtask at most. In the simplest case this is one resource, e.g., one machine, which can perform the subtask. An allocation matrix is a two-dimensional matrix, with one dimension being the available time units and the other being the resources to be allocated. Empty matrix cells indicate availability, while an entry indicates the number of the assigned subtask. The creation of allocation matrices ensures firstly that there are no inadmissible multiple allocations. Secondly, the start times of the subtasks can be read from it as well as the assigned resources.
+
+A common constraint when scheduling resources to subtasks is that a resource can only be allocated once per time unit and that the reservation must be for a contiguous period of time. To achieve this in a timely manner, which is a common optimization goal and not a constraint, a simple heuristic can be used: Allocate the required resource for the desired time period as early as possible, avoiding duplicate reservations. The advantage of this simple procedure is twofold: it avoids the constraint and helps the optimization.
+
+If the scheduling problem is modified to the scheduling of workflows instead of independent subtasks, at least some of the work steps of a workflow have to be executed in a given order. If the previously described scheduling heuristic now determines that the predecessor of a work step is not completed when it should be started itself, the following repair mechanism can help: Postpone the scheduling of this work step until all its predecessors are finished. is intended to illustrate a different use of a heuristic in genotype-phenotype mapping: On a rectangular surface different geometric types of objects are to be arranged in such a way that as little area as possible remains unused. The objects can be rotated, must not overlap after placement, and must be positioned completely on the surface. A related application would be scrap minimization when cutting parts from a steel plate or fabric sheet.
+
+The coordinates of the centers of the objects and a rotation angle reduced to possible isomorphisms of the geometry of the objects can be considered as variables to be determined. If this is done directly by an EA, there will probably be a lot of overlaps. To avoid this, only the angle and the coordinate of one side of the rectangle are determined by the EA. Each object is now rotated and positioned on the edge of that side, shifting it if necessary so that it is inside the rectangle when it is subsequently moved. Then it is moved parallel to the other side until it touches another object or reaches the opposite end of the rectangle. In this way, overlaps are avoided and the unused area is reduced per placement, but not in general, which is left to optimization.
+
+References
+
+Category:Evolutionary algorithms

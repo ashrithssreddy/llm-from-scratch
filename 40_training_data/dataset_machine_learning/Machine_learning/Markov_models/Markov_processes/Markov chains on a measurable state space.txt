@@ -1,0 +1,83 @@
+A Markov chain on a measurable state space is a discrete-time-homogeneous Markov chain with a measurable space as state space.
+
+History
+
+The definition of Markov chains has evolved during the 20th century. In 1953 the term Markov chain was used for stochastic processes with discrete or continuous index set, living on a countable or finite state space, see Doob. or Chung. Since the late 20th century it became more popular to consider a Markov chain as a stochastic process with discrete index set, living on a measurable state space.
+
+Definition
+
+Denote with (E , \Sigma) a measurable space and with p a Markov kernel with source and target (E , \Sigma).
+
+A stochastic process (X_n)_{n \in \mathbb{N}} on (\Omega,\mathcal{F},\mathbb{P}) is called a time homogeneous Markov chain with Markov kernel p and start distribution \mu if
+
+\mathbb{P}[X_0 \in A_0 , X_1 \in A_1, \dots , X_n \in A_n] = \int_{A_0} \dots \int_{A_{n-1}} p(y_{n-1},A_n) \, p(y_{n-2},dy_{n-1}) \dots p(y_0,dy_1) \, \mu(dy_0)
+
+is satisfied for any n \in \mathbb{N}, \, A_0,\dots,A_n \in \Sigma. One can construct for any Markov kernel and any probability measure an associated Markov chain.
+
+Remark about Markov kernel integration
+
+For any measure \mu \colon \Sigma \to [0,\infty]  we denote for \mu-integrable function f \colon E \to \mathbb{R}\cup\{ \infty, - \infty \} the Lebesgue integral as  \int_E f(x) \, \mu(dx) . For the measure  \nu_x \colon \Sigma \to [0,\infty] defined by  \nu_x(A):= p(x,A) we used the following notation:
+
+\int_E f(y) \, p(x,dy) :=\int_E f(y) \, \nu_x (dy).
+
+Basic properties
+
+Starting in a single point
+
+If \mu is a Dirac measure in x, we denote for a Markov kernel p with starting distribution \mu  the associated Markov chain as (X_n)_{n \in \mathbb{N}} on (\Omega,\mathcal{F},\mathbb{P}_x) and the expectation value
+
+\mathbb{E}_x[X] = \int_\Omega X(\omega) \, \mathbb{P}_x(d\omega)
+
+for a \mathbb{P}_x-integrable function X. By definition, we have then
+
+\mathbb{P}_x[X_0 = x] = 1 .
+
+We have for any measurable function f \colon E \to [0,\infty] the following relation:
+
+\int_E f(y) \, p(x,dy) = \mathbb{E}_x[f(X_1)].
+
+Family of Markov kernels
+
+For a Markov kernel p with starting distribution \mu one can introduce a family of Markov kernels (p_n)_{n\in\mathbb{N}} by
+
+p_{n+1}(x,A) := \int_E p_n(y,A) \, p(x,dy)
+
+for n \in \mathbb{N}, \, n \geq 1 and p_1 := p. For the associated Markov chain (X_n)_{n \in \mathbb{N}} according to p and \mu one obtains
+
+\mathbb{P}[X_0 \in A , \, X_n \in B ] = \int_A p_n(x,B) \, \mu(dx).
+
+Stationary measure
+
+A probability measure \mu is called stationary measure of a Markov kernel p if
+
+\int_A \mu(dx) = \int_E p(x,A) \, \mu(dx)
+
+holds for any A \in \Sigma. If (X_n)_{n \in \mathbb{N}} on (\Omega,\mathcal{F},\mathbb{P})
+
+denotes the Markov chain according to a Markov kernel p with stationary measure \mu, and the distribution of  X_0  is  \mu , then all X_n
+
+have the same probability distribution, namely:
+
+\mathbb{P}[X_n \in A ] = \mu(A)
+
+for any A \in \Sigma.
+
+Reversibility
+
+A Markov kernel p is called reversible according to a probability measure \mu if
+
+\int_A p(x,B) \, \mu(dx) = \int_B p(x,A) \, \mu(dx)
+
+holds for any A,B \in \Sigma.
+
+Replacing A=E shows that if p is reversible according to \mu, then \mu must be a stationary measure of p.
+
+See also
+
+Harris chain
+
+Subshift of finite type
+
+References
+
+Category:Markov processes

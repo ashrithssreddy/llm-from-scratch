@@ -1,0 +1,55 @@
+{{Infobox software
+
+name = Riffusion
+
+logo =
+
+logo_upright = 1.2
+
+screenshot =
+
+screenshot size =
+
+caption =
+
+developer =
+
+released = December 15, 2022
+
+latest release version =
+
+latest release date = December 15, 2022
+
+repo =
+
+programming language = Python
+
+operating system =
+
+genre = Text-to-image model
+
+license = MIT License
+
+website =
+
+CEO =
+
+}}
+
+Riffusion is a neural network, designed by Seth Forsgren and Hayk Martiros, that generates music using images of sound rather than audio.
+
+References
+
+{{Reflist|refs=
+
+}}
+
+Category:Deep learning software applications
+
+Category:Computer music
+
+Category:2022 software
+
+Category:2022 in artificial intelligence
+
+Category:Generative artificial intelligence

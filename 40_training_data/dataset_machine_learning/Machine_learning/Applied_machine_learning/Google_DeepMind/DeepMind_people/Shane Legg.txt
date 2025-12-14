@@ -1,0 +1,41 @@
+Shane Legg  (born ) is a machine learning researcher and entrepreneur. With Demis Hassabis and Mustafa Suleyman, he cofounded DeepMind Technologies (later bought by Google and now called Google DeepMind), and works there as the chief AGI scientist. He completed his undergraduate studies at Waikato University in 1996. Also in 1996, he obtained his MSc degree with a thesis entitled "Solomonoff Induction", with Cristian S. Calude at the University of Auckland.
+
+Research interests
+
+In the early 2000s, Legg re-introduced and popularized with Ben Goertzel the term "artificial general intelligence" (AGI), to describe an AI that can do practically any cognitive task a human can do. At that time, talking about AGI "would put you on the lunatic fringe".
+
+Legg is known for his concern of existential risk from AI, highlighted in 2011 in an interview on LessWrong and in 2023 he signed the statement on AI risk of extinction.
+
+Career
+
+Before his PhD and before cofounding DeepMind, Shane Legg worked at "a number of software development positions at private companies", including the "big data firm Adaptive Intelligence" and the startup WebMind founded by Ben Goertzel. He worked on theoretical models of super intelligent machines (AIXI) with Marcus Hutter, and completed in 2008 his doctoral thesis entitled "Machine Super Intelligence". He then went on to complete a postdoctoral fellowship in finance at USI,
+
+In 2010, Legg cofounded the start-up DeepMind Technologies along with Demis Hassabis and Mustafa Suleyman. DeepMind Technologies was bought in 2014 by Google. After the merge with Google Brain in 2023, the company is now known as Google DeepMind.
+
+According to a 2017 article, a significant part of his job as the chief scientist was to supervise recruitment, decide where DeepMind should focus its efforts, and to lead DeepMind's AI safety work.
+
+References
+
+Category:Living people
+
+Category:Machine learning researchers
+
+Category:Artificial intelligence researchers
+
+Category:New Zealand expatriates in England
+
+Category:University of Waikato alumni
+
+Category:University of Auckland alumni
+
+Category:1970s births
+
+Category:Commanders of the Order of the British Empire
+
+Category:People educated at Rotorua Lakes High School
+
+Category:DeepMind people
+
+Category:AI safety scientists
+
+Category:Year of birth missing (living people)

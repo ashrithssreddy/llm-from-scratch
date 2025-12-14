@@ -1,0 +1,59 @@
+Applying machine learning (ML) (including deep learning) methods to the study of quantum systems is an emergent area of physics research. A basic example of this is quantum state tomography, where a quantum state is learned from measurement. Other examples include learning Hamiltonians, learning quantum phase transitions, and automatically generating new quantum experiments. ML is effective at processing large amounts of experimental or calculated data in order to characterize an unknown quantum system, making its application useful in contexts including quantum information theory, quantum technology development, and computational materials design. In this context, for example, it can be used as a tool to interpolate pre-calculated interatomic potentials, or directly solving the Schrödinger equation with a variational method. Hamiltonian learning, and the characterization of an unknown unitary transformation. Other problems that have been addressed with this approach are given in the following list:
+
+Identifying an accurate model for the dynamics of a quantum system, through the reconstruction of the Hamiltonian;
+
+Extracting information on unknown states; or independent Hamiltonians.
+
+Improving the extraction accuracy of physical observables from absorption images of ultracold atoms (degenerate Fermi gas), by the generation of an ideal reference frame.
+
+Calculated and noise-free data
+
+Quantum machine learning can also be applied to dramatically accelerate the prediction of quantum properties of molecules and materials. This can be helpful for the computational design of new molecules or materials. Some examples include
+
+Interpolating interatomic potentials;
+
+Inferring molecular atomization energies throughout chemical compound space;
+
+Accurate potential energy surfaces with restricted Boltzmann machines;
+
+Automatic generation of new quantum experiments;
+
+Identifying phase transitions from entanglement spectra;
+
+Generating adaptive feedback schemes for quantum metrology and quantum tomography.
+
+Variational circuits
+
+Variational circuits are a family of algorithms which utilize training based on circuit parameters and an objective function. Variational circuits are generally composed of a classical device communicating input parameters (random or pre-trained parameters) into a quantum device, along with a classical Mathematical optimization function. These circuits are very heavily dependent on the architecture of the proposed quantum device because parameter adjustments are adjusted based solely on the classical components within the device. Though the application is considerably infantile in the field of quantum machine learning, it has incredibly high promise for more efficiently generating efficient optimization functions.
+
+Sign problem
+
+Machine learning techniques can be used to find a better manifold of integration for path integrals in order to avoid the sign problem.
+
+Fluid dynamics
+
+Physics discovery and prediction
+
+. In specific, prior machine learning models were "highly specialised and lack a general understanding of the world".
+
+See also
+
+Quantum computing
+
+Quantum machine learning
+
+Quantum annealing
+
+Quantum neural network
+
+HHL Algorithm
+
+References
+
+Category:Machine learning
+
+Category:Quantum information science
+
+Category:Theoretical computer science
+
+Category:Quantum programming

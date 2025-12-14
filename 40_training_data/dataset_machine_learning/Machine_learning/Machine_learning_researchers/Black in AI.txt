@@ -1,0 +1,67 @@
+{{Infobox organization
+
+name                = Black in AI
+
+formation           =
+
+founder             = Rediet Abebe, Timnit Gebru
+
+type                = Non-profit Organization
+
+headquarters        = Palo Alto, California, U.S.
+
+website             = https://blackinai.github.io/#/
+
+}}
+
+and her book, Race After Technology at the 2019 Black in AI event|267x267px]]
+
+Black in AI, formally called the Black in AI Workshop, is a technology research organization and affinity group, founded by computer scientists Timnit Gebru and Rediet Abebe in 2017. It started as a conference workshop, later pivoting into an organization. Black in AI increases the presence and inclusion of Black people in the field of artificial intelligence (AI) by creating space for sharing ideas, fostering collaborations, mentorship, and advocacy.
+
+History
+
+Black in AI was created in 2017 to address issues of lack of diversity in AI workshops, Because of algorithmic bias, ethical issues, and underrepresentation of Black people in AI roles; there has been an ongoing need for unity within the AI community to have focus on these issues. Black in AI has strived to continue the progress of improving the presence of people of color in the field of artificial intelligence.
+
+In 2018 and 2019, the Black in AI workshop had many immigration visa issues to Canada, which spurred the conference to be planned for 2020 in Addis Ababa, Ethiopia. On December 7, 2020, Black in AI held its fourth annual workshop and first virtual workshop (due to the COVID-19 pandemic).
+
+In 2021, Black in AI, alongside the groups Queer in AI and Widening NLP, released a public statement refusing funding from Google in an act of protest of Google's treatment of Timnit Gebru, Margaret Mitchell, and April Christina Curley in the events that occurred in December 2020.
+
+Founders
+
+Rediet Abebe is an Ethiopian computer scientist who specializes in algorithms and artificial intelligence. She is a Computer Science Assistant Professor at the University of California, Berkeley. She "designs and analyzes algorithms, discrete optimizations, network-based, [and] computational strategies to increase access to opportunity for historically disadvantaged populations," according to her web bio. She got her B.S. and M.S. in electrical engineering from Stanford University, as well as a PhD from the Stanford Artificial Intelligence Laboratory, where she studied computer vision under Fei-Fei Li. The organization received $10,000 in 2018 for its annual workshop and $150,000 in 2019 for its long-term organizational planning. They provide online education sessions, offer scholarships to cover application fees, pair participants with peer and senior mentors, and distribute crowdsourced papers that simplify the application process. He is the mentor for the new Black in AI Academic Program.
+
+The second workshop was hosted in Montréal, Canada, on December 7, 2018. According to AI experts, visa issues stymie efforts to make their area more inclusive, making technology that discriminates or disadvantages individuals who aren't white or Western less likely. The workshop was able to give travel scholarships and visa support to hundreds of academics who would not have been able to attend NeurIPS without the help of sponsors. He noted that, less than a month before the conference, 40 applicants from both continents had been given visas but that more than 70 applications were still waiting. The lunch was hosted on Tuesday, January 29, 2019. The workshop was scheduled to take place in Vancouver, British Columbia. Oral presentations, guest keynote speakers, a combined poster session with other affinity groups, sponsored sessions, and startup showcases was all featured. The goal of the session was to raise the visibility of black scholars at NeurIPS.
+
+See also
+
+African-American women in computer science
+
+Algorithmic bias
+
+Data for Black Lives
+
+Ethics of artificial intelligence
+
+Data Science Africa
+
+Deep Learning Indaba
+
+References
+
+External links
+
+Category:Machine learning researchers
+
+Category:Diversity in computing
+
+Category:Ethics of science and technology
+
+Category:Data activism
+
+Category:Organizations based in Santa Clara County, California
+
+Category:Information ethics
+
+Category:2017 establishments in California
+
+Category:Politics and technology

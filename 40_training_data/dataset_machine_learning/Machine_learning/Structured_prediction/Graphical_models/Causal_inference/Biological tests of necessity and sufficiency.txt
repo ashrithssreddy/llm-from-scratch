@@ -1,0 +1,43 @@
+Biological tests of necessity and sufficiency refer to experimental methods and techniques that seek to test or provide evidence for specific kinds of causal relationships in biological systems. A necessary cause is one without which it would be impossible for an effect to occur, while a sufficient cause is one whose presence guarantees the occurrence of an effect. These concepts are largely based on but distinct from ideas of necessity and sufficiency in logic.
+
+Tests of necessity, among which are methods of lesioning or gene knockout, and tests of sufficiency, among which are methods of isolation or discrete stimulation of factors, have become important in current-day experimental designs, and application of these tests have led to a number of notable discoveries and findings in the biological sciences.
+
+Definitions
+
+In biological research, experiments or tests are often used to study predicted causal relationships between two phenomena. These causal relationships may be described in terms of the logical concepts of necessity and sufficiency.
+
+Consider the statement that a phenomenon x causes a phenomenon y. X would be a necessary cause of y when the occurrence of y implies that x needed to have occurred. However, only the occurrence of the necessary condition x may not always result in y also occurring. In other words, when some factor is necessary to cause an effect, it is impossible to have the effect without the cause. X would instead be a sufficient cause of y when the occurrence of x implies that y must then occur.
+
+Four distinct combinations of necessity and sufficiency are possible for a relationship of two conditions. A first condition may be:
+
+necessary but not sufficient
+
+sufficient but not necessary
+
+both necessary and sufficient
+
+neither necessary nor sufficient
+
+for a second condition to be true.
+
+Misunderstandings may occur regarding the kinds of evidence that can support these causal relationships; a study applying the causal concepts of necessity and sufficiency found that college students in a biochemistry class were likely to erroneously misinterpret correlations as signifying sufficiency to cause an effect. The study on undergraduate psychology students also indicated a potential discrepancy in understanding sufficiency, where it was found that some students understood a cause as being sufficient for an effect even when the effect did not always follow the cause; Lesioning can look very different across scientific disciplines.
+
+In psychology, information about necessity may be gleaned by observing changes in behavior when a brain region has been destroyed, either by accident or illness in a human or purposefully in a lab animal. Other disciplines may target specific cell types and tag them for degradation. The GAL4/UAS System "reports" a subset of genes of interest although it has no independent effect on tissue. When combined with an apoptotic gene, such as reaper (rpr), all cells that express the genes of interest along with GAL4/UAS, will initiate cell death, creating a legion specific to a cell type.
+
+A classic example of lesioning in chronobiology is the exploration of circadian navigation in monarch butterflies. In a landmark experiment, Dr. Christine Merlin and Dr. Steven Reppert removed (lesioned) the antennae of monarch butterflies and tested their ability to navigate. They found that the Monarchs could not navigate without their antennae. Aside from helping scientists understand the function of gene, observing behavior or some other variable before and after deletion can create an argument for its necessity if a behavior or system ceases to function.
+
+Allada et al. performed a knockout of the drosophila gene CLOCK, a gene earlier identified as a circadian gene via forward genetics. In this experiment, they altered the Clock gene to stop it from performing its normal function. Clock knockout flies did not exhibit a twenty-four hour rhythm as was recorded for unchanged flies. When investigating the coupling of the circadian systems in the intact plants, Thain et al. placed foil covering over one cotyledon and entrained the other uncovered cotyledon to a light-dark cycle of 12 hours light and 12 hours dark (LD 12:12), 6 hours ahead of the covered cotyledon. Then, the researchers covered the opposite cotyledon and entrained the newly exposed cotyledon to a 12:12 light-dark cycle delayed by 6 hours, creating a 12-hour difference between the cotyledons. Using transgenic bioluminescence, Thain et al. discovered that the two leaves were out of phase with each other, displaying peaks in luminescence at opposite times. This provided evidence for the notion that each cotyledon is sufficient for maintaining an independent circadian rhythm and has its own autonomous circadian oscillator.
+
+The method of isolation is not limited to isolating single cells or organs for experimentation. It can be used to analyze proteins and their role in an organism as well. Namely, Nakajima et al. utilizes this in 2005 while working with Kai proteins such as KaiA, KaiB, KaiC, which regulate circadian gene expression in cyanobacteria. These proteins are major components of the cyanobacteria circadian clock, altering their conformation and phosphorylation state throughout the day. Questioning the transcription-translation feedback loop as a means of explaining the cyanobacterial circadian clock, Nakajima et al. isolated the KaiABC proteins by lysing S. elongatus and placing them in test tubes with ATP. Consequently, in vitro phosphorylation of KaiC oscillated with a period of approximately 24 hours at slightly smaller amplitude than the in vivo oscillation. This demonstrated that the KaiABC proteins are sufficient for maintaining circadian rhythm when provided with ATP. It also presented KaiABC as the circadian post-translation oscillator that regulates the clock in S. elongatus, in tandem with transcription-translation feedback loop (TTFL) model as mechanism for the organism's clock.
+
+Critiques
+
+The use of the concepts of necessity and sufficiency in experimental design and research interpretations has been criticized on the grounds that the way they are used may not always be consistent with the meanings of these concepts in formal logic. In particular, Yoshihara and Yoshihara have criticized the usage of the phrase "necessary and sufficient" to describe biological factors in research. They argue that researchers who use that phrase to describe the importance of one factor for another run the risk of miscommunicating their findings to those who interpret the phrase in a logical sense, but at the same time, citing the example of how command neurons are formally defined, that applying the idea of "necessary and sufficient" to biological factors in a strictly logical sense may be overly restrictive and result in some findings being inappropriately dismissed. As an alternative description, the authors suggest using the phrase "indispensable and inducing".
+
+References
+
+Category:Causal inference
+
+Category:Necessity and sufficiency
+
+Category:Biological techniques and tools

@@ -1,0 +1,55 @@
+Bin Yang (Chinese: 杨彬; Pinyin: Yáng Bīn) is a professor of computer science the department of computer science, Aalborg University. His research interests include data management and machine learning.
+
+Education and career
+
+Bin Yang received his bachelor and master degrees from Northwestern Polytechnical University, China in 2004 and 2007, respectively, and his Ph.D. from Fudan University in China in 2010. From 2010 to 2011, he worked at the Databases and Information Systems department at Max-Planck-Institut für Informatik in Germany. From 2011 to 2014, he was employed at the department of computer science, Aarhus University. He has been employed at Aalborg University since 2014.
+
+At the present moment, he works on a number of different projects:
+
+Time Series Analytics and Spatio-temporal Data Management, funded by Huawei, 2020 - 2022.
+
+Light-AI for Cognitive Power Electronics, funded by Villum Synergy Programme, 2020 - 2022.
+
+Advance: A Data-Intensive Paradigm for Dynamic, Uncertain Networks, funded by Independent Research Fund Denmark, 2019 - 2023.
+
+Algorithmic Foundations for Data-Intensive Routing, funded by The Danish Agency for Science and Higher Education, 2019 - 2021.
+
+Astra: AnalyticS of Time seRies in spAtial networks, funded by Independent Research Fund Denmark, 2018 - 2021.
+
+Distinguished Scholar, funded by The Technical Faculty of IT and Design, Aalborg University, 2018 - 2021.
+
+Distinguished Scholar, The Technical Faculty of IT and Design, Aalborg University, 2018.
+
+Early Career Distinguished Lecturer, 20th IEEE International Conference on Mobile Data Management (MDM), 2019.
+
+Distinguished Program Committee Member, 28th International Joint Conference on Artificial Intelligence (IJCAI), 2019
+
+Best paper award at IEEE 14th International Conference on Mobile Data Management (MDM2013), Milan, Italy
+
+Best demo award at IEEE 14th International Conference on Mobile Data Management (MDM2013), Milan, Italy
+
+References
+
+External links
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:Northwestern Polytechnical University alumni
+
+Category:Fudan University alumni
+
+Category:Academic staff of Aalborg University
+
+Category:Chinese computer scientists
+
+Category:People from Xi'an
+
+Category:Data scientists
+
+Category:Machine learning researchers
+
+Category:Chinese expatriates in Denmark
+
+Category:Max Planck Institute for Informatics

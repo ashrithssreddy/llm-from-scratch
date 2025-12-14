@@ -1,0 +1,73 @@
+{{Infobox scientist
+
+honorific_suffix  = FRSE
+
+fields =
+
+alma_mater =
+
+workplaces = University of EdinburghUniversity of Sheffield
+
+thesis_title = Acquisition and modelling of lexical knowledge: a corpus-based investigation of systematic polysemy
+
+thesis_url = https://www.era.lib.ed.ac.uk/handle/1842/22394
+
+thesis_year = 2000
+
+doctoral_advisors =
+
+awards =
+
+website =
+
+}}
+
+Mirella Lapata is a computer scientist and Professor in the School of Informatics at the University of Edinburgh. Working on the general problem of extracting semantic information from large bodies of text, Lapata develops computer algorithms and models in the field of natural language processing (NLP).
+
+Education
+
+Lapata obtained a Master of Arts (MA) degree from Carnegie Mellon University and subsequently earned a doctorate from the University of Edinburgh. Lapata's doctoral research investigated the acquisition of information from polysemous linguistic units using probabilistic methods supervised by Alex Lascarides, Chris Brew and Steve Finch.
+
+Career and research
+
+After her doctorate, Lapata assumed academic positions at Saarland University and at the Department of Computer Science at the University of Sheffield. At the University of Edinburgh she became a reader in the School of Informatics where she is a full Professor and holds a personal chair in natural language processing. Lapata is a member of the Human Communication Research Center and Institute for Language, Cognition and Computation, both in Edinburgh.
+
+Between 2015 and 2017, Lapata served as a member of the Royal Society Machine Learning Working Group. Recently Lapata was granted a European Research Council (ERC) Consolidator Grant worth €1.9M to fund five years of her project, TransModal: Translating from Multiple Modalities into Text.
+
+Awards and honours
+
+In 2009 Lapata became the first recipient of the Microsoft British Computer Society (BCS)/BCS IRSG Karen Spärck Jones Award. The award recognises achievement in furthering the progress in information retrieval and natural language processing; the award commemorates the life and work of Karen Spärck Jones.
+
+In 2012 Lapata won an Empirical Methods in Natural Language Processing (EMNLP)-CoNLL 2012 Best Reviewer Award.
+
+In 2018 Lapata was awarded, alongside Li Dong, an Association for Computational Linguistics (ACL) Best Paper Honorable Mention.
+
+In 2019 Lapata was elected a Fellow of the Royal Society of Edinburgh
+
+In 2020 Lapata was elected to the Academia Europaea.
+
+References
+
+Category:Academics of the University of Edinburgh
+
+Category:21st-century Scottish women scientists
+
+Category:21st-century Scottish scientists
+
+Category:British women computer scientists
+
+Category:Living people
+
+Category:Year of birth missing (living people)
+
+Category:Alumni of the University of Edinburgh
+
+Category:Carnegie Mellon University alumni
+
+Category:Fellows of the Royal Society of Edinburgh
+
+Category:Members of Academia Europaea
+
+Category:Scottish computer scientists
+
+Category:Natural language processing researchers

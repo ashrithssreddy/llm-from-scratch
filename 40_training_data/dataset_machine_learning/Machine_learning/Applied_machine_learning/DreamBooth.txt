@@ -1,0 +1,23 @@
+the Stable Diffusion v1.5 diffusion model, using training data obtained from Category:Jimmy Wales on Wikimedia Commons. Depicted here are algorithmically generated images of Jimmy Wales, co-founder of Wikipedia, performing bench press exercises at a fitness gym.]]
+
+DreamBooth is a deep learning generation model used to personalize existing text-to-image models by fine-tuning. It was developed by researchers from Google Research and Boston University in 2022. Originally developed using Google's own Imagen text-to-image model, DreamBooth implementations can be applied to other text-to-image models, where it can allow the model to generate more fine-tuned and personalized outputs after training on three to five images of a subject.
+
+Technology
+
+Pretrained text-to-image diffusion models, while often capable of offering a diverse range of different image output types, lack the specificity required to generate images of lesser-known subjects, and are limited in their ability to render known subjects in different situations and contexts. Such a use case is quite VRAM intensive, however, and thus cost-prohibitive for hobbyist users. Concerns have been raised regarding the ability for bad actors to utilise DreamBooth to generate misleading images for malicious purposes, and that its open-source nature allows anyone to utilise or even make improvements to the technology. In addition, artists have expressed their apprehension regarding the ethics of using DreamBooth to train model checkpoints that are specifically aimed at imitating specific art styles associated with human artists; one such critic is Hollie Mengert, an illustrator for Disney and Penguin Random House who has had her art style trained into a checkpoint model via DreamBooth and shared online, without her consent.
+
+References
+
+External links
+
+DreamBooth on GitHub.io
+
+DreamBooth on Stable Diffusion
+
+Category:2022 software
+
+Category:Applied machine learning
+
+Category:Google
+
+Category:Text-to-image generation

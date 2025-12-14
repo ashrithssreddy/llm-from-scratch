@@ -1,0 +1,25 @@
+Fashion-MNIST is a large, freely available dataset of fashion images that is commonly used for training and testing machine learning systems. Fashion-MNIST was intended to serve as a replacement for the original MNIST database for benchmarking machine learning algorithms, as it shares the same image size, data format and the structure of training and testing splits. It was created by Han Xiao, the founder of Jina AI.
+
+The dataset contains 60,000 28x28 grayscale images of fashion products from 10 categories from a dataset of Zalando article images, with 6,000 images per category.
+
+History
+
+The set of images in the Fashion MNIST database was created in 2017 to pose a more challenging classification task than the simple MNIST digits data, which saw performance reaching upwards of 99.7%.
+
+Numerous machine learning algorithms have used the dataset as a benchmark, with the top algorithm achieving 96.91% accuracy in 2020 according to the benchmark rankings website.  The dataset was also used as a benchmark in the 2018 Science paper using all optical hardware to classify images at the speed of light. Google, University of Cambridge, IBM Research, Université de Montréal, and Peking University are the repositories most published institutions as of 2021.
+
+See also
+
+List of datasets for machine learning research
+
+MNIST database
+
+References
+
+External links
+
+Official Github Repository
+
+Tutorial to classify Fashion MNIST in Tensorflow
+
+Category:Datasets in computer vision

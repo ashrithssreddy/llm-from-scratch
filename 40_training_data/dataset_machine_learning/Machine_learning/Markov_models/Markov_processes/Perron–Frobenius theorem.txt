@@ -1,0 +1,411 @@
+In matrix theory, the Perron–Frobenius theorem, proved by  and , asserts that a real square matrix with positive entries has a unique eigenvalue of largest magnitude and that eigenvalue is real.  The corresponding eigenvector can be chosen to have strictly positive components, and also asserts a similar statement for certain classes of nonnegative matrices. This theorem has important applications to probability theory (ergodicity of Markov chains); to the theory of dynamical systems (subshifts of finite type); to economics (Okishio's theorem, Hawkins–Simon condition);
+
+to demography (Leslie population age distribution model);
+
+to social networks (DeGroot learning process); to  Internet search engines (PageRank); and even to ranking of American football
+
+teams. The first to discuss the ordering of players within tournaments using Perron–Frobenius eigenvectors is Edmund Landau.
+
+Statement
+
+Let positive and non-negative respectively describe matrices with exclusively positive real numbers as elements and matrices with exclusively non-negative real numbers as elements. The eigenvalues of a real square matrix A are complex numbers that make up the spectrum of the matrix. The exponential growth rate of the matrix powers Ak as k → ∞ is controlled by the eigenvalue of A with the largest absolute value (modulus). The Perron–Frobenius theorem describes the properties of the leading eigenvalue and of the corresponding eigenvectors when A is a non-negative real square matrix. Early results were due to  and concerned positive matrices. Later,  found their extension to certain classes of non-negative matrices.
+
+Positive matrices
+
+Let A = (a_{ij})  be an  n \times n  positive matrix:  a_{ij} > 0  for  1 \le i,j \le n . Then the following statements hold.
+
+There is a positive real number r, called the Perron root or the Perron–Frobenius eigenvalue (also called the leading eigenvalue, principal eigenvalue or dominant eigenvalue), such that r is an eigenvalue of A and any other eigenvalue λ (possibly complex) in absolute value is strictly smaller than r , |λ| \rho(A)  is equal to r. If the matrix coefficients are algebraic, this implies that the eigenvalue is a Perron number.
+
+The Perron–Frobenius eigenvalue is simple: r is a simple root of the characteristic polynomial of A. Consequently, the eigenspace associated to r is one-dimensional. (The same is true for the left eigenspace, i.e., the eigenspace for AT, the transpose of A.)
+
+There exists an eigenvector v = (v1,...,v'n)T of A with eigenvalue r such that all components of v are positive: A v = r v, v'i > 0 for 1 ≤ i ≤ n. (Respectively, there exists a positive left eigenvector w : wT A = wT r, w'i > 0.) It is known in the literature under many variations as the Perron vector, Perron eigenvector, Perron-Frobenius eigenvector, leading eigenvector, principal eigenvector or dominant eigenvector'''.
+
+There are no other positive (moreover non-negative) eigenvectors except positive multiples of v (respectively, left eigenvectors except w), i.e., all other eigenvectors must have at least one negative or non-real component.
+
+\lim_{k \rightarrow \infty} A^k/r^k = v w^T, where the left and right eigenvectors for A are normalized so that wTv = 1. Moreover, the matrix vwT is the projection onto the eigenspace corresponding to&nbsp;r. This projection is called the Perron projection.
+
+Collatz–Wielandt formula: for all non-negative non-zero vectors x, let f(x) be the minimum value of [Ax]i / xi taken over all those i such that xi ≠ 0. Then f is a real valued function whose maximum over all non-negative non-zero vectors x is the Perron–Frobenius eigenvalue.
+
+A "Min-max" Collatz–Wielandt formula takes a form similar to the one above: for all strictly positive vectors x, let g(x) be the maximum value of [Ax]i / xi taken over i. Then g is a real valued function whose minimum over all strictly positive vectors x is the Perron–Frobenius eigenvalue.
+
+Birkhoff–Varga formula: Let x and y be strictly positive vectors.  Then,r = \sup_{x>0} \inf_{y>0} \frac{y^\top A x}{y^\top x} = \inf_{x>0} \sup_{y>0} \frac{y^\top A x}{y^\top x} = \inf_{x>0} \sup_{y>0} \sum_{i,j=1}^n y_i a_{ij} x_j/\sum_{i=1}^n y_i x_i.
+
+Donsker–Varadhan–Friedland formula: Let p be a probability vector and x a strictly positive vector.  Then, r = \sup_p \inf_{x>0} \sum_{i=1}^n p_i[Ax]_i/x_i.
+
+Fiedler formula: r = \sup_{z > 0} \ \inf_{x>0, \ y>0,\ x \circ y = z} \frac{y^\top A x}{y^\top x} = \sup_{z > 0} \ \inf_{x>0, \ y>0,\ x \circ y = z}\sum_{i,j=1}^n y_i a_{ij} x_j/\sum_{i=1}^n y_i x_i.
+
+The Perron–Frobenius eigenvalue satisfies the inequalities \min_i \sum_{j} a_{ij} \le r \le \max_i \sum_{j} a_{ij}.
+
+All of these properties extend beyond strictly positive matrices to primitive matrices (see below).  Facts 1–7 can be found in Meyer However, for the example A = \left(\begin{smallmatrix}0 & 1\\
+
+1 & 0\end{smallmatrix}\right), the maximum eigenvalue r = 1 has the same absolute value as the other eigenvalue −1; while for A = \left(\begin{smallmatrix}0 & 1\\
+
+0 & 0\end{smallmatrix}\right), the maximum eigenvalue is r = 0, which is not a simple root of the characteristic polynomial, and the corresponding eigenvector (1, 0) is not strictly positive.
+
+However, Frobenius found a special subclass of non-negative matrices — irreducible matrices — for which a non-trivial generalization is possible. For such a matrix, although the eigenvalues attaining the maximal absolute value might not be unique, their structure is under control: they have the form \omega r, where r is a real strictly positive eigenvalue, and \omega ranges over the complex h' th roots of 1 for some positive integer h called the period of the matrix.
+
+The eigenvector corresponding to r has strictly positive components (in contrast with the general case of non-negative matrices, where components are only non-negative). Also all such eigenvalues are simple roots of the characteristic polynomial. Further properties are described below.
+
+Classification of matrices
+
+Let A be a  n&nbsp;×&nbsp;n square matrix over field F.
+
+The matrix A is irreducible if any of the following equivalent properties
+
+holds.
+
+Definition 1 : A does not have non-trivial invariant coordinate subspaces.
+
+Here a non-trivial coordinate subspace means a linear subspace spanned by any proper subset of standard basis vectors of Fn. More explicitly, for any linear subspace spanned by standard basis vectors ei1 , ...,
+
+eik, 0&nbsp;PAP^{-1} \ne
+
+\begin{pmatrix} E & F \\ O & G \end{pmatrix},
+
+where E and G are non-trivial (i.e. of size greater than zero) square matrices.
+
+Definition 3: One can associate with a matrix A a certain directed graph G'A. It has n vertices labeled 1,...,n, and there is an edge from vertex i to vertex j precisely when a'ij ≠ 0. Then the matrix A is irreducible if and only if its associated graph GA is strongly connected.
+
+If F is the field of real or complex numbers, then we also have the following condition.
+
+Definition 4: The group representation of (\mathbb R, +) on \mathbb{R}^n or (\mathbb C, +) on \mathbb{C}^n given by t \mapsto\exp(tA) has no non-trivial invariant coordinate subspaces. (By comparison, this would be an irreducible representation if there were no non-trivial invariant subspaces at all, not only considering coordinate subspaces.)
+
+A matrix is reducible if it is not irreducible.
+
+A real matrix A is primitive if it is non-negative and its mth power is positive for some natural number m (i.e. all entries of Am are positive).
+
+Let A be real and non-negative. Fix an index i and define the period of index i  to be the greatest common divisor of all natural numbers m such that (A'm)ii > 0. When A is irreducible, the period of every index is the same and is called the period of A.  In fact, when A is irreducible, the period can be defined as the greatest common divisor of the lengths of the closed directed paths in G'A (see Kitchens
+
+Wielandt's theorem. If |B|iφ is eigenvalue for B), then B = e'iφ D AD−1 for some diagonal unitary matrix D (i.e. diagonal elements of D equals to e'iΘl'', non-diagonal are zero).
+
+If some power Aq is reducible, then it is completely reducible, i.e. for some permutation matrix P, it is true that:
+
+P A^q P^{-1}= \begin{pmatrix}
+
+A_1 & O & O & \dots & O \\
+
+O & A_2 & O & \dots & O \\
+
+\vdots & \vdots & \vdots & & \vdots \\
+
+O & O & O & \dots & A_d \\
+
+\end{pmatrix}
+
+, where Ai are irreducible matrices having the same maximal eigenvalue. The number of these matrices d is the greatest common divisor of q and h, where h is period of A.
+
+If c(x) = xn + ck1 xn-k1 + ck2 xn-k2 + ... + cks xn-ks is the characteristic polynomial of A in which only the non-zero terms are listed, then the period of A equals the greatest common divisor of k1, k2, ... , ks.
+
+Cesàro averages:  \lim_{k \rightarrow \infty} 1/k\sum_{i=0,...,k} A^i/r^i = ( v w^T), where the left and right eigenvectors for A are normalized so that w'T'v = 1. Moreover, the matrix v wT is the spectral projection corresponding to r, the Perron projection.
+
+Let r be the Perron–Frobenius eigenvalue, then the adjoint matrix for (r-A) is positive.
+
+If A has at least one non-zero diagonal element, then A is primitive.
+
+If 0 ≤ A A ≤ rB. Moreover, if B is irreducible, then the inequality is strict: rA B.
+
+A matrix A is primitive provided it is non-negative and Am is positive for some m, and hence Ak is positive for all k ≥ m. To check primitivity, one needs a bound on how large the minimal such m can be, depending on the size of A:
+
+If A is a non-negative primitive matrix of size n, then A'n2&nbsp;−&nbsp;2n&nbsp;+&nbsp;2 is positive. Moreover, this is the best possible result, since for the matrix M below, the power Mk is not positive for every k 2&nbsp;−&nbsp;2n&nbsp;+&nbsp;2, since (M'n2&nbsp;−&nbsp;2n+1)1,1 = 0.
+
+M=
+
+\left(\begin{smallmatrix}
+
+0 & 1 & 0 & 0 & \cdots & 0 \\
+
+0 & 0 & 1 & 0 & \cdots & 0 \\
+
+0 & 0 & 0 & 1 & \cdots & 0 \\
+
+\vdots & \vdots & \vdots & \vdots & & \vdots \\
+
+0 & 0 & 0 & 0 & \cdots & 1 \\
+
+1 & 1 & 0 & 0 & \cdots & 0
+
+\end{smallmatrix}\right)
+
+Applications
+
+Numerous books have been written on the subject of non-negative matrices, and Perron–Frobenius theory is invariably a central feature. The following examples given below only scratch the surface of its vast application domain.
+
+Non-negative matrices
+
+The Perron–Frobenius theorem does not apply directly to non-negative matrices. Nevertheless, any reducible square matrix A may be written in upper-triangular block form (known as the normal form of a reducible matrix)
+
+PAP−1 =  \left( \begin{smallmatrix}
+
+B_1 & * & * & \cdots & * \\
+
+0 & B_2 & * & \cdots & * \\
+
+\vdots & \vdots & \vdots & & \vdots \\
+
+0 & 0 & 0 & \cdots & * \\
+
+0 & 0 & 0 & \cdots & B_h
+
+\end{smallmatrix}
+
+\right)
+
+where P is a permutation matrix and each Bi is a square matrix that is either irreducible or zero. Now if A is
+
+non-negative then so too is each block of PAP−1, moreover the spectrum of A is just the union of the spectra of the
+
+Bi.
+
+The invertibility of A can also be studied. The inverse of PAP−1 (if it exists) must have diagonal blocks of the form Bi−1 so if any
+
+Bi isn't invertible then neither is PAP−1 or A.
+
+Conversely let D be the block-diagonal matrix corresponding to PAP−1, in other words PAP−1 with the
+
+asterisks zeroised. If each Bi is invertible then so is D and D−1(PAP−1) is equal to the
+
+identity plus a nilpotent matrix. But such a matrix is always invertible (if Nk = 0 the inverse of 1 − N is
+
+1 + N + N2 + ... + Nk−1) so PAP−1 and A are both invertible.
+
+Therefore, many of the spectral properties of A may be deduced by applying the theorem to the irreducible Bi. For example, the Perron root is the maximum of the ρ(Bi). While there will still be eigenvectors with non-negative components it is quite possible
+
+that none of these will be positive.
+
+Stochastic matrices
+
+A row (column) stochastic matrix is a square matrix each of whose rows (columns) consists of non-negative real numbers whose sum is unity. The theorem cannot be applied directly to such matrices because they need not be irreducible.
+
+If A is row-stochastic then the column vector with each entry 1 is an eigenvector corresponding to the eigenvalue 1, which is also ρ(A) by the remark above. It might not be the only eigenvalue on the unit circle: and the associated eigenspace can be multi-dimensional. If A is row-stochastic and irreducible then the Perron projection is also row-stochastic and all its rows are equal.
+
+Algebraic graph theory
+
+The theorem has particular use in algebraic graph theory. The "underlying graph" of a nonnegative n-square matrix is the graph with vertices numbered 1, ..., n and arc ij if and only if Aij ≠ 0. If the underlying graph of such a matrix is strongly connected, then the matrix is irreducible, and thus the theorem applies. In particular, the adjacency matrix of a strongly connected graph is irreducible.
+
+Finite Markov chains
+
+The theorem has a natural interpretation in the theory of finite Markov chains (where it is the matrix-theoretic equivalent of the convergence of an irreducible finite Markov chain to its stationary distribution, formulated in terms of the transition matrix of the chain; see, for example, the article on the subshift of finite type).
+
+Compact operators
+
+More generally, it can be extended to the case of non-negative compact operators, which, in many ways, resemble finite-dimensional matrices. These are commonly studied in physics, under the name of transfer operators, or sometimes Ruelle–Perron–Frobenius operators (after David Ruelle). In this case, the leading eigenvalue corresponds to the thermodynamic equilibrium of a dynamical system, and the lesser eigenvalues to the decay modes of a system that is not in equilibrium. Thus, the theory offers a way of discovering the arrow of time in what would otherwise appear to be reversible, deterministic dynamical processes, when examined from the point of view of point-set topology.
+
+Proof methods
+
+A common thread in many proofs is the Brouwer fixed point theorem. Another popular method is that of Wielandt (1950). He used the Collatz–Wielandt formula described above to extend and clarify Frobenius's work. Another proof is based on the spectral theory
+
+Given a strictly positive eigenvector v corresponding to r and another eigenvector w with the same eigenvalue. (The vectors v and w can be chosen to be real, because A and r are both real, so the null space of A-r has a basis consisting of real vectors.) Assuming at least one of the components of w is positive (otherwise multiply w by −1). Given  maximal possible α such that u=v- α w is non-negative, then one of the components of u is zero, otherwise α is not maximum. Vector u is an eigenvector. It is non-negative, hence by the lemma described in the previous section non-negativity implies strict positivity for any eigenvector. On the other hand, as above at least one component of u is zero. The contradiction implies that w does not exist.
+
+Case: There are no Jordan blocks corresponding to the Perron–Frobenius eigenvalue r and all other eigenvalues which have the same absolute value.
+
+If there is a Jordan block, then the infinity norm
+
+(A/r)k∞ tends to infinity for k → ∞ ,
+
+but that contradicts the existence of the positive eigenvector.
+
+Given r = 1, or A/r. Letting v be a Perron–Frobenius strictly positive eigenvector, so Av=v, then:
+
+\|v\|_{\infty}= \|A^k v\|_{\infty} \ge \|A^k\|_{\infty} \min_i (v_i), ~~\Rightarrow~~ \|A^k\|_{\infty} \le \|v\|/\min_i (v_i)
+
+So ‖Ak‖∞ is bounded for all k. This gives another proof that there are no eigenvalues which have greater absolute value than Perron–Frobenius one. It also contradicts the existence of the Jordan block for any eigenvalue which has absolute value equal to 1 (in particular for the Perron–Frobenius one), because existence of the Jordan block implies that ‖Ak‖∞ is unbounded. For a two by two matrix:
+
+J^k= \begin{pmatrix} \lambda & 1 \\ 0 & \lambda \end{pmatrix} ^k
+
+=
+
+\begin{pmatrix} \lambda^k & k\lambda^{k-1} \\ 0 & \lambda^k \end{pmatrix},
+
+hence ‖J'k‖∞ = |k + λ| (for |λ| = 1), so it tends to infinity when k does so. Since Jk = C−1 A'k'C, then A'k ≥ Jk/ (C−1 C ), so it also tends to infinity. The resulting contradiction implies that there are no Jordan blocks for the corresponding eigenvalues.
+
+Combining the two claims above reveals that the Perron–Frobenius eigenvalue r is simple root of the characteristic polynomial. In the case of nonprimitive matrices, there exist other eigenvalues which have the same absolute value as r.  The same claim is true for them, but requires more work.
+
+No other non-negative eigenvectors
+
+Given positive (or more generally irreducible non-negative matrix) A, the Perron–Frobenius eigenvector is the only (up to multiplication by constant) non-negative eigenvector for A.
+
+Other eigenvectors must contain negative or complex components since eigenvectors for different eigenvalues are orthogonal in some sense, but two positive eigenvectors cannot be orthogonal, so they must correspond to the same eigenvalue, but the eigenspace for the Perron–Frobenius is one-dimensional.
+
+Assuming there exists an eigenpair (λ, y) for A, such that vector y is positive, and given (r, x), where x – is the left Perron–Frobenius eigenvector for A (i.e. eigenvector for AT), then
+
+rx'T'y = (x'T A) y = x'T (Ay) = λx'T'y, also xT y > 0, so one has: r = λ. Since the eigenspace for the Perron–Frobenius eigenvalue r is one-dimensional, non-negative eigenvector y is a multiple of the Perron–Frobenius one.
+
+Collatz–Wielandt formula
+
+Given a positive (or more generally irreducible non-negative matrix) A, one defines
+
+the function f on the set of all non-negative non-zero vectors x such that f(x) is the minimum value of [Ax]i / xi taken over all those i such that xi ≠ 0. Then f is a real-valued function, whose maximum is the Perron–Frobenius eigenvalue r.
+
+For the proof we denote the maximum of f by the value R. The proof requires to show  R = r. Inserting the Perron-Frobenius eigenvector v into f, we obtain f(v) = r and conclude r ≤ R. For the opposite inequality, we consider an arbitrary nonnegative vector x and let ξ=f(x). The definition of f gives 0 ≤ ξx ≤ Ax (componentwise). Now, we use the positive right eigenvector w for A for the Perron-Frobenius eigenvalue r, then  ξ wT x = wT ξx ≤ wT (Ax) = (wT A)x = r wT x . Hence f(x) = ξ ≤ r, which implies
+
+R ≤ r.
+
+Perron projection as a limit: A'k/r'k
+
+Let A be a positive (or more generally, primitive) matrix, and let r be its Perron–Frobenius eigenvalue.
+
+There exists a limit Ak/rk for k → ∞, denote it by P.
+
+P is a projection operator: P2 = P, which commutes with A: AP = PA.
+
+The image of P is one-dimensional and spanned by the Perron–Frobenius eigenvector v (respectively for PT—by the Perron–Frobenius eigenvector w for AT).
+
+P = vw'T, where v,w are normalized such that w'T v = 1.
+
+Hence P is a positive operator.
+
+Hence P is a spectral projection for the Perron–Frobenius eigenvalue r, and is called the Perron projection. The above assertion is not true for general non-negative irreducible matrices.
+
+Actually the claims above (except claim 5) are valid for any matrix M such that there exists an eigenvalue r which is strictly greater than the other eigenvalues in absolute value and is the simple root of the characteristic polynomial. (These requirements hold for primitive matrices as above).
+
+Given that M is diagonalizable, M is conjugate to a diagonal matrix with eigenvalues r1, ... , r'n on the diagonal (denote r1 = r). The matrix M'k/r'k will be conjugate (1, (r2/r)k, ... , (r'n/r)k), which tends to (1,0,0,...,0), for k → ∞, so the limit exists. The same method works for general M (without assuming that M is diagonalizable).
+
+The projection and commutativity properties are elementary corollaries of the definition: MM'k/r'k =  M'k/r'k M ; P2 = lim M2k/r2k = P. The third fact is also elementary: M(Pu) = M lim M'k/r'k u = lim rM'k+1/r'k+1u, so taking the limit yields M(Pu) = r(Pu), so image of P lies in the r-eigenspace for M, which is one-dimensional by the assumptions.
+
+Denoting by v, r-eigenvector for M (by w for MT). Columns of P are multiples of v, because the image of P is spanned by it. Respectively, rows of w. So P takes a form (a v wT), for some a. Hence its trace equals to (a wT v). Trace of projector equals the dimension of its image. It was proved before that it is not more than one-dimensional. From the definition one sees that P acts identically on the r-eigenvector for M. So it is one-dimensional. So choosing (w'T'v) = 1, implies P = vwT.
+
+Inequalities for Perron–Frobenius eigenvalue
+
+For any non-negative matrix A its Perron–Frobenius eigenvalue r satisfies the inequality:
+
+r \; \le \; \max_i \sum_j a_{ij}.
+
+This is not specific to non-negative matrices: for any matrix A with an eigenvalue \scriptstyle\lambda it is true
+
+that \scriptstyle |\lambda| \; \le \; \max_i \sum_j |a_{ij}|. This is an immediate corollary of the
+
+Gershgorin circle theorem. However another proof is more direct:
+
+Any matrix induced norm satisfies the inequality \scriptstyle\|A\| \ge |\lambda| for any eigenvalue \scriptstyle\lambda because, if \scriptstyle x is a corresponding eigenvector, \scriptstyle\|A\| \ge |Ax|/|x| = |\lambda x|/|x| = |\lambda|. The infinity norm of a matrix is the maximum of row sums: \scriptstyle \left \| A \right \| _\infty = \max \limits _{1 \leq i \leq m} \sum _{j=1} ^n | a_{ij} |.  Hence the desired inequality is exactly  \scriptstyle\|A\|_\infty \ge |\lambda| applied to the non-negative matrix A.
+
+Another inequality is:
+
+\min_i \sum_j a_{ij} \; \le \; r .
+
+This fact is specific to non-negative matrices; for general matrices there is nothing similar. Given  that A is positive (not just non-negative), then there exists a positive eigenvector w such that Aw = rw and the smallest component of w (say wi) is 1. Then r = (Aw)i ≥ the sum of the numbers in row i of A. Thus the minimum row sum gives a lower bound for r and this observation can be extended to all non-negative matrices by continuity.
+
+Another way to argue it is via the Collatz-Wielandt formula. One takes the vector x&nbsp;=&nbsp;(1,&nbsp;1,&nbsp;...,&nbsp;1) and immediately obtains the inequality.
+
+Further proofs
+
+Perron projection
+
+The proof now proceeds using spectral decomposition. The trick here is to split the Perron root from the other eigenvalues. The spectral projection associated with the Perron root is called the Perron projection and it enjoys the following property:
+
+The Perron projection of an irreducible non-negative square matrix is a positive matrix.
+
+Perron's findings and also (1)–(5) of the theorem are corollaries of this result. The key point is that a positive projection always has rank one. This means that if A is an irreducible non-negative square matrix then the algebraic and geometric multiplicities of its Perron root are both one. Also if P is its Perron projection then AP = PA = ρ(A)P so every column of P is a positive right eigenvector of A and every row is a positive left eigenvector. Moreover, if Ax = λx then PAx = λPx = ρ(A)Px which means Px = 0 if λ ≠ ρ(A). Thus the only positive eigenvectors are those associated with ρ(A). If A is a primitive matrix with ρ(A) = 1 then it can be decomposed as P ⊕ (1&nbsp;−&nbsp;P)A so that An = P + (1&nbsp;−&nbsp;P)An. As n increases the second of these terms decays to zero leaving P as the limit of An as n&nbsp;→&nbsp;∞.
+
+The power method is a convenient way to compute the Perron projection of a primitive matrix. If v and w are the positive row and column vectors that it generates then the Perron projection is just wv/vw. The spectral projections aren't neatly blocked as in the Jordan form. Here they are overlaid and each generally has complex entries extending to all four corners of the square matrix. Nevertheless, they retain their mutual orthogonality which is what facilitates the decomposition.
+
+Peripheral projection
+
+The analysis when A is irreducible and non-negative is broadly similar. The Perron projection is still positive but there may now be other eigenvalues of modulus ρ(A) that negate use of the power method and prevent the powers of (1&nbsp;−&nbsp;P)A decaying as in the primitive case whenever ρ(A) = 1. So we consider the peripheral projection, which is the spectral projection of A corresponding to all the eigenvalues that have modulus ρ(A). It may then be shown that the peripheral projection of an irreducible non-negative square matrix is a non-negative matrix with a positive diagonal.
+
+Cyclicity
+
+Suppose in addition that ρ(A) = 1 and A has h eigenvalues on the unit circle. If P is the peripheral projection then the matrix R = AP = PA is non-negative and irreducible, Rh = P, and the cyclic group P, R, R2, ...., R'h−1 represents the harmonics of A. The spectral projection of A at the eigenvalue λ on the unit circle is given by the formula \scriptstyle h^{-1}\sum^h_1\lambda^{-k}R^k. All of these projections (including the Perron projection) have the same positive diagonal, moreover choosing any one of them and then taking the modulus of every entry invariably yields the Perron projection. Some donkey work is still needed in order to establish the cyclic properties (6)–(8) but it's essentially just a matter of turning the handle. The spectral decomposition of A is given by A&nbsp;=&nbsp;R&nbsp;⊕&nbsp;(1&nbsp;−&nbsp;P)A so the difference between An and Rn is An&nbsp;−&nbsp;Rn =&nbsp;(1&nbsp;−&nbsp;P)A'n representing the transients of An which eventually decay to zero. P may be computed as the limit of Anh as n&nbsp;→&nbsp;∞.
+
+Counterexamples
+
+The matrices L = \left(
+
+\begin{smallmatrix}
+
+1 & 0 & 0 \\
+
+1 & 0 & 0 \\
+
+1 & 1 & 1
+
+\end{smallmatrix}
+
+\right), P = \left(
+
+\begin{smallmatrix}
+
+1 & 0 & 0 \\
+
+1 & 0 & 0 \\
+
+\!-1 & 1 & 1
+
+\end{smallmatrix}
+
+\right), T = \left(
+
+\begin{smallmatrix}
+
+0 & 1 & 1 \\
+
+1 & 0 & 1 \\
+
+1 & 1 & 0
+
+\end{smallmatrix}
+
+\right), M = \left(
+
+\begin{smallmatrix}
+
+0 & 1 & 0 & 0 & 0 \\
+
+1 & 0 & 0 & 0 & 0 \\
+
+0 & 0 & 0 & 1 & 0 \\
+
+0 & 0 & 0 & 0 & 1 \\
+
+0 & 0 & 1 & 0 & 0
+
+\end{smallmatrix}
+
+\right) provide simple examples of what can go wrong if the necessary conditions are not met. It is easily seen that the Perron and peripheral projections of L are both equal to P, thus when the original matrix is reducible the projections may lose non-negativity and there is no chance of expressing them as limits of its powers. The matrix T is an example of a primitive matrix with zero diagonal. If the diagonal of an irreducible non-negative square matrix is non-zero then the matrix must be primitive but this example demonstrates that the converse is false. M is an example of a matrix with several missing spectral teeth. If ω = eiπ/3 then ω6 = 1 and the eigenvalues of M are {1,ω2,ω3=-1,ω4} with a dimension 2 eigenspace for +1 so ω and ω5 are both absent. More precisely, since M is block-diagonal cyclic, then the eigenvalues are {1,-1} for the first block, and {1,ω2,ω4} for the lower one
+
+Terminology
+
+A problem that causes confusion is a lack of standardisation in the definitions. For example, some authors use the terms strictly positive and positive to mean > 0 and ≥ 0 respectively. In this article positive means > 0 and non-negative means ≥ 0. Another vexed area concerns decomposability and reducibility: irreducible is an overloaded term. For avoidance of doubt a non-zero non-negative square matrix A such that 1&nbsp;+&nbsp;A is primitive is sometimes said to be connected. Then irreducible non-negative square matrices and connected matrices are synonymous.
+
+The nonnegative eigenvector is often normalized so that the sum of its components is equal to unity; in this case, the eigenvector is the vector of a probability distribution and is sometimes called a stochastic eigenvector.
+
+Perron–Frobenius eigenvalue and dominant eigenvalue are alternative names for the Perron root. Spectral projections are also known as spectral projectors and spectral idempotents. The period is sometimes referred to as the index of imprimitivity or the order of cyclicity.
+
+See also
+
+Metzler matrix (Quasipositive matrix)
+
+Notes
+
+{{reflist|30em|refs=
+
+}}
+
+References
+
+(1959 edition had different title: "Applications of the theory of matrices". Also the numeration of chapters is different in the two editions.)
+
+Further reading
+
+Abraham Berman, Robert J. Plemmons, Nonnegative Matrices in the Mathematical Sciences, 1994, SIAM. .
+
+Chris Godsil and Gordon Royle, Algebraic Graph Theory, Springer, 2001.
+
+A. Graham, Nonnegative Matrices and Applicable Topics in Linear Algebra, John Wiley&Sons, New York, 1987.
+
+R. A. Horn and C.R. Johnson, Matrix Analysis, Cambridge University Press, 1990
+
+Bas Lemmens and Roger Nussbaum, Nonlinear Perron-Frobenius Theory, Cambridge Tracts in Mathematics 189, Cambridge Univ. Press, 2012.
+
+S. P. Meyn and R. L. Tweedie, Markov Chains and Stochastic Stability London: Springer-Verlag, 1993.  (2nd edition, Cambridge University Press, 2009)
+
+Seneta, E. Non-negative matrices and Markov chains. 2nd rev. ed., 1981, XVI, 288 p., Softcover Springer Series in Statistics. (Originally published by Allen & Unwin Ltd., London, 1973)
+
+(The claim that Aj has order n/h at the end of the statement of the theorem is incorrect.)
+
+.
+
+Category:Matrix theory
+
+Category:Theorems in linear algebra
+
+Category:Markov processes

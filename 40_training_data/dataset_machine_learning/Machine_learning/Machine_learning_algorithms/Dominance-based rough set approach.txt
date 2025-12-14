@@ -1,0 +1,229 @@
+{{Multiple issues|
+
+}}
+
+The dominance-based rough set approach (DRSA) is an extension of rough set theory for multi-criteria decision analysis (MCDA), introduced by Greco, Matarazzo and Słowiński. The main change compared to the classical rough sets is the substitution for the indiscernibility relation by a dominance relation, which permits one to deal with inconsistencies typical to consideration of criteria  and preference-ordered decision classes.
+
+Multicriteria classification (sorting)
+
+Multicriteria classification (sorting) is one of the problems considered within MCDA and can be stated as follows: given a set of objects evaluated by a set of criteria (attributes with preference-order domains), assign these objects to some pre-defined and preference-ordered decision classes, such that each object is assigned to exactly one class. Due to the preference ordering, improvement of evaluations of an object on the criteria should not worsen its class assignment. The sorting problem is very similar to the problem of classification, however, in the latter, the objects are evaluated by regular attributes and the decision classes are not necessarily preference ordered. The problem of multicriteria classification is also referred to as ordinal classification problem with monotonicity constraints and often appears in real-life application when ordinal and monotone properties follow from the domain knowledge about the problem.
+
+As an illustrative example, consider the problem of evaluation in a high school. The director of the school wants to assign students (objects) to three classes: bad, medium and good (notice that class good is preferred to medium and medium is preferred to bad). Each student is described by three criteria: level in Physics, Mathematics and Literature, each taking one of three possible values bad, medium and good. Criteria are preference-ordered and improving the level from one of the subjects should not result in worse global evaluation (class).
+
+As a more serious example, consider classification of bank clients, from the viewpoint of bankruptcy risk, into classes safe and risky. This may involve such characteristics as "return on equity (ROE)", "return on investment (ROI)" and "return on sales (ROS)". The domains of these attributes are not simply ordered but involve a preference order since, from the viewpoint of bank managers, greater values of ROE, ROI or ROS are better for clients being analysed for bankruptcy risk . Thus, these attributes are criteria. Neglecting this information in knowledge discovery may lead to wrong conclusions.
+
+Data representation
+
+Decision table
+
+In DRSA, data are often presented using a particular form of decision table. Formally, a DRSA decision table is a 4-tuple S = \langle U, Q, V, f \rangle, where U\,\! is a finite set of objects, Q\,\! is a finite set of criteria, V=\bigcup {}_{q \in Q} V_q where V_q\,\! is the domain of the criterion q\,\! and f \colon U \times Q \to V is an information function such that f(x,q) \in V_q for every (x,q) \in U \times Q. The set Q\,\! is divided into condition criteria (set C \neq \emptyset) and the decision criterion (class) d\,\!. Notice, that f(x,q)\,\! is an evaluation of object x\,\! on criterion q \in C, while f(x,d)\,\! is the class assignment (decision value) of the object. An example of decision table is shown in Table 1 below.
+
+Outranking relation
+
+It is assumed that the domain of a criterion q \in Q is completely preordered by an outranking relation \succeq_q; x \succeq_q y means that x\,\! is at least as good as (outranks) y\,\! with respect to the criterion q\,\!. Without loss of generality, we assume that the domain of q\,\! is a subset of reals, V_q \subseteq \mathbb{R}, and that the outranking relation is a simple order between real numbers \geq\,\! such that the following relation holds: x \succeq_q y \iff f(x,q) \geq f(y,q). This relation is straightforward for gain-type ("the more, the better") criterion, e.g. company profit. For cost-type ("the less, the better") criterion, e.g. product price, this relation can be satisfied by negating the values from V_q\,\!.
+
+Decision classes and class unions
+
+Let T = \{1,\ldots,n\}\,\!. The domain of decision criterion, V_d\,\! consist of n\,\! elements (without loss of generality we assume V_d = T\,\!) and induces a partition of U\,\! into n\,\! classes \textbf{Cl}=\{Cl_t, t \in T\}, where Cl_t = \{x \in U \colon f(x,d) = t\}. Each object x \in U is assigned to one and only one class Cl_t, t \in T. The classes are preference-ordered according to an increasing order of class indices, i.e. for all r,s \in T such that r \geq s\,\!, the objects from Cl_r\,\! are strictly preferred to the objects from Cl_s\,\!. For this reason, we can consider the upward and downward unions of classes, defined respectively, as:
+
+Cl^{\geq}_t = \bigcup_{s \geq t} Cl_s \qquad Cl^{\leq}_t= \bigcup_{s \leq t} Cl_s \qquad t \in T
+
+Main concepts
+
+Dominance
+
+We say that x\,\! dominates y\,\! with respect to P \subseteq C, denoted by  x D_p y\,\!, if x\,\! is better than y\,\! on every criterion from P\,\!, x \succeq_q y, \, \forall q \in P.  For each P \subseteq C, the dominance relation D_P\,\! is reflexive and transitive, i.e. it is a partial pre-order. Given P \subseteq C and x \in U, let
+
+D_P^+(x) = \{y \in U \colon y D_p x \}
+
+D_P^-(x) = \{y \in U \colon x D_p y \}
+
+represent P-dominating set and P-dominated set with respect to x \in U, respectively.
+
+Rough approximations
+
+The key idea of the rough set philosophy is approximation of one knowledge by another knowledge. In DRSA, the knowledge being approximated is a collection of upward and downward unions of decision classes and the "granules of knowledge" used for approximation are P-dominating and P-dominated sets.
+
+The P-lower and the P-upper approximation of Cl_t^{\geq}, t \in T with respect to P \subseteq C, denoted as \underline{P}(Cl_t^{\geq}) and \overline{P}(Cl_t^{\geq}), respectively, are defined as:
+
+\underline{P}(Cl_t^{\geq}) = \{x \in U \colon D_P^+(x) \subseteq Cl_t^{\geq} \}
+
+\overline{P}(Cl_t^{\geq}) = \{x \in U \colon D_P^-(x) \cap Cl_t^{\geq} \neq \emptyset\}
+
+Analogously, the P-lower and the P-upper approximation of Cl_t^{\leq}, t \in T with respect to P \subseteq C, denoted as \underline{P}(Cl_t^{\leq}) and \overline{P}(Cl_t^{\leq}), respectively, are defined as:
+
+\underline{P}(Cl_t^{\leq}) = \{x \in U \colon D_P^-(x) \subseteq Cl_t^{\leq} \}
+
+\overline{P}(Cl_t^{\leq}) = \{x \in U \colon D_P^+(x) \cap Cl_t^{\leq} \neq \emptyset\}
+
+Lower approximations group the objects which certainly belong to class union Cl^{\ge}_t (respectively Cl^{\le}_t). This certainty comes from the fact, that object x \in U belongs to the lower approximation \underline{P}(Cl^{\ge}_t) (respectively \underline{P}(Cl^{\le}_t)), if no other object in U\,\! contradicts this claim, i.e. every object y \in U which P-dominates x\,\!, also belong to the class union Cl^{\ge}_t (respectively Cl^{\le}_t). Upper approximations group the objects which could belong to Cl^{\ge}_t (respectively Cl^{\le}_t), since object x \in U belongs to the upper approximation \overline{P}(Cl^{\ge}_t) (respectively \overline{P}(Cl^{\le}_t)), if there exist another object y \in U P-dominated by x\,\! from class union Cl^{\ge}_t (respectively Cl^{\le}_t).
+
+The P-lower and P-upper approximations defined as above satisfy the following properties for all t \in T and for any P \subseteq C:
+
+\underline{P}(Cl_t^{\geq}) \subseteq Cl_t^{\geq} \subseteq \overline{P}(Cl_t^{\geq})
+
+\underline{P}(Cl_t^{\leq}) \subseteq Cl_t^{\leq} \subseteq \overline{P}(Cl_t^{\leq})
+
+The P-boundaries (P-doubtful regions) of Cl_t^{\geq} and Cl_t^{\leq} are defined as:
+
+Bn_P(Cl_t^{\geq}) = \overline{P}(Cl_t^{\geq})-\underline{P}(Cl_t^{\geq})
+
+Bn_P(Cl_t^{\leq}) = \overline{P}(Cl_t^{\leq})-\underline{P}(Cl_t^{\leq})
+
+Quality of approximation and reducts
+
+The ratio
+
+\gamma_P(\textbf{Cl}) = \frac{\left|U - \left( \left( \bigcup_{t \in T} Bn_P(Cl_t^{\geq}) \right) \cup \left( \bigcup_{t \in T} Bn_P(Cl_t^{\leq}) \right) \right)\right|}
+
+defines the quality of approximation of the partition \textbf{Cl}\,\! into classes by means of the set of criteria P\,\!. This ratio express the relation between all the P-correctly classified objects and all the objects in the table.
+
+Every minimal subset P \subseteq C such that \gamma_P(\mathbf{Cl}) = \gamma_C(\mathbf{Cl})\,\! is called a reduct of C\,\! and is denoted by RED_{\mathbf{Cl}}(P). A decision table may have more than one reduct. The intersection of all reducts is known as the core.
+
+Decision rules
+
+On the basis of the approximations obtained by means of the dominance relations, it is possible to induce a generalized description of the preferential information contained in the decision table, in terms of decision rules. The decision rules are expressions of the form if [condition] then [consequent], that represent a form of dependency between condition criteria and decision criteria. Procedures for generating decision rules from a decision table use an inductive learning principle. We can distinguish three types of rules: certain, possible and approximate. Certain rules are generated from lower approximations of unions of classes; possible rules are generated from upper approximations of unions of classes and approximate rules are generated from boundary regions.
+
+Certain rules has the following form:
+
+if f(x,q_1) \geq r_1\,\! and f(x,q_2) \geq r_2\,\! and \ldots f(x,q_p) \geq r_p\,\! then x \in Cl_t^{\geq}
+
+if f(x,q_1) \leq r_1\,\! and f(x,q_2) \leq r_2\,\! and \ldots f(x,q_p) \leq r_p\,\! then x \in Cl_t^{\leq}
+
+Possible rules has a similar syntax, however the consequent part of the rule has the form: x\,\! could belong to Cl_t^{\geq} or the form: x\,\! could belong to Cl_t^{\leq}.
+
+Finally, approximate rules has the syntax:
+
+if f(x,q_1) \geq r_1\,\! and f(x,q_2) \geq r_2\,\! and \ldots f(x,q_k) \geq r_k\,\! and f(x,q_{k+1}) \leq r_{k+1}\,\! and f(x,q_{k+2}) \leq r_{k+2}\,\! and \ldots f(x,q_p) \leq r_p\,\!
+
+then x \in Cl_s \cup Cl_{s+1} \cup Cl_t
+
+The certain, possible and approximate rules represent certain, possible and ambiguous knowledge extracted from the decision table.
+
+Each decision rule should be minimal. Since a decision rule is an implication, by a minimal decision rule we understand such an implication that there is no other implication with an antecedent of at least the same weakness (in other words, rule using a subset of elementary conditions or/and weaker elementary conditions) and a consequent of at least the same strength (in other words, rule assigning objects to the same union or sub-union of classes).
+
+A set of decision rules is complete if it is able to cover all objects from the decision table in such a way that consistent objects are re-classified to their original classes and inconsistent objects are classified to clusters of classes referring to this inconsistency. We call minimal each set of decision rules that is complete and non-redundant, i.e. exclusion of any rule from this set makes it non-complete.
+
+One of three induction strategies can be adopted to obtain a set of decision rules:
+
+generation of a minimal description, i.e. a minimal set of rules,
+
+generation of an exhaustive description, i.e. all rules for a given data matrix,
+
+generation of a characteristic description, i.e. a set of rules covering relatively many objects each, however, all together not necessarily all objects from the decision table
+
+The most popular rule induction algorithm for dominance-based rough set approach is DOMLEM, which generates minimal set of rules.
+
+Example
+
+Consider the following problem of high school students’ evaluations:
+
+Each object (student) is described by three criteria q_1,q_2,q_3\,\!, related to the levels in Mathematics, Physics and Literature, respectively. According to the decision attribute, the students are divided into three preference-ordered classes: Cl_1 = \{bad\}, Cl_2 = \{medium\} and Cl_3 = \{good\}. Thus, the following unions of classes were approximated:
+
+Cl_1^{\leq} i.e. the class of (at most) bad students,
+
+Cl_2^{\leq} i.e. the class of at most medium students,
+
+Cl_2^{\geq} i.e. the class of at least medium students,
+
+Cl_3^{\geq} i.e. the class of (at least) good students.
+
+Notice that evaluations of objects x_4\,\! and x_6\,\! are inconsistent, because x_4\,\! has better evaluations on all three criteria than x_6\,\! but worse global score.
+
+Therefore, lower approximations of class unions consist of the following objects:
+
+\underline{P}(Cl_1^{\leq}) = \{x_1,x_5\}
+
+\underline{P}(Cl_2^{\leq}) = \{x_1,x_2,x_3,x_4,x_5,x_6,x_8\} = Cl_2^{\leq}
+
+\underline{P}(Cl_2^{\geq}) = \{x_2,x_3,x_7,x_8,x_9,x_{10}\}
+
+\underline{P}(Cl_3^{\geq}) = \{x_7,x_9,x_{10}\} = Cl_3^{\geq}
+
+Thus, only classes Cl_1^{\leq} and Cl_2^{\geq} cannot be approximated precisely. Their upper approximations are as follows:
+
+\overline{P}(Cl_1^{\leq}) = \{x_1,x_4,x_5,x_6\}
+
+\overline{P}(Cl_2^{\geq}) = \{x_2,x_3,x_4,x_6,x_7,x_8,x_9,x_{10}\}
+
+while their boundary regions are:
+
+Bn_P(Cl_1^{\leq}) = Bn_P(Cl_2^{\geq}) = \{x_4,x_6\}
+
+Of course, since Cl_2^{\leq} and Cl_3^{\geq} are approximated precisely, we have \overline{P}(Cl_2^{\leq})=Cl_2^{\leq}, \overline{P}(Cl_3^{\geq})=Cl_3^{\geq} and Bn_P(Cl_2^{\leq}) = Bn_P(Cl_3^{\geq}) = \emptyset
+
+The following minimal set of 10 rules can be induced from the decision table:
+
+if Physics \leq bad then student \leq bad
+
+if Literature \leq bad and Physics \leq medium and Math \leq medium then student \leq bad
+
+if Math \leq bad then student \leq medium
+
+if Literature \leq medium and Physics \leq medium then student \leq medium
+
+if Math \leq medium and Literature \leq bad then student \leq medium
+
+if Literature \geq good and Math \geq medium then student \geq good
+
+if Physics \geq good and Math \geq good then student \geq good
+
+if Math \geq good then student \geq medium
+
+if Physics \geq good then student \geq medium
+
+if Math \leq bad and Physics \geq medium then student = bad \lor medium
+
+The last rule is approximate, while the rest are certain.
+
+Extensions
+
+Multicriteria choice and ranking problems
+
+The other two problems considered within multi-criteria decision analysis, multicriteria choice and ranking problems, can also be solved using dominance-based rough set approach. This is done by converting the decision table into pairwise comparison table (PCT).
+
+Stochastic DRSA
+
+In real-life data, particularly for large datasets, the notions of rough approximations were found to be excessively restrictive. Therefore, an extension of DRSA, based on stochastic model (Stochastic DRSA), which allows inconsistencies to some degree, has been introduced. Having stated the probabilistic model for ordinal classification problems with monotonicity constraints, the concepts of lower approximations are extended to the
+
+stochastic case. The method is based on estimating the conditional probabilities using the nonparametric maximum likelihood method which leads
+
+to the problem of isotonic regression.
+
+Stochastic dominance-based rough sets can also be regarded as a sort of variable-consistency model.
+
+Software
+
+4eMka2  is a decision support system for multiple criteria classification problems based on dominance-based rough sets (DRSA). JAMM  is a much more advanced successor of 4eMka2. Both systems are freely available for non-profit purposes on the Laboratory of Intelligent Decision Support Systems (IDSS) website.
+
+See also
+
+Rough sets
+
+Granular computing
+
+Multicriteria Decision Analysis (MCDA)
+
+References
+
+Chakhar S., Ishizaka A., Labib A., Saad I. (2016). Dominance-based rough set approach for group decisions, European Journal of Operational Research, 251(1): 206-224
+
+Li S., Li T. Zhang Z., Chen H., Zhang J. (2015). Parallel Computing of Approximations in Dominance-based Rough Sets Approach, Knowledge-based Systems, 87: 102-111
+
+Li S., Li T. (2015). Incremental Update of Approximations in Dominance-based Rough Sets Approach under the Variation of Attribute Values, Information Sciences, 294: 348-361
+
+Li S., Li T., Liu D. (2013). Dynamic Maintenance of Approximations in Dominance-based Rough Set Approach under the Variation of the Object Set, International Journal of Intelligent Systems, 28(8): 729-751
+
+External links
+
+The International Rough Set Society
+
+Laboratory of Intelligent Decision Support Systems (IDSS) at Poznań University of Technology.
+
+Extensive list of DRSA references on the Roman Słowiński home page.
+
+Category:Theoretical computer science
+
+Category:Machine learning algorithms
+
+Category:Multiple-criteria decision analysis

@@ -1,0 +1,13 @@
+Archetypal analysis in statistics is an unsupervised learning method similar to cluster analysis and introduced by Adele Cutler and Leo Breiman in 1994. Rather than "typical" observations (cluster centers), it seeks extremal points in the multidimensional data, the "archetypes". The archetypes are convex combinations of observations chosen so that observations can be approximated by convex combinations of the archetypes.
+
+Literature
+
+Adele Cutler and Leo Breiman. Archetypal analysis. Technometrics, 36(4):338–347, November 1994.
+
+Manuel J. A. Eugster: Archetypal Analysis, Mining the Extreme. HIIT seminar, Helsinki Institute for Information Technology, 2012
+
+Anil Damle, Yuekai Sun: A geometric approach to archetypal analysis and non-negative matrix factorization. arXiv preprint: arXiv : 1405.4275
+
+Category:Data mining
+
+Category:Cluster analysis

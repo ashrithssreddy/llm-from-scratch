@@ -1,0 +1,109 @@
+{{Infobox scientist
+
+name              = Hans-Peter Kriegel
+
+image             =
+
+image_size        =
+
+caption           =
+
+birth_date        =
+
+birth_place       = Germany
+
+citizenship       =
+
+nationality       = German
+
+fields            = Computer Science (Data mining, spatial data management)
+
+workplaces        = Technical University of Dortmund, University of Bremen, University of Würzburg, Ludwig Maximilian University of Munich
+
+alma_mater        = Karlsruhe Institute of Technology
+
+doctoral_advisor  = Hermann Maurer
+
+academic_advisors =
+
+doctoral_students = Daniel A. Keim Arthur ZimekKarsten Borgwardt
+
+notable_students  =
+
+known_for         = R*-tree, X-tree, DBSCAN, OPTICS, LOF
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+awards            = ACM Fellow, IEEE ICDM Research Contributions Award, ACM SIGKDD Innovation Award
+
+thesis_title = Erzeugung von Übersetzungen durch Grammatikpaare
+
+thesis_year = 1976
+
+}}
+
+Hans-Peter Kriegel (1 October 1948, Germany) is a German computer scientist and professor at the Ludwig Maximilian University of Munich and leading the Database Systems Group in the Department of Computer Science. He was previously professor at the University of Würzburg and the University of Bremen after habilitation at the Technical University of Dortmund and doctorate from Karlsruhe Institute of Technology.
+
+Research
+
+His most important contributions are the database index structures R*-tree, X-tree and IQ-Tree, the cluster analysis algorithms  DBSCAN, OPTICS and SUBCLU and the anomaly detection method Local Outlier Factor (LOF).
+
+His research is focused around correlation clustering, high-dimensional data indexing and analysis, spatial data mining and spatial data management as well as multimedia databases.
+
+His research group developed a software framework titled ELKI that is designed for the parallel research of index structures, data mining algorithms and their interaction, such as optimized data mining algorithms based on database indexes.
+
+Awards
+
+In 2009 the Association for Computing Machinery appointed Hans-Peter Kriegel a "fellow", one of its highest honors. He has been honored in particular for his contributions to "knowledge discovery and data mining, similarity search, spatial data management, and access methods for high-dimensional data".
+
+He received the 2013 IEEE ICDM Research Contributions Award for his research on data mining algorithms such as DBSCAN, OPTICS, Local Outlier Factor and his work on mining high-dimensional data.
+
+He was also awarded the 2015 ACM SIGKDD Innovation Award for his contributions to data mining in clustering, outlier detection and high-dimensional data analysis, in particular for density-based approaches.
+
+DBSCAN also received the 2014 ACM SIGKDD test of time award.
+
+, he was the most cited German researcher in databases, and data mining.
+
+References
+
+External links
+
+Former Database Systems Group of Hans-Peter Kriegel
+
+Publications in the Digital Bibliography & Library Project
+
+Publications in the ACM Digital Library
+
+Publications in Google Scholar
+
+Category:Living people
+
+Category:2009 fellows of the Association for Computing Machinery
+
+Category:Database researchers
+
+Category:German computer scientists
+
+Category:1948 births
+
+Category:Data miners
+
+Category:Machine learning researchers
+
+Category:Computer science educators
+
+Category:Academic staff of the Ludwig Maximilian University of Munich
+
+Category:Academic staff of the University of Würzburg
+
+Category:Academic staff of the University of Bremen
+
+Category:Technical University of Dortmund alumni
+
+Category:Karlsruhe Institute of Technology alumni

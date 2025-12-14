@@ -1,0 +1,119 @@
+{{Infobox scientist
+
+name              = Katia Sycara
+
+honorific_suffix  =
+
+native_name       =
+
+native_name_lang  =
+
+image             =
+
+image_size        =
+
+image_upright     =
+
+alt               =
+
+caption           =
+
+birth_name        = 	Ekaterini Panagiotou Sycara
+
+birth_date        =
+
+birth_place       =
+
+death_date        =
+
+death_place       =
+
+death_cause       =
+
+resting_place     =
+
+resting_place_coordinates =
+
+home_town         =
+
+other_names       =
+
+siglum            =
+
+pronounce         =
+
+citizenship       =
+
+nationality       =
+
+fields            = Artificial IntelligenceMulti-Robot SystemsHuman Robot InteractionMulti-Agent SystemsSemantic Web She directs the Advanced Agent-Robotics Technology Lab at Robotics Institute, Carnegie Mellon University. She also serves as academic advisor for PhD students at both Robotics Institute and Tepper School of Business.
+
+Education and early life
+
+Born in Greece, she went to the United States to pursue advanced education through various scholarships, including a Fulbright (1965-1969). She received a B.S. in applied mathematics from Brown University, M.S. in electrical engineering from the University of Wisconsin–Milwaukee, and PhD in computer science from Georgia Institute of Technology.
+
+Research and career
+
+Sycara is a pioneer in the field of semantic web, case-based reasoning, autonomous agents and multi-agent systems.
+
+She has authored or co-authored more than 700 technical papers dealing with multi-agent systems, software agents,  web services, semantic web, human–computer interaction, human-robot interaction, negotiation, case-based reasoning and the application of these techniques to crisis action planning, scheduling, manufacturing, healthcare management, financial planning and e-commerce. She has led multimillion-dollar research effort funded by DARPA, NASA, AFOSR, ONR, AFRL, NSF and industry.
+
+Through an ONR MURI program and though the COABS DARPA program, Prof. Sycara's group has developed the RETSINA multiagent infrastructure, a toolkit that enables the development of heterogeneous software agents that can dynamically coordinate in open information environments (e.g. the Internet). RETSINA has been used in multiple applications including supporting human joint mission teams for crisis response; creating autonomous agents for situation awareness and information fusion; financial portfolio management, negotiations and coalition formation for e-commerce, and coordinating robots for Urban Search and Rescue.
+
+Sycara is one of the contributors to the development of OWL-S, the Darpa-sponsored language for Semantic Web services, as well as matchmaking and brokering software for agent discovery, service integration and semantic interoperation.
+
+Academic service
+
+Sycara is the founding Editor-in-Chief of the journal Autonomous Agents and Multi-Agent Systems; Editor-in-Chief, of the Springer Series on Agents; and Area Editor of AI and Management Science, the journal "Group Decision and Negotiation." She  is a member of the Editorial Board, the Kluwer book series on "Multiagent Systems, Artificial Societies and Simulated Organizations"; member of the editorial board, the journals "Agent Oriented Software Engineering", "Web Intelligence and Agent Technologies", "Journal of Infonomics", "Fundamenda Informaticae", and "Concurrent Engineering: Research and Applications"; and member of the editorial board of the "ETAI journal on the Semantic Web" (1998–2001). She was on the Editorial Board of "IEEE Intelligent Systems and their Applications" (1992–1996), and "AI in Engineering" (1990–1996).
+
+She is a member of the Scientific Advisory Board of France Telecom, 2003-2009; member of the Scientific Advisory Board of the Institute of Informatics and Telecommunications of the Greek National Research Center Demokritos, 2004-2012; member of the AAAI Executive Council (1996–99); member of the OASIS Technical committee on the development of UDDI (Universal Description and Discovery for Interoperability) software which is an industry standard; and an invited expert for W3C (the World Wide Web Consortium) Working Group on Web Services Architecture. She was a founding member of the Board of Directors of the International Foundation of Multiagent Systems (IFMAS), and founding member of the Semantic Web Science Association.
+
+Sycara served as the program chair of the Second International Semantic Web Conference (ISWC 2003); general chair, of the Second International Conference on Autonomous Agents (Agents 98); chair of the Steering Committee of the Agents Conference (1999–2001); scholarship chair of AAAI (1993–1999);
+
+and the US co-chair for the US-Europe Semantic Web Services Initiative.
+
+Awards and honors
+
+Sycara is a Fellow of Institute of Electrical and Electronics Engineers (IEEE), and a Fellow of American Association for Artificial Intelligence (AAAI).
+
+Sycara is the recipient of the 2002 ACM/SIGART Agents Research Award. She is also the recipient of the 2015 Group Decision and Negotiation (GDN) Award of the Institute for Operations Research and the Management Sciences (INFORMS)  GDN Section for her outstanding contributions to the field of group decision and negotiation. According to the citation of the award:
+
+{{Quote|Katia Sycara is widely acknowledged as one of the leading researchers in the field of autonomous software agents and in particular on problems related to joint decision making and negotiations of such agents. Her work is characterized by a unique combination of methods from Artificial Intelligence and research on human negotiations, and thus has contributed to significant advances in both fields.}}
+
+Sycara's robot teams have won multiple international awards. In the 2005 Robocup Urban Search and Rescue (US Open) held in Atlanta, her team won the First-in-Class Award for Autonomy, and the First-in-Class Award for Mobility. Two years later, again in Atlanta, she led another team that became a world champions in the 2007 International Robocup Search and Rescue Simulation League Competition. In 2008, her robotic team placed third in the Worldwide Robocup Championship Competition in the Urban Search and Rescue Virtual robots League held in Beijing, China.
+
+In 2005, she received the Outstanding Alumnus Award from the University of Wisconsin–Milwaukee. She was awarded an Honorary Doctorate from the University of the Aegean in 2004.
+
+References
+
+Category:American women computer scientists
+
+Category:University of Wisconsin&ndash;Milwaukee alumni
+
+Category:Carnegie Mellon University faculty
+
+Category:Artificial intelligence researchers
+
+Category:American roboticists
+
+Category:Women roboticists
+
+Category:Machine learning researchers
+
+Category:Academics of the University of Aberdeen
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:American people of Greek descent
+
+Category:Greek computer scientists
+
+Category:Greek women computer scientists
+
+Category:Women systems scientists
+
+Category:Brown University alumni

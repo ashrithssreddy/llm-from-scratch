@@ -1,0 +1,11 @@
+The Table 2 Fallacy is a term coined by Daniel Westreich and Sander Greenland in 2013. It is a concept in causal inference.
+
+In scientific papers reporting observational studies, people often report both crude and adjusted associations between variables included in a regression model and the outcome of interest in Table 2. If the purpose of the analysis is causal inference, usually, the variables one would choose to adjust for will differ for each exposure - outcome pairing. The Table 2 Fallacy occurs when people seek to give a causal interpretation to the other parameters estimated using a multivariable regression model that was only designed to explore a single exposure - outcome association.
+
+Table 2 Fallacy is a common error made in reporting epidemiological results in a wide range of subject areas.
+
+A high profile example was a paper exploring associations between demographic and health characteristics and death from COVID-19, which was used by the French government to define which groups of workers were deemed at risk. A number of letters to the editor argued that the paper wrongly implied that causal interpretations should be given to multiple parameters taken from a single multivariable regression model. This claim was contested by the study authors, who argued that their paper did not make causal claims.
+
+References
+
+Category:Causal inference

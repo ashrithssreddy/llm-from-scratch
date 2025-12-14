@@ -1,0 +1,27 @@
+In the theory of Probably Approximately Correct Machine Learning, the Natarajan dimension characterizes the complexity of learning a set of functions, generalizing from the Vapnik–Chervonenkis dimension for boolean functions to multi-class functions. Originally introduced as the Generalized Dimension by Natarajan, it was subsequently renamed the Natarajan Dimension by Haussler and Long.
+
+Definition
+
+Let H be a set of functions from a set X to a set Y. H shatters a set C \subset X
+
+if there exist two functions f_0, f_1 \in H such that
+
+For every  x \in C, f_0(x) \neq f_1(x).
+
+For every B\subset C , there exists a function h \in H  such that
+
+for all x \in B, h(x) = f_0(x) and for all x \in C - B, h(x) = f_1(x).
+
+The Natarajan dimension of H is the maximal cardinality of a set shattered by H.
+
+It is easy to see that if |Y| = 2, the Natarajan dimension collapses to the Vapnik–Chervonenkis dimension.
+
+Shalev-Shwartz and Ben-David  present comprehensive material on multi-class learning and the Natarajan dimension, including uniform convergence and learnability.
+
+References
+
+Category:Statistical classification
+
+Category:Computational learning theory
+
+Category:Measures of complexity

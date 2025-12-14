@@ -1,0 +1,261 @@
+Generalized filtering is a generic Bayesian filtering scheme for nonlinear state-space models. It is based on a variational principle of least action, formulated in generalized coordinates of motion. Note that "generalized coordinates of motion" are related to—but distinct from—generalized coordinates as used in (multibody) dynamical systems analysis. Generalized filtering furnishes posterior densities over hidden states (and parameters) generating observed data using a generalized gradient descent on variational free energy, under the Laplace assumption. Unlike classical (e.g. Kalman-Bucy or particle) filtering, generalized filtering eschews Markovian assumptions about random fluctuations. Furthermore, it operates online, assimilating data to approximate the posterior density  over unknown quantities, without the need for a backward pass. Special cases include variational filtering, Given the following definitions:
+
+\tilde{\mu}(t) = \underset{\tilde{\mu}}{\operatorname{arg\,min}} \{F(\tilde(t),\tilde)\}
+
+G(\tilde{s},\tilde{x},\tilde{u})=-\ln p(\tilde{s},\tilde{x},\tilde{u}\vert m)
+
+Denote the Shannon entropy of the density q by H[q]=E_q[-\log(q)]. We can then write the variational free energy in two ways:
+
+F(\tilde{s}, \tilde\mu)=E_q [G(\tilde{s},\tilde{x},\tilde{u})]-H[q(\tilde{x},\tilde{u} \vert \tilde{\mu})] =-\ln p(\tilde{s} \vert m)+D_{KL} [q(\tilde{x},\tilde{u} \vert \tilde{\mu})\vert \vert p(\tilde{x},\tilde{u} \vert \tilde{s},m)]
+
+The second equality shows that minimizing variational free energy (i) minimizes the Kullback-Leibler divergence between the variational and true posterior density and (ii) renders the variational free energy (a bound approximation to) the negative log evidence (because the divergence can never be less than zero). Under the Laplace assumption q(\tilde{x},\tilde\mid \tilde{\mu})=\mathcal{N}(\tilde{\mu},C) the variational density is Gaussian and the precision that minimizes free energy is C^{-1}=\Pi =\partial_{\tilde{\mu}\tilde{\mu}} G(\tilde{\mu}). This means that free-energy can be expressed in terms of the variational mean  (omitting constants):
+
+F=G(\tilde{\mu})+\textstyle{1 \over 2}\ln \vert \partial_{\tilde{\mu}\tilde{\mu}} G(\tilde{\mu})\vert
+
+The variational means that minimize the (path integral) of free energy can now be recovered by solving the generalized filter:
+
+\dot{\tilde{\mu}}=D\tilde{\mu}-\partial_{\tilde{\mu}} F(\tilde{s},\tilde{\mu})
+
+where D is a block matrix derivative operator of identify matrices such that D\tilde{u}=[u',u'',\ldots ]^T
+
+Variational basis
+
+Generalized filtering is based on the following lemma: The self-consistent solution to \dot{\tilde{\mu}}=D\tilde{\mu}-\partial_{\tilde{\mu}} F(s,\tilde{\mu}) satisfies the variational principle of stationary action, where action is the path integral of variational free energy
+
+S=\int dt\, F(\tilde{s}(t),\tilde{\mu}(t))
+
+Proof: self-consistency requires the motion of the mean to be the mean of the motion and (by the fundamental lemma of variational calculus)
+
+\dot{\tilde{\mu}} = D\tilde{\mu}\Leftrightarrow \partial_{\tilde{\mu}} F(\tilde{s},\tilde{\mu}) = 0\Leftrightarrow \delta_{\tilde{\mu}} S=0
+
+Put simply, small perturbations to the path of the mean do not change variational free energy and it has the least action of all possible (local) paths.
+
+Remarks: Heuristically, generalized filtering performs a gradient descent on variational free energy in a moving frame of reference: \dot{{\tilde}}-D\tilde=-\partial_{\tilde{\mu}} F(s,\tilde{\mu}), where the frame itself minimizes variational free energy. For a related example in statistical physics, see Kerr and Graham  who use ensemble dynamics in generalized coordinates to provide a generalized phase-space version of Langevin and associated Fokker-Planck equations.
+
+In practice, generalized filtering uses local linearization over intervals \Delta t to recover discrete updates
+
+\begin{align}
+
+\Delta \tilde{\mu} & =(\exp (\Delta t\cdot J)-I)J^{-1}\dot{\tilde{\mu}} \\
+
+J & =\partial_{\tilde{\mu}} \dot{\tilde{\mu}} =D-\partial _{\tilde{\mu}\tilde{\mu}} F(\tilde{s},\tilde{\mu})
+
+\end{align}
+
+This updates the means of hidden variables at each interval (usually the interval between observations).
+
+Generative (state-space) models in generalized coordinates
+
+Usually, the generative density or model is specified in terms of a nonlinear input-state-output model with continuous nonlinear functions:
+
+\begin{align}
+
+s & = g(x,u)+\omega_s \\
+
+\dot & = f(x,u)+\omega_x
+
+\end{align}
+
+The corresponding generalized model (under local linearity assumptions) obtains the from the chain rule
+
+\begin{align}
+
+\tilde{s} & =\tilde{g}(\tilde{x},\tilde{u})+\tilde{\omega}_s \\
+
+\\
+
+s & =g(x,u)+\omega_s \\
+
+s' & =\partial_x g\cdot x'+\partial_u g\cdot u'+\omega'_s \\
+
+s & =\partial_x g\cdot x+\partial_u g\cdot u+\omega_s
+
+\\
+
+&  \vdots \\
+
+\end{align} \qquad \begin{align}
+
+\dot{\tilde{x}}  & =\tilde{f}(\tilde{x},\tilde{u})+\tilde{\omega}_x \\
+
+\\
+
+\dot{x} & =f(x,u)+\omega_x \\
+
+\dot{x}' & =\partial_x f\cdot x'+\partial_u f\cdot u'+\omega'_x \\
+
+\dot{x}& =\partial_x f\cdot x+\partial_u f\cdot u+\omega_x \\
+
+& \vdots
+
+\end{align}
+
+Gaussian assumptions about the random fluctuations \omega then prescribe the likelihood and empirical priors on the motion of hidden states
+
+\begin{align}
+
+p\left( \tilde{s},\tilde{x},\tilde{u}\vert m \right) & = p\left( \tilde{s}\vert \tilde{x},\tilde{u},m \right)p\left( {D\tilde{x}\vert x,\tilde{u},m} \right)p(x\vert m)p(\tilde{u}\vert m) \\
+
+p\left( \tilde{s}\vert \tilde{x},\tilde{u},m \right) & = \mathcal{N}(\tilde{g}(\tilde{x},\tilde{u}),\tilde{\Sigma}(\tilde{x},\tilde{u})_s) \\
+
+p\left( {D\tilde\vert x,\tilde,m} \right) & = {\mathcal{N}}(\tilde{f}(\tilde{x},\tilde{u}),\tilde{\Sigma}(\tilde{x},\tilde{u})_x ) \\
+
+\end{align}
+
+The covariances \tilde=V\otimes \Sigma factorize into a covariance among variables and correlations V among generalized fluctuations that encodes their autocorrelation:
+
+V=\begin{bmatrix}
+
+1  & 0  & \ddot{\rho}(0) & \cdots  \\
+
+0  & -\ddot{\rho}(0)  & 0 \ & \ \\
+
+\ddot{\rho}(0) \ & 0 \ & \ddot{\ddot{\rho}}(0) \ & \ \\
+
+\vdots \ & \ & \ & \ddots \ \\
+
+\end{bmatrix}
+
+Here, \ddot(0) is the second derivative of the autocorrelation function evaluated at zero. This is a ubiquitous measure of roughness in the theory of stochastic processes. Crucially, the precision (inverse variance) of high order derivatives fall to zero fairly quickly, which means it is only necessary to model relatively low order generalized motion (usually between two and eight) for any given or parameterized autocorrelation function.
+
+Special cases
+
+Filtering discrete time series
+
+When time series are observed as a discrete sequence of N observations, the implicit sampling is treated as part of the generative process, where (using Taylor's theorem)
+
+[s_1 ,\dots ,s_N ]^T = (E\otimes I)\cdot \tilde{s}(t): \qquad E_{ij} =\frac{(i-t)^{(j-1)}}{(j-1)!}
+
+In principle, the entire sequence could be used to estimate hidden variables at each point in time. However, the precision of samples in the past and future falls quickly and can be ignored. This allows the scheme to assimilate data online, using local observations around each time point (typically between two and eight).
+
+Generalized filtering and model parameters
+
+For any slowly varying model parameters of the equations of motion f(x,u,\theta ) or precision \tilde(x,u,\theta ) generalized filtering takes the following form (where \mu corresponds to the variational mean of the parameters)
+
+\begin{align}
+
+\dot{\mu} & = \mu' \\
+
+\dot{\mu'} & = -\partial_\mu F(\tilde{s},\mu )-\kappa \mu'
+
+\end{align}
+
+Here, the solution \dot{{\tilde}}=0 minimizes variational free energy, when the motion of the mean is small. This can be seen by noting \dot={\dot}'=0\Rightarrow \partial_{\mu } F=0\Rightarrow \delta_{\mu } S=0. It is straightforward to show that this solution corresponds to a classical Newton update.
+
+Relationship to Bayesian filtering and predictive coding
+
+Generalized filtering and Kalman filtering
+
+Classical filtering under Markovian or Wiener assumptions is equivalent to assuming the precision of the motion of random fluctuations is zero. In this limiting case, one only has to consider the states and their first derivative \tilde=(\mu ,{\mu }'). This means generalized filtering takes the form of a Kalman-Bucy filter, with prediction and correction terms:
+
+\begin{align}
+
+\dot{\mu} & = \mu'-\partial_\mu F(s,\tilde{\mu}) \\
+
+\dot{\mu'}  & =-\partial_{\mu'} F(s,\tilde{\mu})
+
+\end{align}
+
+Substituting this first-order filtering into the discrete update scheme above gives the equivalent of (extended) Kalman filtering.
+
+Generalized filtering and particle filtering
+
+Particle filtering is a sampling-based scheme that relaxes assumptions about the form of the variational or approximate posterior density. The corresponding generalized filtering scheme is called variational filtering. In variational filtering, an ensemble of particles diffuse over the free energy landscape in a frame of reference that moves with the expected (generalized) motion of the ensemble. This provides a relatively simple scheme that eschews Gaussian (unimodal) assumptions. Unlike particle filtering it does not require proposal densities—or the elimination or creation of particles.
+
+Generalized filtering and variational Bayes
+
+Variational Bayes rests on a mean field partition of the variational density:
+
+q(\tilde{x},\tilde{u},\theta \dots \vert \tilde{\mu},\mu
+
+)=q(\tilde{x},\tilde{u}\vert \tilde{\mu})q(\theta \vert \mu
+
+)\dots
+
+This partition induces a variational update or step for each marginal density—that is usually solved analytically using conjugate priors. In generalized filtering, this leads to dynamic expectation maximisation. that comprises a D-step that optimizes the sufficient statistics of unknown states, an E-step for parameters and an M-step for precisions.
+
+Generalized filtering and predictive coding
+
+Generalized filtering is usually used to invert hierarchical models of the following form
+
+\begin{align}
+
+\tilde{s} & =\tilde^1 (\tilde{x}^1,\tilde{u}^{(1)})+\tilde{\omega}_s^{(1)} \\
+
+\dot{\tilde{x}}^{(1)} & =\tilde{f}^{(1)}(\tilde{x}^{(1)},\tilde{u}^{(1)})+\tilde{\omega}_{x}^{(1)} \\
+
+\vdots \\
+
+\tilde{u}^{(i-1)} & =\tilde{g}^{(i)}(\tilde{x}^{(i)},\tilde{u}^{(i)})+\tilde{\omega}_u^{(i)} \\
+
+\dot{\tilde{x}}^{(i)} & =\tilde{f}^{(i)}(\tilde{x}^{(i)},\tilde{u}^{(i)})+\tilde{\omega}_x^{(i)} \\
+
+\vdots
+
+\end{align}
+
+The ensuing generalized gradient descent on free energy can then be expressed compactly in terms of prediction errors, where (omitting high order terms):
+
+\begin{align}
+
+\dot{\tilde{\mu}}_u^{(i)} & =D\tilde{\mu}^{(u,i)}-\partial_u \tilde{\varepsilon}^{(i)}\cdot \Pi^{(i)}\tilde{\varepsilon}^{(i)}
+
+-\Pi^{(i+1)}\tilde{\varepsilon}_u^{(i+1)} \\
+
+\dot{\tilde{\mu}}_x^{(i)} & =D\tilde{\mu}^{(x,i)}-\partial_x \tilde{\varepsilon}^{(i)}\cdot \Pi^{(i)}\tilde{\varepsilon}^{(i)} \\
+
+\\
+
+\tilde{\varepsilon}_u^{(i)} & =\tilde{\mu}_u^{(i-1)} -\tilde{g}^{(i)} \\
+
+\tilde{\varepsilon}_x^{(i)} & =D\tilde{\mu}_x^{(i)} -\tilde{f}^{(i)}
+
+\end{align}
+
+Here, \Pi^{(i)} is the precision of random fluctuations at the i-th level. This is known as generalized predictive coding , with linear predictive coding as a special case.
+
+Applications
+
+Generalized filtering has been primarily applied to biological timeseries—in particular functional magnetic resonance imaging and electrophysiological data. This is usually in the context of dynamic causal modelling to make inferences about the underlying architectures of (neuronal) systems generating data. It is also used to simulate inference in terms of generalized (hierarchical) predictive coding in the brain.
+
+See also
+
+Dynamic Bayesian network
+
+Kalman filter
+
+Linear predictive coding
+
+Optimal control
+
+Particle filter
+
+Recursive Bayesian estimation
+
+System identification
+
+Variational Bayesian methods
+
+References
+
+External links
+
+software demonstrations and applications are available as academic freeware (as Matlab code) in the DEM toolbox of SPM
+
+papers collection of technical and application papers
+
+Category:Bayesian estimation
+
+Category:Systems theory
+
+Category:Control theory
+
+Category:Nonlinear filters
+
+Category:Linear filters
+
+Category:Signal estimation
+
+Category:Stochastic differential equations
+
+Category:Markov models

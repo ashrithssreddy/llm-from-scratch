@@ -1,0 +1,53 @@
+{{missing information|general information, usage in the field (mention cinepak?), optimality conditions, choice of s, model instead of training data, ELBG|date=December 2023}}
+
+The Linde–Buzo–Gray algorithm (named after its creators Yoseph Linde, Andrés Buzo and Robert M. Gray, who designed it in 1980) is an iterative vector quantization algorithm to improve a small set of vectors (codebook) to represent a larger set of vectors (training set), such that it will be locally optimal. It combines Lloyd's Algorithm with a splitting technique in which larger codebooks are built from smaller codebooks by splitting each code vector in two. The core idea of the algorithm is that by splitting the codebook such that all code vectors from the previous codebook are present, the new codebook must be as good as the previous one or better.
+
+Description
+
+The Linde–Buzo–Gray algorithm may be implemented as follows:
+
+algorithm linde-buzo-gray is
+
+input: set of training vectors training, codebook to improve old-codebook
+
+output: codebook that is twice the size and better or as good as old-codebook
+
+new-codebook ← {}
+
+for each old-codevector in old-codebook do
+
+insert old-codevector into new-codebook
+
+insert old-codevector +  into new-codebook where  is a small vector
+
+return lloyd(new-codebook, training)
+
+algorithm lloyd is
+
+input: codebook to improve, set of training vectors training
+
+output: improved codebook
+
+do
+
+previous-codebook ← codebook
+
+clusters ← divide training into |codebook| clusters, where each cluster contains all vectors in training who are best represented by the corresponding vector in codebook
+
+for each cluster cluster in clusters do
+
+the corresponding code vector in codebook ← the centroid of all training vectors in cluster
+
+while difference in error representing training between codebook and previous-codebook &gt;
+
+return codebook
+
+References
+
+Category:Cluster analysis algorithms
+
+Category:Machine learning algorithms
+
+Category:Artificial neural networks
+
+Category:Signal processing

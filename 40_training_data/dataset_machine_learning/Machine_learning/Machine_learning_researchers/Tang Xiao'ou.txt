@@ -1,0 +1,127 @@
+{{Infobox scientist
+
+name              = Tang Xiao’ou
+
+native_name       =
+
+birth_name        =
+
+native_name_lang  = zh-cn
+
+image             = Tang Xiao'ou.jpeg
+
+image_size        =
+
+alt               =
+
+caption           = Tang in 2019
+
+birth_date        =
+
+birth_place       = Anshan, Liaoning, China
+
+death_date        =
+
+death_place       =
+
+other_names       = (also spelled as) Xiaoou Tang
+
+citizenship       = People's Republic of China
+
+nationality       =
+
+fields            = Artificial intelligenceBusiness
+
+workplaces        =
+
+alma_mater        =
+
+thesis_title      = Transform texture classification
+
+thesis_url        = https://darchive.mblwhoilibrary.org/server/api/core/bitstreams/ff45a7cf-145a-5185-816a-34bd219e4504/content
+
+thesis_year       = 1996
+
+doctoral_advisor  = William Kenneth Stewart
+
+academic_advisors =
+
+known_for         =
+
+doctoral_students = Kaiming He
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+awards            =
+
+signature         =
+
+signature_alt     =
+
+website           =
+
+footnotes         =
+
+spouse            =
+
+}}
+
+Tang Xiao’ou (; 24 January 1968 – 15 December 2023) was a Chinese businessman and computer scientist. He was the founder and chairman of SenseTime, an AI company. He also served as professor of information engineering, associate dean of engineering, and outstanding fellow of engineering at the Chinese University of Hong Kong.
+
+Tang's research primarily focused on areas such as computer vision, pattern recognition, and video processing. He served as the programme chair in 2009 and the general chair in 2019 for the IEEE International Conference on Computer Vision. His editorial contributions include roles as an Associate Editor for both the IEEE Transactions on Pattern Analysis and Machine Intelligence and the International Journal of Computer Vision.
+
+Biography
+
+Tang was born in Anshan, Liaoning, northeastern China in 1968.
+
+Tang received a Bachelor of Science with a major in computer science from the University of Science and Technology of China in 1990. He received a Master of Science from the University of Rochester in 1991 and a Doctor of Philosophy in ocean engineering from the Massachusetts Institute of Technology in 1996. He worked at MIT and Woods Hole Oceanographic Institution during his doctoral studies. Funders of his research included the Office of Naval Research of the United States Department of the Navy.
+
+After graduating from MIT, Tang taught in the Department of Information Engineering of the Chinese University of Hong Kong. In 2001, he founded the Multimedia Laboratory of the Chinese University of Hong Kong. From 2005 to 2008, he worked at Microsoft Research Asia. He served as Associate Dean of the Chinese University of Hong Kong. Upon SenseTime's IPO in December 2021, Tang was estimated to have a net worth of approximately $3.4&nbsp;billion.
+
+Tang died on 15 December 2023, at the age of 55. SenseTime made the announcement the next day and changed the colour scheme of its website to black-and-white in mourning. The Chinese University of Hong Kong also changed his faculty page to a black-and-white theme.
+
+References
+
+External links
+
+Homepage at the Chinese University of Hong Kong
+
+SenseTime
+
+Category:1968 births
+
+Category:2023 deaths
+
+Category:Academic staff of the Chinese University of Hong Kong
+
+Category:Artificial intelligence researchers
+
+Category:Chinese businesspeople in the computer industry
+
+Category:Chinese computer scientists
+
+Category:Chinese expatriate academics in the United States
+
+Category:Chinese technology company founders
+
+Category:Chinese chief executives in technology
+
+Category:Fellows of the IEEE
+
+Category:Machine learning researchers
+
+Category:Massachusetts Institute of Technology alumni
+
+Category:Microsoft Research people
+
+Category:People from Anshan
+
+Category:University of Rochester alumni
+
+Category:University of Science and Technology of China alumni

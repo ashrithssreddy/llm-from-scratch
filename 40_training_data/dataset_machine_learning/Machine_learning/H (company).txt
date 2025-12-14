@@ -1,0 +1,41 @@
+{{Infobox company
+
+name = H Company
+
+logo = H_Company_logo.png
+
+industry = Artificial intelligence
+
+founded = 2023
+
+founders =
+
+key_people =
+
+num_employees = 80 (2025)
+
+hq_location_city = Paris
+
+hq_location_country = France
+
+homepage =
+
+}}
+
+H Company, also known simply as H, is a French artificial intelligence startup which develops "action-oriented" artificial intelligence agents for enterprise automation and productivity. In May 2024, H Company closed a record-setting $220 million seed round, at the time the largest AI raise in Europe.
+
+External links
+
+Category:Artificial intelligence companies
+
+Category:French companies established in 2023
+
+Category:Companies based in Paris
+
+Category:Technology companies of France
+
+Category:2023 establishments in France
+
+Category:Machine learning
+
+Category:Generative artificial intelligence

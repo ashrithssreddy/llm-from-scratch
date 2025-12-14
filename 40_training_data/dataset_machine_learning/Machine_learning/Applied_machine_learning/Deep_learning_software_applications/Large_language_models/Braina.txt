@@ -1,0 +1,69 @@
+{{infobox software
+
+name                   = Braina
+
+logo                   = Braina-logo.png
+
+developer              = Brainasoft
+
+operating system       = Windows
+
+language               = English
+
+genre =
+
+license                = Proprietary
+
+website                =
+
+}}
+
+Braina is a virtual assistant and speech-to-text dictation Braina uses natural language interface, speech synthesis, and speech recognition technology to interact with its users and allows them to use natural language sentences to perform various tasks on a computer. The name Braina is a short form of "Brain Artificial".
+
+Braina is marketed as a Microsoft Copilot alternative. It provides a voice interface for several locally run and cloud large language models, including the latest LLMs from providers such as OpenAI, Anthropic, Google, xAI, Meta, Mistral, etc; while improving data privacy. It has an "Artificial Brain"
+
+Features
+
+Braina provides is able to carry out various tasks on a computer, including automation. Braina can take commands inputted through typing or through dictation to store reminders, find information online, perform mathematical operations, open files, generate images from text, transcribe speech, and control open windows or programs. Braina adapts to user behavior over time with a goal of better anticipating needs.
+
+Speech-to-text dictation
+
+Braina Pro can type spoken words into an active window at the location of a user's cursor. other human voices, or external devices. Braina can also be taught to dictate uncommon legal, medical, and scientific terms. Users can also teach Braina uncommon names and vocabulary.
+
+Transcription
+
+Braina can transcribe media file formats such as WAV, MP3, and MP4 into text.
+
+Notes and reminders
+
+Braina can store and recall notes and reminders. These can include scheduled or unscheduled commands, checklist items, alarms, chat conversations, memos, website snippets, bookmarks, contacts.
+
+Image generation
+
+Brainasoft states that Braina can generate images from text using text-to-image models including Stable Diffusion and DALL-E. Braina is also available for the iOS and Android operating systems.
+
+The mobile version of Braina has a feature allowing remote management of a Windows PC connected via Wi-Fi.
+
+Distributions
+
+Braina is distributed in multiple modes. These include Braina Lite, a freeware version with limitations, and premium versions Braina Pro,
+
+Some additional features in the Pro version include dictation, custom vocabulary,
+
+References
+
+Category:Chatbots
+
+Category:Natural language processing software
+
+Category:OpenAI
+
+Category:Speech recognition software
+
+Category:Large language models
+
+Category:Speech synthesis
+
+Category:Windows software
+
+Category:Virtual assistants

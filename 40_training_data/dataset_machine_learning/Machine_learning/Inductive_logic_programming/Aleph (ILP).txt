@@ -1,0 +1,57 @@
+{{Infobox software
+
+title = Aleph
+
+author = Ashwin Srinivasan
+
+developer = Ashwin Srinivasan, Fabrizio Riguzzi
+
+latest release version = 5
+
+latest release date =
+
+latest preview date =
+
+repo = https://github.com/friguzzi/aleph
+
+programming language = Prolog
+
+genre = Inductive logic programming system
+
+website =
+
+}}
+
+Aleph (A Learning Engine for Proposing Hypotheses) is an inductive logic programming system introduced by Ashwin Srinivasan in 2001.  it is still one of the most widely used inductive logic programming systems.
+
+It is based on the earlier system Progol.
+
+Learning task
+
+The input to Aleph is background knowledge, specified as a logic program, a language bias in the form of mode declarations, as well as positive and negative examples specified as ground facts.
+
+As output it returns a logic program which, together with the background knowledge, entails all of the positive examples and none of the negative examples.
+
+Basic algorithm
+
+Starting with an empty hypothesis, Aleph proceeds as follows:
+
+It chooses a positive example to generalise; if none are left, it aborts and outputs the current hypothesis.
+
+Then it constructs the bottom clause, that is, the most specific clause that is allowed by the mode declarations and covers the example.
+
+It then searches for a generalisation of the bottom clause that scores better on the chosen metric.
+
+It then adds the new clause to the hypothesis program and removes all examples that are covered by the new clause.
+
+Search algorithm
+
+Aleph searches for clauses in a top-down manner, using the bottom clause constructed in the preceding step to bound the search from below. It searches the refinement graph in a breadth-first manner, with tunable parameters to bound the maximal clause size and proof depth. It scores each clause using one of 13 different evaluation metrics, as chosen in advance by the user.
+
+References
+
+{{Cite journal |last1=Cropper |first1=Andrew |last2=Dumančić |first2=Sebastijan |date=2022-06-15 |title=Inductive Logic Programming At 30: A New Introduction |journal=Journal of Artificial Intelligence Research |volume=74 |pages=766850 |doi=10.1613/jair.1.13507 |issn=1076-9757|doi-access=free |arxiv=2008.07912 }}
+
+Category:Inductive logic programming
+
+Category:Free software programmed in Prolog

@@ -1,0 +1,45 @@
+In the mathematical study of stochastic processes, a Harris chain is a Markov chain where the chain returns to a particular part of the state space an unbounded number of times. Harris chains are regenerative processes and are named after Theodore Harris. The theory of Harris chains and Harris recurrence is useful for treating Markov chains on general (possibly uncountably infinite) state spaces.
+
+Definition
+
+Let \{X_n\} be a Markov chain on a general state space \Omega with stochastic kernel K. The kernel represents a generalized one-step transition probability law, so that P(X_{n+1}\in C\mid X_n=x)=K(x,C) for all states x in \Omega and all measurable sets C\subseteq \Omega.  The chain \{X_n\} is a Harris chain if there exists A\subseteq\Omega,\varepsilon>0, and probability measure \rho with \rho(\Omega)=1 such that
+
+If \tau_A:=\inf \{n\geq 0:X_n\in A\}, then P(\tau_A for all x\in\Omega.
+
+If x\in A and C\subseteq\Omega (where C is measurable), then K(x, C)\geq \varepsilon\rho(C).
+
+The first part of the definition ensures that the chain returns to some state within A with probability 1, regardless of where it starts. It follows that it visits state A infinitely often (with probability 1). The second part implies that once the Markov chain is in state A, its next-state can be generated with the help of an independent Bernoulli coin flip. To see this, first note that the parameter \varepsilon must be between 0 and 1 (this can be shown by applying the second part of the definition to the set C=\Omega). Now let x be a point in A and suppose X_n=x.  To choose the next state X_{n+1}, independently flip a biased coin with success probability \varepsilon. If the coin flip is successful, choose the next state X_{n+1}\in\Omega according to the probability measure \rho. Else (and if \varepsilon), choose the next state X_{n+1} according to the measure P(X_{n+1}\in C\mid X_n=x)=(K(x,C)-\varepsilon\rho(C))/(1-\varepsilon) (defined for all measurable subsets C\subseteq \Omega).
+
+Two random processes \{X_n\} and \{Y_n\} that have the same probability law and are Harris chains according to the above definition can be coupled as follows: Suppose that X_n=x and Y_n=y, where x and y are points in A. Using the same coin flip to decide the next-state of both processes, it follows that the next states are the same with probability at least \varepsilon.
+
+Examples
+
+Example 1: Countable state space
+
+Let Ω be a countable state space. The kernel K is defined by the one-step conditional transition probabilities P[X'n+1 = y | X'n&nbsp;=&nbsp;x] for x,y ∈ Ω.  The measure ρ is a probability mass function on the states, so that ρ(x)&nbsp;≥&nbsp;0 for all x ∈ Ω, and the sum of the ρ(x) probabilities is equal to one.  Suppose the above definition is satisfied for
+
+a given set A ⊆ Ω and a given parameter ε > 0.   Then P[X'n+1 = c | X'n = x] ≥ ερ(c) for all x ∈ A and all c ∈ Ω.
+
+Example 2: Chains with continuous densities
+
+Let {X'n},&nbsp;X'n ∈ Rd be a Markov chain with a kernel that is absolutely continuous with respect to Lebesgue measure:
+
+K(x, dy) = K(x, y)&nbsp;dy
+
+such that K(x, y) is a continuous function.
+
+Pick (x0,&nbsp;y0) such that K(x0,&nbsp;y0 )&nbsp;>&nbsp;0, and let A and Ω be open sets containing x0 and y0 respectively that are sufficiently small so that K(x,&nbsp;y) ≥ ε > 0 on A&nbsp;×&nbsp; Ω. Letting ρ(C) = |Ω&nbsp;∩&nbsp;C|/|Ω| where |Ω| is the Lebesgue measure of Ω, we have that (2) in the above definition holds.  If (1) holds, then {Xn} is a Harris chain.
+
+Reducibility and periodicity
+
+In the following R:=\inf\{n\ge1:X_n\in A\}; i.e. R is the first time after time 0 that the process enters region A. Let \mu denote the initial distribution of the Markov chain, i.e. X_0\sim\mu.
+
+Definition:   If for all \mu, P [ R, then the Harris chain is called recurrent.
+
+Definition:  A recurrent Harris chain X_n is aperiodic if \exists N, such that \forall n\ge N, \forall \mu, P[X_n\in A | X_0 \in A]>0
+
+Theorem: Let X_n be an aperiodic recurrent Harris chain with stationary distribution \pi. If  P [ R then as n\rightarrow\infty, ||\mathcal{L}(X_n|X_0)-\pi||_{TV}\rightarrow 0 where ||\cdot||_{TV} denotes the total variation for signed measures defined on the same measurable space.
+
+References
+
+Category:Markov processes

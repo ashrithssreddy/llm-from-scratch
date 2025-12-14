@@ -1,0 +1,481 @@
+{{Other uses|AI for Good (disambiguation)AI for Good}}
+
+{{Multiple issues|
+
+}}
+
+{{Infobox recurring event
+
+name             = AI for Good
+
+native_name      =
+
+native_name_lang =
+
+logo             = AI for Good logo 2024 vertical.png
+
+logo_alt         =
+
+logo_caption     = Logo
+
+logo_size        =
+
+image            =
+
+image_size       =
+
+alt              =
+
+caption          =
+
+status           =
+
+genre            =
+
+begins           = 8 July 2025
+
+ends             = 11 July 2025
+
+frequency        =
+
+venue            = Palexpo
+
+location         = Geneva
+
+coordinates      =
+
+country          = Switzerland
+
+years_active     = 7
+
+first            =
+
+founder_name     =
+
+last             = 2024
+
+prev             =
+
+next             =
+
+participants     =
+
+attendance       = 20,000 (2022)
+
+capacity         =
+
+area             =
+
+budget           =
+
+activity         =
+
+leader_name      =
+
+patron           =
+
+organised        = ITU-T
+
+filing           =
+
+people           =
+
+member           =
+
+sponsors         = Swiss Confederation, Deloitte, Technology Innovation Institute, DLA Piper, King Abdulaziz Center for World Culture, Microsoft, China Mobile, Alibaba Group, Amazon Web Services, China Telecom, Ministry of Internal Affairs and Communications,Ministry of Science and ICT, ZTE, China Unicom, Salesforce, PwC, KUKA, CEIMIA, Huawei, FSAB Consulting, Cisco, Samsung, Gen Digital, Ernst & Young
+
+website          =
+
+current          =
+
+footnotes        =
+
+}}
+
+AI for Good was established in 2017 by the International Telecommunication Union (ITU), the United Nations (UN) agency for digital technologies. The platform is co-convened with the Government of Switzerland and in partnership UN agencies. Its founding mission is to identify innovative applications of artificial intelligence (AI) to solve global challenges.
+
+AI for Good arose from collaboration between ITU and IBM Watson AI XPRIZE. The first AI for Good Global Summit 2017 was held in Geneva, Switzerland and is since held annually.
+
+Activity
+
+With the impact of the Covid-19 pandemic and global shutdowns, AI for Good moved online in March 2020. The platform has 37,000 contributors from more than 180 countries. Since 2023 AI for Good hosts a physical Global Summit in Geneva again annually.
+
+AI for Good has supported Global Initiatives on AI and Data Commons, AI for Health (in partnership with WHO), on Resilience to Natural Hazards through AI Solutions (former ITU/WMO/UNEP Focus Group on Artificial Intelligence for Natural Disaster Management (FG-AI4NDM)
+
+), AI and Multimedia authenticity standards collaboration (under the World Standards Cooperation), AI for Road Safety (in partnership with UNECE) and pre-standardization focus groups on Artificial Intelligence Native for Telecommunication Networks (FG-AINN), AI and Internet of Things (IoT) for Digital Agriculture (in partnership with FAO), concluded focus groups on AI and Environmental Efficiency, Machine Learning and 5G.
+
+AI for Good is guided by Resolution 214 of the ITU Plenipotentiary Conference, and amplified by Resolution A/78/L.49 of the UN General Assembly. The adoption of Resolution COM4/AI at WTSA-24 describes ITU's mandate and AI for Good's role in AI development.
+
+Global summit 2017
+
+speaking at AI for Good 2017]]
+
+The first AI for Good Global summit took place from 7 to 9 June 2017. Speakers at the event included:
+
+Pedro Domingos
+
+Fei-Fei Li
+
+Gary Marcus
+
+Stuart J. Russell
+
+Jürgen Schmidhuber
+
+António Guterres
+
+Rupert Stadler
+
+Manuela M. Veloso
+
+Peter Norvig
+
+Christopher Fabian
+
+Peter Lee
+
+One of the outcomes of the 2017 Global Summit was the creation of an ITU-T Focus Group on Machine Learning for 5G.
+
+Global summit 2018
+
+Director-General Tedros Adhanom (right) and ITU Secretary-General Houlin Zhao (center) ]]
+
+The second AI for Good Global Summit took place from 15 to 17 May 2018 at the ITU headquarters in Geneva, Switzerland and generated 35 AI project proposals. Speakers included:
+
+Roger Penrose
+
+Samantha Cristoforetti
+
+António Guterres
+
+Michael Møller
+
+Wendell Wallach
+
+Aimee Van Wynsberghe
+
+Tedros Adhanom
+
+Mukhisa Kituyi
+
+Bill Peduto
+
+Stuart J. Russell
+
+Thomas Wiegand
+
+Timnit Gebru
+
+Huw Price
+
+Stephen Kelly
+
+H.E. Ahmed Al Theneyan
+
+U.N. Envoy on Youth Jayathma Wickramanayake
+
+Ingmar Weber
+
+Lui Yang
+
+Global summit 2019
+
+The third AI for Good Global Summit took place from 28 May to 31 May, and gave rise to the ITU Focus Group on Artificial Intelligence for Autonomous and Assisted Driving with several Day 0 workshops and VIP events having taken place on May 27. Some of the speakers included:
+
+Ray Kurzweil
+
+Cedric Villani
+
+Yoshua Bengio
+
+Anousheh Ansari
+
+Yves Daccord
+
+Vladimir Kramnik
+
+Jim Hagemann Snabe
+
+Klaus-Robert Müller
+
+Jean-Philippe Courtois
+
+Amir Ansari
+
+Francis Gury
+
+Petteri Taalas
+
+Houlin Zhao
+
+Soumya Swaminathan
+
+Eileen Donahoe
+
+Vicki Hanson
+
+Francesca Rossi
+
+Ingmar Weber
+
+Jean-Philippe Courtois
+
+2020, 2022
+
+In 2020 the Global Summit was an online-only event. In 2022, the summit moved to the "Neural Network" community platform. Speakers included:
+
+Muhammad Yunus
+
+Shwetak Patel
+
+Yoshua Bengio
+
+Peter Heine Nielsen
+
+Reeps One
+
+Anousheh Ansari
+
+Riane Eisler
+
+Kai-Fu Lee
+
+Regina Barzilay
+
+Thomas Wiegand
+
+Stephen Ibaraki
+
+Nuria Oliver
+
+Barbara Pernici
+
+Taryn Southern
+
+Thomas G. Dietterich
+
+Simon Pierro
+
+Gabriele Kotsis
+
+Emmanuel Faber
+
+Mikko Hyppönen
+
+Francesca Rossi
+
+Davar Ardalan
+
+Iker Casillas
+
+Missy Cummings
+
+Jaan Tallinn
+
+Anja Kaspersen
+
+Caroline Criado-Perez
+
+Stuart J. Russell
+
+Chaesub Lee
+
+Peter Diamandis
+
+Simao Campos
+
+Global Summit 2023
+
+The 2023 AI for Good Global Summit took place on 6 – 7 July in Geneva. The event brought together participants, including government officials, policymakers, industry leaders, academics, scientists, technology innovators, civil society members, and representatives from the UN community. The summit received some publicity due to the large gathering of humanoid robots that occurred, including Ai-Da, Nadine Social Robot, Geminoid, and Sophia.
+
+António Guterres
+
+Doreen Bogdan-Martin
+
+Tomas Lamanauskas
+
+Seizo Onoe
+
+Tedros Adhanom Ghebreyesus
+
+Amandeep Singh Gill
+
+Lila Ibrahim
+
+Werner Vogels
+
+Yuval Noah Harari
+
+Stuart Russell
+
+Orly Lobel
+
+Ray Kurzweil
+
+Maja Matarić
+
+Wendel Wallach
+
+Alessandra Sala
+
+Gary Marcus
+
+Nicholas Thompson
+
+Bernard Maissen
+
+Babak Hodjat
+
+Ebtesam Almazrouei
+
+Moriba Jah
+
+Baroness Joanna Shields
+
+Juan Lavista Ferres
+
+H.E. Mr. Jürg Lauber
+
+Najat Mokhtar
+
+Hans Keirstead
+
+LJ Rich
+
+Anne Neuberger
+
+Global summit 2024
+
+The 2024 AI for Good Global Summit was held in Geneva on May 30 – 31. The event was attended by leaders from governments, industries, and academia, alongside 10,000 online participants. Highlights included the launch of a unified framework for AI standards by ITU, the International Organization for Standardization (ISO), and the International Electrotechnical Commission (IEC), addressing issues like AI watermarking and deepfake detection, and over 400 UN-led AI projects. The Summit also introduced the AI for Good Impact Initiative, aiming to scale AI solutions globally and foster regional engagement through competitions, accelerators, and policy guidance. Demonstrations showcased innovations, including generative AI and mind-controlled robotic prosthetics.
+
+António Guterres
+
+Doreen Bogdan-Martin
+
+Tomas Lamanauskas
+
+Seizo Onoe
+
+Bilel Jamoussi
+
+Geoffrey Hinton
+
+Sam Altman
+
+HRH Princess Beatrice
+
+Stuart Russell
+
+Tristan Harris
+
+Tshilidzi Marwala
+
+Azeem Azhar
+
+Daren Tang
+
+Virginia Dignum
+
+Nicholas Thompson
+
+Alexandre Fasel
+
+Chieko Asakawa
+
+Gita Gopinath
+
+Jim Zemlin
+
+Ebtesam Almazrouei
+
+Anja Kaspersen
+
+Baroness Joanna Shields
+
+Alessandra Sala
+
+Sage Lenier
+
+Pelonomi Moiloa
+
+Anna Koivuniemi
+
+LJ Rich
+
+Le Lu
+
+Global summit 2025
+
+protestors in 2025]]
+
+The 2025 AI for Good Global Summit was held in Geneva on July 8 – 11. It showcased progress on areas including networking, multimedia, energy efficiency, healthcare, food security, and road safety. Just prior to her keynote talk, speaker Abeba Birhane was asked modify her presentation to change mentions of Israel, Palestine, genocide and negative comments regarding technology companies. Birhane subsequently made the original presentation available and highlighted that 45% the centre stage speakers at the conference were from industry with academia and civil-society speakers sharing less than 10%.
+
+Doreen Bogdan-Martin
+
+Guy Parmelin
+
+Werner Vogels
+
+Abeba Birhane
+
+Meredith Whittaker
+
+Kenneth Cukier
+
+Qu Dongyu
+
+will.i.am
+
+Nicholas Thompson
+
+Marc Benioff
+
+Cherie Blair
+
+Bernhard Schölkopf
+
+Yann LeCun
+
+Michele Woods
+
+Sasha Luccioni
+
+Kate Kallot
+
+Anne Bouverot
+
+Outcomes
+
+Machine Learning 5G
+
+The ITU-T Focus Group on Machine Learning for 5G Networks (FG-ML5G) was created following discussions at the 2017 AI for Good Global Summit. The FG-ML5G is produced several technology standards in this domain, including Y.3172, Y.3173, Y.3176, which were adopted by ITU-T Study Group 13. The FG-ML5G created the impetus for a new ITU-T Focus Group on Autonomous Networks, which is responsible for i.a. Y.3181.
+
+AI for Health
+
+The 2018 Global Summit led to the creation of the ITU-WHO Focus Group on Artificial Intelligence for Health with the World Health Organization, which created the AI for Health Framework.
+
+ITU Journal "ICT Discoveries"
+
+The ITU relaunched its Journal ICT Discoveries during the 2018 Global Summit, with the first edition being a special on Artificial Intelligence.
+
+Criticism
+
+Payal Arora criticized AI for Good for its paternalism towards the Global South.
+
+References
+
+External links
+
+Category:Recurring events established in 2017
+
+Category:Recurring events established in 2020
+
+Category:Technology conferences
+
+Category:Business conferences
+
+Category:Artificial intelligence conferences
+
+Category:United Nations conferences
+
+Category:Switzerland and the United Nations

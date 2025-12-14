@@ -1,0 +1,185 @@
+Quadratic unconstrained binary optimization (QUBO), also known as unconstrained binary quadratic programming (UBQP), is a combinatorial optimization problem with a wide range of applications from finance and economics to machine learning. QUBO is an NP hard problem, and for many classical problems from theoretical computer science, like maximum cut, graph coloring and the partition problem, embeddings into QUBO have been formulated.
+
+Embeddings for machine learning models include support-vector machines, clustering and probabilistic graphical models.
+
+Moreover, due to its close connection to Ising models, QUBO constitutes a central problem class for adiabatic quantum computation, where it is solved through a physical process called quantum annealing.
+
+Definition
+
+Let \mathbb{B}=\lbrace 0,1\rbrace the set of binary digits (or bits), then \mathbb{B}^n is the set of binary vectors of fixed length n\in\mathbb{N}.
+
+Given a symmetric or upper triangular matrix \boldsymbol Q\in\mathbb{R}^{n\times n}, whose entries Q_{ij} define a weight for each pair of indices i,j\in\lbrace 1,\dots,n\rbrace, we can define the function f_{\boldsymbol Q}: \mathbb{B}^n\rightarrow\mathbb{R} that assigns a value to each binary vector \boldsymbol x through
+
+f_{\boldsymbol Q}(\boldsymbol x) = \boldsymbol{x}^\intercal \boldsymbol{Qx} = \sum_{i=1}^n \sum_{j=1}^n Q_{ij} x_i x_j.
+
+Alternatively, the linear and quadratic parts can be separated as
+
+f_{\boldsymbol Q',\boldsymbol q}(\boldsymbol x)=\boldsymbol x^\intercal\boldsymbol Q'\boldsymbol x+\boldsymbol q^\intercal\boldsymbol x,
+
+where \boldsymbol Q'\in\mathbb{R}^{n\times n} and \boldsymbol q\in\mathbb{R}^n.
+
+This is equivalent to the previous definition through \boldsymbol Q=\boldsymbol Q'+\operatorname{diag}[\boldsymbol q] using the diag operator, exploiting that x=x\cdot x for all binary values x.
+
+Intuitively, the weight Q_{ij} is added if both x_i=1 and x_j=1.
+
+The QUBO problem consists of finding a binary vector \boldsymbol{x}^* that minimizes f_{\boldsymbol Q}, i.e., \forall\boldsymbol x\in\mathbb{B}^n: ~f_{\boldsymbol Q}(\boldsymbol{x}^*)\leq f_{\boldsymbol Q}(\boldsymbol x).
+
+In general, \boldsymbol{x}^* is not unique, meaning there may be a set of minimizing vectors with equal value w.r.t. f_{\boldsymbol Q}.
+
+The complexity of QUBO arises from the number of candidate binary vectors to be evaluated, as \left|\mathbb{B}^n\right|=2^n grows exponentially in n.
+
+Sometimes, QUBO is defined as the problem of maximizing f_{\boldsymbol Q}, which is equivalent to minimizing f_{-\boldsymbol Q}=-f_{\boldsymbol Q}.
+
+Properties
+
+QUBO is scale invariant for positive factors \alpha>0, which leave the optimum {\boldsymbol x}^* unchanged:
+
+f_{\alpha\boldsymbol Q}(\boldsymbol x) = \boldsymbol{x}^\intercal(\alpha\boldsymbol{Q})\boldsymbol x = \alpha(\boldsymbol{x}^\intercal\boldsymbol{Qx})=\alpha f_{\boldsymbol Q}(\boldsymbol x).
+
+In its general form, QUBO is NP-hard and cannot be solved efficiently by any polynomial-time algorithm.
+
+QUBO can be solved using integer linear programming solvers like CPLEX or Gurobi Optimizer.
+
+This is possible since QUBO can be reformulated as a linear constrained binary optimization problem.
+
+To achieve this, substitute the product x_ix_j by an additional binary variable z_{ij}\in\mathbb{B} and add the constraints x_i\ge z_{ij}, x_j\ge z_{ij} and x_i+x_j-1\le z_{ij}.
+
+Note that z_{ij} can also be relaxed to continuous variables within the bounds zero and one.
+
+Applications
+
+QUBO is a structurally simple, yet computationally hard optimization problem.
+
+It can be used to encode a wide range of optimization problems from various scientific areas.
+
+Maximum Cut
+
+Given a graph G=(V,E) with vertex set V=\lbrace 1,\dots,n\rbrace and edges E\subseteq V\times V, the maximum cut (max-cut) problem consists of finding two subsets S,T\subseteq V with T=V\setminus S, such that the number of edges between S and T is maximized.
+
+The more general weighted max-cut problem assumes edge weights w_{ij}\geq 0~\forall i,j\in V, with (i,j)\notin E\Rightarrow w_{ij}=0, and asks for a partition S,T\subseteq V that maximizes the sum of edge weights between S and T, i.e.,
+
+\max_{S\subseteq V}\sum_{i\in S, j\notin S}w_{ij}.
+
+By setting w_{ij}=1 for all (i,j)\in E this becomes equivalent to the original max-cut problem above, which is why we focus on this more general form in the following.
+
+For every vertex in i\in V we introduce a binary variable x_i with the interpretation x_i=0 if i\in S and x_i=1 if i\in T.
+
+As T=V\setminus S, every i is in exactly one set, meaning there is a 1:1 correspondence between binary vectors \boldsymbol x\in\mathbb{B}^n and partitions of V into two subsets.
+
+We observe that, for any i,j\in V, the expression x_i(1-x_j)+(1-x_i)x_j evaluates to 1 if and only if i and j are in different subsets, equivalent to logical XOR.
+
+Let \boldsymbol W\in\mathbb{R}^{n\times n}_+ with W_{ij}=w_{ij}~\forall i,j\in V.
+
+By extending above expression to matrix-vector form we find that
+
+\boldsymbol x^\intercal\boldsymbol W(\boldsymbol 1-\boldsymbol x)+(\boldsymbol 1-\boldsymbol x)^\intercal\boldsymbol{Wx}=-2\boldsymbol x^\intercal\boldsymbol{Wx}+(\boldsymbol{W1}+\boldsymbol{W}^\intercal\boldsymbol 1)^\intercal\boldsymbol x
+
+is the sum of weights of all edges between S and T, where \boldsymbol 1=(1,1,\dots,1)^\intercal\in\mathbb{R}^n.
+
+As this is a quadratic function over \boldsymbol x, it is a QUBO problem whose parameter matrix we can read from above expression as
+
+\boldsymbol Q = 2\boldsymbol W-\operatorname{diag}[\boldsymbol{W1}+\boldsymbol{W}^\intercal\boldsymbol 1],
+
+after flipping the sign to make it a minimization problem.
+
+Cluster Analysis
+
+Next, we consider the problem of cluster analysis, where we are given a set of N points in d-dimensional space and want to assign each point to one of two classes or clusters, such that points in the same cluster are similar to each other.
+
+For this example we set N=20 and d=2.
+
+The data is given as a matrix \boldsymbol X\in\mathbb{R}^{20\times 2}, where each row contains two cartesian coordinates.
+
+For two clusters, we can assign a binary variable x_i\in\mathbb{B} to the point corresponding to the i-th row in \boldsymbol X, indicating whether it belongs to the first (x_i=0) or second cluster (x_i=1).
+
+Consequently, we have 20 binary variables, which form a binary vector \boldsymbol x\in\mathbb{B}^{20} that corresponds to a cluster assignment of all points (see figure).
+
+One way to derive a  clustering is to consider the pairwise distances between points.
+
+Given a cluster assignment \boldsymbol x, the expression x_ix_j+(1-x_i)(1-x_j) evaluates to 1 if points i and j are in the same cluster.
+
+Similarly, x_i(1-x_j)+(1-x_i)x_j=1 indicates that they are in different clusters.
+
+Let d_{ij}>0 denote the Euclidean distance between the points i and j, i.e.,
+
+d_{ij}=\sqrt{\boldsymbol X_i^\intercal\boldsymbol X_j},
+
+where \boldsymbol X_i is the i-th row of \boldsymbol X.
+
+In order to define a cost function to minimize, when points i and j are in the same cluster we add their positive distance d_{ij}, and subtract it when they are in different clusters.
+
+This way, an optimal solution tends to place points which are far apart into different clusters, and points that are close into the same cluster.
+
+Let \boldsymbol D\in\mathbb{R}^{N\times N} with D_{ij}=d_{ij}/2 for all i,j\in\lbrace 1,\dots,n\rbrace.
+
+Given an assignment \boldsymbol x\in\mathbb{B}^N, such a cost function is given by
+
+\begin{align}
+
+f(\boldsymbol x) &=\boldsymbol x^\intercal\boldsymbol{Dx}-\boldsymbol{x}^\intercal \boldsymbol D(\boldsymbol 1-\boldsymbol x)-(\boldsymbol 1-\boldsymbol x)^\intercal\boldsymbol{Dx}+(\boldsymbol 1-\boldsymbol x)^\intercal\boldsymbol D(\boldsymbol 1-\boldsymbol x)\\
+
+&= 4\boldsymbol x^\intercal\boldsymbol D\boldsymbol x-4\boldsymbol{1}^\intercal\boldsymbol D\boldsymbol x+\boldsymbol 1^\intercal\boldsymbol{D1},\end{align}
+
+where \boldsymbol 1=(1,1,\dots,1)^\intercal\in\mathbb{R}^N.
+
+From the second line we can see that this expression can be re-arranged to a QUBO problem by defining
+
+\boldsymbol Q=4\boldsymbol D-4\operatorname{diag}[\boldsymbol{D1}]
+
+and ignoring the constant term \boldsymbol 1^\intercal\boldsymbol{D1}.
+
+Using these parameters, a binary vector minimizing this QUBO instance \boldsymbol Q will correspond to an optimal cluster assignment w.r.t. above cost function.
+
+Connection to Ising models
+
+QUBO is very closely related and computationally equivalent to the Ising model, whose Hamiltonian function is defined as
+
+H(\boldsymbol\sigma) =\boldsymbol\sigma^\intercal \boldsymbol J\boldsymbol\sigma+\boldsymbol h^\intercal\boldsymbol\sigma =\sum_{i,j} J_{ij} \sigma_i \sigma_j +\sum_j h_j \sigma_j
+
+with real-valued parameters h_j, J_{ij} for all i,j.
+
+The spin variables \sigma_j are binary with values from \lbrace -1,+1\rbrace instead of \mathbb{B}.
+
+Note that this formulation is simplified, since, in a physics context, \sigma_i are typically Pauli operators, which are complex-valued matrices of size 2^n\times 2^n, whereas here we treat them as binary variables.
+
+Many formulations of the Ising model Hamiltonian further assume that the variables are arranged in a lattice, where only neighboring pairs of variables \langle i~j\rangle can have non-zero coefficients; here, we simply assume that J_{ij}=0 if i and j are not neighbors.
+
+Applying the identity \sigma = 1-2x yields an equivalent QUBO problem
+
+\begin{align}
+
+&\boldsymbol\sigma^\intercal \boldsymbol J\boldsymbol\sigma+\boldsymbol h^\intercal\boldsymbol\sigma \\
+
+&= (\boldsymbol 1-2\boldsymbol x)^\intercal\boldsymbol J(\boldsymbol 1-2\boldsymbol x)+\boldsymbol h^\intercal(\boldsymbol 1-2\boldsymbol x) \\
+
+&= 4\boldsymbol x^\intercal\boldsymbol J\boldsymbol x-4\boldsymbol 1^\intercal\boldsymbol{Jx}+\boldsymbol 1^\intercal\boldsymbol{J1}-2\boldsymbol h^\intercal\boldsymbol x+\boldsymbol h^\intercal\boldsymbol 1 \\
+
+&= \boldsymbol x^\intercal(4\boldsymbol J)\boldsymbol x-(4\boldsymbol J^\intercal\boldsymbol 1+2\boldsymbol h)^\intercal\boldsymbol x+\underbrace{\boldsymbol 1^\intercal\boldsymbol{J1}+\boldsymbol h^\intercal\boldsymbol 1}_{\text{const.}},
+
+\end{align}
+
+whose weight matrix \boldsymbol Q is given by
+
+\boldsymbol Q=4\boldsymbol J-\operatorname{diag}[4\boldsymbol J^\intercal\boldsymbol 1+2\boldsymbol h],
+
+again ignoring the constant term, which does not affect the minization.
+
+Using the identity x=(1-\sigma)/2, a QUBO problem with matrix \boldsymbol Q can be converted to an equivalent Ising model using the same technique, yielding
+
+\begin{align}
+
+\boldsymbol J &= \boldsymbol Q/4, &\boldsymbol h &= -(\boldsymbol{Q1}+\boldsymbol Q^\intercal\boldsymbol 1)/4,
+
+\end{align}
+
+and a constant offset of \boldsymbol 1^\intercal\boldsymbol{Q1}/4.
+
+References
+
+External links
+
+QUBO Benchmark (Benchmark of software packages for the exact solution of QUBOs; part of the well-known Mittelmann benchmark collection)
+
+Hiroshima University and NTT DATA Group Corporation : "QUBO++ with ABS2 GPU QUBO Solver" # Software.
+
+Category:Machine learning algorithms

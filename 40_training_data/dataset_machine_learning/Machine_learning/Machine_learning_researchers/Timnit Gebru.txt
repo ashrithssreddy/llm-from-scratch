@@ -1,0 +1,153 @@
+{{Infobox scientist
+
+name              = Timnit Gebru
+
+birth_name        = Timnit W. Gebru
+
+image             = Timnit Gebru crop.jpg
+
+caption           = Timnit Gebru in 2018
+
+alt               = Gebru in 2018
+
+birth_date        =
+
+birth_place       = Addis Ababa, Ethiopia
+
+}}
+
+Timnit W. Gebru (Amharic and ; 1982/1983) is an Eritrean Ethiopian-born computer scientist who works in the fields of artificial intelligence (AI), algorithmic bias and data mining. She is a co-founder of Black in AI, an advocacy group that has pushed for more Black roles in AI development and research. on the risks of large language models (LLMs) acting as stochastic parrots, and submitted it for publication. According to Jeff Dean, the paper was submitted without waiting for Google's internal review, which then asserted that it ignored too much relevant research. Google management requested that Gebru either withdraw the paper or remove the names of all the authors employed by Google. Gebru requested the identity and feedback of every reviewer, and stated that if Google refused she would talk to her manager about "a last date". Google terminated her employment immediately, stating that they were accepting her resignation. Gebru maintained that she had not formally offered to resign, and only threatened to.
+
+Gebru has been recognized widely for her expertise in the ethics of artificial intelligence. She was named one of the World's 50 Greatest Leaders by Fortune and one of Natures ten people who shaped science in 2021, and in 2022, one of Times most influential people.
+
+Early life and education
+
+Gebru was raised in Addis Ababa, Ethiopia. Her father, an electrical engineer with a Doctor of Philosophy (PhD), died when she was five years old, and she was raised by her mother, an economist. Both her parents are from Eritrea. When Gebru was 15, during the Eritrean–Ethiopian War, she fled Ethiopia after some of her family were deported to Eritrea and compelled to fight in the war. She was initially denied a U.S. visa and briefly lived in Ireland, but she eventually received political asylum in the U.S., an experience she said was "miserable". Gebru settled in Somerville, Massachusetts, to attend high school, where she says she immediately started to experience racial discrimination, with some teachers refusing to allow her to take certain Advanced Placement courses, despite being a high-achiever. and her PhD in computer vision in 2017. Gebru was advised during her PhD program by Fei-Fei Li.
+
+During the 2008 United States presidential election, Gebru canvassed in support of Barack Obama.
+
+Both during her PhD program in 2016 and in 2018, Gebru returned to Ethiopia with Jelani Nelson's programming campaign AddisCoder.
+
+While working on her PhD, Gebru authored a paper that was never published about her concern over the future of AI. She wrote of the dangers of the lack of diversity in the field, centered on her experiences with the police and on a ProPublica investigation into predictive policing, which revealed a projection of human biases in machine learning. At the time, she said she did not consider the potential use for surveillance, saying "I just found it technically interesting." Gebru revealed she experienced "so many egregious things" and "always wondered how they manage[d] to get out of the spotlight." She said that accountability at Apple was long overdue, and warned they could not continue to fly under the radar for much longer. Gebru also criticized the way the media covers Apple and other tech giants, saying that the press helps shield such companies from public scrutiny.
+
+In 2015, Gebru attended the field's top conference, Neural Information Processing Systems (NIPS), in Montreal, Canada. Out of 3,700 attendees, she noted she was one of only a few Black researchers. When she attended again the following year, she kept a tally and noted that there were only five Black men and that she was the only Black woman out of 8,500 delegates.
+
+In the summer of 2017, Gebru joined Microsoft as a postdoctoral researcher in the Fairness, Accountability, Transparency, and Ethics in AI (FATE) lab. In 2017, Gebru spoke at the Fairness and Transparency conference, where MIT Technology Review interviewed her about biases that exist in AI systems and how adding diversity in AI teams can fix that issue. In her interview with Jackie Snow, Snow asked Gebru, "How does the lack of diversity distort artificial intelligence and specifically computer vision?" and Gebru pointed out that there are biases that exist in the software developers. While at Microsoft, Gebru co-authored a research paper called Gender Shades,
+
+2018–2020: Artificial intelligence ethics at Google
+
+Gebru joined Google in 2018, where she co-led a team on the ethics of artificial intelligence with Margaret Mitchell. She studied the implications of artificial intelligence, looking to improve the ability of technology to do social good.
+
+In 2019, Gebru and other artificial intelligence researchers "signed a letter calling on Amazon to stop selling its facial-recognition technology to law enforcement agencies because it is biased against women and people of color", citing a study that was conducted by MIT researchers showing that Amazon's facial recognition system had more trouble identifying darker-skinned females than any other technology company's facial recognition software. In a New York Times interview, Gebru has further expressed that she believes facial recognition is too dangerous to be used for law enforcement and security purposes at present.
+
+Exit from Google
+
+In 2020 Gebru and five co-authors wrote a paper titled "On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? 🦜".
+
+In December 2020, her employment with Google ended after Google management asked her to either withdraw the paper before publication, or remove the names of all the Google employees from the paper. Jeff Dean, Google's head of AI research, replied with an email saying that they made the decision because the paper ignored too much relevant recent research on ways to mitigate some of the problems described in it, about environmental impact, and bias of these models. Lissack also allegedly harassed Mitchell and Bender, along with other colleagues on Gebru's former team. Twitter temporarily suspended Lissack's account access on 1 February 2021.
+
+Gebru has repeatedly maintained that she was fired, and close to 2,700 Google employees and more than 4,300 academics and civil society supporters signed a letter condemning Gebru's alleged firing. Nine members of Congress sent a letter to Google asking it to clarify the circumstances around Timnit Gebru's exit. Gebru's former team demanded that Vice President Megan Kacholia be removed from the team's management chain. Kacholia had allegedly fired Gebru without notifying Gebru's direct manager Samy Bengio first, and Gebru's former team demanded Kacholia and Dean apologize for how Gebru was treated. Mitchell took to Twitter to criticize Google's treatment of employees working to eliminate bias and toxicity in AI, including its alleged dismissal of Gebru. Mitchell was later terminated for alleged exfiltration of confidential business-sensitive documents and private data of other employees.
+
+Following the negative publicity over the circumstances of her exit, Sundar Pichai, CEO of Alphabet, Google's parent company, publicly apologized on Twitter without clarifying whether Gebru was terminated or resigned and initiated a months-long investigation into the incident. Upon conclusion of the review, Dean announced Google would be changing its "approach for handling how certain employees leave the company."
+
+Following her departure, Google held a forum to discuss experiences with racism at the company, and employees reported to NBC News that half of it was spent discrediting Gebru, which they took as the company making an example of her for speaking out. The forum was followed up with a group psychotherapy session for Google's Black employees with a licensed therapist, which the employees said was dismissive over the harm they felt Gebru's alleged termination had caused.
+
+In November 2021, the Nathan Cummings Foundation, partnered with Open MIC and endorsed by Color of Change, filed a shareholder proposal calling for a "racial equity audit" to analyze Alphabet's "adverse impact" on "Black, Indigenous and People of Color (BIPOC) communities". The proposal also requests investigation into whether or not Google retaliated against minority employees who raised concerns of discrimination, citing Gebru's firing, her previous urge for Google to hire more BIPOC, and her research into racially based biases in Google's technology. The proposal followed a less formal request from a group of Senate Democratic Caucus members led by Cory Booker from earlier that year, also citing Gebru's separation from the company and her work.
+
+In December 2021, Reuters reported that Google was under investigation by California Department of Fair Employment and Housing (DFEH) for its treatment of Black women, after numerous formal complaints of discrimination and harassment by current and former workers. The probe comes after Gebru, and other BIPOC employees, reported that when they brought up their experiences with racism and sexism to Human Resources, they were advised to take medical leave and therapy through the company's Employee Assistance Program (EAP). Google said that it "continue[s] to focus on this important work and thoroughly investigate[s] any concerns, to make sure [Google] is representative and equitable." One of the organization's initial projects plans to analyze satellite imagery of townships in South Africa with AI to better understand legacies of apartheid. Gebru has criticized research into artificial general intelligence (AGI) as being rooted in eugenics. Gebru states that focus should be shifted away from AGI and that trying to build AGI is an inherently unsafe practice.
+
+Awards and recognition
+
+Gebru, Buolamwini, and Inioluwa Deborah Raji won VentureBeats 2019 AI Innovations Award in the category AI for Good for their research highlighting the significant problem of algorithmic bias in facial recognition. Gebru was named one of the world's 50 greatest leaders by Fortune in 2021. Gebru was included in a list of ten scientists who had had important roles in scientific developments in 2021 compiled by the scientific journal Nature.
+
+Gebru was named one of Time's most influential people of 2022.
+
+In 2023, Gebru was named by Carnegie Corporation of New York as an honoree of the Great Immigrants Awards. She was awarded as recognition for her significant contributions to the field of ethical artificial intelligence.
+
+In November 2023, she was named to the BBC's 100 Women list as one of the world's inspiring and influential women.
+
+Selected publications
+
+Visual computational sociology: computer vision methods and challenges
+
+See also
+
+Coded Bias
+
+Claire Stapleton
+
+Meredith Whittaker
+
+Sophie Zhang
+
+References
+
+External links
+
+Category:Living people
+
+Category:21st-century African-American women
+
+Category:21st-century American businesswomen
+
+Category:21st-century American businesspeople
+
+Category:21st-century American women scientists
+
+Category:21st-century Ethiopian women
+
+Category:21st-century Ethiopian people
+
+Category:African-American activists
+
+Category:African-American businesspeople
+
+Category:African-American computer scientists
+
+Category:African-American social scientists
+
+Category:African-American businesswomen
+
+Category:American computer scientists
+
+Category:American social justice activists
+
+Category:21st-century American social scientists
+
+Category:American women computer scientists
+
+Category:American women social scientists
+
+Category:Apple Inc. employees
+
+Category:Artificial intelligence ethicists
+
+Category:Artificial intelligence researchers
+
+Category:Criticism of Google
+
+Category:Data miners
+
+Category:Ethiopian activists
+
+Category:Ethiopian emigrants to the United States
+
+Category:Ethiopian women activists
+
+Category:Ethiopian women computer scientists
+
+Category:Ethiopian women scientists
+
+Category:Google employees
+
+Category:Machine learning researchers
+
+Category:Microsoft employees
+
+Category:Refugees in the United States
+
+Category:Stanford University alumni
+
+Category:People from Addis Ababa
+
+Category:1983 births

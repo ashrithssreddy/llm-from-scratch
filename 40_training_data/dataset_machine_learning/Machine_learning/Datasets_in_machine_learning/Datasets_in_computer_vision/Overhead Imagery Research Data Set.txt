@@ -1,0 +1,49 @@
+The Overhead Imagery Research Data Set (OIRDS) is a collection of an open-source, annotated, overhead images that computer vision researchers can use to aid in the development of algorithms. Most computer vision and machine learning algorithms function by training on a large set of example data. Further, for many academic and industry researchers, the availability of truth-labeled test data helps drive algorithm research.
+
+While a great deal of terrestrial imagery is available on the Internet from various sources, there are few (if any) repositories of overhead imagery.  The limited overhead imagery that is found via sources such as Google Earth or Google Maps is copyrighted or may have limited use.
+
+Vehicle Data Set
+
+The initial ~1,000 images in the OIRDS is focused on an Automatic Target Detection (ATD) task for passenger vehicles.  Passenger vehicles in the OIRDS consist of cars, trucks, vans, & pick-ups.  The vehicle data set is composed of USGS and VIVID images.  All
+
+of these images are color RGB images.  The annotations that describe the images are documented in detail in.
+
+Current status
+
+OIRDS v1.0 was released in September, 2009. This version contains ~900 annotated images with ~1800 targets identified.
+
+Limitations
+
+The current OIRDS data set only has vehicle annotations.  It does not include other target types.  Additionally, recent trends in computer vision include image context for many detection and classification problems.  While researchers are encouraged to provide those annotations, they are not currently provided.
+
+See also
+
+Comparison of datasets in machine learning
+
+References
+
+External links
+
+Links to Data Sets
+
+https://sourceforge.net/projects/oirds/ – OIRDS Homepage (Includes download)
+
+http://www.vision.caltech.edu/Image_Datasets/Caltech101/  – Caltech 101 Homepage (Includes download)
+
+http://www.vision.caltech.edu/Image_Datasets/Caltech256/  – Caltech 256 Homepage (Includes download)
+
+http://labelme.csail.mit.edu/ – LabelMe Homepage
+
+Links to some sources of OIRDS imagery
+
+United States Geological Survey website – source of a majority of the vehicle data set imagery.
+
+DARPA VIVID Program website – source of a small portion of the vehicle data set imagery.
+
+Other Links
+
+CVPR 2009 website where OIRDS was demonstrated
+
+AIPR-Workshop 2009 website where some OIRDS work was published
+
+Category:Datasets in computer vision

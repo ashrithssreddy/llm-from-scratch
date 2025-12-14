@@ -1,0 +1,65 @@
+{{Infobox scientist
+
+name  = Alex Graves
+
+image  =
+
+alt  =
+
+caption  =
+
+birth_date  =
+
+birth_place  =
+
+thesis_title = Supervised sequence labelling with recurrent neural networks
+
+thesis_year = 2008
+
+thesis_url = https://www.worldcat.org/oclc/1184353689
+
+known_for  =
+
+fields =
+
+alma_mater  =
+
+workplaces  = DeepMindUniversity of TorontoDalle Molle Institute for Artificial Intelligence ResearchInstaDeep
+
+doctoral_advisor = Jürgen Schmidhuber
+
+website =
+
+}}
+
+Alex Graves is a computer scientist.
+
+Education
+
+Graves earned his Bachelor of Science degree in Theoretical Physics from the University of Edinburgh and a PhD in artificial intelligence from the Technical University of Munich supervised by Jürgen Schmidhuber at the Dalle Molle Institute for Artificial Intelligence Research.
+
+Career and research
+
+After his PhD, Graves was postdoc working with Schmidhuber at the Technical University of Munich and Geoffrey Hinton at the University of Toronto.
+
+At the Dalle Molle Institute for Artificial Intelligence Research, Graves trained long short-term memory (LSTM) neural networks by a novel method called connectionist temporal classification (CTC). This method outperformed traditional speech recognition models in certain applications. In 2009, his CTC-trained LSTM was the first recurrent neural network (RNN) to win pattern recognition contests, winning several competitions in connected handwriting recognition.
+
+Google uses CTC-trained LSTM for speech recognition on the smartphone.
+
+Graves is also the creator of neural Turing machines and the closely related differentiable neural computer. In 2023, he wrote the paper Bayesian Flow Networks. He currently works as a Staff Research Scientist at InstaDeep. He was previously a research scientist at Google DeepMind in London.
+
+References
+
+Category:Living people
+
+Category:British artificial intelligence researchers
+
+Category:Scottish computer scientists
+
+Category:Alumni of the University of Edinburgh
+
+Category:Year of birth missing (living people)
+
+Category:Place of birth missing (living people)
+
+Category:DeepMind people

@@ -1,0 +1,211 @@
+{{Infobox file format
+
+name = Predictive Model Markup Language
+
+icon = PMML Logo.png
+
+iconcaption =
+
+icon_size =
+
+screenshot =
+
+screenshot_size =
+
+caption =
+
+_noextcode =
+
+extension =
+
+_nomimecode =
+
+mime =
+
+type_code =
+
+uniform_type =
+
+conforms_to =
+
+magic =
+
+developer = Robert Lee Grossman
+
+released =
+
+latest_release_version = 4.4
+
+latest_release_date =
+
+type = Predictive modelling
+
+container_for =
+
+contained_by =
+
+extended_from = XML
+
+extended_to =
+
+standard =
+
+free =
+
+open =
+
+url =
+
+}}
+
+The Predictive Model Markup Language (PMML) is an XML-based predictive model interchange format conceived by Robert Lee Grossman, then the director of the National Center for Data Mining at the University of Illinois at Chicago. PMML provides a way for analytic applications to describe and exchange predictive models produced by data mining and machine learning algorithms. It supports common models such as logistic regression and   other feedforward neural networks. Version 0.9 was published in 1998.  Subsequent versions have been developed by the Data Mining Group.
+
+Since PMML is an XML-based standard, the specification comes in the form of an XML schema. PMML itself is a mature standard with over 30 organizations having announced products supporting PMML.
+
+PMML components
+
+A PMML file can be described by the following components:
+
+Header: contains general information about the PMML document, such as copyright information for the model, its description, and information about the application used to generate the model such as name and version. It also contains an attribute for a timestamp which can be used to specify the date of model creation.
+
+Data Dictionary: contains definitions for all the possible fields used by the model. It is here that a field is defined as continuous, categorical, or ordinal (attribute optype). Depending on this definition, the appropriate value ranges are then defined as well as the data type (such as, string or double).
+
+Data Transformations: transformations allow for the mapping of user data into a more desirable form to be used by the mining model. PMML defines several kinds of simple data transformations.
+
+Normalization: map values to numbers, the input can be continuous or discrete.
+
+Discretization: map continuous values to discrete values.
+
+Value mapping: map discrete values to discrete values.
+
+Functions (custom and built-in): derive a value by applying a function to one or more parameters.
+
+Aggregation: used to summarize or collect groups of values.
+
+Model: contains the definition of the data mining model. E.g., A multi-layered feedforward neural network is represented in PMML by a "NeuralNetwork" element which contains attributes such as:
+
+Model Name (attribute modelName)
+
+Function Name (attribute functionName)
+
+Algorithm Name (attribute algorithmName)
+
+Activation Function (attribute activationFunction)
+
+Number of Layers (attribute numberOfLayers)
+
+This information is then followed by three kinds of neural layers which specify the architecture of the neural network model being represented in the PMML document. These attributes are NeuralInputs, NeuralLayer, and NeuralOutputs. Besides neural networks, PMML allows for the representation of many other types of models including support vector machines, association rules, Naive Bayes classifier, clustering models, text models, decision trees, and different regression models.
+
+Mining Schema: a list of all fields used in the model. This can be a subset of the fields as defined in the data dictionary. It contains specific information about each field, such as:
+
+Name (attribute name): must refer to a field in the data dictionary
+
+Usage type (attribute usageType): defines the way a field is to be used in the model. Typical values are: active, predicted, and supplementary. Predicted fields are those whose values are predicted by the model.
+
+Outlier Treatment (attribute outliers): defines the outlier treatment to be use. In PMML, outliers can be treated as missing values, as extreme values (based on the definition of high and low values for a particular field), or as is.
+
+Missing Value Replacement Policy (attribute missingValueReplacement): if this attribute is specified then a missing value is automatically replaced by the given values.
+
+Missing Value Treatment (attribute missingValueTreatment): indicates how the missing value replacement was derived (e.g. as value, mean or median).
+
+Targets: allows for post-processing of the predicted value in the format of scaling if the output of the model is continuous. Targets can also be used for classification tasks. In this case, the attribute priorProbability specifies a default probability for the corresponding target category. It is used if the prediction logic itself did not produce a result. This can happen, e.g., if an input value is missing and there is no other method for treating missing values.
+
+Output: this element can be used to name all the desired output fields expected from the model. These are features of the predicted field and so are typically the predicted value itself, the probability, cluster affinity (for clustering models), standard error, etc. The latest release of PMML, PMML 4.1, extended Output to allow for generic post-processing of model outputs. In PMML 4.1, all the built-in and custom functions that were originally available only for pre-processing became available for post-processing too.
+
+PMML 4.0, 4.1, 4.2 and 4.3
+
+PMML 4.0 was released on June 16, 2009.
+
+Examples of new features included:
+
+Improved Pre-Processing Capabilities: Additions to built-in functions include a range of Boolean operations and an If-Then-Else function.
+
+Time Series Models: New exponential Smoothing models; also place holders for ARIMA, Seasonal Trend Decomposition, and Spectral density estimation, which are to be supported in the near future.
+
+Model Explanation: Saving of evaluation and model performance measures to the PMML file itself.
+
+Multiple Models: Capabilities for model composition, ensembles, and segmentation (e.g., combining of regression and decision trees).
+
+Extensions of Existing Elements: Addition of multi-class classification for Support Vector Machines, improved representation for Association Rules, and the addition of Cox Regression Models.
+
+PMML 4.1 was released on December 31, 2011.
+
+New features included:
+
+New model elements for representing Scorecards, k-Nearest Neighbors (KNN) and Baseline Models.
+
+Simplification of multiple models. In PMML 4.1, the same element is used to represent model segmentation, ensemble, and chaining.
+
+Overall definition of field scope and field names.
+
+A new attribute that identifies for each model element if the model is ready or not for production deployment.
+
+Enhanced post-processing capabilities (via the Output element).
+
+PMML 4.2 was released on February 28, 2014.
+
+New features include:
+
+Transformations: New elements for implementing text mining
+
+New built-in functions for implementing regular expressions: matches, concat, and replace
+
+Simplified outputs for post-processing
+
+Enhancements to Scorecard and Naive Bayes model elements
+
+PMML 4.3 was released on August 23, 2016.
+
+New features include:
+
+New Model Types:
+
+Gaussian Process
+
+Bayesian Network
+
+New built-in functions
+
+Usage clarifications
+
+Documentation improvements
+
+Version 4.4 was released in November 2019.
+
+Release history
+
+Data Mining Group
+
+The Data Mining Group is a consortium managed by the Center for Computational Science Research, Inc., a nonprofit founded in 2008. The Data Mining Group also developed a standard called Portable Format for Analytics, or PFA, which is complementary to PMML.
+
+See also
+
+Open Neural Network Exchange
+
+References
+
+External links
+
+Data Pre-processing in PMML and ADAPA - A Primer
+
+Video of Alex Guazzelli's PMML presentation for the ACM Data Mining Group (hosted by LinkedIn)
+
+PMML 3.2 Specification
+
+PMML 4.0 Specification
+
+PMML 4.1 Specification
+
+PMML 4.2.1 Specification
+
+PMML 4.4 Specification
+
+Representing predictive solutions in PMML: Move from raw data to predictions - Article published on the IBM developerWorks website.
+
+Predictive analytics in healthcare: The importance of open standards - Article published on the IBM developerWorks website.
+
+Category:Domain-specific knowledge representation languages
+
+Category:Applied machine learning
+
+Category:XML markup languages

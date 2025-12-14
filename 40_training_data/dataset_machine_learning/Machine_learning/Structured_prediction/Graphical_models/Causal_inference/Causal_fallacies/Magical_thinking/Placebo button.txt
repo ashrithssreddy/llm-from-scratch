@@ -1,0 +1,31 @@
+A placebo button is a push-button or other control that appears to have functionality but has no physical effect when pressed. Such buttons can appear to work, by lighting up or otherwise reacting, which rewards the user by giving them an illusion of control. They are commonly placed in situations where it would have once been useful to have such a button but the system now operates automatically, such as a manual thermostat in a temperature-regulated office. Were the control removed entirely, some users would feel frustrated at the awareness they were not in control.
+
+Office thermostats
+
+It has been reported that the temperature set point adjustment on thermostats in many office buildings in the United States is non-functional, installed to give tenants' employees a similar illusion of control. In some cases, they act as input devices to a central control computer; in others, they serve no purpose other than to keep employees contented.
+
+A common implementation in buildings with an HVAC central control computer is to allow the thermostats to provide a graded level of control. Temperatures in such a system are governed by the central controller's settings, which are typically set by the building maintenance staff or HVAC engineers. The individual thermostats in various offices provide the controller with a temperature reading of the zone (provided the thermocouples are not installed as inline duct sensors), but also serve as modifiers for the central controller's set point. While the thermostat may include settings from, for example, , the actual effect of the thermostat is to apply "pressure" to the central controller's set point. Thus, if the controller's setting is , setting the thermostat to its maximum warm or cool settings will deflect the output temperature, generally by only a few degrees Fahrenheit (about two degrees Celsius) at most. So, although the thermostat can be set to its lowest marking of , in reality, it may change the HVAC system's output temperature only to . In this case, the thermostat has a "swing" of 2&nbsp;°C (4&nbsp;°F): it can alter the produced temperature from the main controller's set point by a maximum of 1&nbsp;°C (2&nbsp;°F) in either direction. Consequently, while not purely a placebo, the thermostat in this setup does not provide the level of control that is expected, but the combination of the lower setting number and the feeling of a slight change in temperature can induce the office occupants to believe that the temperature was significantly decreased.
+
+Placebo thermostats work on two psychological principles, which are classical conditioning and the placebo effect. First, placebo thermostats work in accordance with classical conditioning. Classical conditioning was first discovered by Ivan Pavlov and is a type of learning which pairs a stimulus with a physiological response. Applied to placebo thermostats, this is when the employee adjusts the thermostat and hears the noise of hissing or a fan running and consequently physically feels more content. This is due to the countless trials involving the thermostat in their own home, which actually works. The employee has paired the sound of hissing or a fan running to being more physically content due to the actual temperature change and therefore when they experience the noise at work they feel the same way even though there is no change in temperature. As long as individuals get the result they are looking for (noise associated with temperature change) they will continue with the practice (changing the placebo thermostat). Additionally, placebo thermostats work due to the placebo effect. The placebo effect works on the basis that individuals will experience what they believe they will experience. This is attributed to Expectancy theory, which states that the placebo effect is mediated by overt expectancies. The most common example is in medical testing: inactive sugar pills are given to patients who are told they are actually medicine. Some patients will experience relief from symptoms regardless. According to expectancy theory, if people believe they are going to experience a temperature change after changing a placebo thermostat they may psychologically experience one without an actual change happening.
+
+In the United Kingdom and Hong Kong, pedestrian push-buttons on crossings using the Split Cycle Offset Optimisation Technique may or may not have any real effect on crossing timings, depending on their location and the time of day, and some junctions may be completely automated, with push-buttons which do not have any effect at all. In other areas the buttons have an effect only during the night. much like mainline railway stock. In addition, London Underground D stock used on the District line were built with door open buttons which worked much like those of the 1992, 1995 and 1996 stock. These buttons were subsequently removed when the stock was refurbished.
+
+See also
+
+Illusion of control
+
+Affordance
+
+References
+
+Category:Deception
+
+Category:Magical thinking
+
+Category:Switches
+
+Category:Pedestrian crossings
+
+Category:User interfaces
+
+Category:User interface techniques

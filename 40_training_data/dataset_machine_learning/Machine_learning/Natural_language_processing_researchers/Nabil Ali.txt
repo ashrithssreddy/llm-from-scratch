@@ -1,0 +1,83 @@
+{{Infobox person
+
+name               = Nabil Ali
+
+native_name        = Nabil Ali Mohammed Abd Al Azeez
+
+birth_date         =
+
+death_date         = 27 January 2016 (age 78)
+
+nationality        = Egyptian
+
+education          = Cairo University
+
+}}
+
+Nabil Ali Mohammed Abd AL Azeez (Arabic:نبيل علي) (3 January 1938 – 27 January 2016) was an Egyptian scientist, writer, and intellectual who worked in the field of natural language processing and computational linguistics. Ali is considered a pioneer of Arabic language computing, making significant innovations in early computational linguistics.
+
+Education and career
+
+Ali earned a bachelor's degree in Aeronautical Engineering in 1960, and a master's degree in 1967. In 1971, he earned a PhD in Aeronautics. From 1961 to 1972 Ali worked as an engineering officer in the Egyptian Air Force, specializing in maintenance and training.
+
+In 1972, he shifted focus to computing, and from 1972 to 1977 he worked as a computer manager at Egyptair. While in this position, Ali introduced the first automated reservation system for airlines in the Arab world. He later held various computing positions in Egypt, Kuwait, Europe, Canada and the US.
+
+Ali started working for Sakhr Software, an Arabic language technology company, in 1983. From 1985 to 1999, he was vice president of Sakhr's council for Research and Development. As a director of the Multilingual Advanced Systems Foundation and project manager at the Egyptian National Company for Scientific and Technical Information, Ali did extensive research on information culture and artificial intelligence relating to the Arabic language.
+
+Over the course of his career, Ali developed more than 20 educational programs relating to computational linguistics. He developed the first Arabic lexical database and the first knowledge base for Arabic poetry, as well as many other pieces of Arabic language software.
+
+Awards
+
+1994: General Book Authority Award for Best Book (in the field of future studies).
+
+2003: General Book Authority Award for Best Culture Book (in the field of "Challenges of the Information Age").
+
+2007: General Book Authority "Innovation in Information Technology" Award.
+
+2012: King Faisal International Award, with Professor Ali Helmy Mousa, in the field of computer processing of the Arabic Language.
+
+Works
+
+Arabic Language and Computer (Research study), Dar Localization, 1988.
+
+Al Arab and the Information Age, Knowledge World Series No. 184, April 1994.
+
+Arab Culture and the Information Age: A Vision for the Future of Arab Culture Discourse, World of Knowledge Series, No. 265 January 2001.
+
+The Digital Gap: an Arab Vision for a Knowledge Society (in partnership with Dr. Nadia Hegazy), World of Knowledge Series, No. 318 August 2005.
+
+The Arab Mind and the Knowledge Society: Manifestations of the Crisis and Suggestions for Solutions, Part 1, The World of Knowledge Series, No. 369, November 2009.
+
+The Arab Mind and the Knowledge Society: Manifestations of the Crisis and Suggestions for Solutions, Part 2, The World of Knowledge Series, No. 370, December 2009.
+
+Tribute
+
+On 3 January 2020, Google Doodle celebrated Nabil Ali Mohamed's 82nd Birthday.
+
+References
+
+External links
+
+Arab Sites and Their Place in the Era of Information Culture – Nabil Ali, Expert in Information Technology and Computational Linguistics, Without Borders Program, 23 March 2001.
+
+Category:1938 births
+
+Category:2016 deaths
+
+Category:Cairo University alumni
+
+Category:Egyptian male writers
+
+Category:Egyptian scientists
+
+Category:Place of birth missing
+
+Category:21st-century Egyptian writers
+
+Category:Computational linguistics researchers
+
+Category:Egyptian Air Force personnel
+
+Category:EgyptAir
+
+Category:Natural language processing researchers

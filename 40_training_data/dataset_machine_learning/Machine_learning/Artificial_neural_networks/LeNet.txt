@@ -1,0 +1,71 @@
+LeNet is a series of convolutional neural network architectures created by a research group in AT&T Bell Laboratories during the 1988 to 1998 period, centered around Yann LeCun. They were designed for reading small grayscale images of handwritten digits and letters, and were used in ATM for reading cheques.
+
+Convolutional neural networks are a kind of feed-forward neural network whose artificial neurons can respond to a part of the surrounding cells in the coverage range and perform well in large-scale image processing. LeNet-5 was one of the earliest convolutional neural networks and was historically important during the development of deep learning.
+
+In general, when LeNet is referred to without a number, it refers to the 1998 version,
+
+In 1989, Yann LeCun et al. at Bell Labs first applied the backpropagation algorithm to practical applications, and believed that the ability to learn network generalization could be greatly enhanced by providing constraints from the task's domain. He combined a convolutional neural network trained by backpropagation algorithms to read handwritten numbers and successfully applied it in identifying handwritten zip code numbers provided by the US Postal Service. This was the prototype of what later came to be called LeNet-1.
+
+Their research continued for the next four years, and in 1994 the MNIST database was developed, for which LeNet-1 was too small, hence a new LeNet-4 was trained on it.
+
+A year later the AT&T Bell Labs collective reviewed various methods on handwritten character recognition in paper, using standard handwritten digits to identify benchmark tasks. These models were compared and the results showed that the latest network outperformed other models.
+
+By 1998 Yann LeCun, Leon Bottou, Yoshua Bengio, and Patrick Haffner were able to provide examples of practical applications of neural networks, such as two systems for recognizing handwritten characters online and models that could read millions of checks per day, which includes a description of LeNet-5.
+
+The research achieved great success and aroused the interest of scholars in the study of neural networks. While the architecture of the best performing neural networks today are not the same as that of LeNet, the network was the starting point for a large number of neural network architectures, and also brought inspiration to the field.
+
+1989 LeNet
+
+The LeNet published in 1989 has 3 hidden layers (H1-H3) and an output layer.. There were no separate pooling layer, as it was deemed too computationally expensive.
+
+Training took 3 days on a Sun-4/260 using a diagonal Hessian approximation of Newton's method. It was implemented in the SN Neural Network Simulator. It took 23 epochs over the training set.
+
+Compared to the previous 1988 architecture, there was no skeletonization, and the convolutional kernels were learned automatically by backpropagation.
+
+1990 LeNet
+
+A later version of 1989 LeNet has four hidden layers (H1-H4) and an output layer. It takes a 28x28 pixel image as input, though the active region is 16x16 to avoid boundary effects.
+
+H1 (Convolutional): 28 \times 28 \to 4 \times 24 \times 24 with 5\times 5 kernels. This layer has 104 trainable parameters (100 from kernels, 4 from biases).
+
+H2 (Pooling): 4 \times 24 \times 24 \to 4 \times 12 \times 12 by 2\times 2 average pooling.
+
+H3 (Convolutional): 4 \times 12 \times 12 \to 12 \times 8 \times 8 with 5\times 5 kernels. Some kernels take input from 1 feature map, while others take inputs from 2 feature maps.
+
+H4 (Pooling): 12 \times 8 \times 8 \to 12 \times 4 \times 4 by 2\times 2 average pooling.
+
+Output: 10 units fully connected to H4, representing the 10 digit classes (0-9).
+
+The network 4635 units, 98442 connections, and 2578 trainable parameters. Its architecture was designed by beginning with the 1989 LeNet, then pruning the parameter count by 4x via Optimal Brain Damage. One forward pass requires about 140,000 multiply-add operations. Its size is 50 kB in memory. It was also called LeNet-1. On a SPARCstation 10, it took 0.5 weeks to train, and 0.015 seconds to classify one image.
+
+In the following table, each column indicates which of the 6 feature maps in S2 are combined by the units in each of the 15 feature maps of C3.
+
+Even though C5 has output shape 120 \times 1 \times 1 , it is not a fully connected layer, because the network is designed to be able to take in input shapes of arbitrary height and width, much larger than the 1 \times 32 \times 32 that the network is trained on. In those cases, the output shape of C5 would be larger. Similarly, the output of F6 would also be larger than 84 \times 1 \times 1. Indeed, in modern language, the layer F6 is better described as a 1 \times 1 convolution.
+
+The output of the convolutional part of the network has 84 neurons, and this is not a coincidence. It was designed such, because 84 = 7×12, meaning that the output of the network can be viewed as a small 7×12 grayscale image.
+
+The output layer has RBF units, similar to RBF networks. Each of the 10 units has 84 parameters, which might either be hand-designed and fixed, or trained. When hand-designed, it was designed so that, when viewed as a 7×12 grayscale image, it looks like the digit to be recognized.
+
+1998 LeNet was trained with stochastic Levenberg–Marquardt algorithm with diagonal approximation of the Hessian. It was trained for about 20 epoches over MNIST. It took 2 to 3 days of CPU time on a Silicon Graphics Origin 2000 server, using a single 200&nbsp;MHz R10000 processor.
+
+Application
+
+Recognizing simple digit images is the most classic application of LeNet as it was created because of that. they loaded the neural network into a AT&T DSP-32C digital signal processor with a peak performance of 12.5 million multiply-add operations per second. It could normalize-and-classify 10 digits a second, or classify 30 normalized digits a second. It was a "graph transformer", with a main component being the LeNet as reported in 1998 with ~60000 trainable parameters.
+
+Subsequent work
+
+The LeNet-5 means the emergence of CNN and defines the basic components of CNN.
+
+Increasing the number of filters for the LeNet architecture results in a power law decay of the error rate. These results indicate that a shallow network can achieve the same performance as deep learning architectures.
+
+References
+
+External links
+
+LeNet-5, convolutional neural networks. An online project page for LeNet maintained by Yann LeCun, containing animations and bibliography.
+
+projects:lush [leon.bottou.org]. Lush, an object-oriented programming language. It contains SN, a neural network simulator. The LeNet series was written in SN.
+
+Category:Artificial neural networks
+
+Category:1988 in artificial intelligence

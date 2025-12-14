@@ -1,0 +1,235 @@
+In data mining and statistics, hierarchical clustering (also called hierarchical cluster analysis or HCA) is a method of cluster analysis that seeks to build a hierarchy of clusters. Strategies for hierarchical clustering generally fall into two categories:
+
+Agglomerative: Agglomerative clustering, often referred to as a "bottom-up" approach, begins with each data point as an individual cluster. At each step, the algorithm merges the two most similar clusters based on a chosen distance metric (e.g., Euclidean distance) and linkage criterion (e.g., single-linkage, complete-linkage). This process continues until all data points are combined into a single cluster or a stopping criterion is met. Agglomerative methods are more commonly used due to their simplicity and computational efficiency for small to medium-sized datasets.
+
+Divisive: Divisive clustering, known as a "top-down" approach, starts with all data points in a single cluster and recursively splits the cluster into smaller ones. At each step, the algorithm selects a cluster and divides it into two or more subsets, often using a criterion such as maximizing the distance between resulting clusters. Divisive methods are less common but can be useful when the goal is to identify large, distinct clusters first.
+
+In general, the merges and splits are determined in a greedy manner. The results of hierarchical clustering for single-linkage and CLINK for complete-linkage clustering. With a heap, the runtime of the general case can be reduced to \mathcal{O}(n^2 \log n) instead of \mathcal{O}(n^3), at the cost of additional the memory requirements. In many cases, the memory overheads of this approach are too large to make it practically usable. Methods exist which use quadtrees that demonstrate \mathcal{O}(n^2) total running time with \mathcal{O}(n) space.
+
+Divisive clustering with an exhaustive search is \mathcal{O}(2^n), but it is common to use faster heuristics to choose splits, such as k-means.
+
+Cluster Linkage
+
+In order to decide which clusters should be combined (for agglomerative), or where a cluster should be split (for divisive), a measure of dissimilarity between sets of observations is required. In most methods of hierarchical clustering, this is achieved by use of an appropriate distance d, such as the Euclidean distance, between single observations of the data set, and a linkage criterion, which specifies the dissimilarity of sets as a function of the pairwise distances of observations in the sets. The choice of metric as well as linkage can have a major impact on the result of the clustering, where the lower level metric determines which objects are most similar, whereas the linkage criterion influences the shape of the clusters. For example, complete-linkage tends to produce more spherical clusters than single-linkage.
+
+The linkage criterion determines the distance between sets of observations as a function of the pairwise distances between observations.
+
+Some commonly used linkage criteria between two sets of observations A and B and a distance d are:
+
+\sum_{a \in A }\sum_{ b \in B} d(a,b).
+
+-
+
+Weighted average linkage clustering (or WPGMA)
+
+d(i \cup j, k) = \frac{d(i, k) + d(j, k)}{2}.
+
+-
+
+Centroid linkage clustering, or UPGMC
+
+\lVert \mu_A-\mu_B\rVert^2 where \mu_A and \mu_B are the centroids of A resp. B.
+
+-
+
+Median linkage clustering, or WPGMC
+
+d(i\cup j, k) = d(m_{i\cup j}, m_k) where m_{i\cup j} = \tfrac{1}{2}\left(m_i + m_j\right)
+
+-
+
+Versatile linkage clustering
+
+\sqrt[p]{\frac{1} \sum_{a \in A }\sum_{ b \in B} d(a,b)^p}, p\neq 0
+
+-
+
+Ward linkage, Minimum Increase of Sum of Squares (MISSQ)
+
+\frac \lVert \mu_A - \mu_B \rVert ^2
+
+= \sum_{x\in A\cup B} \lVert x - \mu_{A\cup B} \rVert^2
+
+- \sum_{x\in A} \lVert x - \mu_{A} \rVert^2
+
+- \sum_{x\in B} \lVert x - \mu_{B} \rVert^2
+
+-
+
+Minimum Error Sum of Squares (MNSSQ)
+
+\max_{x\in A\cup B} \min_{y\in A\cup B} d(x,y)
+
+-
+
+Minimum Sum Medoid linkage
+
+\min_{m\in A\cup B} \sum_{y\in A\cup B} d(m, y) such that m is the medoid of the resulting cluster
+
+-
+
+Minimum Sum Increase Medoid linkage
+
+d(m_A, m_B) where m_A, m_B are the medoids of the previous clusters
+
+-
+
+Minimum energy clustering
+
+\frac {2}{nm}\sum_{i,j=1}^{n,m} \|a_i- b_j\|_2 - \frac {1}{n^2}\sum_{i,j=1}^{n} \|a_i-a_j\|_2 - \frac{1}{m^2}\sum_{i,j=1}^{m} \|b_i-b_j\|_2
+
+}
+
+Some of these can only be recomputed recursively (WPGMA, WPGMC), for many a recursive computation with Lance-Williams-equations is more efficient, while for other (Hausdorff, Medoid) the distances have to be computed with the slower full formula. Other linkage criteria include:
+
+The probability that candidate clusters spawn from the same distribution function (V-linkage).
+
+The product of in-degree and out-degree on a k-nearest-neighbour graph (graph degree linkage).
+
+The increment of some cluster descriptor (i.e., a quantity defined for measuring the quality of a cluster) after merging two clusters.
+
+Agglomerative clustering example
+
+For example, suppose this data is to be clustered, and the Euclidean distance is the distance metric.
+
+The hierarchical clustering dendrogram would be:
+
+Cutting the tree at a given height will give a partitioning clustering at a selected precision. In this example, cutting after the second row (from the top) of the dendrogram will yield clusters {a} {b c} {d e} {f}. Cutting after the third row will yield clusters {a} {b c} {d e f}, which is a coarser clustering, with a smaller number but larger clusters.
+
+This method builds the hierarchy from the individual elements by progressively merging clusters. In our example, we have six elements {a} {b} {c} {d} {e} and {f}. The first step is to determine which elements to merge in a cluster. Usually, we want to take the two closest elements, according to the chosen distance.
+
+Optionally, one can also construct a distance matrix at this stage, where the number in the i-th row j-th column is the distance between the i-th and j-th elements. Then, as clustering progresses, rows and columns are merged as the clusters are merged and the distances updated. This is a common way to implement this type of clustering, and has the benefit of caching distances between clusters. A simple agglomerative clustering algorithm is described in the single-linkage clustering page; it can easily be adapted to different types of linkage (see below).
+
+Suppose we have merged the two closest elements b and c, we now have the following clusters {a}, {b, c}, {d}, {e} and {f}, and want to merge them further. To do that, we need to take the distance between {a} and {b c}, and therefore define the distance between two clusters.
+
+Usually the distance between two clusters \mathcal{A} and \mathcal{B} is one of the following:
+
+The maximum distance between elements of each cluster (also called complete-linkage clustering):
+
+\max \{\, d(x,y) : x \in \mathcal{A},\, y \in \mathcal{B}\,\}.
+
+The minimum distance between elements of each cluster (also called single-linkage clustering):
+
+\min \{\, d(x,y) : x \in \mathcal{A},\, y \in \mathcal{B} \,\}.
+
+The mean distance between elements of each cluster (also called average linkage clustering, used e.g. in UPGMA):
+
+{1 \over }\sum_{x \in \mathcal{A}}\sum_{ y \in \mathcal{B}} d(x,y).
+
+The sum of all intra-cluster variance.
+
+The increase in variance for the cluster being merged (Ward's method
+
+One can always decide to stop clustering when there is a sufficiently small number of clusters (number criterion). Some linkages may also guarantee that agglomeration occurs at a greater distance between clusters than the previous agglomeration, and then one can stop clustering when the clusters are too far apart to be merged (distance criterion). However, this is not the case of, e.g., the centroid linkage where the so-called reversals (inversions, departures from ultrametricity) may occur.
+
+Divisive clustering
+
+The basic principle of divisive clustering was published as the DIANA (DIvisive ANAlysis clustering) algorithm. Initially, all data is in the same cluster, and the largest cluster is split until every object is separate.
+
+Because there exist O(2^n) ways of splitting each cluster, heuristics are needed. DIANA chooses the object with the maximum average dissimilarity and then moves all objects to this cluster that are more similar to the new cluster than to the remainder.
+
+Informally, DIANA is not so much a process of "dividing" as it is of "hollowing out": each iteration, an existing cluster (e.g. the initial cluster of the entire dataset) is chosen to form a new cluster inside of it. Objects progressively move to this nested cluster, and hollow out the existing cluster. Eventually, all that's left inside a cluster is nested clusters that grew there, without it owning any loose objects by itself.
+
+Formally, DIANA operates in the following steps:
+
+Let C_0 = \{1\dots n\} be the set of all n object indices and \mathcal{C} = \{C_0\} the set of all formed clusters so far.
+
+Iterate the following until |\mathcal{C}| = n:
+
+Find the current cluster with 2 or more objects that has the largest diameter: C_* = \arg\max_{C\in \mathcal{C}} \max_{i_1,i_2\in C} \delta(i_1,i_2)
+
+Find the object in this cluster with the most dissimilarity to the rest of the cluster: i^* = \arg\max_{i\in C_*} \frac{1}\sum_{j\in C_\textrm{new}} \delta(i,j), then either stop iterating when D(i^*) , or migrate i^*.
+
+Add C_\textrm{new} to \mathcal{C}.
+
+Intuitively, D(i) above measures how strongly an object wants to leave its current cluster, but it is attenuated when the object wouldn't fit in the splinter group either. Such objects will likely start their own splinter group eventually.
+
+The dendrogram of DIANA can be constructed by letting the splinter group C_\textrm{new} be a child of the hollowed-out cluster C_* each time. This constructs a tree with C_0 as its root and n unique single-object clusters as its leaves.
+
+Software
+
+Open source implementations
+
+of the Iris dataset (using R). Source ]]
+
+.]]
+
+ALGLIB implements several hierarchical clustering algorithms (single-link, complete-link, Ward) in C++ and C# with O(n²) memory and O(n³) run time.
+
+ELKI includes multiple hierarchical clustering algorithms, various linkage strategies and also includes the efficient SLINK,
+
+Octave, the GNU analog to MATLAB implements hierarchical clustering in function "linkage".
+
+Orange, a data mining software suite, includes hierarchical clustering with interactive dendrogram visualisation.
+
+R has built-in functions and packages that provide functions for hierarchical clustering.
+
+SciPy implements hierarchical clustering in Python, including the efficient SLINK algorithm.
+
+scikit-learn also implements hierarchical clustering in Python.
+
+Weka includes hierarchical cluster analysis.
+
+Commercial implementations
+
+MATLAB includes hierarchical cluster analysis.
+
+SAS includes hierarchical cluster analysis in PROC CLUSTER.
+
+Mathematica includes a Hierarchical Clustering Package.
+
+NCSS includes hierarchical cluster analysis.
+
+SPSS includes hierarchical cluster analysis.
+
+Qlucore Omics Explorer includes hierarchical cluster analysis.
+
+Stata includes hierarchical cluster analysis.
+
+CrimeStat includes a nearest neighbor hierarchical cluster algorithm with a graphical output for a Geographic Information System.
+
+See also
+
+Binary space partitioning
+
+Bounding volume hierarchy
+
+Brown clustering
+
+Cladistics
+
+Cluster analysis
+
+Computational phylogenetics
+
+CURE data clustering algorithm
+
+Dasgupta's objective
+
+Dendrogram
+
+Determining the number of clusters in a data set
+
+Hierarchical clustering of networks
+
+Locality-sensitive hashing
+
+Nearest neighbor search
+
+Nearest-neighbor chain algorithm
+
+Numerical taxonomy
+
+OPTICS algorithm
+
+Statistical distance
+
+Persistent homology
+
+References
+
+Further reading
+
+Category:Network analysis
+
+Category:Cluster analysis algorithms

@@ -1,0 +1,65 @@
+A factor graph is a bipartite graph representing the factorization of a function.  In probability theory and its applications, factor graphs are used to represent factorization of a probability distribution function, enabling efficient computations, such as the computation of marginal distributions through the sum–product algorithm. One of the important success stories of factor graphs and the sum–product algorithm is the decoding of capacity-approaching error-correcting codes, such as LDPC and turbo codes.
+
+Factor graphs generalize constraint graphs.  A factor whose value is either 0 or 1 is called a constraint. A constraint graph is a factor graph where all factors are constraints. The max-product algorithm for factor graphs can be viewed as a generalization of the  arc-consistency algorithm for constraint processing.
+
+Definition
+
+A factor graph is a bipartite graph representing the factorization of a function. Given a factorization of a function g(X_1,X_2,\dots,X_n),
+
+g(X_1,X_2,\dots,X_n) = \prod_{j=1}^m f_j(S_j),
+
+where  S_j \subseteq \{X_1,X_2,\dots,X_n\}, the corresponding factor graph  G=(X,F,E) consists of variable vertices
+
+X=\{X_1,X_2,\dots,X_n\}, factor vertices F=\{f_1,f_2,\dots,f_m\}, and edges E. The edges depend on the factorization as follows: there is an undirected edge between factor vertex  f_j  and variable vertex  X_k  if  X_k \in S_j. The function is tacitly assumed to be real-valued: g(X_1,X_2,\dots,X_n) \in \mathbb{R} .
+
+Factor graphs can be combined with message passing algorithms to efficiently compute certain characteristics of the function g(X_1,X_2,\dots,X_n), such as the marginal distributions.
+
+Examples
+
+Consider a function that factorizes as follows:
+
+g(X_1,X_2,X_3) = f_1(X_1)f_2(X_1,X_2)f_3(X_1,X_2)f_4(X_2,X_3),
+
+with a corresponding factor graph shown on the right. Observe that the factor graph has a cycle. If we merge  f_2(X_1,X_2)f_3(X_1,X_2)  into a single factor, the resulting factor graph will be a tree. This is an important distinction, as message passing algorithms are usually exact for trees, but only approximate for graphs with cycles.
+
+Message passing on factor graphs
+
+A popular message passing algorithm on factor graphs is the sum–product algorithm, which efficiently computes all the marginals of the individual variables of the function. In particular, the marginal of variable  X_k  is defined as
+
+g_k(X_k) = \sum_{X_{\bar{k}}} g(X_1,X_2,\dots,X_n)
+
+where the notation X_{\bar{k}}  means that the summation goes over all the variables, except  X_k . The messages of the sum–product algorithm are conceptually computed in the vertices and passed along the edges. A message from or to a variable vertex is always a function of that particular variable. For instance, when a variable is binary, the messages
+
+over the edges incident to the corresponding vertex can be represented as vectors of length 2: the first entry is the message evaluated in 0, the second entry is the message evaluated in 1. When a variable belongs to the field of real numbers, messages can be arbitrary functions, and special care needs to be taken in their representation.
+
+In practice, the sum–product algorithm is used for statistical inference, where  g(X_1,X_2,\dots,X_n) is a joint distribution or a joint likelihood function, and the factorization depends on the conditional independencies among the variables.
+
+The Hammersley–Clifford theorem shows that other probabilistic models such as Bayesian networks and Markov networks can be represented as factor graphs; the latter representation is frequently used when performing inference over such networks using belief propagation. On the other hand, Bayesian networks are more naturally suited for generative models, as they can directly represent the causalities of the model.
+
+See also
+
+Belief propagation
+
+Bayesian inference
+
+Bayesian programming
+
+Conditional probability
+
+Markov network
+
+Bayesian network
+
+Hammersley–Clifford theorem
+
+==References==
+
+Further reading
+
+dimple  an open-source tool for building and solving factor graphs in MATLAB.
+
+Category:Graphical models
+
+Category:Markov networks
+
+Category:Application-specific graphs

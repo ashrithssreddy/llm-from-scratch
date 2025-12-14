@@ -1,0 +1,67 @@
+{{Infobox scientist
+
+name              = Tal Arbel
+
+nationality       = Canadian
+
+workplaces        = McGill University
+
+alma_mater        = McGill University
+
+thesis_title      = Active Object Recognition Conditioned by Probabilistic Evidence and Entropy Maps
+
+thesis_url        = http://www.cim.mcgill.ca/~apl/Papers/ABSTRACTS/ALL-ABSTRACTS/node9.html
+
+thesis_year       = 2000
+
+doctoral_advisor  = Frank Ferrie
+
+awards            = D.W. Ambridge Dissertation Award
+
+website           =
+
+image             = Tal Arbel at the 2018 Trottier Public Science Symposium (cropped).jpg
+
+caption           = Tal Arbel at the 2018 Trottier Public Science Symposium
+
+}}
+
+Tal Arbel is a professor of electrical engineering at McGill University who specialises in computer vision. She is interested in the application of artificial intelligence in healthcare.
+
+Early life and education
+
+Arbel was born in Montreal. Arbel's father was an electrical engineer. As a child Arbel was given a TRS-80 computer, which she used to play video games like pong. Her PhD thesis was awarded the D.W. Ambridge Prize for the best dissertation in Physical Sciences and Engineering at McGill University. After completing her PhD, Arbel worked at the Montreal Neurological Hospital, where she developed computer vision methods for neurology and neurosurgery.
+
+Career
+
+She works on algorithms to interpret medical images, which are used to assist in drug discovery and diagnostics. Her software can be used for image-guided neurosurgery. She was appointed to McGill University as a Research associate in 2000 and made an assistant professor in 2001. She received funding from the Natural Sciences and Engineering Research Council to launch the Collaborative Research and Training Experience Program in Medical Image Analysis (CREATE-MIA) program.
+
+At McGill, Arbel leads the Probabilistic Vision Group, which is part of the Centre for Intelligent Machines. She is also an Associate Member of the Montreal Institute for Learning Algorithms (MILA). She is interested in the biomarkers that can be used to improve medical care for people who suffer from Multiple Sclerosis. She created an Adaptive Multi-level Conditional Random Field (AMCRF) framework that can leverage spatial and temporal information. She demonstrated that cortical folding patterns in the brain vary over the population. For MS diagnostics, including a 3D MS lesion segmentation convolutional neural network (CNN). In an effort for to understand brain morphometry, Arbel has developed models for computational neuroanatomy.
+
+Arbel is the first woman to be made a Full Professor of Electrical Engineering at McGill University. She is committed to improving diversity in engineering, and is part of several women in computer vision committees. She is a mentor for young women working in science. She is a Member of the Ordre des ingénieurs du Québec.
+
+References
+
+Category:Living people
+
+Category:Academics from Montreal
+
+Category:Academic staff of McGill University
+
+Category:Scientists from Montreal
+
+Category:Canadian electrical engineers
+
+Category:Canadian women engineers
+
+Category:21st-century Canadian women engineers
+
+Category:Electrical engineering academics
+
+Category:McGill University Faculty of Engineering alumni
+
+Category:Machine learning researchers
+
+Category:Year of birth missing (living people)
+
+Category:Fellows of the Canadian Academy of Engineering

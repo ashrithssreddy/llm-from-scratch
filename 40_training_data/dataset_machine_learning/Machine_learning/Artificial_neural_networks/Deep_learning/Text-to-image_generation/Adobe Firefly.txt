@@ -1,0 +1,69 @@
+{{Infobox software
+
+name = Adobe Firefly
+
+logo = Adobe Firefly CC 2026 icon.svg
+
+logo alt = Logo of Adobe Firefly
+
+logo size = 130px
+
+screenshot = Adobe Firefly generated landscape photography.jpg
+
+screenshot alt = An AI-generated image of landscape photography showing mountain view with snow created by Adobe Firefly
+
+caption = An image generated with Adobe Firefly. Prompt: Paradise looking, but believable mountain landscape from drone perspective, sun is shining right over the edge of the highest mountain with snow on top
+
+developer = Adobe Inc.
+
+released =  (beta)
+
+latest release version =
+
+latest release date =
+
+repo =
+
+programming language =
+
+operating system =
+
+genre =
+
+license =
+
+website =
+
+}}
+
+Adobe Firefly is a web app and family of generative artificial intelligence models for creative production. Its capabilities include text-to-image and text-to-video. It is part of Adobe Creative Cloud, and also powers features in other Creative Cloud apps, including Photoshop's Generative Fill tool. Its video models are currently being tested in an open beta phase, and its image generation tools are available via subscription.
+
+Adobe Firefly is developed using Adobe's Sensei platform. Firefly is trained with images from Creative Commons, Wikimedia and Flickr Commons as well as 300 million images and videos in Adobe Stock and the public domain. This dependency only on training data for which Adobe owns the license or which is public domain has led them to describe the models' output as "commercially safe".
+
+Firefly for Enterprise was released on June 22, 2023.
+
+History
+
+Adobe Firefly was first announced in September 2022 at Adobe's MAX conference. It was initially released as a public beta in March 2023, and is currently available to all Adobe Creative Cloud subscribers.
+
+Adobe Firefly is built on top of Adobe Sensei, the company's AI platform.
+
+Google planned to use Firefly in Bard (now Gemini) as its AI image generator, but ended up using their own Imagen model.
+
+Mattel, IBM, and Dentsu have also partnered with Adobe.
+
+The demo showed a capability for generating variations of photos.
+
+In April 2025, Adobe released Adobe Firefly Image 4 and Firefly Image 4 Ultra Model in Adobe Firefly Web Application.
+
+References
+
+Category:2023 software
+
+Firefly
+
+Category:Graphic design
+
+Category:Text-to-image generation
+
+Category:2023 in artificial intelligence

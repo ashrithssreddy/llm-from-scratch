@@ -1,0 +1,49 @@
+In probability theory, a transition-rate matrix (also known as a Q-matrix, intensity matrix, or infinitesimal generator matrix) is an array of numbers describing the instantaneous rate at which a continuous-time Markov chain transitions between states.
+
+In a transition-rate matrix Q (sometimes written A), element q_{ij} (for i \neq j) denotes the rate departing from i and arriving in state j. The rates q_{ij} \geq 0, and the diagonal elements q_{ii} are defined such that
+
+q_{ii} = -\sum_{j\neq i} q_{ij},
+
+and therefore the rows of the matrix sum to zero.
+
+Up to a global sign, a large class of examples of such matrices is provided by the Laplacian of a directed, weighted graph. The vertices of the graph correspond to the Markov chain's states.
+
+Properties
+
+The transition-rate matrix has following properties:
+
+There is at least one eigenvector with a vanishing eigenvalue, exactly one if the graph of Q is strongly connected.
+
+All other eigenvalues \lambda fulfill  0 > \mathrm{Re}\{\lambda\} \geq 2 \min_i q_{ii}.
+
+All eigenvectors v with a non-zero eigenvalue fulfill \sum_{i}v_{i} = 0.
+
+The Transition-rate matrix satisfies the relation Q=P'(0) where P(t) is the continuous stochastic matrix.
+
+Example
+
+An M/M/1 queue, a model which counts the number of jobs in a queueing system with arrivals at rate λ and services at rate μ, has transition-rate matrix
+
+Q=\begin{pmatrix}
+
+-\lambda & \lambda \\
+
+\mu & -(\mu+\lambda) & \lambda \\
+
+&\mu & -(\mu+\lambda) & \lambda \\
+
+&&\mu & -(\mu+\lambda) & \ddots &\\
+
+&&&\ddots&\ddots
+
+\end{pmatrix}.
+
+See also
+
+Stochastic matrix
+
+References
+
+Category:Markov processes
+
+Category:Matrices (mathematics)

@@ -1,0 +1,57 @@
+Synapse is a component-based development environment for neural networks and adaptive systems. Created by Peltarion, Synapse allows data mining, statistical analysis, visualization, preprocessing, design and training of neural networks and adaptive systems and the deployment of them. It utilizes a plug-in based architecture making it a general platform for signal processing. The first version of the product was released in May 2006.
+
+Platform
+
+Due to its plug in-based design, the usage of Synapse can be very general. Synapse is based on the Microsoft .NET framework and all Synapse components are also .NET components. Although Peltarion has yet to release an official API for the Synapse platform, user made components are emerging, some of them being original, demonstrating the openness of the platform.Features
+
+The development cycle in Synapse is based on the canonical data mining cycle. A notable difference however is that in Synapse that cycle is not linear, but supports an iterative approach where the user can freely move between the steps. Synapse features four different operating modes that make up the development cycle.
+
+Preprocessing
+
+The preprocessing mode is for data mining and data preparation. In this mode the user can import, visualize, explore and transform data in a variety of ways. Data is imported through the use of format components. The standard release includes format components for reading and writing data from CSV (text) files, SQL databases, images and XML. The imported data can be visualized through visualizer components and filters can be applied to the data. The filter components range from simple data rearrangement to more advanced FFT and outlier removal filters.
+
+The visualizers include a variety of plots and grids, which can be interconnected and branched out to perform complex data mining tasks.
+
+Design
+
+In design mode components are linked to construct a topology. Linked components enable a signal flow creating a pipe filter machine. When a signal is set on a component, it filters the signal in some way and the filtered signal can then be piped to the next component in the linked chain of components that form the topology. The components can be either static or adaptive. Besides regular filters, they can be sources or sinks (like plots or data loggers). The standard distribution of synapse comes with a variety of components, ranging from simple neural network components such as weight layers and function layers, to whole neural networks such as self-organizing maps and more complex static elements like for instance the fuzzy logic component. The control system is chosen and configured in design mode as well.
+
+Training
+
+The training mode is used for training (adapting) the system, or more generally to start the control system that regulates the information flow. It is visually similar to design mode and the same components are displayed. As the components have support for context sensitive displays, they can have a different visual appearance in training. In addition to running the control system, training mode allows the execution of high-level optimizers such as genetic algorithms, particle swarm optimization and simulated annealing. Remote execution and training is also possible in this mode.
+
+Postprocessing
+
+The postprocessing mode is for analyzing a trained system and the preparation of such a system for end use. System performance can be tested using statistical analysis, the sensitivity of the input-output relations of a system can be analyzed (sensitivity analysis) and reports can be generated.
+
+One of the most important postprocessing components is the deployment component.
+
+Deployment
+
+The deployment component allows the export of a system made in Synapse to a single .NET component. The system in the development environment is downscaled so that it only contains the minimal necessary requirements for execution and then compiled into an assembly. This assembly can then be used in any .NET framework or .NET Compact Framework application. The latter allows the deployment to embedded devices.
+
+Example code in C#:
+
+DeployedNeuralNet net = new DeployedNeuralNet(); // Create nn object
+
+Matrix input = someSensor.GetData(); // Get data from some sensor
+
+net.Input_Sensor = input;  // Set inputs to the nn
+
+net.Run(); // Run the nn control system
+
+someMotor.Power = net.Output_Port0; // Set the power of some motor to the output of the nn
+
+See also
+
+Artificial neural network
+
+Neural network software
+
+Peltarion
+
+External links
+
+[https://levity.ai/peltarion-to-levity Levity, Peltarion shut down on September 30, 2022 purchased by King.
+
+Category:Neural network software

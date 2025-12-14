@@ -1,0 +1,19 @@
+The swish function is a family of mathematical function defined as follows:
+
+\operatorname{swish}_\beta(x) = x \operatorname{sigmoid}(\beta x) = \frac{x}{1+e^{-\beta x}}.. Variants of the swish function include Mish.
+
+Special values
+
+For β&nbsp;=&nbsp;0, the function is linear: f(x) = x/2.
+
+For β&nbsp;=&thinsp;1, the function is the Sigmoid Linear Unit (SiLU).
+
+With β&nbsp;→&nbsp;∞, the function converges to ReLU.
+
+Thus, the swish family smoothly interpolates between a linear function and the ReLU function.
+
+}}
+
+Category:Functions and mappings
+
+Category:Artificial neural networks

@@ -1,0 +1,151 @@
+{{Infobox scientist
+
+name        = Svetlana Lazebnik
+
+native_name = Світлана Лазебник
+
+native_name_lang = uk
+
+image       =
+
+alt         =
+
+caption     =
+
+birth_date         =
+
+birth_place        = Kiev, Ukrainian SSR, Soviet Union (now Kyiv, Ukraine)
+
+death_date  =
+
+death_place =
+
+death_cause =
+
+resting_place =
+
+resting_place_coordinates =
+
+other_names =
+
+residence   =
+
+citizenship =
+
+nationality =
+
+fields      =
+
+workplaces  = University of Illinois at Urbana–Champaign
+
+patrons     =
+
+alma_mater  = University of Illinois at Urbana–Champaign (PhD)
+
+thesis_title =  Local, Semi-Local and Global Models for Texture, Object and Scene Recognition
+
+thesis_url  =   https://slazebni.cs.illinois.edu/publications/phd_dissertation.pdf
+
+thesis_year =  2006
+
+doctoral_advisor = Jean Ponce
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students =
+
+known_for   =
+
+influences  =
+
+influenced  =
+
+awards      =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+spouse      =
+
+partner     =
+
+children    =
+
+signature   =
+
+signature_alt =
+
+website     =
+
+footnotes   =
+
+}}
+
+Svetlana Lazebnik (born 1979) is a Ukrainian-American researcher in computer vision who works as a professor of computer science and Willett Faculty Scholar at the University of Illinois at Urbana–Champaign. Her research involves interactions between image understanding and natural language processing, including the automated captioning of images, and the development of a benchmark database of textually grounded images.
+
+Education and career
+
+Lazebnik was born in Kyiv in 1979 to a family of Ukrainian Jews, and emigrated with her family to the US as a teenager. She majored in computer science at DePaul University, minoring in mathematics and graduating with the highest honors in 2000. She completed her Ph.D. in 2006 at the University of Illinois at Urbana–Champaign, with the dissertation Local, Semi-Local and Global Models for Texture, Object and Scene Recognition supervised by Jean Ponce.
+
+After postdoctoral research at the University of Illinois, she became an assistant professor at the University of North Carolina at Chapel Hill in 2007. She returned to the University of Illinois as a faculty member in 2012.
+
+She is a co-editor-in-chief of the International Journal of Computer Vision.
+
+Recognition
+
+Lazebnik was named an IEEE Fellow in 2021, "for contributions to computer vision".
+
+With Cordelia Schmid and Jean Ponce, she won the Longuet-Higgins Prize in 2016 for the best work in computer vision from ten years earlier, for their work on spatial pyramid matching.
+
+Notes
+
+References
+
+{{reflist|refs=
+
+}}
+
+External links
+
+Home page
+
+Category:1979 births
+
+Category:Living people
+
+Category:Ukrainian emigrants to the United States
+
+Category:American people of Ukrainian-Jewish descent
+
+Category:Scientists from Kyiv
+
+Category:American women computer scientists
+
+Category:American computer scientists
+
+Category:Ukrainian women computer scientists
+
+Category:Computer vision researchers
+
+Category:DePaul University alumni
+
+Category:Grainger College of Engineering alumni
+
+Category:University of North Carolina at Chapel Hill faculty
+
+Category:University of Illinois Urbana-Champaign faculty
+
+Category:Fellows of the IEEE
+
+Category:Natural language processing researchers
+
+Category:21st-century American women scientists
+
+Category:21st-century Ukrainian women scientists
+
+Category:21st-century American women academics
+
+Category:21st-century American academics

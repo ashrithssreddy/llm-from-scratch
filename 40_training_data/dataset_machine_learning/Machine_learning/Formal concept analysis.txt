@@ -1,0 +1,177 @@
+In information science, formal concept analysis (FCA) is a principled way of deriving a concept hierarchy or formal ontology from a collection of objects and their properties. Each concept in the hierarchy represents the objects sharing some set of properties; and each sub-concept in the hierarchy represents a subset of the objects (as well as a superset of the properties) in the concepts above it. The term was introduced by Rudolf Wille in 1981, and builds on the mathematical theory of lattices and ordered sets that was developed by Garrett Birkhoff and others in the 1930s.
+
+Formal concept analysis finds practical application in fields including data mining, text mining, machine learning, knowledge management, semantic web, software development, chemistry and biology.
+
+Overview and history
+
+The original motivation of formal concept analysis was the search for real-world meaning of mathematical order theory. One such possibility of very general nature is that data tables can be transformed into algebraic structures called complete lattices, and that these can be utilized for data visualization and interpretation. A data table that represents a heterogeneous relation between objects and attributes, tabulating pairs of the form "object g has attribute m", is considered as a basic data type. It is referred to as a formal context. In this theory, a formal concept is defined to be a pair (A, B), where A is a set of objects (called the extent) and B is a set of attributes (the intent) such that
+
+the extent A consists of all objects that share the attributes in B, and dually
+
+the intent B consists of all attributes shared by the objects in A.
+
+In this way, formal concept analysis formalizes the semantic notions of extension and intension.
+
+The formal concepts of any formal context can—as explained below—be ordered in a hierarchy called more formally the context's "concept lattice". The concept lattice can be graphically visualized as a "line diagram", which then may be helpful for understanding the data. Often however these lattices get too large for visualization. Then the mathematical theory of formal concept analysis may be helpful, e.g., for decomposing the lattice into smaller pieces without information loss, or for embedding it into another structure that is easier to interpret.
+
+The theory in its present form goes back to the early 1980s and a research group led by Rudolf Wille, Bernhard Ganter and Peter Burmeister at the Technische Universität Darmstadt. Its basic mathematical definitions, however, were already introduced in the 1930s by Garrett Birkhoff as part of general lattice theory. Other previous approaches to the same idea arose from various French research groups, but the Darmstadt group normalised the field and systematically worked out both its mathematical theory and its philosophical foundations. The latter refer in particular to Charles S. Peirce, but also to the Port-Royal Logic.
+
+Motivation and philosophical background
+
+In his article "Restructuring Lattice Theory" (1982), initiating formal concept analysis as a mathematical discipline, Wille starts from a discontent with the current lattice theory and pure mathematics in general: The production of theoretical results—often achieved by "elaborate mental gymnastics"—were impressive, but the connections between neighboring domains, even parts of a theory were getting weaker.
+
+This aim traces back to the educationalist Hartmut von Hentig, who in 1972 pleaded for restructuring sciences in view of better teaching and in order to make sciences mutually available and more generally (i.e. also without specialized knowledge) critiqueable. Hence, by its origins formal concept analysis aims at interdisciplinarity and democratic control of research.
+
+It corrects the starting point of lattice theory during the development of formal logic in the 19th century. Then—and later in model theory—a concept as unary predicate had been reduced to its extent. Now again, the philosophy of concepts should become less abstract by considering the intent. Hence, formal concept analysis is oriented towards the categories extension and intension of linguistics and classical conceptual logic.
+
+Formal concept analysis aims at the clarity of concepts according to Charles S. Peirce's pragmatic maxim by unfolding observable, elementary properties of the subsumed objects. For the purpose here it has been simplified.
+
+The data table represents a formal context, the line diagram next to it shows its concept lattice. Formal definitions follow below.
+
+The above line diagram consists of circles, connecting line segments, and labels. Circles represent formal concepts. The lines allow to read off the subconcept-superconcept hierarchy. Each object and attribute name is used as a label exactly once in the diagram, with objects below and attributes above concept circles. This is done in a way that an attribute can be reached from an object via an ascending path if and only if the object has the attribute.
+
+In the diagram shown, e.g. the object reservoir has the attributes stagnant and constant, but not the attributes temporary, running, natural, maritime. Accordingly, puddle has exactly the characteristics temporary, stagnant and natural.
+
+The original formal context can be reconstructed from the labelled diagram, as well as the formal concepts. The extent of a concept consists of those objects from which an ascending path leads to the circle representing the concept. The intent consists of those attributes to which there is an ascending path from that concept circle (in the diagram). In this diagram the concept immediately to the left of the label reservoir has the intent stagnant and natural and the extent puddle, maar, lake, pond, tarn, pool, lagoon, and sea.
+
+Formal contexts and concepts
+
+A formal context is a triple , where G is a set of objects, M is a set of attributes, and  is a binary relation called incidence that expresses which objects have which attributes. an irredundant set of implications from which all valid implications can be derived by the natural inference (Armstrong rules). This is used in attribute exploration, a knowledge acquisition method based on implications.
+
+Arrow relations
+
+Formal concept analysis has elaborate mathematical foundations, Voutsadakis has studied the n-ary case.
+
+Fuzzy concept analysis: Extensive work has been done on a fuzzy version of formal concept analysis.
+
+Concept algebras: Modelling negation of formal concepts is somewhat problematic because the complement  of a formal concept (A, B) is in general not a concept. However, since the concept lattice is complete one can consider the join (A, B)Δ of all concepts (C, D) that satisfy ; or dually the meet (A, B)𝛁 of all concepts satisfying . These two operations are known as weak negation and weak opposition, respectively. This can be expressed in terms of the derivation operators. Weak negation can be written as {{math|1=(A, B)Δ = ((G \ A), (G \ A)')}}, and weak opposition can be written as {{math|1=(A, B)𝛁 = ((M \ B)', (M \ B))}}. The concept lattice equipped with the two additional operations Δ and 𝛁 is known as the concept algebra of a context. Concept algebras generalize power sets. Weak negation on a concept lattice L is a weak complementation, i.e. an order-reversing map  which satisfies the axioms . Weak opposition is a dual weak complementation. A (bounded) lattice such as a concept algebra, which is equipped with a weak complementation and a dual weak complementation, is called a weakly dicomplemented lattice. Weakly dicomplemented lattices generalize distributive orthocomplemented lattices, i.e. Boolean algebras.
+
+Temporal concept analysis
+
+Temporal concept analysis (TCA) is an extension of Formal Concept Analysis (FCA) aiming at a conceptual description of temporal phenomena. It provides animations in concept lattices obtained from data about changing objects. It offers a general way of understanding change of concrete or abstract objects in continuous, discrete or hybrid space and time. TCA applies conceptual scaling to temporal data bases.
+
+In the simplest case TCA considers objects that change in time like a particle in physics, which, at each time, is at exactly one place. That happens in those temporal data where the attributes 'temporal object' and 'time' together form a key of the data base. Then the state (of a temporal object at a time in a view) is formalized as a certain object concept of the formal context describing the chosen view. In this simple case, a typical visualization of a temporal system is a line diagram of the concept lattice of the view into which trajectories of temporal objects are embedded.
+
+TCA generalizes the above mentioned case by considering temporal data bases with an arbitrary key. That leads to the notion of distributed objects which are at any given time at possibly many places, as for example, a high pressure zone on a weather map. The notions of 'temporal objects', 'time' and 'place' are represented as formal concepts in scales. A state is formalized as a set of object concepts.
+
+That leads to a conceptual interpretation of the ideas of particles and waves in physics.
+
+Algorithms and tools
+
+There are a number of simple and fast algorithms for generating formal concepts and for constructing and navigating concept lattices. For a survey, see Kuznetsov and Obiedkov or the book by Ganter and Obiedkov, The main purpose of these tools varies from formal context creation to formal concept mining and generating the concepts lattice of a given formal context and the corresponding implications and association rules. Most of these tools are academic open-source applications, such as:
+
+ConExp
+
+ToscanaJ
+
+Lattice Miner
+
+Coron
+
+FcaBedrock
+
+GALACTIC
+
+Related analytical techniques
+
+Bicliques
+
+A formal context can naturally be interpreted as a bipartite graph. The formal concepts then correspond to the maximal bicliques in that graph. The mathematical and algorithmic results of formal concept analysis may thus be used for the theory of maximal bicliques. The notion of bipartite dimension (of the complemented bipartite graph) translates
+
+Biclustering and multidimensional clustering
+
+Given an object-attribute numerical data-table, the goal of biclustering is to group together some objects having similar values of some attributes. For example, in gene expression data, it is known that genes (objects) may share a common behavior for a subset of biological situations (attributes) only: one should accordingly produce local patterns to characterize biological processes, the latter should possibly overlap, since a gene may be involved in several processes. The same remark applies for recommender systems where one is interested in local patterns characterizing groups of users that strongly share almost the same tastes for a subset of items.
+
+A bicluster in a binary object-attribute data-table is a pair (A,B) consisting of an inclusion-maximal set of objects A and an inclusion-maximal set of attributes B such that almost all objects from A have almost all attributes from B and vice versa.
+
+Of course, formal concepts can be considered as "rigid" biclusters where all objects have all attributes and vice versa. Hence, it is not surprising that some bicluster definitions coming from practice are just definitions of a formal concept. Relaxed FCA-based versions of biclustering and triclustering include OA-biclustering and OAC-triclustering (here O stands for object, A for attribute, C for condition); to generate patterns these methods use prime operators only once being applied to a single entity (e.g. object) or a pair of entities (e.g. attribute-condition), respectively.
+
+A bicluster of similar values in a numerical object-attribute data-table is usually defined as a pair consisting of an inclusion-maximal set of objects and an inclusion-maximal set of attributes having similar values for the objects. Such a pair can be represented as an inclusion-maximal rectangle in the numerical table, modulo rows and columns permutations. In Including the fields of: medicine and cell biology, genetics, ecology, software engineering, ontology, information and library sciences, office administration, law, linguistics, political science.
+
+Many more examples are e.g. described in: Formal Concept Analysis. Foundations and Applications, Concept Lattices and their Applications (CLA), or International Conference on Conceptual Structures (ICCS).
+
+See also
+
+Association rule learning
+
+Cluster analysis
+
+Commonsense reasoning
+
+Conceptual analysis
+
+Conceptual clustering
+
+Conceptual space
+
+Concept learning
+
+Correspondence analysis
+
+Description logic
+
+Factor analysis
+
+Formal semantics (natural language)
+
+General Concept Lattice
+
+Graphical model
+
+Grounded theory
+
+Inductive logic programming
+
+Pattern theory
+
+Statistical relational learning
+
+Schema (genetic algorithms)
+
+Notes
+
+References
+
+External links
+
+A Formal Concept Analysis Homepage
+
+Demo
+
+Formal Concept Analysis. ICFCA International Conference Proceedings
+
+2007 5th
+
+2008 6th
+
+2009 7th
+
+2010 8th
+
+2011 9th
+
+2012 10th
+
+2013 11th
+
+2014 12th
+
+2015 13th
+
+2017 14th
+
+2019 15th
+
+2021 16th
+
+Category:Machine learning
+
+Category:Lattice theory
+
+Category:Data mining
+
+Category:Formal semantics (natural language)
+
+Category:Ontology (information science)
+
+Category:Semantic relations

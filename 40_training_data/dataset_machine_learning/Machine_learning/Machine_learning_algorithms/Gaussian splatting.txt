@@ -1,0 +1,59 @@
+{{multiple issues|
+
+}}
+
+Gaussian splatting is a volume rendering technique that deals with the direct rendering of volume data without converting the data into surface or line primitives. The technique was originally introduced as splatting by Lee Westover in the early 1990s.
+
+This technique was revitalized and exploded in popularity in 2023, when a research group from Inria proposed the seminal 3D Gaussian splatting that offers real-time radiance field rendering. Like other radiance field methods, it can convert multiple images into a representation of 3D space, then use the representation to create images as seen from new angles. It enables the creation of high-quality real-time novel-view scenes by combining multiple photos or videos, addressing a significant challenge in the field.
+
+The method represents scenes with 3D Gaussians that retain properties of continuous volumetric radiance fields, integrating sparse points produced during camera calibration. It introduces an Anisotropic representation using 3D Gaussians to model radiance fields, along with an interleaved optimization and density control of the Gaussians. A fast visibility-aware rendering algorithm supporting anisotropic splatting is also proposed, catering to GPU usage.
+
+Rasterizer: Implementing a tile-based rasterizer for fast sorting and backward pass, enabling efficient blending of Gaussian components.
+
+The method uses differentiable 3D Gaussian splatting, which is unstructured and explicit, allowing rapid rendering and projection to 2D splats. The covariance of the Gaussians can be thought of as configurations of an ellipsoid, which can be mathematically decomposed into a scaling matrix and a rotation matrix. The gradients for all parameters are derived explicitly to overcome any overhead due to autodiff.
+
+Each step of rendering is followed by a comparison to the training views available in the dataset. The optimization uses the difference to create a dense set of 3D Gaussians that represent the scene as accurately as possible.
+
+Using
+
+An optimized set of 3D Gaussians is saved onto the computer. Like in the training step, a renderer creates a view from these Gaussians.
+
+Several sets of Gaussians can be composed together into larger scenes.
+
+Results and evaluation
+
+The authors They compared their method against state-of-the-art techniques like Mip-NeRF360, InstantNGP, and Plenoxels. It represents and renders dynamic scenes by modeling complex motions while maintaining efficiency. The method uses a HexPlane to connect adjacent Gaussians, providing an accurate representation of position and shape deformations. By utilizing only a single set of canonical 3D Gaussians and predictive analytics, it models how they move over different timestamps.
+
+It is sometimes referred to as "4D Gaussian splatting"; however, this naming convention implies the use of 4D Gaussian primitives (parameterized by a 4×4 mean and a 4×4 covariance matrix). Most work in this area still employs 3D Gaussian primitives, applying temporal constraints as an extra parameter of optimization.
+
+Achievements of this technique include real-time rendering on dynamic scenes with high resolutions, while maintaining quality. It showcases potential applications for future developments in film and other media, although there are current limitations regarding the length of motion captured.
+
+End-to-end Autonomous Driving: Mentions 3D Gaussian splatting as a data-driven sensor simulation method for autonomous driving, highlighting its ability to generate realistic novel views of a scene.
+
+SuGaR: Proposes a method to extract precise and fast meshes from 3D Gaussian splatting.
+
+SplaTAM: Applies 3D Gaussian-based radiance fields to Simultaneous Localization and Mapping (SLAM), leveraging fast rendering and optimization capabilities to achieve state-of-the-art results.
+
+Align Your Gaussians: Uses dynamic 3D Gaussians for 4D content creation from text.
+
+See also
+
+Ambisonics
+
+Computer graphics
+
+Neural radiance field
+
+Volume rendering
+
+References
+
+Category:Machine learning algorithms
+
+Category:3D rendering
+
+Category:3D computer graphics
+
+Category:3D animation software
+
+Category:Carl Friedrich Gauss

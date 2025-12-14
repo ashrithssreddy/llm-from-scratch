@@ -1,0 +1,117 @@
+{{Infobox scientist
+
+name  = Volker Markl
+
+image            = Volker Markl.png
+
+image_size       = 100px
+
+caption          = Markl in 2025
+
+birth_date        =
+
+birth_place       =
+
+fields            =
+
+workplaces        =
+
+alma_mater        = {{Plainlist|
+
+Technical University of Munich
+
+}}
+
+doctoral_advisor  = Rudolf Bayer
+
+title =
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students  =
+
+thesis_title =
+
+thesis_year =
+
+thesis_url =
+
+known_for         =
+
+awards            = {{Plainlist|
+
+ACM Fellow
+
+}}
+
+website           =
+
+}}
+
+Volker Markl (born 1971) is a German computer scientist and database systems researcher.
+
+Career
+
+In 1999, Markl received his PhD in computer science under the direction of Rudolf Bayer at the Technical University of Munich. His doctoral research led to the development of the UB-Tree. From 1997 to 2000, he was research group leader at FORWISS, the Bavarian research center for knowledge-based systems. From 2001 to 2008, he was project leader at the IBM Almaden Research Center, Silicon Valley. Since 2008, he has been full professor and Chair of the Database Systems and Information Management Group at Technische Universität Berlin. Since 2014, he is head of the Intelligent Analytics for Massive Data Research Department at the German Research Centre for Artificial Intelligence (DFKI), Berlin. From 2014 to 2020, he was director of the Berlin Big Data Center (BBDC). From 2018 to 2020, he was co-director of the Berlin Machine Learning Center (BZML). Together with Klaus-Robert Müller he became director of the new Berlin Institute for the Foundations of Learning and Data (BIFOLD), after both BBDC and the BZML merged into BIFOLD in 2020.
+
+From 2010 through 2019, he led the DFG funded Stratosphere project, which led to the establishment of Apache Flink. In 2018, he was elected president of the VLDB Endowment for a six years period that ended in 2024.
+
+Research
+
+Markl’s research interests lie at the intersection of distributed systems, scalable data processing, and machine learning.
+
+Awards and honors
+
+Markl was elected member of the Berlin-Brandenburg Academy of Sciences and Humanities in 2021.
+
+His work was honoured with several awards, including:
+
+2021 ICDE Best Paper Award
+
+2021 BTW Best Paper Award
+
+2020 ACM SIGMOD Best Paper Award
+
+2020 ACM Fellow
+
+2019 EDBT Best Paper Award
+
+2017 BTW Best Paper Award
+
+2017 EDBT Best Demonstration Award
+
+2016 ACM SIGMOD Research Highlight Award
+
+2014 VLDB Best Paper Award
+
+2012 IBM Faculty Award
+
+2012 IBM Shared University Research Grant
+
+2010 Hewlett Packard Open Innovation Award
+
+2005 IBM Outstanding Technological Achievement Award
+
+2005 IBM Pat Goldberg Best Paper Award
+
+References
+
+External links
+
+Category:Machine learning researchers
+
+Category:Database researchers
+
+Category:2020 fellows of the Association for Computing Machinery
+
+Category:Academic staff of Technische Universität Berlin
+
+Category:German computer scientists
+
+Category:Living people
+
+Category:Technical University of Munich alumni
+
+Category:1971 births

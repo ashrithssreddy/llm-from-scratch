@@ -1,0 +1,31 @@
+CoDi is a cellular automaton (CA) model for spiking neural networks (SNNs). CoDi is an acronym for Collect and Distribute, referring to the signals and spikes in a neural network.
+
+CoDi uses a von Neumann neighborhood modified for a three-dimensional space; each cell looks at the states of its six orthogonal neighbors and its own state. In a growth phase a neural network is grown in the CA-space based on an underlying chromosome. There are four types of cells: neuron body, axon, dendrite and blank. The growth phase is followed by a signaling- or processing-phase. Signals are distributed from the neuron bodies via their axon tree and collected from connection dendrites. De Garis conducted a series of experiments on the CAM-machine evaluating the CoDi model. The original model, where learning is based on evolutionary algorithms, has been augmented with a local learning rule via feedback from dendritic spikes by Schwarzer.
+
+See also
+
+Artificial brain
+
+Biological neural network
+
+Blue Brain Project
+
+Cultured neuronal network
+
+Firing squad synchronization problem
+
+Neurochip
+
+Neurogrid
+
+Spiking neural network
+
+SpiNNaker
+
+Von Neumann cellular automaton
+
+References
+
+Category:Cellular automaton rules
+
+Category:Artificial neural networks

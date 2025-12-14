@@ -1,0 +1,25 @@
+The Santa Fe Trail problem is a genetic programming exercise in which artificial ants search for food pellets according to a programmed set of instructions. The layout of food pellets in the Santa Fe Trail problem has become a standard for comparing different genetic programming algorithms and solutions.
+
+One method for programming and testing algorithms on the Santa Fe Trail problem is by using the NetLogo application. There is at least one case of a student creating a Lego robotic ant to solve the problem.
+
+See also
+
+Genetic programming
+
+Agent-based model
+
+Java Grammatical Evolution
+
+References
+
+External links
+
+Genetic-programming.org
+
+Grammatical-evolution.org
+
+Teamwork in genetic programming
+
+java Grammatical Evolution
+
+Category:Genetic programming

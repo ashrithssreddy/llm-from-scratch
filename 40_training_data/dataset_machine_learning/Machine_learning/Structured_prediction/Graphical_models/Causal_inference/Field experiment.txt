@@ -1,0 +1,63 @@
+Field experiments are experiments carried out outside of laboratory settings. They are different from others in that they are conducted in real-world settings often unobtrusively and control not only the subject pool but selection and overtness, as defined by leaders such as John A. List. This is in contrast to laboratory experiments, which enforce scientific control by testing a hypothesis in the artificial and highly controlled setting of a laboratory. Field experiments have some contextual differences as well from naturally occurring experiments and quasi-experiments. While naturally occurring experiments rely on an external force (e.g. a government, nonprofit, etc.) controlling the randomization treatment assignment and implementation, field experiments require researchers to retain control over randomization and implementation. Quasi-experiments occur when treatments are administered as-if randomly (e.g. U.S. Congressional districts where candidates win with slim margins, weather patterns, natural disasters, etc.).
+
+In a field experiment, researchers randomly assign subjects (or other sampling units) to either treatment or control groups to test claims of causal relationships. Random assignment helps establish the comparability of the treatment and control group so that any differences between them that emerge after the treatment has been administered plausibly reflect the influence of the treatment rather than preexisting differences between the groups.
+
+Field experiments encompass a broad array of experimental designs, each with varying degrees of generality. Some criteria of generality (e.g. authenticity of treatments, participants, contexts, and outcome measures) refer to the contextual similarities between the subjects in the experimental sample and the rest of the population. They are increasingly used in the social sciences to study the effects of policy-related interventions in domains such as health, education, crime, social welfare, and politics.
+
+Characteristics
+
+Under random assignment, outcomes of field experiments are reflective of the real-world because subjects are assigned to groups based on non-deterministic probabilities. Two other core assumptions underlie the ability of the researcher to collect unbiased potential outcomes: excludability and non-interference. The excludability assumption provides that the only relevant causal agent is through the receipt of the treatment. Asymmetries in assignment, administration or measurement of treatment and control groups violate this assumption. The non-interference assumption, or Stable Unit Treatment Value Assumption (SUTVA), indicates that the value of the outcome depends only on whether or not the subject is assigned the treatment and not whether or not other subjects are assigned to the treatment. When these three core assumptions are met, researchers are more likely to provide unbiased estimates through field experiments.
+
+After designing the field experiment and gathering the data, researchers can use statistical inference tests to determine the size and strength of the intervention's effect on the subjects. Field experiments allow researchers to collect diverse amounts and types of data. For example, a researcher could design an experiment that uses pre- and post-trial information in an appropriate statistical inference method to see if an intervention has an effect on subject-level changes in outcomes.
+
+Practical uses
+
+Field experiments offer researchers a way to test theories and answer questions with higher external validity because they simulate real-world occurrences. Compared to surveys and lab experiments, one strength of field experiments is that they can test people without them being aware that they are in a study, which could influence how they respond (called the "Hawthorne Effect"). For example, researchers used a field experiment by posting different types of employment ads to test people's preferences for stable versus exciting jobs as a way to check the validity of people's responses to survey measures.
+
+Some researchers argue that field experiments are a better guard against potential bias and biased estimators. Field experiments can act as benchmarks for comparing observational data to experimental results. Using field experiments as benchmarks can help determine levels of bias in observational studies, and, since researchers often develop a hypothesis from an a priori judgment, benchmarks can help to add credibility to a study. While some argue that covariate adjustment or matching designs might work just as well in eliminating bias, field experiments can increase certainty by displacing omitted variable bias because they better allocate observed and unobserved factors.
+
+Researchers can utilize machine learning methods to simulate, reweight, and generalize experimental data. This increases the speed and efficiency of gathering experimental results and reduces the costs of implementing the experiment. Another cutting-edge technique in field experiments is the use of the multi armed bandit design, including similar adaptive designs on experiments with variable outcomes and variable treatments over time.
+
+Limitations
+
+There are limitations of and arguments against using field experiments in place of other research designs (e.g. lab experiments, survey experiments, observational studies, etc.). Given that field experiments necessarily take place in a specific geographic and political setting, there is a concern about extrapolating outcomes to formulate a general theory regarding the population of interest. However, researchers have begun to find strategies to effectively generalize causal effects outside of the sample by comparing the environments of the treated population and external population, accessing information from larger sample size, and accounting and modeling for treatment effects heterogeneity within the sample. Others have used covariate blocking techniques to generalize from field experiment populations to external populations.
+
+Noncompliance issues affecting field experiments (both one-sided and two-sided noncompliance)
+
+Using field experiments can also lead to concerns over interference between subjects. When a treated subject or group affects the outcomes of the nontreated group (through conditions like displacement, communication, contagion etc.), nontreated groups might not have an outcome that is the true untreated outcome. A subset of interference is the spillover effect, which occurs when the treatment of treated groups has an effect on neighboring untreated groups.
+
+Field experiments can be expensive, time-consuming to conduct, difficult to replicate, and plagued with ethical pitfalls. Subjects or populations might undermine the implementation process if there is a perception of unfairness in treatment selection (e.g. in 'negative income tax' experiments communities may lobby for their community to get a cash transfer so the assignment is not purely random). There are limitations to collecting consent forms from all subjects. Comrades administering interventions or collecting data could contaminate the randomization scheme. The resulting data, therefore, could be more varied: larger standard deviation, less precision and accuracy, etc.  This leads to the use of larger sample sizes for field testing. However, others argue that, even though replicability is difficult, if the results of the experiment are important then there a larger chance that the experiment will get replicated. As well, field experiments can adopt a "stepped-wedge" design that will eventually give the entire sample access to the intervention on different timing schedules. Researchers can also design a blinded field experiment to remove possibilities of manipulation.
+
+Examples
+
+The history of experiments in the lab and the field has left longstanding impacts in the physical, natural, and life sciences. Modern use field experiments has roots in the 1700s, when James Lind utilized a controlled field experiment to identify a treatment for scurvy.
+
+Other categorical examples of sciences that use field experiments include:
+
+Economists have used field experiments to analyze discrimination (e.g., in the labor market, in housing, in the sharing economy, in the credit market, or in integration), health care programs, charitable fundraising, education, information aggregation in markets, and microfinance programs.
+
+Engineers often conduct field tests of prototype products to validate earlier laboratory tests and to obtain broader feedback.
+
+Researchers in social psychology often use field experiments, such as Stanley Milgram's Stanford Prison Experiment and Robert Cialdini's door-in-the-face study.
+
+Agricultural science researcher R.A. Fisher analyzed randomized actual "field" experimental data for crops.
+
+Political Science researcher Harold Gosnell conducted an early field experiment on voter participation in 1924 and 1925.
+
+Ecology Joseph H. Connell’s field experiment.
+
+See also
+
+Field research
+
+References
+
+Category:Design of experiments
+
+Category:Tests
+
+Category:Causal inference
+
+Category:Mathematical and quantitative methods (economics)
+
+Category:Field research

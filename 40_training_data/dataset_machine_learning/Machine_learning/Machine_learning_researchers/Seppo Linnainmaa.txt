@@ -1,0 +1,25 @@
+Seppo Ilmari Linnainmaa (born 28 September 1945) is a Finnish mathematician and computer scientist known for creating the modern version of backpropagation.
+
+Biography
+
+He was born in Pori. He received his MSc in 1970 and introduced a reverse mode of automatic differentiation in his MSc thesis. In 1974 he obtained the first doctorate ever awarded in computer science at the University of Helsinki. when he introduced the reverse mode of automatic differentiation (AD), in order to efficiently compute the derivative of a differentiable composite function that can be represented as a graph, by recursively applying the chain rule to the building blocks of the function. Linnainmaa published it first, following Gerardi Ostrowski who had used it in the context of certain process models in chemical engineering some five years earlier, but didn't publish.
+
+Notes
+
+External links
+
+Category:Living people
+
+Category:1945 births
+
+Category:People from Pori
+
+Category:Finnish mathematicians
+
+Category:Finnish computer scientists
+
+Category:University of Helsinki alumni
+
+Category:Academic staff of the University of Helsinki
+
+Category:Machine learning researchers

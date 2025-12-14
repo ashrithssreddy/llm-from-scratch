@@ -1,0 +1,97 @@
+In machine learning, the term stochastic parrot is a metaphor, introduced by Emily M. Bender and colleagues in a 2021 paper, that frames large language models as systems that statistically mimic text without real understanding. The term carries a negative connotation.
+
+The word "stochastic"from the ancient Greek "στοχαστικός" (, "based on guesswork")is a term from probability theory meaning "randomly determined".
+
+LLMs are limited by the data they are trained by and are simply stochastically repeating contents of datasets.
+
+Because they are just making up outputs based on training data, LLMs do not understand if they are saying something incorrect or inappropriate.
+
+Lindholm et al. noted that, with poor quality datasets and other limitations, a learning machine might produce results that are "dangerously wrong".
+
+Dismissal of Gebru by Google
+
+Gebru was asked by Google to retract the paper or remove the names of Google employees from it. According to Jeff Dean, the paper "didn't meet our bar for publication". In response, Gebru listed conditions to be met, stating that otherwise they could "work on a last date". Dean wrote that one of these conditions was for Google to disclose the reviewers of the paper and their specific feedback, which Google declined. Shortly after, she received an email saying that Google was "accepting her resignation". Her firing sparked a protest by Google employees, who believed the intent was to censor Gebru's criticism.
+
+Usage
+
+The phrase has been used by AI skeptics to signify that LLMs lack understanding of the meaning of their outputs.
+
+Sam Altman, CEO of OpenAI, used the term shortly after the release of ChatGPT, when he tweeted "i am a stochastic parrot, and so r u".
+
+Debate
+
+Some LLMs, such as ChatGPT, have become capable of interacting with users in convincingly human-like conversations. The development of these new systems has deepened the discussion of the extent to which LLMs understand or are simply "parroting".
+
+Subjective experience
+
+In the mind of a human being, words and language correspond to things one has experienced. For LLMs, words may correspond only to other words and patterns of usage fed into their training data. GPT-4 scored in the  on the Uniform Bar Examination and achieved 93% accuracy on the MATH benchmark of high-school Olympiad problems, results that exceed rote pattern-matching expectations. From this perspective, understanding is not an alternative to statistical prediction, but rather an emergent property required to perform it effectively at scale. Hinton also uses logical puzzles to demonstrate that LLMs actually understand language.
+
+A 2024 Scientific American investigation described a closed Berkeley workshop where state-of-the-art models solved novel tier-4 mathematics problems and produced coherent proofs, indicating reasoning abilities beyond memorization.
+
+The GPT-4 Technical Report showed human-level results on professional and academic exams (e.g., the Uniform Bar Exam and USMLE), challenging the "parrot" characterization.
+
+Interpretability
+
+Another line of evidence against the 'stochastic parrot' claim comes from mechanistic interpretability, a research field dedicated to reverse-engineering LLMs to understand their internal workings. Rather than only observing the model's input-output behavior, these techniques probe the model's internal activations, which can be used to determine if they contain structured representations of the world. The goal is to investigate whether LLMs are merely manipulating surface statistics or if they are building and using internal "world models" to process information.
+
+One example is Othello-GPT, where a small transformer was trained to predict legal Othello moves. It has been found that this model has an internal representation of the Othello board, and that modifying this representation changes the predicted legal Othello moves in the correct way. This supports the idea that LLMs have a "world model", and are not just doing superficial statistics.
+
+In another example, a small transformer was trained on computer programs written in the programming language Karel. Similar to the Othello-GPT example, this model developed an internal representation of Karel program semantics. Modifying this representation results in appropriate changes to the output. Additionally, the model generates correct programs that are, on average, shorter than those in the training set.
+
+Researchers also studied "grokking", a phenomenon where an AI model initially memorizes the training data outputs, and then, after further training, suddenly finds a solution that generalizes to unseen data.
+
+Shortcut learning and benchmark flaws
+
+A significant counterpoint in the debate is the well-documented phenomenon of "shortcut learning." Models have shown examples of shortcut learning, which is when a system makes unrelated correlations within data instead of using human-like understanding.
+
+One such experiment conducted in 2019 tested Google's BERT LLM using the argument reasoning comprehension task. BERT was prompted to choose between 2 statements, and find the one most consistent with an argument. Below is an example of one of these prompts:
+
+Researchers found that specific words such as "not" hint the model towards the correct answer, allowing near-perfect scores when included but resulting in random selection when hint words were removed. This problem, and the known difficulties defining intelligence, causes some to argue all benchmarks that find understanding in LLMs are flawed, that they all allow shortcuts to fake understanding.
+
+See also
+
+Chinese room
+
+Criticism of artificial neural networks
+
+Criticism of deep learning
+
+Generative AI
+
+Mark V. Shaney, an early chatbot that used a very simple three-word Markov chain algorithm to generate Markov text
+
+Autocomplete
+
+References
+
+Works cited
+
+Keynote by Emily Bender. The presentation was followed by a panel discussion.
+
+Further reading
+
+External links
+
+"On the Dangers of Stochastic Parrots: Can Language Models Be Too Big? 🦜" at Wikimedia Commons
+
+Category:Chatbots
+
+Category:Concepts in the philosophy of language
+
+Category:Concepts in the philosophy of mind
+
+Category:Criticism of Google
+
+Category:Deep learning
+
+Category:Large language models
+
+Category:Philosophy of artificial intelligence
+
+Category:Statistical natural language processing
+
+Category:Parrots
+
+Category:2021 neologisms
+
+Category:Pejorative terms related to technology

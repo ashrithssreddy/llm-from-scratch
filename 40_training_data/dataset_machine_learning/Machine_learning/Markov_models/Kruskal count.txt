@@ -1,0 +1,61 @@
+The Kruskal count
+
+}}
+
+References
+
+{{reflist|refs=
+
+}}
+
+Further reading
+
+(1+9+80+9+1 pages) (NB. This is a translation of the first Russian edition published as ""[https://web.archive.org/web/20200629114941/http://ilib.mccme.ru:80/djvu/bib-mat-kr/besedy.htm by GTTI () in March 1952 as Number 6 in Library of the Mathematics Circle (). It is based on seminars held at the School Mathematics Circle in 1945/1946 and 1946/1947 at Moscow State University.)
+
+(xii+365+1 pages);  (viii+274+2 pages) (NB. This was originally published in Russian as "Markovskie prot︠s︡essy" () by Fizmatgiz () in 1963 and translated to English with the assistance of the author.)
+
+(x+237 pages) (NB. This is a corrected translation of the first Russian edition published as "" by Nauka Press () in 1967 as part of a series on Probability Theory and Mathematical Statistics () with the assistance of the authors. It is based on lectures held at the Moscow State University in 1962/1963.)
+
+(4 pages)
+
+(4 pages);  (4 of xiv+373+17 pages)
+
+(xvi+421 pages)
+
+{{cite journal |title=A Random Walk on a Circular Path |author-first1=Wai-Ki |author-last1=Ching |author-link1=:d:Q102247201 |author-first2=Yiu-Fai |author-last2=Lee |journal= |issn=0020-739X |eissn=1464-5211 |publisher=Taylor & Francis, Ltd. |department=Miscellany |volume=36 |issue=6 |date=September 2005 |orig-date=2004-05-05 |doi=10.1080/00207390500064254 |pages=680–683|s2cid=121692834 }} (4 pages)
+
+{{cite journal |title=On Convergent Probability of a Random Walk |author-first1=Yiu-Fai |author-last1=Lee |author-first2=Wai-Ki |author-last2=Ching
+
+author-link2=:d:Q102247201 |date=2006-03-07 |department=Classroom notes |journal= |issn=0020-739X |eissn=1464-5211 |volume=37 |issue=7 |publisher=Taylor & Francis, Ltd. |orig-date=2005-09-29 |doi=10.1080/00207390600712299 |location=Advanced Modeling and Applied Computing Laboratory and Department of Mathematics, The University of Hong Kong, Hong Kong |pages=833–838 |s2cid=121242696 |url=http://www.math.hku.hk/imrwww/IMRPreprintSeries/2006/IMR2006-11.pdf |access-date=2023-09-02 |url-status=live |archive-url=https://web.archive.org/web/20230902190323/http://www.math.hku.hk/imrwww/IMRPreprintSeries/2006/IMR2006-11.pdf |archive-date=2023-09-02}} (6 pages)
+
+(1+10 pages)
+
+(8 pages)
+
+[https://web.archive.org/web/20230902172632/http://page.mi.fu-berlin.de/bhrnds/publ_papers/nl2012-09-85_1.pdf (2 pages)
+
+(10 pages)
+
+(18 pages)
+
+(23 pages)
+
+*
+
+(1+xvii+1+152 pages)
+
+(13 pages)
+
+(17 pages) (NB. This source does not mention Dynkin or Kruskal specifically.)
+
+External links
+
+[23:40
+
+Category:Recreational mathematics
+
+Category:Cryptography
+
+Category:Number theoretic algorithms
+
+Category:Markov models

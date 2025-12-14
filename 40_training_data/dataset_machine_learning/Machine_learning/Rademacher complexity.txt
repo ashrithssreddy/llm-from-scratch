@@ -1,0 +1,89 @@
+In computational learning theory (machine learning and theory of computation), Rademacher complexity, named after Hans Rademacher, measures richness of a class of sets with respect to a probability distribution. The concept can also be extended to real valued functions.
+
+Definitions
+
+Rademacher complexity of a set
+
+Given a set A\subseteq \mathbb{R}^m, the Rademacher complexity of A is defined as follows:
+
+\operatorname{Rad}(A)
+
+=
+
+\frac{1}{m}
+
+\mathbb{E}_\sigma \left[
+
+\sup_{a \in A}
+
+\sum_{i=1}^m \sigma_i a_i
+
+\right]
+
+where \sigma_1, \sigma_2, \dots, \sigma_m are independent random variables drawn from the Rademacher distribution i.e. \Pr(\sigma_i = +1) = \Pr(\sigma_i = -1) = 1/2 for i \in \{1,2,\dots,m\}, and  a=(a_1, \ldots, a_m) \in A. Some authors take the absolute value of the sum before taking the supremum, but if A is symmetric this makes no difference.
+
+Rademacher complexity of a function class
+
+Let S=\{z_1, z_2, \dots, z_m\} \subseteq Z be a sample of points and consider a function class \mathcal{F} of real-valued functions over Z. Then, the empirical Rademacher complexity of \mathcal{F} given S is defined as:
+
+\operatorname{Rad}_S(\mathcal{F})
+
+=
+
+\frac{1}{m}
+
+\mathbb{E}_\sigma \left[
+
+\sup_{f \in \mathcal{F}}
+
+\left|\sum_{i=1}^m \sigma_i f(z_i)  \right|
+
+\right]
+
+This can also be written using the previous definition:
+
+The set A = \{(1,1),(1,2)\} \subseteq \mathbb{R}^2 has average width 1/\sqrt 2  along the two diagonal directions of the square, so it has Rademacher complexity 1/4 .
+
+The unit cube [0, 1]^m has constant width \sqrt m  along the diagonal directions, so it has Rademacher complexity 1/2 . Similarly, the unit cross-polytope \{x\in\mathbb R^m : \|x\|_1 \le 1\} has constant width 2/\sqrt m  along the diagonal directions, so it has Rademacher complexity 1/m .
+
+Using the Rademacher complexity
+
+The Rademacher complexity can be used to derive data-dependent upper-bounds on the learnability of function classes. Intuitively, a function-class with smaller Rademacher complexity is easier to learn.
+
+Bounding the representativeness
+
+In machine learning, it is desired to have a training set that represents the true distribution of some sample data S. This can be quantified using the notion of representativeness. Denote by P the probability distribution from which the samples are drawn. Denote by H the set of hypotheses (potential classifiers) and denote by \mathcal F the corresponding set of error functions, i.e., for every hypothesis h\in H, there is a function f_h\in F, that maps each training sample (features,label) to the error of the classifier h (note in this case hypothesis and classifier are used interchangeably). For example, in the case that h represents a binary classifier, the error function is a 0–1 loss function, i.e. the error function f_h returns 0 if h correctly classifies a sample and 1 else. We omit the index and write f instead of f_h when the underlying hypothesis is irrelevant. Define:
+
+L_P(f) := \mathbb E_{z\sim P}[f(z)] – the expected error of some error function f\in \mathcal F on the real distribution P;
+
+L_S(f) := {1\over m} \sum_{i=1}^m f(z_i) – the estimated error of some error function f\in \mathcal F on the sample S.
+
+The representativeness of the sample S, with respect to P and \mathcal F, is defined as:
+
+\operatorname{Rep}_P(\mathcal F,S) := \sup_{f\in F} (L_P(f) - L_S(f))
+
+Smaller representativeness is better, since it provides a way to avoid overfitting: it means that the true error of a classifier is not much higher than its estimated error, and so selecting a classifier that has low estimated error will ensure that the true error is also low. Note however that the concept of representativeness is relative and hence can not be compared across distinct samples.
+
+The expected representativeness of a sample can be bounded above by the Rademacher complexity of the function class: If \mathcal F is a set of functions with range within [0, 1], then
+
+\operatorname{Rad}_{P,m}(\mathcal{F}) - \sqrt{\frac{\ln 2}{2 m}} \leq \mathbb E_{S\sim P^m} [\operatorname{Rep}_P(\mathcal F,S)] \leq 2 \operatorname{Rad}_{P,m}(\mathcal{F})
+
+Furthermore, the representativeness is concentrated around its expectation:) one can show, for example, that there exists a constant C, such that any class of \{0,1\}-indicator functions with Vapnik–Chervonenkis dimension d has Rademacher complexity upper-bounded by C\sqrt{\frac{d}{m}}.
+
+Bounds related to linear classes
+
+The following bounds are related to linear operations on S – a constant set of m vectors in \mathbb{R}^n.:
+
+\frac{G(A)}{2\sqrt{\log{n}}} \leq \text{Rad}(A) \leq \sqrt{\frac{\pi}{2}}G(A)
+
+Where G(A) is the Gaussian Complexity of A. As an example, consider the rademacher and gaussian complexities of the L1 ball. The Rademacher complexity is given by exactly 1, whereas the Gaussian complexity is on the order of \sqrt {\log d} (which can be shown by applying known properties of suprema of a set of subgaussian random variables).
+
+References
+
+Peter L. Bartlett, Shahar Mendelson (2002) Rademacher and Gaussian Complexities: Risk Bounds and Structural Results. Journal of Machine Learning Research 3 463–482
+
+Giorgio Gnecco, Marcello Sanguineti (2008) Approximation Error Bounds via Rademacher's Complexity. Applied Mathematical Sciences, Vol. 2, 2008, no. 4, 153–176
+
+Category:Machine learning
+
+Category:Measures of complexity

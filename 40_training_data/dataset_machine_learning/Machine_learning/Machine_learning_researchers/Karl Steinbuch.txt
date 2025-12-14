@@ -1,0 +1,91 @@
+Karl W. Steinbuch (June 15, 1917 in Stuttgart-Bad Cannstatt – June 4, 2005 in Ettlingen) was a German computer scientist,  cyberneticist, and electrical engineer.  He was an early and influential researcher in German computer science, and was the developer of the Lernmatrix, an early implementation of artificial neural networks.
+
+From the late 1960s onwards the focus of his activity shifted from scientific research to right-wing political activism supporting the Neue Rechte.
+
+Biography
+
+Steinbuch joined the National Socialist German Students' League (NSDStB) and the Nazi Party.
+
+Steinbuch studied at the University of Stuttgart and in 1944 he received his PhD in physics. In 1948 he joined Standard Elektrik Lorenz (SEL, part of the ITT group) in Stuttgart, as a computer design engineer and later as a director of research and development, where he filed more than 70 patents. Steinbuch completed the first European fully transistorized computer, the ER 56 marketed by SEL. In 1958 he became professor and director of the Institute of Technology for information processing (ITIV) of the University of Karlsruhe, where he retired in 1980.
+
+In 1967 he began publishing books, in which he tried to influence German education policy. Together with books from colleagues like Jean Ziegler from Switzerland, Eric J. Hobsbawm from the UK, and John Naisbitt his books predicted what he regarded as the coming education disaster of the emerging civic lobby society.
+
+In 1957, together with Helmut Gröttrup, Steinbuch coined the term Informatik, the German word for computer science, which gave informatics, and the term kybernetische Anthropologie.
+
+Awards and recognition
+
+Wilhelm-Boelsche award - medal in Gold
+
+German non-fiction book award
+
+Gold medal award of the XXI. International Congresses on Aerospace Medicine
+
+Konrad Adenauer award of science
+
+Jakob Fugger award medal
+
+Medal of merit of the state of Baden-Wuerttemberg
+
+member, German Academy of Sciences Leopoldina
+
+member, International Academy of Science, Munich.
+
+grants from a state government grants program, named "Karl-Steinbuch-Stipendium"
+
+at the Karlsruhe Institute of Technology named after him
+
+Books
+
+Steinbuch wrote several books and articles, including:
+
+1957 Informatik: Automatische Informationsverarbeitung ("Informatics: automatic information processing").
+
+1963 Learning matrices and their applications (together with U. A. W. Piske)
+
+1965 A critical comparison of two kinds of adaptive classification networks (together with Bernard Widrow)
+
+1966 (1969): Die informierte Gesellschaft. Geschichte und Zukunft der Nachrichtentechnik (The informed society. History and Future of telecommunications)
+
+1989: Die desinformierte Gesellschaft (The disinformed society)
+
+1968: Falsch programmiert. Über das Versagen unserer Gesellschaft in der Gegenwart und vor der Zukunft und was eigentlich geschehen müßte. (as a bestseller listet in: Der Spiegel) (Programmed falsely. About our society's failure in the present and with respect to the future and what should be done.)
+
+1969: Programm 2000. (as a bestseller listet in: Der Spiegel)
+
+1971: Automat und Mensch. Auf dem Weg zu einer kybernetischen Anthropologie (Machine and Man. On the way to a cybernetic anthropology; 4th revised edition)
+
+1971: Mensch Technik Zukunft. Probleme von Morgen (German non-fiction book award) (Man Technology Future. Problems of Tomorrow)
+
+1973: Kurskorrektur (Correcting the Course)
+
+1978: Maßlos informiert. Die Enteignung des Denkens (Excessively informed. The Deprivation of Thinking)
+
+1984: Unsere manipulierte Demokratie. Müssen wir mit der linken Lüge leben? (Our Thought-controlled Democracy. Do we have to live with the leftist lie?)
+
+References
+
+External links
+
+http://xputers.informatik.uni-kl.de/papers/publications/karl-steinbuch.html
+
+http://helios.informatik.uni-kl.de/euology.pdf
+
+https://web.archive.org/web/20120618185338/http://www.karl-steinbuch-stipendium.de/karlsteinbuch.html
+
+Category:1917 births
+
+Category:2005 deaths
+
+Category:Cyberneticists
+
+Category:German computer scientists
+
+Category:German electrical engineers
+
+Category:20th-century German inventors
+
+Category:Machine learning researchers
+
+Category:Engineers from Stuttgart
+
+Category:Recipients of the Order of Merit of Baden-Württemberg

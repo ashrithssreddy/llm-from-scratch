@@ -1,0 +1,13 @@
+In statistics, cluster analysis is the algorithmic grouping of objects into homogeneous
+
+groups based on numerical measurements. Model-based clustering
+
+.
+
+}}
+
+Category:Cluster analysis
+
+Category:Data science
+
+Category:Statistical algorithms

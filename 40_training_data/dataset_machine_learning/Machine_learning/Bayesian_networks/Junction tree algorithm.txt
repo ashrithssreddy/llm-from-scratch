@@ -1,0 +1,53 @@
+The junction tree algorithm (also known as 'Clique Tree')  is a method used in machine learning to extract marginalization in general graphs.  In essence, it entails performing belief propagation on a modified graph called a junction tree. The graph is called a tree because it branches into different sections of data; nodes of variables are the branches. The basic premise is to eliminate cycles by clustering them into single nodes. Multiple extensive classes of queries can be compiled at the same time into larger structures of data.
+
+Junction tree algorithm
+
+Hugin algorithm
+
+If the graph is directed then moralize it to make it un-directed.
+
+Introduce the evidence.
+
+Triangulate the graph to make it chordal.
+
+Construct a junction tree from the triangulated graph (we will call the vertices of the junction tree "supernodes").
+
+Propagate the probabilities along the junction tree (via belief propagation)
+
+Note that this last step is inefficient for graphs of large treewidth. Computing the messages to pass between supernodes involves doing exact marginalization over the variables in both supernodes. Performing this algorithm for a graph with treewidth k will thus have at least one computation which takes time exponential in k. It is a message passing algorithm. The Hugin algorithm takes fewer computations to find a solution compared to Shafer-Shenoy.
+
+Shafer-Shenoy algorithm
+
+Computed recursively
+
+Found by the message passing equation
+
+The Shafer-Shenoy algorithm is the sum product of a junction tree. It is used because it runs programs and queries more efficiently than the Hugin algorithm. The algorithm makes calculations for conditionals for belief functions possible. Joint distributions are needed to make local computations happen.
+
+Theorem: For an undirected graph, G, the following properties are equivalent:
+
+Graph G is triangulated.
+
+The clique graph of G has a junction tree.
+
+There is an elimination ordering for G that does not lead to any added edges.
+
+Thus, by triangulating a graph, we make sure that the corresponding junction tree exists. A usual way to do this, is to decide an elimination order for its nodes, and then run the Variable elimination algorithm. The variable elimination algorithm states that the algorithm must be run each time there is a different query. Now the next theorem gives us a way to find a junction tree:
+
+Usage: A junction tree graph is used to visualize the probabilities of the problem. The tree can become a binary tree to form the actual building of the tree. A specific use could be found in auto encoders, which combine the graph and a passing network on a large scale automatically.
+
+Inference Algorithms
+
+Loopy belief propagation: A different method of interpreting complex graphs. The loopy belief propagation is used when an approximate solution is needed instead of the exact solution. It is an approximate inference.
+
+Cutset conditioning: Used with smaller sets of variables. Cutset conditioning allows for simpler graphs that are easier to read but are not exact.
+
+References
+
+Further reading
+
+Lepar, V., Shenoy, P. (1998). "A Comparison of Lauritzen-Spiegelhalter, Hugin, and Shenoy-Shafer Architectures for Computing Marginals of Probability Distributions." https://arxiv.org/ftp/arxiv/papers/1301/1301.7394.pdf
+
+Category:Bayesian networks
+
+Category:Graph algorithms

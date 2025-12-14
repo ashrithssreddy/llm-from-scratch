@@ -1,0 +1,175 @@
+{{Infobox scientist
+
+honorific_prefix  =
+
+name              = Andrej Mrvar
+
+honorific_suffix  =
+
+native_name       =
+
+native_name_lang  =
+
+image             =
+
+image_size        =
+
+image_upright     =
+
+alt               =
+
+caption           =
+
+birth_name        =
+
+birth_date        =
+
+birth_place       =
+
+death_date        =
+
+death_place       =
+
+death_cause       =
+
+resting_place     =
+
+resting_place_coordinates =
+
+home_town         =
+
+other_names       =
+
+pronounce         =
+
+residence         =
+
+citizenship       =
+
+nationality       = Slovenian
+
+fields            = Computer Science
+
+workplaces        = University of Ljubljana
+
+patrons           =
+
+education         =
+
+alma_mater        =
+
+University of Ljubljana (PhD)
+
+University of Ljubljana (MS)
+
+University of Ljubljana (BA)
+
+thesis_title      = Analiza in prikaz velikih omrežij
+
+thesis_url        = https://plus.si.cobiss.net/opac7/bib/19300701
+
+thesis_year       = 1999
+
+doctoral_advisor  = Vladimir BatageljSaša Divjak
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students  =
+
+known_for         =
+
+influences        =
+
+influenced        =
+
+awards            =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+spouse            =
+
+partner           =
+
+children          =
+
+signature         =
+
+signature_alt     =
+
+website           = http://mrvar.fdv.uni-lj.si/
+
+footnotes         =
+
+}}
+
+Andrej Mrvar is a Slovenian computer scientist and a professor at the University of Ljubljana. He is known for his work in network analysis, graph drawing, decision making, virtual reality, electronic timing and data processing of sports competitions.
+
+Education and career
+
+He is well known for his work on Pajek, a free software for analysis and visualization of large networks. The book was translated into Japanese (2009) and Chinese (first edition 2012, second 2014).
+
+With Anuška Ferligoj, he was a founding co-editor-in-chief of the Metodološki zvezki journal.
+
+Awards and honors
+
+Vidmar Award (Faculty of Electrical and Computer Engineering, University of Ljubljana): 1988, 1990
+
+Award of University of Ljubljana for contributions in education and research (Svečana listina Univerze v Ljubljani za pomembne dosežke na področju vzgojnoizobraževalnega in znanstvenoraziskovalega dela): 2001
+
+Award of Faculty of Social Sciences, University of Ljubljana for scientific excellence (Priznanje za znanstveno odličnost): 2013
+
+Selected publications
+
+Wouter de Nooy, Andrej Mrvar, Vladimir Batagelj, Mark Granovetter (Series Editor), Exploratory Social Network Analysis with Pajek (Structural Analysis in the Social Sciences), Cambridge University Press (First Edition: 2005, Second Edition: 2011, Third Edition: 2018), (). Japanese Translation (2010). Chinese Translation (First Edition: 2012, Second Edition: 2014)
+
+Andrej Mrvar and Vladimir Batagelj, Analysis and visualization of large networks with program package Pajek. Complex Adaptive Systems Modeling, 4:6. SpringerOpen, 2016
+
+Vladimir Batagelj and Andrej Mrvar, Some Analyses of Erdős Collaboration Graph. Social Networks,  22, 173–186, 2000
+
+Vladimir Batagelj and Andrej Mrvar, A Subquadratic Triad Census Algorithm for Large Sparse Networks with Small Maximum Degree. Social Networks, 23, 237–243, 2001
+
+Patrick Doreian and Andrej Mrvar, A Partitioning Approach to Structural Balance, Social Networks, 18, 149–168, 1996
+
+Patrick Doreian and Andrej Mrvar, Partitioning Signed Social Networks, Social Networks, 31, 1–11, 2009
+
+Andrej Mrvar and Patrick Doreian, Partitioning Signed Two-Mode Networks, Journal of Mathematical Sociology, 33, 196–221, 2009
+
+Patrick Doreian and Andrej Mrvar, The international reach of the Koch brothers network. In: Antonyuk, A. and Basov N. (Eds.): Networks in the Global World V. NetGloW 2020. Lecture Notes in Networks and Systems, 181, 225–235. Springer, 2021
+
+Patrick Doreian and Andrej Mrvar, Delineating Changes in the Fundamental Structure of Signed Networks, Frontiers in Physics, 294, 1–11, 2021
+
+Patrick Doreian and Andrej Mrvar, Hubs and Authorities in the Koch Brothers Network. Social Networks, Social Networks, 64, 148–157, 2021
+
+Patrick Doreian and Andrej Mrvar, Public issues, policy proposals, social movements, and the interests of the Koch Brothers network of allies, Quality and Quantity, 56, 305–322, 2022
+
+Douglas R. White, Vladimir Batagelj, Andrej Mrvar, Analyzing Large Kinship and Marriage Networks with Pgraph and Pajek. Social Science Computer Review, 17, 245–274, 1999
+
+Ion Georgiou, Ronald Concer, Andrej Mrvar, A Systemic Approach to Sociometric Group Research: Advancing The Work of Leslie Day Zeleny, 1939–1947, Social Networks, 63, 174–200, 2020
+
+References
+
+External links
+
+Category:21st-century Slovenian mathematicians
+
+Category:20th-century Slovenian mathematicians
+
+Category:Academic staff of the University of Ljubljana
+
+Category:Network scientists
+
+Category:Blockmodeling
+
+Category:Slovenian computer scientists
+
+Category:Graph drawing people
+
+Category:Slovenian statisticians
+
+Category:Living people
+
+Category:Year of birth missing (living people)

@@ -1,0 +1,57 @@
+Triplet loss is a machine learning loss function widely used in one-shot learning, a setting where models are trained to generalize effectively from limited examples.  It was conceived by Google researchers for their prominent FaceNet algorithm for face detection.
+
+Triplet loss is designed to support metric learning.  Namely, to assist training models to learn an embedding (mapping to a feature space) where similar data points are closer together and dissimilar ones are farther apart, enabling robust discrimination across varied conditions.  In the context of face detection, data points correspond to images.
+
+Definition
+
+The loss function is defined using triplets of training points of the form  (A, P, N) . In each triplet,  A  (called an "anchor point") denotes a reference point of a particular identity,  P  (called a "positive point") denotes another point of the same identity in point A, and  N  (called a "negative point") denotes a point of an identity different from the identity in point  A  and P.
+
+Let  x  be some point and let f(x) be the embedding of x in the finite-dimensional Euclidean space. It shall be assumed that the L2-norm of f(x) is unity (the L2 norm of a vector X in a finite dimensional Euclidean space is denoted by  \Vert X\Vert.) We assemble m triplets of points from the training dataset. The goal of training here is to ensure that, after learning, the following condition (called the "triplet constraint") is satisfied by all triplets (A^{(i)}, P^{(i)}, N^{(i)}) in the training data set:
+
+\Vert f(A^{(i)}) - f(P^{(i)})\Vert_2^2 + \alpha
+
+The variable \alpha is a  hyperparameter called the margin, and its value must be set manually. In the FaceNet system, its value was set as 0.2.
+
+Thus, the full form of the function to be minimized is the following:
+
+L = \sum_{i=1}^m  \max \Big( \Vert f(A^{(i)}) - f(P^{(i)})\Vert_2^2 - \Vert f(A^{(i)}) - f(N^{(i)})\Vert_2^2 + \alpha, 0 \Big)
+
+Intuition
+
+A baseline for understanding the effectiveness of triplet loss is the contrastive loss, which operates on pairs of samples (rather than triplets). Training with the contrastive loss pulls embeddings of similar pairs closer together, and pushes dissimilar pairs apart. Its pairwise approach is greedy, as it considers each pair in isolation.
+
+Triplet loss innovates by considering relative distances.  Its goal is that the embedding of an anchor (query) point be closer to positive points than to negative points (also accounting for the margin).  It does not try to further optimize the distances once this requirement is met.  This is approximated by simultaneously considering two pairs (anchor-positive and anchor-negative), rather than each pair in isolation.
+
+Triplet "mining"
+
+One crucial implementation detail when training with triplet loss is triplet "mining", which focuses on the smart selection of triplets for optimization. This process adds an additional layer of complexity compared to contrastive loss.
+
+A naive approach to preparing training data for the triplet loss involves randomly selecting triplets from the dataset.  In general, the set of valid triplets of the form (A^{(i)},P^{(i)},N^{(i)}) is very large. To speed-up training convergence, it is essential to focus on challenging triplets.   In the FaceNet paper, several options were explored, eventually arriving at the following.   For each anchor-positive pair, the algorithm considers only semi-hard negatives.  These are negatives that violate the triplet requirement (i.e, are "hard"), but lie farther from the anchor than the positive (not too hard).   Restated, for each A^{(i)} and  P^{(i)}, they seek N^{(i)} such that:
+
+\Vert f(A^{(i)}) - f(P^{(i)})\Vert_2^2
+
+The rationale for this design choice is heuristic.  It may appear puzzling that the mining process neglects "very hard" negatives (i.e., closer to the anchor than the positive).  Experiments conducted by the FaceNet designers found that this often leads to a convergence to degenerate local minima.
+
+Triplet mining is performed at each training step, from within the sample points contained in the training batch (this is known as online mining), after embeddings were computed for all points in the batch.   While ideally the entire dataset could be used, this is impractical in general.  To support a large search space for triplets, the FaceNet authors used very large batches (1800 samples).   Batches are constructed by selecting a large number of same-category sample points (40), and randomly selected negatives for them.
+
+Extensions
+
+Triplet loss has been extended to simultaneously maintain a series of distance orders by optimizing a continuous relevance degree with a chain (i.e., ladder) of distance inequalities. This leads to the Ladder Loss, which has been demonstrated to offer performance enhancements of visual-semantic embedding in learning to rank tasks.
+
+In Natural Language Processing, triplet loss is one of the loss functions considered for BERT fine-tuning in the SBERT architecture.
+
+Other extensions involve specifying multiple negatives (multiple negatives ranking loss).
+
+See also
+
+Siamese neural network
+
+t-distributed stochastic neighbor embedding
+
+Similarity learning
+
+References
+
+Category:Artificial neural networks
+
+Category:Machine learning algorithms

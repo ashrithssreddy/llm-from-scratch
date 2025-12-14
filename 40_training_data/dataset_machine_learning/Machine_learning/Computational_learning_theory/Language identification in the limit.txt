@@ -1,0 +1,147 @@
+Language identification in the limit is a formal model for inductive inference of formal languages, mainly by computers (see machine learning and induction of regular languages). It was introduced by E. Mark Gold in a technical report and a journal article with the same title.
+
+In this model, a teacher provides to a learner some presentation (i.e. a sequence of strings) of some formal language. The learning is seen as an infinite process. Each time the learner reads an element of the presentation, it should provide a representation (e.g. a formal grammar) for the language.
+
+Gold defines that a learner can identify in the limit a class of languages if, given any presentation of any language in the class, the learner will produce only a finite number of wrong representations, and then stick with the correct representation. However, the learner need not be able to announce its correctness; and the teacher might present a counterexample to any representation arbitrarily long after.
+
+Gold defined two types of presentations:
+
+Text (positive information): an enumeration of all strings the language consists of.
+
+Complete presentation (positive and negative information): an enumeration of all possible strings, each with a label indicating if the string belongs to the language or not.
+
+Learnability
+
+This model is an early attempt to formally capture the notion of learnability.
+
+Gold's journal article introduces for contrast the stronger models
+
+Finite identification (where the learner has to announce correctness after a finite number of steps), and
+
+Fixed-time identification (where correctness has to be reached after an apriori-specified number of steps).
+
+A weaker formal model of learnability is the Probably approximately correct learning (PAC) model, introduced by Leslie Valiant in 1984.
+
+Examples
+
+It is instructive to look at concrete examples (in the tables) of learning sessions the definition of identification in the limit speaks about.
+
+A fictitious session to learn a regular language L over the alphabet {a,b} from text presentation:In each step, the teacher gives a string belonging to L, and the learner answers a guess for L, encoded as a regular expression. In step 3, the learner's guess is not consistent with the strings seen so far; in step 4, the teacher gives a string repeatedly. After step 6, the learner sticks to the regular expression (ab+ba)*. If this happens to be a description of the language L the teacher has in mind, it is said that the learner has learned that language.If a computer program for the learner's role would exist that was able to successfully learn each regular language, that class of languages would be identifiable in the limit. Gold has shown that this is not the case.
+
+A particular learning algorithm always guessing L to be just the union of all strings seen so far:If L is a finite language, the learner will eventually guess it correctly, however, without being able to tell when. Although the guess didn't change during step 3 to 6, the learner couldn't be sure to be correct.Gold has shown that the class of finite languages is identifiable in the limit, however, this class is neither finitely nor fixed-time identifiable.
+
+Learning from complete presentation by telling:In each step, the teacher gives a string and tells whether it belongs to L () or not (). Each possible string is eventually classified in this way by the teacher.
+
+Learning from complete presentation by request:The learner gives a query string, the teacher tells whether it belongs to L () or not (); the learner then gives a guess for L, followed by the next query string. In this example, the learner happens to query in each step just the same string as given by the teacher in example 3.In general, Gold has shown that each language class identifiable  in the request-presentation setting is also identifiable in the telling-presentation setting, since the learner, instead of querying a string, just needs to wait until it is eventually given by the teacher.
+
+Gold's theorem
+
+More formally,
+
+a language L is a nonempty set, and its elements are called sentences.
+
+a language family is a set of languages.
+
+a language-learning environment E for a language L is a stream of sentences from L, such that each sentence in L appears at least once.
+
+a language learner is a function f that sends a list of sentences to a language.
+
+This is interpreted as saying that, after seeing sentences a_1, a_2..., a_n in that order, the language learner guesses that the language that produces the sentences should be f(a_1, ..., a_n).
+
+Note that the learner is not obliged to be correct &mdash; it could very well guess a language that does not even contain a_1, ..., a_n.
+
+a language learner f learns a language L in environment E = (a_1, a_2, ...) if the learner always guesses L after seeing enough examples from the environment.
+
+a language learner f learns a language L if it learns L in any environment E for L.
+
+a language family is learnable if there exists a language learner that can learn all languages in the family.
+
+Notes:
+
+In the context of Gold's theorem, sentences need only be distinguishable. They need not be anything in particular, such as finite strings (as usual in formal linguistics).
+
+Learnability is not a concept for individual languages. Any individual language L could be learned by a trivial learner that always guesses L.
+
+Learnability is not a concept for individual learners. A language family is learnable if, and only if, there exists some learner that can learn the family. It does not matter how well the learner performs for learning languages outside the family.
+
+{{Math theorem|name=Gold's theorem (1967)|note=Theorem I.8 of (Gold, 1967)|math_statement=
+
+If a language family C contains L_1, L_2, ..., L_\infty, such that
+
+L_1 \subsetneq L_2 \subsetneq \cdots
+
+and L_\infty = \cup_{n=1}^\infty L_n, then it is not learnable.
+
+}}
+
+Gold's theorem is easily bypassed if negative examples are allowed. In particular, the language family \{L_1,L_2, ..., L_\infty\} can be learned by a learner that always guesses L_\infty until it receives the first negative example \neg a_n, where a_n\in L_{n+1} \setminus L_{n}, at which point it always guesses L_n.
+
+Learnability characterization
+
+Dana Angluin gave the characterizations of learnability from text (positive information) in a 1980 paper.
+
+If a learner is required to be effective, then an indexed class of recursive languages is learnable in the limit if there is an effective procedure that uniformly enumerates tell-tales for each language in the class (Condition 1). It is not hard to see that if an ideal learner (i.e., an arbitrary function) is allowed, then an indexed class of languages is learnable in the limit if each language in the class has a tell-tale (Condition 2).
+
+Language classes learnable in the limit
+
+The table shows which language classes are identifiable in the limit in which learning model. On the right-hand side, each language class is a superclass of all lower classes. Each learning model (i.e. type of presentation) can identify in the limit all classes below it. In particular, the class of finite languages is identifiable in the limit by text presentation (cf. Example 2 above), while the class of regular languages is not.
+
+Pattern Languages, introduced by Dana Angluin in another 1980 paper, are also identifiable by normal text presentation; they are omitted in the table, since they are above the singleton and below the primitive recursive language class, but incomparable to the classes in between.
+
+Sufficient conditions for learnability
+
+Condition 1 in Angluin's paper Angluin showed that if a class of recursive languages has finite thickness, then it is learnable in the limit.
+
+A class with finite thickness certainly satisfies MEF-condition and MFF-condition; in other words, finite thickness implies M-finite thickness.
+
+Finite elasticity
+
+A class of languages is said to have finite elasticity if for every infinite sequence of strings s_0, s_1, ... and every infinite sequence of languages in the class L_1, L_2, ..., there exists a finite number n such that s_n\not\in L_n implies L_n is inconsistent with \{s_1,...,s_{n-1}\}.
+
+It is shown that a class of recursively enumerable languages is learnable in the limit if it has finite elasticity.
+
+Mind change bound
+
+A bound over the number of hypothesis changes that occur before convergence.
+
+Other concepts
+
+Infinite cross property
+
+A language L has infinite cross property within a class of languages \mathcal{L} if there is an infinite sequence L_i of distinct languages in \mathcal{L} and a sequence of finite subset T_i such that:
+
+T_1 \sub T_2\sub ...,
+
+T_i \in L_i,
+
+T_{i+1}\not\in L_i, and
+
+\lim_{n=\infty}T_i=L.
+
+Note that L is not necessarily a member of the class of language.
+
+It is not hard to see that if there is a language with infinite cross property within a class of languages, then that class of languages has infinite elasticity.
+
+Relations between concepts
+
+Finite thickness implies finite elasticity; the converse is not true.
+
+Finite elasticity and conservatively learnable implies the existence of a mind change bound. *Finite elasticity and M-finite thickness implies the existence of a mind change bound. However, M-finite thickness alone does not imply the existence of a mind change bound; neither does the existence of a mind change bound imply M-finite thickness. [http://citeseer.ist.psu.edu/context/1042497/0
+
+Existence of a mind change bound implies learnability; the converse is not true.
+
+If we allow for noncomputable learners, then finite elasticity implies the existence of a mind change bound; the converse is not true.
+
+If there is no accumulation order for a class of languages, then there is a language (not necessarily in the class) that has infinite cross property within the class, which in turn implies infinite elasticity of the class.
+
+Open questions
+
+If a countable class of recursive languages has a mind change bound for noncomputable learners, does the class also have a mind change bound for computable learners, or is the class unlearnable by a computable learner?
+
+Notes
+
+References
+
+Category:Formal languages
+
+Category:Computational learning theory

@@ -1,0 +1,67 @@
+'', commenting on the Boxer Rebellion against foreign influence in China (Hermann-Paul, 1899)]]
+
+The ultimate attribution error is an attribution error made when making in-group and out-group attributions. The error occurs when attributions of outgroup behavior are more negative and attributions of ingroup behavior are more positive. As a cognitive bias, the error results in negative outgroup behavior being more likely to be attributed to factors internal and specific to the actor, such as personality, and to attribute positive behaviors to external factors, such as the context the behavior is exhibited in.
+
+The concept and term originates in an article by Thomas F. Pettigrew in 1979 as an extension of the fundamental attribution error which was identified in 1958. Since its publication, which at the time lacked a strong empirical basis, there has been some support for the theory. The specific categorisation originally proposed had only some empirical support for broader categories of motivational and cognitive attribution.  The bias is related to intergroup attribution bias. The attribution bias can be explained by group schemas. The grouping schema assumes that one will like and trust members of their in-group and dislike and hate are expected reactions to the out-group.
+
+Cross cultural differences
+
+The ultimate attribution error may not be identical across cultures. Research by Markus and Kitayama suggested that those in individualistic cultures with an independent view of the self are more likely to experience the ultimate attribution error.
+
+The study conducted by Markus and Kitayama consisted of American and Indian participants who listened to someone describe a motor vehicle accident. Participants were asked to make attributions about the person who was at fault in the accident. Results found differences between the American and Indian participants. American participants were more likely to make dispositional attributions whereas Indian participants more often made situational attributions. Indian participants seemed to place emphasis on understanding the driver's social role in the situation was extremely import when making these attributions. found that East Asian cultures, which tend to be more collectivist, are more likely to consider social contexts when making causal attributions, whereas Western cultures focus more on individual dispositions. This difference stem from a deeper cultural orientation towards interdependence in East Asian cultures, where individual are more involved within a broader social network. On the other hand, Western societies often emphasise personal responsibility and autonomy, leading to a stronger tendency towards dispositional attribution. Additionally, language differences may also play a role in shaping attribution. Some languages place a stronger emphasis on contextual markers, which may lead speakers to be more mindful of the situational influences on behaviour.
+
+Real-world implications
+
+While much of the research of the ultimate attribution error focuses on theoretical framework, the bias has significant real-world implications in areas such as criminal justice, politics, and media representation.
+
+Criminal justice
+
+Legal decisions are influenced by the ultimate attribution error, especially when it comes to racial and ethnic differences in punishment. According to research, defendants from minority groups are more likely to have their crimes attributed to innate dispositional flaws (such as "criminal nature"), while members of the majority group are more inclined to attribute similar crimes to outside influences or particular situations. Minority groups may face harsher sentences and a higher chance of conviction as a result of this bias.
+
+Politics
+
+The ultimate attribution error has a significant impact on political bias. Political party supporters are more prone to reject failures as the result of unfair opposition, while attributing their party's accomplishments to inherent traits like intelligence, commitment, or ability. Constructive political conversation declines and polarisation is strengthened when political opponents' shortcomings are perceived as evidence of their own inexperience or dishonesty.
+
+Media representation
+
+The media and entertainment frequently reinforce attribution biases by utilising negative dispositional lenses to depict members of the out-group and situational explanations to justify in-group behaviour. According to research, how crime, immigration, and social unrest are portrayed in the media frequently presents marginalised groups as innately prone to bad behaviour, which fuels prejudice and stereotypes.
+
+Original theory
+
+In the case of negative attribution of outgroup member's positive behaviours, four categories were proposed. The four categories each correspond to combinations of two factors: perceived degree of controllability of act (low vs high) and perceived locus of control of act (internal vs external). In a 2x2 between-group design, Hindu or Muslim participants were asked to make casual attributions for undesirable acts performed by Hindus or Muslims. Hindus attributed external causes to undesirable acts committed by fellow Hindus, but an internal cause for undesirable acts committed by Muslims. Conversely, Muslims attributed external causes to undesirable acts committed by fellow Muslims, but an internal cause for undesirable acts committed by Hindus. While Pettigrew and many others to follow would focus on race, this study offered clear evidence that similar mechanisms are at play among religious groups.
+
+Another study that was drawn on for Pettigrew's original theory was a 1976 study of ethnocentric behavior. It found that white participants viewed black individuals as more violent than white individuals in an "ambiguous shove" situation, where a black or white person accidentally shoves a white person. In a 2x2 between-group design, white participants viewed a black or white individual (harm-doer) ambiguously shoving a black or white individual (victim). In general, when a black harm-doer shoved another person (whether they were black or white), their behavior was attributed their high dispositional levels of violence (internal). On the other hand, when a white harm-doer shoved another person (whether they were black or white), their behavior was generally attributed to external constraints. The results suggested that the white students participating in the experiment possessed a lower threshold for labeling a behavior as violent when the harm-doer is black (outgroup) than when the harm-doer is white (ingroup).
+
+In 1990, a review of 19 ultimate attribution error studies offered limited support for Pettigrew's ultimate attribution error. Specifically, it found support for three aspects of the ultimate attribution error:
+
+more internal attribution for positive acts, and less internal attribution for negative acts, by ingroup than outgroup members;
+
+more attribution of outgroup members' failures to lack of ability, and more explaining away of outgroup members' successes;
+
+a preference for ingroup-serving versus outgroup-serving attributions for group differences.
+
+See also
+
+Actor–observer asymmetry
+
+Cultural bias
+
+Dispositional attribution
+
+Group attribution error
+
+References
+
+Category:Attitude attribution
+
+Category:Group processes
+
+Category:Sociological terminology
+
+Category:Cognitive biases
+
+Category:Error
+
+Category:Causal fallacies
+
+Category:Prejudice and discrimination

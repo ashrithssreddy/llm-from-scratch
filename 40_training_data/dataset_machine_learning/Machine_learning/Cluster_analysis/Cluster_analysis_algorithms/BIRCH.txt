@@ -1,0 +1,83 @@
+BIRCH (balanced iterative reducing and clustering using hierarchies) is an unsupervised data mining algorithm used to perform hierarchical clustering over particularly large data-sets. With modifications it can also be used to accelerate k-means clustering and Gaussian mixture modeling with the expectation–maximization algorithm.
+
+Problem with previous methods
+
+Previous clustering algorithms performed less effectively over very large databases and did not adequately consider the case wherein a data-set was too large to fit in main memory. As a result, there was a lot of overhead maintaining high clustering quality while minimizing the cost of additional IO (input/output) operations. Furthermore, most of BIRCH's predecessors inspect all data points (or all currently existing clusters) equally for each 'clustering decision' and do not perform heuristic weighting based on the distance between these data points.
+
+Advantages with BIRCH
+
+It is local in that each clustering decision is made without scanning all data points and currently existing clusters.
+
+It exploits the observation that the data space is not usually uniformly occupied and not every data point is equally important.
+
+It makes full use of available memory to derive the finest possible sub-clusters while minimizing I/O costs.
+
+It is also an incremental method that does not require the whole data set in advance.
+
+Algorithm
+
+The BIRCH algorithm takes as input a set of  data points, represented as real-valued vectors, and a desired number of clusters . It operates in four phases, the second of which is optional.
+
+The first phase builds a clustering feature (CF) tree out of the data points, a height-balanced tree data structure, defined as follows:
+
+Given a set of N d-dimensional data points, the clustering feature CF of the set is defined as the triple CF = (N,\overrightarrow{LS},SS), where
+
+\overrightarrow{LS} = \sum_{i=1}^N \overrightarrow{X_i} is the linear sum.
+
+SS = \sum_{i=1}^N (\overrightarrow{X_i})^2 is the square sum of data points.
+
+Clustering features are organized in a CF tree, a height-balanced tree with two parameters: branching factor B and threshold T. Each non-leaf node contains at most B entries of the form [CF_i,child_i], where child_i is a pointer to its ith child node and CF_i the clustering feature representing the associated subcluster. A leaf node contains at most L entries each of the form [CF_i] . It also has two pointers prev and next which are used to chain all leaf nodes together. The tree size depends on the parameter T. A node is required to fit in a page of size P. B and L are determined by P. So P can be varied for performance tuning. It is a very compact representation of the dataset because each entry in a leaf node is not a single data point but a subcluster.
+
+In the second step, the algorithm scans all the leaf entries in the initial CF tree to rebuild a smaller CF tree, while removing outliers and grouping crowded subclusters into larger ones. This step is marked optional in the original presentation of BIRCH.
+
+In step three an existing clustering algorithm is used to cluster all leaf entries. Here an agglomerative hierarchical clustering algorithm is applied directly to the subclusters represented by their CF vectors. It also provides the flexibility of allowing the user to specify either the desired number of clusters or the desired diameter threshold for clusters. After this step a set of clusters is obtained that captures major distribution pattern in the data. However, there might exist minor and localized inaccuracies which can be handled by an optional step 4. In step 4 the centroids of the clusters produced in step 3 are used as seeds and redistribute the data points to its closest seeds to obtain a new set of clusters. Step 4 also provides us with an option of discarding outliers. That is a point which is too far from its closest seed can be treated as an outlier.
+
+Calculations with the clustering features
+
+Given only the clustering feature CF = [N, \overrightarrow{LS}, SS], the same measures can be calculated without the knowledge of the underlying actual values.
+
+Centroid:  \overrightarrow{C} = \frac{\sum_{i=1}^N \overrightarrow{X_i}}{N} = \frac{\overrightarrow{LS}}{N}
+
+Radius:  R = \sqrt{\frac{ \sum_{i=1}^N (\overrightarrow{X_i} - \overrightarrow{C})^2}{N}} = \sqrt{\frac{N \cdot \overrightarrow{C}^2 + SS - 2 \cdot \overrightarrow{C} \cdot \overrightarrow{LS}}{N}} = \sqrt{\frac{SS}{N} - (\frac{\overrightarrow{LS}}{N})^2}
+
+Average Linkage Distance between clusters  CF_1 = [N_1, \overrightarrow{LS_1}, SS_1]  and  CF_2 = [N_2, \overrightarrow{LS_2}, SS_2] : D_2 = \sqrt{\frac{\sum_{i=1}^{N_1} \sum_{j=1}^{N_2} (\overrightarrow{X_i} -  \overrightarrow{Y_j})^2}{N_1 \cdot N_2}} =  \sqrt{\frac{N_1 \cdot  SS_2 + N_2 \cdot  SS_1 - 2 \cdot  \overrightarrow{LS_1} \cdot \overrightarrow{LS_2}}{N_1 \cdot N_2}}
+
+In multidimensional cases the square root should be replaced with a suitable norm.
+
+BIRCH uses the distances DO to D3 to find the nearest leaf, then the radius R or the diameter D to decide whether to absorb the data into the existing leaf or whether to add a new leaf.
+
+Numerical issues in BIRCH clustering features
+
+Unfortunately, there are numerical issues associated with the use of the term SS in BIRCH. When subtracting \frac{SS}{N}-\big(\frac{\vec{LS}}{N}\big)^2 or similar in the other distances such as D_2, catastrophic cancellation can occur and yield a poor precision, and which can in some cases even cause the result to be negative (and the square root then become undefined). This can be resolved by using BETULA cluster features CF=(N,\mu,S) instead, which store the count N, mean \mu, and sum of squared deviations instead based on numerically more reliable online algorithms to calculate variance. For these features, a similar additivity theorem holds. When storing a vector respectively a matrix for the squared deviations, the resulting BIRCH CF-tree can also be used to accelerate Gaussian Mixture Modeling with the expectation–maximization algorithm, besides k-means clustering and hierarchical agglomerative clustering.
+
+Instead of storing the linear sum and the sum of squares, we can instead store the mean and the squared deviation from the mean in each cluster feature CF'=(N,\mu,S), where
+
+n is the node weight (number of points)
+
+\mu is the node center vector (arithmetic mean, centroid)
+
+S is the sum of squared deviations from the mean (either a vector, or a sum to conserve memory, depending on the application)
+
+The main difference here is that S is computed relative to the center, instead of relative to the origin.
+
+A single point x can be cast into a cluster feature CF_x=(1,x,0). In order to combine two cluster features CF_{AB}=CF_{A}+CF_{B}, we use
+
+N_{AB}=N_{A} + N_{B}
+
+\mu_{AB}=\mu_A + \frac{N_B}{N_{AB}} (\mu_B-\mu_A) (incremental update of the mean)
+
+S_{AB}=S_A+S_B+N_B(\mu_B-\mu_A)\circ(\mu_B-\mu_{AB}) in vector form using the element-wise product, respectively
+
+S_{AB}=S_A+S_B+N_B(\mu_B-\mu_A)^T(\mu_B-\mu_{AB}) to update a scalar sum of squared deviations
+
+These computations use numerically more reliable computations (cf. online computation of the variance) that avoid the subtraction of two similar squared values. The centroid is simply the node center vector \mu, and can directly be used for distance computations using, e.g., the Euclidean or Manhattan distances. The radius simplifies to R=\sqrt{\frac{1}{N}S} and the diameter to D=\sqrt{\frac{2}{N-1}S}.
+
+We can now compute the different distances D0 to D4 used in the BIRCH algorithm as:
+
+{| class="wikitable" width=100%
+
++ Correspondence between HAC linkages and BIRCH distances
+
+References
+
+Category:Cluster analysis algorithms

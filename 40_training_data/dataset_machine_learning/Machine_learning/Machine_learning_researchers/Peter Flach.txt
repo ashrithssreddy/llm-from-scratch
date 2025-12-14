@@ -1,0 +1,121 @@
+{{Infobox scientist
+
+name              = Peter Flach
+
+birth_name        = Pieter Adriaan Flach
+
+native_name_lang  =
+
+image             =
+
+image_size        =
+
+alt               =
+
+caption           =
+
+birth_date        =
+
+birth_place       = Sneek, Netherlands
+
+death_date        =
+
+death_place       =
+
+death_cause       =
+
+resting_place     =
+
+resting_place_coordinates =
+
+other_names       =
+
+residence         =
+
+citizenship       =
+
+nationality       =
+
+fields            =
+
+workplaces        = University of Bristol
+
+patrons           =
+
+education         =
+
+alma_mater        =
+
+thesis_title      =
+
+thesis_url        =
+
+thesis_year       =
+
+doctoral_advisor  =
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students  =
+
+known_for         =
+
+influences        =
+
+influenced        =
+
+awards            =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+spouse            =
+
+partner           =
+
+children          =
+
+signature         =
+
+signature_alt     =
+
+website           =
+
+footnotes         =
+
+}}
+
+Pieter "Peter" Adriaan Flach (born 8 April 1961, Sneek) is a Dutch computer scientist and a Professor of Artificial Intelligence in the Department of Computer Science at the University of Bristol. He is author of the acclaimed Simply Logical: Intelligent Reasoning by Example (John Wiley, 1994) and Machine Learning: the Art and Science of Algorithms that Make Sense of Data (Cambridge University Press, 2012).
+
+Education
+
+Flach received an MSc Electrical Engineering from Universiteit Twente in 1987 and a PhD in Computer Science from Tilburg University in 1995.
+
+Research
+
+Flach's research interests are in  data mining and machine learning.
+
+References
+
+Category:1961 births
+
+Category:Living people
+
+Category:Artificial intelligence researchers
+
+Category:Dutch computer scientists
+
+Category:British computer scientists
+
+Category:Machine learning researchers
+
+Category:People from Sneek
+
+Category:University of Twente alumni
+
+Category:Tilburg University alumni
+
+Category:Academics of the University of Bristol

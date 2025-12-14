@@ -1,0 +1,45 @@
+Dropout and dilution (also called DropConnect) are regularization techniques for reducing overfitting in artificial neural networks by preventing complex co-adaptations on training data. They are an efficient way of performing model averaging with neural networks. Dilution refers to randomly decreasing weights towards zero,
+
+Strong dilution
+
+When the dilution is strong, the finite fraction of removed connections (the weights) is large, giving rise to a huge uncertainty.
+
+Dropout
+
+Dropout is a special case of the previous weight equation (), where the aforementioned equation is adjusted to remove a whole row in the vector matrix, and not only random weights
+
+{{NumBlk||\hat{\mathbf{w}}_j =
+
+\begin{cases}
+
+\mathbf{w}_j, & \text{with } P(c) \\
+
+\mathbf{0}, & \text{otherwise}
+
+\end{cases}|}}
+
+P(c) – the probability c to keep a row in the weight matrix
+
+\mathbf{w}_j – real row in the weight matrix before dropout
+
+\hat{\mathbf{w}}_j – diluted row in the weight matrix
+
+Because dropout removes a whole row from the vector matrix, the previous (unlisted) assumptions for weak dilution and the use of mean field theory are not applicable.
+
+The process by which the node is driven to zero, whether by setting the weights to zero, by “removing the node”, or by some other means, does not impact the end result and does not create a new and unique case. If the neural net is processed by a high-performance digital array-multiplicator, then it is likely more effective to drive the value to zero late in the process graph. If the net is processed by a constrained processor, perhaps even an analog neuromorphic processor, then it is likely a more power-efficient solution is to drive the value to zero early in the process graph.
+
+Google's patent
+
+Although there have been examples of randomly removing connections between neurons in a neural network to improve models, this technique was first introduced with the name dropout by Geoffrey Hinton, et al. in 2012.
+
+See also
+
+AlexNet
+
+Notes
+
+References
+
+Category:Deep learning
+
+Category:2012 in artificial intelligence

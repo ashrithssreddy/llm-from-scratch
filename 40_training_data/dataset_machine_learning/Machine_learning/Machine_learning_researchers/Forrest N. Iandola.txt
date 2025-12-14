@@ -1,0 +1,29 @@
+Forrest N. Iandola is an American computer scientist specializing in efficient AI.
+
+Career
+
+Iandola earned a PhD in Electrical Engineering and Computer Science from UC Berkeley in 2016, advised by Kurt Keutzer. As part of his dissertation he co-authored SqueezeNet, a deep neural network for image classification that is optimized for smartphones and other mobile devices.
+
+Iandola and Keutzer went on to co-found DeepScale. The firm squeezes deep neural networks onto low-cost automotive grade processors for use in driver assistance systems. Tesla acquired DeepScale in 2019.
+
+In 2020, he co-authored SqueezeBERT, an efficient neural network for natural language processing. In 2022, he joined Meta as an AI research scientist. His research at Meta includes the efficient AI models EfficientSAM and MobileLLM.
+
+References
+
+Further reading
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:Machine learning researchers
+
+Category:Natural language processing researchers
+
+Category:American technology company founders
+
+Category:Tesla, Inc. people
+
+Category:Meta Platforms people
+
+Category:University of California, Berkeley alumni

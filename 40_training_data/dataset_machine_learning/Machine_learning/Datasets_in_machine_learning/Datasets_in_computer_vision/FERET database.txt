@@ -1,0 +1,33 @@
+The Facial Recognition Technology (FERET) database is a dataset used for facial recognition system evaluation as part of the Face Recognition Technology (FERET) program. It was first established in 1993 under a collaborative effort between Harry Wechsler at George Mason University and Jonathon Phillips at the Army Research Laboratory in Adelphi, Maryland. The FERET database serves as a standard database of facial images for researchers to use to develop various algorithms and report results. The use of a common database also allowed one to compare the effectiveness of different approaches in methodology and gauge their strengths and weaknesses.
+
+The facial images for the database were collected between December 1993 and August 1996, accumulating a total of 14,126 images pertaining to 1,199 individuals along with 365 duplicate sets of images that were taken on a different day. In 2003, the Defense Advanced Research Projects Agency (DARPA) released a high-resolution, 24-bit color version of these images. The dataset tested includes 2,413 still facial images, representing 856 individuals. The FERET database has been used by more than 460 research groups and is managed by the National Institute of Standards and Technology (NIST).
+
+References
+
+External links
+
+Official website about the gray-scale version
+
+Official website about the color version
+
+More official information
+
+IEEE Transactions on Pattern Analysis and Machine Intelligence, VOL. 22, NO. 10, October 2000
+
+More documents about FERET
+
+Category:Biometric databases
+
+Category:Datasets in computer vision
+
+Category:Facial recognition
+
+Category:Scientific databases
+
+Category:Test items
+
+Category:Machine learning task
+
+Category:Automatic identification and data capture
+
+Category:Surveillance

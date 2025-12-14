@@ -1,0 +1,17 @@
+Rule induction is an area of machine learning in which formal rules are extracted from a set of observations.  The rules extracted may represent a full scientific model of the data, or merely represent local patterns in the data.
+
+Data mining in general and rule induction in detail are trying to create algorithms without human programming but with analyzing existing data structures. In the easiest case, a rule is expressed with “if-then statements” and was created with the ID3 algorithm for decision tree learning.
+
+Creating different algorithm and testing them with input data can be realized in the WEKA software.
+
+Rulex
+
+Progol
+
+CN2
+
+References
+
+Category:Machine learning
+
+Category:Inductive reasoning

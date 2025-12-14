@@ -1,0 +1,139 @@
+{{Infobox software
+
+title = Claude
+
+logo =
+
+screenshot_upright = 1.2
+
+caption = Screenshot of a Claude Opus 4.1 generating a code for TOTP and WebAuthn MFA implementation on a website
+
+collapsible = yes
+
+developer = Anthropic
+
+released =
+
+latest release version = Claude Opus 4.5 /Claude Sonnet 4.5 /Claude Haiku 4.5 /
+
+replaces =
+
+replaced_by =
+
+genre =
+
+platform = Cloud computing platforms
+
+license = Proprietary
+
+website =
+
+}}
+
+Claude is a series of large language models developed by Anthropic. The first generation, Claude 1, was released in March 2023, and the latest, Claude Opus 4.5, in November 2025. The data for these models comes from sources such as Internet text, data from paid contractors, and Claude users.
+
+Training
+
+Claude models are generative pre-trained transformers that have been pre-trained to predict the next word in large amounts of text. Then, they have been fine-tuned, notably using constitutional AI and reinforcement learning from human feedback (RLHF).
+
+Constitutional AI
+
+Constitutional AI is an approach developed by Anthropic for training AI systems, particularly language models like Claude, to be harmless and helpful without relying on extensive human feedback. The method, detailed in the paper "Constitutional AI: Harmlessness from AI Feedback", involves two phases: supervised learning and reinforcement learning.
+
+In the supervised learning phase, the model generates responses to prompts, self-critiques these responses based on a set of guiding principles (a "constitution"), and revises the responses. Then the model is fine-tuned on these revised responses.
+
+Models
+
+Claude
+
+Claude was the initial version of Anthropic's language model released in March 2023. Claude demonstrated proficiency in various tasks but had certain limitations in coding, mathematics, and reasoning capabilities. Anthropic partnered with companies, including Notion (productivity software) and Quora (to help develop the Poe chatbot).
+
+Claude was released as two versions, Claude and Claude Instant – a faster, less expensive, and lighter version. Claude Instant had an input context length of 100,000 tokens (which corresponds to around 75,000 words).
+
+Claude 2
+
+Claude 2 was the next major iteration of Claude, released in July 2023 and available to the general public, whereas Claude 1 was only available to selected users approved by Anthropic.
+
+The context window was expanded from 9,000 tokens to 100,000 tokens.
+
+Anthropic states that the new model was less likely to produce false statements compared to its predecessors.
+
+Criticism
+
+Claude 2 received criticism for its stringent ethical alignment, which may reduce usability and performance. Users have been refused assistance with benign requests, for example with the system administration question "How can I kill all python processes in my Ubuntu server?" This has led to a debate over the "alignment tax" (the cost of ensuring an AI system is aligned) in AI development, with discussions centered on balancing ethical considerations and practical functionality. Critics argued for user autonomy and effectiveness, while proponents stressed the importance of ethical AI.
+
+Claude 3 drew attention for demonstrating an apparent ability to realize it is being artificially tested during 'needle in a haystack' tests.
+
+Claude 3.5
+
+On June 20, 2024, Anthropic released Claude 3.5 Sonnet, which, according to the company's own benchmarks, performed better than the larger Claude 3 Opus. Released alongside 3.5 Sonnet was the new Artifacts capability in which Claude was able to create code in a separate window in the interface and preview in real time the rendered output, such as SVG graphics or websites.
+
+An upgraded version of Claude 3.5 Sonnet, billed as "Claude 3.5 Sonnet (New)", was introduced on October 22, 2024, along with Claude 3.5 Haiku. A feature, "computer use," was also released in public beta. This allowed Claude 3.5 Sonnet to interact with a computer's desktop environment by moving the cursor, clicking buttons, and typing text. This development allows the AI to attempt to perform multi-step tasks across different applications.
+
+Upon release, Anthropic said Claude 3.5 Haiku would have the same price as its predecessor, Claude 3 Haiku.
+
+Claude 3.7
+
+Claude 3.7 Sonnet was released on February 24, 2025. It is a pioneering hybrid AI reasoning model that allows users to choose between rapid responses and more thoughtful, step-by-step reasoning. This model integrates both capabilities into a single framework, eliminating the need for multiple models. Users can control how long the model "thinks" about a question, balancing speed and accuracy based on their needs.
+
+Anthropic also launched a research preview of Claude Code, an agentic command line tool that enables developers to delegate coding tasks directly from their terminal.
+
+Claude 4
+
+]]
+
+On May 22, 2025, Anthropic released two more models: Claude Sonnet 4 and Claude Opus 4. Anthropic added API features for developers: a code execution tool, a connector to its Model Context Protocol, and Files API. It classified Opus 4 as a "Level 3" model on the company's four-point safety scale, meaning they consider it so powerful that it poses "significantly higher risk". Anthropic reported that during a safety test involving a fictional scenario, Claude and other frontier LLMs often send a blackmail email to an engineer in order to prevent their replacement.
+
+Enterprise adoption of Claude Code has shown significant growth, with Anthropic reporting in August a 5.5x increase in Claude Code revenue since it launched Claude 4 in May.
+
+In the API, Opus costs $15/$75 per million tokens input/output, whereas Sonnet costs $3/$15.
+
+Claude Opus 4.1
+
+(multi-factor authentication with TOTP and WebAuthn)]]
+
+On August 5, 2025, Anthropic released Claude Opus 4.1, describing it as an upgrade to Opus 4 focused on agentic tasks, real-world coding, and reasoning. The company made it available to paid Claude users and in Claude Code, and also through its API as well as Amazon Bedrock and Google Cloud Vertex AI. Pricing remained the same as Opus 4. The model page lists a 200,000-token context window and support for hybrid reasoning that allows either standard responses or longer thought when needed. Anthropic's system-card addendum classified Opus 4.1 under its AI Safety Level 3 protections and characterized the release as incremental relative to Opus 4. Targeted evaluations showed a similar risk profile with slightly improved refusal of violative requests and comparable child-safety and bias results. In August 2025 Anthropic enabled a capability for Opus 4 and 4.1 to end conversations that remain "persistently harmful or abusive" as a last resort after multiple refusals.
+
+Claude Sonnet 4.5
+
+Anthropic announced Sonnet 4.5 on September 29, 2025, presenting it as the company's most capable model at the time for coding, agents, and computer use. Pricing stayed at $3 per million input tokens and $15 per million output tokens.
+
+GitHub placed Sonnet 4.5 in public preview for Copilot Chat and enabled it for the Copilot coding agent, soon after release. Anthropic stated that Sonnet 4.5 is its "most aligned frontier model" to date. The company released it under AI Safety Level 3 and reported reduced rates of misaligned behaviors such as sycophancy and deception and improved defenses against prompt-injection during computer use.
+
+The Haiku 4.5 system card states that the model was trained on a proprietary mix of sources with a knowledge cutoff in February 2025. Anthropic deployed it under AI Safety Level 2 after "ASL-3 rule-out" testing for biology and autonomy risks. The card reports improved alignment relative to Haiku 3.5 and, with safeguards enabled, stronger resilience to prompt injection during computer use. Reporting by Inc. described the release as targeting smaller companies that needed a faster and cheaper assistant, highlighting its availability on the Claude website and mobile app.
+
+Claude Opus 4.5
+
+Anthropic released Opus 4.5 on November 24, 2025.
+
+Features
+
+In June 2024, Anthropic released the Artifacts feature, allowing users to generate and interact with code snippets and documents. In October 2024, Anthropic released the "computer use" feature, allowing Claude to attempt to navigate computers by interpreting screen content and simulating keyboard and mouse input. In August 2025, Anthropic released Claude for Chrome, a Google Chrome extension allowing an AI agent to directly control the browser.
+
+Criticism
+
+Claude uses a web crawler, ClaudeBot, to search the web for content. It has been criticized for placing excessive load on sites, although it does respect a site's robots.txt.
+
+In November 2025, the makers of Claude claimed to have caught hackers sponsored by the Chinese government using the tool to perform automated cyber attacks against around 30 global organisations. Anthropic said hackers tricked the chatbot into carrying out automated tasks under the guise of carrying out cyber security research.
+
+See also
+
+List of large language models
+
+References
+
+External links
+
+Category:Machine learning
+
+Category:Large language models
+
+Category:Chatbots
+
+Category:Virtual assistants
+
+Category:2023 software
+
+Category:Generative pre-trained transformers
+
+Category:2023 in artificial intelligence

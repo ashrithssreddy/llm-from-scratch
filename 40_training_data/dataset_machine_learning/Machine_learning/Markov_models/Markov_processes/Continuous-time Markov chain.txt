@@ -1,0 +1,297 @@
+A continuous-time Markov chain (CTMC) is a continuous stochastic process in which, for each state, the process will change state according to an exponential random variable and then move to a different state as specified by the probabilities of a stochastic matrix. An equivalent formulation describes the process as changing state according to the least value of a set of exponential random variables, one for each possible state it can move to, with the parameters determined by the current state.
+
+An example of a CTMC with three states \{0,1, 2\} is as follows: the process makes a transition after the amount of time specified by the holding time—an exponential random variable E_i, where i is its current state. Each random variable is independent and such that E_0\sim \text{Exp}(6), E_1\sim \text{Exp}(12) and E_2\sim \text{Exp}(18). When a transition is to be made, the process moves according to the jump chain, a discrete-time Markov chain with stochastic matrix:
+
+\begin{bmatrix}
+
+0 & \frac{1}{2} & \frac{1}{2} \\
+
+\frac{1}{3} & 0 & \frac{2}{3} \\
+
+\frac{5}{6} & \frac{1}{6} & 0
+
+\end{bmatrix}.
+
+Equivalently, by the property of competing exponentials, this CTMC changes state from state i according to the minimum of two random variables, which are independent and such that E_{i,j}\sim \text{Exp}(q_{i,j}) for i\neq j where the parameters are given by the Q-matrix Q=(q_{i,j})
+
+\begin{bmatrix}
+
+-6 & 3 & 3 \\
+
+4 & -12 & 8 \\
+
+15 & 3 & -18
+
+\end{bmatrix}.
+
+Each non-diagonal entry q_{i,j} can be computed as the probability that the jump chain moves from state i to state j, divided by the expected holding time of state i. The diagonal entries are chosen so that each row sums to 0.
+
+A CTMC satisfies the Markov property, that its behavior depends only on its current state and not on its past behavior, due to the memorylessness of the exponential distribution and of discrete-time Markov chains.
+
+Definition
+
+Let (\Omega,{\cal A},\Pr) be a probability space, let S be a countable nonempty set, and let T=\mathbb R_{\ge0} (T for "time"). Equip S with the discrete metric, so that we can make sense of right continuity of functions \mathbb R_{\ge0}\to S. A continuous-time Markov chain is defined by:
+
+A probability vector \lambda on S (which below we will interpret as the initial distribution of the Markov chain), and
+
+A rate matrix Q on S, that is, a function Q:S^2\to\mathbb R such that
+
+for all distinct i,j\in S, 0\le q_{i,j},
+
+for all i\in S, \sum_{j\in S:j\ne i}q_{i,j}=-q_{i,i}. (Even if S is infinite, this sum is a priori well defined (possibly equalling +\infty) because each term appearing in the sum is nonnegative. A posteriori, we know the sum must also be finite (not equal to +\infty), since we're assuming it's equal to -q_{i,i} and we've assumed Q is real valued. Some authors instead use a definition that's word-for-word the same except for a modified stipulation Q:S^2\to\mathbb R\cup\{-\infty\}, and say Q is stable or totally stable to mean \operatorname{range}Q\subseteq\mathbb R, i.e., every entry is real valued.)
+
+Note that the row sums of Q are 0: \forall i\in S,~\sum_{j\in S}q_{i,j}=0, or more succinctly, Q\cdot1=0. This situation contrasts with the situation for discrete-time Markov chains, where all row sums of the transition matrix equal unity.
+
+Now, let X:T\to S^\Omega such that \forall t\in T~X(t) is ({\cal A},{\cal P}(S))-measurable. There are three equivalent ways to define X being Markov with initial distribution \lambda and rate matrix Q: via transition probabilities or via the jump chain and holding times.
+
+As a prelude to a transition-probability definition, we first motivate the definition of a regular rate matrix. We will use the transition-rate matrix Q to specify the dynamics of the Markov chain by means of generating a collection of transition matrices P(t) on S (t\in\mathbb R_{\ge0}), via the following theorem.
+
+{{math theorem
+
+name = Existence of solution to Kolmogorov backward equations | note=
+
+math_statement = There exists P\in([0,1]^{S\times S})^T such that for all i,j\in S the entry (P(t)_{i,j})_{t\in T} is differentiable and P satisfies the Kolmogorov backward equations:
+
+{{NumBlk|:|P(0)=([i=j])_{i,j\in S},~\forall t\in T~\forall i,j\in S~~(P(t)_{i,j})'=\sum_{k\in S}q_{i,k}P(t)_{k,j}.|}}
+
+}}
+
+We say Q is regular to mean that we do have uniqueness for the above system, i.e., that there exists exactly one solution. We say Q is irregular to mean Q is not regular. If S is finite, then there is exactly one solution, namely P=(e^{tQ})_{t\in T}, and hence Q is regular. Otherwise, S is infinite, and there exist irregular transition-rate matrices on S.{{efn|For instance, consider the example S=\mathbb Z_{\ge0} and Q being the (unique) transition-rate matrix on S such that \forall i\in\mathbb Z_{\ge0}~~Q_{i,i+1}=i^2,~Q_{i,i}=-i^2. (Then the remaining entries of Q will all be zero. Cf. birth process.) Then Q is irregular. Then, for general infinite S, indexing S by the nonnegative integers \mathbb Z_{\ge0} yields that a suitably modified version of the above matrix Q will be irregular.}} If Q is regular, then for the unique solution P, for each t\in T, P(t) will be a stochastic matrix. We will assume Q is regular from the beginning of the following subsection up through the end of this section, even though it is conventional to not include this assumption. (Note for the expert: thus we are not defining continuous-time Markov chains in general but only non-explosive continuous-time Markov chains.)
+
+Transition-probability definition
+
+Let P be the (unique) solution of the system (). (Uniqueness guaranteed by our assumption that Q is regular.) We say X is Markov with initial distribution \lambda and rate matrix Q to mean: for any nonnegative integer n\ge0, for all t_0,\dots,t_{n+1}\in T such that t_0 for all i_0,\dots,i_{n+1}\in I,
+
+{{NumBlk|:|\Pr(X_0=i_0,\dots,X_{t_{n+1}}=i_{n+1})=\lambda_{i_0}\prod_{k\in\mathbb Z:0\le k\le n}P(t_{k+1}-t_k)_{i_k,i_{k+1}}.|}}
+
+Using induction and the fact that \forall A,B\in{\cal A}~~\Pr(B)\ne0\rightarrow\Pr(A\cap B)=\Pr(A\mid B)\Pr(B), we can show the equivalence of the above statement containing () and the following statement: for all i\in I,~\Pr(X_0=i)=\lambda_i and for any nonnegative integer n\ge0, for all t_0,\dots,t_{n+1}\in T such that t_0 for all i_0,\dots,i_{n+1}\in I such that 0 (it follows that 0),
+
+{{NumBlk|:|\Pr(X_{t_{n+1}}=i_{n+1}\mid X_{t_n}=i_n,\dots,X_{t_0}=i_0)=P(t_{n+1}-t_n)_{i_n,i_{n+1}}.|}}
+
+It follows from continuity of the functions (P(t)_{i,j})_{t\in T} (i,j\in S) that the trajectory (X_t(\omega))_{t\in T} is almost surely right continuous (with respect to the discrete metric on S): there exists a \Pr-null set N such that \{\omega\in\Omega:(X_t(\omega))_{t\in T}\text{ is right continuous}\}\subseteq N.
+
+Jump-chain/holding-time definition
+
+Sequences associated to a right-continuous function
+
+Let f:T\to S be right continuous (when we equip S with the discrete metric). Define
+
+h=h(f)=(\inf\{u\in(0,+\infty):f(t+u)\ne f(t)\})_{t\in T})\cup\{+\infty,0\},
+
+let
+
+H=H(f)=(h^{\circ n}0)_{n\in\mathbb Z_{\ge0}}
+
+be the holding-time sequence associated to f, choose s\in S, and let
+
+y=y(f)=\left(\begin{cases}f(\sum_{k\in n}H_k)&\text{ if }\sum_{k\in n}H_k
+
+be "the state sequence" associated to f.
+
+Definition of the jump matrix Π
+
+The jump matrix \Pi, alternatively written \Pi(Q) if we wish to emphasize the dependence on Q, is the matrix
+
+\Pi=([i=j])_{i\in Z,j\in S}\cup\bigcup_{i\in S\setminus Z}(\{((i,j), -q_{i,j}/ q_{i, i}):j\in S\setminus\{i\}\}\cup\{((i,i),0)\}),
+
+where Z=Z(Q)=\{k\in S:q_{k,k}=0\} is the zero set of the function (q_{k,k})_{k\in S}.
+
+Jump-chain/holding-time property
+
+We say X is Markov with initial distribution \lambda and rate matrix Q to mean: the trajectories of X are almost surely right continuous, let f be a modification of X to have (everywhere) right-continuous trajectories, \sum_{n\in\mathbb Z_{\ge0}}H(f(\omega))_n=+\infty almost surely (note to experts: this condition says X is non-explosive), the state sequence y(f(\omega)) is a discrete-time Markov chain with initial distribution \lambda (jump-chain property) and transition matrix \Pi(Q), and \forall n\in\mathbb Z_{\ge0}~\forall B\in{\cal B}(\mathbb R_{\ge0})~\Pr(H_n(f)\in B)=\operatorname{Exp}(-q_{Y_n,Y_n})(B) (holding-time property).
+
+Infinitesimal definition
+
+We say X is Markov with initial distribution \lambda and rate matrix Q to mean: for all i\in S, \Pr(X(0)=i)=\lambda_i and for all i,j, for all t and for small strictly positive values of h, the following holds for all t\in T such that 0:
+
+\Pr(X(t+h) = j \mid X(t) = i) = [i=j] + q_{i,j}h + o(h),
+
+where the term [i=j] is 1 if i=j and otherwise 0, and the little-o term o(h) depends in a certain way on i,j,h.
+
+The above equation shows that q_{i,j} can be seen as measuring how quickly the transition from i to j happens for i\neq j, and how quickly the transition away from i happens for i= j.
+
+Properties
+
+Communicating classes
+
+Communicating classes, transience, recurrence and positive and null recurrence are defined identically as for discrete-time Markov chains.
+
+Transient behaviour
+
+Write P(t) for the matrix with entries p'ij = P(X't&nbsp;=&nbsp;j&nbsp;|&nbsp;X0&nbsp;=&nbsp;i). Then the matrix P(t) satisfies the forward equation, a first-order differential equation
+
+P'(t) = P(t) Q,
+
+where the prime denotes differentiation with respect to t. The solution to this equation is given by a matrix exponential
+
+P(t) = e^{tQ}.
+
+In a simple case such as a CTMC on the state space {1,2}. The general Q matrix for such a process is the following 2&nbsp;×&nbsp;2 matrix with α,β&nbsp;>&nbsp;0
+
+Q = \begin{pmatrix} -\alpha & \alpha \\ \beta & -\beta \end{pmatrix}.
+
+The above relation for forward matrix can be solved explicitly in this case to give
+
+P(t) = \begin{pmatrix}
+
+\frac{\beta}{\alpha+\beta} + \frac{\alpha}{\alpha+\beta}e^{-(\alpha+\beta)t} &
+
+\frac{\alpha}{\alpha+\beta} - \frac{\alpha}{\alpha+\beta}e^{-(\alpha+\beta)t} \\
+
+\frac{\beta}{\alpha+\beta} - \frac{\beta}{\alpha+\beta}e^{-(\alpha+\beta)t} &
+
+\frac{\alpha}{\alpha+\beta} + \frac{\beta}{\alpha+\beta}e^{-(\alpha+\beta)t}
+
+\end{pmatrix}.
+
+Computing direct solutions is complicated in larger matrices. The fact that Q is the generator for a semigroup of matrices
+
+P(t+s) = e^{(t+s)Q} = e^{tQ} e^{sQ} = P(t) P(s)
+
+is used.
+
+Stationary distribution
+
+The stationary distribution for an irreducible recurrent CTMC is the probability distribution to which the process converges for large values of t. Observe that for the two-state process considered earlier with P(t) given by
+
+P(t) = \begin{pmatrix}
+
+\frac{\beta}{\alpha+\beta} + \frac{\alpha}{\alpha+\beta}e^{-(\alpha+\beta)t} &
+
+\frac{\alpha}{\alpha+\beta} - \frac{\alpha}{\alpha+\beta}e^{-(\alpha+\beta)t} \\
+
+\frac{\beta}{\alpha+\beta} - \frac{\beta}{\alpha+\beta}e^{-(\alpha+\beta)t} &
+
+\frac{\alpha}{\alpha+\beta} + \frac{\beta}{\alpha+\beta}e^{-(\alpha+\beta)t}
+
+\end{pmatrix},
+
+as t&nbsp;→&nbsp;∞ the distribution tends to
+
+P_\pi = \begin{pmatrix}
+
+\frac{\beta}{\alpha+\beta} &
+
+\frac{\alpha}{\alpha+\beta} \\
+
+\frac{\beta}{\alpha+\beta} &
+
+\frac{\alpha}{\alpha+\beta}
+
+\end{pmatrix}.
+
+Observe that each row has the same distribution as this does not depend on starting state. The row vector  may be found by solving
+
+\pi Q = 0
+
+with the constraint
+
+\sum_{i \in S} \pi_i = 1.
+
+Example 1
+
+The image to the right describes a continuous-time Markov chain with state-space {Bull market, Bear market, Stagnant market} and transition-rate matrix
+
+Q=\begin{pmatrix}
+
+-0.025 & 0.02 & 0.005 \\
+
+0.3 & -0.5 & 0.2 \\
+
+0.02 & 0.4 & -0.42
+
+\end{pmatrix}.
+
+The stationary distribution of this chain can be found by solving \pi Q=0, subject to the constraint that elements must sum to 1 to obtain
+
+\pi = \begin{pmatrix}0.885 & 0.071 & 0.044 \end{pmatrix}.
+
+Example 2
+
+The image to the right describes a discrete-time Markov chain modeling Pac-Man with state-space {1,2,3,4,5,6,7,8,9}. The player controls Pac-Man through a maze, eating pac-dots. Meanwhile, he is being hunted by ghosts. For convenience, the maze shall be a small 3x3-grid and the ghosts move randomly in horizontal and vertical directions. A secret passageway between states 2 and 8 can be used in both directions. Entries with probability zero are removed in the following transition-rate matrix:
+
+Q=\begin{pmatrix}
+
+-1 & \frac{1}{2} & & \frac{1}{2}\\
+
+\frac{1}{4} & -1 & \frac{1}{4} & & \frac{1}{4}&&&\frac{1}{4}\\
+
+& \frac{1}{2} & -1 & & & \frac{1}{2}\\
+
+\frac{1}{3} & & & -1 & \frac{1}{3} & & \frac{1}{3}\\
+
+& \frac{1}{4} & & \frac{1}{4} & -1 & \frac{1}{4} & & \frac{1}{4}\\
+
+& & \frac{1}{3} & & \frac{1}{3} & -1& & & \frac{1}{3}\\
+
+& & & \frac{1}{2} & & & -1 & \frac{1}{2}\\
+
+& \frac{1}{4} & && \frac{1}{4} & & \frac{1}{4} & -1 & \frac{1}{4}\\
+
+& & & & & \frac{1}{2} & & \frac{1}{2} & -1\end{pmatrix}
+
+This Markov chain is irreducible, because the ghosts can fly from every state to every state in a finite amount of time. Due to the secret passageway, the Markov chain is also aperiodic, because the ghosts can move from any state to any state both in an even and in an uneven number of state transitions. Therefore, a unique stationary distribution exists and can be found by solving \pi Q=0, subject to the constraint that elements must sum to 1. The solution of this linear equation subject to the constraint is \pi=(7.7,15.4,7.7,11.5,15.4,11.5,7.7,15.4,7.7)\%.
+
+The central state and the border states 2 and 8 of the adjacent secret passageway are visited most and the corner states are visited least.
+
+Time reversal
+
+For a CTMC Xt, the time-reversed process is defined to be \hat X_t = X_{T-t}. By Kelly's lemma this process has the same stationary distribution as the forward process.
+
+A chain is said to be reversible if the reversed process is the same as the forward process. Kolmogorov's criterion states that the necessary and sufficient condition for a process to be reversible is that the product of transition rates around a closed loop must be the same in both directions.
+
+Embedded Markov chain
+
+One method of finding the stationary probability distribution, , of an ergodic continuous-time Markov chain, Q, is by first finding its embedded Markov chain (EMC). Strictly speaking, the EMC is a regular discrete-time Markov chain. Each element of the one-step transition probability matrix of the EMC, S, is denoted by sij, and represents the conditional probability of transitioning from state i into state j. These conditional probabilities may be found by
+
+s_{ij} = \begin{cases}
+
+\frac{q_{ij}}{\sum_{k \neq i} q_{ik}} & \text{if } i \neq j,\\
+
+0 & \text{otherwise}.
+
+\end{cases}
+
+From this, S may be written as
+
+S = I - \left( \operatorname{diag}(Q) \right)^{-1} Q
+
+where I is the identity matrix and diag(Q) is the diagonal matrix formed by selecting the main diagonal from the matrix Q and setting all other elements to zero.
+
+To find the stationary probability distribution vector, we must next find \varphi such that
+
+\varphi S = \varphi,
+
+with \varphi being a row vector, such that all elements in \varphi are greater than 0 and \|\varphi\|_1 = 1. From this,  may be found as
+
+\pi = {-\varphi (\operatorname{diag}(Q))^{-1} \over \left\| \varphi (\operatorname{diag}(Q))^{-1} \right\|_1}.
+
+(S may be periodic, even if Q is not. Once  is found, it must be normalized to a unit vector.)
+
+Another discrete-time process that may be derived from a continuous-time Markov chain is a δ-skeleton&mdash;the (discrete-time) Markov chain formed by observing X(t) at intervals of δ units of time. The random variables X(0),&nbsp;X(δ),&nbsp;X(2δ),&nbsp;... give the sequence of states visited by the δ-skeleton.
+
+See also
+
+Kolmogorov equations (Markov jump process)
+
+Notes
+
+References
+
+Leo Breiman (1992)  Probability. Original edition published by Addison-Wesley; reprinted by Society for Industrial and Applied Mathematics . (See Chapter 7)
+
+J. L. Doob (1953) Stochastic Processes. New York: John Wiley and Sons .
+
+A. A. Markov (1971). "Extension of the limit theorems of probability theory to a sum of variables connected in a chain". reprinted in Appendix B of: R. Howard. Dynamic Probabilistic Systems, volume 1: Markov Chains. John Wiley and Sons.
+
+S. P. Meyn and R. L. Tweedie (1993) Markov Chains and Stochastic Stability. London: Springer-Verlag . online: MCSS . Second edition to appear, Cambridge University Press, 2009.
+
+Classical text. cf Chapter 6 Finite Markov Chains pp.&nbsp;384ff.
+
+John G. Kemeny & J. Laurie Snell (1960) Finite Markov Chains, D. van Nostrand Company
+
+E. Nummelin. General irreducible Markov chains and non-negative operators. Cambridge University Press, 1984, 2004.
+
+Seneta, E. Non-negative matrices and Markov chains. 2nd rev. ed., 1981, XVI, 288 p., Softcover Springer Series in Statistics. (Originally published by Allen & Unwin Ltd., London, 1973)
+
+Category:Markov processes

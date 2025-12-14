@@ -1,0 +1,15 @@
+In data mining, cluster-weighted modeling (CWM) is an algorithm-based approach to non-linear prediction of outputs (dependent variables) from inputs (independent variables) based on density estimation using a set of models (clusters) that are each notionally appropriate in a sub-region of the input space. The overall approach works in jointly input-output space and an initial version was proposed by Neil Gershenfeld.
+
+Basic form of model
+
+The procedure for cluster-weighted modeling of an input-output problem can be outlined as follows.  Each cluster in CWM is localized to a Gaussian input region, and this contains its own trainable local model.  It is recognized as a versatile inference algorithm which provides simplicity, generality, and flexibility; even when a feedforward layered network might be preferred, it is sometimes used as a "second opinion" on the nature of the training problem.
+
+CWM can be used to classify media in printer applications, using at least two parameters to generate an output that has a joint dependency on the input parameters.
+
+References
+
+Category:Multivariate statistics
+
+Category:Cluster analysis algorithms
+
+Category:Estimation of densities

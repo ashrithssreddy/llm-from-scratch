@@ -1,0 +1,35 @@
+In computer science, a ball tree, balltree
+
+D^{B}(t) =
+
+\begin{cases}
+
+\max(|t - \textit{B.pivot}| - \textit{B.radius}, D^\textit{B.parent}),
+
+& \text{if }B \neq Root \\
+
+\max(|t - \textit{B.pivot}| - \textit{B.radius}, 0),
+
+& \text{if }B = Root \\
+
+\end{cases}
+
+Where D^{B}(t) is the minimum possible distance from any point in the ball  to some point .
+
+Ball-trees are related to the M-tree, but only support binary splits, whereas in the M-tree each level splits m to 2m fold, thus leading to a shallower tree structure, therefore need fewer distance computations, which usually yields faster queries. Furthermore, M-trees can better be stored on disk, which is organized in pages. The M-tree also keeps the distances from the parent node precomputed to speed up queries.
+
+Vantage-point trees are also similar, but they binary split into one ball, and the remaining data, instead of using two balls.
+
+Construction
+
+A number of ball tree construction algorithms are available. The goal of such an algorithm is to produce a tree that will efficiently support queries of the desired type (e.g. nearest-neighbor) in the average case. The specific criteria of an ideal tree will depend on the type of question being answered and the distribution of the underlying data. However, a generally applicable measure of an efficient tree is one that minimizes the total volume of its internal nodes. Given the varied distributions of real-world data sets, this is a difficult task, but there are several heuristics that partition the data well in practice. In general, there is a tradeoff between the cost of constructing a tree and the efficiency achieved by this metric.
+
+However, the best nearest-neighbor data structure for a given application will depend on the dimensionality, number of data points, and underlying structure of the data.
+
+References
+
+Category:Trees (data structures)
+
+Category:Machine learning
+
+Category:Articles with example pseudocode

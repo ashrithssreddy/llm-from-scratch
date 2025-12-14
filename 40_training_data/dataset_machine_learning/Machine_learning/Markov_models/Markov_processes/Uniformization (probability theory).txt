@@ -1,0 +1,31 @@
+In probability theory, uniformization method, (also known as Jensen's method) is a method to compute transient solutions of finite state continuous-time Markov chains, by approximating the process by a discrete-time Markov chain.
+
+Method description
+
+For a continuous-time Markov chain with transition rate matrix Q, the uniformized discrete-time Markov chain has probability transition matrix P:=(p_{ij})_{i,j}, which is defined by
+
+p_{ij} = \begin{cases} q_{ij}/\gamma &\text{ if } i \neq j \\ 1 - \sum_{k \neq i} q_{ik}/\gamma &\text{ if } i=j \end{cases}
+
+with γ, the uniform rate parameter, chosen such that
+
+\gamma \geq \max_i |q_{ii}|.
+
+In matrix notation:
+
+P=I+\frac{1}{\gamma}Q.
+
+For a starting distribution (0), the distribution at time t, (t) is computed by Using a parallel version of the algorithm, chains with state spaces of larger than 107 have been analysed.
+
+Limitations
+
+Reibman and Trivedi state that "uniformization is the method of choice for typical problems," though they note that for stiff problems some tailored algorithms are likely to perform better.
+
+External links
+
+Matlab implementation
+
+Notes
+
+Category:Queueing theory
+
+Category:Markov processes

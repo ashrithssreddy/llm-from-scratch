@@ -1,0 +1,75 @@
+{{Infobox scientist
+
+name = Andrew McCallum
+
+image =
+
+image_size =
+
+caption =
+
+birth_date =
+
+birth_place =
+
+residence =
+
+field = Computer Science, Artificial Intelligence
+
+work_institution = WhizBang LabsUniversity of Massachusetts AmherstGoogle Research
+
+alma_mater = Dartmouth CollegeUniversity of Rochester
+
+doctoral_advisor = Dana H. Ballard
+
+doctoral_students =
+
+known_for = Conditional random field
+
+prizes = ICML Test of Time (2011)
+
+}}
+
+Andrew McCallum is an American  professor in the computer science department at University of Massachusetts Amherst. His primary specialties are in machine learning, natural language processing, information extraction, information integration, and social network analysis.
+
+Career
+
+McCallum graduated summa cum laude from Dartmouth College in 1989. He completed his Ph.D. at the University of Rochester in 1995 under the supervision of Dana H. Ballard. McCallum was then a postdoctoral fellow, working with Sebastian Thrun and Tom M. Mitchell at Carnegie Mellon University. From 1998 to 2000, he was a Research Scientist and Research Coordinator at Justsystem Pittsburgh Research Center. From 2000 to 2002, he was Vice President of Research and Development at WhizBang Labs, and Director of its Pittsburgh office. Since 2002, he has worked as a professor of computer science at the University of Massachusetts Amherst. In 2020, he also joined Google as a part-time research scientist.
+
+He was elected as a fellow of the Association for the Advancement of Artificial Intelligence in 2009, and as an Association for Computing Machinery in 2017. From 2014 to 2017, he was the President of International Machine Learning Society (IMLS), which organizes the International Conference on Machine Learning. He is also the director of the Center for Data Science at UMass, leading a new partnership with the Chan and Zuckerberg Initiative. In 2018, the initiative made an initial grant of 5.5 million to the center, supporting research to facilitate new ways for scientists to explore and discover research articles.
+
+Main contributions
+
+In collaboration with John D. Lafferty and Fernando Pereira, McCallum developed conditional random fields, first described in a paper presented at the International Conference on Machine Learning (ICML).  In 2011 this research paper won the ICML "Test of Time" (10-year best paper) award.
+
+McCallum has written several widely used open-source software toolkits for machine learning, natural language processing and other text processing, including Rainbow, Mallet (software project), and FACTORIE. In addition, he was instrumental in publishing the Enron Corpus, a large collection of emails that has been used as a basis for a number of academic studies of social networking and language.
+
+McCallum instigated and directs the nonprofit project OpenReview.net, an online platform that aims to promote openness in scientific communication, particularly the peer review process, by providing a flexible cloud-based web interface and underlying database API.
+
+References
+
+External links
+
+Andrew McCallum's home page
+
+Andrew McCallum's published papers
+
+Category:American artificial intelligence researchers
+
+Category:American computer scientists
+
+Category:Dartmouth College alumni
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Living people
+
+Category:Machine learning researchers
+
+Category:Natural language processing researchers
+
+Category:University of Massachusetts Amherst faculty
+
+Category:University of Rochester alumni
+
+Category:Year of birth missing (living people)

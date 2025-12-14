@@ -1,0 +1,55 @@
+DREAM Challenges (Dialogue for Reverse Engineering Assessment and Methods) is a non-profit initiative for advancing biomedical and systems biology research via crowd-sourced competitions. Started in 2006, DREAM challenges collaborate with Sage Bionetworks to provide a platform for competitions run on the Synapse platform. Over 60 DREAM challenges have been conducted over the span of over 15 years.
+
+Overview
+
+DREAM Challenges were founded in 2006 by Gustavo Stolovizky from IBM Research and Andrea Califano from Columbia University. Current chair of the DREAM organization is Paul Boutros from University of California. Further organization spans emeritus chairs Justin Guinney and Gustavo Stolovizky, and multiple DREAM directors.
+
+Individual challenges focus on tackling a specific biomedical research question, typically narrowed down to a specific disease. A prominent disease focus has been on oncology, with multiple past challenges focused on breast cancer, acute myeloid leukemia, and prostate cancer or similar diseases.
+
+Motivation for DREAM Challenges is that via crowd-sourcing data to a larger audience via competitions, better models and insight is gained than if the analysis was conducted by a single entity. Past competitions have been published in such scientific venues as the flagship journals of the Nature Portfolio and PLOS publishing groups. Results of DREAM challenges are announced via web platforms, and the top performing participants are invited to present their results in the annual RECOMB/ISCB Conferences with RSG/DREAM  organized by the ISCB.
+
+While DREAM Challenges have emphasized open science and data, in order to mitigate issues rising from highly sensitive data such as genomics in patient cohorts, "model to data" approaches have been adopted. In such challenges participants submit their models via containers such as Docker or Singularity. This allows retaining confidentiality of the original data as these containers are then run by the organizers on the confidential data. This differs from the more traditional open data model, where participants submit predictions directly based on the provided open data.
+
+Challenge organization
+
+DREAM challenge comprises a core DREAM/Sage Bionetworks organization group as well as an extended scientific expert group, who may have contributed to creation and conception of the challenge or by providing key data. Additionally, new DREAM challenges may be proposed by the wider research community. Pharmaceutical companies or other private entities may also be involved in DREAM challenges, for example in providing data.
+
+Challenge structure
+
+Timelines for key stages (such as introduction webinars, model submission deadlines, and final deadline for participation) are provided in advance. After the winners are announced, organizers start collaborating with the top performing participants to conduct post hoc analyses for a publication describing key findings from the competition.
+
+Person has privileged access to the data for the particular challenge, thus providing them with an unfair advantage.
+
+Person has been caught or is under suspicion of cheating or abusing previous DREAM Challenges.
+
+Person is a minor (under age 18 or the age of majority in jurisdiction of residence). This may be alleviated via parental consent.
+
+See also
+
+List of crowdsourcing projects
+
+Critical Assessment of Function Annotation (CAFA)
+
+Critical Assessment of Genome Interpretation (CAGI)
+
+Critical Assessment of Prediction of Interactions (CAPRI)
+
+Critical Assessment of protein Structure Prediction (CASP)
+
+Kaggle
+
+References
+
+Category:Applied machine learning
+
+Category:Bioinformatics
+
+Category:Computer science competitions
+
+Category:Crowdsourcing
+
+Category:Forecasting competitions
+
+Category:Molecular modelling
+
+Category:Programming contests

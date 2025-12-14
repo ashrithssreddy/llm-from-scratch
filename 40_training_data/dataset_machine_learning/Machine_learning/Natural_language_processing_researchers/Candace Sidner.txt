@@ -1,0 +1,45 @@
+Candace Lee (Candy) Sidner is an American computer scientist whose research has applied artificial intelligence and natural language processing to problems in personal information management, intelligent user interfaces, and human–robot interaction. She is a research professor of computer science at the Worcester Polytechnic Institute, and a former president of the Association for Computational Linguistics.
+
+Education and career
+
+Sidner majored in mathematics at Kalamazoo College, graduating in 1971. She earned a master's degree in computer science at the University of Pittsburgh in 1975, and completed a Ph.D. in computer science in 1979 at the Massachusetts Institute of Technology. Her dissertation, Towards A Computational Theory of Definite Anaphora Comprehension in English Discourse, was supervised by Jonathan Allen.
+
+She worked as a researcher for Bolt Beranek and Newman from 1979 to 1989, and continued to work in industry for the Digital Equipment Corporation (1989 to 1993), the Lotus Development Corporation (1993 to 2000), Mitsubishi Electric Research Laboratories (2000 to 2007), and BAE Systems (2007 to 2010). She took her present position as a research professor at the Worcester Polytechnic Institute in 2009.
+
+She served as president of the Association for Computational Linguistics in 1989.
+
+Recognition
+
+Sidner was named a Fellow of the Association for the Advancement of Artificial Intelligence in 1991. In 2013, she was named a Fellow of the Association for Computational Linguistics, "for seminal contributions to discourse focus and collaborative dialog".
+
+References
+
+{{reflist|refs=
+
+}}
+
+External links
+
+Home page
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:American computer scientists
+
+Category:American women computer scientists
+
+Category:Natural language processing researchers
+
+Category:Kalamazoo College alumni
+
+Category:University of Pittsburgh alumni
+
+Category:Massachusetts Institute of Technology alumni
+
+Category:Worcester Polytechnic Institute faculty
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Presidents of the Association for Computational Linguistics

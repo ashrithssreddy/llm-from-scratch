@@ -1,0 +1,97 @@
+{{Infobox scientist
+
+name              = Dan Roth
+
+native_name       = דן רוט
+
+native_name_lang  = he
+
+image             = Roth dan-057(web).jpg
+
+caption           = Roth in 2011
+
+birth_date        =
+
+birth_place       = Haifa, Israel
+
+death_date        =
+
+death_place       =
+
+residence         =
+
+citizenship       =
+
+nationality       =
+
+workplaces        = University of Illinois at Urbana-Champaign, University of Pennsylvania
+
+alma_mater        = Harvard University
+
+doctoral_advisor  = Leslie Valiant
+
+doctoral_students = Ming-Hsuan Yang
+
+known_for         = Joint Learning and Inference: ILP formulations of NLP tasks..., Machine Learning for NLP, Probabilistic Reasoning
+
+awards            = ACM Fellow; IJCAI John McCarthy Award
+
+website           =
+
+footnotes         =
+
+ethnicity         =
+
+field             = Computer Science, Machine Learning, Natural Language Processing, Automated reasoning, Information Extraction.
+
+author_abbreviation_bot =
+
+author_abbreviation_zoo =
+
+religion          = |
+
+}}
+
+Dan Roth () is the Eduardo D. Glandt Distinguished Professor of Computer and Information Science at the University of Pennsylvania and the Chief AI Scientist at Oracle. Until June 2024 Roth was a VP and distinguished scientist at AWS AI. In his role at AWS, Roth led over the last three years the scientific effort behind the first-generation Generative AI products from AWS, including Titan Models, Amazon Q efforts, and Bedrock, from inception until they became generally available.
+
+Roth got his B.A. summa cum laude in mathematics from the Technion, Israel, and his Ph.D. in computer science from Harvard University in 1995. He taught at the University of Illinois at Urbana-Champaign from 1998 to 2017 before moving to the University of Pennsylvania.
+
+Professional career
+
+Roth is a Fellow of the American Association for the Advancement of Science (AAAS), the Association for Computing Machinery (ACM), the Association for the Advancement of Artificial Intelligence (AAAI), and the Association of Computational Linguistics (ACL).
+
+Roth’s research focuses on the computational foundations of intelligent behavior. He develops theories and systems pertaining to intelligent behavior using a unified methodology, at the heart of which is the idea that learning has a central role in intelligence.  His work centers around the study of machine learning and inference methods to facilitate natural language understanding. In doing that he has pursued several interrelated lines of work that span multiple aspects of this problem - from fundamental questions in learning and inference and how they interact, to the study of a range of natural language processing (NLP) problems and developing advanced machine learning based tools for natural language applications.
+
+Roth has made seminal contribution to the fusion of Learning and Reasoning, Machine Learning with weak, incidental supervision, and to machine learning and inference approaches to natural language understanding. He has written the first paper on zero-shot learning in natural language processing, a 2008 paper by Chang, Ratinov, Roth, and Srikumar that was published at AAAI’08, but the name given to the learning paradigm there was dataless classification. Roth has worked on probabilistic reasoning (including its complexity and probabilistic lifted inference ), Constrained Conditional Models (ILP formulations of NLP problems) and constraints-driven learning, part-based (constellation) methods in object recognition, response based Learning,  He has developed NLP and Information extraction tools that are being used broadly by researchers and commercially, including NER, coreference resolution, wikification, SRL, and ESL text correction. He is currently on the scientific advisory board of the Allen Institute for AI.
+
+References
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:Harvard University alumni
+
+Category:Israeli computer scientists
+
+Category:University of Illinois Urbana-Champaign faculty
+
+Category:Fellows of the American Association for the Advancement of Science
+
+Category:Technion – Israel Institute of Technology alumni
+
+Category:2011 fellows of the Association for Computing Machinery
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Fellows of the Association for Computational Linguistics
+
+Category:Natural language processing researchers
+
+Category:Artificial intelligence researchers
+
+Category:Machine learning researchers
+
+Category:University of Pennsylvania Department of Computer and Information Science faculty
+
+Category:University of Pennsylvania

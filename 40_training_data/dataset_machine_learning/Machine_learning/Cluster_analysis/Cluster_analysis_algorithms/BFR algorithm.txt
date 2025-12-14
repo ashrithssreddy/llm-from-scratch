@@ -1,0 +1,5 @@
+The BFR algorithm, named after its inventors Bradley, Fayyad and Reina, is a variant of k-means algorithm that is designed to cluster data in a high-dimensional Euclidean space. It makes a very strong assumption about the shape of clusters: they must be normally distributed about a centroid. The mean and standard deviation for a cluster may differ for different dimensions, but the dimensions must be independent. In other words, the data must take the shape of axis-aligned ellipses.
+
+References
+
+Category:Cluster analysis algorithms

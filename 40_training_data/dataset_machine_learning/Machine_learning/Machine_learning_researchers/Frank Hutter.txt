@@ -1,0 +1,51 @@
+Frank Hutter is a German computer scientist recognized for his contributions to machine learning, particularly in the areas of automated machine learning (AutoML), hyperparameter optimization, meta-learning and tabular machine learning. He is currently a Hector-Endowed Fellow and PI at the ELLIS Institute Tübingen and a Full Professor (W3) for Machine Learning at the Department of Computer Science, University of Freiburg. Hutter is known for his role in establishing AutoML as a key area in artificial intelligence research.
+
+Education and academic career
+
+Frank Hutter received his academic training in computer science at Darmstadt University of Technology, where he completed his Vordiplom (comparable to a BSc) and Hauptdiplom (equivalent to MSc) by 2004. He later pursued his PhD at the University of British Columbia, under the supervision of Profs. Holger Hoos, Kevin Leyton-Brown and Kevin Murphy, where his doctoral thesis, titled "Automated Configuration of Algorithms for Solving Hard Computational Problems," was awarded the CAIAC Doctoral Dissertation Award for the best thesis in Artificial Intelligence completed at a Canadian university in 2009.
+
+Hutter did his postdoctoral research at the University of British Columbia, where he worked from 2009 to 2013. In 2013, he moved to the University of Freiburg, initially leading an Emmy Noether Research Group, and in 2017, he was appointed as a Full Professor. His contributions to machine learning have been recognized globally, particularly his work in AutoML and hyperparameter optimization. Overall, Hutter has authored over 180 peer-reviewed publications, which have garnered more than 89,000 citations, reflecting the high impact of his work.
+
+Contributions in AutoML
+
+Hutter's early research laid the groundwork for the field of Automated Machine Learning (AutoML). He has been a key figure in establishing AutoML as a distinct research area. Along with various colleagues, he organized the AutoML workshops from 2014 to 2021, wrote the first book on AutoML and taught the first MOOC on AutoML. He also co-founded the AutoML conference in 2022 and served as its general chair the first two years.
+
+He also published prominent works in various subfields of AutoML, such as hyperparameter optimization, neural architecture search, meta-Learning and AutoML systems. He is currently the most highly cited researcher in AutoML.
+
+Contributions in machine learning for tabular data
+
+Hutter has also made many contributions to machine learning for tabular data. He led the development of the first widely adopted AutoML system for tabular data, AutoWEKA, which was published at KDD 2013 and received the test of time award at KDD (2023). Subsequently, he led the development of Auto-sklearn, and the subsequent second international AutoML challenge, both of which only included tabular data. More recently, he focused on tabular foundation models, including TabPFN, which was published in Nature magazine. In 2024, he also co-founded Prior Labs, the first company focusing on tabular foundation models.
+
+Awards and honors
+
+Hutter has received numerous awards throughout his career. In 2023, he won the KDD Test of Time Award for Research together with Chris Thornton, Holger H. Hoos, and Kevin Leyton-Brown. He has received three grants from the ERC, including the ERC Starting Grant (2016) and ERC Consolidator Grant (2022), as well as an ERC Proof of Concept Grant (2020). In 2021, he became an ELLIS Unit Director and was also recognized as a EurAI Fellow, in addition to receiving the AIJ Prominent Paper Award. Earlier, he was a recipient of the Google Faculty Research Award in 2018. His groundbreaking research was acknowledged early in his career with the IJCAI Distinguished Paper Award in 2013 and the IJCAI/JAIR Best Paper Prize in 2010.
+
+Representative publications
+
+Hutter, F. Kotthoff, L. and Vanschoren, J., editors. Automated machine learning: methods, systems, challenges, Springer Nature, 2019. www.automl.org/book.
+
+Feurer, M., Klein, A., Eggensperger, K., Springenberg, T., Blum, M., Hutter, F. Efficient and Robust Automated Machine Learning. In NeurIPS 2015.
+
+Loshchilov, I., and Hutter, F. Decoupled weight decay regularization. In ICLR 2018.
+
+Zela,A.,Elsken,T.,Saikia,T.,Marrakschi,Y.,Brox,T.,Hutter.,F.Understanding and Robustifying Differentiable Architecture Search. In ICLR 2020.
+
+Hollmann, N., Mu ̈ller, S. and Hutter, F. TabPFN: A Transformer That Solves Small Tabular Classification Problems in a Second, In ICLR 2023.
+
+References
+
+Category:Living people
+
+Category:Year of birth missing (living people)
+
+Category:German computer scientists
+
+Category:University of British Columbia alumni
+
+Category:Machine learning researchers
+
+Category:Artificial intelligence researchers
+
+Category:Academic staff of the University of Freiburg
+
+Category:German artificial intelligence researchers

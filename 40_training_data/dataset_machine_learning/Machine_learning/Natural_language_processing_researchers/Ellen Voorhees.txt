@@ -1,0 +1,45 @@
+Ellen Marie Voorhees (born March 13, 1958) is an American computer scientist known for her work in document retrieval, information retrieval, and natural language processing. She works in the retrieval group at the National Institute of Standards and Technology (NIST).
+
+Education and career
+
+Voorhees was born in Bensalem Township, Pennsylvania, and was the 1976 valedictorian at Bensalem High School.
+
+She did her undergraduate studies at Pennsylvania State University, graduating in 1979 with a bachelor's degree in computer science.  She attended Cornell University where she received her master's degree and then went on to complete her Ph.D. in 1985.  Her dissertation, The Effectiveness and Efficiency of Agglomerative Hierarchic Clustering in Document Retrieval, was supervised by Gerard Salton.
+
+Prior to joining NIST she was a Senior Member of the Technical Staff at Siemens Corporate Research in Princeton, NJ, where her work on intelligent agents applied to information access resulted in numerous patents. A dedicated researcher and prolific writer, she is the author of hundreds of technical papers.
+
+Recognition
+
+Voorhees was elected as an ACM Fellow in 2018 for "contributions in evaluation of information retrieval, question answering, and other language technologies". Voorhees is a member of the Association for the Advancement of Artificial Intelligence and the Association for Computational Linguistics (ACL), and has been elected as a fellow of the Washington Academy of Sciences. She has published numerous articles on information retrieval techniques and evaluation methodologies and serves on the review boards of several journals and conferences.
+
+In 2023 Voorhees was awarded an Honorary Doctor of Science Degree from the University of Glasgow in recognition of her body of work in the evaluation of information retrieval, question answering, and other language technologies.
+
+In 2024 Voorhees received the Gerard Salton Award, a lifetime achievement award given by ACM's Special Interest Group on Information Retrieval (SIGIR).
+
+References
+
+{{reflist|refs=
+
+}}
+
+External links
+
+Category:1958 births
+
+Category:Living people
+
+Category:American computer scientists
+
+Category:American women computer scientists
+
+Category:Pennsylvania State University alumni
+
+Category:Cornell University alumni
+
+Category:2018 fellows of the Association for Computing Machinery
+
+Category:National Institute of Standards and Technology people
+
+Category:Natural language processing researchers
+
+Category:21st-century American women

@@ -1,0 +1,127 @@
+gene]]
+
+In computational biology, gene prediction or gene finding refers to the process of identifying the regions of genomic DNA that encode genes. This includes protein-coding genes as well as RNA genes, but may also include prediction of other functional elements such as regulatory regions. Gene finding is one of the first and most important steps in understanding the genome of a species once it has been sequenced.
+
+In its earliest days, "gene finding" was based on painstaking experimentation on living cells and organisms. Statistical analysis of the rates of homologous recombination of several different genes could determine their order on a certain chromosome, and information from many such experiments could be combined to create a genetic map specifying the rough location of known genes relative to each other. Today, with comprehensive genome sequence and powerful computational resources at the disposal of the research community, gene finding has been redefined as a largely computational problem.
+
+Determining that a sequence is functional should be distinguished from determining the function of the gene or its product. Predicting the function of a gene and confirming that the gene prediction is accurate still demands in vivo experimentation through gene knockout and other assays, although frontiers of bioinformatics research  are making it increasingly possible to predict the function of a gene based on its sequence alone.
+
+Gene prediction is one of the key steps in genome annotation, following sequence assembly, the filtering of non-coding regions and repeat masking.
+
+Gene prediction is closely related to the so-called 'target search problem' investigating how DNA-binding proteins (transcription factors) locate specific binding sites within the genome. Many aspects of structural gene prediction are based on current understanding of underlying biochemical processes in the cell such as gene transcription, translation, protein–protein interactions and regulation processes, which are subject of active research in the various omics fields such as transcriptomics, proteomics, metabolomics, and more generally structural and functional genomics.
+
+Empirical methods
+
+In empirical (similarity, homology or evidence-based) gene finding systems, the target genome is searched for sequences that are similar to extrinsic evidence in the form of the known expressed sequence tags, messenger RNA (mRNA), protein products, and homologous or orthologous sequences. Given an mRNA sequence, it is trivial to derive a unique genomic DNA sequence from which it had to have been transcribed. Given a protein sequence, a family of possible coding DNA sequences can be derived by reverse translation of the genetic code. Once candidate DNA sequences have been determined, it is a relatively straightforward algorithmic problem to efficiently search a target genome for matches, complete or partial, and exact or inexact. Given a sequence, local alignment algorithms such as BLAST, FASTA and Smith-Waterman look for regions of similarity between the target sequence and possible candidate matches. Matches can be complete or partial, and exact or inexact. The success of this approach is limited by the contents and accuracy of the sequence database.
+
+A high degree of similarity to a known messenger RNA or protein product is strong evidence that a region of a target genome is a protein-coding gene. However, to apply this approach systemically requires extensive sequencing of mRNA and protein products. Not only is this expensive, but in complex organisms, only a subset of all genes in the organism's genome are expressed at any given time, meaning that extrinsic evidence for many genes is not readily accessible in any single cell culture. Thus, to collect extrinsic evidence for most or all of the genes in a complex organism requires the study of many hundreds or thousands of cell types, which presents further difficulties. For example, some human genes may be expressed only during development as an embryo or fetus, which might be difficult to study for ethical reasons.
+
+Despite these difficulties, extensive transcript and protein sequence databases have been generated for human as well as other important model organisms in biology, such as mice and yeast. For example, the RefSeq database contains transcript and protein sequence from many different species, and the Ensembl system comprehensively maps this evidence to human and several other genomes. It is, however, likely that these databases are both incomplete and contain small but significant amounts of erroneous data.
+
+New high-throughput transcriptome sequencing technologies such as RNA-Seq and ChIP-sequencing open opportunities for incorporating additional extrinsic evidence into gene prediction and validation, and allow structurally rich and more accurate alternative to previous methods of measuring gene expression such as expressed sequence tag or DNA microarray.
+
+Major challenges involved in gene prediction involve dealing with sequencing errors in raw DNA data, dependence on the quality of the sequence assembly, handling short reads, frameshift mutations, overlapping genes and incomplete genes.
+
+In prokaryotes it's essential to consider horizontal gene transfer when searching for gene sequence homology. An additional important factor underused in current gene detection tools is existence of gene clusters — operons (which are functioning units of DNA containing a cluster of genes under the control of a single promoter) in both prokaryotes and eukaryotes. Most popular gene detectors treat each gene in isolation, independent of others, which is not biologically accurate.
+
+Ab initio methods
+
+Ab Initio gene prediction is an intrinsic method based on gene content and signal detection. Because of the inherent expense and difficulty in obtaining extrinsic evidence for many genes, it is also necessary to resort to ab initio gene finding, in which the genomic DNA sequence alone is systematically searched for certain tell-tale signs of protein-coding genes. These signs can be broadly categorized as either signals, specific sequences that indicate the presence of a gene nearby, or content, statistical properties of the protein-coding sequence itself. Ab initio gene finding might be more accurately characterized as gene prediction, since extrinsic evidence is generally required to conclusively establish that a putative gene is functional.
+
+In the genomes of prokaryotes, genes have specific and relatively well-understood promoter sequences (signals), such as the Pribnow box and transcription factor binding sites, which are easy to systematically identify. Also, the sequence coding for a protein occurs as one contiguous open reading frame (ORF), which is typically many hundred or thousands of base pairs long. The statistics of stop codons are such that even finding an open reading frame of this length is a fairly informative sign. (Since 3 of the 64 possible codons in the genetic code are stop codons, one would expect a stop codon approximately every 20–25 codons, or 60–75 base pairs, in a random sequence.) Furthermore, protein-coding DNA has certain periodicities and other statistical properties that are easy to detect in a sequence of this length. These characteristics make prokaryotic gene finding relatively straightforward, and well-designed systems are able to achieve high levels of accuracy.
+
+Ab initio gene finding in eukaryotes, especially complex organisms like humans, is considerably more challenging for several reasons. First, the promoter and other regulatory signals in these genomes are more complex and less well-understood than in prokaryotes, making them more difficult to reliably recognize. Two classic examples of signals identified by eukaryotic gene finders are CpG islands and binding sites for a poly(A) tail.
+
+Second, splicing mechanisms employed by eukaryotic cells mean that a particular protein-coding sequence in the genome is divided into several parts (exons), separated by non-coding sequences (introns). (Splice sites are themselves another signal that eukaryotic gene finders are often designed to identify.) A typical protein-coding gene in humans might be divided into a dozen exons, each less than two hundred base pairs in length, and some as short as twenty to thirty. It is therefore much more difficult to detect periodicities and other known content properties of protein-coding DNA in eukaryotes.
+
+Advanced gene finders for both prokaryotic and eukaryotic genomes typically use complex probabilistic models, such as hidden Markov models (HMMs) to combine information from a variety of different signal and content measurements. The GLIMMER system is a widely used and highly accurate gene finder for prokaryotes. GeneMark is another popular approach. Eukaryotic ab initio gene finders, by comparison, have achieved only limited success; notable examples are the GENSCAN and geneid programs. The GeneMark-ES and SNAP gene finders are GHMM-based like GENSCAN. They attempt to address problems related to using a gene finder on a genome sequence that it was not trained against. A few recent approaches like mSplicer, CONTRAST, or mGene also use machine learning techniques like support vector machines for successful gene prediction. They build a discriminative model using hidden Markov support vector machines or conditional random fields to learn an accurate gene prediction scoring function.
+
+Ab Initio methods have been benchmarked, with some approaching 100% sensitivity,
+
+It has been suggested that signals other than those directly detectable in sequences may improve gene prediction. For example, the role of secondary structure in the identification of regulatory motifs has been reported. In addition, it has been suggested that RNA secondary structure prediction helps splice site prediction.
+
+Neural networks
+
+Artificial neural networks are computational models that excel at machine learning and pattern recognition. Neural networks must be trained with example data before being able to generalise for experimental data, and tested against benchmark data. Neural networks are able to come up with approximate solutions to problems that are hard to solve algorithmically, provided there is sufficient training data. When applied to gene prediction, neural networks can be used alongside other ab initio methods to predict or identify biological features such as splice sites. One approach involves using a sliding window, which traverses the sequence data in an overlapping manner. The output at each position is a score based on whether the network thinks the window contains a donor splice site or an acceptor splice site. Larger windows offer more accuracy but also require more computational power. A neural network is an example of a signal sensor as its goal is to identify a functional site in the genome.
+
+Combined approaches
+
+Programs such as Maker combine extrinsic and ab initio approaches by mapping protein and EST data to the genome to validate ab initio predictions. Augustus, which may be used as part of the Maker pipeline, can also incorporate hints in the form of EST alignments or protein profiles to increase the accuracy of the gene prediction.
+
+Comparative genomics approaches
+
+As the entire genomes of many different species are sequenced, a promising direction in current research on gene finding is a comparative genomics approach.
+
+This is based on the principle that the forces of natural selection cause genes and other functional elements to undergo mutation at a slower rate than the rest of the genome, since mutations in functional elements are more likely to negatively impact the organism than mutations elsewhere.  Genes can thus be detected by comparing the genomes of related species to detect this evolutionary pressure for conservation. This approach was first applied to the mouse and human genomes, using programs such as SLAM, SGP and TWINSCAN/N-SCAN and CONTRAST.
+
+Multiple informants
+
+TWINSCAN examined only human-mouse synteny to look for orthologous genes. Programs such as N-SCAN and CONTRAST allowed the incorporation of alignments from multiple organisms, or in the case of N-SCAN, a single alternate organism from the target. The use of multiple informants can lead to significant improvements in accuracy. Pseudogene prediction utilises existing sequence similarity and ab initio methods, whilst adding additional filtering and methods of identifying pseudogene characteristics.
+
+Sequence similarity methods can be customised for pseudogene prediction using additional filtering to find candidate pseudogenes. This could use disablement detection, which looks for nonsense or frameshift mutations that would truncate or collapse an otherwise functional coding sequence. Additionally, translating DNA into proteins sequences can be more effective than just straight DNA homology.
+
+Metagenomic gene prediction
+
+Metagenomics is the study of genetic material recovered from the environment, resulting in sequence information from a pool of organisms. Predicting genes is useful for comparative metagenomics.
+
+Metagenomics tools also fall into the basic categories of using either sequence similarity approaches (MEGAN4) and ab initio techniques (GLIMMER-MG).
+
+Glimmer-MG is an extension to GLIMMER that relies mostly on an ab initio approach for gene finding and by using training sets from related organisms. The prediction strategy is augmented by classification and clustering gene data sets prior to applying ab initio gene prediction methods. The data is clustered by species. This classification method leverages techniques from metagenomic phylogenetic classification. An example of software for this purpose is, Phymm, which uses interpolated markov models—and PhymmBL, which integrates BLAST into the classification routines.
+
+MEGAN4 uses a sequence similarity approach, using local alignment against databases of known sequences, but also attempts to classify using additional information on functional roles, biological pathways and enzymes. As in single organism gene prediction, sequence similarity approaches are limited by the size of the database.
+
+FragGeneScan and MetaGeneAnnotator are popular gene prediction programs based on Hidden Markov model. These predictors account for sequencing errors, partial genes and work for short reads.
+
+Another fast and accurate tool for gene prediction in metagenomes is MetaGeneMark. This tool is used by the DOE Joint Genome Institute to annotate IMG/M, the largest metagenome collection to date.
+
+See also
+
+List of gene prediction software
+
+Phylogenetic footprinting
+
+Protein function prediction
+
+Protein structure prediction
+
+Protein–protein interaction prediction
+
+Pseudogene (database)
+
+Sequence mining
+
+Sequence similarity (homology)
+
+References
+
+External links
+
+Augustus
+
+FGENESH
+
+GeMoMa - Homology-based gene prediction based on amino acid and intron position conservation as well as RNA-Seq data
+
+geneid, SGP2
+
+Glimmer , GlimmerHMM
+
+GenomeThreader
+
+ChemGenome
+
+GeneMark
+
+Gismo
+
+mGene
+
+StarORF — A multi-platform and web tool for predicting ORFs and obtaining reverse complement sequence
+
+Maker - A portable and easily configurable genome annotation pipeline
+
+Category:Bioinformatics
+
+Category:Mathematical and theoretical biology
+
+Category:Markov models

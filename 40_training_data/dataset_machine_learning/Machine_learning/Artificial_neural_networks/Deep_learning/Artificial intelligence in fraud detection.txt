@@ -1,0 +1,51 @@
+Artificial intelligence is used by many different businesses and organizations. It is widely used in the financial sector, especially by accounting firms, to help detect fraud.
+
+In 2022, PricewaterhouseCoopers reported that fraud has impacted 46% of all businesses in the world. The shift from working in person to working from home has brought increased access to data. According to an FTC (Federal Trade Commission) study from 2022, customers reported fraud of approximately $5.8 billion in 2021, an increase of 70% from the year before. The majority of these scams were imposter scams and online shopping frauds. Furthermore, artificial intelligence plays a crucial role in developing advanced algorithms and machine learning models that enhance fraud detection systems, enabling businesses to stay ahead of evolving fraudulent tactics in an increasingly digital landscape.
+
+Tools
+
+Expert systems
+
+Expert systems were first designed in the 1970s as an expansion into artificial intelligence technologies. Their design is based on the premise of decreasing potential user error in decision-making and emulating mental reasoning used by experts in a particular field. They differentiate themselves from traditional linear reasoning models by separating identified points in data and processing them individually at the same time. Though, these systems do not rely purely on machine-learned intelligence.
+
+Continuous auditing
+
+Continuous auditing is a set of processes that assess various aspects of information gathered in an audit to classify areas of risk and potential weaknesses in financial Internal controls at a more frequent rate than traditional methods. Instead of analyzing recorded transactions and journal entries periodically, continuous auditing focuses on interpreting the character of these actions more frequently. The frequency of these processes being undertaken as well as highlighting areas of importance is up to the discretion of their implementer, who commonly makes such decisions based on the level of risk in the accounts being evaluated and the goals of implementing the system. Performance of these processes can occur as frequently as being nearly instantaneous with an entry being posted.
+
+Applications
+
+'Big 4' Accounting Firms
+
+Deloitte created an Al-enabled document-reviewing system in 2014. The system automates the method of reviewing and extracting relevant information from different business documents. Deloitte claims that this innovation has made a difference by reducing time spent going through lawful contract documents, invoices, money-related articulations, and board minutes by up to 50%. Working with IBM's Watson, Deloitte is developing cognitive-technology-enhanced commerce arrangements for its clients. LeasePoint is fueled by IBM Tririga and uses Deloitte's industrial information to create an end-to-end leasing portfolio. Automated Cognitive Resource Assessment employs IBM's Maximo innovation to progress the proficiency of asset inspection.
+
+Ernst and Young (EY) connected Al to the investigation of lease contracts. EY (Australia) has also received Al-enabled auditing technology. A survey of 400 chief executive officers created by KPMG in 2016 found that approximately 58% believed that artificial intelligence would play a key role in making audits more efficient in the future.
+
+Data interpretation
+
+Higher levels of fraud detection entail the use of professional judgement to interpret data. Supporters of artificial intelligence being used in financial audits have claimed that increased risks from instances of higher data interpretation can be minimized through such technologies. The threshold for materiality in an audit is set by the auditor based on various factors. Artificial intelligence has been used to interpret data and suggest materiality thresholds to be implemented through the use of expert systems.
+
+Disadvantages
+
+Job Displacement
+
+The inescapable reception of computer based intelligence and robotization advancements might prompt critical work relocation across different enterprises. As artificial intelligence frameworks become more equipped for performing undertakings customarily completed by people, there is a worry that specific work jobs could become out of date, prompting joblessness and financial imbalance.
+
+Initial investment requirement
+
+Along with a knowledge of coding and building systems through computer programs, we are seeing the advantages of these systems, but since they are so new, they require a large investment to start building such a system. Any firm that is planning on implementing an AI system to detect fraud must hire a team of data scientists, along with upgrading their cloud system and data storage. The system must be consistently monitored and updated to be the most efficient form of itself, otherwise the likelihood of fraud being involved in those transactions increases. If one does not initially invest in such a system and make certain it will detect a large percentage of fraudulent transactions, the consequences are the cost of the fraud, including chargeback fees. It is a very large initial investment, but money will be saved in the long run.
+
+Technical expertise
+
+Data analytics is a new science at many companies, and firms are heavily researching it to analyze their business as a whole and find where they can improve. Data analytics tells the story of a business through numbers. Many people in this world are experienced with reading data, but there are also more people who are not as experienced with data at all. The discipline of data analytics is expanding rapidly. It is frequently challenging to become an expert in such a profession.
+
+References
+
+Category:Fraud
+
+Category:Deep learning
+
+Category:Logic programming
+
+Fraud
+
+Category:Finance fraud

@@ -1,0 +1,19 @@
+The Van Gogh Fallacy is an example of a logical fallacy. It is a type of fallacy wherein the conclusion is affirmed by its consequent (fallacy of affirming the consequent) instead of its antecedent (modus ponens).
+
+Its name is derived from a particular case that argues:
+
+Van Gogh was misunderstood and living in poverty, but later on, he is recognized as one of the world’s greatest artist. I am misunderstood and living in poverty. Therefore, I am going to be recognized as one of the world’s greatest artists.
+
+Although the argument itself sounds promising and provides hope to struggling artists and the like, it is invalid and should not be taken as it is. The Van Gogh Fallacy is problematic as it promotes wishful thinking. More often than not, it leads to unpleasant consequences.
+
+There are far more people in the “misunderstood” and unrecognized category than there those who are great. Having some common unimportant attributes together with a person does not instantiate that the same will happen for oneself. In the case of the Van Gogh fallacy, sharing the misunderstood and poor attribute with Van Gogh does not equate to an individual sharing the same fate (i.e., getting recognized as a great artist). Such a case will only be true if there is a one-to-one correlation between the two factors; this is rarely the case with correlation. (See correlation does not imply causation). The only thing that is guaranteed is the fact that being misunderstood and living in poverty does not rule out the possibility of greatness and recognition.
+
+The use of parody is a good way of demonstrating how weak the Van Gogh Fallacy is. Some examples would be:
+
+Albert Einstein has a face and he is well-known physicist. I also have a face and therefore, I too will be a  well-known physicist.
+
+When it is put this way, the ridiculousness of the argument is much clearer. It relies on a very weak analogy. Simply sharing similar superficial and trivial characteristics with a great person does not mean one shares all of the same other attributes that made the person great in the first place.
+
+References
+
+Category:Causal fallacies

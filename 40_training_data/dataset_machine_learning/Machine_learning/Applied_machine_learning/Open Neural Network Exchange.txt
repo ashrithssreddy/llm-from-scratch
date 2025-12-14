@@ -1,0 +1,49 @@
+The Open Neural Network Exchange (ONNX) []  is an open-source artificial intelligence ecosystem of technology companies and research organizations that establish open standards for representing machine learning algorithms and software tools to promote innovation and collaboration in the AI sector. ONNX is available on GitHub.
+
+History
+
+ONNX was originally named Toffee and was developed by the PyTorch team at Facebook. In September 2017 it was renamed to ONNX and announced by Facebook and Microsoft.
+
+In October 2020 Zetane Systems became a member of the ONNX ecosystem.
+
+Intent
+
+The initiative targets:
+
+Framework interoperability
+
+Allow developers to more easily move between frameworks, some of which may be more desirable for specific phases of the development process, such as fast training, network architecture flexibility or inferencing on mobile devices.
+
+Shared optimization
+
+Allow hardware vendors and others to improve the performance of artificial neural networks of multiple frameworks at once by targeting the ONNX representation.
+
+Contents
+
+ONNX provides definitions of an extensible computation graph model, built-in operators and standard data types, focused on inferencing (evaluation).
+
+Each computation dataflow graph is a list of nodes that form an acyclic graph. Nodes have inputs and outputs. Each node is a call to an operator. Metadata documents the graph. Built-in operators are to be available on each ONNX-supporting framework.
+
+See also
+
+Neural Network Exchange Format
+
+Comparison of deep learning software
+
+Predictive Model Markup Language—an XML-based predictive model interchange format
+
+PicklingTools—an open-source collection of tools for allowing C++ and Python systems to share information quickly and easily.
+
+References
+
+External links
+
+Category:Microsoft free software
+
+Category:Software using the Apache license
+
+Category:Neural network data exchange formats
+
+Category:2017 software
+
+Category:Applied machine learning

@@ -1,0 +1,67 @@
+The wisdom of repugnance or appeal to disgust, also known informally as the yuck factor, is the belief that an intuitive (or "deep-seated") negative response to some thing, idea, or practice should be interpreted as evidence for the intrinsically harmful or evil character of that thing. Furthermore, it refers to the notion that wisdom may manifest itself in feelings of disgust towards anything which lacks goodness or wisdom, though the feelings or the reasoning of such 'wisdom' may not be immediately explicable through reason.
+
+Origin and usage
+
+{{Quote box|quote="Revulsion is not an argument; and some of yesterday's abhorrences are today calmly accepted—not always for the better. In some crucial cases, however, repugnance is the emotional expression of deep wisdom, beyond reason's power completely to articulate it. [...] [W]e intuit and we feel, immediately and without argument, the violation of things that we rightfully hold dear. [...] [R]evulsion may be the only voice left that speaks up to defend the central core of our humanity. Shallow are the souls that have forgotten how to shudder."|author = Leon Kass|bgcolor=Cornsilk|width=30%|align=right|salign=right}}
+
+The term "wisdom of repugnance" was coined in 1997 by Leon Kass, chairman (2001–2005) of the President's Council on Bioethics, in an article in The New Republic, which was later expanded into a further (2001) article in the same magazine, and also incorporated into his 2002 book Life, Liberty, and the Defense of Dignity.
+
+The term originated in discussions of bioethics. It is often used by those who accept its underlying premise; i.e., that repugnance does, in fact, indicate wisdom. It is thus often viewed as loaded language, and is primarily used by certain bioconservatives to justify their position.
+
+The concept is also used in the study of controversies such as same-sex marriage, pornography, marijuana legalization, alternative sexualities and legalization of abortion. In all cases, it expresses the view that one's "gut reaction" might justify objecting to some practice even in the absence of a persuasive rational (e.g., utilitarian) case against that practice.
+
+Reactions and criticism
+
+The wisdom of repugnance has been criticized, both as an example of a fallacious appeal to emotion and for an underlying premise which seems to reject rationalism. Although mainstream science concedes that a sense of disgust most likely evolved as a useful defense mechanism (e.g. in that it tends to prevent or prohibit potentially harmful behaviour such as inbreeding, cuckoldry, cannibalism, and coprophagia), social psychologists question whether the instinct can serve any moral or logical value when removed from the context in which it was originally acquired.
+
+Martha Nussbaum explicitly opposes the concept of a disgust-based morality as an appropriate guide for law and policy, instead siding with John Stuart Mill's harm principle as the proper basis for limiting individual liberties, which supports the legal ideas of consent, the age of majority, privacy, and bestows equal rights unto citizens. Nussbaum argues that the "politics of disgust" is misguided because we cannot escape the inherent animality and disgustingness of our bodies (nor the material world), and that disgust has, throughout history, led to persecution—racism, antisemitism, sexism, and homophobia have all been driven by popular repulsion. In an interview with Reason magazine, she elaborated:
+
+{{blockquote|Disgust and shame are inherently hierarchical; they set up ranks and orders of human beings. They are also inherently connected to restrictions on liberty in areas of non-harmful conduct. For both of these reasons, I believe, anyone who cherishes the key democratic values of equality and liberty should be deeply suspicious of the appeal to those emotions in the context of law and public policy.}}
+
+Stephen Jay Gould has remarked that "our prejudices often overwhelm our limited information. [They] are so venerable, so reflexive, so much a part of our second nature, that we never stop to recognize their status as social decisions with radical alternatives&mdash;and we view them instead as given and obvious truths."
+
+British bioethicist John Harris replied to Kass's view by arguing that, "there is no necessary connection between phenomena, attitudes, or actions that make us uneasy, or even those that disgust us, and those phenomena, attitudes, and actions that there are good reasons for judging unethical. Nor does it follow that those things we are confident are unethical must be prohibited by legislation or regulation."
+
+The word squick was created within BDSM subculture in reaction to this sort of reasoning, and denotes a "gut reaction" of disgust without the implication of any sort of actual moral judgment.
+
+In The Righteous Mind: Why Good People Are Divided by Politics and Religion, psychologist Jonathan Haidt cites Kass' essay as an argument against "moral degradation," which he contrasts with "moral elevation". Haidt, drawing from research by Emile Durkheim, Robert Putnam and Richard Sosis, argues that humans' ability to unite around sacred beliefs and practices—even in the absence of immediate utilitarian benefits—is an essential component of human civilizations which facilitates social bonding and in-group cooperation. Without such "binding" moral and sacred values, individuals tend to draw inward and exhibit fewer prosocial behaviours. Consequently, Haidt proposes that moral disgust may be justified in certain, culturally-specific cases wherein they can promote social capital without significantly negatively impacting the rights of many individuals, citing laws against incest (even with no risk of procreation), flag-burning, bestiality and consensual cannibalism as examples:
+
+{{blockquote|[In] Lawrence v. Texas, [Justice Antonin Scalia's] dissent was that: 'If we allow homosexuality, what's next? Incest, bestiality...' To which I would say: since 5% of people are gay, that's  of people, and we really need to try to [overcome the disgust]. The number of people who can't live a full and decent life unless they have sex with a sheep? Now, that's not very many people... If [repugnance] does some good to have a sense that there are still some morals we share, and there are few people out there who can't be happy, I'm willing to let them be unhappy.}}
+
+See also
+
+Appeal to emotion
+
+Ethical intuitionism
+
+Emotivism, which claims that all statements like "X is morally wrong" only express repugnance, not moral facts
+
+Moral panic
+
+Moralistic fallacy
+
+Repugnancy costs
+
+Repugnant market
+
+Uncanny valley
+
+Victimless crime
+
+References
+
+General references
+
+Reviewed in The Journal of the American Medical Association (subscription required; access date November 24, 2007)
+
+Category:Bioethics
+
+Category:Appeals to emotion
+
+Category:Causal fallacies
+
+Category:Ignorance
+
+Category:Prejudices
+
+Category:Barriers to critical thinking

@@ -1,0 +1,73 @@
+{{Multiple issues|
+
+}}
+
+A Google matrix is a particular stochastic matrix that is used by Google's PageRank algorithm. The matrix represents a graph with edges representing links between pages. The PageRank of each page can then be generated iteratively from the Google matrix using the power method. However, in order for the power method to converge, the matrix must be stochastic, irreducible and aperiodic.
+
+Adjacency matrix A and Markov matrix S
+
+In order to generate the Google matrix G, we must first generate an adjacency matrix A which represents the relations between pages or nodes.
+
+Assuming there are N pages, we can fill out A by doing the following:
+
+A matrix element A_{i, j} is filled with 1 if node j has a link to node i, and 0 otherwise; this is the adjacency matrix of links.
+
+A related matrix S corresponding to the transitions in a Markov chain of given network is constructed from A by dividing the elements of column "j" by a number of k_j=\Sigma_{i=1}^N A_{i,j} where k_j is the total number of outgoing links from node&nbsp;j to all other nodes. The columns having zero matrix elements, corresponding to dangling nodes, are replaced by a constant value 1/N. Such a procedure adds a link from every sink, dangling state  a  to every other node.
+
+Now by the construction the sum of all elements in any column of matrix S is equal to unity. In this way the matrix S is mathematically well defined and it belongs to the class of Markov chains and the class of Perron-Frobenius operators. That makes S suitable for the PageRank algorithm.
+
+Construction of Google matrix G
+
+.
+
+For the actual matrix, Google uses a damping factor \alpha around 0.85. The term (1-\alpha) gives a surfer probability to jump randomly on any page. The matrix G belongs to the class of Perron-Frobenius operators of Markov chains.)]]
+
+For 0  there is only one maximal eigenvalue  \lambda =1 with the corresponding right eigenvector which has non-negative elements  P_i  which can be viewed as stationary probability distribution. The left eigenvector at  \lambda =1 has constant matrix elements. With 0  all eigenvalues move as  \lambda_i \rightarrow \alpha \lambda_i  except the maximal eigenvalue  \lambda =1, which remains unchanged.)]]
+
+At  \alpha=1  the matrix  G
+
+has generally many degenerate eigenvalues  \lambda =1
+
+(see e.g. )]]
+
+The Google matrix can be constructed also for other directed networks, e.g. for the procedure call network of the Linux Kernel software introduced in . In this case the spectrum of  \lambda  is described by the fractal Weyl law with the fractal dimension  d \approx 1.3  (see Fig.5 from ). Numerical analysis shows that the eigenstates of matrix  G  are localized (see Fig.6 from ). Arnoldi iteration method allows to compute many eigenvalues and eigenvectors for matrices of rather large size .
+
+Other examples of  G  matrix include the Google matrix of brain
+
+and business process management , see also. Applications of Google matrix analysis to
+
+DNA sequences is described in . Such a Google matrix approach allows also to analyze entanglement of cultures via ranking of multilingual Wikipedia articles abouts persons
+
+Historical notes
+
+The Google matrix with damping factor was described by Sergey Brin and Larry Page in 1998 , see also articles on PageRank history ,.
+
+See also
+
+CheiRank
+
+Arnoldi iteration
+
+Markov chain
+
+Transfer operator
+
+Perron–Frobenius theorem
+
+Web search engines
+
+References
+
+External links
+
+Google matrix at Scholarpedia
+
+Google PR Shut Down
+
+Video lectures at IHES Workshop "Google matrix: fundamental, applications and beyond", Oct 2018
+
+matrix
+
+Category:Link analysis
+
+Category:Markov models

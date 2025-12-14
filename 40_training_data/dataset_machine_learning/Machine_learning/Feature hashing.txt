@@ -1,0 +1,99 @@
+In machine learning, feature hashing, also known as the hashing trick (by analogy to the kernel trick), is a fast and space-efficient way of vectorizing features, i.e. turning arbitrary features into indices in a vector or matrix.  On the contrary, if the vocabulary is kept fixed and not increased with a growing training set, an adversary may try to invent new words or misspellings that are not in the stored vocabulary so as to circumvent a machine learned filter. To address this challenge, Yahoo! Research attempted to use feature hashing for their spam filters.
+
+Note that the hashing trick isn't limited to text classification and similar tasks at the document level, but can be applied to any problem that involves large (perhaps unbounded) numbers of features.
+
+Mathematical motivation
+
+Mathematically, a token is an element t  in a finite (or countably infinite) set T . Suppose we only need to process a finite corpus, then we can put all tokens appearing in the corpus into T , meaning that T  is finite. However, suppose we want to process all possible words made of the English letters, then T  is countably infinite.
+
+Most neural networks can only operate on real vector inputs, so we must construct a "dictionary" function \phi: T\to \R^n.
+
+When T  is finite, of size |T| = m \leq n, then we can use one-hot encoding to map it into \R^n. First, arbitrarily enumerate T = \{t_1, t_2, .., t_m\} , then define \phi(t_i) = e_i . In other words, we assign a unique index i  to each token, then map the token with index i  to the unit basis vector e_i .
+
+One-hot encoding is easy to interpret, but it requires one to maintain the arbitrary enumeration of T . Given a token t\in T , to compute \phi(t) , we must find out the index i  of the token t . Thus, to implement \phi  efficiently, we need a fast-to-compute bijection h: T\to \{1, ..., m\} , then we have \phi(t) = e_{h(t)} .
+
+In fact, we can relax the requirement slightly: It suffices to have a fast-to-compute injection h: T\to \{1, ..., n\} , then use \phi(t) = e_{h(t)} .
+
+In practice, there is no simple way to construct an efficient injection h: T\to \{1, ..., n\} . However, we do not need a strict injection, but only an approximate injection. That is, when t\neq t' , we should probably have h(t) \neq h(t') , so that probably \phi(t) \neq \phi(t') .
+
+At this point, we have just specified that h  should be a hashing function. Thus we reach the idea of feature hashing.
+
+Algorithms
+
+Feature hashing (Weinberger et al. 2009)
+
+The basic feature hashing algorithm presented in (Weinberger et al. 2009) If such a hash function is used, the algorithm becomes
+
+function hashing_vectorizer(features : array of string, N : integer):
+
+x := new vector[N]
+
+for f in features:
+
+h := hash(f)
+
+idx := h mod N
+
+if ξ(f) == 1:
+
+x[idx] += 1
+
+else:
+
+x[idx] -= 1
+
+return x
+
+The above pseudocode actually converts each sample into a vector. An optimized version would instead only generate a stream of (h, \zeta)   pairs and let the learning and prediction algorithms consume such streams; a linear model can then be implemented as a single hash table representing the coefficient vector.
+
+Extensions and variations
+
+Learned feature hashing
+
+Feature hashing generally suffers from hash collision, which means that there exist pairs of different tokens with the same hash:  t\neq t', \phi(t) = \phi(t') = v. A machine learning model trained on feature-hashed words would then have difficulty distinguishing  t and  t', essentially because  v is polysemic.
+
+If  t' is rare, then performance degradation is small, as the model could always just ignore the rare case, and pretend all  v means  t. However, if both are common, then the degradation can be serious.
+
+To handle this, one can train supervised hashing functions that avoids mapping common tokens to the same feature vectors.
+
+Applications and practical performance
+
+Ganchev and Dredze showed that in text classification applications with random hash functions and several tens of thousands of columns in the output vectors, feature hashing need not have an adverse effect on classification performance, even without the signed hash function.
+
+Implementations
+
+Implementations of the hashing trick are present in:
+
+Apache Mahout
+
+Gensim
+
+scikit-learn
+
+sofia-ml
+
+Vowpal Wabbit
+
+Apache Spark
+
+R
+
+TensorFlow
+
+Dask-ML
+
+See also
+
+References
+
+External links
+
+Hashing Representations for Machine Learning on John Langford's website
+
+What is the "hashing trick"? - MetaOptimize Q+A
+
+Category:Hashing
+
+Category:Machine learning
+
+Category:Articles with example pseudocode

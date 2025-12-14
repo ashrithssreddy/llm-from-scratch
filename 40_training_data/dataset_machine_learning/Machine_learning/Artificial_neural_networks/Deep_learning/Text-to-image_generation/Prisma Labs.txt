@@ -1,0 +1,93 @@
+{{Multiple issues|
+
+}}
+
+{{Infobox company
+
+name = Prisma Labs
+
+logo =
+
+caption =
+
+industry = Artificial intelligence
+
+founders =
+
+type =
+
+tax_id =
+
+registration_id =
+
+founded =
+
+hq_location = Sunnyvale, California, US
+
+origins =
+
+key_people =
+
+area_served =
+
+products = Prisma, Lensa
+
+services =
+
+focus =
+
+method =
+
+revenue =
+
+equity =
+
+equity_year =
+
+num_employees =
+
+subsid =
+
+owner =
+
+motto =
+
+former name =
+
+homepage =
+
+dissolved =
+
+footnotes =
+
+board_of_directors =
+
+leader_title =
+
+}}
+
+Prisma Labs is a software company based in Sunnyvale, California that is known for developing Prisma and Lensa.
+
+History
+
+Prisma Labs was founded in 2016 by Andrey Usoltsev, Alexey Moiseenkov, and a team of Russian developers. Usoltsev is also the CEO. The Lensa app has been criticized for producing hypersexualized images of women and girls, including non-consensual pornographic content, a bias not present when processing images of men.
+
+Datasets
+
+Prisma Labs uses the Stable Diffusion generative engine to power the Lensa apps’s Magic Avatar feature. Stable Diffusion is open source and was trained on the LAION 5B dataset, which utilized 5.85 billion CLIP-filtered image-text pairs from Common Crawl to create the dataset.
+
+References
+
+External links
+
+Category:Text-to-image generation
+
+Category:American companies established in 2016
+
+Category:Technology companies established in 2016
+
+Category:2016 establishments in California
+
+Category:Companies based in Sunnyvale, California
+
+Category:Technology companies based in the San Francisco Bay Area

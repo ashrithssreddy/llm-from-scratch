@@ -1,0 +1,17 @@
+Contrastive Hebbian learning is a biologically plausible form of Hebbian learning.
+
+It is based on the contrastive divergence algorithm, which has been used to train a variety of energy-based latent variable models.
+
+In 2003, contrastive Hebbian learning was shown to be equivalent in power to the backpropagation algorithms commonly used in machine learning.
+
+See also
+
+Oja's rule
+
+Generalized Hebbian algorithm
+
+References
+
+Category:Hebbian theory
+
+Category:Artificial neural networks

@@ -1,0 +1,179 @@
+The -medoids method is a classical partitioning technique of clustering that splits a data set of  objects into  clusters, where the number  of clusters is assumed to be known a priori (which implies that the programmer must specify k before the execution of a -medoids algorithm). The "goodness" of the given value of  can be assessed with methods such as the silhouette method. The name of the clustering method was coined by Leonard Kaufman and Peter J. Rousseeuw with their PAM (Partitioning Around Medoids) algorithm.
+
+The medoid of a cluster is defined as the object in the cluster whose sum (and, equivalently, the average) of dissimilarities to all the objects in the cluster is minimal, that is, it is a most centrally located point in the cluster. Unlike certain objects used by other algorithms, the medoid is an actual point in the cluster.
+
+As every point is typically assigned to its nearest medoid, the method (similar to k-means) does not work well if clusters vary significantly in diameter. If clusters vary in diameter or shape, other clustering method such as Gaussian mixture modeling or density-based clustering may work better.
+
+Algorithms
+
+.]]
+
+In general, the -medoids problem is NP-hard to solve exactly. As such, multiple heuristics to optimize this problem exist.
+
+Partitioning Around Medoids (PAM)
+
+PAM at which point a random initialization becomes a viable alternative to BUILD.
+
+Alternating optimization
+
+Algorithms other than PAM have also been suggested in the literature, including the following Voronoi iteration method known as the "Alternating" heuristic in literature, as it alternates between two optimization steps:
+
+Select initial medoids randomly
+
+Iterate while the cost decreases:
+
+In each cluster, make the point that minimizes the sum of distances within the cluster the medoid
+
+Reassign each point to the cluster defined by the closest medoid determined in the previous step
+
+k-means-style Voronoi iteration tends to produce worse results, and exhibit "erratic behavior". Because it does not allow reassigning points to other clusters while updating means it only explores a smaller search space. It can be shown that even in simple cases this heuristic finds inferior solutions the swap based methods can solve. directly uses the objective of medoids, but the Minimum Sum Increase linkage was shown to produce better results (similar to how Ward linkage uses the increase in squared error). Earlier approaches simply used the distance of the cluster medoids of the previous medoids as linkage measure, but which tends to result in worse solutions, as the distance of two medoids does not ensure there exists a good medoid for the combination. These approaches have a run time complexity of O(n^3), and when the dendrogram is cut at a particular number of clusters k, the results will typically be worse than the results found by PAM.
+
+Visualization of the medoid-based clustering process
+
+Purpose
+
+Visualization of medoid-based clustering can be helpful when trying to understand how medoid-based clustering work. Studies have shown that people learn better with visual information. In medoid-based clustering, the medoid is the center of the cluster. This is different from k-means clustering, where the center isn't a real data point, but instead can lie between data points. We use the medoid to group “clusters” of data, which is obtained by finding the element with minimal average dissimilarity to all other objects in the cluster.　Although the visualization example used utilizes k-medoids clustering, the visualization can be applied to k-means clustering as well by swapping out average dissimilarity with the mean of the dataset being used.
+
+Visualization using one-dimensional data
+
+Distance matrix
+
+A distance matrix is required for medoid-based clustering, which is generated using Jaccard Dissimilarity (which is 1 - the Jaccard Index). This distance matrix is used to calculate the distance between two points on a one-dimensional graph. The above image shows an example of a Jaccard Dissimilarity graph.
+
+Clustering
+
+Step 1
+
+Medoid-based clustering is used to find clusters within a dataset. An initial one-dimensional dataset which contains clusters that need to be discovered is used for the process of medoid-based clustering. In the image below, there are twelve different objects in the dataset at varying x-positions.
+
+Step 2
+
+K random points are chosen to be the initial centers. The value chosen for K is known as the K-value. In the image below, 3 has been chosen as the K-value. The process for finding the optimal K-value will be discussed in step 7.
+
+Step 3
+
+Each non-center object is assigned to its nearest center. This is done using a distance matrix. The lower the dissimilarity, the closer the points are. In the image below, there are 5 objects in cluster 1, 3 in cluster 2, and 4 in cluster 3.
+
+Step 4
+
+The new center for each cluster is found by finding the object whose average dissimilarity to all other objects in the cluster is minimal. The center selected during this step is called the medoid. The image below shows the results of medoid selection.
+
+Step 5
+
+Steps 3-4 are repeated until the centers no longer move, as in the images below.
+
+Medoid-based Clustering - Second Clusters.png|The second clusters.
+
+Medoid-based Clustering - Medoid Selection Final.png|Medoid selection.
+
+Medoid-based Clustering - Third Clusters.png|The third clusters.
+
+Medoid-based Clustering - Medoid Selection Final.png|Final medoid selection.
+
+Step 6
+
+The final clusters are obtained when the centers no longer move between steps. The image below shows what a final cluster can look like.
+
+Step 7
+
+The variation is added up within each cluster to see how accurate the centers are. By running this test with different K-values, an "elbow" of the variation graph can be acquired, where the graph's variation levels out. The "elbow" of the graph is the optimal K-value for the dataset.
+
+Comparison to k-means clustering
+
+The -medoids problem is a clustering problem similar to -means. Both the -means and -medoids algorithms are partitional (breaking the dataset up into groups) and attempt to minimize the distance between points labeled to be in a cluster and a point designated as the center of that cluster. In contrast to the -means algorithm, -medoids chooses actual data points as centers (medoids or exemplars), and thereby allows for greater interpretability of the cluster centers than in -means, where the center of a cluster is not necessarily one of the input data points (it is the average between the points in the cluster known as the centroid). Furthermore, -medoids can be used with arbitrary dissimilarity measures, whereas -means generally requires Euclidean distance for efficient solutions. Because -medoids minimizes a sum of pairwise dissimilarities instead of a sum of squared Euclidean distances, it is more robust to noise and outliers than -means.
+
+Despite these advantages, the results of -medoids lack consistency since the results of the algorithm may vary. This is because the initial medoids are chosen at random during the performance of the algorithm. -medoids is also not suitable for clustering objects that are not spherical and may work inefficiently when dealing with large datasets depending on how it is implemented. Meanwhile, -means is suitable for well-distributed and isotropic clusters and can handle larger datasets. Similarly to -medoids however, -means also uses random initial points which varies the results the algorithm finds.
+
+K-medoids in high dimensions
+
+A common problem with k-medoids clustering and other medoid-based clustering algorithms is the "curse of dimensionality," in which the data points contain too many dimensions or features. As dimensions are added to the data, the distance between them becomes sparse, and it becomes difficult to characterize clustering by Euclidean distance alone. As a result, distance based similarity measures converge to a constant  and we have a characterization of distance between points which may not be reflect our data set in meaningful ways.
+
+One way to mitigate the effects of the curse of dimensionality is by using spectral clustering. Spectral clustering achieves a more appropriate analysis by reducing the dimensionality of then data using principal component analysis, projecting the data points into the lower dimensional subspace, and then running the chosen clustering algorithm as before. One thing to note, however, is that as with any dimension reduction we lose information, so it must be weighed against clustering in advanced how much reduction is necessary before too much data is lost.
+
+High dimensionality doesn't only affect distance metrics however, as the time complexity also increases with the number of features. k-medoids is sensitive to initial choice of medoids, as they are usually selected randomly. Depending on how such medoids are initialized, k-medoids may converge to different local optima, resulting in different clusters and quality measures, meaning k-medoids might need to run multiple times with different initializations, resulting in a much higher run time. One way to counterbalance this is to use k-medoids++, an alternative to k-medoids similar to its k-means counterpart, k-means++ which chooses initial medoids to begin with based on a probability distribution, as a sort of "informed randomness" or educated guess if you will. If such medoids are chosen with this rationale, the result is an improved runtime and better performance in clustering. The k-medoids++ algorithm is described as follows: package includes a KMedoids class that implements k-medoids clustering with a Scikit-learn compatible interface. It offers two algorithm choices:
+
+The original PAM algorithm
+
+An alternate optimization method that is faster but less accurate
+
+Parameters include:
+
+n_clusters: The number of clusters to form (default is 8)
+
+metric: The distance metric to use (default is Euclidean distance)
+
+method: The algorithm to use ('pam' or 'alternate')
+
+init: The medoid initialization method (options include 'random', 'heuristic', 'k-medoids++', and 'build')
+
+max_iter: The maximum number of iterations (default is 300)
+
+Example Python usage:
+
+from sklearn_extra.cluster import KMedoids
+
+kmedoids = KMedoids(n_clusters=2, method="pam").fit(X)
+
+print(kmedoids.labels_)
+
+kmedoids
+
+The Python kmedoids package provides optimized implementations of PAM and related algorithms:
+
+FasterPAM: An improved version with better time complexity
+
+FastPAM1: An earlier optimization of PAM
+
+DynMSC: A method for automatic cluster number selection
+
+This package expects precomputed dissimilarity matrices and includes silhouette-based methods for evaluating clusters.
+
+Example Python usage:
+
+import kmedoids
+
+from sklearn.metrics import pairwise_distances
+
+dissimilarity_matrix = pairwise_distances(X, metric="euclidean")
+
+fp = kmedoids.fasterpam(dissimilarity_matrix, n_clusters=2)
+
+print(fp.medoids)
+
+Alternatively, the scikit-learn compatible API can be used, which can compute the distance matrix:
+
+from kmedoids import KMedoids
+
+kmedoids = KMedoids(n_clusters=2, metric="euclidean").fit(X)
+
+print(kmedoids.labels_)
+
+print("Selected medoids: ", kmedoids.medoid_indices_)
+
+Comparison
+
+Software
+
+ELKI provides several k-medoid variants, including a Voronoi-iteration k-medoids, the original PAM algorithm, Reynolds' improvements, the O(n²) FastPAM and FasterPAM algorithms, CLARA, CLARANS, FastCLARA and FastCLARANS.
+
+Julia contains a k-medoid implementation of the k-means style algorithm (fast, but much worse result quality) in the JuliaStats/Clustering.jl package.
+
+KNIME includes a basic k-medoid implementation supporting multiple distance measures. The exact algorithm is not documented besides using "exhaustive search".
+
+MATLAB implements PAM, CLARA and two algorithms named "small" and "large" based on k-means style iterations to solve the k-medoid clustering problem.
+
+Python contains FasterPAM and other variants in the "kmedoids" package, additional implementations can be found in, e.g., scikit-learn-extra and pyclustering.
+
+R contains PAM in the "cluster" package, including the FasterPAM improvements via the options variant = "faster" and medoids = "random". There also exists a "fastkmedoids" package.
+
+RapidMiner has an operator named KMedoids, but it does not implement any of above KMedoids algorithms. Instead, it is a k-means variant, that substitutes the mean with the closest data point (which is not the medoid), which combines the drawbacks of k-means (limited to coordinate data) with the additional cost of finding the nearest point to the mean.
+
+Rust has a "kmedoids" crate that also includes the FasterPAM variant.
+
+References
+
+Category:Cluster analysis algorithms
+
+Category:Robust statistics
+
+Category:1990 in artificial intelligence

@@ -1,0 +1,107 @@
+{{Infobox scientist
+
+name              = Sebastian Thrun
+
+image             = Sebastian Thrun by Christopher Michel - 6.jpg
+
+caption           = Thrun in 2021
+
+birth_date        =
+
+birth_place       = Solingen, West Germany
+
+death_date        =
+
+death_place       =
+
+citizenship       = United States, Germany
+
+awards            = National Science Foundation CAREER Award (2003)AAAI Fellow (2006)DARPA Grand Challenge (2005)
+
+field             = Artificial IntelligenceRobotics
+
+work_institution  = Google X Lab (co-founder)Stanford UniversityCarnegie Mellon UniversityUdacity (co-founder)
+
+alma_mater        = University of BonnUniversity of Hildesheim
+
+thesis_title      = Explanation-Based Neural Network Learning: A Lifelong Learning Approach
+
+thesis_year       = 1995
+
+thesis_url        = https://dl.acm.org/citation.cfm?id=525571
+
+doctoral_advisor  = Armin B. CremersTom Mitchell
+
+doctoral_students = Frank Dellaert
+
+Thrun led development of the robotic vehicle Stanley which won the 2005 DARPA Grand Challenge, and which has since been placed on exhibit in the Smithsonian Institution's National Museum of American History. His team also developed a vehicle called Junior, which placed second at the DARPA Urban Challenge in 2007. Thrun led the development of the Google self-driving car.
+
+Thrun is also well known for his work on probabilistic algorithms for robotics with applications including robot localization and robotic mapping. In recognition of his contributions, and at the age of 39, he was elected into the National Academy of Engineering (NAE) and also into the German National Academy of Sciences Leopoldina (Leopoldina) in 2007. The Guardian recognized him as one of 20 "fighters for internet freedom".
+
+Early life and education
+
+Thrun was born in 1967 in Solingen, Germany (former West Germany), the son of Winfried and Kristin (Grüner) Thrun. He completed his Vordiplom (intermediate examination) in computer science, economics, and medicine at the University of Hildesheim in 1988.  At the University of Bonn, he completed a Diplom (first degree) in 1993 and a Ph.D. (summa cum laude) in 1995 in computer science and statistics. He was a Google VP and Fellow, and worked on development of the Google driverless car system, after winning DARPA Grand Challenge and finishing in second place in DARPA Urban Challenge as a professor. Thrun was interviewed in the 2018 documentary on artificial intelligence Do You Trust This Computer?.
+
+Robotics
+
+Thrun developed a number of autonomous robotic systems that earned him international recognition. In 1994, he started the University of Bonn's Rhino project together with his doctoral thesis advisor Armin B. Cremers. In 1997 Thrun and his colleagues Wolfram Burgard and Dieter Fox developed the world's first robotic tour guide in the Deutsches Museum Bonn (1997). In 1998, the follow-up robot "Minerva" was installed in the Smithsonian's National Museum of American History in Washington, D.C., where it guided tens of thousands of visitors during a two-week deployment period. Thrun went on to found the CMU/Pitt Nursebot project, which fielded an interactive humanoid robot in a nursing home near Pittsburgh, Pennsylvania. In 2002, Thrun helped develop mine mapping robots in a project with his colleagues William L. Whittaker and Scott Thayer, research professors at Carnegie Mellon University. After his move to Stanford University in 2003, he engaged in the development of the robot Stanley, which in 2005 won the DARPA Grand Challenge. His former graduate student Michael Montemerlo, who was co-advised by William L. Whittaker, led the software development for this robot. In 2007, Thrun's robot "Junior" won second place in the 2007 DARPA Urban Challenge. Thrun joined Google as part of a sabbatical, together with several Stanford students. At Google, he co-developed Google Street View.
+
+Thrun's best known contributions to robotics are on the theoretical end. He contributed to the area of probabilistic robotics, a field that marries statistics and robotics. He and his research group made substantial contributions in areas of mobile robot localization, such as Monte Carlo localization, Since 2007, a Japanese translation of Probabilistic Robotics has been available on the Japanese market.
+
+Thrun is one of the principal investors of the Stanford spin-off VectorMagic.
+
+Awards and recognition
+
+National Science Foundation CAREER Award (1999–2003)
+
+Max-Planck-Research Award (2011)
+
+Inaugural AAAI Ed Feigenbaum Prize (2011)
+
+Named as the fifth-most creative person in the business world by Fast Company in 2011
+
+No. 4 on Foreign Policy magazine's Top 100 Global Thinkers of 2012
+
+Thrun was the 2012 recipient of Smithsonian magazine's American Ingenuity Award in the Education category.
+
+Thrun was named by Carnegie Corporation of New York in 2013 as an honoree of the Great Immigrants Award.
+
+Fellow of the European Association for Artificial Intelligence (EurAI)
+
+Classic Paper Award at AAAI 2017 and Milestone Award at ICRA 2020 the Instituto Politécnico Nacional (2016), and the University of Hildesheim (2020).
+
+References
+
+External links
+
+Category:1967 births
+
+Category:Living people
+
+Category:Artificial intelligence researchers
+
+Category:German computer scientists
+
+Category:Machine learning researchers
+
+Category:German roboticists
+
+Category:People from Solingen
+
+Category:American investors
+
+Category:University of Bonn alumni
+
+Category:Stanford University School of Engineering faculty
+
+Category:West German expatriates in the United States
+
+Category:Carnegie Mellon University faculty
+
+Category:Google employees
+
+Category:Google Fellows
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Fellows of the European Association for Artificial Intelligence

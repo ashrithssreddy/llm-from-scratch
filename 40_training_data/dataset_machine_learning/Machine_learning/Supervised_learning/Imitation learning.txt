@@ -1,0 +1,37 @@
+Imitation learning is a paradigm in reinforcement learning, where an agent learns to perform a task by supervised learning from expert demonstrations. It is also called learning from demonstration and apprenticeship learning.
+
+It has been applied to underactuated robotics, self-driving cars, quadcopter navigation, helicopter aerobatics, and locomotion.
+
+Approaches
+
+Expert demonstrations are recordings of an expert performing the desired task, often collected as state-action pairs (o_t^*, a_t^*).
+
+Behavior Cloning
+
+Behavior Cloning (BC) is the most basic form of imitation learning. Essentially, it uses supervised learning to train a policy \pi_\theta such that, given an observation o_t, it would output an action distribution \pi_\theta(\cdot | o_t)  that is approximately the same as the action distribution of the experts.
+
+BC is susceptible to distribution shift. Specifically, if the trained policy differs from the expert policy, it might find itself straying from expert trajectory into observations that would have never occurred in expert trajectories. improves on behavior cloning by iteratively training on a dataset of expert demonstrations. In each iteration, the algorithm first collects data by rolling out the learned policy \pi_\theta. Then, it queries the expert for the optimal action a_t^*  on each observation o_t encountered during the rollout. Finally, it aggregates the new data into the datasetD \leftarrow D \cup \{ (o_1, a_1^*), (o_2, a_2^*), ..., (o_T, a_T^*) \}and trains a new policy on the aggregated dataset. Similar to Behavior Cloning, it trains a sequence model, such as a Transformer, that models rollout sequences (R_1, o_1, a_1), (R_2, o_2, a_2), \dots, (R_t, o_t, a_t), where R_t = r_t + r_{t+1} + \dots + r_T  is the sum of future reward in the rollout. During training time, the sequence model is trained to predict each action a_t , given the previous rollout as context:(R_1, o_1, a_1), (R_2, o_2, a_2), \dots, (R_t, o_t) During inference time, to use the sequence model as an effective controller, it is simply given a very high reward prediction R, and it would generalize by predicting an action that would result in the high reward. This was shown to scale predictably to a Transformer with 1 billion parameters that is superhuman on 41 Atari games.
+
+Other approaches
+
+See  for more examples.
+
+Related approaches
+
+Inverse Reinforcement Learning (IRL) learns a reward function that explains the expert's behavior and then uses reinforcement learning to find a policy that maximizes this reward. Recent works have also explored multi-agent extensions of IRL in networked systems.
+
+Generative Adversarial Imitation Learning (GAIL) uses generative adversarial networks (GANs) to match the distribution of agent behavior to the distribution of expert demonstrations. It extends a previous approach using game theory.
+
+See also
+
+Reinforcement learning
+
+Supervised learning
+
+Inverse reinforcement learning
+
+Further reading
+
+References
+
+Category:Supervised learning

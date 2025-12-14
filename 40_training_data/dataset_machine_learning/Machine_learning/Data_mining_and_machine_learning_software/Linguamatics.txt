@@ -1,0 +1,47 @@
+{{Infobox company
+
+name = Linguamatics
+
+logo =
+
+type = Private company
+
+industry = Software
+
+founded =
+
+hq_location_city = Cambridge
+
+hq_location_country = UK
+
+parent = IQVIA
+
+revenue =  £9.1 million
+
+Technology
+
+The company develops enterprise search tools for the life sciences sector. The core natural language processing engine (I2E) uses a federated architecture to incorporate data from 3rd party resources. Initially developed to be used interactively through a graphic user interface, the core software also has an application programming interface that can be used to automate searches.
+
+LabKey, Penn Medicine, Atrius Health and Mercy all use Linguamatics software to extract electronic health record data into data warehouses. Linguamatics software is used by 17 of the top 20 global pharmaceutical companies, the US Food and Drug Administration, as well as healthcare providers.
+
+Thomson Reuters produces Cortellis Informatics Clinical Text Analytics, which depends on I2E to make clinical data accessible and searchable.
+
+ChemAxon can be used alongside I2E to allow named entity recognition of chemicals within unstructured data.
+
+Data sources include MEDLINE, ClinicalTrials.gov, FDA Drug Labels, PubMed Central, and Patent Abstracts.
+
+See also
+
+List of academic databases and search engines
+
+References
+
+Category:Software companies based in Cambridge
+
+Category:Software companies established in 2001
+
+Category:British companies established in 2001
+
+Category:Data mining and machine learning software
+
+Category:2001 establishments in England

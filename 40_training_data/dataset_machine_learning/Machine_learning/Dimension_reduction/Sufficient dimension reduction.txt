@@ -1,0 +1,55 @@
+In statistics, sufficient dimension reduction (SDR) is a paradigm for analyzing data that combines the ideas of dimension reduction with the concept of sufficiency.
+
+Dimension reduction has long been a primary goal of regression analysis. Given a response variable y and a p-dimensional predictor vector \textbf{x}, regression analysis aims to study the distribution of y\mid\textbf{x}, the conditional distribution of y given \textbf{x}. A dimension reduction is a function R(\textbf{x}) that maps \textbf{x} to a subset of \mathbb{R}^k, k&nbsp;\textbf{x}. For example, R(\textbf{x}) may be one or more linear combinations of \textbf{x}.
+
+A dimension reduction R(\textbf{x}) is said to be sufficient if the distribution of y\mid R(\textbf{x}) is the same as that of y\mid\textbf{x}. In other words, no information about the regression is lost in reducing the dimension of \textbf{x} if the reduction is sufficient.
+
+Structural dimensionality
+
+For a regression y\mid\textbf{x}, the structural dimension, d, is the smallest number of distinct linear combinations of \textbf{x} necessary to preserve the conditional distribution of y\mid\textbf{x}. In other words, the smallest dimension reduction that is still sufficient maps \textbf{x} to a subset of \mathbb{R}^d. The corresponding DRS will be d-dimensional. Although SIR was originally designed to estimate an effective dimension reducing subspace, it is now understood that it estimates only the central subspace, which is generally different.
+
+More recent methods for dimension reduction include likelihood-based sufficient dimension reduction, estimating the central subspace based on the inverse third moment (or kth moment), estimating the central solution space, graphical regression, For more details on these and other methods, consult the statistical literature.
+
+Principal components analysis (PCA) and similar methods for dimension reduction are not based on the sufficiency principle.
+
+Example: linear regression
+
+Consider the regression model
+
+y = \alpha + \beta^T\textbf{x} + \varepsilon,\text{ where }\varepsilon\perp\!\!\!\perp\textbf{x}.
+
+Note that the distribution of y\mid\textbf{x} is the same as the distribution of y\mid\beta^T\textbf{x}. Hence, the span of \beta is a dimension reduction subspace. Also, \beta^T\textbf{x} is 1-dimensional (unless \beta=\textbf{0}), so the structural dimension of this regression is d=1.
+
+The OLS estimate \hat{\beta} of \beta is consistent, and so the span of \hat{\beta} is a consistent estimator of \mathcal{S}_{y\mid x}. The plot of y versus \hat{\beta}^T\textbf{x} is a sufficient summary plot for this regression.
+
+See also
+
+Dimension reduction
+
+Sliced inverse regression
+
+Principal component analysis
+
+Linear discriminant analysis
+
+Curse of dimensionality
+
+Multilinear subspace learning
+
+Notes
+
+References
+
+Cook, R.D. (1998) Regression Graphics: Ideas for Studying Regressions through Graphics, Wiley Series in Probability and Statistics. Regression Graphics.
+
+Cook, R.D. and Adragni, K.P. (2009) "Sufficient Dimension Reduction and Prediction in Regression", Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences, 367(1906), 4385–4405. Full-text
+
+Cook, R.D. and Weisberg, S. (1991) "Sliced Inverse Regression for Dimension Reduction: Comment", Journal of the American Statistical Association, 86(414), 328–332. Jstor
+
+Li, K-C. (1991) "Sliced Inverse Regression for Dimension Reduction", Journal of the American Statistical Association, 86(414), 316–327. Jstor
+
+External links
+
+Sufficient Dimension Reduction
+
+Category:Dimension reduction

@@ -1,0 +1,49 @@
+In probability theory, an additive Markov chain is a Markov chain with an additive conditional probability function. Here the process is a discrete-time Markov chain of order m and the transition probability to a state at the next time is a sum of functions, each depending on the next state and one of the m previous states.
+
+Definition
+
+An additive Markov chain of order m is a sequence of random variables X1,&nbsp;X2,&nbsp;X3,&nbsp;..., possessing the following property: the probability that a random variable X'n has a certain value x'n under the condition that the values of all previous variables are fixed depends on the values of m previous variables only (Markov chain of order m), and the influence of previous variables on a generated one is additive,
+
+\Pr(X_n=x_n\mid X_{n-1}=x_{n-1}, X_{n-2}=x_{n-2}, \dots, X_{n-m}=x_{n-m}) = \sum_{r=1}^{m} f(x_n,x_{n-r},r).
+
+Binary case
+
+A binary additive Markov chain is where the state space of the chain consists on two values only, Xn&nbsp;&isin;&nbsp;{&nbsp;x1,&nbsp;x2&nbsp;}. For example, Xn&nbsp;∈&nbsp;{&nbsp;0,&nbsp;1&nbsp;}. The conditional probability function of a binary additive Markov chain can be represented as
+
+\Pr(X_n=1\mid X_{n-1}=x_{n-1}, X_{n-2}=x_{n-2}, \dots) = \bar{X} + \sum_{r=1}^{m} F(r) (x_{n-r}-\bar{X}),
+
+\Pr(X_n=0\mid X_{n-1}=x_{n-1}, X_{n-2}=x_{n-2}, \dots) = 1 - \Pr(X_n=1\mid X_{n-1} = x_{n-1}, X_{n-2} = x_{n-2}, \dots).
+
+Here \bar{X} is the probability to find Xn&nbsp;=&nbsp;1 in the sequence and
+
+F(r) is referred to as the memory function. The value of \bar{X} and the function F(r) contain all the information about correlation properties of the Markov chain.
+
+Relation between the memory function and the correlation function
+
+In the binary case, the correlation function between the variables X_n and X_k of the chain depends on the distance n - k only. It is defined as follows:
+
+K(r) = \langle (X_n-\bar{X})(X_{n+r}-\bar{X}) \rangle = \langle X_n X_{n+r} \rangle -{\bar{X}}^2,
+
+where the symbol \langle \cdots \rangle denotes averaging over all n. By definition,
+
+K(-r)=K(r),   K(0)=\bar{X}(1-\bar{X}).
+
+There is a relation between the memory function and the correlation function of the binary additive Markov chain:
+
+K(r)=\sum_{s=1}^m K(r-s)F(s), \, \, \, \, r=1, 2, \dots\,.
+
+See also
+
+Examples of Markov chains
+
+Notes
+
+References
+
+A.A. Markov. (1906) "Rasprostranenie zakona bol'shih chisel na velichiny, zavisyaschie drug ot druga". Izvestiya Fiziko-matematicheskogo obschestva pri Kazanskom universitete, 2-ya seriya, tom 15, 135–156
+
+A.A. Markov. (1971) "Extension of the limit theorems of probability theory to a sum of variables connected in a chain". reprinted in Appendix B of: R. Howard. Dynamic Probabilistic Systems, volume 1: Markov Chains. John Wiley and Sons
+
+Ramakrishnan, S. (1981) "Finitely Additive Markov Chains", Transactions of the American Mathematical Society, 265 (1), 247–272
+
+Category:Markov processes

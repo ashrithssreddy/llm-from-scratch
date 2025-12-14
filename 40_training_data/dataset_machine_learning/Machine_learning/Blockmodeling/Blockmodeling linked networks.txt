@@ -1,0 +1,17 @@
+Blockmodeling linked networks is an approach in blockmodeling in analysing the linked networks. Such approach is based on the generalized multilevel blockmodeling approach. The main objective of this approach is to achieve clustering of the nodes from all involved sets, while at the same time using all available information. At the same time, all one-mode and two-node networks, that are connected, are blockmodeled, which results in obtaining only one clustering, using nodes from each sets. Each cluster ideally contains only nodes from one set, which also allows the modeling of the links among clusters from different sets (through two-mode networks).
+
+Blockmodeling linked networks can be done using:
+
+separate analysis: blockmodeling each level separately;
+
+conversion approach: converting all one-mode networks to the same level and joining with two-mode networks;
+
+a true multilevel approach: one-mode and two-mode networks are blockmodeled at the same time, resulting in one clustering for nodes from each level.
+
+References
+
+See also
+
+mathematical sociology
+
+Category:Blockmodeling

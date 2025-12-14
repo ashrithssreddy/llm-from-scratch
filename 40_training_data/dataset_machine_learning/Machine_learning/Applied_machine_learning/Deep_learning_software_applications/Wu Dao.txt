@@ -1,0 +1,43 @@
+{{Infobox software
+
+name                   = 悟道 (Wu Dao)
+
+logo                   =
+
+screenshot             =
+
+screenshot size        =
+
+caption                =
+
+author                 = Beijing Academy of Artificial Intelligence
+
+developer              =
+
+released               = January 11, 2021
+
+latest release version =
+
+latest release date    =
+
+repo                   =
+
+programming language   =
+
+operating system       =
+
+genre                  =
+
+license                =
+
+website                =
+
+}}
+
+Wu Dao ()
+
+}}
+
+Category:Deep learning software applications
+
+Category:Language modeling

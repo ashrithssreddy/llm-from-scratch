@@ -1,0 +1,23 @@
+Dex-net is a robotic. It uses a Grasp Quality Convolutional Neural Network to learn how to grasp unusually shaped objects.
+
+History
+
+Dex-net was developed by University of California, Berkeley professor Ken Goldberg and graduate student Jeff Mahler.
+
+Design
+
+Dex-net includes a high-resolution 3-D sensor and two arms, each controlled by a different neural network. One arm is equipped with a conventional robot gripper and another with a suction system. The robot’s software scans an object and then asks both neural networks to decide, on the fly, whether to grab or suck a particular object.  It runs on an off-the-shelf industrial machine made by Swiss robotics company ABB.
+
+The software learns by attempting to pick up objects in a virtual environment. Dex-Net can generalize from an object it has seen before to a new one. The robot can "nudge" such virtual objects to examine if it is unsure how to grasp it. The trial data set was  6.7 million point clouds, grasps and analytic grasp metrics generated from thousands of 3D models. Grasps are defined as a gripper's planar position, angle and depth relative to an RGB-D sensor.
+
+Mean picks per hour
+
+A metric called mean picks per hour (MPPH) is calculated by multiplying the average time per pick and the average probability of success for a specific set of objects. The new metric allows labs working on picking robots to compare their results.
+
+Humans are capable of between 400 and 600 MPPH. In a contest organized by Amazon recently, the best robots were capable of between 70 and 95. Dex-net has achieved 200 to 300.
+
+References
+
+Category:Artificial neural networks
+
+Category:Robotics

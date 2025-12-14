@@ -1,0 +1,61 @@
+A causal map can be defined as a network consisting of links or arcs between nodes or factors, such that a link between C and E means, in some sense, that someone believes or claims C has or had some causal influence on E.
+
+This definition could cover diagrams representing causal connections between variables which are measured in a strictly quantitative way and would therefore also include closely related statistical models like Structural Equation Models and Directed Acyclic Graphs (DAGs). However the phrase “causal map” is usually reserved for qualitative or merely semi-quantitative maps. In this sense, causal maps can be seen as a type of concept map. Systems diagrams and Fuzzy Cognitive Maps  also fall under this definition. Causal maps have been used since the 1970’s by researchers and practitioners in a range of disciplines from management science  to ecology,&nbsp; employing a variety of methods. They are used for many purposes, for example:
+
+As sketch diagrams to summarise causal links
+
+As tools to understand how decisions are made
+
+As tools to assist strategic planning
+
+As tools to form and represent a consensus of expert views on “what causes what” in a subject area
+
+As tools to investigate the differences in how different subjects view causal links in a subject area
+
+As a way to encode the separate views of many different respondents on “what causes what” in a subject area
+
+To represent “theories of change”  and “program theory”  in project management and evaluation
+
+Different kinds of causal maps can be distinguished particularly by the kind of information which can be encoded by the links and nodes. One important distinction is to what extent the links are intended to encode causation or (somebody’s) belief about causation.
+
+Causal mapping
+
+Causal mapping is the process of constructing, summarising and drawing inferences from a causal map, and more broadly can refer to sets of techniques for doing this. While one group of such methods is actually called “causal mapping”, there are many similar methods which go by a wide variety of names.
+
+The phrase “causal mapping” goes back at least to Robert Axelrod, The idea of wanting to understand the behaviour of actors in terms of internal ‘maps’ of the word which they carry around with them goes back further, to Kurt Lewin  and the field theorists. Causal mapping in this sense is loosely based on "concept mapping" and “cognitive mapping”, and sometimes the three terms are used interchangeably, though the latter two are usually understood to be broader, including maps in which the links between factors are not necessarily causal and are therefore not causal maps.
+
+Literature on the theory and practice of causal mapping includes a few canonical works and guides to particular approaches.
+
+Cause–effect graph
+
+In software testing, a cause–effect graph is a directed graph that maps a set of causes to a set of effects.  The causes may be thought of as the input to the program, and the effects may be thought of as the output.  Usually the graph shows the nodes representing the causes on the left side and the nodes representing the effects on the right side.  There may be intermediate nodes in between that combine inputs using logical operators such as AND and OR.
+
+Constraints may be added to the causes and effects.  These are represented as edges labeled with the constraint symbol using a dashed line.  For causes, valid constraint symbols are E (exclusive), O (one and only one), I (at least one), and R (Requires). The exclusive constraint states that at most one of the causes 1 and 2 can be true, i.e. both cannot be true simultaneously. The Inclusive (at least one) constraint states that at least one of the causes 1, 2 or 3 must be true, i.e. all cannot be false simultaneously. The one and only one (OaOO or simply O) constraint states that only one of the causes 1, 2 or 3 must be true. The Requires constraint states that if cause 1 is true, then cause 2 must be true, and it is impossible for 1 to be true and 2 to be false.
+
+For effects, valid constraint symbol is M (Mask). The mask constraint states that if effect 1 is true then effect 2 is false. Note that the mask constraint relates to the effects and not the causes like the other constraints.
+
+The graph's direction is as follows:
+
+Causes --> intermediate nodes --> Effects
+
+The graph can always be rearranged so there is only one node between any input and any output.  See conjunctive normal form and disjunctive normal form.
+
+A cause–effect graph is useful for generating a reduced decision table.
+
+See also
+
+• List of Causal Mapping Software
+
+Causal diagram
+
+Decision table
+
+Why–because graph
+
+References
+
+Further reading
+
+Category:Causal diagrams
+
+Category:Graph data structures

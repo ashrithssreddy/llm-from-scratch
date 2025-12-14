@@ -1,0 +1,47 @@
+Fast-and-frugal tree or matching heuristic (in the study of decision-making) is a simple graphical structure that categorizes objects by asking one question at a time. These decision trees are used in a range of fields: psychology, artificial intelligence, and management science. Unlike other decision or classification trees, such as Leo Breiman's CART, fast-and-frugal trees are intentionally simple, both in their construction as well as their execution, and operate speedily with little information. For this reason, fast-and-frugal-trees are potentially attractive when designing resource-constrained tasks.
+
+Laura Martignon, Vitouch, Takezawa and Forster first introduced both the concept and the term in 2003; similar heuristics for other tasks had been used before, building on the formal models created by Gerd Gigerenzer and Herbert A. Simon.
+
+In categorization tasks with two options and m cues—also known as features or attributes—available for making such a decision, an FFT is defined as follows:
+
+A fast-and-frugal tree is a classification or a decision tree that has m+1 exits, with one exit for each of the first m −1 cues and two exits for the last cue.
+
+Mathematically, fast-and-frugal trees can be viewed as lexicographic heuristics or as linear classification models with non-compensatory weights and a threshold. Their formal properties and construction have also been analyzed using signal detection theory by Luan, Schooler and Gigerenzer in 2011.
+
+Basic organization
+
+Construction
+
+The basic elements are the cues. The cues are ranked, with one cue at each level of the tree and an exit node at each level (except for two exit nodes for the last cue at the last level of the tree). Whenever a cue is used, a question is asked about the value of the cue. The answers to the questions might immediately lead to an exit, or they might lead to a further question (and eventually to an exit). A characteristic property of fast-and-frugal trees is that, for each question, there is at least one possible answer that leads to an exit.
+
+In the literature on fast-and-frugal trees, many different algorithms have been proposed for (1) ordering cues and (2) deciding which possible answer to a question about a cue leads immediately to an exit. A fast-and-frugal tree is fully defined if both the following conditions are met. Often, in order to keep construction simple and intuitive, the algorithms use (1) simple measures of cue "goodness" (e.g., correlation between cue and category, considering each cue independently of the other cues) and (2) make simple choices about exits (e.g., decide on each exit independently of the other exits), but more complex algorithms have been proposed as well.
+
+Execution
+
+To use a fast-and-frugal tree, begin at the root and check one cue at a time.  At each step, one of the possible outcomes is an exit node which allows for a decision (or action)—if an exit is reached, stop; otherwise, continue until an exit is reached. Take an exit, stop; otherwise, continue and ask more questions until an exit is reached.
+
+Figure 1 illustrates a fast-and-frugal tree for classifying a patient as "high risk" of having a heart stroke and thus having to be sent to the "coronary care unit" or as "low risk" and thus having to be sent to a "regular nursing bed" (Green & Mehr, 1997).
+
+Consider three patients, John, Mary, and Jack:
+
+John has ST segment changes thus is classified as "high risk" and sent to the coronary care unit without considering other cues.
+
+Mary has no ST segment changes, does have chest pain as her chief complaint, but does not have any of the remaining five factors, thus is classified as "low risk" and sent to a regular nursing bed, after all three cues are checked.
+
+Jack has no ST segment change and does not have chest pain as his chief complaint, thus is classified as "low risk" and sent to a regular nursing bed, by considering these two cues.
+
+Performance
+
+The accuracy and robustness of fast-and-frugal trees has been shown to be comparable to that of Bayesian benchmarks in studies by Laskey and Martignon (2014). Extensive studies comparing the performance of fast-and-frugal trees to that of classification algorithms used in statistics and machine learning, such as naive Bayes, CART, random forests, and logistic regression, have also been carried out by using dozens of real-world datasets. hosted on CRAN (with an accompanying app), which constructs, depicts graphically, and evaluates quantitatively fast and frugal trees in user-friendly ways.
+
+There have been many applications of fast-and-frugal trees in both prescribing how a decision should be made and describing how people actually make decisions. Beyond the medical field, an example of their prescriptive applications is instructing soldiers stationed in Afghanistan how to distinguish whether a car approaching a check-point is driven by civilians or potential suicide bombers; the tree is illustrated in Figure 3. Two examples of fast-and-frugal trees' descriptive uses are shown in Figure 4. The trees on the left and right describe, respectively, how a person decides whether to forgive another person for an offense the latter committed during social interactions and how British judges make a bail-or-jail decision. In general, fast-and-frugal trees can be applied to help or model any binary decision-making processes that involve multiple cues.
+
+Related articles and other sources
+
+References
+
+Category:Cybernetics
+
+Category:Decision trees
+
+Category:Heuristics

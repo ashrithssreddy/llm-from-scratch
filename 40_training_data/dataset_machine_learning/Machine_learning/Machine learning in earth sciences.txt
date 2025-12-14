@@ -1,0 +1,175 @@
+Applications of machine learning (ML) in earth sciences include geological mapping, gas leakage detection and geological feature identification. Machine learning is a subdiscipline of artificial intelligence aimed at developing programs that are able to classify, cluster, identify, and analyze vast and complex data sets without the need for explicit programming to do so. Earth science is the study of the origin, evolution, and future of the Earth. The earth's system can be subdivided into four major components including the solid earth, atmosphere, hydrosphere, and biosphere.
+
+A variety of algorithms may be applied depending on the nature of the task. Some algorithms may perform significantly better than others for particular objectives. For example, convolutional neural networks (CNNs) are good at interpreting images, whilst more general neural networks may be used for soil classification, but can be more computationally expensive to train than alternatives such as support vector machines. The range of tasks to which ML (including deep learning) is applied has been ever-growing in recent decades, as has the development of other technologies such as unmanned aerial vehicles (UAVs), This has led to the availability of large high-quality datasets and more advanced algorithms.
+
+Significance
+
+Complexity of earth science
+
+Problems in earth science are often complex. Ecological data are commonly non-linear and consist of higher-order interactions, and together with missing data, traditional statistics may underperform as unrealistic assumptions such as linearity are applied to the model. A number of researchers found that machine learning outperforms traditional statistical models in earth science, such as in characterizing forest canopy structure, predicting climate-induced range shifts, and delineating geologic facies. Characterizing forest canopy structure enables scientists to study vegetation response to climate change. Predicting climate-induced range shifts enable policy makers to adopt suitable conversation method to overcome the consequences of climate change.
+
+Inaccessible data
+
+In Earth Sciences, some data are often difficult to access or collect, therefore inferring data from data that are easily available by machine learning method is desirable. Incorporation of remote sensing and machine learning approaches can provide an alternative solution to eliminate some field mapping needs. A recency effect that is present in humans is that the classification often biases towards the most recently recalled classes. For example, although an SVM yielded the best result in landslide susceptibility assessment accuracy, the result cannot be rewritten in the form of expert rules that explain how and why an area was classified as that specific class. Geological, lithological, and mineral prospectivity mapping can be carried out by processing data with ML techniques, with the input of spectral imagery obtained from remote sensing and geophysical data. Spectral imaging is also used – the imaging of wavelength bands in the electromagnetic spectrum, while conventional imaging captures three wavelength bands (red, green, blue) in the electromagnetic spectrum.
+
+Random forests and SVMs are some algorithms commonly used with remotely-sensed geophysical data, while Simple Linear Iterative Clustering-Convolutional Neural Network (SLIC-CNN)
+
+AVIRIS-NG hyperspectral data
+
+Hutti, India
+
+Linear Discriminant Analysis (LDA),
+
+Random Forest,
+
+Support Vector Machine (SVM)
+
+Support Vector Machine (SVM) outperforms the other Machine Learning Algorithms (MLAs)
+
+-
+
+Lithological Mapping in the Tropical Rainforest
+
+Magnetic Vector Inversion, Ternary RGB map, Shuttle Radar Topography Mission (SRTM), false color (RGB) of Landsat 8 combining bands 4, 3 and 2
+
+Cinzento Lineament, Brazil
+
+Random Forest
+
+Two predictive maps were generated:
+
+(1) Map generated with remote sensing data only has a 52.7% accuracy when compared to the geological map, but several new possible lithological units are identified
+
+(2) Map generated with remote sensing data and spatial constraints has a 78.7% accuracy but no new possible lithological units are identified
+
+-
+
+Geological Mapping for mineral exploration
+
+Airborne polarimetric Terrain Observation with Progressive Scans SAR (TopSAR),
+
+geophysical data
+
+Western Tasmania
+
+Random Forest
+
+Low reliability of TopSAR for geological mapping, but accurate with geophysical data.
+
+-
+
+Geological and Mineralogical mapping
+
+Multispectral and hyperspectral satellite data
+
+Central Jebilet,
+
+Morocco
+
+Support Vector Machine (SVM)
+
+The accuracy of using hyperspectral data for classifying is slightly higher than that using multispectral data, obtaining 93.05% and 89.24% respectively, showing that machine learning is a reliable tool for mineral exploration.
+
+-
+
+Integrating Multigeophysical Data into a Cluster Map
+
+Airborne magnetic,
+
+frequency electromagnetic, radiometric measurements, ground gravity measurements
+
+Trøndelag, Mid-Norway
+
+Random Forest
+
+The cluster map produced has a satisfactory relationship with the existing geological map but with minor misfits.
+
+-
+
+High-Resolution Geological Mapping with Unmanned Aerial Vehicle (UAV)
+
+Ultra-resolution RGB images
+
+Taili waterfront,
+
+Liaoning Province, China
+
+Simple Linear Iterative Clustering-Convolutional Neural Network (SLIC-CNN)
+
+The result is satisfactory in mapping major geological units but showed poor performance in mapping pegmatites, fine-grained rocks and dykes. UAVs were unable to collect rock information where the rocks were not exposed.
+
+-
+
+Surficial Geology Mapping Landslide susceptibility mapping can highlight areas prone to landslide risks, which is useful for urban planning and disaster management. according to the study requirements. As usual, for training an ML model for landslide susceptibility mapping, training and testing datasets are required.
+
+Digital Elevation Model (DEM), Geological Map, 30m Landsat Imagery
+
+Fruška Gora Mountain, Serbia
+
+Support Vector Machine (SVM),
+
+Decision Trees, Logistic Regression
+
+Support Vector Machine (SVM) outperforms others
+
+-
+
+Landslide Susceptibility Mapping
+
+ASTER satellite-based geomorphic data, geological maps
+
+Honshu Island, Japan
+
+Artificial Neural Network (ANN)
+
+Accuracy greater than 90% for determining the probability of landslide.
+
+-
+
+Landslide Susceptibility Zonation through ratings
+
+Spatial data layers with slope, aspect, relative relief, lithology, structural features, land use, land cover, drainage density
+
+Parts of Chamoli and Rudraprayag districts of the State of Uttarakhand, India
+
+Artificial Neural Network (ANN)
+
+The AUC of this approach reaches 0.88. This approach generated an accurate assessment of landslide risks.
+
+-
+
+Regional Landslide Hazard Analysis
+
+Topographic slope, aspect, and curvature; distance from drainage, lithology, distance from lineament, land cover from TM satellite images, vegetation index (NDVI), precipitation data
+
+Eastern Selangor state, Malaysia
+
+Artificial Neural Network (ANN)
+
+The approach achieved 82.92% accuracy of prediction.
+
+}
+
+Feature identification and detection
+
+the model.]]
+
+Discontinuity analyses
+
+Discontinuities such as fault planes and bedding planes have important implications in civil engineering. Rock fractures can be recognized automatically by machine learning through photogrammetric analysis, even with the presence of interfering objects such as vegetation. In ML training for classifying images, data augmentation is a common practice to avoid overfitting and increase the training dataset size and variability. Carbon dioxide leakage from a geological sequestration site can be detected indirectly with the aid of remote sensing and an unsupervised clustering algorithm such as Iterative Self-Organizing Data Analysis Technique (ISODATA). The increase in soil CO2 concentration causes a stress response for plants by inhibiting plant respiration, as oxygen is displaced by carbon dioxide. The vegetation stress signal can be detected with the Normalized Difference Red Edge Index (NDRE). system is a widely adopted rock mass classification system by geomechanical means with the input of six parameters. The amount of water inflow is one of the inputs of the classification scheme, representing the groundwater condition. Quantification of the water inflow in the faces of a rock tunnel was traditionally carried out by visual observation in the field, which is labour and time-consuming, and fraught with safety concerns. The classification of the approach mostly follows the RMR system, but combining damp and wet states, as it is difficult to distinguish only by visual inspection. The test is carried out by pushing a metallic cone through the soil: the force required to push at a constant rate is recorded as a quasi-continuous log.
+
+Challenge
+
+Inadequate training data
+
+An adequate amount of training and validation data is required for machine learning. Such amount of data may not be adequate. In a study of automatic classification of geological structures, the weakness of the model is the small training dataset, even though with the help of data augmentation to increase the size of the dataset. as the model learns about the noise and undesired details.
+
+Limited by data input
+
+Machine learning cannot carry out some of the tasks as a human does easily. For example, in the quantification of water inflow in rock tunnel faces by images for Rock Mass Rating system (RMR), 'White-box' approach such as decision tree can reveal the algorithm details to the users. If one wants to investigate the relationships, such 'black-box' approaches are not suitable. However, the performances of 'black-box' algorithms are usually better.
+
+References
+
+Category:Machine learning
+
+Category:Geological techniques

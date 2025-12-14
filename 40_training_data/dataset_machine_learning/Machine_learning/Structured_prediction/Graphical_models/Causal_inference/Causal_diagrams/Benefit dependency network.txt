@@ -1,0 +1,17 @@
+A benefit dependency network (BDN) is a strategic management tool that visually maps cause-effect relationships between organizational enablers and their resulting business benefits. This structured diagram organizes interdependencies into three primary categories: capabilities (enablers), changes (business and organizational transformations), and benefits (measurable outcomes).
+
+Originally developed by researchers at Cranfield School of Management as part of their Benefits Management approach, BDNs provide executives and stakeholders with a comprehensive one-page visualization of how investments generate value. Typically read from right to left, the diagram begins with high-level drivers for change and traces pathways through to implementation elements, making it particularly valuable for complex initiatives such as digital transformations and enterprise-wide system implementations.
+
+The BDN framework has evolved to encompass all key domains required for effective benefits management: the Why (strategic objectives), What (benefits and changes), Who (stakeholders), and How (enablers). From a methodological perspective, BDNs can be considered a business-oriented adaptation of what engineers would call goal modeling.
+
+Recent advancements have incorporated weighted connections to transform BDNs into weighted graphs, enabling quantitative causality analysis across different value chains. This enhancement allows organizations to compare alternative strategies based on projected outcomes and value creation potential. The resulting causal chains provide a compelling narrative that demonstrates how proposed benefits can be realized through specific organizational changes.
+
+In software engineering contexts, Jabbari et al. have applied BDNs for software process improvement, using the framework to structure findings from systematic literature reviews on methodologies such as DevOps.
+
+References
+
+Category:Value (ethics)
+
+Category:Causal diagrams
+
+Category:Information technology management

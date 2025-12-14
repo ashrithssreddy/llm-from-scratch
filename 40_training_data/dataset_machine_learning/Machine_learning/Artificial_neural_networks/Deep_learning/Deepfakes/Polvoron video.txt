@@ -1,0 +1,145 @@
+{{Infobox event
+
+title                    = Polvoron video
+
+image                    = File:Polvoron_video_screenshot.jpg
+
+image_upright            =
+
+image_alt                =
+
+caption                  = Screencap of the video
+
+native_name              =
+
+native_name_lang         =
+
+english_name             =
+
+time                     =
+
+timezone                 =
+
+duration                 =
+
+date                     =
+
+venue                    =
+
+location                 =
+
+coordinates              =
+
+also_known_as            =
+
+type                     = Video
+
+theme                    =
+
+cause                    =
+
+motive                   =
+
+target                   = Ferdinand Marcos Jr.
+
+perpetrator              =
+
+first_reporter           = Claire Contreras (Maharlika) in Boldyakan
+
+budget                   =
+
+patron                   =
+
+organisers               =
+
+filmed_by                = Unknown
+
+participants             =
+
+outcome                  = Found to be a deepfake by government and independent fact checking bodies
+
+inquiries                =
+
+inquest                  =
+
+coroner                  =
+
+arrests                  =
+
+suspects                 =
+
+accused                  = MaharlikaHarry Roque
+
+convicted                =
+
+charges                  = see below
+
+trial                    =
+
+verdict                  =
+
+convictions              =
+
+sentence                 =
+
+publication_bans         =
+
+litigation               =
+
+awards                   =
+
+url                      =
+
+blank_label              =
+
+blank1_label             =
+
+blank2_label             =
+
+website                  =
+
+notes                    =
+
+}}
+
+The polvoron video is a video published on July 22, 2024, purportedly depicting Philippine President Ferdinand Marcos Jr. snorting cocaine. The video has been found to be deepfake by both Philippine government law agencies and independent fact checking bodies.
+
+Background
+
+The polvoron video depicts a man, allegedly President Ferdinand Marcos Jr. sniffing a white powdery substance. This substance is suggested to be cocaine, or euphemistically polvoron.
+
+History
+
+Claire Contreras, a vlogger who goes by the name Maharlika first teased the existence of the polvoron video during a livestream on the Facebook page Boldyakan during the evening of July 21, 2024. The event was attended by allies of former president Rodrigo Duterte such as Roque himself and former candidate for senator, Glenn Chong
+
+News organizations
+
+Rappler ran a copy of the video under SensityAI which gave a result that there is 81.8% confidence that a face swap was done on the video, publishing a fact checking article on July 25, 2024.
+
+Maharlika
+
+Maharlika discussed the verification process she made on the video on August 12 on her vlog. She did not specify any specific program or mention the identities of the forensic experts she consulted with. Maharlika disputed the findings of Philippine government agents. In an appearance at Sonshine Media Network International (SMNI) she said she sought evidence the video was "untampered" showing a printed report confirming such from five test from an unknown source.
+
+The NBI filed charges against Roque and Maharlika for the polvoron video in April 2025. The following are the charges:
+
+Maharlika – Unlawful use of means of publication and unlawful utterances, inciting to sedition, cyber libel, and computer-related forgery
+
+Harry Roque – Inciting to sedition
+
+This followed vlogger Pebbles Cunanan appearance in a House of Representatives Tri Committee inquiry on fake news where the internet personality said she is convinced that Roque spread the video.
+
+References
+
+Category:Deepfakes
+
+Category:Disinformation
+
+Category:Fake news in the Philippines
+
+Category:Presidency of Bongbong Marcos
+
+Category:2024 works
+
+Category:2024 crimes in the Philippines
+
+Category:Cybercrime in the Philippines

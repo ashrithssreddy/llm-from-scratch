@@ -1,0 +1,133 @@
+Inductive logic programming (ILP) is a subfield of symbolic artificial intelligence which uses logic programming as a uniform representation for examples, background knowledge and hypotheses. The term "inductive" here refers to philosophical (i.e. suggesting a theory to explain observed facts) rather than mathematical (i.e. proving a property for all members of a well-ordered set) induction. Given an encoding of the known background knowledge and a set of examples represented as a logical database of facts, an ILP system will derive a hypothesised logic program which entails all the positive and none of the negative examples.
+
+Schema: positive examples + negative examples + background knowledge ⇒ hypothesis.
+
+Inductive logic programming is particularly useful in bioinformatics and natural language processing.
+
+History
+
+Building on earlier work on Inductive inference, Gordon Plotkin was the first to formalise induction in a clausal setting around 1970, adopting an approach of generalising from examples. In 1981, Ehud Shapiro introduced several ideas that would shape the field in his new approach of model inference, an algorithm employing refinement and backtracing to search for a complete axiomatisation of given examples. His first implementation was the Model Inference System in 1981: a Prolog program that inductively inferred Horn clause logic programs from positive and negative examples.
+
+Several inductive logic programming systems that proved influential appeared in the early 1990s. FOIL, introduced by Ross Quinlan in 1990 was based on upgrading propositional learning algorithms AQ and ID3. Golem, introduced by Muggleton and Feng in 1990, went back to a restricted form of Plotkin's least generalisation algorithm. The Progol system, introduced by Muggleton in 1995, first implemented inverse entailment, and inspired many later systems. Aleph, a descendant of Progol introduced by Ashwin Srinivasan in 2001, is still one of the most widely used systems .
+
+At around the same time, the first practical applications emerged, particularly in bioinformatics, where by 2000 inductive logic programming had been successfully applied to drug design, carcinogenicity and mutagenicity prediction, and elucidation of the structure and function of proteins. Unlike the focus on automatic programming inherent in the early work, these fields used inductive logic programming techniques from a viewpoint of relational data mining. The success of those initial applications and the lack of progress in recovering larger traditional logic programs shaped the focus of the field.
+
+Recently, classical tasks from automated programming have moved back into focus, as the introduction of meta-interpretative learning makes predicate invention and learning recursive programs more feasible. This technique was pioneered with the Metagol system introduced by Muggleton, Dianhuan Lin, Niels Pahlavi and Alireza Tamaddoni-Nezhad in 2014. This allows ILP systems to work with fewer examples, and brought successes in learning string transformation programs, answer set grammars and general algorithms.
+
+Setting
+
+Inductive logic programming has adopted several different learning settings, the most common of which are learning from entailment and learning from interpretations.{{sfn|Cropper|Dumančić|2022|p=779782}} In both cases, the input is provided in the form of background knowledge , a logical theory (commonly in the form of clauses used in logic programming), as well as positive and negative examples, denoted E^+ and E^{-} respectively. The output is given as a hypothesis , itself a logical theory that typically consists of one or more clauses.
+
+The two settings differ in the format of examples presented.
+
+Learning from entailment
+
+, learning from entailment is by far the most popular setting for inductive logic programming.{{sfn|Cropper|Dumančić|2022|p=779782}} In this setting, the positive and negative examples are given as finite sets E^+ and E^{-} of positive and negated ground literals, respectively. A correct hypothesis  is a set of clauses satisfying the following requirements, where the turnstile symbol \models stands for logical entailment:{{sfn|Cropper|Dumančić|2022|p=779782}}
+
+\begin{array}{llll}
+
+\text{Completeness:}
+
+& B \cup H
+
+& \models
+
+& E^+
+
+\\
+
+\text{Consistency: }
+
+& B \cup H \cup E^-
+
+& \not\models
+
+& \textit{false}
+
+\end{array}
+
+Completeness requires any generated hypothesis ' to explain all positive examples E^+, and consistency forbids generation of any hypothesis ' that is inconsistent with the negative examples E^{-}, both given the background knowledge .
+
+In Muggleton's setting of concept learning, "completeness" is referred to as "sufficiency", and "consistency" as "strong consistency". Two further conditions are added: "Necessity", which postulates that ' does not entail E^+, does not impose a restriction on ', but forbids any generation of a hypothesis as long as the positive facts are explainable without it. "Weak consistency", which states that no contradiction can be derived from B\land H, forbids generation of any hypothesis ' that contradicts the background knowledge '. Weak consistency is implied by strong consistency; if no negative examples are given, both requirements coincide. Weak consistency is particularly important in the case of noisy data, where completeness and strong consistency cannot be guaranteed.
+
+To account for background knowledge, inductive logic programming systems employ relative least general generalisations, which are defined in terms of subsumption relative to a background theory. In general, such relative least general generalisations are not guaranteed to exist; however, if the background theory ' is a finite set of ground literals, then the negation of ' is itself a clause. In this case, a relative least general generalisation can be computed by disjoining the negation of  with both C_1 and C_2 and then computing their least general generalisation as before.
+
+Relative least general generalisations are the foundation of the bottom-up system Golem.
+
+Inverse resolution was first introduced by Stephen Muggleton and Wray Buntine in 1988 for use in the inductive logic programming system Cigol. and Imparo  find a hypothesis  using the principle of the inverse entailment However, the operation of anti-entailment is computationally more expensive since it is highly nondeterministic. Therefore, an alternative hypothesis search can be conducted using the inverse subsumption (anti-subsumption) operation instead, which is less non-deterministic than anti-entailment.
+
+Questions of completeness of a hypothesis search procedure of specific inductive logic programming system arise. For example, the Progol hypothesis search procedure based on the inverse entailment inference rule is not complete by Yamamoto's example. On the other hand, Imparo is complete by both anti-entailment procedure  and its extended inverse subsumption  procedure.
+
+Metainterpretive learning
+
+Rather than explicitly searching the hypothesis graph, metainterpretive or meta-level systems encode the inductive logic programming program as a meta-level logic program which is then solved to obtain an optimal hypothesis. Formalisms used to express the problem specification include Prolog and answer set programming, with existing Prolog systems and answer set solvers used for solving the constraints.
+
+And example of a Prolog-based system is Metagol, which is based on a meta-interpreter in Prolog, while ASPAL and ILASP are based on an encoding of the inductive logic programming problem in answer set programming.
+
+Evolutionary learning
+
+Evolutionary algorithms in ILP use a population-based approach to evolve hypotheses, refining them through selection, crossover, and mutation. Methods like EvoLearner have been shown to outperform traditional approaches on structured machine learning benchmarks.
+
+List of implementations
+
+1BC and 1BC2: first-order naive Bayesian classifiers:
+
+ACE (A Combined Engine)
+
+Aleph
+
+Atom
+
+Claudien
+
+DL-Learner
+
+DMax
+
+FastLAS (Fast Learning from Answer Sets)
+
+FOIL (First Order Inductive Learner)
+
+Golem
+
+ILASP (Inductive Learning of Answer Set Programs)
+
+Imparo
+
+Probabilistic inductive logic programming
+
+Probabilistic inductive logic programming adapts the setting of inductive logic programming to learning probabilistic logic programs. It can be considered as a form of statistical relational learning within the formalism of probabilistic logic programming.
+
+Given
+
+background knowledge as a probabilistic logic program , and
+
+a set of positive and negative examples E^{+} and E^{-}
+
+the goal of probabilistic inductive logic programming is to find a probabilistic logic program H such that the probability of positive examples according to {H \cup B} is maximized and the probability of negative examples is minimized. where the authors learn the structure of first-order rules with associated probabilistic uncertainty parameters. Their approach involves generating the underlying graphical model in a preliminary step and then applying expectation-maximisation.
+
+In the same year, Meert, W. et al. introduced a method for learning parameters and structure of ground probabilistic logic programs by considering the Bayesian networks equivalent to them and applying techniques for learning Bayesian networks.
+
+Its extension SLIPCOVER, proposed in 2014, uses bottom clauses generated as in Progol to guide the refinement process, thus reducing the number of revisions and exploring the search space more effectively. Moreover, SLIPCOVER separates the search for promising clauses from that of the theory: the space of clauses is explored with a beam search, while the space of theories is searched greedily.
+
+See also
+
+Commonsense reasoning
+
+Formal concept analysis
+
+Inductive reasoning
+
+Inductive programming
+
+Inductive probability
+
+Statistical relational learning
+
+Version space learning
+
+References
+
+Further reading
+
+Visual example of inducing the grandparenthood relation by the Atom system. http://john-ahlgren.blogspot.com/2014/03/inductive-reasoning-visualized.html
