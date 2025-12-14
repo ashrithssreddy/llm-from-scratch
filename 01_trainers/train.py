@@ -49,8 +49,8 @@
 #   --num-layers - Number of transformer layers (default: 3)
 #   --lr - Learning rate (default: 0.001)
 #
-# Model will be saved to: 50_models/{dataset_name}/embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt
-# Example: 50_models/dataset_toy/embed128_layers3_heads4_epochs10.pt
+# Model will be saved to: 50_models/{dataset_name}/embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}_batch{batch_size}_block{block_size}_lr{lr}_accum{grad_accum}.pt
+# Example: 50_models/dataset_toy/embed128_layers3_heads4_epochs10_batch128_block128_lr1e3_accum4.pt
 
 
 # =====================
@@ -78,6 +78,44 @@ from train_utils import CharDataset, SimpleLanguageModel, train_epoch, evaluate 
 # Logging setup
 from logger_utils import setup_logging  # type: ignore
 logger = setup_logging()
+
+
+# =====================
+#  FILENAME GENERATION
+# =====================
+
+def generate_model_filename(embed_dim, num_layers, num_heads, epochs, batch_size, 
+                           block_size, learning_rate, gradient_accumulation_steps, 
+                           suffix=""):
+    """
+    Generate a comprehensive model filename with all training parameters.
+    
+    Args:
+        embed_dim: Embedding dimension
+        num_layers: Number of transformer layers
+        num_heads: Number of attention heads
+        epochs: Number of epochs
+        batch_size: Batch size
+        block_size: Sequence length
+        learning_rate: Learning rate
+        gradient_accumulation_steps: Gradient accumulation steps
+        suffix: Optional suffix (e.g., "_latest")
+    
+    Returns:
+        Filename string
+    """
+    # Format learning rate to remove decimal point (e.g., 0.001 -> 1e-3 -> 1m3)
+    # Handle both small (< 1.0) and large (>= 1.0) learning rates
+    if learning_rate >= 1.0:
+        lr_str = f"{int(learning_rate)}"
+    else:
+        # Convert 0.001 -> "1e-3" -> "1m3" (m for minus)
+        lr_str = f"{learning_rate:.0e}".replace(".", "").replace("+", "").replace("-", "m")
+    
+    filename = (f"embed{embed_dim}_layers{num_layers}_heads{num_heads}_"
+                f"epochs{epochs}_batch{batch_size}_block{block_size}_"
+                f"lr{lr_str}_accum{gradient_accumulation_steps}{suffix}.pt")
+    return filename
 
 
 # =====================
@@ -413,6 +451,9 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
         batch_size = find_max_batch_size(model, train_dataset, device, block_size)
         logger.info(f"Using auto-detected maximum batch size: {batch_size}")
         logger.info("")
+        
+        logger.info(f"Note: Checkpoint filename will be updated with batch_size={batch_size}")
+        logger.info("")
     
     # Now create dataloaders with the (possibly auto-detected) batch size
     logger.info("=" * 80)
@@ -485,7 +526,11 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     model_dir.mkdir(parents=True, exist_ok=True)
     
     # Use a consistent checkpoint filename that gets overwritten
-    checkpoint_filename = f"embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}_latest.pt"
+    # Now batch_size is finalized (either user-specified or auto-detected)
+    checkpoint_filename = generate_model_filename(
+        embed_dim, num_layers, num_heads, epochs, batch_size, block_size,
+        learning_rate, gradient_accumulation_steps, suffix="_latest"
+    )
     checkpoint_path = model_dir / checkpoint_filename
     
     # Store checkpoint metadata for signal handler
@@ -678,8 +723,11 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     else:
         logger.info("Saving final model...")
     
-    # Generate final filename (without _latest suffix)
-    final_filename = f"embed{embed_dim}_layers{num_layers}_heads{num_heads}_epochs{epochs}.pt"
+    # Generate final filename (without _latest suffix) with all parameters
+    final_filename = generate_model_filename(
+        embed_dim, num_layers, num_heads, epochs, batch_size, block_size,
+        learning_rate, gradient_accumulation_steps, suffix=""
+    )
     final_model_path = model_dir / final_filename
     
     # If file exists, add version suffix to prevent overwriting
