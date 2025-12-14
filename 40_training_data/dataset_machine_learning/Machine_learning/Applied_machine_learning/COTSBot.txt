@@ -1,0 +1,19 @@
+COTSBot is a small autonomous underwater vehicle (AUV)  long, which is designed by Queensland University of Technology (QUT) to kill the very destructive crown-of-thorns starfish (Acanthaster planci) in the Great Barrier Reef off the north-east coast of Australia. It identifies its target using an image-analyzing neural net to analyze what an onboard camera sees, and then lethally injects the starfish with a bile salt solution using a needle on the end of a long underslung foldable arm.
+
+}}
+
+Category:Applied machine learning
+
+Category:Artificial neural networks
+
+Category:Autonomous underwater vehicles
+
+Category:Lethal injection
+
+Category:Mechanical pest control
+
+Category:Queensland University of Technology
+
+Category:Robotic submarines
+
+Category:Robots of Australia

@@ -1,0 +1,301 @@
+Google Neural Machine Translation (GNMT) was a neural machine translation (NMT) system developed by Google and introduced in November 2016 that used an artificial neural network to increase fluency and accuracy in Google Translate. The neural network consisted of two main blocks, an encoder and a decoder, both of LSTM architecture with 8 1024-wide layers each and a simple 1-layer 1024-wide feedforward attention mechanism connecting them. The total number of parameters has been variously described as over 160 million, approximately 210 million, 278 million or 380 million. It used WordPiece tokenizer, and beam search decoding strategy. It ran on Tensor Processing Units.
+
+By 2020, the system had been replaced by another deep learning system based on a Transformer encoder and an RNN decoder.
+
+GNMT improved on the quality of translation by applying an example-based (EBMT) machine translation method in which the system learns from millions of examples of language translation.
+
+History
+
+The Google Brain project was established in 2011 in the "secretive Google X research lab" Ng's work has led to some of the biggest breakthroughs at Google and Stanford.
+
+In November 2016, Google Neural Machine Translation system (GNMT) was introduced. Since then, Google Translate began using neural machine translation (NMT) in preference to its previous statistical methods (SMT) which had been used since October 2007, with its proprietary, in-house SMT technology.
+
+Training GNMT was a big effort at the time and took, by a 2018 OpenAI estimate, on the order of 79 petaFLOP-days (or 7e21 FLOPs) of compute which was 1.5 orders of magnitude larger than Seq2seq model of 2014 (but about 2x smaller than GPT-J-6B in 2021).
+
+Google Translate's NMT system uses a large artificial neural network capable of deep learning. The new translation engine was first enabled for eight languages: to and from English and French, German, Spanish, Portuguese, Chinese, Japanese, Korean and Turkish in November 2016. In March 2017, three additional languages were enabled: Russian, Hindi and Vietnamese along with Thai for which support was added later. Support for Hebrew and Arabic was also added with help from the Google Translate Community in the same month. In mid April 2017 Google Netherlands announced support for Dutch and other European languages related to English. Further support was added for nine Indian languages: Hindi, Bengali, Marathi, Gujarati, Punjabi, Tamil, Telugu, Malayalam and Kannada at the end of April 2017.
+
+By 2020, Google had changed methodology to use a different neural network system based on transformers, and had phased out NMT.
+
+Evaluation
+
+The GNMT system was said to represent an improvement over the former Google Translate in that it will be able to handle "zero-shot translation", that is it directly translates one language into another. For example, it might be trained just for Japanese-English and Korean-English translation, but can perform Japanese-Korean translation. The system appears to have learned to produce a language-independent intermediate representation of language (an "interlingua"), which allows it to perform zero-shot translation by converting from and to the interlingua.
+
+Languages supported by GNMT
+
+As of December 2021, all of the languages of Google Translate support GNMT, with Latin being the most recent addition.
+
+Afrikaans
+
+Albanian
+
+Amharic
+
+Arabic
+
+Armenian
+
+Azerbaijani
+
+Basque
+
+Belarusian
+
+Bengali
+
+Bosnian
+
+Bulgarian
+
+Burmese
+
+Catalan
+
+Cebuano
+
+Chewa
+
+Chinese (Simplified)
+
+Chinese (Traditional)
+
+Corsican
+
+Croatian
+
+Czech
+
+Danish
+
+Dutch
+
+English
+
+Esperanto
+
+Estonian
+
+Filipino (Tagalog)
+
+Finnish
+
+French
+
+Galician
+
+Georgian
+
+German
+
+Greek
+
+Gujarati
+
+Haitian Creole
+
+Hausa
+
+Hawaiian
+
+Hebrew
+
+Hindi
+
+Hmong
+
+Hungarian
+
+Icelandic
+
+Igbo
+
+Indonesian
+
+Irish
+
+Italian
+
+Japanese
+
+Javanese
+
+Kannada
+
+Kazakh
+
+Khmer
+
+Kinyarwanda
+
+Korean
+
+Kurdish (Kurmanji)
+
+Kyrgyz
+
+Lao
+
+Latin
+
+Latvian
+
+Lithuanian
+
+Luxembourgish
+
+Macedonian
+
+Malagasy
+
+Malay
+
+Malayalam
+
+Maltese
+
+Maori
+
+Marathi
+
+Mongolian
+
+Nepali
+
+Norwegian (Bokmål)
+
+Odia
+
+Pashto
+
+Persian
+
+Polish
+
+Portuguese
+
+Punjabi (Gurmukhi)
+
+Romanian
+
+Russian
+
+Samoan
+
+Scottish Gaelic
+
+Serbian
+
+Shona
+
+Sindhi
+
+Sinhala
+
+Slovak
+
+Slovenian
+
+Somali
+
+Sotho
+
+Spanish
+
+Sundanese
+
+Swahili
+
+Swedish
+
+Tajik
+
+Tamil
+
+Tatar
+
+Telugu
+
+Thai
+
+Turkish
+
+Turkmen
+
+Ukrainian
+
+Urdu
+
+Uyghur
+
+Uzbek
+
+Vietnamese
+
+Welsh
+
+West Frisian
+
+Xhosa
+
+Yiddish
+
+Yoruba
+
+Zulu
+
+See also
+
+Example-based machine translation
+
+Rule-based machine translation
+
+Comparison of machine translation applications
+
+Statistical machine translation
+
+Artificial intelligence
+
+Cache language model
+
+Computational linguistics
+
+Computer-assisted translation
+
+History of machine translation
+
+List of emerging technologies
+
+List of research laboratories for machine translation
+
+Neural machine translation
+
+Machine translation
+
+Universal translator
+
+References
+
+External links
+
+Google’s Neural Machine Translation System: Bridging the Gap between Human and Machine Translation
+
+The Advantages and Disadvantages of Machine Translation
+
+Statistical Machine Translation
+
+International Association for Machine Translation (IAMT)
+
+Machine Translation Archive  by John Hutchins. An electronic repository (and bibliography) of articles, books and papers in the field of machine translation and computer-based translation technology
+
+Machine translation (computer-based translation) – Publications by John Hutchins (includes PDFs of several books on machine translation)
+
+Category:Applications of artificial intelligence
+
+Category:Computational linguistics
+
+Category:Machine translation
+
+Category:Artificial neural networks
+
+Category:Tasks of natural language processing
+
+Category:Google Translate

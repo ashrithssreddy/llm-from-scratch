@@ -1,0 +1,7 @@
+Time-aware LSTM (T-LSTM) is a long short-term memory (LSTM) unit capable of handling irregular time intervals in longitudinal patient records. T-LSTM was developed by researchers from Michigan State University, IBM Research, and Cornell University and was first presented in the Knowledge Discovery and Data Mining (KDD) conference.
+
+Experiments using real and synthetic data proved that T-LSTM auto-encoder outperformed widely used frameworks including LSTM and MF1-LSTM auto-encoders.
+
+References
+
+Category:Artificial neural networks

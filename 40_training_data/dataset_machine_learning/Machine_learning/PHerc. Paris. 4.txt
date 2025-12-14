@@ -1,0 +1,39 @@
+PHerc. Paris. 4 is a carbonized scroll of papyrus, dating to the 1st century BC to the 1st century AD. Part of a corpus known as the Herculaneum papyri, it was buried by hot-ash in the Roman city of Herculaneum during the eruption of Mount Vesuvius in 79 AD. It was subsequently discovered in excavations of the Villa of the Papyri from 1752–1754. Held by the Institut de France in its rolled state, it is now known to be a cornerstone example of non-invasive reading, where in February 2024, an announcement was made that the scroll's contents can be unveiled with the use of non-invasive X-ray imaging and machine learning algorithms, paving the way towards the decipherment and scanning of other Herculaneum papyri and otherwise heavily damaged scrolls.
+
+Background and provenance
+
+The Villa of the Papyri was buried during the eruption of Vesuvius in 79&nbsp;AD, subjecting the scrolls to temperatures of 310–320&nbsp;°C, compacting them and converting them to charcoal. The first scrolls were uncovered in 1752, with subsequent excavations uncovering more scrolls. There were attempts to unroll the scrolls, as the contents were realized to contain writings by classical philosophers from schools such as Epicureanism.
+
+PHerc. Paris. 4 was amongst a set of six scrolls that entered its present day location at the Institut de France. They were a diplomatic gift, made to commemorate peace between the Kingdom of Naples and Sicily, under the reign of Ferdinand IV and Napoleon, with the negotiations mediated by Charles Alquier.
+
+In 2015, PHerc. Paris. 1 and PHerc. Paris. 4 were studied side by side, with Paris. 1 having a history of successful limited readings in 1986–1987, with sequences of letters such as "ΠIΠTOIE" and words such as "EIΠOI" (Greek: "would say") proving decipherable.
+
+The Vesuvius Challenge raised , with an objective of clear readings of the scroll and the future aim of reading other carbonized, sealed fragments of the Herculaneum corpus, with a distant idea towards excavating more portions of the Villa of the Papyri in order to recover more scrolls.
+
+In October 2023, 21 year old college student and SpaceX intern Luke Farritor and physicist Casey Handmer identified the word "porphyras" (πορΦυρας) or "purple" on the scroll utilizing neural networking to differentiate the paper and the ink; Farritor subsequently won  for his find.
+
+Reactions
+
+Università degli Studi di Napoli Federico II papyrology professor Federica Nicolardi praised the discovery declaring: "It's extremely exciting to be reading entire words, not just sequences of letters, from within a scroll", and expressing confidence in further future decipherment of the scroll.
+
+The goal of the Vesuvius Challenge for 2024 is towards deciphering 90% of the scroll's contents in addition to other fragments held by the Institut de France.
+
+References
+
+Category:Ancient Epicurean literature
+
+Category:Herculaneum
+
+Category:1752 archaeological discoveries
+
+Category:2023 archaeological discoveries
+
+Category:1st-century manuscripts
+
+Category:Machine learning
+
+Category:Greek-language papyri
+
+Category:Applications of artificial intelligence
+
+Category:Eruption of Mount Vesuvius in 79 AD

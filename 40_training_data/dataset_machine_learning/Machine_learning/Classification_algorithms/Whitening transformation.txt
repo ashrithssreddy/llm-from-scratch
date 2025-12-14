@@ -1,0 +1,47 @@
+A whitening transformation or sphering transformation is a linear transformation that transforms a vector of random variables with a known covariance matrix into a set of new variables whose covariance is the identity matrix, meaning that they are uncorrelated and each have variance 1. The transformation is called "whitening" because it changes the input vector into a white noise vector.
+
+Several other transformations are closely related to whitening:
+
+the decorrelation transform removes only the correlations but leaves variances intact,
+
+the standardization transform sets variances to 1 but leaves correlations intact,
+
+a coloring transformation transforms a vector of white random variables into a random vector with a specified covariance matrix.
+
+Definition
+
+Suppose X is a random (column) vector with non-singular covariance matrix \Sigma and mean 0. Then the transformation Y = W X with
+
+a whitening matrix W satisfying the condition W^\mathrm{T} W = \Sigma^{-1} yields the whitened random vector Y with unit diagonal covariance.
+
+If X has non-zero mean \mu, then whitening can be performed by Y = W (X - \mu).
+
+There are infinitely many possible whitening matrices W that all satisfy the above condition.  Commonly used choices are W = \Sigma^{-1/2} (Mahalanobis or ZCA whitening), W = L^T where L is the Cholesky decomposition of  \Sigma^{-1} (Cholesky whitening), or the eigen-system of \Sigma (PCA whitening).
+
+Optimal whitening transforms can be singled out by investigating the cross-covariance and cross-correlation of X and Y.
+
+R implementation
+
+An implementation of several whitening procedures in R, including ZCA-whitening and PCA whitening but also CCA whitening, is available in the "whitening" R package   published on CRAN. The R package "pfica" allows the computation of high-dimensional whitening representations using basis function systems (B-splines, Fourier basis, etc.).
+
+See also
+
+Decorrelation
+
+Principal component analysis
+
+Weighted least squares
+
+Canonical correlation
+
+Mahalanobis distance (is Euclidean after W. transformation).
+
+References
+
+External links
+
+http://courses.media.mit.edu/2010fall/mas622j/whiten.pdf
+
+The ZCA whitening transformation. Appendix A of Learning Multiple Layers of Features from Tiny Images by A. Krizhevsky.
+
+Category:Classification algorithms

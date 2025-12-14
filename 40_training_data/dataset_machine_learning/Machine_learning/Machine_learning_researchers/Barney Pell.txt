@@ -1,0 +1,149 @@
+{{Infobox scientist
+
+name              = Barney Pell
+
+native_name       =
+
+native_name_lang  =
+
+image             =
+
+image_size        =
+
+alt               =
+
+caption           =
+
+birth_date        =
+
+birth_place       =
+
+death_date        =
+
+death_place       =
+
+death_cause       =
+
+resting_place     =
+
+resting_place_coordinates =
+
+other_names       =
+
+nationality       = American
+
+fields            = Computer science
+
+workplaces        =
+
+patrons           =
+
+education         =
+
+alma_mater        =
+
+thesis_title      = Strategy Generation and Evaluation for Meta-Game Playing
+
+thesis_url        =
+
+thesis_year       =
+
+doctoral_advisor  = Steve Pulman
+
+academic_advisors = Emmanuel Rayner
+
+doctoral_students =
+
+notable_students  =
+
+known_for         =
+
+influences        =
+
+influenced        =
+
+awards            = Marshall Scholar
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+spouse            =
+
+partner           =
+
+children          =
+
+signature         =
+
+signature_alt     =
+
+website           =
+
+footnotes         =
+
+}}
+
+Barney Pell (born March 18, 1968) is an American entrepreneur, angel investor and computer scientist. He was co-founder and CEO of Powerset, a pioneering natural language search startup, search strategist and architect for Microsoft's Bing search engine, a pioneer in the field of general game playing in artificial intelligence, and the architect of the first intelligent agent to fly onboard and control a spacecraft.
+
+Research
+
+Pell's research is focused on basic problems in the study of intelligence, computer game playing, machine learning, natural language processing, autonomous robotics, and  web search.
+
+Barney Pell has published over 30 technical papers on topics related to information retrieval, knowledge management, machine learning, artificial intelligence, and scheduling systems.
+
+In computer game playing and machine learning, he was a pioneer in the field of General Game Playing, and created programs to generate the rules of chess-like games and programs to play individual games directly from the rules without human assistance.  He also did early work on machine learning in the game of Go and on an architecture for pragmatic reasoning for bidding in the game of Bridge.
+
+In natural language processing, he was a scientist in the Artificial Intelligence Center at SRI International, where he worked on the Core Language Engine.
+
+Barney Pell was the Technical Area Manager of the Collaborative and Assistant Systems area within the Computational Sciences Division (now the Intelligent Systems Division) at NASA Ames Research Center, where he oversaw a staff of 80 scientists working on information retrieval, search, knowledge management, machine learning, semantic technology, human centered systems, collaboration technology, adaptive user interfaces, human robot interaction, and other areas of artificial intelligence.  From 1993 to 1998, Barney Pell worked as a Principal Investigator and Senior Computer Scientist at NASA Ames, where he conducted advanced research and development of autonomous control software for NASA's deep space missions. He was the Architect for the Deep Space One Remote Agent Experiment and the Project Lead for the Executive component of the Remote Agent Experiment, the first intelligent agent to fly onboard and control a spacecraft. On May 11, 2008, the company unveiled a tool for searching a fixed subset of Wikipedia using conversational phrases rather than keywords. On July 1, 2008, Microsoft signed an agreement to acquire Powerset for an estimated $100 million. Powerset became a part of Microsoft's search engine, Bing.
+
+From 2008 until August 2011, Pell served as Partner, Search Strategist, and Evangelist for Microsoft's search engine, Bing  and as Head of Bing's Local and Mobile Search teams.
+
+Prior to joining Powerset, Pell was an Entrepreneur-in-Residence at Mayfield Fund, a venture capital firm in Silicon Valley.
+
+Pell is also a founder of Moon Express, Inc., a U.S. company awarded a $10M commercial lunar contract by NASA and a competitor in the Google Lunar X PRIZE.
+
+Pell was also co-founder and chairman of LocoMobi, Inc., a U.S. company developing mobile, software and hardware technology solutions for the parking industry. LocoMobi was winner of the Tie50 Award in 2014.
+
+Pell is also an associate founder of Singularity University and a Machine Learning Fellow at the Creative Destruction Lab at the Rotman School of Management
+
+From 1998 to 2000, Pell served as chief strategist and vice president of business development at StockMaster.com (acquired by Red Herring in March, 2000). From 2000 to 2002, Pell was Chief Strategist and Vice President of Business Development for Whizbang Labs.
+
+Pell has been an angel investor and advisor to numerous startup companies, including Pulse.io (acquired by Google),  Aardvark (acquired by Google), Appjet (acquired by Google), Jibe Mobile (acquired by Google), Movity (acquired by Trulia), QuestBridge,  BrandYourself, CrowdFlower (acquired by Appen), and LinkedIn.
+
+Views and predictions
+
+Pell has expressed views and predictions regarding technological advancements in coming years. He believes that humans will soon have "brain-machine interfaces that will let people interact with each other as if they had 'hangouts' in their mind." Pell predicts these interfaces to become available within 20 to 30 years. Pell also predicts advancements in bodily augmentation, such as "even-better-than-human prosthetics and high-quality tissue engineering within 10 years."
+
+Awards and recognition
+
+In 1986, Pell was awarded a National Merit Scholarship.
+
+In 1989, Pell was awarded a Marshall Scholarship.
+
+In 1989, Pell was elected Phi Beta Kappa.
+
+In 1997, Pell was part of the team award a NASA Software of the Year Award for the Deep Space 1 Remote Agent.
+
+References
+
+Category:Living people
+
+Category:American businesspeople in the computer industry
+
+Category:American computer scientists
+
+Category:American artificial intelligence researchers
+
+Category:Machine learning researchers
+
+Category:Stanford University alumni
+
+Category:Alumni of the University of Cambridge
+
+Category:1968 births
+
+Category:Scientists from San Francisco
+
+Category:Businesspeople from San Francisco

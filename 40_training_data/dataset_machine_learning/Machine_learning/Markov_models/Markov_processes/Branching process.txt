@@ -1,0 +1,125 @@
+In probability theory, a branching process is a type of mathematical object known as a stochastic process, which consists of collections of random variables indexed by some set, usually natural or non-negative real numbers. The original purpose of branching processes was to serve as a mathematical model of a population in which each individual in generation&nbsp;n produces some random number of individuals in generation&nbsp;n+1, according, in the simplest case, to a fixed probability distribution that does not vary from individual to individual. Branching processes are used to model reproduction; for example, the individuals might correspond to bacteria, each of which generates&nbsp;0,&nbsp;1,&nbsp;or&nbsp;2 offspring with some probability in a single time unit.  Branching processes can also be used to model other systems with similar dynamics, e.g., the spread of surnames in genealogy or the propagation of neutrons in a nuclear reactor.
+
+A central question in the theory of branching processes is the probability of ultimate extinction, where no individuals exist after some finite number of generations.  Using Wald's equation, it can be shown that starting with one individual in generation zero, the expected size of generation&nbsp;n equals&nbsp;μn where μ is the expected number of children of each individual.  If μ  1, then the probability of ultimate extinction is less than&nbsp;1 (but not necessarily zero; consider a process where each individual either has 0 or 100 children with equal probability. In that case, μ = 50, but probability of ultimate extinction is greater than 0.5, since that's the probability that the first individual has 0 children).  If μ&nbsp;=&nbsp;1, then ultimate extinction occurs with probability 1 unless each individual always has exactly one child.
+
+In theoretical ecology, the parameter μ of a branching process is called the basic reproductive rate.
+
+Mathematical formulation
+
+The most common formulation of a branching process is that of the Galton&ndash;Watson process.  Let Z'n denote the state in period n (often interpreted as the size of generation&nbsp;n), and let X'n,i be a random variable denoting the number of direct successors of member i in period n, where X'n,i are independent and identically distributed random variables over all n&nbsp;∈{&nbsp;0,&nbsp;1,&nbsp;2,&nbsp;...} and i&nbsp;∈&nbsp;{1,&nbsp;...,&nbsp;Z'n}.  Then the recurrence equation is
+
+Z_{n+1} = \sum_{i=1}^{Z_n} X_{n,i}
+
+with Z0 = 1.
+
+Alternatively, the branching process can be formulated as a random walk.  Let S'i denote the state in period i, and let X'i be a random variable that is iid over all i.  Then the recurrence equation is
+
+S_{i+1} = S_i+X_{i+1}-1 = \sum_{j=1}^{i+1} X_j-i
+
+with S0 = 1.  To gain some intuition for this formulation, imagine a walk where the goal is to visit every node, but every time a previously unvisited node is visited, additional nodes are revealed that must also be visited.  Let S'i represent the number of revealed but unvisited nodes in period i, and let X'i represent the number of new nodes that are revealed when node i is visited.  Then in each period, the number of revealed but unvisited nodes equals the number of such nodes in the previous period, plus the new nodes that are revealed when visiting a node, minus the node that is visited.  The process ends once all revealed nodes have been visited.
+
+Continuous-time branching processes
+
+For discrete-time branching processes, the "branching time" is fixed to be 1 for all individuals. For continuous-time branching processes, each individual waits for a random time (which is a continuous random variable), and then divides according to the given distribution. The waiting time for different individuals are independent, and are independent with the number of children. In general, the waiting time is an exponential variable with parameter λ for all individuals, so that the process is Markovian.
+
+Extinction problem for a Branching process
+
+The ultimate extinction probability is given by
+
+\lim_{n \to \infty} \Pr(Z_n=0).
+
+For any nontrivial cases (trivial cases are ones in which the probability of having no offspring is zero for every member of the population - in such cases the probability of ultimate extinction is 0), the probability of ultimate extinction equals one if μ&nbsp;≤&nbsp;1 and strictly less than one if μ&nbsp;>&nbsp;1.
+
+The process can be analyzed using the method of probability generating function. Let p0,&nbsp;p1,&nbsp;p2,&nbsp;... be the probabilities of producing 0,&nbsp;1,&nbsp;2,&nbsp;... offspring by each individual in each generation. Let dm be the extinction probability by the mth generation, starting with a single individual (i.e. Z_0=1). Obviously, d0 = 0 and d1 = p0. Since the probabilities for all paths that lead to 0 by the mth generation must be added up, the extinction probability is nondecreasing in generations. That is,
+
+0=d_0 \leq d_1\leq d_2 \leq \cdots \leq 1.
+
+Therefore, d'm converges to a limit d, and d is the ultimate extinction probability. If there are j offspring in the first generation, then to die out by the mth generation, each of these lines must die out in m&nbsp;−&nbsp;1 generations. Since they proceed independently, the probability is (d'm−1) j. Thus,
+
+d_m=p_0+p_1d_{m-1}+p_2(d_{m-1})^2+p_3(d_{m-1})^3+\cdots. \,
+
+The right-hand side of the equation is a probability generating function. Let h(z) be the ordinary generating function for pi:
+
+h(z)=p_0+p_1z+p_2z^2+\cdots. \,
+
+Using the generating function, the previous equation becomes
+
+d_m=h(d_{m-1}). \,
+
+Since dm → d, d can be found by solving
+
+d=h(d). \,
+
+This is also equivalent to finding the intersection point(s) of lines y&nbsp;=&nbsp;z and y&nbsp;=&nbsp;h(z) for&nbsp;z&nbsp;≥&nbsp;0. y = z is a straight line. y&nbsp;=&nbsp;h(z) is an increasing (since h'(z) = p_1 + 2 p_2 z + 3 p_3 z^2 + \cdots \geq 0) and convex (since h''(z) = 2 p_2 + 6 p_3 z + 12 p_4 z^2 + \cdots \geq 0) function. There are at most two intersection points. Since (1,1) is always an intersect point for the two functions, there only exist three cases:
+
+There is another intersection point at z  1.(See the black curve in the graph)
+
+In case 1, the ultimate extinction probability is strictly less than one. For case 2 and 3, the ultimate extinction probability equals to one.
+
+By observing that h′(1)&nbsp;=&nbsp;p1&nbsp;+&nbsp;2p2&nbsp;+&nbsp;3p3&nbsp;+&nbsp;...&nbsp;=&nbsp;μ is exactly the expected number of offspring a parent could produce, it can be concluded that for a branching process with generating function h(z) for the number of offspring of a given parent, if the mean number of offspring produced by a single parent is less than or equal to one, then the ultimate extinction probability is one. If the mean number of offspring produced by a single parent is greater than one, then the ultimate extinction probability is strictly less than one.
+
+Size dependent branching processes
+
+Along with discussion of a more general model of branching processes known as age-dependent branching processes by Grimmett, in which individuals live for more than one generation, Krishna Athreya has identified three distinctions between size-dependent branching processes which have general application. Athreya identifies the three classes of size-dependent branching processes as sub-critical, stable, and super-critical branching measures. For Athreya, the central parameters are crucial to control if sub-critical and super-critical unstable branching is to be avoided. Size dependent branching processes are also discussed under the topic of resource-dependent branching process.
+
+Example of extinction problem
+
+Consider a parent can produce at most two offspring. The extinction probability in each generation is:
+
+d_m=p_0+p_1d_{m-1}+p_2(d_{m-1})^2. \,
+
+with d0&nbsp;=&nbsp;0. For the ultimate extinction probability, we need to find d which satisfies d&nbsp;=&nbsp;p0&nbsp;+&nbsp;p1d&nbsp;+&nbsp;p2d2.
+
+Taking as example probabilities for the numbers of offspring produced p0&nbsp;=&nbsp;0.1, p1&nbsp;=&nbsp;0.6, and p2&nbsp;=&nbsp;0.3, the extinction probability for the first 20 generations is as follows:
+
+In this example, we can solve algebraically that d&nbsp;=&nbsp;1/3, and this is the value to which the extinction probability converges with increasing generations.
+
+Simulating branching processes
+
+Branching processes can be simulated for a range of problems. One specific use of simulated branching process is in the field of evolutionary biology. Phylogenetic trees, for example, can be simulated under several models, helping to develop and validate estimation methods as well as supporting hypothesis testing.
+
+Multitype branching processes
+
+In multitype branching processes, individuals are not identical, but can be classified into n types. After each time step, an individual of type i will produce individuals of different types, and \mathbf{X}_i, a random vector representing the numbers of children in different types, satisfies a probability distribution on \mathbb{N}^n.
+
+For example, consider the population of cancer stem cells (CSCs) and non-stem cancer cells (NSCCs). After each time interval, each CSC has probability p_1 to produce two CSCs (symmetric division), probability p_2 to produce one CSC and one NSCC (asymmetric division), probability p_3 to produce one CSC (stagnation), and probability 1-p_1-p_2-p_3 to produce nothing (death); each NSCC has probability p_4 to produce two NSCCs (symmetric division), probability p_5 to produce one NSCC (stagnation), and probability 1-p_4-p_5 to produce nothing (death).
+
+Law of large numbers for multitype branching processes
+
+For multitype branching processes that the populations of different types grow exponentially, the proportions of different types converge almost surely to a constant vector under some mild conditions. This is the strong law of large numbers for multitype branching processes.
+
+For continuous-time cases, proportions of the population expectation satisfy an ODE system, which has a unique attracting fixed point. This fixed point is just the vector that the proportions converge to in the law of large numbers.
+
+The monograph by Athreya and Ney  summarizes a common set of conditions under which this law of large numbers is valid. Later there are some improvements through discarding different conditions.
+
+Other branching processes
+
+There are many other branching processes, for example, branching processes in random environments, in which the reproduction law is chosen randomly at each generation, or branching processes, where the growth of the population is controlled by external influences or interacting processes. Branching processes where particles have to work (contribute resources to the environment) in order to be able to reproduce,
+
+and live in a changing society structure controlling the distribution of resources, are so-called resource-dependent branching processes.
+
+The scaling limit of near-critical branching processes can be used to obtain superprocesses.
+
+See also
+
+Galton&ndash;Watson process
+
+Random tree
+
+Branching random walk
+
+Resource-dependent branching process
+
+Bruss–Duerinckx theorem
+
+Martingale (probability theory)
+
+Superprocess
+
+References
+
+C. M. Grinstead and J. L. Snell, Introduction to Probability , 2nd ed. Section 10.3 discusses branching processes in detail together with the application of generating functions to study them.
+
+G. R. Grimmett and D. R. Stirzaker, Probability and Random Processes, 2nd ed., Clarendon Press, Oxford, 1992.  Section 5.4 discusses the model of branching processes described above.  Section 5.5 discusses a more general model of branching processes known as age-dependent branching processes, in which individuals live for more than one generation.
+
+Category:Markov processes

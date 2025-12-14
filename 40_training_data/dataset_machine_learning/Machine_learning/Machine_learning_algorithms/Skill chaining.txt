@@ -1,0 +1,5 @@
+Skill chaining is a skill discovery method in continuous reinforcement learning. It has been extended to high-dimensional continuous domains by the related Deep skill chaining algorithm.
+
+References
+
+Category:Machine learning algorithms

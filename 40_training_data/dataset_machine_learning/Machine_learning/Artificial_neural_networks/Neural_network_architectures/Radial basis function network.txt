@@ -1,0 +1,371 @@
+In the field of mathematical modeling, a radial basis function network is an artificial neural network that uses radial basis functions as activation functions. The output of the network is a linear combination of radial basis functions of the inputs and neuron parameters. Radial basis function networks have many uses, including function approximation, time series prediction, classification, and system control. They were first formulated in a 1988 paper by Broomhead and Lowe, both researchers at the Royal Signals and Radar Establishment.) and the radial basis function is commonly taken to be Gaussian
+
+\rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) = \exp \left[ -\beta_i \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert ^2 \right] .
+
+The Gaussian basis functions are local to the center vector in the sense that
+
+\lim_{||x|| \to \infty}\rho(\left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert) = 0
+
+i.e. changing parameters of one neuron has only a small effect for input values that are far away from the center of that neuron.
+
+Given certain mild conditions on the shape of the activation function, RBF networks are universal approximators on a compact subset of \mathbb{R}^n. This means that an RBF network with enough hidden neurons can approximate any continuous function on a closed, bounded set with arbitrary precision.
+
+The parameters   a_i ,   \mathbf{c}_i , and  \beta_i  are determined in a manner that optimizes the fit between  \varphi  and the data.
+
+Normalization
+
+Normalized architecture
+
+In addition to the above unnormalized architecture, RBF networks can be normalized. In this case the mapping is
+
+\varphi ( \mathbf{x} ) \ \stackrel{\mathrm{def}}{=}\   \frac { \sum_{i=1}^N  a_i \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) } { \sum_{i=1}^N  \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) }  = \sum_{i=1}^N  a_i u \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big )
+
+where
+
+u \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) \ \stackrel{\mathrm{def}}{=}\   \frac { \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) } { \sum_{j=1}^N  \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_j  \right \Vert \big ) }
+
+is known as a normalized radial basis function.
+
+Theoretical motivation for normalization
+
+There is theoretical justification for this architecture in the case of stochastic data flow. Assume a stochastic kernel approximation for the joint probability density
+
+P\left ( \mathbf{x} \land y \right ) = {1 \over N} \sum_{i=1}^N \, \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) \, \sigma \big ( \left \vert y - e_i  \right \vert \big )
+
+where the weights  \mathbf{c}_i   and  e_i  are exemplars from the data and we require the kernels to be normalized
+
+\int \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) \, d^n\mathbf{x} =1
+
+and
+
+\int \sigma \big ( \left \vert y - e_i  \right \vert \big ) \, dy =1.
+
+The probability densities in the input and output spaces are
+
+P \left ( \mathbf{x} \right ) = \int P \left ( \mathbf{x} \land y \right )   \, dy = {1 \over N} \sum_{i=1}^N \, \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big )
+
+and
+
+The expectation of y given an input    \mathbf{x}  is
+
+\varphi \left ( \mathbf{x} \right ) \ \stackrel{\mathrm{def}}{=}\   E\left ( y \mid \mathbf{x} \right ) = \int y \, P\left ( y \mid \mathbf{x} \right ) dy
+
+where
+
+P\left ( y \mid \mathbf{x} \right )
+
+is the conditional probability of y given   \mathbf{x}   .
+
+The conditional probability is related to the joint probability through Bayes' theorem
+
+P\left ( y \mid \mathbf{x} \right ) = \frac {P \left ( \mathbf{x} \land y \right )} {P \left ( \mathbf{x}  \right )}
+
+which yields
+
+\varphi \left ( \mathbf{x} \right ) =  \int y \, \frac {P \left ( \mathbf{x} \land y \right )} {P \left ( \mathbf{x}  \right )}  \,  dy .
+
+This becomes
+
+\varphi \left ( \mathbf{x} \right ) =  \frac { \sum_{i=1}^N  e_i \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) } { \sum_{i=1}^N  \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) } = \sum_{i=1}^N  e_i u \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big )
+
+when the integrations are performed.
+
+Local linear models
+
+It is sometimes convenient to expand the architecture to include local linear models. In that case the architectures become, to first order,
+
+\varphi \left ( \mathbf{x} \right ) =  \sum_{i=1}^N  \left ( a_i + \mathbf{b}_i \cdot \left ( \mathbf{x} - \mathbf{c}_i \right )   \right )\rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big )
+
+and
+
+\varphi \left ( \mathbf{x} \right ) =  \sum_{i=1}^N  \left ( a_i + \mathbf{b}_i \cdot \left ( \mathbf{x} - \mathbf{c}_i \right )  \right )u \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big )
+
+in the unnormalized and normalized cases, respectively. Here  \mathbf{b}_i  are weights to be determined. Higher order linear terms are also possible.
+
+This result can be written
+
+\varphi \left ( \mathbf{x} \right ) =  \sum_{i=1}^{2N} \sum_{j=1}^n e_{ij} v_{ij} \big ( \mathbf{x} - \mathbf{c}_i   \big )
+
+where
+
+e_{ij} = \begin{cases} a_i, & \mbox{if } i \in [1,N] \\ b_{ij}, & \mbox{if }i \in [N+1,2N] \end{cases}
+
+and
+
+v_{ij}\big ( \mathbf{x} - \mathbf{c}_i   \big ) \ \stackrel{\mathrm{def}}{=}\   \begin{cases} \delta_{ij} \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) , & \mbox{if } i \in [1,N] \\ \left ( x_{ij} - c_{ij} \right ) \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big )  , & \mbox{if }i \in [N+1,2N] \end{cases}
+
+in the unnormalized case and in the normalized case.
+
+Here  \delta_{ij}  is a Kronecker delta function defined as
+
+\delta_{ij} = \begin{cases} 1, & \mbox{if }i = j \\ 0, & \mbox{if }i \ne j \end{cases} .
+
+Training
+
+RBF networks are typically trained from pairs of input and target values \mathbf{x}(t), y(t), t = 1, \dots, T by a two-step algorithm.
+
+In the first step, the center vectors \mathbf c_i of the RBF functions in the hidden layer are chosen. This step can be performed in several ways; centers can be randomly sampled from some set of examples, or they can be determined using k-means clustering. Note that this step is unsupervised.
+
+The second step simply fits a linear model with coefficients w_i to the hidden layer's outputs with respect to some objective function. A common objective function, at least for regression/function estimation, is the least squares function:
+
+K( \mathbf{w} ) \ \stackrel{\mathrm{def}}{=}\    \sum_{t=1}^T K_t( \mathbf{w} )
+
+where
+
+K_t( \mathbf{w} ) \ \stackrel{\mathrm{def}}{=}\   \big [ y(t) - \varphi \big (  \mathbf{x}(t), \mathbf{w} \big ) \big ]^2 .
+
+We have explicitly included the dependence on the weights. Minimization of the least squares objective function by optimal choice of weights optimizes accuracy of fit.
+
+There are occasions in which multiple objectives, such as smoothness as well as accuracy, must be optimized. In that case it is useful to optimize a regularized objective function such as
+
+H( \mathbf{w} ) \ \stackrel{\mathrm{def}}{=}\    K( \mathbf{w} ) + \lambda S( \mathbf{w} ) \ \stackrel{\mathrm{def}}{=}\    \sum_{t=1}^T H_t( \mathbf{w} )
+
+where
+
+S( \mathbf{w} ) \ \stackrel{\mathrm{def}}{=}\    \sum_{t=1}^T S_t( \mathbf{w} )
+
+and
+
+H_t( \mathbf{w} ) \ \stackrel{\mathrm{def}}{=}\    K_t ( \mathbf{w} ) + \lambda S_t ( \mathbf{w} )
+
+where optimization of S maximizes smoothness and    \lambda   is known as a regularization parameter.
+
+A third optional backpropagation step can be performed to fine-tune all of the RBF net's parameters.
+
+Interpolation
+
+RBF networks can be used to interpolate a function y: \mathbb{R}^n \to \mathbb{R} when the values of that function are known on finite number of points: y(\mathbf x_i) = b_i, i=1, \ldots, N. Taking the known points \mathbf x_i to be the centers of the radial basis functions and evaluating the values of the basis functions at the same points g_{ij} = \rho(|| \mathbf x_j - \mathbf x_i ||) the weights can be solved from the equation
+
+\left[ \begin{matrix}
+
+g_{11} & g_{12} & \cdots & g_{1N} \\
+
+g_{21} & g_{22} & \cdots & g_{2N} \\
+
+\vdots & & \ddots & \vdots \\
+
+g_{N1} & g_{N2} & \cdots & g_{NN}
+
+\end{matrix}\right] \left[ \begin{matrix}
+
+w_1 \\
+
+w_2 \\
+
+\vdots \\
+
+w_N
+
+\end{matrix} \right] = \left[ \begin{matrix}
+
+b_1 \\
+
+b_2 \\
+
+\vdots \\
+
+b_N
+
+\end{matrix} \right]
+
+It can be shown that the interpolation matrix in the above equation is non-singular, if the points \mathbf x_i are distinct, and thus the weights w can be solved by simple linear algebra:
+
+\mathbf{w} = \mathbf{G}^{-1} \mathbf{b}
+
+where G = (g_{ij}).
+
+Function approximation
+
+If the purpose is not to perform strict interpolation but instead more general function approximation or classification the optimization is somewhat more complex because there is no obvious choice for the centers.  The training is typically done in two phases first fixing the width and centers and then the weights. This can be justified by considering the different nature of the non-linear hidden neurons versus the linear output neuron.
+
+Training the basis function centers
+
+Basis function centers can be randomly sampled among the input instances or obtained by Orthogonal Least Square Learning Algorithm or found by clustering the samples and choosing the cluster means as the centers.
+
+The RBF widths are usually all fixed to same value which is proportional to the maximum distance between the chosen centers.
+
+Pseudoinverse solution for the linear weights
+
+After the centers c_i have been fixed, the weights that minimize the error at the output can be computed with a linear pseudoinverse solution:
+
+\mathbf{w} = \mathbf{G}^+ \mathbf{b},
+
+where the entries of G are the values of the radial basis functions evaluated at the points x_i: g_{ji} = \rho(||x_j-c_i||).
+
+The existence of this linear solution means that unlike multi-layer perceptron (MLP) networks, RBF networks have an explicit minimizer (when the centers are fixed).
+
+Gradient descent training of the linear weights
+
+Another possible training algorithm is gradient descent. In gradient descent training, the weights are adjusted at each time step by moving them in a direction opposite from the gradient of the objective function (thus allowing the minimum of the objective function to be found),
+
+\mathbf{w}(t+1) = \mathbf{w}(t) - \nu \frac {d} {d\mathbf{w}} H_t(\mathbf{w})
+
+where   \nu  is a "learning parameter."
+
+For the case of training the linear weights,  a_i , the algorithm becomes
+
+a_i (t+1) = a_i(t) + \nu \big [ y(t) - \varphi \big (  \mathbf{x}(t), \mathbf{w} \big ) \big ] \rho \big ( \left \Vert \mathbf{x}(t) - \mathbf{c}_i  \right \Vert \big )
+
+in the unnormalized case and
+
+a_i (t+1) = a_i(t) + \nu \big [ y(t) - \varphi \big (  \mathbf{x}(t), \mathbf{w} \big ) \big ] u \big ( \left \Vert \mathbf{x}(t) - \mathbf{c}_i  \right \Vert \big )
+
+in the normalized case.
+
+For local-linear-architectures gradient-descent training is
+
+e_{ij} (t+1) = e_{ij}(t) + \nu \big [ y(t) - \varphi \big (  \mathbf{x}(t), \mathbf{w} \big ) \big ] v_{ij} \big (  \mathbf{x}(t) - \mathbf{c}_i  \big )
+
+Projection operator training of the linear weights
+
+For the case of training the linear weights,  a_i  and  e_{ij} , the algorithm becomes
+
+a_i (t+1) = a_i(t) + \nu \big [ y(t) - \varphi \big (  \mathbf{x}(t), \mathbf{w} \big ) \big ] \frac {\rho \big ( \left \Vert \mathbf{x}(t) - \mathbf{c}_i  \right \Vert \big )} {\sum_{i=1}^N \rho^2 \big ( \left \Vert \mathbf{x}(t) - \mathbf{c}_i  \right \Vert \big )}
+
+in the unnormalized case and
+
+a_i (t+1) = a_i(t) + \nu \big [ y(t) - \varphi \big (  \mathbf{x}(t), \mathbf{w} \big ) \big ] \frac {u \big ( \left \Vert \mathbf{x}(t) - \mathbf{c}_i  \right \Vert \big )} {\sum_{i=1}^N u^2 \big ( \left \Vert \mathbf{x}(t) - \mathbf{c}_i  \right \Vert \big )}
+
+in the normalized case and
+
+e_{ij} (t+1) = e_{ij}(t) + \nu \big [ y(t) - \varphi \big (  \mathbf{x}(t), \mathbf{w} \big ) \big ] \frac { v_{ij} \big (  \mathbf{x}(t) - \mathbf{c}_i  \big ) } {\sum_{i=1}^N \sum_{j=1}^n  v_{ij}^2 \big (  \mathbf{x}(t) - \mathbf{c}_i  \big ) }
+
+in the local-linear case.
+
+For one basis function, projection operator training reduces to Newton's method.
+
+Examples
+
+Logistic map
+
+The basic properties of radial basis functions can be illustrated with a simple mathematical map, the logistic map, which maps the unit interval onto itself. It can be used to generate a convenient prototype data stream. The logistic map can be used to explore function approximation, time series prediction, and control theory. The map originated from the field of population dynamics and became the prototype for chaotic time series. The map, in the fully chaotic regime, is given by
+
+x(t+1)\ \stackrel{\mathrm{def}}{=}\   f\left [ x(t)\right ] = 4 x(t) \left [ 1-x(t) \right ]
+
+where t is a time index. The value of x at time t+1 is a parabolic function of x at time t. This equation represents the underlying geometry of the chaotic time series generated by the logistic map.
+
+Generation of the time series from this equation is the forward problem. The examples here illustrate the inverse problem; identification of the underlying dynamics, or fundamental equation, of the logistic map from exemplars of the time series. The goal is to find an estimate
+
+x(t+1) = f \left [ x(t) \right ]  \approx  \varphi(t) = \varphi  \left [ x(t)\right ]
+
+for f.
+
+Function approximation
+
+Unnormalized radial basis functions
+
+The architecture is
+
+\varphi ( \mathbf{x} ) \ \stackrel{\mathrm{def}}{=}\   \sum_{i=1}^N  a_i \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big )
+
+where
+
+\rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) = \exp \left[ -\beta_i \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert ^2 \right] = \exp \left[ -\beta_i \left ( x(t) - c_i  \right ) ^2 \right] .
+
+Since the input is a scalar rather than a vector, the input dimension is one. We choose the number of basis functions as N=5 and the size of the training set to be 100 exemplars generated by the chaotic time series. The weight  \beta  is taken to be a constant equal to 5. The weights   c_i  are five exemplars from the time series. The weights   a_i  are trained with projection operator training:
+
+a_i (t+1) = a_i(t) + \nu \big [ x(t+1) - \varphi \big (  \mathbf{x}(t), \mathbf{w} \big ) \big ] \frac {\rho \big ( \left \Vert \mathbf{x}(t) - \mathbf{c}_i  \right \Vert \big )} {\sum_{i=1}^N \rho^2 \big ( \left \Vert \mathbf{x}(t) - \mathbf{c}_i  \right \Vert \big )}
+
+where the learning rate  \nu  is taken to be 0.3. The training is performed with one pass through the 100 training points. The rms error is 0.15.
+
+Normalized radial basis functions
+
+The normalized RBF architecture is
+
+\varphi ( \mathbf{x} ) \ \stackrel{\mathrm{def}}{=}\   \frac { \sum_{i=1}^N  a_i \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) } { \sum_{i=1}^N  \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) }  = \sum_{i=1}^N  a_i u \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big )
+
+where
+
+u \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) \ \stackrel{\mathrm{def}}{=}\   \frac { \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) } { \sum_{i=1}^N  \rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) }  .
+
+Again:
+
+\rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) = \exp \left[ -\beta \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert ^2 \right] = \exp \left[ -\beta \left ( x(t) - c_i  \right ) ^2 \right] .
+
+Again, we choose the number of basis functions as five and the size of the training set to be 100 exemplars generated by the chaotic time series. The weight  \beta  is taken to be a constant equal to 6. The weights   c_i  are five exemplars from the time series. The weights   a_i  are trained with projection operator training:
+
+a_i (t+1) = a_i(t) + \nu \big [ x(t+1) - \varphi \big (  \mathbf{x}(t), \mathbf{w} \big ) \big ] \frac {u \big ( \left \Vert \mathbf{x}(t) - \mathbf{c}_i  \right \Vert \big )} {\sum_{i=1}^N u^2 \big ( \left \Vert \mathbf{x}(t) - \mathbf{c}_i  \right \Vert \big )}
+
+where the learning rate  \nu  is again taken to be 0.3. The training is performed with one pass through the 100 training points. The rms error on a test set of 100 exemplars is 0.084, smaller than the unnormalized error. Normalization yields accuracy improvement. Typically accuracy with normalized basis functions increases even more over unnormalized functions as input dimensionality increases.
+
+Time series prediction
+
+Once the underlying geometry of the time series is estimated as in the previous examples, a prediction for the time series can be made by iteration:
+
+\varphi(0) = x(1)
+
+{x}(t) \approx \varphi(t-1)
+
+{x}(t+1) \approx \varphi(t)=\varphi [\varphi(t-1)].
+
+A comparison of the actual and estimated time series is displayed in the figure. The estimated times series starts out at time zero with an exact knowledge of x(0). It then uses the estimate  of the dynamics to update the time series estimate for several time steps.
+
+Note that the estimate is accurate for only a few time steps. This is a general characteristic of chaotic time series. This is a property of the sensitive dependence on initial conditions common to chaotic time series. A small initial error is amplified with time. A measure of the divergence of time series with nearly identical initial conditions is known as the Lyapunov exponent.
+
+Control of a chaotic time series
+
+We assume the output of the logistic map can be manipulated through a control parameter   c[ x(t),t]   such that
+
+{x}^{ }_{ }(t+1) = 4 x(t) [1-x(t)] +c[x(t),t] .
+
+The goal is to choose the control parameter in such a way as to drive the time series to a desired output   d(t)  . This can be done if we choose the control parameter to be
+
+c^{ }_{ }[x(t),t] \ \stackrel{\mathrm{def}}{=}\   -\varphi [x(t)] + d(t+1)
+
+where
+
+y[x(t)] \approx f[x(t)] = x(t+1)- c[x(t),t]
+
+is an approximation to the underlying natural dynamics of the system.
+
+The learning algorithm is given by
+
+a_i (t+1) = a_i(t) + \nu \varepsilon  \frac {u \big ( \left \Vert \mathbf{x}(t) - \mathbf{c}_i  \right \Vert \big )} {\sum_{i=1}^N u^2 \big ( \left \Vert \mathbf{x}(t) - \mathbf{c}_i  \right \Vert \big )}
+
+where
+
+\varepsilon \ \stackrel{\mathrm{def}}{=}\   f[x(t)] - \varphi [x(t)] = x(t+1)- c[x(t),t] - \varphi [x(t)] = x(t+1) - d(t+1) .
+
+See also
+
+Radial basis function kernel
+
+instance-based learning
+
+In Situ Adaptive Tabulation
+
+Predictive analytics
+
+Chaos theory
+
+Hierarchical RBF
+
+Cerebellar model articulation controller
+
+Instantaneously trained neural networks
+
+Support vector machine
+
+References
+
+Further reading
+
+J. Moody and C. J. Darken, "Fast learning in networks of locally tuned processing units," Neural Computation, 1, 281-294 (1989). Also see Radial basis function networks according to Moody and Darken
+
+T. Poggio and F. Girosi, "Networks for approximation and learning," Proc. IEEE 78(9), 1484-1487 (1990).
+
+Roger D. Jones, Y. C. Lee, C. W. Barnes, G. W. Flake, K. Lee, P. S. Lewis, and S. Qian, Function approximation and time series prediction with neural networks, Proceedings of the International Joint Conference on Neural Networks, June 17–21, p.&nbsp;I-649 (1990).
+
+S. Chen, C. F. N. Cowan, and P. M. Grant, "Orthogonal Least Squares Learning Algorithm for Radial Basis Function Networks", IEEE Transactions on Neural Networks, Vol 2, No 2 (Mar) 1991.
+
+Category:Neural network architectures
+
+Category:Computational statistics
+
+Category:Classification algorithms
+
+Category:Machine learning algorithms
+
+Category:Regression analysis
+
+Category:1988 in artificial intelligence

@@ -1,0 +1,103 @@
+{{Infobox scientist
+
+birth_name        =
+
+name              = Erkki Oja
+
+image             =
+
+image_size        =
+
+caption           =
+
+birth_date        =
+
+birth_place       = Helsinki, Finland
+
+death_date        =
+
+death_place       =
+
+residence         =
+
+citizenship       =
+
+nationality       =
+
+ethnicity         =
+
+fields            = Machine learningArtificial neural networks
+
+work_institution  = Brown UniversityAcademy of FinlandUniversity of KuopioLappeenranta University of TechnologyAalto University
+
+alma_mater        = Helsinki University of Technology
+
+doctoral_advisor  = Teuvo Kohonen
+
+doctoral_students = Aapo Hyvärinen
+
+notable_students  =
+
+thesis_title      = Studies of the Convergence Properties of Adaptive Orthogonalizing Filters
+
+thesis_year       = 1977
+
+thesis_url        =
+
+known_for         = Oja's rule
+
+influences        =
+
+influenced        =
+
+awards            = Member of the Finnish Academy of Science and Letters Fellow, International Association for Pattern Recognition Fellow, IEEE Knight of the White Rose of Finland IEEE Computational Intelligence Society Neural Network Pioneer Award Fellow, International Neural Network Society
+
+signature         =
+
+website           =
+
+}}
+
+Erkki Oja (born 22 March 1948) is a Finnish computer scientist and Aalto Distinguished Professor in the Department of Information and Computer Science at Aalto University School of Science. He is recognized for developing Oja's rule, which is a model of how neurons in the brain or in artificial neural networks learn over time.
+
+Early life and education
+
+Oja was born in Helsinki and studied at Helsinki University of Technology, where he received his diploma engineer in 1972, licentiate in technology in 1975 and Doctor of Technology in 1977.
+
+Career
+
+Oja was a research associate at the Center for Cognitive Science at Brown University between 1977 and 1978 and a research fellow at the Academy of Finland from 1976 to 1981. Since 1981, he took up a professorship in applied mathematics at Kuopio University (now University of Eastern Finland). He was a visiting research scholar at Tokyo Institute of Technology from 1983 to 1984. From 1987 to 1993, he was a professor in computer science at the Lappeenranta University of Technology. He moved back to the Helsinki University of Technology (now Aalto University) from 1993 as a professor in computer science. He retired in 2015.
+
+Honors and awards
+
+Oja is a Fellow of the International Association for Pattern Recognition and the IEEE, and a member of the Finnish Academy of Sciences. He served as chairman of the European Neural Network Society between 2000 and 2005, and as the chairman of the Academy of Finland’s Research Council for Natural Sciences and Engineering between 2007 and 2012. He was awarded the Frank Rosenblatt Award for his contributions to artificial intelligence research in 2019.
+
+Oja was a member of the Board of Governors for the International Neural Network Society (INNIS) in 2003. He received honorary doctorates from Uppsala University and Lappeenranta University of Technology in 2008.
+
+Bibliography
+
+References
+
+Category:1948 births
+
+Category:Living people
+
+Category:Aalto University alumni
+
+Category:Academic staff of Aalto University
+
+Category:Academic staff of Lappeenranta University of Technology
+
+Category:Academic staff of the University of Eastern Finland
+
+Category:Brown University people
+
+Category:Fellows of the IEEE
+
+Category:Fellows of the International Association for Pattern Recognition
+
+Category:Finnish computer scientists
+
+Category:Machine learning researchers
+
+Category:Members of the Finnish Academy of Science and Letters

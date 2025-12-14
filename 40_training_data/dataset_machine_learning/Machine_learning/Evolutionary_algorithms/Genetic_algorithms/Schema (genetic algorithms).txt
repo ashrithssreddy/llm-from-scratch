@@ -1,0 +1,63 @@
+A schema (: schemata) is a template in computer science used in the field of genetic algorithms that identifies a subset of strings with similarities at certain string positions. Schemata are a special case of cylinder sets, forming a basis for a product topology on strings. In other words, schemata can be used to generate a topology on a space of strings.
+
+Description
+
+For example, consider binary strings of length 6. The schema 1**0*1 describes the set of all words of length 6 with 1's at the first and sixth positions and a 0 at the fourth position. The * is a wildcard symbol, which means that positions 2, 3 and 5 can have a value of either 1 or 0. The order of a schema is defined as the number of fixed positions in the template, while the defining length  \delta(H)  is the distance between the first and last specific positions. The order of 1**0*1 is 3 and its defining length is 5. The fitness of a schema is the average fitness of all strings matching the schema. The fitness of a string is a measure of the value of the encoded problem solution, as computed by a problem-specific evaluation function.
+
+Length
+
+The length of a schema H, called N(H), is defined as the total number of nodes in the schema. N(H) is also equal to the number of nodes in the programs matching H.
+
+Disruption
+
+If the child of an individual that matches schema H does not itself match H, the schema is said to have been disrupted.
+
+Two basic operators are defined for schema: expansion and compression. The expansion maps a schema onto a set of words which it represents, while the compression maps a set of words on to a schema.
+
+In the following definitions  \Sigma  denotes an alphabet,  \Sigma^l  denotes all words of length  l  over the alphabet  \Sigma ,  \Sigma_*  denotes the alphabet \Sigma with the extra symbol *. \Sigma_*^l denotes all schema of length  l  over the alphabet  \Sigma_*  as well as the empty schema  \epsilon_* .
+
+For any schema s \in \Sigma^l_*  the following operator {\uparrow}s, called the expansion of s, which maps s to a subset of words in \Sigma^l :
+
+{\uparrow}s := \{b \in \Sigma^l | b_i = s_i \mbox{ or } s_i = * \mbox{ for each }  i \in \{1,...,l\}\}
+
+Where subscript i denotes the character at position i in a word or schema.  When  s= \epsilon_* then {\uparrow}s  = \emptyset.  More simply put, {\uparrow}s is the set of all words in \Sigma^l that can be made by exchanging the * symbols in s with symbols from \Sigma. For example, if \Sigma=\{0,1\}, l=3 and s=10* then {\uparrow}s=\{100,101\} .
+
+Conversely, for any A \subseteq \Sigma^l we define {\downarrow}{A}, called the compression of A,  which maps A on to a schema s\in \Sigma_*^l:
+
+{\downarrow}A:= s
+
+where s is a schema of length l such that the symbol at position i in s is determined in the following way: if x_i = y_i for all x,y \in A then s_i = x_i otherwise s_i = *. If A = \emptyset then {\downarrow}A = \epsilon_*. One can think of this operator as stacking up all the items in A and if all elements in a column are equivalent, the symbol at that position in s takes this value, otherwise there is a wild card symbol. For example, let A = \{100,000,010\} then {\downarrow}A = **0.
+
+Schemata can be partially ordered. For any a,b \in \Sigma^l_* we say a \leq b if and only if {\uparrow}a \subseteq {\uparrow}b. It follows that \leq is a partial ordering on a set of schemata from the reflexivity, antisymmetry and transitivity of the subset relation. For example, \epsilon_* \leq 11 \leq 1* \leq **.
+
+This is because {\uparrow}\epsilon_* \subseteq {\uparrow}11 \subseteq {\uparrow}1* \subseteq {\uparrow}** = \emptyset \subseteq \{11\} \subseteq \{11,10\} \subseteq \{11,10,01,00\}.
+
+The compression and expansion operators form a Galois connection, where \downarrow is the lower adjoint and \uparrow the upper adjoint.
+
+The Schematic Completion and The Schematic Lattice
+
+.
+
+]]
+
+For a set A \subseteq \Sigma^l, we call the process of calculating the compression on each subset of A, that is \{{\downarrow}X | X \subseteq A\}, the schematic completion of A, denoted \mathcal{S}(A).
+
+For example, let A = \{110, 100, 001, 000\}. The schematic completion of A,  results in the following set:
+
+\mathcal{S}(A) =
+
+\{001, 100, 000, 110, 00*, *00, 1*0, **0, *0*, ***, \epsilon_*\}
+
+The poset (\mathcal{S}(A),\leq) always forms a complete lattice called the schematic lattice.
+
+The schematic lattice is similar to the concept lattice found in Formal concept analysis.
+
+See also
+
+Holland's schema theorem
+
+Formal concept analysis
+
+References
+
+Category:Genetic algorithms

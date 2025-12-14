@@ -1,0 +1,81 @@
+In the theory of cluster analysis, the nearest-neighbor chain algorithm is an algorithm that can speed up several methods for agglomerative hierarchical clustering. These are methods that take a collection of points as input, and create a hierarchy of clusters of points by repeatedly merging pairs of smaller clusters to form larger clusters. The clustering methods that the nearest-neighbor chain algorithm can be used for include Ward's method, complete-linkage clustering, and single-linkage clustering; these all work by repeatedly merging the closest two clusters but use different definitions of the distance between clusters. The cluster distances for which the nearest-neighbor chain algorithm works are called reducible and are characterized by a simple inequality among certain cluster distances.
+
+The main idea of the algorithm is to find pairs of clusters to merge by following paths in the nearest neighbor graph of the clusters. Every such path will eventually terminate at a pair of clusters that are nearest neighbors of each other, and the algorithm chooses that pair of clusters as the pair to merge. In order to save work by re-using as much as possible of each path, the algorithm uses a stack data structure to keep track of each path that it follows. By following paths in this way, the nearest-neighbor chain algorithm merges its clusters in a different order than methods that always find and merge the closest pair of clusters. However, despite that difference, it always generates the same hierarchy of clusters.
+
+The nearest-neighbor chain algorithm constructs a clustering in time proportional to the square of the number of points to be clustered. This is also proportional to the size of its input, when the input is provided in the form of an explicit distance matrix. The algorithm uses an amount of memory proportional to the number of points, when it is used for clustering methods such as Ward's method that allow constant-time calculation of the distance between clusters. However, for some other clustering methods it uses a larger amount of memory in an auxiliary data structure with which it keeps track of the distances between pairs of clusters.
+
+Background
+
+Many problems in data analysis concern clustering, grouping data items into clusters of closely related items. Hierarchical clustering is a version of cluster analysis in which the clusters form a hierarchy or tree-like structure rather than a strict partition of the data items. In some cases, this type of clustering may be performed as a way of performing cluster analysis at multiple different scales simultaneously. In others, the data to be analyzed naturally has an unknown tree structure and the goal is to recover that structure by performing the analysis. Both of these kinds of analysis can be seen, for instance, in the application of hierarchical clustering to biological taxonomy. In this application, different living things are grouped into clusters at different scales or levels of similarity (species, genus, family, etc). This analysis simultaneously gives a multi-scale grouping of the organisms of the present age, and aims to accurately reconstruct the branching process or evolutionary tree that in past ages produced these organisms.
+
+The input to a clustering problem consists of a set of points.
+
+In agglomerative clustering methods, the input also includes a distance function defined on the points, or a numerical measure of their dissimilarity.
+
+The distance or dissimilarity should be symmetric: the distance between two points does not depend on which of them is considered first.
+
+However, unlike the distances in a metric space, it is not required to satisfy the triangle inequality. The nearest-neighbor chain algorithm uses a smaller amount of time and space than the greedy algorithm by merging pairs of clusters in a different order. In this way, it avoids the problem of repeatedly finding closest pairs. Nevertheless, for many types of clustering problem, it can be guaranteed to come up with the same hierarchical clustering as the greedy algorithm despite the different merge order.
+
+In more detail, the algorithm performs the following steps:
+
+Initialize the set of active clusters to consist of  one-point clusters, one for each input point.
+
+Let  be a stack data structure, initially empty, the elements of which will be active clusters.
+
+While there is more than one cluster in the set of clusters:
+
+If  is empty, choose an active cluster arbitrarily and push it onto .
+
+Let  be the active cluster on the top of . Compute the distances from  to all other clusters, and let  be the nearest other cluster.
+
+If  is already in , it must be the immediate predecessor of . Pop both clusters from  and merge them.
+
+Otherwise, if  is not already in , push it onto .
+
+When it is possible for one cluster to have multiple equal nearest neighbors, then the algorithm requires a consistent tie-breaking rule. For instance, one may assign arbitrary index numbers to all of the clusters,
+
+and then select (among the equal nearest neighbors) the one with the smallest index number. This rule prevents certain kinds of inconsistent behavior in the algorithm; for instance, without such a rule, the neighboring cluster  might occur earlier in the stack than as the predecessor of .
+
+Time and space analysis
+
+Each iteration of the loop performs a single search for the nearest neighbor of a cluster, and either adds one cluster to the stack or removes two clusters from it. Every cluster is only ever added once to the stack, because when it is removed again it is immediately made inactive and merged. There are a total of  clusters that ever get added to the stack:  single-point clusters in the initial set, and  internal nodes other than the root in the binary tree representing the clustering. Therefore, the algorithm performs  pushing iterations and  popping iterations. A distance function  on clusters is defined to be reducible if, for every three clusters ,  and  in the greedy hierarchical clustering such that  and  are mutual nearest neighbors, the following inequality holds: That is,
+
+d(A,B)=\sum_{x\in A, y\in B} \frac{d^2(x,y)} -
+
+\sum_{x,y\in A} \frac{d^2(x,y)} -
+
+\sum_{x,y\in B} \frac{d^2(x,y)}.
+
+Expressed in terms of the centroid c_A and cardinality n_A of the two clusters, it has the simpler formula
+
+d(A,B)=\frac{d^2(c_a,c_b)}{1/n_A + 1/n_B},
+
+allowing it to be computed in constant time per distance calculation.
+
+Although highly sensitive to outliers, Ward's method is the most popular variation of agglomerative clustering both because of the round shape of the clusters it typically forms and because of its principled definition as the clustering that at each step has the smallest variance within its clusters.  Alternatively, this distance can be seen as the difference in k-means cost between the new cluster and the two old clusters.
+
+Ward's distance is also reducible, as can be seen more easily from a different formula for calculating the distance of a merged cluster from the distances of the clusters it was merged from:
+
+d(A\cup B,C) = \frac{n_A+n_C}{n_A+n_B+n_C} d(A,C) + \frac{n_B+n_C}{n_A+n_B+n_C} d(B,C) - \frac{n_C}{n_A+n_B+n_C} d(A,B).
+
+Distance update formulas such as this one are called formulas "of Lance–Williams type" after the work of .
+
+If d(A,B) is the smallest of the three distances on the right hand side (as would necessarily be true if A and B are mutual nearest-neighbors) then the negative contribution from its term is cancelled by the n_C coefficient of one of the two other terms, leaving a positive value added to the weighted average of the other two distances. Therefore, the combined distance is always at least as large as the minimum of d(A,C) and d(B,C), meeting the definition of reducibility.
+
+Because Ward's distance is reducible, the nearest-neighbor chain algorithm using Ward's distance calculates exactly the same clustering as the standard greedy algorithm. For  points in a Euclidean space of constant dimension, it takes time  and space .
+
+Single linkage
+
+In single-linkage or nearest-neighbor clustering, the oldest form of agglomerative hierarchical clustering,
+
+Centroid distance
+
+Another distance measure commonly used in agglomerative clustering is the distance between the centroids of pairs of clusters, also known as the weighted group method.
+
+History
+
+The nearest-neighbor chain algorithm was developed and implemented in 1982 by Jean-Paul Benzécri and J. Juan. They based this algorithm on earlier methods that constructed hierarchical clusterings using mutual nearest neighbor pairs without taking advantage of nearest neighbor chains.
+
+References
+
+Category:Cluster analysis algorithms

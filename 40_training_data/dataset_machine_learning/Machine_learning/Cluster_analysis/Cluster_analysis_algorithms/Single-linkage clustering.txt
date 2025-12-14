@@ -1,0 +1,161 @@
+In statistics, single-linkage clustering is one of several methods of hierarchical clustering. It is based on grouping clusters in bottom-up fashion (agglomerative clustering), at each step combining two clusters that contain the closest pair of elements not yet belonging to the same cluster as each other.
+
+This method tends to produce long thin clusters in which nearby elements of the same cluster have small distances, but elements at opposite ends of a cluster may be much farther from each other than two elements of other clusters. For some classes of data, this may lead to difficulties in defining classes that could usefully subdivide the data. However, it is popular in astronomy for analyzing galaxy clusters, which may often involve long strings of matter; in this application, it is also known as the friends-of-friends algorithm.
+
+Overview of agglomerative clustering methods
+
+In the beginning of the agglomerative clustering process, each element is in a cluster of its own. The clusters are then sequentially combined into larger clusters, until all elements end up being in the same cluster. At each step, the two clusters separated by the shortest distance are combined. The function used to determine the distance between two clusters, known as the linkage function, is what differentiates the agglomerative clustering methods.
+
+In single-linkage clustering, the distance between two clusters is determined by a single pair of elements: those two elements (one in each cluster) that are closest to each other. The shortest of these pairwise distances that remain at any step causes the two clusters whose elements are involved to be merged. The method is also known as nearest neighbour clustering. The result of the clustering can be visualized as a dendrogram, which shows the sequence in which clusters were merged and the distance at which each merge took place.
+
+Mathematically, the linkage function – the distance D(X,Y) between clusters X and Y – is described by the expression
+
+D(X,Y)=\min_{x\in X, y\in Y} d(x,y),
+
+where X and Y are any two sets of elements considered as clusters, and d(x,y) denotes the distance between the two elements x and y.
+
+Naive algorithm
+
+The following algorithm is an agglomerative scheme that erases rows and columns in a proximity matrix as old clusters are merged into new ones. The N \times N proximity matrix D contains all distances d(i,j). The clusterings are assigned sequence numbers 0,1, \ldots, n-1 and L(k) is the level of the k-th clustering. A cluster with sequence number m is denoted (m) and the proximity between clusters (r) and (s) is denoted d[(r),(s)].
+
+The single linkage algorithm is composed of the following steps:
+
+Begin with the disjoint clustering having level  L(0) = 0 and sequence number m=0.
+
+Find the most similar pair of clusters in the current clustering, say pair (r), (s), according to d[(r),(s)] = \min d[(i),(j)]where the minimum is over all pairs of clusters in the current clustering.
+
+Increment the sequence number: m = m + 1. Merge clusters (r) and (s) into a single cluster to form the next clustering m. Set the level of this clustering to L(m) = d[(r),(s)]
+
+Update the proximity matrix, D, by deleting the rows and columns corresponding to clusters (r) and (s) and adding a row and column corresponding to the newly formed cluster. The proximity between the new cluster, denoted (r,s) and an old cluster (k) is defined as d[(r,s),(k)] = \min \{d[(k),(r)], d[(k),(s)] \}.
+
+If all objects are in one cluster, stop. Else, go to step 2.
+
+Working example
+
+This working example is based on a JC69 genetic distance matrix computed from the 5S ribosomal RNA sequence alignment of five bacteria: Bacillus subtilis (a), Bacillus stearothermophilus (b), Lactobacillus viridescens (c), Acholeplasma modicum (d), and Micrococcus luteus (e).
+
+First step
+
+First clustering
+
+Let us assume that we have five elements (a,b,c,d,e) and the following matrix D_1 of pairwise distances between them:
+
+In this example, D_1 (a,b)=17 is the lowest value of D_1, so we cluster elements  and .
+
+First branch length estimation
+
+Let  denote the node to which  and  are now connected. Setting  \delta(a,u)=\delta(b,u)=D_1(a,b)/2  ensures that elements  and  are equidistant from . This corresponds to the expectation of the ultrametricity hypothesis.
+
+The branches joining  and  to  then have lengths  \delta(a,u)=\delta(b,u)=17/2=8.5 (see the final dendrogram)
+
+First distance matrix update
+
+We then proceed to update the initial proximity matrix D_1 into a new proximity matrix D_2 (see below), reduced in size by one row and one column because of the clustering of  with .
+
+Bold values in D_2 correspond to the new distances, calculated by retaining the minimum distance between each element of the first cluster (a,b) and each of the remaining elements:
+
+\begin{array}{lllllll}
+
+D_2((a,b),c)&=&\min(D_1(a,c),D_1(b,c))&=&\min(21,30)&=&21
+
+\\
+
+D_2((a,b),d)&=&\min(D_1(a,d),D_1(b,d))&=&\min(31,34)&=&31
+
+\\
+
+D_2((a,b),e)&=&\min(D_1(a,e),D_1(b,e))&=&\min(23,21)&=&21
+
+\end{array}
+
+Italicized values in D_2 are not affected by the matrix update as they correspond to distances between elements not involved in the first cluster.
+
+Second step
+
+Second clustering
+
+We now reiterate the three previous actions, starting from the new distance matrix D_2 :
+
+Here, D_2 ((a,b),c)=21  and  D_2 ((a,b),e)=21  are the lowest values of D_2, so we join cluster (a,b) with element  and with element .
+
+Second branch length estimation
+
+Let  denote the node to which (a,b),  and  are now connected. Because of the ultrametricity constraint, the branches joining  or  to , and  to , and also  to  are equal and have the following total length:
+
+\delta(a,v)=\delta(b,v)=\delta(c,v)=\delta(e,v)=21/2=10.5
+
+We deduce the missing branch length:
+
+\delta(u,v)=\delta(c,v)-\delta(a,u)=\delta(c,v)-\delta(b,u)=10.5-8.5=2 (see the final dendrogram)
+
+Second distance matrix update
+
+We then proceed to update the D_2 matrix into a new distance matrix D_3 (see below), reduced in size by two rows and two columns because of the clustering of (a,b) with  and with  :
+
+D_3(((a,b),c,e),d)=\min(D_2((a,b),d),D_2(c,d),D_2(e,d))=\min(31,28,43)=28
+
+Final step
+
+The final D_3 matrix is:
+
+So we join clusters ((a,b),c,e) and d.
+
+Let r denote the (root) node to which ((a,b),c,e) and d are now connected.
+
+The branches joining ((a,b),c,e) and d to r then have lengths:
+
+\delta(((a,b),c,e),r)=\delta(d,r)=28/2=14
+
+We deduce the remaining branch length:
+
+\delta(v,r)=\delta(a,r)-\delta(a,v)=\delta(b,r)-\delta(b,v)=\delta(c,r)-\delta(c,v)=\delta(e,r)-\delta(e,v)=14-10.5=3.5
+
+The single-linkage dendrogram
+
+The dendrogram is now complete. It is ultrametric because all tips (a, b, c, e, and d) are equidistant from r :
+
+\delta(a,r)=\delta(b,r)=\delta(c,r)=\delta(e,r)=\delta(d,r)=14
+
+The dendrogram is therefore rooted by r, its deepest node.
+
+Other linkages
+
+The naive algorithm for single linkage clustering is essentially the same as Kruskal's algorithm for minimum spanning trees. However, in single linkage clustering, the order in which clusters are formed is important, while for minimum spanning trees what matters is the set of pairs of points that form distances chosen by the algorithm.
+
+Alternative linkage schemes include complete linkage clustering, average linkage clustering (UPGMA and WPGMA), and Ward's method. In the naive algorithm for agglomerative clustering, implementing a different linkage scheme may be accomplished simply by using a different formula to calculate inter-cluster distances in the algorithm. The formula that should be adjusted has been highlighted using bold text in the above algorithm description. However, more efficient algorithms such as the one described below do not generalize to all linkage schemes in the same way.
+
+Faster algorithms
+
+The naive algorithm for single-linkage clustering is easy to understand but slow, with time complexity O(n^3). In 1973, R. Sibson proposed an algorithm with time complexity O(n^2) and space complexity O(n) (both optimal) known as SLINK. The slink algorithm represents a clustering on a set of n numbered items by two functions. These functions are both determined by finding the smallest cluster C that contains both item&nbsp;i and at least one larger-numbered item.
+
+The first function, \pi, maps item&nbsp;i to the largest-numbered item in cluster C.
+
+The second function, \lambda, maps item&nbsp;i to the distance associated with the creation of cluster C.
+
+Storing these functions in two arrays that map each item number to its function value takes space O(n), and this information is sufficient to determine the clustering itself. As Sibson shows, when a new item is added to the set of items, the updated functions representing the new single-linkage clustering for the augmented set, represented in the same way, can be constructed from the old clustering in time O(n). The SLINK algorithm then loops over the items, one by one, adding them to the representation of the clustering.
+
+An alternative algorithm, running in the same optimal time and space bounds, is based on the equivalence between the naive algorithm and Kruskal's algorithm for minimum spanning trees. Instead of using Kruskal's algorithm, one can use Prim's algorithm, in a variation without binary heaps that takes time O(n^2) and space O(n) to construct the minimum spanning tree (but not the clustering) of the given items and distances. Then, applying Kruskal's algorithm to the sparse graph formed by the edges of the minimum spanning tree produces the clustering itself in an additional time O(n\log n) and space O(n).
+
+See also
+
+Cluster analysis
+
+Complete-linkage clustering
+
+Hierarchical clustering
+
+Molecular clock
+
+Neighbor-joining
+
+UPGMA
+
+WPGMA
+
+References
+
+External links
+
+Linkages used in Matlab
+
+Category:Cluster analysis algorithms

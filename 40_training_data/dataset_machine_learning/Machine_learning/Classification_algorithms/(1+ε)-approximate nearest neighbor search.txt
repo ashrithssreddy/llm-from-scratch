@@ -1,0 +1,13 @@
+(1+)-approximate nearest neighbor search is a variant of the nearest neighbor search problem. A solution to the (1+)-approximate nearest neighbor search is a point or multiple points within distance (1+)  from a query point, where  is the distance between the query point and its true nearest neighbor.
+
+Reasons to approximate nearest neighbor search include the space and time costs of exact solutions in high-dimensional spaces (see curse of dimensionality) and that in some domains, finding an approximate nearest neighbor is an acceptable solution.
+
+Approaches for solving (1+)-approximate nearest neighbor search include k-d trees, locality-sensitive hashing and brute-force search.
+
+References
+
+Category:Approximation algorithms
+
+Category:Classification algorithms
+
+Category:Search algorithms

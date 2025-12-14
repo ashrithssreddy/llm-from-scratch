@@ -1,0 +1,21 @@
+In geometric data analysis and statistical shape analysis, principal geodesic analysis is a generalization of principal component analysis to a non-Euclidean, non-linear setting of manifolds suitable for use with shape descriptors such as medial representations.
+
+References
+
+Principal Geodesic Analysis for the Study of Nonlinear Statistics of Shape
+
+Probabilistic Principal Geodesic Analysis
+
+Kernel Principal Geodesic Analysis
+
+Mixture Probabilistic Principal Geodesic Analysis
+
+Category:Image processing
+
+Category:Digital geometry
+
+Category:Differential geometry
+
+Category:Topology
+
+Category:Factor analysis

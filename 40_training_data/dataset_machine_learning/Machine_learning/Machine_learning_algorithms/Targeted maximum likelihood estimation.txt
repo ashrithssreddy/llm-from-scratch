@@ -1,0 +1,87 @@
+Targeted Maximum Likelihood Estimation (TMLE) (also, more accurately referenced as Targeted Minimum Loss-Based Estimation) is a general statistical estimation framework for causal inference and semiparametric models. TMLE combines ideas from maximum likelihood estimation, semiparametric efficiency theory, and machine learning. It was introduced by Mark J. van der Laan and colleagues in the mid-2000s as a method that yields asymptotically efficient plug-in estimators while allowing the use of flexible, data-adaptive algorithms such as ensemble machine learning for nuisance parameter estimation.
+
+TMLE is used in epidemiology, biostatistics, and the social sciences to estimate causal effects in observational and experimental studies. Applications of TMLE include Longitudinal TMLE (LTMLE) for time-varying treatments and confounders. Variations in how the targeting step in TMLE is carried out have resulted in various versions of TMLE such as  Collaborative TMLE (CTMLE)  and Adaptive TMLE for improved finite-sample performance and automated variable selection.
+
+History
+
+The TMLE framework was first described by van der Laan and Rubin (2006) as a general approach for the construction of efficient plug-in estimators of smooth features of the data density. It was demonstrated in the context of causal inference and missing data problems.
+
+Since its introduction, TMLE has been developed in a series of theoretical and applied papers, culminating in book-length treatments of the method and its applications to survival analysis, adaptive designs, and longitudinal data.
+
+Methodology
+
+At its core, TMLE is a two-step estimation procedure:
+
+Initial estimation: Machine learning methods (such as the Super Learner ensemble) are used to obtain flexible estimates of nuisance parameters, such as outcome regressions and propensity scores.
+
+Targeting step: The initial estimate is updated by solving a score equation (the efficient influence function) so that the final estimator is consistent, asymptotically normal, and efficient under mild regularity conditions. The targeted machine learning fit is then mapped into the corresponding estimator of the target parameter by simply plugging it in the target parameter mapping.
+
+This approach balances the bias–variance trade-off by combining data-adaptive estimation with semiparametric efficiency theory. TMLE is doubly robust, meaning it remains consistent if either the outcome model or the treatment model is consistently estimated.
+
+Formula
+
+Here we explain the TMLE of the average treatment effect of a binary treatment on an outcome adjusting for baseline covariates. Consider i.i.d. observations O_i=(W_i,A_i,Y_i) from a distribution P_0, where W are baseline covariates, A is a binary treatment, and Y is an outcome. Let Q_0(a,w)=\mathbb{E}[Y\mid A=a,W=w] represent the outcome model and g_0(a\mid w)=P(A=a\mid W=w) represent the propensity score.
+
+The average treatment effect (ATE) is given by \psi_0=\mathbb{E}\{Q_0(1,W)-Q_0(0,W)\}.
+
+A basic TMLE for the ATE proceeds:
+
+Estimate \hat Q^{0}(a,w) and \hat g^{0}(a\mid w) (often via Super Learner).
+
+Define a (logistic) fluctuation submodel through \hat Q^{0}:
+
+\operatorname{logit}\big(\hat Q^{\varepsilon}(A,W)\big)=\operatorname{logit}\big(\hat Q^{0}(A,W)\big)+\varepsilon\,H(A,W),
+
+where the clever covariate is H(A,W)=\frac{\mathbb{1}\{A=1\}}{\hat g^{0}(1\mid W)}-\frac{\mathbb{1}\{A=0\}}{\hat g^{0}(0\mid W)}.
+
+Choose \hat\varepsilon to solve the score equation
+
+\frac{1}{n}\sum_{i=1}^{n} H(A_i,W_i)\{Y_i-\hat Q^{\varepsilon}(A_i,W_i)\}=0.
+
+Update \hat Q^{*}=\hat Q^{\hat\varepsilon} and compute
+
+\hat\psi_{\text{TMLE}}=\frac{1}{n}\sum_{i=1}^{n}\big[\hat Q^{*}(1,W_i)-\hat Q^{*}(0,W_i)\big].
+
+For inference, the efficient influence function (EIF) is
+
+D^{*}(O_i)=H(A_i,W_i)\{Y_i-\hat Q^{*}(A_i,W_i)\}+ \hat Q^{*}(1,W_i)-\hat Q^{*}(0,W_i)-\hat\psi_{\text{TMLE}}.
+
+The variance is estimated by \hat\sigma^{2}=n^{-1}\sum_{i=1}^{n}\big(D^{*}(O_i)\big)^{2}, yielding Wald intervals \hat\psi_{\text{TMLE}}\pm z_{1-\alpha/2}\,\hat\sigma/\sqrt{n}.
+
+Clinical trials and real-world evidence: The Targeted Learning roadmap provides a structured framework for generating and validating real-world evidence (RWE), bridging randomized trials and observational data using TMLE and related estimation techniques. This approach enables transparency, sensitivity analysis, and stronger causal inference for regulatory and clinical trial contexts.
+
+High-dimensional settings: Integration with ensemble methods for causal effect estimation. TMLE has been successfully applied in pharmacoepidemiology where a large number of covariates are automatically selected to adjust for confounding. In a study of post–myocardial infarction statin use and 1-year mortality, TMLE demonstrated robust performance relative to inverse probability weighting in scenarios with hundreds of potential confounders.
+
+Derivatives and extensions
+
+Longitudinal TMLE (LTMLE): A methodological extension of TMLE for longitudinal data with time-varying treatments, confounders, and censoring. It allows the estimation of dynamic treatment regimes and intervention-specific causal effects over time. This framework was originally introduced by van der Laan & Gruber (2012).
+
+Collaborative TMLE (CTMLE): Enhances finite-sample performance and variable selection by collaboratively fitting the treatment mechanism in conjunction with the target parameter.
+
+Software
+
+Several R packages implement TMLE and related methods:
+
+tmle: Functions for binary, categorical, and continuous outcomes.
+
+ltmle: Implementation for longitudinal data with time-varying treatments and outcomes.
+
+ctmle: Algorithms for collaborative TMLE and adaptive variable selection.
+
+SuperLearner: A theoretically grounded, cross-validated ensemble learning method that combines predictions from multiple algorithms to minimize predictive risk. Widely used in TMLE for estimating nuisance parameters. The original implementation is available as the R package SuperLearner.   Recent machine learning platforms like H2O AutoML implement similar ensemble strategies, combining diverse learners in parallel and leveraging stacking and blending techniques, effectively functioning as a large-scale Super Learner.
+
+See also
+
+Causal inference
+
+References
+
+Category:Causal inference
+
+Category:Machine learning algorithms
+
+Category:Epidemiology
+
+Category:Biostatistics
+
+Category:Statistical software

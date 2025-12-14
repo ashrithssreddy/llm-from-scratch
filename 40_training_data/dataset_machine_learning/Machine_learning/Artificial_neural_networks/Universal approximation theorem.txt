@@ -1,0 +1,137 @@
+In the field of machine learning, the universal approximation theorems state that neural networks with a certain structure can, in principle, approximate any continuous function to any desired degree of accuracy. These theorems provide a mathematical justification for using neural networks, assuring researchers that a sufficiently large or deep network can model the complex, non-linear relationships often found in real-world data.
+
+The best-known version of the theorem applies to feedforward networks with a single hidden layer. It states that if the layer's activation function is non-polynomial (which is true for common choices like the sigmoid function or ReLU), then the network can act as a "universal approximator." Universality is achieved by increasing the number of neurons in the hidden layer, making the network "wider." Other versions of the theorem show that universality can also be achieved by keeping the network's width fixed but increasing its number of layers, making it "deeper."
+
+It is important to note that these are existence theorems. They guarantee that a network with the right structure exists, but they do not provide a method for finding the network's parameters (training it), nor do they specify exactly how large the network must be for a given function. Finding a suitable network remains a practical challenge that is typically addressed with optimization algorithms like backpropagation.
+
+Setup
+
+Artificial neural networks are combinations of multiple simple mathematical functions that implement more complicated functions from (typically) real-valued vectors to real-valued vectors.  The spaces of multivariate functions that can be implemented by a network are determined by the structure of the network, the set of simple functions, and its multiplicative parameters. A great deal of theoretical work has gone into characterizing these function spaces.
+
+Most universal approximation theorems are in one of two classes. The first quantifies the approximation capabilities of neural networks with an arbitrary number of artificial neurons ("arbitrary width" case) and the second focuses on the case with an arbitrary number of hidden layers, each containing a limited number of artificial neurons ("arbitrary depth" case). In addition to these two classes, there are also universal approximation theorems for neural networks with bounded number of hidden layers and a limited number of neurons in each layer ("bounded depth and bounded width" case).
+
+History
+
+Arbitrary width
+
+The first examples were the arbitrary width case. George Cybenko in 1989 proved it for sigmoid activation functions. , Maxwell Stinchcombe, and Halbert White showed in 1989 that multilayer feed-forward networks with as few as one hidden layer are universal approximators. Hornik also showed in 1991 that it is not the specific choice of the activation function but rather the multilayer feed-forward architecture itself that gives neural networks the potential of being universal approximators. Moshe Leshno et al in 1993 and later Allan Pinkus in 1999 showed that the universal approximation property is equivalent to having a nonpolynomial activation function.
+
+Arbitrary depth
+
+The arbitrary depth case was also studied by a number of authors such as Gustaf Gripenberg in 2003, Dmitry Yarotsky, Zhou Lu et al in 2017, Boris Hanin and Mark Sellke in 2018 who focused on neural networks with ReLU activation function.  In 2020, Patrick Kidger and Terry Lyons extended those results to neural networks with general activation functions such, e.g. tanh or GeLU.
+
+One special case of arbitrary depth is that each composition component comes from a finite set of mappings. In 2024, Cai constructed a finite set of mappings, named a vocabulary, such that any continuous function can be approximated by compositing a sequence from the vocabulary. This is similar to the concept of compositionality in linguistics, which is the idea that a finite vocabulary of basic elements can be combined via grammar to express an infinite range of meanings.
+
+Bounded depth and bounded width
+
+The bounded depth and bounded width case was first studied by Maiorov and Pinkus in 1999. They showed that there exists an analytic sigmoidal activation function such that two hidden layer neural networks with bounded number of units in hidden layers are universal approximators.
+
+In 2018, Guliyev and Ismailov constructed a smooth sigmoidal activation function providing universal approximation property for two hidden layer feedforward neural networks with less units in hidden layers. In 2018, they also constructed single hidden layer networks with bounded width that are still universal approximators for univariate functions. However, this does not apply for multivariable functions.
+
+In 2022, Shen et al. obtained precise quantitative information on the depth and width required to approximate a target function by deep and wide ReLU neural networks.
+
+Quantitative bounds
+
+The question of minimal possible width for universality was first studied in 2021, Park et al obtained the minimum width required for the universal approximation of Lp functions using feed-forward neural networks with ReLU as activation functions. Similar results that can be directly applied to residual neural networks were also obtained in the same year by Paulo Tabuada and Bahman Gharesifard using control-theoretic arguments. In 2023, Cai obtained the optimal minimum width bound for the universal approximation.
+
+For the arbitrary depth case, Leonie Papon and Anastasis Kratsios derived explicit depth estimates depending on the regularity of the target function and of the activation function.
+
+Kolmogorov network
+
+The Kolmogorov–Arnold representation theorem is similar in spirit. Indeed, certain neural network families can directly apply the Kolmogorov–Arnold theorem to yield a universal approximation theorem. Robert Hecht-Nielsen showed that a three-layer neural network can approximate any continuous multivariate function. This was extended to the discontinuous case by Vugar Ismailov. In 2024, Ziming Liu and co-authors showed a practical application.
+
+Reservoir computing and quantum reservoir computing
+
+In reservoir computing a sparse recurrent neural network with fixed weights equipped of fading memory and echo state property is followed by a trainable output layer. Its universality has been demonstrated separately for what concerns networks of rate neurons and spiking neurons, respectively. In 2024, the framework has been generalized and extended to quantum reservoirs where the reservoir is based on qubits defined over Hilbert spaces.
+
+Variants
+
+Discontinuous activation functions, certifiable networks,
+
+random neural networks, and alternative network architectures and topologies.
+
+The universal approximation property of width-bounded networks has been studied as a dual of classical universal approximation results on depth-bounded networks. For input dimension d_x and output dimension d_y the minimum width required for the universal approximation of the Lp functions is exactly max\{d_x + 1, d_y\} (for a ReLU network).  More generally this also holds if both ReLU and a threshold activation function are used. In 2020, a universal approximation theorem result was established by Brüel-Gabrielsson, showing that graph representation with certain injective properties is sufficient for universal function approximation on bounded graphs and restricted universal function approximation on unbounded graphs, with an accompanying \mathcal O(\left|V\right| \cdot \left|E\right|)-runtime method that performed at state of the art on a collection of benchmarks (where V and E are the sets of nodes and edges of the graph respectively).
+
+There are also a variety of results between non-Euclidean spaces and other commonly used architectures and, more generally, algorithmically generated sets of functions, such as the convolutional neural network (CNN) architecture, radial basis functions, or neural networks with specific properties.
+
+Arbitrary-width case
+
+A universal approximation theorem formally states that a family of neural network functions is a dense set within a larger space of functions they are intended to approximate. In more direct terms, for any function f from a given function space, there exists a sequence of neural networks \phi_1, \phi_2, \dots from the family, such that \phi_n \to f according to some criterion. The original proofs, such as the one by Cybenko, use methods from functional analysis, including the Hahn-Banach and Riesz–Markov–Kakutani representation theorems. Cybenko first published the theorem in a technical report in 1988, then as a paper in 1989.
+
+{{math theorem
+
+name = Universal approximation theorem (L1 distance, ReLU activation, arbitrary depth, minimal width)
+
+math_statement = For any Bochner–Lebesgue p-integrable function f : \mathbb R^n \to \mathbb R^m and any \varepsilon > 0, there exists a fully connected ReLU network F of width exactly d_m = \max\{n + 1, m\}, satisfying
+
+\int_{\mathbb R^n} \|f(x) - F(x)\|^p \, \mathrm{d}x
+
+Moreover, there exists a function f \in L^p(\mathbb{R}^n, \mathbb{R}^m) and some \varepsilon > 0, for which there is no fully connected ReLU network of width less than d_m = \max\{n + 1 ,m\} satisfying the above approximation bound.
+
+Remark: If the activation is replaced by leaky-ReLU, and the input is restricted in a compact domain, then the exact minimum width is  Even if f is not smooth, the curse of dimensionality can be broken if f admits additional "compositional structure".
+
+}}
+
+Together, the central result of
+
+Bounded depth and bounded width case
+
+The first result on approximation capabilities of neural networks with bounded number of layers, each containing a limited number of artificial neurons was obtained by Maiorov and Pinkus. Their remarkable result revealed that such networks can be universal approximators and for achieving this property two hidden layers are enough.
+
+{{math theorem
+
+name = Universal approximation theorem:
+
+math_statement=  There exists an activation function \sigma which is analytic, strictly increasing and sigmoidal and has the following property: For any  f\in C[0,1]^{d}  and
+
+\varepsilon >0 there exist constants d_{i}, c_{ij}, \theta _{ij}, \gamma _{i}, and vectors  \mathbf{w}^{ij}\in \mathbb{R}^{d}  for which
+
+\left\vert f(\mathbf{x})-\sum_{i=1}^{6d+3} d_{i}\sigma \left(
+
+\sum_{j=1}^{3d} c_{ij} \sigma (\mathbf{w}^{ij}\cdot \mathbf{x-}\theta_{ij}) - \gamma_{i}\right) \right\vert
+
+for all  \mathbf{x}=(x_{1},...,x_{d})\in [0,1]^{d}.
+
+}}
+
+This is an existence result. It says that activation functions providing universal approximation property for bounded depth bounded width networks exist. Using certain algorithmic and computer programming techniques, Guliyev and Ismailov efficiently constructed such activation functions depending on a numerical parameter.  The developed algorithm allows one to compute the activation functions at any point of the real axis instantly. For the algorithm and the corresponding computer code see. The theoretical result can be formulated as follows.
+
+{{math theorem
+
+name = Universal approximation theorem:
+
+math_statement = Let   [a,b]  be a finite segment of the real line,  s=b-a and  \lambda  be any positive number. Then one can algorithmically construct a computable sigmoidal activation function  \sigma \colon \mathbb{R} \to \mathbb{R}, which is infinitely differentiable, strictly increasing on  (-\infty, s) ,  \lambda -strictly increasing on  [s,+\infty) , and satisfies the following properties:
+
+For any  f \in C[a,b]   and  \varepsilon > 0  there exist numbers  c_1,c_2,\theta_1  and  \theta_2  such that for all x \in [a,b]   |f(x) - c_1 \sigma(x - \theta_1) - c_2 \sigma(x - \theta_2)|
+
+For any continuous function F on the d-dimensional box [a,b]^{d} and \varepsilon > 0, there exist constants e_p, c_{pq}, \theta_{pq} and \zeta_p such that the inequality   \left| F(\mathbf{x}) - \sum_{p=1}^{2d+2} e_p \sigma \left( \sum_{q=1}^{d} c_{pq} \sigma(\mathbf{w}^{q} \cdot \mathbf{x} - \theta_{pq}) - \zeta_p \right) \right|  holds for all \mathbf{x} = (x_1, \ldots, x_d) \in [a, b]^{d}. Here the weights \mathbf{w}^{q}, q = 1, \ldots, d, are fixed as follows:   \mathbf{w}^{1} = (1, 0, \ldots, 0), \quad \mathbf{w}^{2} = (0, 1, \ldots, 0), \quad \ldots, \quad \mathbf{w}^{d} = (0, 0, \ldots, 1).  In addition, all the coefficients e_p, except one, are equal.
+
+}}
+
+Here " \sigma \colon \mathbb{R} \to \mathbb{R} is \lambda-strictly increasing on some set X" means that there exists a strictly increasing function u \colon X \to \mathbb{R} such that |\sigma(x) - u(x)| \le \lambda for all x \in X. Clearly, a \lambda-increasing function behaves like a usual increasing function as \lambda gets small.
+
+In the "depth-width" terminology, the above theorem says that for certain activation functions depth-2 width-2 networks are universal approximators for univariate functions and depth-3 width- (2d+2)  networks are universal approximators for d-variable functions (d>1).
+
+See also
+
+Kolmogorov–Arnold representation theorem
+
+Representer theorem
+
+No free lunch theorem
+
+Stone–Weierstrass theorem
+
+Fourier series
+
+References
+
+Category:Theorems in mathematical analysis
+
+Category:Artificial neural networks
+
+Category:Network architecture
+
+Category:Networks
+
+Category:Approximation theory

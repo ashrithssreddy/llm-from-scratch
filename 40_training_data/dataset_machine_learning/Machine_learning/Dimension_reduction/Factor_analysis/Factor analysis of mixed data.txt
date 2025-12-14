@@ -1,0 +1,93 @@
+In statistics, factor analysis of mixed data or factorial analysis of mixed data (FAMD, in the French original: AFDM or Analyse Factorielle de Données Mixtes), is the factorial method devoted to data tables in which a group of individuals is described both by quantitative and qualitative variables. It belongs to the exploratory methods developed by the French school called Analyse des données (data analysis) founded by Jean-Paul Benzécri.
+
+The term mixed refers to the use of both quantitative and qualitative variables. Roughly, we can say that FAMD works as a principal components analysis (PCA) for quantitative variables and as a multiple correspondence analysis (MCA) for qualitative variables.
+
+Scope
+
+When data include both types of variables but the active variables being homogeneous, PCA or MCA can be used.
+
+Indeed, it is easy to include supplementary quantitative variables in MCA by the correlation coefficients between the variables and factors on individuals (a factor on individuals is the vector gathering the coordinates of individuals on a factorial axis); the representation obtained is a correlation circle (as in PCA).
+
+Similarly, it is easy to include supplementary categorical variables in PCA. For this, each category is represented by the center of gravity of the individuals who have it (as MCA).
+
+When the active variables are mixed, the usual practice is to perform discretization on the quantitative variables (e.g. usually in surveys the age is transformed in age classes). Data thus obtained can be processed by MCA.
+
+This practice reaches its limits:
+
+When there are few individuals ( less than a hundred to fix ideas ) in which case the MCA is unstable;
+
+When there are few qualitative variables with respect to quantitative variables (one can be reluctant to discretize twenty quantitative variables to take into account a single qualitative variable).
+
+Criterion
+
+The data include  K  quantitative variables {k = 1,\dots, K}  and Q qualitative variables  {q = 1,\dots, Q} .
+
+z  is a quantitative variable. We note:
+
+r(z,k)  the correlation coefficient between variables  k  and  z  ;
+
+\eta^2(z, q)  the squared correlation ratio between variables  z  and  q  .
+
+In the PCA  of  K , we look for the function on  I  (a function on  I  assigns a value to each individual, it is the case for initial variables and principal components) the most correlated to all  K  variables in the following sense:
+
+\sum_k r^2(z,k) maximum.
+
+In MCA of Q, we look for the function on  I  more related to all  Q  variables in the following sense:
+
+\sum_q\eta^2(z, q)  maximum.
+
+In FAMD  \{K, Q\} , we look for the function on  I  the more related to all  K + Q  variables in the following sense:
+
+\sum_k r^2(z, k) + \sum_q\eta^2(z, q)  maximum.
+
+In this criterion, both types of variables  play the same role. The contribution of each variable in this criterion is bounded by 1.
+
+Plots
+
+The representation of individuals is made directly from factors  I  .
+
+The representation of quantitative variables is constructed as in PCA (correlation circle).
+
+The representation of the categories of qualitative variables is as in MCA : a category is at the centroid of the individuals who possess it. Note that we take the exact centroid and not, as is customary in MCA, the centroid up to a coefficient dependent on the axis (in MCA this coefficient is equal to the inverse of the square root of the eigenvalue; it would be inadequate in FAMD).
+
+The representation of variables is called relationship square. The coordinate of qualitative variable  j  along  axis  s  is equal to squared correlation ratio between the variable  j  and the factor of rank  s  (denoted \eta^2(j,s) ). The coordinates of quantitative variable  k  along  axis  s  is equal to the squared correlation coefficient between the variable  k  and the factor of rank  s   (denoted  r^2(k,s) ).
+
+Aids to interpretation
+
+The relationship indicators between the initial variables are combined in a so-called relationship matrix that contains, at the intersection of row  l  and column  c :
+
+If the variables  l and  c  are quantitative, the squared correlation coefficient between the variables  l and  c  ;
+
+If the variable  l is qualitative and the variable  c is quantitative, the squared correlation ratio between  l and  c;
+
+If the variables  l and  c  are qualitative, the indicator  \phi^2  between the variables l and c .
+
+Example
+
+A very small data set (Table 1) illustrates the operation and outputs of the FAMD . Six individuals are described by three quantitative variables and three qualitatives variables. Data were analyzed using the R package function FAMD FactoMineR .
+
+width=50% |
+
+}
+
+In the relationship matrix, the coefficients are equal to R^2  (quantitative variables),  \phi^2  (qualitative variables) or  \eta^2  (one variable of each type).
+
+The matrix shows an entanglement of the relationships between the two types of variables.
+
+The representation of individuals (Figure 1) clearly shows three groups of individuals. The first axis opposes individuals 1 and 2 to all others. The second axis opposes individuals 3 and 4 to individuals 5 and 6.
+
+The representation of variables (relationship square, Figure 2) shows that the first axis ( F1) is closely linked to variables  k_2 ,  k_3  and  Q_3  . The correlation circle (Figure 3) specifies the sign of the correlation between  F1 ,  k_2  and  k_3 ; the representation of the categories (Figure 4) clarifies the nature of the relationship between  F1  and  Q_3 . Finally individuals 1 and 2, individualized by the first axis, are characterized by high values of  k_2 and  k_3  and by the categories  c  of  Q_3  as well.
+
+This example illustrates how the FAMD simultaneously analyses of quantitative and qualitative variables. Thus, it shows, in this example, a first dimension based on the two types of variables.
+
+History
+
+The FAMD's original work is due to Brigitte Escofier and Gilbert Saporta. This work was resumed in 2002 by Jérôme Pagès. A more complete presentation of FAMD in English is included in a book of Jérôme Pagès.
+
+Software
+
+The method is implemented in the R package FactoMineR. The method is implemented in the Python library prince.
+
+References
+
+Category:Factor analysis

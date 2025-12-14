@@ -1,0 +1,5 @@
+Amália is a Portuguese large language model (LLM) announced in November 2024 by the Portuguese Prime-Minister Luís Montenegro. Its final version is expected to be launched in 2026. It is being developed by Center for Responsible AI (Centro para a AI Responsável) and by the research centers of NOVA School of Science and Technology and Instituto Superior Técnico. The beta version released in September is available only to the Public Administration, but the website launched in October reiterates the final version will be an open model.
+
+References
+
+Category:Large language models

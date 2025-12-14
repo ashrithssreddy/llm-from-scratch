@@ -1,0 +1,35 @@
+The decentralized partially observable Markov decision process (Dec-POMDP) is a model for coordination and decision-making among multiple agents. It is a probabilistic model that can consider uncertainty in outcomes, sensors and communication (i.e., costly, delayed, noisy or nonexistent communication).
+
+It is a generalization of a Markov decision process (MDP) and a partially observable Markov decision process (POMDP) to consider multiple decentralized agents.
+
+Definition
+
+Formal definition
+
+A Dec-POMDP is a 7-tuple (S,\{A_i\},T,R,\{\Omega_i\},O,\gamma), where
+
+S is a set of states,
+
+A_i is a set of actions for agent i, with A=\times_i A_i is the set of joint actions,
+
+T is a set of conditional transition probabilities between states, T(s,a,s')=P(s'\mid s,a),
+
+R: S \times A \to \mathbb{R} is the reward function.
+
+\Omega_i is a set of observations for agent i, with \Omega=\times_i \Omega_i is the set of joint observations,
+
+O is a set of conditional observation probabilities O(s',a, o)=P(o\mid s',a), and
+
+\gamma \in [0, 1] is the discount factor.
+
+At each time step, each agent takes an action a_i \in A_i, the state updates based on the transition function T(s,a,s') (using the current state and the joint action), each agent observes an observation based on the observation function O(s',a, o) (using the next state and the joint action) and a reward is generated for the whole team based on the reward function R(s,a).  The goal is to maximize expected cumulative reward over a finite or infinite number of steps. These time steps repeat until some given horizon (called finite horizon) or forever (called infinite horizon). The discount factor \gamma maintains a finite sum in the infinite-horizon case (\gamma \in [0,1)).
+
+References
+
+External links
+
+maspan.org
+
+The Dec-POMDP page
+
+Category:Markov processes

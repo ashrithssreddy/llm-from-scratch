@@ -1,0 +1,53 @@
+Averaged one-dependence estimators (AODE) is a probabilistic classification learning technique.  It was developed to address the attribute-independence problem of the popular naive Bayes classifier.  It frequently develops substantially more accurate classifiers than naive Bayes at the cost of a modest increase in the amount of computation.
+
+The AODE classifier
+
+AODE seeks to estimate the probability of each class y given a specified set of features x1, ... xn, P(y | x1, ... xn).  To do so it uses the formula
+
+\hat{P}(y\mid x_1, \ldots x_n)=\frac{\sum_{i:1\leq i\leq n \wedge F(x_i)\geq m}
+
+\hat{P}(y,x_i)\prod_{j=1}^n\hat{P}(x_j\mid y,x_i)}{\sum_{y^\prime\in
+
+Y}\sum_{i:1\leq i\leq n \wedge F(x_i)\geq m}
+
+\hat{P}(y^\prime,x_i)\prod_{j=1}^n\hat{P}(x_j\mid y^\prime,x_i)}
+
+where \hat{P}(\cdot) denotes an estimate of P(\cdot), F(\cdot) is the frequency with which the argument appears in the sample data and m is a user specified minimum frequency with which a term must appear in order to be used in the outer summation.  In recent practice m is usually set at 1.
+
+Derivation of the AODE classifier
+
+We seek to estimate P(y | x1, ... xn). By the definition of conditional probability
+
+P(y\mid x_1, \ldots x_n)=\frac{P(y, x_1, \ldots x_n)}{P(x_1, \ldots x_n)}.
+
+For any 1\leq i\leq n,
+
+P(y, x_1, \ldots x_n)=P(y, x_i)P(x_1, \ldots x_n\mid y, x_i).
+
+Under an assumption that x1, ... xn are independent given y and xi, it follows that
+
+P(y, x_1, \ldots x_n)=P(y, x_i)\prod_{j=1}^n P(x_j\mid y, x_i).
+
+This formula defines a special form of One Dependence Estimator (ODE), a variant of the naive Bayes classifier that makes the above independence assumption that is weaker (and hence potentially less harmful) than the naive Bayes' independence assumption.  In consequence, each ODE should create a less biased estimator than naive Bayes. However, because the base probability estimates are each conditioned by two variables rather than one, they are formed from less data (the training examples that satisfy both variables) and hence are likely to have more variance.  AODE reduces this variance by averaging the estimates of all such ODEs.
+
+Features of the AODE classifier
+
+Like naive Bayes, AODE does not perform model selection and does not use tuneable parameters. As a result, it has low variance.  It supports incremental learning whereby the classifier can be updated efficiently with information from new examples as they become available.  It predicts class probabilities rather than simply predicting a single class, allowing the user to determine the confidence with which each classification can be made. Its probabilistic model can directly handle situations where some data are missing.
+
+AODE has computational complexity O(ln^2) at training time and O(kn^2) at classification time, where n is the number of features, l is the number of training examples and k is the number of classes.  This makes it infeasible for application to high-dimensional data.  However, within that limitation, it is linear with respect to the number of training examples and hence can efficiently process large numbers of training examples.
+
+Implementations
+
+The free Weka machine learning suite includes an implementation of AODE.
+
+See also
+
+Cluster-weighted modeling
+
+References
+
+Category:Classification algorithms
+
+Category:Bayesian estimation
+
+Category:Statistical classification

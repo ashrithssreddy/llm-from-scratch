@@ -1,0 +1,7 @@
+REDIRECT Controversial Reddit communities#Deepfakes
+
+{{rcat shell|
+
+}}
+
+Category:Deepfakes

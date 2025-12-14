@@ -1,0 +1,105 @@
+{{Infobox game
+
+title         = Snakes and ladders
+
+image_link    = Snakes and Ladders.jpg
+
+image_caption = Game of Snakes and ladders, gouache on cloth (India, 19th century)
+
+years         = Ancient India 2nd century CE to present
+
+genre         =
+
+players       = 2 or more
+
+setup_time    = Negligible
+
+playing_time  = 15–45 minutes
+
+random_chance = Complete
+
+skills        = Counting, observation
+
+AKA           =
+
+footnotes     =
+
+}}
+
+Snakes and ladders is a board game for two or more players regarded today as a worldwide classic. The game originated in ancient India as Moksha Patam, and was brought to the United Kingdom in the 1890s. It is played on a game board with numbered, gridded squares. A number of "ladders" and "snakes" are pictured on the board, each connecting two specific board squares. The object of the game is to navigate one's game piece, according to die  rolls, from the start (bottom square) to the finish (top square), helped by climbing ladders but hindered by falling down snakes.
+
+The game is a simple race based on sheer luck, and it is popular with young children. The historic version had its roots in morality lessons, on which a player's progression up the board represented a life journey complicated by virtues (ladders) and vices (snakes). The game is also sold under other names, such as the morality themed Chutes and Ladders, which was published by the Milton Bradley Company starting in 1943.
+
+Equipment
+
+The size of the grid varies, but is most commonly 8×8, 10×10 or 12×12 squares. Boards have snakes and ladders starting and ending on different squares; both factors affect the duration of play. Each player is represented by a distinct game piece token. A single die  is rolled to determine random movement of a player's token in the traditional form of play; two dice may be used for a shorter game.
+
+History
+
+Snakes and ladders originated as part of a family of Indian dice board games. They included gyan chauper and pachisi (known in English as Ludo and Parcheesi). It made its way to England and was sold as "Snakes and Ladders", then the basic concept was introduced in the United States as Chutes and Ladders. and luck. The underlying ideals of the game inspired a version introduced in Victorian England in 1892. The game has also been interpreted and used as a tool for teaching the effects of good deeds versus bad. The board was covered with symbolic images used in ancient India, the top featuring gods, angels, and majestic beings, while the rest of the board was covered with pictures of animals, flowers and people. The ladders represented virtues such as generosity, faith, and humility, while the snakes represented vices such as lust, anger, murder, and theft. The morality lesson of the game was that a person can attain liberation (Moksha) through doing good, whereas by doing evil one will be reborn as lower forms of life. The number of ladders was fewer than the number of snakes as a reminder that a path of good is much more difficult to tread than a path of sins. Presumably, reaching the last square (number 100) represented the attainment of Moksha (spiritual liberation).
+
+Gyan chauper, or jnan chauper, (game of wisdom), the version associated with the Jain philosophy, encompassed the concepts like karma and Moksha. A version popular in the Muslim world is known as shatranj al-'urafa and exists in various versions in India, Iran, and Turkey. In this version, based on sufi philosophy, the game represents the dervish's quest to leave behind the trappings of worldly life and achieve union with God.
+
+When the game was brought to England, the Indian virtues and vices were replaced by English ones in hopes of better reflecting Victorian doctrines of morality. Squares of Fulfilment, Grace and Success were accessible by ladders of Thrift, Penitence and Industry and snakes of Indulgence, Disobedience and Indolence caused one to end up in Illness, Disgrace and Poverty. While the Indian version of the game had snakes outnumbering ladders, the English counterpart was more forgiving as it contained equal numbers of each.
+
+The association of Britain's snakes and ladders with India and gyan chauper began with the returning of colonial families from India during the British Raj. The décor and art of the early English boards of the 20th century reflect this relationship. By the 1940s very few pictorial references to Indian culture remained, due to the economic demands of the war and the collapse of British rule in India. In Hindi, this game is called Saanp aur Seedhi, Saanp Seedhi and Mokshapat. In Tamil Nadu the game is called Parama padam and is often played by devotees of Hindu god Vishnu during the Vaikuntha Ekadashi festival in order to stay awake during the night. In Bengali-speaking regions, West Bengal in India and Bangladesh, it is known as Shap Shiri or Shapludu respectively.
+
+In the original game the squares of virtue are: Faith (12), Reliability (51), Generosity (57), Knowledge (76), and Asceticism (78). The squares of vice or evil are: Disobedience (41), Vanity (44), Vulgarity (49), Theft (52), Lying (58), Drunkenness (62), Debt (69), Murder (73), Rage (84), Greed (92), Pride (95), and Lust (99). otherwise play passes to the next player in turn. The player who is first to bring their token to the last square of the track is the winner.
+
+Variations
+
+Variants exists where a player must roll the exact number to reach the final square. Depending on the variation, if the die roll is too large, the token either remains in place or goes off the final square and back again. (For example, if a player requiring a 3 to win rolls a 5, the token moves forward three spaces, then back two spaces.) In certain circumstances (such as a player rolling a 5 when a 1 is required to win), a player can end up further away from the final square after their move, than before it.
+
+In the book Winning Ways, the authors propose a variant that they call Adders-and-Ladders, which, unlike the original game, involves skill. Instead of tokens for each player, there is a store of indistinguishable tokens shared by all players. The illustration has five tokens (and a five by five board). There is no die to roll; instead, the player chooses any token and moves it one to four spaces. Whoever moves the last token to the Home space (i.e. the last number) wins.
+
+Specific editions
+
+The most widely known edition of snakes and ladders in the United States is Chutes and Ladders, released by Milton Bradley in 1943. The playground setting replaced the snakes, which were thought to be disliked by children at the time.
+
+An early British version of the game depicts the path of a young boy and girl making their way through a cartoon railroad and train system.
+
+Even though the concept of major virtues against vices and related Eastern spiritualism is not much emphasized in modern incarnations of the game, the central mechanism of snakes and ladders makes it an effective tool for teaching young children about various subjects. In two separate Indonesian schools, the implementation of the game as media in English lessons of fifth graders not only improved the students' vocabulary but also stimulated their interest and excitement about the learning process. Researchers from Carnegie Mellon University found that pre-schoolers from low income backgrounds who played an hour of numerical board games like snakes and ladders matched the performance of their middle-class counterparts by showing improvements in counting and recognizing number shapes. An eco-inspired version of the game was also used to teach students and teachers about climate change and environmental sustainability.
+
+Meyer et al. (2020) explored on the basis of Chutes and Ladders with a free and adaptive game project. This refers on the one hand to systemic game pedagogy. The players and the educators develop the game from ground up and set the rules. The second element of the Monza project is mathematization. Over several years, teachers and learners abstract the game experiences into the language of mathematics.
+
+Mathematics of the game
+
+Any version of snakes and ladders can be represented exactly as an absorbing Markov chain, since from any square the odds of moving to any other square are fixed and independent of any previous game history. The Milton Bradley version of Chutes and Ladders has 100 squares, with 19 chutes and ladders. A player will need an average of 35.8 spins to move from the starting point, which is off the board, to square 100.  A two-player game is expected to end in 47.76 moves with a 50.9% chance of winning for the first player. These calculations are based on a variant where spinning a six does not lead to an additional spin and where the player does not need to spin the exact number to reach square 100; if they overshoot, the game has still ended.  Requiring a player to land exactly on square 100 in order to end the game results in a single-player average of 39.2 spins to win.
+
+Snakes & Lattes is a board game café chain headquartered in Toronto, Canada, named after snakes and ladders.
+
+Chutes and Ladders is mentioned in Rixty Minutes, the eighth episode of the first season of Rick and Morty. Summer, while using Rick's electronic goggles to observe the parallel universes, sees herself playing Chutes and Ladders with her parents (Beth and Jerry).
+
+References
+
+Bibliography
+
+Further reading
+
+Shimkhada, Deepak (1983), "A Preliminary Study of the Game of Karma in India, Nepal, and Tibet" in Artibus Asiae 44:4, pp.&nbsp;308–322.
+
+Topsfield, Andrew (1985), "The Indian Game of Snakes and Ladders" in Artibus Asiae 46:3, pp.&nbsp;203–226.
+
+Topsfield, Andrew (2006), "Snakes and Ladders in India: Some Further Discoveries" in Artibus Asiae 66:1, pp.&nbsp;143–179.
+
+External links
+
+Category:Children's board games
+
+Category:Traditional board games
+
+Category:Tabletop games
+
+Category:Roll-and-move board games
+
+Category:Race games
+
+Category:Indian board games
+
+Category:Indian inventions
+
+Category:Markov models
+
+Category:Milton Bradley Company games
+
+Category:Products introduced in 1943

@@ -1,0 +1,119 @@
+The availability heuristic, also known as availability bias, is a mental shortcut that relies on immediate examples that come to a given person's mind when evaluating a specific topic, concept, method, or decision. This heuristic, operating on the notion that, if something can be quickly recalled, it must be important, or at least more important than alternative solutions not as readily recalled, is inherently biased toward recently acquired information.
+
+The mental availability of an action's consequences is positively related to those consequences' perceived magnitude. In other words, the easier it is to recall the consequences of something, the greater those consequences are often perceived to be. Most notably, people often rely on the content of their recall if its implications are not called into question by the difficulty they have in recalling it.
+
+Overview and history
+
+.]]
+
+In the late 1960s and early 1970s, Amos Tversky and Daniel Kahneman began work on a series of papers examining "heuristic and biases" used in judgment under uncertainty. Prior to that, the predominant view in the field of human judgment was that humans are rational actors. Kahneman and Tversky explained that judgment under uncertainty often relies on a limited number of simplifying heuristics rather than extensive algorithmic processing. Soon, this idea spread beyond academic psychology, into law, medicine, and political science. This research questioned the descriptive adequacy of idealized models of judgment, and offered insights into the cognitive processes that explained human error without invoking motivated irrationality. One simplifying strategy people may rely on is the tendency to make a judgment about the frequency of an event based on how many similar instances are brought to mind. In 1973, Amos Tversky and Daniel Kahneman first studied this phenomenon and labeled it the "availability heuristic". An availability heuristic is a mental shortcut that relies on immediate examples that come to a given person's mind when evaluating a specific topic, concept, method, or decision. As follows, people tend to use a readily available fact to base their beliefs on a comparably distant concept. There has been much research done with this heuristic, but studies on the issue are still questionable with regard to the underlying process. Studies illustrate that manipulations intended to increase the subjective experience of ease of recall are also likely to affect the amount of recall. Furthermore, this makes it difficult to determine whether the obtained estimates of frequency, likelihood, or typicality are based on participants' phenomenal experiences or on a biased sample of recalled information. In this Wikipedia article itself, for example, there are multiple instances of words such as "likely", "make", "take", "ask" and indeed "Wikipedia", but (aside from names) only a couple of initial K's: "know" and "key".
+
+Research
+
+Chapman (1967) described a bias in the judgment of the frequency with which two events co-occur. This demonstration showed that the co-occurrence of paired stimuli resulted in participants overestimating the frequency of the pairings. To test this idea, participants were given information about several hypothetical mental patients. The data for each patient consisted of a clinical diagnosis and a drawing made by the patient. Later, participants estimated the frequency with which each diagnosis had been accompanied by various features of the drawing. The subjects vastly overestimated the frequency of this co-occurrence (such as suspiciousness and peculiar eyes). This effect was labeled the illusory correlation. Tversky and Kahneman suggested that availability provides a natural account for the illusory-correlation effect. The strength of the association between two events could provide the basis for the judgment of how frequently the two events co-occur. When the association is strong, it becomes more likely to conclude that the events have been paired frequently. Strong associations will be thought of as having occurred together frequently.
+
+In Tversky & Kahneman's first examination of availability heuristics, subjects were asked, "If a random word is taken from an English text, is it more likely that the word starts with a K, or that K is the third letter?" They argue that English-speaking people would immediately think of many words that begin with the letter "K" (kangaroo, kitchen, kale), but that it would take a more concentrated effort to think of any words in which "K" is the third letter (acknowledge, ask). Results indicated that participants overestimated the number of words that began with the letter "K" and underestimated the number of words that had "K" as the third letter. Tversky and Kahneman concluded that people answer questions like these by comparing the availability of the two categories and assessing how easily they can recall these instances. In other words, it is easier to think of words that begin with "K", more than words with "K" as the third letter. Thus, people judge words beginning with a "K" to be a more common occurrence. In reality, however, a typical text contains twice as many words that have "K" as the third letter than "K" as the first letter.
+
+Applications
+
+Media
+
+After seeing news stories about child abductions, people may judge that the likelihood of this event is greater. Media coverage can help fuel a person's example bias with widespread and extensive coverage of unusual events, such as homicide or airline accidents, and less coverage of more routine, less sensational events, such as common diseases or car accidents. Long term consumption of this media will skew the consumer's reality and influence their attitudes and emotions. This is referred to as cultivation theory, which aligns with availability bias: frequent exposure to similar news stories causes consumers to inflate their sense of how likely these dangers are. For example, when asked to rate the probability of a variety of causes of death, people tend to rate "newsworthy" events as more likely because they can more readily recall an example from memory. Moreover, unusual and vivid events like homicides, shark attacks, or lightning are more often reported in mass media than common and un-sensational causes of death like common diseases.
+
+For example, many people think that the likelihood of dying from shark attacks is greater than that of dying from being hit by falling airplane parts when more people actually die from falling airplane parts. When a shark attack occurs, the deaths are widely reported in the media whereas deaths as a result of being hit by falling airplane parts are rarely reported in the media. This shows the power media has in priming the social perceiver's thoughts and can lead to the implicit idea that the ocean is more dangerous than flying.
+
+In a 2010 study exploring how vivid television portrayals are used when forming social reality judgments, people watching vivid violent media gave higher estimates of the prevalence of crime and police immorality in the real world than those not exposed to vivid television. These results suggest that television violence does in fact have a direct causal impact on participants' social reality beliefs. Repeated exposure to vivid violence leads to an increase in people's risk estimates about the prevalence of crime and violence in the real world.  Counter to these findings, researchers from a similar study argued that these effects may be due to effects of new information. Researchers tested the new information effect by showing movies depicting dramatic risk events and measuring their risk assessment after the film. Contrary to previous research, there were no long-term effects on risk perception due to exposure to dramatic movies. However, the study did find evidence of idiosyncratic effects of the movies - that is, people reacted immediately after the movies with enhanced or diminished risk beliefs, which faded after a period of 10 days.
+
+Another measurable effect is the inaccurate estimation of the fraction of deaths caused by terrorism compared to homicides with other causes.
+
+In the context of media (often social media), echo chambers need to be considered when discussing availability bias. If a person is constantly exposed to the same perspectives and opinions, they become more engrained and thus more immediately accessible and available when using social media. While conformation bias may perpetuate echo chambers, availability bias can become problematic too as it feeds into this loop.
+
+Health
+
+Researchers examined the role of cognitive heuristics in the AIDS risk-assessment process. 331 physicians reported worry about on-the-job HIV exposure, and experience with patients who have HIV. By analyzing answers to questionnaires handed out, researchers concluded that availability of AIDS information did not relate strongly to perceived risk.
+
+Participants in a 1992 study read case descriptions of hypothetical patients who varied on their sex and sexual preference. These hypothetical patients showed symptoms that could have been caused by five different diseases (AIDS, leukemia, influenza, meningitis, or appendicitis). Participants were instructed to indicate which disease they thought the patient had and then they rated patient responsibility and interaction desirability. Consistent with the availability heuristic, either the more common (influenza) or the more publicized (AIDS) disease was chosen.
+
+Business and economy
+
+One study sought to analyze the role of the availability heuristic in financial markets. Researchers defined and tested two aspects of the availability heuristic:
+
+Outcome Availability&nbsp;– availability of positive and negative investment outcomes, and
+
+Risk Availability&nbsp;– availability of financial risk.
+
+In effect, investors are using the availability heuristic to make decisions and subsequently, may be obstructing their own investment success. An investor's lingering perceptions of a dire market environment may be causing them to view investment opportunities through an overly negative lens, making it less appealing to consider taking on investment risk, no matter how small the returns on perceived "safe" investments.  To illustrate, Franklin Templeton's annual Global Investor Sentiment Survey 1 asked individuals how they believed the S&P 500 Index performed in 2009, 2010, and 2011. 66 percent of respondents stated that they believed the market was either flat or down in 2009, 48 percent said the same about 2010 and 53 percent also said the same about 2011.  In reality, the S&P 500 saw 26.5 percent annual returns in 2009, 15.1 percent annual returns in 2010, and 2.1 percent annual returns in 2011, meaning lingering perceptions based on dramatic, painful events are impacting decision-making even when those events are over.
+
+Additionally, a study by Hayibor and Wasieleski found that the availability of others who believe that a particular act is morally acceptable is positively related to others' perceptions of the morality of that act. This suggests that availability heuristic also has an effect on ethical decision making and ethical behavior in organizations.
+
+Education
+
+A study done by Craig R. Fox provides an example of how availability heuristics can work in the classroom. In this study, Fox tests whether the difficulty of recall influences judgment, specifically with course evaluations among college students.  In his study he had two groups complete a course evaluation form.  He asked the first group to write two recommended improvements for the course (a relatively easy task) and then write two positives about the class. The second group was asked to write ten suggestions where the professor could improve (a relatively difficult task) and then write two positive comments about the course.  At the end of the evaluation, both groups were asked to rate the course on a scale from one to seven.  The results showed that students asked to write ten suggestions (difficult task) rated the course less harshly because it was more difficult for them to recall the information. Most of the students in the group that was asked to fill in 10 suggestions didn't fill in more than two being unable to recall more instances where they were unsatisfied with the class. Students asked to do the easier evaluation with only two complaints had less difficulty in terms of availability of information, so they rated the course more harshly.
+
+Another study by Marie Geurten sought to test the availability heuristic in young children. Children of varying ages (from 4 to 8 years old) were tasked with generating a list of names, with some being asked for a shorter list and some for a longer list. The study then assessed the children's own impressions of their ability to recall names. Those children who were tasked with generating a shorter list had a higher perception of their ability to recall names than those who were tasked with generating a longer list. According to the study, this suggests that the children based their assessment of their recall abilities on their subjective experience of ease of recall.
+
+Criminal justice
+
+The media usually focuses on violent or extreme cases, which are more readily available in the public's mind. This may come into play when it is time for the judicial system to evaluate and determine the proper punishment for a crime. In one study, respondents rated how much they agreed with hypothetical laws and policies such as "Would you support a law that required all offenders convicted of unarmed muggings to serve a minimum prison term of two years?" Participants then read cases and rated each case on several questions about punishment. As hypothesized, respondents recalled more easily from long-term memory stories that contain severe harm, which seemed to influence their sentencing choices to make them push for harsher punishments. This can be eliminated by adding high concrete or high contextually distinct details into the crime stories about less severe injuries.
+
+A similar study asked jurors and college students to choose sentences on four severe criminal cases in which prison was a possible but not an inevitable sentencing outcome. Respondents answering questions about court performance on a public opinion formulated a picture of what the courts do and then evaluated the appropriateness of that behavior. Respondents recalled public information about crime and sentencing. This type of information is incomplete because the news media present a highly selective and non-representative selection of crime, focusing on the violent and extreme, rather than the ordinary. This makes most people think that judges are too lenient. But, when asked to choose the punishments, the sentences given by students were equal to or less severe than those given by judges. In other words, the availability heuristic made people believe that judges and jurors were too lenient in the courtroom, but the participants gave similar sentences when placed in the position of the judge, suggesting that the information they recalled was not correct.
+
+Researchers in 1989 predicted that mock jurors would rate a witness to be more deceptive if the witness testified truthfully before lying than when the witness was caught lying first before telling the truth. If the availability heuristic played a role in this, lying second would remain in jurors' minds (since it was more recent) and they would most likely remember the witness lying over the truthfulness. To test the hypothesis, 312 university students played the roles of mock jurors and watched a videotape of a witness presenting testimony during a trial. Results confirmed the hypothesis, as mock jurors were most influenced by the most recent act.
+
+Perceived risk
+
+Previous studies have indicated that explaining a hypothetical event makes the event seem more likely through the creation of causal connections. However, such effects could arise through the use of the availability heuristic; that is, subjective likelihood is increased by an event becoming easier to imagine.
+
+A study done asked those participating to pick between two illnesses. Those doing the study wanted to know which disease they thought was more likely to cause death. In the study, they asked participants to choose between a stroke and asthma as to which one someone was more likely to die from. The researchers concluded that it depended on what experiences were available to them. If they knew someone or heard of someone that died from one of the diseases that is the one they perceived to be a higher risk to die from.
+
+Vividness effects
+
+Two studies with 108 undergraduates investigated vivid information and its impact on social judgment and the availability heuristic and its role in mediating vividness effects.
+
+In study 1, Subjects listened to a tape recording that described a woman who lived with her 7-year-old son. Subjects then heard arguments about the woman's fitness as a parent and were asked to draw their own conclusions regarding her fitness or unfitness. The concrete and colorful language were found to influence judgments about the woman's fitness as a mother.
+
+In study 2, a series of male and female names were presented to subjects; for each name, subjects were told the university affiliation of the individual (Yale or Stanford). When some names were presented, subjects were simultaneously shown a photograph that purportedly portrayed the named individual. Subsequently, to assess what subjects could remember (as a measure of availability), each name was represented, as well as the appropriate photograph if one had been originally presented. The study considered whether the display or non-display of photographs biased subjects' estimates as to the percentage of Yale (vs Stanford) students in the sample of men and women whose names appeared on the original list, and whether these estimated percentages were causally related to the respondents' memory for the college affiliations of the individual students on the list. The presence of photographs affected judgments about the proportion of male and female students at the two universities. Such effects have typically been attributed to the ready accessibility of vividly presented information in memory—that is, to the availability heuristic.
+
+In both studies, vividness affected both availability (ability to recall) and judgments. However, causal modeling results indicated that the availability heuristic did not play a role in the judgment process.
+
+Judging frequency and probability
+
+In general, availability is correlated with ecological frequency, but it is also affected by other factors. Consequently, the reliance on the availability heuristic leads to systematic biases. Such biases are demonstrated in the judged frequency of classes of words, of combinatoric outcomes, and of repeated events. The phenomenon of illusory correlation is explained as an availability bias.
+
+Another example of the availability heuristic and exemplars would be seeing a shark in the ocean. Seeing a shark has a greater impact on an individual's memory than seeing a dolphin.  If someone sees both sharks and dolphins in the ocean, they will be less aware of seeing the dolphins, because the dolphins had less of an impact on their memory. Due to the greater impact of seeing a shark, the availability heuristic can influence the probability judgement of the ratio of sharks and dolphins in the water. Thus, an individual who saw both a shark and a dolphin would assume a higher ratio of sharks in the water, even if there are more dolphins in reality. study on the availability heuristic was the Schwarz et al.
+
+A second line of study has shown that frequency estimation may not be the only strategy we use when making frequency judgments.  A recent line of research has shown that our situational working memory can access long-term memories, and this memory retrieval process includes the ability to determine more accurate probabilities.
+
+See also
+
+Anomic aphasia
+
+Attribute substitution
+
+Cache language model
+
+Confirmation bias
+
+Gambler's fallacy
+
+List of cognitive biases
+
+Recency bias
+
+Streetlight effect
+
+References
+
+External links
+
+How Belief Works – an article on the origins of the availability bias.
+
+Category:Causal fallacies
+
+Category:Cognitive biases
+
+Category:Heuristics
+
+Category:Inductive fallacies
+
+Category:Prospect theory

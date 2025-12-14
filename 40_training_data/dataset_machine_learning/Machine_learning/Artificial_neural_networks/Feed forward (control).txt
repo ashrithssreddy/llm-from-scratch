@@ -1,0 +1,159 @@
+A feed forward (sometimes written feedforward) is an element or pathway within a control system that passes a controlling signal from a source in its external environment to a load elsewhere in its external environment. This is often a command signal from an external operator.
+
+In control engineering, a feedforward control system is a control system that uses sensors to detect disturbances affecting the system and then applies an additional input to minimize the effect of the disturbance. This requires a mathematical model of the system so that the effect of disturbances can be properly predicted.
+
+A control system which has only feed-forward behavior responds to its control signal in a pre-defined way without responding to the way the system reacts; it is in contrast with a system that also has feedback, which adjusts the input to take account of how it affects the system, and how the system itself may vary unpredictably.
+
+In a feed-forward system, the control variable adjustment is not error-based. Instead it is based on knowledge about the process in the form of a mathematical model of the process and knowledge about, or measurements of, the process disturbances.
+
+There are three types of control systems: open loop, feed-forward, and feedback. An example of a pure open loop control system is manual non-power-assisted steering of a motor car; the steering system does not have access to an auxiliary power source and does not respond to varying resistance to turning of the direction wheels; the driver must make that response without help from the steering system. In comparison, power steering has access to a controlled auxiliary power source, which depends on the engine speed. When the steering wheel is turned, a valve is opened which allows fluid under pressure to turn the wheels. A sensor monitors that pressure so that the valve only opens enough to cause the correct pressure to reach the wheel turning mechanism.  This is feed-forward control where the output of the system, the change in direction of travel of the vehicle, plays no part in the system. See Model predictive control.
+
+If the driver is included in the system, then they do provide a feedback path by observing the direction of travel and compensating for errors by turning the steering wheel. In that case you have a feedback system, and the block labeled System in Figure(c) is a feed-forward system.
+
+In other words, systems of different types can be nested, and the overall system regarded as a black-box.
+
+Feedforward control is distinctly different from open loop control and teleoperator systems. Feedforward control requires a mathematical model of the plant (process and/or machine being controlled) and the plant's relationship to any inputs or feedback the system might receive. Neither open loop control nor teleoperator systems require the sophistication of a mathematical model of the physical system or plant being controlled. Control based on operator input without integral processing and interpretation through a mathematical model of the system is a teleoperator system and is not considered feedforward control.
+
+Benefits
+
+The benefits of feedforward control are significant and can often justify the extra cost, time and effort required to implement the technology. Control accuracy can often be improved by as much as an order of magnitude if the mathematical model is of sufficient quality and implementation of the feedforward control law is well thought out. Energy consumption by the feedforward control system and its driver is typically substantially lower than with other controls. Stability is enhanced such that the controlled device can be built of lower cost, lighter weight, springier materials while still being highly accurate and able to operate at high speeds. Other benefits of feedforward control include reduced wear and tear on equipment, lower maintenance costs, higher reliability and a substantial reduction in hysteresis.  Feedforward control is often combined with feedback control to optimize performance.
+
+Model
+
+The mathematical model of the plant (machine, process or organism) used by the feedforward control system may be created and input by a control engineer or it may be learned by the control system. Control systems capable of learning and/or adapting their mathematical model have become more practical as microprocessor speeds have increased. The discipline of modern feedforward control was itself made possible by the invention of microprocessors.
+
+Feedforward control requires integration of the mathematical model into the control algorithm such that it is used to determine the control actions based on what is known about the state of the system being controlled. In the case of control for a lightweight, flexible robotic arm, this could be as simple as compensating between when the robot arm is carrying a payload and when it is not. The target joint angles are adjusted to place the payload in the desired position based on knowing the deflections in the arm from the mathematical model's interpretation of the disturbance caused by the payload. Systems that plan actions and then pass the plan to a different system for execution do not satisfy the above definition of feedforward control. Unless the system includes a means to detect a disturbance or receive an input and process that input through the mathematical model to determine the required modification to the control action, it is not true feedforward control.
+
+Open system
+
+In control theory, an open system is a feed forward system that does not have any feedback loop to control its output. In contrast, a closed system uses on a feedback loop to control the operation of the system.  In an open system, the output of the system is not fed back into the input to the system for control or operation.
+
+Applications
+
+Physiological feed-forward system
+
+In physiology, feed-forward control is exemplified by the normal anticipatory regulation of heartbeat in advance of actual physical exertion by the central autonomic network.  Feed-forward control can be likened to learned anticipatory responses to known cues (predictive coding). Feedback regulation of the heartbeat provides further adaptiveness to the running eventualities of physical exertion. Feedforward systems are also found in biological control of other variables by many regions of animals brains.
+
+Even in the case of biological feedforward systems, such as in the human brain, knowledge or a mental model of the plant (body) can be considered to be mathematical as the model is characterized by limits, rhythms, mechanics and patterns.
+
+A pure feed-forward system is different from a homeostatic control system, which has the function of keeping the body's internal environment 'steady' or in a 'prolonged steady state of readiness.' A homeostatic control system relies mainly on feedback (especially negative), in addition to the feedforward elements of the system.
+
+Gene regulation and feed-forward
+
+Feed-forward loops (FFLs), a three-node graph of the form A affects B and C and B affects C, are frequently observed in transcription networks in several organisms including E. coli and S. cerevisiae, suggesting that they perform functions that are important for the functioning of these organisms. In E. coli and S. cerevisiae transcription networks have been extensively studied, FFLs occur approximately three times more frequently than expected based on random (Erdös-Rényi) networks.
+
+Edges in transcription networks are directed and signed, as they represent activation (+) or repression (-). The sign of a path in a transcription network can be obtained by multiplying the signs of the edges in the path, so a path with an odd number of negative signs is negative. There are eight possible three-node FFLs as each of the three arrows can be either repression or activation, which can be classified into coherent or incoherent FFLs. Coherent FFLs have the same sign for both the paths from A to C, and incoherent FFLs have different signs for the two paths.
+
+The temporal dynamics of FFLs show that coherent FFLs can be sign-sensitive delays that filter input into the circuit. We consider the differential equations for a Type-I coherent FFL, where all the arrows are positive:
+
+\frac{\delta B}{\delta t} = \beta_B (A) - \gamma_{B}B
+
+\frac{\delta C}{\delta t} = \beta_C (A, B) - \gamma_{C}C
+
+Where \beta_y and \beta_z are increasing functions in A and B representing production, and \gamma_Y and \gamma_z are rate constants representing degradation or dilution of B and C respectively. \beta_C (A,B) can represent an AND gate where \beta_C (A,B)=0 if either A = 0 or B = 0, for instance if  \beta_C (A,B)=\beta_C \theta_A (A>k_{AC} ) \theta_A (B>k_{ABC} ) where \theta_A and \theta_B are step functions. In this case the FFL creates a time-delay between a sustained on-signal, i.e. increase in A and the output increase in C. This is because production of A must first induce production of B, which is then needed to induce production of C. However, there is no time-delay in for an off-signal because a reduction of A immediately results in a decrease in the production term \beta_C (A,B). This system therefore filters out fluctuations in the on-signal and detects persistent signals. This is particularly relevant in settings with stochastically fluctuating signals. In bacteria these circuits create time delays ranging from a few minutes to a few hours.
+
+Similarly, an inclusive-OR gate in which C is activated by either A or B is a sign-sensitive delay with no delay after the ON step but with a delay after the OFF step. This is because an ON pulse immediately activates B and C, but an OFF step does not immediately result in deactivation of C because B can still be active. This can protect the system from fluctuations that result in the transient loss of the ON signal and can also provide a form of memory. Kalir, Mangan, and Alon, 2005 show that the regulatory system for flagella in E. coli is regulated with a Type 1 coherent feedforward loop.
+
+For instance, the regulation of the shift from one carbon source to another in diauxic growth in E. coli can be controlled via a type-1 coherent FFL. In diauxic growth cells growth using two carbon sources by first rapidly consuming the preferred carbon source, and then slowing growth in a lag phase before consuming the second less preferred carbon source. In E. coli, glucose is preferred over both arabinose and lactose. The absence of glucose is represented via a small molecule cAMP. Diauxic growth in glucose and lactose is regulated by a simple regulatory system involving cAMP and the lac operon. However, growth in arabinose is regulated by a feedforward loop with an AND gate which confers an approximately 20 minute time delay between the ON-step in which cAMP concentration increases when glucose is consumed and when arabinose transporters are expressed. There is no time delay with the OFF signal which occurs when glucose is present. This prevents the cell from shifting to growth on arabinose based on short term fluctuations in glucose availability.
+
+Additionally, feedforward loops can facilitate cellular memory. Doncic and Skotheim (2003) show this effect in the regulation in the mating of yeast, where extracellular mating pheromone induces mating behavior, including preventing cells from entering the cell cycle. The mating pheromone activates the MAPK pathway, which then activates the cell-cycle inhibitor Far1 and the transcription factor Ste12, which in turn increases the synthesis of inactive Far1. In this system, the concentration of active Far1 depends on the time integral of a function of the external mating pheromone concentration. This dependence on past levels of mating pheromone is a form of cellular memory. This system simultaneously allows for the stability and reversibility.
+
+Incoherent feedforward loops, in which the two paths from the input to the output node have different signs result in short pulses in response to an ON signal. In this system, input A simultaneous directly increases and indirectly decreases synthesis of output node C. If the indirect path to C (via B) is slower than the direct path a pulse of output is produced in the time period before levels of B are high enough to inhibit synthesis of C. Response to epidermal growth factor (EGF) in dividing mammalian cells is an example of a Type-1 incoherent FFL.
+
+The frequent observation of feed-forward loops in various biological contexts across multiple scales suggests that they have structural properties that are highly adaptive in many contexts. Several theoretical and experimental studies including those discussed here show that FFLs create a mechanism for biological systems to process and store information, which is important for predictive behavior and survival in complex dynamically changing environments.
+
+Feed-forward systems in computing
+
+In computing, feed-forward normally refers to a perceptron network in which the outputs from all neurons go to following but not preceding layers, so there are no feedback loops.  The connections are set up during a training phase, which in effect is when the system is a feedback system.
+
+Long distance telephony
+
+In the early 1970s, intercity coaxial transmission systems, including L-carrier, used feed-forward amplifiers to diminish linear distortion.  This more complex method allowed wider bandwidth than earlier feedback systems.  Optical fiber, however, made such systems obsolete before many were built.
+
+Automation and machine control
+
+Feedforward control is a discipline within the field of automatic controls used in automation.
+
+Parallel feed-forward compensation with derivative (PFCD)
+
+The method is rather a new technique that changes the phase of an open-loop transfer function of a non-minimum phase system into minimum phase.
+
+See also
+
+Black box
+
+Smith predictor
+
+References
+
+Further reading
+
+S. Mangan A. Zaslaver & U. Alon, "The coherent feed-forward loop serves as a sign-sensitive delay element in transcription networks", J. Molecular Biology 334:197-204 (2003).
+
+Foss, S., Foss, K., & Trapp. (2002). Contemporary Perspectives on Rhetoric (3rd ed.). Waveland Press, Inc.
+
+Book, W.J. and Cetinkunt, S., "Optimum Control of Flexible Robot Arms OR Fixed Paths", IEEE Conference on Decision and Control. December 1985.
+
+Meckl, P.H. and Seering, W.P., "Feedforward Control Techniques Achieve Fast Settling Time in Robots", Automatic Control Conference Proceedings. 1986, pp 58–64.
+
+Sakawa, Y., Matsuno, F. and Fukushima, S., "Modeling and Feedback Control of a Flexible Arm", Journal of Robotic Systems. August 1985, pp 453–472.
+
+Truckenbrodt, A., "Modeling and Control of Flexible Manipulator Structures", 4th CISM-IFToMM Symp., Warszawa, 1981.
+
+Leu, M.C., Dukovski, V. and Wang, K.K., "An Analytical and Experimental Study of the Stiffness of Robot Manipulators with Parallel Mechanisms", 1985 ASME Winter Annual Meeting PRD-Vol. 15 Robotics and Manufacturing Automation, pp.&nbsp;137–144
+
+Asada, H., Youcef-Toumi, K. and Ramirez, R.B., "Designing of the MIT Direct Drive Arm", Int. Symp. on Design and Synthesis, Japan, July 1984.
+
+Rameriz, R.B., Design of a High Speed Graphite Composite Robot Arm, M.S. Thesis, M.E. Dept., MIT, Feb. 1984.
+
+Balas, M.J., "Feedback Control of Flexible Systems", IEEE Trans. on Automatic Control, Vol.AC-23, No.4, Aug. 1978, pp.&nbsp;673–679.
+
+Balas, M.J., "Active Control of Flexible Systems", J. of Optim. Th. and App., Vol.25, No.3, July 1978,
+
+Book, W.J., Maizzo Neto, 0. and Whitney, D.E., "Feedback Control of Two Beam, Two Joint Systems With Distributed Flexibility", Journal of Dynamic Systems, Measurement and Control, Vol.97, No.4, December 1975, pp.&nbsp;424–430.
+
+Book, W.J., "Analysis of Massless Elastic Chains With Servo Controlled Joints", Journal of Dynamic Systems, Measurement and Control, Vol.101, September 1979, pp.&nbsp;187–192.
+
+Book, W.J., "Recursive Lagrangian Dynamics of Flexible Manipulator Arms Via Transformation Matrices", Carnegie-Mellon University Robotics Institute Technical Report, CMU-RI-TR-8323, Dec. 1983.
+
+Hughes, P.C., "Dynamics of a Flexible Manipulator Arm for the Space Shuttle", AAS/AIAA Astrodynamics Conference, September 1977, Jackson Lake Lodge, Wyoming.
+
+Hughes, P.C., "Dynamics of a Chain of Flexible Bodies", Journal of Astronautical Sciences, 27,4, Oct.-Dec. 1979, pp.&nbsp;359–380.
+
+Meirovitch, L., "Modeling and control of Distributed Structures" Proc. of the Workshop on Application of Distributed System Theory to Large Space Structures, JPL/CIT, NTIS #N83- 36064, July 1, 1983.
+
+Schmitz, E., "Experiments on the End-point Position Control of a Very Flexible One Link.Manipulator", Ph.D. Dissertation,-Stanford Univ., Dept. of Aero & Astro., June 1985.
+
+Martin, G.D., On the Control of Flexible Mechanical Systems, Ph.D. Dissertation, Stanford Univ., Dept. of E.E., May 1978.
+
+Zalucky, A. and Hardt, D.E., "Active Control of Robot Structure Deflections", J. of Dynamic Systems, Measurement and Control, Vol. 106, March 1984, pp.&nbsp;63–69.
+
+Sangveraphunsiri, V., The Optimal Control and Design of a Flexible Manipulator Arm, Ph.D. Dissertation, Dept. of Mech. Eng., Georgia Inst, of Tech., 1984. 1985.
+
+Nemir, D. C, Koivo, A. J., and Kashyap, R. L., "Pseudolinks and the Self-Tuning Control of a Nonrigid Link Mechanism", Purdue University, Advance copy submitted for publication, 1987.
+
+Widmann, G. R. and Ahmad, S., "Control of Industrial Robots with Flexible Joints", Purdue University, Advance copy submitted for publication, 1987.
+
+Hollars, M. G., Uhlik, C. R., and Cannon, R. H., "Comparison of Decoupled and Exact Computed Torque Control for Robots with Elastic Joints", Advance copy submitted for publication, 1987.
+
+Cannon, R. H. and Schmitz, E., "Initial Experiments on the End- Point Control of a Flexible One Link Robot", International Journal of Robotics Research, November 1983.
+
+Oosting, K.W. and Dickerson, S.L., "Low-Cost, High Speed Automated Inspection", 1991, Industry Report
+
+Oosting, K.W. and Dickerson, S.L., "Feed Forward Control for Stabilization", 1987, ASME
+
+Oosting, K.W. and Dickerson, S.L., "Control of a Lightweight Robot Arm", 1986, IEEE International Conference on Industrial Automation
+
+Oosting, K.W., "Actuated Feedforward Controlled Solar Tracking System", 2009, Patent Pending
+
+Oosting, K.W., "Feedforward Control System for a Solar Tracker", 2009, Patent Pending
+
+Oosting, K.W., "Smart Solar Tracking", July, 2010, InterSolar NA Presentation
+
+Category:Control theory
+
+Category:Artificial neural networks
+
+Category:Neuroethology concepts
+
+&

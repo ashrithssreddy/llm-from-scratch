@@ -1,0 +1,33 @@
+Margaret (Maghi) Daniel King is a retired British computational linguist known for her work on evaluating the quality of machine translation. She is an honorary professor in the Department of Translation Technology of the University of Geneva in Switzerland, and the former director of the Dalle Molle Institute for Semantic and Cognitive Studies at the University of Geneva.
+
+Education and career
+
+King read classics, Ancient History and Philosophy (Greats) at the University of Oxford, worked as a computer programmer, and became a lecturer in the Department of Computation at the University of Manchester Institute of Science and Technology. She moved to the Dalle Molle Institute for Semantic and Cognitive Studies (ISSCO) in 1974. In 1976, ISSCO became part of the University of Geneva, and she continued there, becoming ISSCO's director in 1978. She remained director until her retirement in 2006.
+
+Recognition
+
+King is a Fellow of the European Association for Artificial Intelligence
+
+(formerly ECCAI), elected in 1999.
+
+References
+
+{{reflist|refs=
+
+}}
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:Linguists from the United Kingdom
+
+Category:Women linguists
+
+Category:Natural language processing researchers
+
+Category:Alumni of the University of Oxford
+
+Category:Academic staff of the University of Geneva
+
+Category:Fellows of the European Association for Artificial Intelligence

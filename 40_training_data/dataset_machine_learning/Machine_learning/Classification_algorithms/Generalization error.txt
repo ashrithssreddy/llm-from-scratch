@@ -1,0 +1,61 @@
+For supervised learning applications in machine learning and statistical learning theory, generalization error (also known as the out-of-sample error or the risk) is a measure of how accurately an algorithm is able to predict outcomes for previously unseen data. As learning algorithms are evaluated on finite samples, the evaluation of a learning algorithm may be sensitive to sampling error. As a result, measurements of prediction error on the current data may not provide much information about the algorithm's predictive ability on new, unseen data. The generalization error can be minimized by avoiding overfitting in the learning algorithm. The performance of machine learning algorithms is commonly visualized by learning curve plots that show estimates of the generalization error throughout the learning process.
+
+Definition
+
+In a learning problem, the goal is to develop a function f_n(\vec{x}) that predicts output values y for each input datum \vec{x}. The subscript n indicates that the function f_n is developed based on a data set of n data points. The generalization error or expected loss or risk I[f] of a particular function f over all possible values of \vec{x} and y is the expected value of the loss function V(f):
+
+These conditions can be formalized as:
+
+Leave-one-out cross-validation Stability
+
+An algorithm L has CVloo stability if for each n, there exists a \beta_{CV}^{(n)} and \delta_{CV}^{(n)} such that:
+
+\forall i\in\{1,...,n\}, \mathbb{P}_S\{|V(f_{S^i},z_i)-V(f_S,z_i)|\leq\beta_{CV}^{(n)}\}\geq1-\delta_{CV}^{(n)}
+
+and \beta_{CV}^{(n)} and \delta_{CV}^{(n)} go to zero as n goes to infinity.
+
+Expected-leave-one-out error Stability
+
+An algorithm L has Eloo_{err} stability if for each n there exists a \beta_{EL}^m and a \delta_{EL}^m such that:
+
+\forall i\in\{1,...,n\}, \mathbb{P}_S\left\{\left|I[f_S]-\frac{1}{n}\sum_{i=1}^N V\left(f_{S^{i}},z_i\right)\right|\leq\beta_{EL}^{(n)}\right\}\geq1-\delta_{EL}^{(n)}
+
+with \beta_{EL}^{(n)} and \delta_{EL}^{(n)} going to zero for n\rightarrow\infty.
+
+For leave-one-out stability in the L_1 norm, this is the same as hypothesis stability:
+
+\mathbb{E}_{S,z}[|V(f_S,z) - V(f_{S^i},z)|] \leq \beta_H^{(n)}
+
+with \beta_H^{(n)} going to zero as n goes to infinity.
+
+Algorithms with proven stability
+
+A number of algorithms have been proven to be stable and as a result have bounds on their generalization error. A list of these algorithms and the papers that proved stability is available here.
+
+Relation to overfitting
+
+[[File:RegressionOverfitting.png|thumb|This figure illustrates the relationship between overfitting and the generalization error I[fn] - IS[fn]. Data points were generated from the relationship y = x with white noise added to the y values. In the left column, a set of training points is shown in blue. A seventh order polynomial function was fit to the training data. In the right column, the function is tested on data sampled from the underlying joint probability distribution of x and y.
+
+In the top row, the function is fit on a sample dataset of 10 datapoints. In the bottom row, the function is fit on a sample dataset of 100 datapoints. As we can see, for small sample sizes and complex functions, the error on the training set is small but error on the underlying distribution of data is large and we have overfit the data. As a result, generalization error is large. As the number of sample points increases, the prediction error on training and test data converges and generalization error goes to 0.
+
+]]
+
+The concepts of generalization error and overfitting are closely related. Overfitting occurs when the learned function f_S becomes sensitive to the noise in the sample. As a result, the function will perform well on the training set but not perform well on other data from the joint probability distribution of x and y. Thus, the more overfitting occurs, the larger the generalization error.
+
+The amount of overfitting can be tested using cross-validation methods, that split the sample into simulated training samples and testing samples. The model is then trained on a training sample and evaluated on the testing sample. The testing sample is previously unseen by the algorithm and so represents a random sample from the joint probability distribution of x and y. This test sample allows us to approximate the expected error and as a result approximate a particular form of the generalization error.
+
+Many algorithms exist to prevent overfitting. The minimization algorithm can penalize more complex functions (known as Tikhonov regularization), or the hypothesis space can be constrained, either explicitly in the form of the functions or by adding constraints to the minimization function (Ivanov regularization).
+
+The approach to finding a function that does not overfit is at odds with the goal of finding a function that is sufficiently complex to capture the particular characteristics of the data. This is known as the bias–variance tradeoff. Keeping a function simple to avoid overfitting may introduce a bias in the resulting predictions, while allowing it to be more complex leads to overfitting and a higher variance in the predictions. It is impossible to minimize both simultaneously.
+
+References
+
+Further reading
+
+Mohri, M., Rostamizadeh A., Talwakar A., (2018) Foundations of Machine learning, 2nd ed., Boston: MIT Press.
+
+Moody, J.E. (1992), "The Effective Number of Parameters: An Analysis of Generalization and Regularization in Nonlinear Learning Systems ", in Moody, J.E., Hanson, S.J., and Lippmann, R.P., Advances in Neural Information Processing Systems 4, 847–854.
+
+White, H. (1992b), Artificial Neural Networks: Approximation and Learning Theory, Blackwell.
+
+Category:Classification algorithms

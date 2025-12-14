@@ -1,0 +1,79 @@
+{{Infobox scientist
+
+name              = Inioluwa Deborah Raji
+
+image             = Deb Raji.jpg
+
+birth_place       = Port Harcourt, Nigeria
+
+birth_date        =
+
+nationality       = Canadian
+
+fields            = Computer Science
+
+workplaces        = Mozilla Foundation  Partnership on AI  AI Now Institute  Google  MIT Media Lab
+
+alma_mater        = University of Toronto
+
+known_for         = Algorithmic bias  Fairness (machine learning)  Algorithmic auditing and evaluation
+
+awards            =
+
+}}
+
+Inioluwa Deborah Raji (born ) is a Nigerian-Canadian computer scientist and activist who works on algorithmic bias, AI accountability, and algorithmic auditing. Raji has previously worked with Joy Buolamwini, Timnit Gebru, and the Algorithmic Justice League on researching gender and racial bias in facial recognition technology. She has also worked with Google’s Ethical AI team and been a research fellow at the Partnership on AI and AI Now Institute at New York University working on how to operationalize ethical considerations in machine learning engineering practice. A current Mozilla fellow, she has been recognized by MIT Technology Review and Forbes as one of the world's top young innovators.
+
+Early life and education
+
+Raji was born in Port Harcourt, Nigeria, and moved to Mississauga, Ontario, Canada, when she was four years old. Eventually her family moved to Ottawa. In 2015, she founded Project Include, a nonprofit providing increased student access to engineering education, mentorship, and resources in low income and immigrant communities in the Greater Toronto Area. She started a Doctor of Philosophy - PhD, in Computer Science from the University of California, Berkeley  in Aug 2021.
+
+Career and research
+
+Raji worked with Joy Buolamwini at the MIT Media Lab and Algorithmic Justice League, where she audited commercial facial recognition technologies from Microsoft, Amazon, IBM, Face++, and Kairos. They found that these technologies were significantly less accurate for darker-skinned women than for white men. With support from other top AI researchers and increased public pressure and campaigning, their work led IBM and Amazon to agree to support facial recognition regulation and later halt the sale of their product to police for at least a year. Raji also interned at machine learning startup Clarifai, where she worked on a computer vision model for flagging images.
+
+In 2019, Raji was a summer research fellow at The Partnership on AI working on setting industry machine learning transparency standards and benchmarking norms. Raji was a Tech Fellow at the AI Now Institute worked on algorithmic and AI auditing. Currently, she is a fellow at the Mozilla Foundation researching algorithmic auditing and evaluation.
+
+Selected awards
+
+2019 Venture Beat AI Innovations Award in category AI for Good (received with Joy Buolamwini and Timnit Gebru)
+
+2020 MIT Technology Review 35 Under 35 Innovator Award
+
+2021 Forbes 30 Under 30 Award in Enterprise Technology
+
+2023 Time magazine 100 Most Influential People in AI
+
+References
+
+Category:Living people
+
+Category:1990s births
+
+Category:Artificial intelligence researchers
+
+Category:University of Toronto alumni
+
+Category:Mozilla people
+
+Category:Canadian computer scientists
+
+Category:People from Mississauga
+
+Category:Scientists from Ontario
+
+Category:Machine learning researchers
+
+Category:MIT Media Lab
+
+Category:Facial recognition software
+
+Category:Canadian women computer scientists
+
+Category:Computer vision researchers
+
+Category:Black Canadian scientists
+
+Category:Black Canadian women
+
+Category:Nigerian emigrants to Canada

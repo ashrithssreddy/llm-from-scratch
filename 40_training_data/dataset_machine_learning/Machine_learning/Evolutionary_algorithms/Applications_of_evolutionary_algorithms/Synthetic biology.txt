@@ -1,0 +1,329 @@
+]]
+
+Synthetic biology (SynBio) is a multidisciplinary field of science that focuses on living systems and organisms. It applies engineering principles to develop new biological parts, devices, and systems or to redesign existing systems found in nature.
+
+It is a branch of science that encompasses a broad range of methodologies from various disciplines, such as biochemistry, biotechnology, biomaterials, material science/engineering, genetic engineering, molecular biology, molecular engineering, systems biology, membrane science, biophysics, chemical and biological engineering, electrical and computer engineering, control engineering and evolutionary biology.
+
+It includes designing and constructing biological modules, biological systems, and biological machines, or re-designing existing biological systems for useful purposes.
+
+Additionally, it is the branch of science that focuses on the new abilities of engineering into existing organisms to redesign them for useful purposes.
+
+In order to produce predictable and robust systems with novel functionalities that do not already exist in nature, it is also necessary to apply the engineering paradigm of systems design to biological systems. According to the European Commission, this possibly involves a molecular assembler based on biomolecular systems such as the ribosome.
+
+History
+
+1910: First identifiable use of the term synthetic biology in Stéphane Leduc's publication Théorie physico-chimique de la vie et générations spontanées. He also noted this term in another publication, La Biologie Synthétique in 1912.
+
+1944: Canadian-American scientist Oswald Avery shows that DNA is the material of which genes and chromosomes are made. This becomes the bedrock on which all subsequent genetic research is built.
+
+1953: Francis Crick and James Watson publish the structure of the DNA in Nature.
+
+1961: Jacob and Monod postulate cellular regulation by molecular networks from their study of the lac operon in E. coli and envisioned the ability to assemble new systems from molecular components.
+
+1973: First molecular cloning and amplification of DNA in a plasmid is published in P.N.A.S. by Cohen, Boyer et al. constituting the dawn of synthetic biology.
+
+1978: Arber, Nathans and Smith win the Nobel Prize in Physiology or Medicine for the discovery of restriction enzymes, leading Szybalski to offer an editorial comment in the journal Gene:
+
+{{blockquote|The work on restriction nucleases not only permits us easily to construct recombinant DNA molecules and to analyze individual genes, but also has led us into the new era of synthetic biology where not only existing genes are described and analyzed but also new gene arrangements can be constructed and evaluated.}}
+
+1988: First DNA amplification by the polymerase chain reaction (PCR) using a thermostable DNA polymerase is published in Science by Mullis et al. This obviated adding new DNA polymerase after each PCR cycle, thus greatly simplifying DNA mutagenesis and assembly.
+
+2000: Two papers in Nature report synthetic biological circuits, a genetic toggle switch and a biological clock, by combining genes within E. coli cells.
+
+2003: The most widely used standardized DNA parts, BioBrick plasmids, are invented by Tom Knight. These parts will become central to the International Genetically Engineered Machine (iGEM) competition founded at MIT in the following year.
+
+(SBOL) standard visual symbols for use with BioBricks Standard]]
+
+2003: Researchers engineer an artemisinin precursor pathway in E. coli.
+
+2004: First international conference for synthetic biology, Synthetic Biology 1.0 (SB1.0) is held at MIT.
+
+2005: Researchers develop a light-sensing circuit in E. coli. Another group designs circuits capable of multicellular pattern formation.
+
+2006: Researchers engineer a synthetic circuit that promotes bacterial invasion of tumour cells.
+
+2010: Researchers publish in Science the first synthetic bacterial genome, called M. mycoides JCVI-syn1.0. The genome is made from chemically-synthesized DNA using yeast recombination.
+
+2011: Functional synthetic chromosome arms are engineered in yeast.
+
+2012: Charpentier and Doudna labs publish in Science the programming of CRISPR-Cas9 bacterial immunity for targeting DNA cleavage. This technology greatly simplified and expanded eukaryotic gene editing.
+
+2019: Scientists at ETH Zurich report the creation of the first bacterial genome, named Caulobacter ethensis-2.0, made entirely by a computer, although a related viable form of C. ethensis-2.0 does not yet exist.
+
+2019: Researchers report the production of a new synthetic (possibly artificial) form of viable life, a variant of the bacteria Escherichia coli, by reducing the natural number of 64 codons in the bacterial genome to 59 codons instead, in order to encode 20 amino acids.
+
+2020: Scientists created the first xenobot, a programmable synthetic organism derived from frog cells and designed by AI.
+
+Demis Hassabis and John M. Jumper presented an AI model called AlphaFold2. With its help, they have been able to predict the structure of virtually all the 200 million proteins that researchers have identified. Since their breakthrough, AlphaFold2 has been used by more than two million people from 190 countries. Among a myriad of scientific applications, researchers can now better understand antibiotic resistance and create images of enzymes that can decompose plastic.
+
+2021: Scientists reported that xenobots are able to self-replicate by gathering loose cells in the environment and then forming new xenobots.
+
+2023: Advancements in RNA therapeutics, including vaccines, RNA circuits, and genetic modifications, have improved safety and efficiency in synthetic biology. RNA-based therapeutics are considered safer than DNA-based systems as they do not integrate into the host genome, reducing the risk of unintended genetic alterations. Additionally, RNA-based systems, constructed from RNA devices and circuits, act more rapidly than DNA-based counterparts since they do not require transcription. These advancements have expanded the potential applications of RNA in gene therapy, personalized medicine, and vaccine development.
+
+Perspectives
+
+Synthetic biology is a field whose scope is expanding in terms of systems integration, engineered organisms, and practical findings. Synthetic biology includes the broad redefinition and expansion of biotechnology, with the ultimate goal of being able to design and build engineered live biological systems that process information, manipulate chemicals, fabricate materials and structures, produce energy, provide food, and maintain and enhance human health, as well as advance fundamental knowledge of biological systems  and our environment.
+
+Researchers and companies working in synthetic biology are using nature's power to solve issues in agriculture, manufacturing, and medicine. Synthetic biology currently has no generally accepted definition. Here are a few examples:
+
+It is the science of emerging genetic and physical engineering to produce new (and, therefore, synthetic) life forms. To develop organisms with novel or enhanced characteristics, this emerging field of study combines biology, engineering, and related disciplines' knowledge and techniques to design chemically synthesised DNA.
+
+Biomolecular engineering includes approaches that aim to create a toolkit of functional units that can be introduced to present new technological functions in living cells. Genetic engineering includes approaches to construct synthetic chromosomes or minimal organisms like Mycoplasma laboratorium.
+
+Biomolecular design refers to the general idea of de novo design and additive combination of biomolecular components. Each of these approaches shares a similar task: to develop a more synthetic entity at a higher level of complexity by inventively manipulating a simpler part at the preceding level. Optimizing these exogenous pathways in unnatural systems takes iterative fine-tuning of the individual biomolecular components to select the highest concentrations of the desired product.
+
+On the other hand, "re-writers" are synthetic biologists interested in testing the irreducibility of biological systems. Due to the complexity of natural biological systems, it would be simpler to rebuild the natural systems of interest from the ground up; to provide engineered surrogates that are easier to comprehend, control and manipulate. Re-writers draw inspiration from refactoring, a process sometimes used to improve computer software.
+
+Categories
+
+Bioengineering, synthetic genomics, protocell synthetic biology, unconventional molecular biology, and in silico techniques are the five categories of synthetic biology.
+
+It is necessary to review the distinctions and analogies between the categories of synthetic biology for its social and ethical assessment, to distinguish between issues affecting the whole field and particular to a specific one. These membraneless organelles can be engineered to scaffold metabolic pathways, or enabling protein purification with no traditional external chromatography materials by a workflow termed PandaPure.
+
+Protocell synthetic biology takes artificial life one step closer to reality by eventually synthesizing not only the genome but also every component of the cell in vitro, as opposed to the synthetic genomics approach, which relies on coercing a natural cell to carry out the instructions encoded by the introduced synthetic genome. Synthetic biologists in this field view their work as basic study into the conditions necessary for life to exist and its origin more than in any of the other techniques. The protocell technique, however, also lends itself well to applications; similar to other synthetic biology byproducts, protocells could be employed for the manufacture of biopolymers and medicines.
+
+To replicate emergent behaviours from natural biology and build artificial life, unnatural chemicals are used. The other looks for interchangeable components from biological systems to put together and create systems that do not work naturally. In either case, a synthetic objective compels researchers to venture into new area in order to engage and resolve issues that cannot be readily resolved by analysis. Due to this, new paradigms are driven to arise in ways that analysis cannot easily do. In addition to equipments that oscillate, creep, and play tic-tac-toe, synthetic biology has produced diagnostic instruments that enhance the treatment of patients with infectious diseases.
+
+Top-down approach
+
+It involves using metabolic and genetic engineering techniques to impart new functions to living cells. By comparing universal genes and eliminating non-essential ones to create a basic genome, this method seeks to lessen the complexity of existing cells. These initiatives are founded on the hypothesis of a single genesis for cellular life, the so-called Last Universal Common Ancestor, which supports the presence of a universal minimal genome that gave rise to all living things. Recent studies, however, raise the possibility that the eukaryotic and prokaryotic cells that make up the tree of life may have evolved from a group of primordial cells rather than from a single cell. As a result, even while the Holy Grail-like pursuit of the "minimum genome" has grown elusive, cutting out a number of non-essential functions impairs an organism's fitness and leads to "fragile" genomes. often with the aim of constructing an artificial cell.
+
+Reproduction, replication, and assembly are three crucial self-organizational principles that are taken into account in order to accomplish this. Cells, which are made up of a container and a metabolism, are considered "hardware" in the definition of reproduction, whereas replication occurs when a system duplicates a perfect copy of itself, as in the case of DNA, which is considered "software." When vesicles or containers (such as Oparin's coacervates) formed of tiny droplets of molecules that are organic like lipids or liposomes, membrane-like structures comprising phospholipids, aggregate, assembly occur.
+
+Parallel approach
+
+Parallel engineering is also known as bioengineering. The basic genetic code is the foundation for parallel engineering research, which uses conventional biomolecules like nucleic acids and the 20 amino acids to construct biological systems. For a variety of applications in biocomputing, bioenergy, biofuels, bioremediation, optogenetics, and medicine, it involves the standardisation of DNA components, engineering of switches, biosensors, genetic circuits, logic gates, and cellular communication operators. For directing the expression of two or more genes and/or proteins, the majority of these applications often rely on the use of one or more vectors (or plasmids). Small, circular, double-strand DNA units known as plasmids, which are primarily found in prokaryotic but can also occasionally be detected in eukaryotic cells, may replicate autonomously of chromosomal DNA. DNA serves as the guide for how biological processes should function, like the score to a complex symphony of life. Our ability to comprehend and design biological systems has undergone significant modifications as a result of developments in the previous few decades in both reading (sequencing) and writing (synthesis) DNA sequences. These developments have produced ground-breaking techniques for designing, assembling, and modifying DNA-encoded genes, materials, circuits, and metabolic pathways, enabling an ever-increasing amount of control over biological systems and even entire organisms.
+
+Basic technologies include reading and writing DNA (sequencing and fabrication). Measurements under multiple conditions are needed for accurate modeling and computer-aided design (CAD).
+
+DNA and gene synthesis
+
+Driven by dramatic decreases in costs of oligonucleotide ("oligos") synthesis and the advent of PCR, the sizes of DNA constructions from oligos have increased to the genomic level. In 2000, researchers reported synthesis of the 9.6 kbp (kilo bp) Hepatitis C virus genome from chemically synthesized 60 to 80-mers. In 2002, researchers at Stony Brook University succeeded in synthesizing the 7741 bp poliovirus genome from its published sequence, producing the second synthetic genome, spanning two years. In 2003, the 5386 bp genome of the bacteriophage Phi X 174 was assembled in about two weeks. In 2006, the same team, at the J. Craig Venter Institute, constructed and patented a synthetic genome of a novel minimal bacterium, Mycoplasma laboratorium and were working on getting it functioning in a living cell.
+
+In 2007, it was reported that several companies were offering synthesis of genetic sequences up to 2000 base pairs (bp) long, for a price of about $1 per bp and a turnaround time of less than two weeks. Oligonucleotides harvested from a photolithographic- or inkjet-manufactured DNA chip combined with PCR and DNA mismatch error-correction allows inexpensive large-scale changes of codons in genetic systems to improve gene expression or incorporate novel amino-acids (see George M. Church's and Anthony Forster's synthetic cell projects.). This favors a synthesis-from-scratch approach.
+
+Additionally, the CRISPR/Cas system has emerged as a promising technique for gene editing. It was described as "the most important innovation in the synthetic biology space in nearly 30 years". While other methods take months or years to edit gene sequences, CRISPR speeds that time up to weeks.
+
+Sequencing
+
+DNA sequencing determines the order of nucleotide bases in a DNA molecule. Synthetic biologists use DNA sequencing in their work in several ways. First, large-scale genome sequencing efforts continue to provide information on naturally occurring organisms. This information provides a rich substrate from which synthetic biologists can construct parts and devices. Second, sequencing can verify that the fabricated system is as intended. Third, fast, cheap, and reliable sequencing can facilitate rapid detection and identification of synthetic systems and organisms.
+
+Modularity
+
+This is the ability of a system or component to operate without reference to its context.
+
+The most used standardized DNA parts are BioBrick plasmids, invented by Tom Knight in 2003. To increase genome modularity, the practice of genome refactoring or improving "the internal structure of an existing system for future use, while simultaneously maintaining external system function" has been adopted across synthetic biology disciplines. and type III secretion system along with bacteriophages T7
+
+While DNA is most important for information storage, a large fraction of the cell's activities are carried out by proteins. Tools can send proteins to specific regions of the cell and to link different proteins together. The interaction strength between protein partners should be tunable between a lifetime of seconds (desirable for dynamic signaling events) up to an irreversible interaction (desirable for device stability or resilient to harsh conditions). Interactions such as coiled coils, SH3 domain-peptide binding or SpyTag/SpyCatcher offer such control. In addition, it is necessary to regulate protein-protein interactions in cells, such as with light (using light-oxygen-voltage-sensing domains) or cell-permeable small molecules by chemically induced dimerization.
+
+In a living cell, molecular motifs are embedded in a bigger network with upstream and downstream components. These components may alter the signaling capability of the modeling module. In the case of ultrasensitive modules, the sensitivity contribution of a module can differ from the sensitivity that the module sustains in isolation.
+
+Modeling
+
+Models inform the design of engineered biological systems by better predicting system behavior prior to fabrication. Synthetic biology benefits from better models of how biological molecules bind substrates and catalyze reactions, how DNA encodes the information needed to specify the cell and how multi-component integrated systems behave. Multiscale models of gene regulatory networks focus on synthetic biology applications. Simulations can model all biomolecular interactions in transcription, translation, regulation and induction of gene regulatory networks.
+
+Only extensive modelling can enable the exploration of dynamic gene expression in a form suitable for research and design due to the numerous involved species and the intricacy of their relationships. Dynamic simulations of the entire biomolecular interconnection involved in regulation, transport, transcription, induction, and translation enable the molecular level detailing of designs. As opposed to modelling artificial networks a posteriori, this is contrasted. It is widely employed in screening assays.
+
+Synthetic transcription factors
+
+Studies have considered the components of the DNA transcription mechanism. One desire of scientists creating synthetic biological circuits is to be able to control the transcription of synthetic DNA in unicellular organisms (prokaryotes) and in multicellular organisms (eukaryotes). One study tested the adjustability of synthetic transcription factors (sTFs) in areas of transcription output and cooperative ability among multiple transcription factor complexes. Researchers were able to mutate functional regions called zinc fingers, the DNA specific component of sTFs, to decrease their affinity for specific operator DNA sequence sites, and thus decrease the associated site-specific activity of the sTF (usually transcriptional regulation). They further used the zinc fingers as components of complex-forming sTFs, which are the eukaryotic translation mechanisms. which codes for the enzyme that is the source of bacterial bioluminescence, and can be placed after a respondent promoter to express the luminescence genes in response to a specific environmental stimulus. One such sensor created, consisted of a bioluminescent bacterial coating on a photosensitive computer chip to detect certain petroleum pollutants. When the bacteria sense the pollutant, they luminesce. Another example of a similar mechanism is the detection of landmines by an engineered E.coli reporter strain capable of detecting TNT and its main degradation product DNT, and consequently producing a green fluorescent protein (GFP).
+
+Modified organisms can sense environmental signals and send output signals that can be detected and serve diagnostic purposes. Microbe cohorts have been used.
+
+Biosensors could also be used to detect pathogenic signatures—such as of SARS-CoV-2—and can be wearable.
+
+For the purpose of detecting and reacting to various and temporary environmental factors, cells have developed a wide range of regulatory circuits, ranging from transcriptional to post-translational. These circuits are made up of transducer modules that filter the signals and activate a biological response, as well as carefully designed sensitive sections that attach analytes and regulate signal-detection thresholds. Modularity and selectivity are programmed to biosensor circuits at the transcriptional, translational, and post-translational levels, to achieve the delicate balancing of the two basic sensing modules.]]
+
+However, not all synthetic nutrition products are animal food products – for instance, as of 2021, there are also products of synthetic coffee that are reported to be close to commercialization. Similar fields of research and production based on synthetic biology that can be used for the production of food and drink are:
+
+Genetically engineered microbial food cultures (e.g. for solar-energy-based protein powder)
+
+Cell-free artificial synthesis (e.g. synthetic starch; )
+
+Materials
+
+Photosynthetic microbial cells have been used as a step to synthetic production of spider silk.
+
+Biological computers
+
+A biological computer refers to an engineered biological system that can perform computer-like operations, which is a dominant paradigm in synthetic biology. Researchers built and characterized a variety of logic gates in a number of organisms, and demonstrated both analog and digital computation in living cells. They demonstrated that bacteria can be engineered to perform both analog and/or digital computation. In 2007, in human cells, research demonstrated a universal logic evaluator that operates in mammalian cells. Subsequently, researchers utilized this paradigm to demonstrate a proof-of-concept therapy that uses biological digital computation to detect and kill human cancer cells in 2011. In 2016, another group of researchers demonstrated that principles of computer engineering can be used to automate digital circuit design in bacterial cells. In 2017, researchers demonstrated the 'Boolean logic and arithmetic through DNA excision' (BLADE) system to engineer digital computation in human cells. In 2019, researchers implemented a perceptron in biological systems opening the way for machine learning in these systems.
+
+Cell transformation
+
+Cells use interacting genes and proteins, which are called gene circuits, to implement diverse function, such as responding to environmental signals, decision making and communication. Three key components are involved: DNA, RNA and Synthetic biologist designed gene circuits that can control gene expression from several levels including transcriptional, post-transcriptional and translational levels.
+
+Traditional metabolic engineering has been bolstered by the introduction of combinations of foreign genes and optimization by directed evolution. This includes engineering E. coli and yeast for commercial production of a precursor of the antimalarial drug, Artemisinin.
+
+Entire organisms have yet to be created from scratch, although living cells can be transformed with new DNA. Several ways allow constructing synthetic DNA components and even entire synthetic genomes, but once the desired genetic code is obtained, it is integrated into a living cell that is expected to manifest the desired new capabilities or phenotypes while growing and thriving. Cell transformation is used to create biological circuits, which can be manipulated to yield desired outputs.
+
+Designed proteins
+
+protein was one of the first proteins designed for a fold that had never been seen before in nature. ]]
+
+Natural proteins can be engineered, for example, by directed evolution, novel protein structures that match or improve on the functionality of existing proteins can be produced. One group generated a helix bundle that was capable of binding oxygen with similar properties as hemoglobin, yet did not bind carbon monoxide. A similar protein structure was generated to support a variety of oxidoreductase activities while another formed a structurally and sequentially novel ATPase. Another group generated a family of G-protein coupled receptors that could be activated by the inert small molecule clozapine N-oxide but insensitive to the native ligand, acetylcholine; these receptors are known as DREADDs. Novel functionalities or protein specificity can also be engineered using computational approaches. One study was able to use two different computational methods: a bioinformatics and molecular modeling method to mine sequence databases, and a computational enzyme design method to reprogram enzyme specificity. Both methods resulted in designed enzymes with greater than 100 fold specificity for production of longer chain alcohols from sugar.
+
+Another common investigation is expansion of the natural set of 20 amino acids. Excluding stop codons, 61 codons have been identified, but only 20 amino acids are coded generally in all organisms. Certain codons are engineered to code for alternative amino acids including: nonstandard amino acids such as O-methyl tyrosine; or exogenous amino acids such as 4-fluorophenylalanine. Typically, these projects make use of re-coded nonsense suppressor tRNA-Aminoacyl tRNA synthetase pairs from other organisms, though in most cases substantial engineering is required.
+
+Other researchers investigated protein structure and function by reducing the normal set of 20 amino acids. Limited protein sequence libraries are made by generating proteins where groups of amino acids may be replaced by a single amino acid. For instance, several non-polar amino acids within a protein can all be replaced with a single non-polar amino acid. One project demonstrated that an engineered version of Chorismate mutase still had catalytic activity when only nine amino acids were used.
+
+Researchers and companies practice synthetic biology to synthesize industrial enzymes with high activity, optimal yields and effectiveness. These synthesized enzymes aim to improve products such as detergents and lactose-free dairy products, as well as make them more cost effective. The improvements of metabolic engineering by synthetic biology is an example of a biotechnological technique utilized in industry to discover pharmaceuticals and fermentive chemicals. Synthetic biology may investigate modular pathway systems in biochemical production and increase yields of metabolic production. Artificial enzymatic activity and subsequent effects on metabolic reaction rates and yields may develop "efficient new strategies for improving cellular properties ... for industrially important biochemical production".
+
+Designed nucleic acid systems
+
+Scientists can encode digital information onto a single strand of synthetic DNA. In 2012, George M. Church encoded one of his books about synthetic biology in DNA. The 5.3 Mb of data was more than 1000 times greater than the previous largest amount of information to be stored in synthesized DNA. A similar project encoded the complete sonnets of William Shakespeare in DNA. More generally, algorithms such as NUPACK, ViennaRNA, Ribosome Binding Site Calculator, Cello, enables the design of new genetic systems.
+
+Many technologies have been developed for incorporating unnatural nucleotides and amino acids into nucleic acids and proteins, both in vitro and in vivo. For example, in May 2014, researchers announced that they had successfully introduced two new artificial nucleotides into bacterial DNA. By including individual artificial nucleotides in the culture media, they were able to exchange the bacteria 24 times; they did not generate mRNA or proteins able to use the artificial nucleotides.
+
+Space exploration
+
+Synthetic biology raised NASA's interest as it could help to produce resources for astronauts from a restricted portfolio of compounds sent from Earth. On Mars, in particular, synthetic biology could lead to production processes based on local resources, making it a powerful tool in the development of occupied outposts with less dependence on Earth.
+
+Synthetic life
+
+functions in the minimal genome of the synthetic organism, Syn 3]]
+
+One important topic in synthetic biology is synthetic life, that is concerned with hypothetical organisms created in vitro from biomolecules and/or chemical analogues thereof. Synthetic life experiments attempt to either probe the origins of life, study some of the properties of life, or more ambitiously to recreate life from non-living (abiotic) components. Synthetic life biology attempts to create living organisms capable of carrying out important functions, from manufacturing pharmaceuticals to detoxifying polluted land and water. In medicine, it offers prospects of using designer biological parts as a starting point for new classes of therapies and diagnostic tools. It has been claimed that this would be difficult,
+
+A completely synthetic bacterial chromosome was produced in 2010 by Craig Venter, and his team introduced it to genomically emptied bacterial host cells. The host cells were able to grow and replicate. The Mycoplasma laboratorium is the only living organism with completely engineered genome.
+
+The first living organism with 'artificial' expanded DNA code was presented in 2014; the team used E. coli that had its genome extracted and replaced with a chromosome with an expanded genetic code. The nucleosides added are d5SICS and dNaM. followed by national synthetic cell organizations in several countries, including FabriCell, MaxSynBio and BaSyC. The European synthetic cell efforts were unified in 2019 as SynCellEU initiative.
+
+In 2023, researchers were able to create the first synthetically made human embryos derived from stem cells.
+
+Drug delivery platforms
+
+In therapeutics, synthetic biology has achieved significant advancements in altering and simplifying the therapeutics scope in a relatively short period of time. In fact, new therapeutic platforms, from the discovery of disease mechanisms and drug targets to the manufacture and transport of small molecules, are made possible by the logical and model-guided design construction of biological components. Recently synthetic biologists reprogrammed bacteria to sense and respond to a particular cancer state. Most often bacteria are used to deliver a therapeutic molecule directly to the tumor to minimize off-target effects. To target the tumor cells, peptides that can specifically recognize a tumor were expressed on the surfaces of bacteria. Peptides used include an affibody molecule that specifically targets human epidermal growth factor receptor 2 and a synthetic adhesin. The other way is to allow bacteria to sense the tumor microenvironment, for example hypoxia, by building an AND logic gate into bacteria. Then the bacteria only release target therapeutic molecules to the tumor through either lysis or the bacterial secretion system. Lysis has the advantage that it can stimulate the immune system and control growth. Multiple types of secretion systems can be used and other strategies as well. The system is inducible by external signals. Inducers include chemicals, electromagnetic or light waves.
+
+Multiple species and strains are applied in these therapeutics. Most commonly used bacteria are Salmonella typhimurium, Escherichia coli, Bifidobacteria, Streptococcus, Lactobacillus, Listeria and Bacillus subtilis. Each of these species have their own property and are unique to cancer therapy in terms of tissue colonization, interaction with immune system and ease of application.
+
+Engineered yeast-based platform
+
+Synthetic biologists are developing genetically modified live yeast that can deliver therapeutic biologic medicines. When orally delivered, these live yeast act like micro-factories and will make therapeutic molecules directly in the gastrointestinal tract. Because yeast are eukaryotic, a key benefit is that they can be administered together with antibiotics. Probiotic yeast expressing human P2Y2 purinergic receptor suppressed intestinal inflammation in mouse models of inflammatory bowel disease. A live S. boulardii yeast delivering a tetra-specific anti-toxin that potently neutralizes Toxin A and Toxin B of Clostridioides difficile has been developed. This therapeutic anti-toxin is a fusion of four single-domain antibodies (nanobodies) that potently and broadly neutralize the two major virulence factors of C. difficile at the site of infection in preclinical models. The first in human clinical trial of engineered live yeast for the treatment of Clostridioides difficile infection is anticipated in 2024 and will be sponsored by the developer Fzata, Inc.
+
+Cell-based platform
+
+The immune system plays an important role in cancer and can be harnessed to attack cancer cells. Cell-based therapies focus on immunotherapies, mostly by engineering T cells.
+
+T cell receptors were engineered and 'trained' to detect cancer epitopes. Chimeric antigen receptors (CARs) are composed of a fragment of an antibody fused to intracellular T cell signaling domains that can activate and trigger proliferation of the cell. Multiple second generation CAR-based therapies have been approved by FDA.
+
+Gene switches were designed to enhance safety of the treatment. Kill switches were developed to terminate the therapy should the patient show severe side effects. Mechanisms can more finely control the system and stop and reactivate it. Since the number of T-cells are important for therapy persistence and severity, growth of T-cells is also controlled to dial the effectiveness and safety of therapeutics.
+
+Although several mechanisms can improve safety and control, limitations include the difficulty of inducing large DNA circuits into the cells and risks associated with introducing foreign components, especially proteins, into cells.
+
+Biofuels, pharmaceuticals and biomaterials
+
+The most popular biofuel is ethanol produced from corn or sugar cane, but this method of producing biofuels is troublesome and constrained due to the high agricultural cost and inadequate fuel characteristics of ethanol. A substitute and potential source of renewable energy is microbes that have had their metabolic pathways altered to be more efficient at converting biomass into biofuels. Only if their production costs could be made to match or even beat those of present fuel production can these techniques be expected to be successful. Related to this, there are several medicines whose pricey manufacturing procedures prevent them from having a larger therapeutic range. The creation of new materials and the microbiological manufacturing of biomaterials would both benefit substantially from novel artificial biology tools.
+
+Regulatory elements
+
+To build and develop biological systems, regulating components including regulators, ribosome-binding sites (RBSs), and terminators are crucial. Despite years of study, there are many various varieties and numbers of promoters and terminators for Escherichia coli, but also for the well-researched model organism Saccharomyces cerevisiae, as well as for other organisms of interest, these tools are quite scarce. Numerous techniques have been invented for the finding and identification of promoters and terminators in order to overcome this constraint, including genome mining, random mutagenesis, hybrid engineering, biophysical modelling, combinatorial design, and rational design.
+
+Bioprinted organs
+
+Other transplants and induced regeneration
+
+There is ongoing research and development into synthetic biology based methods for inducing regeneration in humans as well the creation of transplantable artificial organs.
+
+Nanoparticles, artificial cells and micro-droplets
+
+Synthetic biology can be used for creating nanoparticles which can be used for drug-delivery as well as for other purposes. Complementing research and development seeks to and has created synthetic cells that mimics functions of biological cells. Applications include medicine such as designer-nanoparticles that make blood cells eat away—from the inside out—portions of atherosclerotic plaque that cause heart attacks. Synthetic micro-droplets for algal cells or synergistic algal-bacterial multicellular spheroid microbial reactors, for example, could be used to produce hydrogen as hydrogen economy biotechnology.
+
+Electrogenetics
+
+Mammalian designer cells are engineered by humans to behave a specific way, such as an immune cell that expresses a synthetic receptor designed to combat a specific disease. Electrogenetics is an application of synthetic biology that involves utilizing electrical fields to stimulate a response in engineered cells. Controlling the designer cells can be done with relative ease through the use of common electronic devices, such as smartphones. Additionally, electrogenetics allows for the possibility of creating devices that are much smaller and compact than devices that use other stimulus through the use of microscopic electrodes. This was implemented in ElectroHEK cells, cells that contain voltage-gated calcium channels that are electrosensitive, meaning that the ion channel can be controlled by electrical conduction between electrodes and the ElectroHEK cells.
+
+Ethics
+
+The creation of new life and the tampering of existing life has raised ethical concerns in the field of synthetic biology and are actively being discussed.
+
+Common ethical questions include:
+
+Is it morally right to tamper with nature?
+
+Is one playing God when creating new life?
+
+What happens if a synthetic organism accidentally escapes?
+
+What if an individual misuses synthetic biology and creates a harmful entity (e.g., a biological weapon)?
+
+Who will have control of and access to the products of synthetic biology?
+
+Who will gain from these innovations? Investors? Medical patients? Industrial farmers?
+
+Does the patent system allow patents on living organisms? What about parts of organisms, like HIV resistance genes in humans?
+
+What if a new creation is deserving of moral or legal status?
+
+The ethical aspects of synthetic biology has three main features: biosafety, biosecurity, and the creation of new life forms. Other ethical issues mentioned include the regulation of new creations, patent management of new creations, benefit distribution, and research integrity.
+
+Ethical issues have surfaced for recombinant DNA and genetically modified organism (GMO) technologies and extensive regulations of genetic engineering and pathogen research were in place in many jurisdictions. Amy Gutmann, former head of the Presidential Bioethics Commission, argued that we should avoid the temptation to over-regulate synthetic biology in general, and genetic engineering in particular. According to Gutmann, "Regulatory parsimony is especially important in emerging technologies...where the temptation to stifle innovation on the basis of uncertainty and fear of the unknown is particularly great. The blunt instruments of statutory and regulatory restraint may not only inhibit the distribution of new benefits, but can be counterproductive to security and safety by preventing researchers from developing effective safeguards.".
+
+The "creation" of life
+
+One ethical question is whether or not it is acceptable to create new life forms, sometimes known as "playing God". Currently, the creation of new life forms not present in nature is at small-scale, the potential benefits and dangers remain unknown, and careful consideration and oversight are ensured for most studies. as well as potential reduction of human labor needs and, via therapies of diseases, reduction of human suffering and prolonged life.
+
+Biosafety and biocontainment
+
+What is most ethically appropriate when considering biosafety measures? How can accidental introduction of synthetic life in the natural environment be avoided? Much ethical consideration and critical thought has been given to these questions. Biosafety not only refers to biological containment; it also refers to strides taken to protect the public from potentially hazardous biological agents. Even though such concerns are important and remain unanswered, not all products of synthetic biology present concern for biological safety or negative consequences for the environment. It is argued that most synthetic technologies are benign and are incapable of flourishing in the outside world due to their "unnatural" characteristics as there is yet to be an example of a transgenic microbe conferred with a fitness advantage in the wild.
+
+In general, existing hazard controls, risk assessment methodologies, and regulations developed for traditional genetically modified organisms (GMOs) are considered to be sufficient for synthetic organisms. "Extrinsic" biocontainment methods in a laboratory context include physical containment through biosafety cabinets and gloveboxes, as well as personal protective equipment. In an agricultural context, they include isolation distances and pollen barriers, similar to methods for biocontainment of GMOs. Synthetic organisms may offer increased hazard control because they can be engineered with "intrinsic" biocontainment methods that limit their growth in an uncontained environment, or prevent horizontal gene transfer to natural organisms. Examples of intrinsic biocontainment include auxotrophy, biological kill switches, inability of the organism to replicate or to pass modified or synthetic genes to offspring, and the use of xenobiological organisms using alternative biochemistry, for example using artificial xeno nucleic acids (XNA) instead of DNA.
+
+Biosecurity and bioterrorism
+
+Some ethical issues relate to biosecurity, where biosynthetic technologies could be deliberately used to cause harm to society and/or the environment. Since synthetic biology raises ethical issues and biosecurity issues, humanity must consider and plan on how to deal with potentially harmful creations, and what kinds of ethical measures could possibly be employed to deter nefarious biosynthetic technologies. With the exception of regulating synthetic biology and biotechnology companies, however, the issues are not seen as new because they were raised during the earlier recombinant DNA and genetically modified organism (GMO) debates, and extensive regulations of genetic engineering and pathogen research are already in place in many jurisdictions.
+
+Additionally, the development of synthetic biology tools has made it easier for individuals with less education, training, and access to equipment to modify and use pathogenic organisms as bioweapons. This increases the threat of bioterrorism, especially as terrorist groups become aware of the significant social, economic, and political disruption caused by pandemics like COVID-19. As new techniques are developed in the field of synthetic biology, the risk of bioterrorism is likely to continue to grow. Juan Zarate, who served as Deputy National Security Advisor for Combating Terrorism from 2005 to 2009, noted that "the severity and extreme disruption of a novel coronavirus will likely spur the imagination of the most creative and dangerous groups and individuals to reconsider bioterrorist attacks."
+
+European Union
+
+The European Union-funded project SYNBIOSAFE has issued reports on how to manage synthetic biology. A 2007 paper identified key issues in safety, security, ethics, and the science-society interface, which the project defined as public education and ongoing dialogue among scientists, businesses, government and ethicists. The key security issues that SYNBIOSAFE identified involved engaging companies that sell synthetic DNA and the biohacking community of amateur biologists. Key ethical issues concerned the creation of new life forms.
+
+A subsequent report focused on biosecurity, especially the so-called dual-use challenge. For example, while synthetic biology may lead to more efficient production of medical treatments, it may also lead to synthesis or modification of harmful pathogens (e.g., smallpox). The biohacking community remains a source of special concern, as the distributed and diffuse nature of open-source biotechnology makes it difficult to track, regulate or mitigate potential concerns over biosafety and biosecurity.
+
+COSY, another European initiative, focuses on public perception and communication. To better communicate synthetic biology and its societal ramifications to a broader public, COSY and SYNBIOSAFE published SYNBIOSAFE, a 38-minute documentary film, in October 2009. This proposes specific measures that the synthetic biology industry, especially DNA synthesis companies, should implement. In 2007, a group led by scientists from leading DNA-synthesis companies published a "practical plan for developing an effective oversight framework for the DNA-synthesis industry".
+
+On July 9–10, 2009, the National Academies' Committee of Science, Technology & Law convened a symposium on "Opportunities and Challenges in the Emerging Field of Synthetic Biology".
+
+After the publication of the first synthetic genome and the accompanying media coverage about "life" being created, President Barack Obama established the Presidential Commission for the Study of Bioethical Issues to study synthetic biology. The commission convened a series of meetings, and issued a report in December 2010 titled "New Directions: The Ethics of Synthetic Biology and Emerging Technologies." The commission stated that "while Venter's achievement marked a significant technical advance in demonstrating that a relatively large genome could be accurately synthesized and substituted for another, it did not amount to the "creation of life". It noted that synthetic biology is an emerging field, which creates potential risks and rewards. The commission did not recommend policy or oversight changes and called for continued funding of the research and new funding for monitoring, study of emerging ethical issues and public education. The proliferation of such technology could also make the production of biological and chemical weapons available to a wider array of state and non-state actors. These security issues may be avoided by regulating industry uses of biotechnology through policy legislation. Federal guidelines on genetic manipulation are being proposed by "the President's Bioethics Commission ... in response to the announced creation of a self-replicating cell from a chemically synthesized genome, put forward 18 recommendations not only for regulating the science ... for educating the public". Richard Lewontin wrote that some of the safety tenets for oversight discussed in The Principles for the Oversight of Synthetic Biology are reasonable, but that the main problem with the recommendations in the manifesto is that "the public at large lacks the ability to enforce any meaningful realization of those recommendations".
+
+Health and safety
+
+The hazards of synthetic biology include biosafety hazards to workers and the public, biosecurity hazards stemming from deliberate engineering of organisms to cause harm, and environmental hazards. The biosafety hazards are similar to those for existing fields of biotechnology, mainly exposure to pathogens and toxic chemicals, although novel synthetic organisms may have novel risks. For biosecurity, there is concern that synthetic or redesigned organisms could theoretically be used for bioterrorism. Potential risks include recreating known pathogens from scratch, engineering existing pathogens to be more dangerous, and engineering microbes to produce harmful biochemicals. Lastly, environmental hazards include adverse effects on biodiversity and ecosystem services, including potential changes to land use resulting from agricultural use of synthetic organisms. Synthetic biology is an example of a dual-use technology with the potential to be used in ways that could intentionally or unintentionally harm humans and/or damage the environment. Often "scientists, their host institutions and funding bodies" consider whether the planned research could be misused and sometimes implement measures to reduce the likelihood of misuse.
+
+Existing risk analysis systems for GMOs are generally considered sufficient for synthetic organisms, although there may be difficulties for an organism built "bottom-up" from individual genetic sequences. Synthetic biology generally falls under existing regulations for GMOs and biotechnology in general, and any regulations that exist for downstream commercial products, although there are generally no regulations in any jurisdiction that are specific to synthetic biology.
+
+See also
+
+References
+
+Bibliography
+
+External links
+
+Engineered Pathogens and Unnatural Biological Weapons: The Future Threat of Synthetic Biology . Threats and considerations
+
+Synthetic biology books popular science book and textbooks
+
+Introductory Summary of Synthetic Biology . Concise overview of synthetic biology concepts, developments and applications
+
+Collaborative overview article on Synthetic Biology
+
+Controversial DNA startup wants to let customers create creatures (2015-01-03), San Francisco Chronicle
+
+It's Alive, But Is It Life: Synthetic Biology and the Future of Creation (28 September 2016), World Science Festival
+
+Category:Biotechnology
+
+Category:Molecular genetics
+
+Category:Systems biology
+
+Category:Bioinformatics
+
+Category:Biocybernetics
+
+Category:Appropriate technology
+
+Category:Applications of evolutionary algorithms
+
+Category:Bioterrorism

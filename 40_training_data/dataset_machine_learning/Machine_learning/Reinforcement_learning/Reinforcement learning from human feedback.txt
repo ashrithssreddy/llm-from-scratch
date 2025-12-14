@@ -1,0 +1,233 @@
+In machine learning, reinforcement learning from human feedback (RLHF) is a technique to align an intelligent agent with human preferences. It involves training a reward model to represent preferences, which can then be used to train other models through reinforcement learning.
+
+In classical reinforcement learning, an intelligent agent's goal is to learn a function that guides its behavior, called a policy. The function is iteratively optimized to increase the reward signal derived from the agent's task performance. However, explicitly defining a reward function that accurately approximates human preferences is challenging. Therefore, RLHF seeks to train a "reward model" directly from human feedback. The reward model is first trained in a supervised manner to predict if a response to a given prompt is good (high reward) or bad (low reward) based on ranking data collected from human annotators. This model then serves as a reward function to improve an agent's policy through an optimization algorithm like proximal policy optimization.
+
+RLHF has applications in various domains in machine learning, including natural language processing tasks such as text summarization and conversational agents, computer vision tasks like text-to-image models, and the development of video game bots. While RLHF is an effective method of training models to act better in accordance with human preferences, it also faces challenges due to the way the human preference data is collected. Though RLHF does not require massive amounts of data to improve performance, sourcing high-quality preference data is still an expensive process. Furthermore, if the data is not carefully collected from a representative sample, the resulting model may exhibit unwanted biases.
+
+Background and motivation
+
+Optimizing a model based on human feedback is desirable when a task is difficult to specify yet easy to judge.
+
+Despite the clear benefits of incorporating human feedback in training models, prior efforts—including some that leverage reinforcement learning—have encountered significant challenges. Most attempts were either narrow and difficult to generalize, breaking down on more complex tasks, or they faced difficulties learning from sparse (lacking specific information and relating to large amounts of text at a time) or noisy (inconsistently rewarding similar outputs) reward functions.
+
+RLHF was not the first successful method of using human feedback for reinforcement learning, but it is one of the most widely used. The foundation for RLHF was introduced as an attempt to create a general algorithm for learning from a practical amount of human feedback.
+
+Collecting human feedback
+
+Human feedback is commonly collected by prompting humans to rank instances of the agent's behavior. These rankings can then be used to score outputs, for example, using the Elo rating system, which is an algorithm for calculating the relative skill levels of players in a game based only on the outcome of each game.
+
+One initial motivation of RLHF was that it requires relatively small amounts of comparison data to be effective.
+
+Both offline data collection models, where the model is learning by interacting with a static dataset and updating its policy in batches, as well as online data collection models, where the model directly interacts with the dynamic environment and updates its policy immediately, have been mathematically studied proving sample complexity bounds for RLHF under different feedback models.
+
+In the offline data collection model, when the objective is policy training, a pessimistic MLE that incorporates a lower confidence bound as the reward estimate is most effective. Moreover, when applicable, it has been shown that considering K-wise comparisons directly is asymptotically more efficient than converting them into pairwise comparisons for prediction purposes. Ordinary reinforcement learning, in which agents learn from their actions based on a predefined "reward function", is difficult to apply to NLP tasks because the rewards tend to be difficult to define or measure, especially when dealing with complex tasks that involve human values or preferences. Some notable examples of RLHF-trained language models are OpenAI's ChatGPT (and its predecessor InstructGPT), DeepMind's Sparrow, Google's Gemini, and Anthropic's Claude.
+
+In computer vision, RLHF has also been used to align text-to-image models. Studies that successfully used RLHF for this goal have noted that the use of KL regularization in RLHF, which aims to prevent the learned policy from straying too far from the unaligned model, helped to stabilize the training process by reducing overfitting to the reward model. The final image outputs from models trained with KL regularization were noted to be of significantly higher quality than those trained without. Other methods tried to incorporate the feedback through more direct training—based on maximizing the reward without the use of reinforcement learning—but conceded that an RLHF-based approach would likely perform better due to the online sample generation used in RLHF during updates as well as the aforementioned KL regularization over the prior model, which mitigates overfitting to the reward function.
+
+RLHF was initially applied to other areas, such as the development of video game bots and tasks in simulated robotics. For example, OpenAI and DeepMind trained agents to play Atari games based on human preferences. In classical RL-based training of such bots, the reward function is simply correlated to how well the agent is performing in the game, usually using metrics like the in-game score. In comparison, in RLHF, a human is periodically presented with two clips of the agent's behavior in the game and must decide which one looks better. This approach can teach agents to perform at a competitive level without ever having access to their score. In fact, it was shown that RLHF can sometimes lead to superior performance over RL with score metrics because the human's preferences can contain more useful information than performance-based metrics. The agents achieved strong performance in many of the environments tested, often surpassing human performance.
+
+Training
+
+In RLHF, two different models are trained: a reward model and a reinforcement learning (RL) policy. The reward model learns to determine what behavior is desirable based on human feedback, while the policy is guided by the reward model to determine the agent's actions. Both models are commonly initialized using a pre-trained autoregressive language model. This model is then customarily trained in a supervised manner on a relatively small dataset of pairs of prompts to an assistant and their accompanying responses, written by human annotators.
+
+Reward model
+
+The reward model is usually initialized with a pre-trained model, as this initializes it with an understanding of language and focuses training explicitly on learning human preferences. In addition to being used to initialize the reward model and the RL policy, the model is then also used to sample data to be compared by annotators.
+
+The first step in its training is supervised fine-tuning (SFT). This step does not require the reward model. Instead, the pre-trained model is trained on a dataset D_{SFT} that contains prompt-response pairs (x, y). Then, during SFT, the model is trained to auto-regressively generate the corresponding response y when given a random prompt x. The original paper recommends to SFT for only one epoch, since more than that causes overfitting.
+
+The dataset D_{SFT} is usually written by human contractors, who write both the prompts and responses.
+
+The second step uses a policy gradient method to the reward model. It uses a dataset D_{RL}, which contains prompts, but not responses. Like most policy gradient methods, this algorithm has an outer loop and two inner loops:
+
+Initialize the policy \pi^{RL}_\phi to \pi^{SFT}, the policy output from SFT.
+
+Loop for many steps.
+
+Initialize a new empty dataset D_{\pi_{\phi}^{RL}}.
+
+Loop for many steps
+
+Sample a random prompt x from D_{RL}.
+
+Generate a response y from the policy \pi^{RL}_\phi.
+
+Calculate the reward signal r_\theta(x, y) from the reward model r_\theta.
+
+Add the triple (x, y, r_\theta(x, y)) to D_{\pi_{\phi}^{RL}}.
+
+Update \phi by a policy gradient method to increase the objective function\text{objective}(\phi)=E_{(x,y)\sim D_{\pi_\phi^\text{RL}}}\left[r_\theta(x,y)-\beta\log\left(\frac{\pi^\text{RL}_\phi(y|x)}{\pi^\text{SFT}(y|x)}\right)\right]
+
+Note that (x,y)\sim D_{\pi_\phi^\text{RL}} is equivalent to x \sim D_{RL}, y \sim \pi_\phi^\text{RL}(\cdot | x), which means "sample a prompt from D_{RL}, then sample a response from the policy".
+
+The objective function has two parts. The first part is simply the expected reward E[r], and is standard for any RL algorithm. The second part is a "penalty term" involving the KL divergence. The strength of the penalty term is determined by the hyperparameter \beta.
+
+This KL term works by penalizing the KL divergence (a measure of statistical distance between distributions) between the model being fine-tuned and the initial supervised model. By choosing an appropriate \beta, the training can balance learning from new data while retaining useful information from the initial model, increasing generalization by avoiding fitting too closely to the new data. Aside from preventing the new model from producing outputs too dissimilar those of the initial model, a second motivation of including the KL term is to encourage the model to output high-entropy text, so as to prevent the model from collapsing to a small number of canned responses. Compared to data collection for techniques like unsupervised or self-supervised learning, collecting data for RLHF is less scalable and more expensive. Its quality and consistency may vary depending on the task, interface, and the preferences and biases of individual humans.
+
+The effectiveness of RLHF depends on the quality of human feedback. For instance, the model may become biased, favoring certain groups over others, if the feedback lacks impartiality, is inconsistent, or is incorrect. There is a risk of overfitting, where the model memorizes specific feedback examples instead of learning to generalize. For instance, feedback predominantly from a specific demographic might lead the model to learn peculiarities or noise, along with the intended alignment. Excessive alignment to the specific feedback it received (that is, to the bias therein) can lead to the model performing sub-optimally in new contexts or when used by different groups. A single reward function cannot always represent the opinions of diverse groups of people. Even with a representative sample, conflicting views and preferences may result in the reward model favoring the majority's opinion, potentially disadvantaging underrepresented groups. In the case of RLHF, a model may learn to exploit the fact that it is rewarded for what is evaluated positively and not necessarily for what is actually good, which can lead to it learning to persuade and manipulate. For example, models might learn that apparent confidence, even if inaccurate, garners higher rewards. Such behavior, if unchecked, is not just incentivized but can cause significant deployment issues due to the model's potential to mislead. Studies have found that humans are not skilled at identifying mistakes in LLM outputs in complex tasks; therefore, models learning to generate confident-sounding yet incorrect text can lead to significant issues when deployed. This is notably used in Anthropic's constitutional AI, where the AI feedback is based on the conformance to the principles of a constitution.
+
+Direct alignment algorithms
+
+Direct alignment algorithms (DAA) have been proposed as a new class of algorithms that seek to directly optimize large language models (LLMs) on human feedback data in a supervised manner instead of the traditional policy-gradient methods.
+
+These algorithms aim to align models with human intent more transparently by removing the intermediate step of training a separate reward model. Instead of first predicting human preferences and then optimizing against those predictions, direct alignment methods train models end-to-end on human-labeled or curated outputs. This reduces potential misalignment risks introduced by proxy objectives or reward hacking.
+
+By directly optimizing for the behavior preferred by humans, these approaches often enable tighter alignment with human values, improved interpretability, and simpler training pipelines compared to RLHF.
+
+Direct preference optimization
+
+Direct preference optimization (DPO) is a technique to learn human preferences. Like RLHF, it has been applied to align pre-trained large language models using human-generated preference data. Unlike RLHF, however, which first trains a separate intermediate model to understand what good outcomes look like and then teaches the main model how to achieve those outcomes, DPO simplifies the process by directly adjusting the main model according to people's preferences. It uses a change of variables to define the "preference loss" directly as a function of the policy and uses this loss to fine-tune the model, helping it understand and prioritize human preferences without needing a separate step. Essentially, this approach directly shapes the model's decisions based on positive or negative human feedback.
+
+Recall, the pipeline of RLHF is as follows:
+
+We begin by gathering human preference dataset D.
+
+We then fit a reward model r^* to data, by maximum likelihood estimation using the Plackett–Luce modelr^* = \arg\max_{r} \mathbb{E}_{(x, y_1, \dots, y_N) \sim D} \left[\ln\prod_{k=1}^N\frac{e^{r(x, y_k)}}{\sum_{i=k}^N e^{r(x, y_i)}}\right]
+
+We finally train an optimal policy \pi^* that maximizes the objective function:\pi^* = \arg\max_{\pi^\text{RL}}\mathbb{E}_{(x,y)\sim D_{\pi^\text{RL}}}\left[r^*(x,y)-\beta\log\left(\frac{\pi^\text{RL}(y|x)}{\pi^\text{SFT}(y|x)}\right)\right]
+
+However, instead of doing the intermediate step of the reward model, DPO directly optimizes for the final policy.
+
+First, solve directly for the optimal policy, which can be done by Lagrange multipliers, as usual in statistical mechanics:
+
+\pi^*(y|x) = \frac{\pi^{\text{SFT}}(y|x) \exp(r^*(x,y)/\beta)}{Z(x)},
+
+where Z(x) is the partition function. This is unfortunately not tractable, since it requires summing over all possible responses: Z(x) = \sum_y \pi^{\text{SFT}}(y|x) \exp(r^*(x,y)/\beta) = \mathbb E_{y \sim \pi^{\text{SFT}}(\cdot |x)}[\exp(r^*(x,y)/\beta)]
+
+Next, invert this relationship to express the reward implicitly in terms of the optimal policy:r^*(x,y) = \beta \log \frac{\pi^*(y|x)}{\pi^{\text{SFT}}(y|x)} + \beta \log Z(x).
+
+Finally, plug it back to the maximum likelihood estimator, we obtain\pi^* = \arg\max_{\pi} \mathbb{E}_{(x, y_1, \dots, y_N) \sim D}
+
+\left[\ln\prod_{k=1}^N\frac{e^{\beta \log \frac{\pi(y_k|x)}{\pi^{\text{SFT}}(y_k|x)}}}{\sum_{i=k}^N e^{\beta \log \frac{\pi(y_i|x)}{\pi^{\text{SFT}}(y_i|x)}}}\right]
+
+Usually, DPO is used for modeling human preference in pairwise comparisons, so that N = 2. In that case, we have\pi^* = \arg\max_{\pi} \mathbb{E}_{(x, y_w, y_l) \sim D}
+
+\left[\log \sigma\left(
+
+\beta \log \frac{\pi(y_w|x)}{\pi^{\text{SFT}}(y_w|x)} - \beta \log \frac{\pi(y_l|x)}{\pi^{\text{SFT}}(y_l|x)}
+
+\right)\right]
+
+DPO eliminates the need for a separate reward model or reinforcement learning loop, treating alignment as a supervised learning problem over preference data. This is simpler to implement and train than RLHF and has been shown to produce comparable and sometimes superior results.
+
+Identity preference optimization
+
+Identity preference optimization (IPO) is a modification to the original DPO objective that introduces a regularization term to reduce the chance of overfitting. It remains robust to overtraining by assuming noise in the preference data.
+
+Foremost, IPO first applies a non-linear mapping over the probability distribution of preferences \Psi(q) = \log(q / (1-q)) instead of the Bradley-Terry assumption to soften the probability of preferences and smooth the labels. Here, \Psi(q) denotes the \Psi preference objective separate from the policy objective. This helps avoid the overfitting issue of the assumption that pairwise preferences can be substituted for point-wise rewards, which weakens the KL regularization by heavily skewing the preference distribution.
+
+As with DPO, IPO is also formulated as an offline learning objective learned over a human preference dataset D. In particular, the IPO introduces a new objective by applying a mapping \Psi over the preference probability distribution. Practically, \Psi is taken as the identity mapping, which results in IPO. Hence, IPO also directly optimizes for the final policy from the preference dataset and bypasses the reward modeling stage by the following objective:
+
+\max_{\pi_{\theta}} \mathbb{E}[\Psi(p^*(y_w \succ y_l |x))] - \beta D_{KL}(\pi_{\theta} || \pi_{\text{ref}})
+
+where p^*(y_w \succ y_l |x)
+
+is preference distribution of the chosen responses y_w
+
+over the rejected responses y_l
+
+. However, since p^*
+
+is not observed directly, we sample from a Bernoulli distribution from the offline preference dataset as:p^*(y \succ y' |x) = \mathbb{E}_h[I\{h \text{ prefers } y \text{ to } y' \text{ given } x\}]
+
+To solve this objective, IPO minimizes the quadratic loss function:
+
+\begin{align}
+
+\text{Minimize } &\mathbb{E}_{(x, y_w, y_l) \sim D} [(h_\pi(x, y_w, y_l) -  I(y_w, y_l))]^2
+
+\\ &= \mathbb{E}_{x, y_w, y_l) \sim D} [I h_\pi(x, y_w, y_l) - (1 - I) h_\pi(x, y_l, y_w) - \frac{1}{2}\beta^{-1}]^2
+
+\\ &= \mathbb{E}_{x, y_w, y_l \sim D} [h_\pi(x, y_w, y_l) - \frac{1}{2}\beta^{-1}]^2
+
+\end{align}
+
+where h_\pi(x, y_w, y_l) = \log\left (\frac{\pi_\theta(y_w | x)}{\pi_{\text{ref}}(y_w | x))}\right)
+
+- \log\left (\frac{\pi_\theta(y_l | x)}{\pi_\text{ref}(y_l | x)}\right )
+
+and I(y_w, y_l) is a function drawn from the Bernoulli distribution from the preference dataset. Here,  I(y, y') is 1 if y is preferred to y' which happens with probability p^*(y \succ y'), and 0 otherwise. As such, the simplification of the expression directly follows from exploiting the symmetry of y and y' from the Bernoulli such that for each datapoint (y_w, y_l)_i \sim D. In particular this symmetry can be represented as (y, y', I(y, y')) = (y_{w,i}, y_{l,i}, 1) and  (y, y', I(y, y')) = (y_{l,i}, y_{w,i}, 0) with \mathbb{E}_{y}[p_y] = \frac{1}{2}and \mathbb{E}[I(y, y')] = p_y
+
+.
+
+In summary, IPO can control the gap between the log-likelihood ratios of the policy model and the reference by always regularizing the solution towards the reference model. It allows learning directly from preferences without a reward modelling stage and without relying on the Bradley-Terry modelisation assumption that assumes that pairwise preferences can be substituted with pointwise rewards. is another direct alignment algorithm drawing from prospect theory to model uncertainty in human decisions that may not maximize the expected value.
+
+In general, KTO seeks to optimize a class of new loss functions proposed as “human-aware losses” (HALO) formulated under prospect theory to model “human values” of a query, response pair (x,y) as v(r_\theta(x, y) - E_Q[r_\theta(x,y)']). A function is defined as a human-aware loss for the value described by the general HALO objective:
+
+f(\pi_\theta, \pi_{\text{ref}}) = \mathbb{E}_{x,y \sim D}[a_{x,y}
+
+v\Bigl(
+
+r_\theta(x, y)
+
+\;-\;
+
+\underbrace{E_{y' \sim Q}[\,r_\theta(x,y')\,]}_{\text{reference point}}
+
+\Bigr)
+
+] + C_D
+
+where D is the preference data, C_D is some constant relevant to the dataset, and Q is some distribution representing the baseline or “reference”. Each training example is attached a label a_{x,y} \in \{+1, -1\} that tells us if the example is desirable (we want to push up its reward) and -1 if it’s undesirable (in order to push down its reward). Unlike previous definitions of the reward, KTO defines r_\theta(x,y) as the “implied reward” taken by the log-likelihood ratio between the policy model and the reference model \log \left( \frac{\pi_\theta(y|x)}{\pi_{\text{ref}}(y|x)} \right ). Here, the value function v is a non-linear (typically concave) function that mimics human loss aversion and risk aversion. As opposed to previous preference optimization algorithms, the motivation of KTO lies in maximizing the utility of model outputs from a human perspective rather than maximizing the likelihood of a “better” label (chosen vs. rejected responses). Hence, it constructs a more relaxed generalization to preference distributions by requiring only a binary feedback signal a_{x,y} instead of explicit preference pairs. For each example (x,y) in the dataset D, KTO explicitly optimizes the HALO objective as:
+
+\pi_\theta^*
+
+\;=\;
+
+\arg\max_{\pi_\theta}
+
+\;\;
+
+\mathbb{E}_{(x,y)\,\sim\,D}
+
+\Bigl[
+
+\gamma_y \;-\; v(x,y)
+
+\Bigr], where \gamma_y is a class-specific constant (e.g., \gamma_y = \lambda_D \text{ or } \lambda_U) controlling how strongly the model should push up good outputs vs. push down bad ones. The value function v(x,y) is defined piecewise depending on whether y is desirable (\lambda_D) or undesirable (\lambda_U):
+
+v(x,y)
+
+\;=\;
+
+\begin{cases}
+
+\lambda_D \,\sigma\!\bigl(\,\beta\,\bigl(r_\theta(x, y) \;-\; z_0\bigr)\bigr),
+
+& \quad \text{if } y \sim y_{\mathrm{desirable}\mid x},\\[6pt]
+
+\lambda_U \,\sigma\!\bigl(\,\beta\,\bigl(z_0 \;-\; r_\theta(x, y)\bigr)\bigr),
+
+& \quad \text{if } y \sim y_{\mathrm{undesirable}\mid x}
+
+\end{cases}
+
+and z_0
+
+=
+
+\mathrm{KL}\!\Bigl(
+
+\,\pi_\theta(y' \mid x)
+
+\;\big\Vert\;
+
+\pi_{\mathrm{ref}}(y' \mid x)
+
+\Bigr)is a baseline given by the Kullback–Leibler divergence. Here, \beta controls how “risk-averse” the value function is (larger \beta = faster saturation in the logistic function \sigma). Intuitively, desirable outputs push the model to increase r_\theta so that r_\theta - z_0 becomes more positive. Undesirable ones push it in the opposite direction, so the reward is less than the reference. Since many real-world feedback pipelines yield "like/dislike" data more easily than pairwise comparisons, KTO is designed to be data-cheap and to reflect "loss aversion" more directly by using a straightforward notion of "good vs. bad" at the example level.
+
+See also
+
+Human-in-the-loop
+
+Reward-based selection
+
+References
+
+Further reading
+
+Category:Reinforcement learning
+
+Category:Language modeling
+
+Category:2017 in artificial intelligence

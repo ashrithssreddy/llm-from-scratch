@@ -1,0 +1,21 @@
+VITAL (Validating Investment Tool for Advancing Life Sciences) was a Board Management Software machine learning proprietary software developed by Aging Analytics, a company registered in Bristol (England) and dissolved in 2017. Andrew Garazha (the firm's Senior Analyst) declared that the project aimed "through iterative releases and updates to create a piece of software capable of making autonomous investment decisions."
+
+On 13 May 2014, Deep Knowledge Ventures, a Hong Kong venture capital firm, claimed to have appointed VITAL to its board of directors in order to prove that artificial intelligence could be an instrument for investment decision-making. Fortune reported in 2019 that VITAL is no longer used.
+
+Criticism
+
+Academics and journalists viewed VITAL's board appointment with skepticism. University of Sheffield computer science professor Noel Sharkey called it "a publicity hype". Simon Sharwood of The Register, wrote there is "a strong whiff of stunt and/or promotion about this". In a 2019 speech, the Chief Scientist of Australia, Alan Finkel, commented, "At the time, most of us probably dismissed Vital as a PR exercise. I admit, I used her story three years ago to get a laugh in one of my speeches."
+
+Florian Möslein, a law professor at the University of Marburg, wrote in 2018 that "Vital has widely been acknowledged as the 'world's first artificial intelligence company director'". Vice journalist Jason Koebler suggested that the software did not have any article intelligence capabilities and concluded "VITAL can’t talk, and it can’t hear, and it can’t be a real, functional executive of a company." Sharwood of The Register  noted that because VITAL was not a natural person, it could not be a board member under Hong Kong's corporate governance laws.
+
+University of Sheffield computer science professor Noel Sharkey said of VITAL, "On first sight, it looks like a futuristic idea but on reflection it is really a little bit of publicity hype." According to Andrew Garazh, Aging Analytics Senior Analyst, VITAL was not a machine learning algorithm as the necessary datasets on investment rounds, intellectual property and clinical trial outcomes are generally not disclosed. It was used to  help the human board members of Deep Knowledge Venture make investment decisions in biotechnology companies. which creates ways for computers to help find drugs in research into aging. which uses the OncoFinder algorithm to choose and appraise cancer treatments. He raised the hypothetical where VITAL was able to persuade the board to invest in a startup that had the facade of doing research into treatment for age-associated ills, but in actuality was run by terrorists who were raising funds. to predict the most remunerative investment opportunities.  Drawing his analysis on an article  from Business Insider,  Goldberg describes VITAL's decision-making predictiveness based "on surface pattern recognition and the identification of regularities and/or irregularities". Harari argues that the human mind is being replaced by a world in which algorithms and data make the decisions. Specifically, it is argued that "as algorithms push humans out of the job market," executive boards driven by artificial intelligence are more likely to give priority to algorithms over the humans.
+
+References
+
+Category:2014 software
+
+Category:Data mining and machine learning software
+
+Category:Publicity stunts
+
+Category:Proprietary software

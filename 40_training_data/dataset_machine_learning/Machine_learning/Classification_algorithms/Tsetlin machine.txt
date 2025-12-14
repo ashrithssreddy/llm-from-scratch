@@ -1,0 +1,129 @@
+A Tsetlin machine is an artificial intelligence algorithm based on propositional logic.
+
+Background
+
+A Tsetlin machine is a form of learning automaton collective for learning patterns using propositional logic. Ole-Christoffer Granmo created and gave the method its name after Michael Lvovitch Tsetlin, who invented the Tsetlin automaton and worked on Tsetlin automata collectives and games. Collectives of Tsetlin automata were originally constructed, implemented, and studied theoretically by Vadim Stefanuk in 1962.
+
+The Tsetlin machine uses computationally simpler and more efficient primitives compared to more ordinary artificial neural networks.
+
+As of April 2018 it has shown promising results on a number of test sets.
+
+Types
+
+Original Tsetlin machine
+
+Regression Tsetlin machine
+
+Relational Tsetlin machine
+
+Weighted Tsetlin machine
+
+Arbitrarily deterministic Tsetlin machine
+
+Parallel asynchronous Tsetlin machine
+
+Coalesced multi-output Tsetlin machine
+
+Tsetlin machine for contextual bandit problems
+
+Tsetlin machine autoencoder
+
+Tsetlin machine composites: plug-and-play collaboration between specialized Tsetlin machines
+
+Contracting Tsetlin machine with absorbing automata
+
+Graph Tsetlin machine
+
+Fuzzy-Pattern Tsetlin Machine
+
+Applications
+
+Keyword spotting
+
+Aspect-based sentiment analysis
+
+Word-sense disambiguation
+
+Novelty detection
+
+Intrusion detection
+
+Semantic relation analysis
+
+Image analysis
+
+Fake news detection
+
+Game playing
+
+Batteryless sensing
+
+Recommendation systems
+
+Word embedding
+
+Edge computing
+
+Bayesian network learning
+
+Federated learning
+
+Original Tsetlin machine
+
+{| class="wikitable"
+
++
+
+List of hyperparameters Python, multithreaded Python, CUDA, Julia (programming language)
+
+Convolutional Tsetlin Machine
+
+Hardware
+
+One of the first FPGA-based hardware implementation of the Tsetlin Machine on the Iris flower data set was developed by the μSystems (microSystems) Research Group at Newcastle University.
+
+They also presented the first ASIC implementation of the Tsetlin Machine focusing on energy frugality, claiming it could deliver 10 trillion operation per Joule. The ASIC design had demoed on DATA2020.
+
+Further reading
+
+Books
+
+An Introduction to Tsetlin Machines
+
+Conferences
+
+International Symposium on the Tsetlin Machine (ISTM)
+
+Videos
+
+Tsetlin Machine—A new paradigm for pervasive AI
+
+IOLTS Presentation: Explainability and Dependability Analysis of Learning Automata based AI hardware
+
+FPGA and uC co-design: Tsetlin Machine on Iris demo
+
+Interpretable clustering and dimension reduction with Tsetlin automata machine learning.
+
+Predicting and explaining economic growth using real-time interpretable learning
+
+Early detection of breast cancer from a simple blood test
+
+Recent advances in Tsetlin Machines
+
+Papers
+
+On the Convergence of Tsetlin Machines for the XOR Operator
+
+Learning Automata based Energy-efficient AI Hardware Design for IoT Applications
+
+On the Convergence of Tsetlin Machines for the IDENTITY- and NOT Operators
+
+The Tsetlin Machine - A Game Theoretic Bandit Driven Approach to Optimal Pattern Recognition with Propositional Logic
+
+References
+
+Category:Finite-state machines
+
+Category:Classification algorithms
+
+Category:Logic gates

@@ -1,0 +1,61 @@
+The Kitagawa–Oaxaca–Blinder (KOB) decomposition, or simply Kitagawa decomposition or Blinder–Oaxaca decomposition (), is a statistical method that explains the difference in the means of a dependent variable between two groups by decomposing the gap into within-group and between-group differences in the effect of the explanatory variable.
+
+The method was originally invented by sociologist and demographer Evelyn M. Kitagawa in 1955. Ronald Oaxaca introduced this method in economics in his doctoral thesis at Princeton University and eventually published in 1973. The decomposition technique is also named after Alan Blinder who proposed a similar approach in the same year. Oaxaca's original research question was the wage differential between two different groups of workers (male vs. female), but the method has since been applied to numerous other topics.
+
+Method
+
+The following three equations illustrate this decomposition. Estimate separate linear wage regressions for individuals i in groups A and B:
+
+\begin{align}
+
+(1) \qquad \ln(\text{wages}_{A_i}) & = X_{A_i} \beta_A + \mu_{A_i} \\
+
+(2) \qquad \ln(\text{wages}_{B_i}) & = X_{B_i} \beta_B + \mu_{B_i}
+
+\end{align}
+
+where Χ is a vector of explanatory variables such as education, experience, industry, and occupation, β'A and β'B are vectors of coefficients and μ is an error term.
+
+Suppose we have the regression estimates \hat{\beta}_A, \hat{\beta}_B. Then, since the average value of residuals in a linear regression is zero, we have the KOB decomposition as:
+
+\begin{align}
+
+(3) \qquad & E(\ln(\text{wages}_A)) - E(\ln(\text{wages}_B)) \\[4pt]
+
+= {} & \hat{\beta}_A E(X_A) - \hat{\beta}_B E(X_B) \\[4pt]
+
+= {} & \hat{\beta}_A (E(X_A) - E(X_B)) + E(X_B) (\hat{\beta}_A - \hat{\beta}_B).
+
+\end{align}
+
+In the last line of (3), the first part is the impact of between-group differences in the explanatory variables X, evaluated using the coefficients for group A. The second part is the differential not explained by these differences in observed characteristics X.
+
+Interpretation
+
+The unexplained differential in wages for the same values of explanatory variables should not be interpreted as the amount of the difference in wages due only to discrimination (against women in Oaxaca's application). This is because other explanatory variables not included in the regression (e.g. because they are unobserved) may also account for wage differences. For example, David Card and Alan Krueger found in a paper entitled, "School Quality and Black-White Relative Earnings: A Direct Assessment" that improvements in the quality of schools for Black men born in the Southern states of the United States between 1915 and 1966 increased the return to education for these men, leading to narrowing of the black-white earnings gap.  In terms of wage regressions, the poor quality of schools for Black men had meant a lower value of the β coefficient on years of schooling for Black men than for White men. Thus, some of this lower β coefficient reflected a difference in the quality of education for Black workers which could have otherwise been interpreted as an effect of direct discrimination; differences in the quality of education for Black workers would reflect historical or 'indirect' discrimination against them.
+
+Differences between Kitagawa and Blinder–Oaxaca
+
+Kitagawa’s method was developed to decompose differences between two rates (proportions) by stratifying on categorical factors and attributing the gap to composition (“gross X”) and specific-rate (“residual X”) components, with an optional third interaction term; it is not framed as a regression model.
+
+By contrast, the Blinder–Oaxaca (OB) decomposition is regression-based, typically at the mean, and accommodates continuous outcomes and arbitrary covariates (continuous or categorical) via fitted coefficients and counterfactual predictions.
+
+Oaxaca and Sierminska show that the two approaches coincide only in a special case: when the outcome is binary, all covariates are mutually exclusive indicator variables, and the OB decomposition is implemented with an OLS linear probability model; in that setting, Kitagawa’s components map exactly to OB terms.
+
+They summarize this as “all Kitagawa decompositions are OB, but not all OB are Kitagawa,” emphasizing that OB is the more general framework and warning that the combined “KOB” label is often misleading outside those conditions.
+
+See also
+
+Standardization (demographics)
+
+References
+
+Further reading
+
+Kevin Guo & Guillaume Basse. 2021. "The Generalized Oaxaca-Blinder Estimator." Journal of the American Statistical Association.
+
+Category:Regression analysis
+
+Category:Observational study
+
+Category:Causal inference

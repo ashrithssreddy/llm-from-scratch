@@ -1,0 +1,63 @@
+Chris Callison-Burch is an American computer scientist and professor of computer and information science at the University of Pennsylvania (Penn), specializing in natural language processing (NLP), artificial intelligence (AI), and crowdsourcing. He is recognised for his contributions to machine translation, paraphrase generation, and the application of large language models (LLMs) to AI challenges, with over 200 publications cited more than 33,000 times. Callison-Burch has influenced public policy on AI and copyright, testifying before the U.S. Congress in 2023 on generative AI’s implications. He serves as the faculty director for Penn’s Online Master of Science in Engineering in AI program. His doctoral research developed statistical methods for generating paraphrases in machine translation systems, laying the foundation for his later NLP work. Prior to his PhD, he studied at Stanford University, where he developed an interest in computational linguistics. In 2013, he joined the University of Pennsylvania as an assistant professor in the Department of Computer and Information Science and was promoted to associate professor in 2017, and to full professor in 2024.
+
+At Penn, Callison-Burch teaches courses on AI and NLP, including CIS 5300 (Natural Language Processing) and CIS 5210 (Artificial Intelligence]), which attract over 500 students annually.
+
+He directs Penn’s Online Master of Science in Engineering in AI program, launched in 2025. He teaches AI and NLP courses on Coursera, reaching thousands of global learners.
+
+Callison-Burch was a part-time visiting researcher at Google in 2019 and 2020, where he collaborated on applying Google's LLM to Dungeons & Dragons dialogues. In 2023, he took a sabbatical at the Allen Institute for AI (AI2), where he contributed to vision-language models.
+
+Research
+
+Callison-Burch’s research focuses on NLP, AI, and crowdsourcing, with significant contributions to machine translation, paraphrase generation, and LLMs for tasks like text simplification and bias detection. His early work developed crowdsourcing methods for machine translation, leveraging non-expert annotators for paraphrase-based evaluation, influencing platforms like Amazon Mechanical Turk.
+
+Recent projects include:
+
+Molmo and PixMo (2025): Open-weight vision-language models developed with AI2, achieving state-of-the-art multimodal performance and earning a Best Paper Honourable Mention at CVPR 2025.
+
+Calibrating Large Language Models with Sample Consistency (2025): Improves LLM reliability via sample-based calibration, presented at NAACL 2025.
+
+Media Bias Detector (2025): Real-time tool analysing selection and framing bias in news, using LLMs to detect persuasive language differences (e.g., Russian vs. English Wikipedia).
+
+Holodeck (2024): Language-guided system for generating 3D embodied AI environments, presented at CVPR 2024.
+
+BORDIRLINES (2024): Dataset for cross-lingual retrieval-augmented generation, focusing on culturally sensitive tasks.
+
+He has co-authored over 200 publications, featured at conferences like ACL, EMNLP, and CVPR.
+
+Best Paper Award at STARSEM 2016 for "So-Called Non-Subsective Adjectives".
+
+Best Paper Award at the Workshop on Sense, Concept and Entity Representations 2017 for "Word Sense Filtering Improves Embedding-Based Lexical Substitution".
+
+Honourable Mention Award at CHI 2018 for "A Data-Driven Analysis of Workers’ Earnings on Amazon Mechanical Turk".
+
+Google Faculty Research Award (2013) for crowdsourcing in NLP.
+
+Sloan Research Fellowship.
+
+He has received research funding from Google, Microsoft, Amazon, Facebook, Roblox, DARPA, IARPA, and NSF.
+
+He contributes to AI ethics discussions, including workshops on AI’s effects on writing and creative professions.
+
+See also
+
+Natural language processing
+
+Artificial intelligence
+
+Machine translation
+
+University of Pennsylvania
+
+References
+
+Category:American computer scientists
+
+Category:University of Pennsylvania faculty
+
+Category:Natural language processing researchers
+
+Category:Artificial intelligence researchers
+
+Category:Living people
+
+Category:1977 births

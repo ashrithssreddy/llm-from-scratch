@@ -1,0 +1,47 @@
+Category utility is a measure of "category goodness" defined in  and . It attempts to maximize both the probability that two objects in the same category have attribute values in common, and the probability that objects from different categories have different attribute values. It was intended to supersede more limited measures of category goodness such as "cue validity" and "collocation index". It provides a normative information-theoretic measure of the predictive advantage gained by the observer who possesses knowledge of the given category structure (i.e., the class labels of instances) over the observer who does not possess knowledge of the category structure. In this sense the motivation for the category utility measure is similar to the information gain metric used in decision tree learning. In certain presentations, it is also formally equivalent to the mutual information, as discussed below. A review of category utility in its probabilistic incarnation, with applications to machine learning, is provided in Witten and Frank's 2005 book.
+
+Probability-theoretic definition of category utility
+
+The probability-theoretic definition of category utility given in Fisher (1987) is as follows:
+
+CU(C,F) = \tfrac{1}{p} \sum_{c_j \in C} p(c_j) \left [\sum_{f_i \in F} \sum_{k=1}^m p(f_{ik}|c_j)^2 - \sum_{f_i \in F} \sum_{k=1}^m p(f_{ik})^2\right ]
+
+where F = \{f_i\}, \ i=1 \ldots n is a size-n\  set of m\ -ary features, and C = \{c_j\} \ j=1 \ldots p is a set of p\ categories. The term p(f_{ik})\ designates the marginal probability that feature f_i\  takes on value k\ , and the term p(f_{ik}|c_j)\  designates the category-conditional probability that feature f_i\  takes on value k\  given that the object in question belongs to category c_j\ .
+
+The motivation and development of this expression for category utility, and the role of the multiplicand \textstyle \tfrac{1}{p} as a crude overfitting control, is given in the above sources. Loosely, the term \textstyle p(c_j) \sum_{f_i \in F} \sum_{k=1}^m p(f_{ik}|c_j)^2 is the expected number of attribute values that can be correctly guessed by an observer using a probability-matching strategy together with knowledge of the category labels, while \textstyle p(c_j) \sum_{f_i \in F} \sum_{k=1}^m p(f_{ik})^2 is the expected number of attribute values that can be correctly guessed by an observer the same strategy but without any knowledge of the category labels. Their difference therefore reflects the relative advantage accruing to the observer by having knowledge of the category structure.
+
+Information-theoretic definition of category utility
+
+The information-theoretic definition of category utility for a set of entities with size-n\  binary feature set F = \{f_i\}, \ i=1 \ldots n, and a binary category C = \{c,\bar{c}\} is given in  as follows:
+
+CU(C,F) = \left [p(c) \sum_{i=1}^n p(f_i|c)\log p(f_i|c) + p(\bar{c}) \sum_{i=1}^n p(f_i|\bar{c})\log p(f_i|\bar{c}) \right ] - \sum_{i=1}^n p(f_i)\log p(f_i)
+
+where p(c)\  is the prior probability of an entity belonging to the positive category c\  (in the absence of any feature information), p(f_i|c)\  is the conditional probability of an entity having feature f_i\  given that the entity belongs to category c\ , p(f_i|\bar{c}) is likewise the conditional probability of an entity having feature f_i\  given that the entity belongs to category \bar{c}, and p(f_i)\  is the prior probability of an entity possessing feature f_i\  (in the absence of any category information).
+
+The intuition behind the above expression is as follows: The term p(c)\textstyle  \sum_{i=1}^n p(f_i|c)\log p(f_i|c) represents the cost (in bits) of optimally encoding (or transmitting) feature information when it is known that the objects to be described belong to category c\ . Similarly, the term  p(\bar{c})\textstyle  \sum_{i=1}^n p(f_i|\bar{c})\log p(f_i|\bar{c}) represents the cost (in bits) of optimally encoding (or transmitting) feature information when it is known that the objects to be described belong to category \bar{c}. The sum of these two terms in the brackets is therefore the weighted average of these two costs. The final term, \textstyle  \sum_{i=1}^n p(f_i)\log p(f_i), represents the cost (in bits) of optimally encoding (or transmitting) feature information when no category information is available. The value of the category utility will, in the above formulation, be non-negative.
+
+Category utility and mutual information
+
+Gluck and Corter (1985) and Corter and Gluck (1992) mention that the category utility is equivalent to the mutual information. and many others is that classification (conception) is a precursor to induction: By imposing a particular categorization on the universe, an organism gains the ability to deal with physically non-identical objects or situations in an identical fashion, thereby gaining substantial predictive leverage. As J.S. Mill puts it,
+
+From this base, Mill reaches the following conclusion, which foreshadows much subsequent thinking about category goodness, including the notion of category utility: p(c_j|f_i)\ , or as the deviation of the conditional probability from the category base rate, p(c_j|f_i)-p(c_j)\ . Clearly, these measures quantify only inference from feature to category (i.e., cue validity), but not from category to feature, i.e., the category validity p(f_i|c_j)\ . Also, while the cue validity was originally intended to account for the demonstrable appearance of basic categories in human cognition—categories of a particular level of generality that are evidently preferred by human learners—a number of major flaws in the cue validity quickly emerged in this regard. and "salience".
+
+Applications
+
+Category utility is used as the category evaluation measure in the popular conceptual clustering algorithm called COBWEB.
+
+See also
+
+Abstraction
+
+Concept learning
+
+Universals
+
+Unsupervised learning
+
+References
+
+Category utility
+
+Category utility

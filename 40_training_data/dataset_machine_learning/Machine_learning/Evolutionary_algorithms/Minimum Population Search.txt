@@ -1,0 +1,19 @@
+In evolutionary computation, Minimum Population Search (MPS) is a computational method that optimizes a problem by iteratively trying to improve a set of candidate solutions with regard to a given measure of quality. It solves a problem by evolving a small population of candidate solutions by means of relatively simple arithmetical operations.
+
+MPS is a metaheuristic as it makes few or no assumptions about the problem being optimized and can search very large spaces of candidate solutions. For problems where finding the precise global optimum is less important than finding an acceptable local optimum in a fixed amount of time, using a metaheuristic such as MPS may be preferable to alternatives such as brute-force search or gradient descent.
+
+MPS is used for multidimensional real-valued functions but does not use the gradient of the problem being optimized, which means MPS does not require for the optimization problem to be differentiable as is required by classic optimization methods such as gradient descent and quasi-newton methods. MPS can therefore also be used on optimization problems that are not even continuous, are noisy, change over time, etc.
+
+Background
+
+In a similar way to Differential evolution, MPS uses difference vectors between the members of the population in order to generate new solutions. It attempts to provide an efficient use of function evaluations by maintaining a small population size. If the population size is smaller than the dimensionality of the search space, then the solutions generated through difference vectors will be constrained to the n - 1 dimensional hyperplane. A smaller population size will lead to a more restricted subspace. With a population size equal to the dimensionality of the problem (n = d), the “line/hyperplane points” in MPS will be generated within a d - 1 dimensional hyperplane. Taking a step orthogonal to this hyperplane will allow the search process to cover all the dimensions of the search space.
+
+}}
+
+External links
+
+Reference implementations
+
+Category:Metaheuristics
+
+Category:Evolutionary algorithms

@@ -1,0 +1,3 @@
+REDIRECT Multiple instance learning
+
+Category:Machine learning

@@ -1,0 +1,97 @@
+In probability theory and information theory, the variation of information or shared information distance is a measure of the distance between two clusterings (partitions of elements).  It is closely related to mutual information; indeed, it is a simple linear expression involving the mutual information.  Unlike the mutual information, however, the variation of information is a true metric, in that it obeys the triangle inequality.
+
+illustrating the relation between information entropies, mutual information and variation of information.]]
+
+Definition
+
+Suppose we have two partitions X and Y of a set A, namely  X = \{X_{1}, X_{2}, \ldots, X_{k}\} and Y = \{Y_{1}, Y_{2}, \ldots, Y_{l}\}.
+
+Let:
+
+n = \sum_{i} |X_{i}| = \sum_{j} |Y_{j}|=|A|
+
+p_{i} = |X_{i}| / n and q_{j} = |Y_{j}| / n
+
+r_{ij} = |X_i\cap Y_{j}| / n
+
+Then the variation of information between the two partitions is:
+
+\mathrm{VI}(X; Y ) = - \sum_{i,j} r_{ij} \left[\log(r_{ij}/p_i)+\log(r_{ij}/q_j) \right].
+
+This is equivalent to the shared information distance between the random variables i and j with respect to the uniform probability measure on A defined by \mu(B):=|B|/n for B\subseteq A.
+
+Explicit information content
+
+We can rewrite this definition in terms that explicitly highlight the information content of this metric.
+
+The set of all partitions of a set form a compact lattice where the partial order induces two operations, the meet \wedge and the join \vee, where the maximum \overline{\mathrm{1}} is the partition with only one block, i.e., all elements grouped together, and the minimum is \overline{\mathrm{0}}, the partition consisting of all elements as singletons. The meet of two partitions X and Y is easy to understand as that partition formed by all pair intersections of one block of, X_{i}, of X and one, Y_{i}, of Y. It then follows that X\wedge Y\subseteq X and X\wedge Y\subseteq Y.
+
+Let's define the entropy of a partition X as
+
+H\left( X\right)\,=\,-\sum_i\,p_{i}\log p_{i},
+
+where p_{i}=|X_i|/n. Clearly, H(\overline{\mathrm{1}})=0 and H(\overline{\mathrm{0}})=\log\,n. The entropy of a partition is a monotonous function on the lattice of partitions in the sense that X\subseteq Y\Rightarrow H(X) \geq H(Y).
+
+Then the VI distance between X and Y is given by
+
+\mathrm{VI}(X,Y)\,=\,2 H( X\wedge Y )\,-\,H(X)\,-\,H(Y).
+
+The difference d(X,Y)\equiv |H\left(X\right)-H\left(Y\right)| is a pseudo-metric as d(X,Y)=0 doesn't necessarily imply that X=Y. From the definition of \overline{\mathrm{1}}, it is \mathrm{VI}(X,\mathrm{1})\,=\,H\left(X\right).
+
+If in the Hasse diagram we draw an edge from every partition to the maximum \overline{\mathrm{1}} and assign it a weight equal to the VI distance between the given partition and \overline{\mathrm{1}}, we can interpret the VI distance as basically an average of differences of edge weights to the maximum
+
+\mathrm{VI}(X,Y)\,=\,|\mathrm{VI}(X,\overline{\mathrm{1}})\,-\,\mathrm{VI}(X\wedge Y,\overline{\mathrm{1}})|\,+\,|\mathrm{VI}(Y,\overline{\mathrm{1}})\,-\,\mathrm{VI}(X\wedge Y,\overline{\mathrm{1}})| \,=\,d(X,X\wedge Y)\,+\,d(Y,X\wedge Y).
+
+For H(X) as defined above, it holds that the joint information of two partitions coincides with the entropy of the meet
+
+H(X,Y)\,=\,H(X\wedge Y)
+
+and we also have that d(X,X\wedge Y)\,=\,H(X\wedge Y|X) coincides with the conditional entropy of the meet (intersection) X\wedge Y relative to X.
+
+Identities
+
+The variation of information satisfies
+
+\mathrm{VI}(X; Y ) = H(X) + H(Y) - 2I(X, Y),
+
+where H(X) is the entropy of X, and I(X, Y) is mutual information between X and Y with respect to the uniform probability measure on A. This can be rewritten as
+
+\mathrm{VI}(X; Y ) = H(X,Y) - I(X, Y),
+
+where H(X,Y) is the joint entropy of X and Y, or
+
+\mathrm{VI}(X; Y ) = H(X|Y) + H(Y|X),
+
+where H(X|Y) and H(Y|X) are the respective conditional entropies.
+
+The variation of information can also be bounded, either in terms of the number of elements:
+
+\mathrm{VI}(X; Y)\leq \log(n),
+
+Or with respect to a maximum number of clusters, K^*:
+
+\mathrm{VI}(X ; Y) \leq 2 \log(K^*)
+
+Triangle inequality
+
+To verify the triangle inequality \mathrm{VI}(X; Z ) \leq \mathrm{VI}(X; Y )  + \mathrm{VI}(Y; Z) , expand using the identity \mathrm{VI}(X; Y ) = H(X|Y) + H(Y|X). It suffices to prove H(X | Z) \leq H(X | Y) + H(Y | Z) The right side has a lower bound
+
+H(X | Y) + H(Y | Z) \geq H(X|Y, Z) + H(Y|Z) = H(X, Y|Z)
+
+which is no less than the left side.
+
+References
+
+Further reading
+
+External links
+
+Partanalyzer includes a C++ implementation of VI and other metrics and indices for analyzing partitions and clusterings
+
+C++ implementation with MATLAB mex files
+
+Category:Entropy and information
+
+Category:Summary statistics for contingency tables
+
+Category:Clustering criteria

@@ -1,0 +1,57 @@
+Paco Nathan (born 1962) is an American computer scientist and early engineer of the World Wide Web. Nathan is also an author and performance art show producer who established much of his career in Austin, Texas.
+
+Early life
+
+Paco Nathan was brought up in  San Luis Obispo, California. He studied mathematics and computer science at Stanford University, specializing in user interface design and artificial intelligence, with Douglas Lenat as graduate advisor.
+
+He received a teaching fellowship during 1984–1986, under the direction of Stuart Reges, to create a course called CS1E, as a peer-teaching introduction to using the Internet, informally called "PCs for Poets". It has since grown to become the popular Residential Computing program on campus.
+
+Career
+
+Nathan collaborated with Robby Garner and the Italian researcher Luigi Caputo, President of Alma Research Centre, on one of the first web chatterbots, named Barry DeFacto, in 1995.
+
+The three have worked together on several related projects, including the JFRED open source project for developing Java-based chat bots. They used JFRED in BBC Television's "Tomorrow's World MegaLab Experiment" and attained a 17% Turing percentage during what was the largest online Turing test at the time.
+
+He was a co-founder (with Jon Lebkowsky) and president of FringeWare, Inc., and the editor of FringeWare Review. FringeWare, founded in 1992, was one of the early commercial sites on the Internet. It experimented with mixing subcultural analysis and ecommerce, hence the name "fringe" plus "ware". Through work at FringeWare in support of small press publishers and fringe subcultures, Nathan also helped produce a series of performance art shows during 1997–1999, including events for Robert Anton Wilson, Survival Research Laboratories,
+
+Church of the Subgenius, RTMark, and Negativland. FringeWare was later used as a pattern for part of the organization of the Viridian design movement.
+
+Nathan has written for several other publications including O'Reilly Net, Wired, Whole Earth Review, Mondo 2000, and was a contributing editor for Boing Boing during the early 1990s.
+
+His first article for Mondo 2000 about the IBVA brainwave interface system was credited as inspiration for the song Hi-Tech Hippies by Yellow Magic Orchestra.
+
+Other popular writings have included a parody (nEurorAncid) of the cyberpunk novel Neuromancer, and court-room reporting on behalf of a newly launched Wired during the federal trial of Steve Jackson Games v. US Secret Service.
+
+More recent work has focused on applying aspects of systems theory for computer network applications. Nathan led an engineering team at Symbiot to develop software for monitoring and visualizing risk metrics of complex network security systems. That work received an Apple Design Award in 2004, was cited as a source for the United Nations UNCTAD Information Economy Report in 2005, and spun off as an open source project called OpenSIMS. During his period at Symbiot, Nathan helped pioneer a controversial "hands on" college program in network security at Austin Community College, for which he received a NISOD Award for Teaching Excellence in 2003.
+
+Some of the technology at Symbiot emerged from an earlier project created by Nathan, called The Ceteri Institute, which used complex systems modeling to analyze aspects of multinational corporations. That effort followed from several years of writing, speaking, and political organizing on behalf of anti-corporate activism. During the period of 1999–2002, he summarized that material in a series of papers and lectures about "corporate metabolism".
+
+, Nathan works as the technical director for HeadCase Humanufacturing, combining previous experience in chat bots and ecommerce.
+
+See also
+
+Notes and references
+
+External links
+
+JFRED open source project mac.com
+
+Austin SRL 1997 show archive srl.org
+
+FringeWare content archives web.archive.org
+
+OpenSIMS open source project sourceforge.net
+
+ClaimID verified web pages claimid.com
+
+Category:1962 births
+
+Category:People from San Luis Obispo, California
+
+Category:Living people
+
+Category:Anti-corporate activists
+
+Category:American computer scientists
+
+Category:Natural language processing researchers

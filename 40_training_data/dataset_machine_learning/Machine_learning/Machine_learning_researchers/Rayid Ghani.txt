@@ -1,0 +1,79 @@
+{{Infobox scientist
+
+name              = Rayid Ghani
+
+birth_place       = Karachi, Pakistan
+
+birth_date        =
+
+fields            = Computer Science, Machine learning, Data science, Artificial Intelligence, Social Good, Public Policy
+
+work_institution  = Carnegie Mellon University
+
+alma_mater        = University of the South, TNCarnegie Mellon University, PA
+
+}}
+
+Rayid Ghani (born 1977) is a Distinguished Career Professor in the Machine Learning Department (in the School of Computer Science) and the Heinz College of Information Systems and Public Policy at Carnegie Mellon University. Previously, he was the director of the Center for Data Science and Public Policy, research associate professor in the department of computer science, and a senior fellow at the Harris School of Public Policy at the  University of Chicago. He was also the co-founder of Edgeflip, an analytics startup that grew out of the Obama 2012 Campaign, focused on social media products for non-profits, advocacy groups, and charities. In September 2019, it was announced that he will be leaving the University of Chicago and joining Carnegie Mellon University's School of Computer Science and Heinz College of Information Systems and Public Policy. Prior to that, Rayid was the Chief Scientist of the Obama 2012 Election Campaign and focused on using data science, machine learning, and technology to improve fundraising, volunteer mobilization, voter registration, persuasion, and turnout.
+
+Ghani started and runs the Eric & Wendy Schmidt Data Science for Social Good Summer Fellowship. He's also the co-founder of Coleridge Initiative, a nonprofit organization working with governments to ensure that data and evidence is used more effectively for policymaking.
+
+Education and career
+
+Ghani completed his schooling at the Karachi Grammar School, in Karachi, Pakistan. Ghani completed his graduate studies in the machine learning department at Carnegie Mellon University with Tom M. Mitchell on machine learning and text classification and received his undergraduate degrees in computer science and mathematics from University of the South.
+
+Before his role at the University of Chicago, he was the chief scientist of the Obama 2012 Campaign. Before that, he was a senior research scientist and director of analytics research at Accenture Labs, where he led a technology research team focused on applied R&D in analytics, machine learning, and data mining for large-scale and emerging business problems.
+
+Policy efforts
+
+Ghani has been actively working with government agencies and non-profits on designing AI and Machine Learning Systems to help tackle societal problems in public health, criminal justice, social services, education, economic development, and workforce development
+
+He has also testified in front of the US Senate in 2023 and the US House of Representatives in 2020, on AI Governance and Regulation.
+
+Research contributions
+
+Ghani's research focuses on developing and applying machine learning, data science, and artificial intelligence methods to large-scale social problems in areas such as education, healthcare, economic development, criminal justice, energy, transportation, and public safety. His work has previously focused on text analytics, fundraising, volunteer, and voter mobilization using analytics, social media, and machine learning., and data mining. Rayid's research contributions have been in the areas of text mining, co-training, active learning, consumer behavior modeling, and fraud detection.
+
+His research focus has been on 1) dealing with bias and fairness issues in machine learning and AI, 2) designing Human-AI collaborative systems that support people in making decisions, and 3) evaluating AI systems to focus on the entire workflow and outcomes
+
+He has given keynote speeches on Analytics and the Presidential Elections (for example at Predictive Analytics World, Digital Leaders Forum, Carnegie Mellon University, and CeBIT Australia), on Business Applications of Data Mining, and Data Science for Social Good.
+
+Selected publications
+
+Big Data and Social Science: A Practical Guide to Methods and Tools. Editors: Ian Foster, Rayid Ghani, Ron Jarmin, Frauke Kreuter, Julia Lane. CRC Press 2016.
+
+Empirical observation of negligible fairness–accuracy trade-offs in machine learning for public policy. Kit Rodolfa, Hemank Lamba, Rayid Ghani. Nature Machine Intelligence 2021.
+
+Explainable machine learning for public policy: Use cases, gaps, and research directions. Kasun Amarasinghe, Kit T. Rodolfa, Hemank Lamba, Rayid Ghani. Data and Policy 2023.
+
+Data Mining for Business Applications. Editors: Carlos Soares, Rayid Ghani. Book. IOS Press 2010.
+
+Mining the Web to Add Semantics to Retail Data Mining. R. Ghani. Invited Paper. Web Mining: From Web to Semantic Web. Springer Lecture Notes in Artificial Intelligence, Vol. 3209. Berendt, B.; Hotho, A.; Mladenic, D.; van Someren, M.; Spiliopoulou, M.; Stumme, G. (Eds.)  2004
+
+References
+
+External links
+
+Category:Living people
+
+Category:American computer scientists
+
+Category:Carnegie Mellon University alumni
+
+Category:Carnegie Mellon University faculty
+
+Category:American artificial intelligence researchers
+
+Category:Machine learning researchers
+
+Category:Barack Obama 2012 presidential campaign
+
+Category:University of Chicago faculty
+
+Category:1977 births
+
+Category:Muhajir people
+
+Category:Karachi Grammar School alumni
+
+Category:Pakistani emigrants to the United States

@@ -1,0 +1,31 @@
+{{other people||Allan Ramsay (disambiguation)Allan Ramsay}}
+
+Allan M. Ramsay is a Professor of Formal Linguistics in the Department of Computer Science at the University of Manchester.
+
+Education
+
+Ramsay's undergraduate degree was in Logic and Mathematics from the University of Sussex. After completing a Master of Science degree in Logic from the University of London, he returned to Sussex to complete a PhD in Artificial Intelligence. Prior to working at UMIST and the University of Manchester, he was Professor of Artificial Intelligence at University College Dublin.
+
+Research
+
+Ramsay's research focuses on Natural language processing, including morphology and syntax. He has published papers on the analysis of free word order languages, particularly morphology of the Arabic language, which poses a number of specific problems. Some of this research has been funded by the EPSRC.
+
+References
+
+Category:Academics of the University of Manchester
+
+Category:People associated with the Department of Computer Science, University of Manchester
+
+Category:Linguists from England
+
+Category:Living people
+
+Category:Alumni of the University of London
+
+Category:Alumni of the University of Sussex
+
+Category:1953 births
+
+Category:Natural language processing researchers
+
+Category:Computational linguistics researchers

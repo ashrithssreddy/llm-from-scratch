@@ -1,0 +1,45 @@
+{{Other uses|Winner takes all (disambiguation)Winner takes all}}
+
+Winner-take-all is a computational principle applied in computational models of neural networks by which neurons compete with each other for activation. In the classical form, only the neuron with the highest activation stays active while all other neurons shut down; however, other variations allow more than one neuron to be active, for example the soft winner take-all, by which a power function is applied to the neurons.
+
+Neural networks
+
+In the theory of artificial neural networks, winner-take-all networks are a case of competitive learning in recurrent neural networks. Output nodes in the network mutually inhibit each other, while simultaneously activating themselves through reflexive connections. After some time, only one node in the output layer will be active, namely the one corresponding to the strongest input. Thus the network uses nonlinear inhibition to pick out the largest of a set of inputs. Winner-take-all is a general computational primitive that can be implemented using different types of neural network models, including both continuous-time and spiking networks.
+
+Winner-take-all networks are commonly used in computational models of the brain, particularly for distributed decision-making or action selection in the cortex. Important examples include hierarchical models of vision, and models of selective attention and recognition. They are also common in artificial neural networks and neuromorphic analog VLSI circuits. It has been formally proven that the winner-take-all operation is computationally powerful compared to other nonlinear operations, such as thresholding.
+
+In many practical cases, there is not only one single neuron which becomes active but there are exactly k neurons which become active for a fixed number k. This principle is referred to as k-winners-take-all.
+
+Example algorithm
+
+Consider a single linear neuron, with inputs x_1, \dots, x_n. Each input has weight w_i, and the output of the neuron is \sum_i w_i x_i. In the Instar learning rule, on each input vector, the weight vectors are modified according to \Delta w_i = \eta(x_i - w_i)  where \eta is the learning rate. This rule is unsupervised, since we need just the input vector, not a reference output.
+
+Now, consider multiple linear neurons y_1, \dots, y_m. The output of each satisfies y_i = \sum_j w_{ij} x_j.
+
+In the winner-take-all algorithm, the weights are modified as follows. Given an input vector x, each output is computed. The neuron with the largest output is selected, and the weights going into that neuron are modified according to the Instar learning rule. All other weights remain unchanged.
+
+The k-winners-take-all rule is similar, except that the Instar learning rule is applied to the weights going into the k neurons with the largest outputs. using MOS transistors biased to operate in the weak-inversion or subthreshold regime. In the particular case shown there are only two inputs (I'IN,1 and I'IN,2), but the circuit can be easily extended to multiple inputs in a straightforward way. It operates on continuous-time input signals (currents) in parallel, using only two transistors per input. In addition, the bias current IBIAS is set by a single global transistor that is common to all the inputs.
+
+The largest of the input currents sets the common potential V'C. As a result, the corresponding output carries almost all the bias current, while the other outputs have currents that are close to zero. Thus, the circuit selects the larger of the two input currents, i.e., if I'IN,1 > I'IN,2, we get I'OUT,1 = I'BIAS and I'OUT,2 = 0. Similarly, if I'IN,2 > I'IN,1, we get I'OUT,1 = 0 and I'OUT,2 = IBIAS.
+
+A SPICE-based DC simulation of the CMOS winner-take-all circuit in the two-input case is shown on the right. As shown in the top subplot, the input I'IN,1 was fixed at 6nA, while I'IN,2 was linearly increased from 0 to 10nA.  The bottom subplot shows the two output currents. As expected, the output corresponding to the larger of the two inputs carries the entire bias current (10nA in this case), forcing the other output current nearly to zero.
+
+Other uses
+
+In stereo matching algorithms, following the taxonomy proposed by Scharstein and Szelliski, winner-take-all is a local method for disparity computation. Adopting a winner-take-all strategy, the disparity associated with the minimum or maximum cost value is selected at each pixel.
+
+It is axiomatic that in the electronic commerce market, early dominant players such as AOL or Yahoo! get most of the rewards. By 1998, one study found the top 5% of all web sites garnered more than 74% of all traffic.
+
+The winner-take-all hypothesis in economics suggests that once a technology or a firm gets ahead, it will do better and better over time, whereas lagging technology and firms will fall further behind. See First-mover advantage.
+
+See also
+
+Self-organizing map
+
+Winner-take-all in action selection
+
+Zero instruction set computer
+
+References
+
+Category:Artificial neural networks

@@ -1,0 +1,77 @@
+{{Infobox scientist
+
+name              = Pierre Baldi
+
+image             = |
+
+birth_place       = Rome, Italy
+
+death_date        =
+
+death_place       =
+
+salary            =
+
+spouse            =
+
+field             = Artificial IntelligenceMachine LearningBioinformaticsSystems BiologyMathematics
+
+known_for         =
+
+prizes            =
+
+website           =
+
+}}
+
+Pierre Baldi is a distinguished professor of computer science at University of California Irvine and the director of its Institute for Genomics and Bioinformatics.
+
+Education and early life
+
+Born in Rome (Italy), Pierre Baldi received his Bachelor of Science and Master of Science degrees at the University of Paris, in France. He then obtained his Ph.D. degree in mathematics at the California Institute of Technology in 1986 supervised by R. M. Wilson. He was CEO of a start up company called Net-ID from 1995 to 1999 and joined University of California, Irvine in 1999.
+
+Baldi's research is focused on understanding intelligence in brains and machines, through the study of the mathematical foundations of artificial intelligence, machine learning, and deep learning, and their applications to problems in the natural sciences, physics, chemistry, and biology.
+
+Publications
+
+Baldi has over 400 publications in his field of research and five books:
+
+"Deep Learning in Science." Pierre Baldi. Cambridge University Press. 2021.
+
+"Bioinformatics: the Machine Learning Approach." Pierre Baldi and Soren Brunak. MIT Press, 1998; 2nd Edition, 2001, .
+
+"Modeling the Internet and the Web. Probabilistic Methods and Algorithms," Pierre Baldi, Paolo Frasconi and Padhraic Smyth. Wiley editors, 2003.
+
+"The Shattered Self—The End of Natural Evolution." Pierre Baldi. MIT Press, 2001.
+
+"DNA Microarrays and Gene Regulation." Pierre Baldi and G. Wesley Hatfield. Cambridge University Press, 2002.
+
+Awards and honors
+
+Baldi is a fellow of the Association for the Advancement of Artificial Intelligence (AAAI), the AAAS, the IEEE, and the Association for Computing Machinery (ACM). He is also the recipient of the
+
+2010 Eduardo R. Caianiello Prize for Scientific Contributions to the field of Neural Networks and a fellow of the International Society for Computational Biology (ISCB).
+
+References
+
+Category:American bioinformaticians
+
+Category:Fellows of the American Association for the Advancement of Science
+
+Category:Fellows of the International Society for Computational Biology
+
+Category:Fellows of the IEEE
+
+Category:Machine learning researchers
+
+Category:University of California, Irvine faculty
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:Italian emigrants to the United States
+
+Category:University of Paris alumni
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence

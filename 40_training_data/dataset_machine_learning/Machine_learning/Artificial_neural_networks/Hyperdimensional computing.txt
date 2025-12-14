@@ -1,0 +1,51 @@
+Hyperdimensional computing (HDC) is an approach to computation, particularly Artificial General Intelligence. HDC is motivated by the observation that the cerebellum operates on high-dimensional data representations. In HDC, information is thereby represented as a hyperdimensional (long) vector called a hypervector. A hyperdimensional vector (hypervector) could include thousands of numbers that represent a point in a space of thousands of dimensions, as vector symbolic architectures is an older name for the same approach. Research extenuates for creating Artificial General Intelligence.
+
+Process
+
+Data is mapped from the input space to sparse HD space under an encoding function φ : X → H. HD representations are stored in data structures that are subject to corruption by noise/hardware failures. Noisy/corrupted HD representations can still serve as input for learning, classification, etc. They can also be decoded to recover the input data. H is typically restricted to range-limited integers (-v-v)
+
+This is analogous to the learning process conducted by fruit flies olfactory system. The input is a roughly 50-dimensional vector corresponding to odor receptor neuron types. The HD representation uses ~2,000-dimensions.
+
+Errors
+
+HDC is robust to errors such as an individual bit error (a 0 flips to 1 or vice versa) missed by error-correcting mechanisms. Eliminating such error-correcting mechanisms can save up to 25% of compute cost. This is possible because such errors leave the result "close" to the correct vector. Reasoning using vectors is not compromised. HDC is at least 10x more error tolerant than traditional artificial neural networks, which are already orders of magnitude more tolerant than traditional computing. that is built on top of PyTorch.
+
+Applications
+
+Image recognition
+
+HDC algorithms can replicate tasks long completed by deep neural networks, such as classifying images.
+
+Classifying an annotated set of handwritten digits uses an algorithm to analyze the features of each image, yielding a hypervector per image. The algorithm then adds the hypervectors for all labeled images of e.g., zero, to create a prototypical hypervector for the concept of zero and repeats this for the other digits.
+
+Classifying an unlabeled image involves creating a hypervector for it and comparing it to the reference hypervectors. This comparison identifies the digit that the new image most resembles.
+
+Given labeled example set S = \{(x_{i}, y_{i})\}_{i=1}^N, \ {\scriptstyle\text{where}} \ x_{i} \in X \ {\scriptstyle\text{and}} \ y_{i} \in \{c_{i}\}_{i=1}^K is the class of a particular xi.
+
+Given query xq ∈ X the most similar prototype can be found with k^* = _{k \in 1,...,K}^{argmax} \ \rho(\phi(x_{q}), \phi(c_{k})). The similarity metric ρ is typically the dot-product.
+
+Reasoning
+
+Hypervectors can also be used for reasoning. Raven's progressive matrices presents images of objects in a grid. One position in the grid is blank. The test is to choose from candidate images the one that best fits.
+
+A dictionary of hypervectors represents individual objects. Each hypervector represents an object concept with its attributes. For each test image a neural network generates a binary hypervector (values are +1 or −1) that is as close as possible to some set of dictionary hypervectors. The generated hypervector thus describes all the objects and their attributes in the image.
+
+Another algorithm creates probability distributions for the number of objects in each image and their characteristics. These probability distributions describe the likely characteristics of both the context and candidate images. They too are transformed into hypervectors, then algebra predicts the most likely candidate image to fill the slot.
+
+This approach achieved 88% accuracy on one problem set, beating neural network–only solutions that were 61% accurate. For 3-by-3 grids, the system was 250x faster than a method that used symbolic logic to reason, because of the size of the associated rulebook.
+
+Other
+
+Other applications include bio-signal processing, natural language processing, and robotics.
+
+See also
+
+Support vector machine
+
+References
+
+External links
+
+Category:Artificial neural networks
+
+Category:Deep learning

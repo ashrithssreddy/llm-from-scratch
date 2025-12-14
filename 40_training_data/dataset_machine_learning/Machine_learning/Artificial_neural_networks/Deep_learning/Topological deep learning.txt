@@ -1,0 +1,27 @@
+Topological deep learning (TDL) is a research field that extends deep learning to handle complex, non-Euclidean data structures. Traditional deep learning models, such as convolutional neural networks (CNNs) and recurrent neural networks (RNNs), excel in processing data on regular grids and sequences. However, scientific and real-world data often exhibit more intricate data domains encountered in scientific computations, including point clouds, meshes, time series, scalar fields graphs, or general topological spaces like simplicial complexes and CW complexes. TDL addresses this by incorporating topological concepts to process data with higher-order relationships, such as interactions among multiple entities and complex hierarchies. This approach leverages structures like simplicial complexes and hypergraphs to capture global dependencies and qualitative spatial properties, offering a more nuanced representation of data. TDL also encompasses methods from computational and algebraic topology that permit studying properties of neural networks and their training process, such as their predictive performance or generalization properties.
+
+The mathematical foundations of TDL are algebraic topology, differential topology, and geometric topology. Therefore, TDL can be generalized for data on differentiable manifolds, knots, links, tangles, curves, etc.
+
+History and motivation
+
+Traditional techniques from deep learning often operate under the assumption that a dataset is residing in a highly-structured space (like images, where convolutional neural networks exhibit outstanding performance over alternative methods) or a Euclidean space. The prevalence of new types of data, in particular graphs, meshes, and molecules, resulted in the development of new techniques, culminating in the field of geometric deep learning, which originally proposed a signal-processing perspective for treating such data types. While originally confined to graphs, where connectivity is defined based on nodes and edges, follow-up work extended concepts to a larger variety of data types, including simplicial complexes While at first restricted to smaller datasets, subsequent work developed new descriptors that efficiently summarized topological information of datasets to make them available for traditional machine-learning techniques, such as support vector machines or random forests. Such descriptors ranged from new techniques for feature engineering over new ways of providing suitable coordinates for topological descriptors, or the creation of more efficient dissimilarity measures.
+
+Contemporary research in this field is largely concerned with either integrating information about the underlying data topology into existing deep-learning models or obtaining novel ways of training on topological domains.
+
+Learning on topological spaces
+
+, several models have been suggested that do not follow this approach. For instance, Maggs et al. leverage geometric information from embedded simplicial complexes, i.e., simplicial complexes with high-dimensional features attached to their vertices.This offers interpretability and geometric consistency without relying on message passing. Furthermore, in  a contrastive loss-based method was suggested to learn the simplicial representation.
+
+Learning on topological descriptors
+
+Motivated by the modular nature of deep neural networks, initial work in TDL drew inspiration from topological data analysis, and aimed to make the resulting descriptors amenable to integration into deep-learning models. This led to work defining new layers for deep neural networks. Pioneering work by Hofer et al., for instance, introduced a layer that permitted topological descriptors like persistence diagrams or persistence barcodes to be integrated into a deep neural network. This was achieved by means of end-to-end-trainable projection functions, permitting topological features to be used to solve shape classification tasks, for instance. Follow-up work expanded more on the theoretical properties of such descriptors and integrated them into the field of representation learning. Other such topological layers include layers based on extended persistent homology descriptors, persistence landscapes, or coordinate functions. In parallel, persistent homology also found applications in graph-learning tasks. Noteworthy examples include new algorithms for learning task-specific filtration functions for graph classification or node classification tasks.
+
+Applications
+
+TDL is rapidly finding new applications across different domains, including data compression, enhancing the expressivity and predictive performance of graph neural networks, action recognition, and trajectory prediction.
+
+References
+
+Category:Deep learning
+
+Category:Topology

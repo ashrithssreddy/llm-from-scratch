@@ -1,0 +1,11 @@
+REDIRECT Kuaishou#History
+
+{{Redirect category shell|1=
+
+}}
+
+Category:2024 software
+
+Category:Applications of artificial intelligence
+
+Category:Text-to-video generation

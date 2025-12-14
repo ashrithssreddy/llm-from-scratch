@@ -1,0 +1,103 @@
+{{Infobox person
+
+name               = Anthony Levandowski
+
+image              = Anthony Levandowski Headshot.jpg
+
+image_size         =
+
+caption            =
+
+birth_date         =
+
+birth_place        = Brussels, Belgium
+
+nationality        =
+
+occupation         = Engineer
+
+years_active       = since 2009
+
+title              =
+
+website            =
+
+education          = Bachelor's degree in Industrial engineering and operations research
+
+alma_mater         = University of California, Berkeley
+
+known_for          = Way of the Future
+
+}}
+
+Anthony Levandowski (born March 15, 1980) is a French-American self-driving car engineer. In 2009, Levandowski co-founded Google's self-driving car program, known as Waymo, and was a technical lead until 2016. In 2010, he co-founded Google X along with Yoky Matsuoka and Sebastian Thrun. In 2016, he co-founded and sold Otto, an autonomous trucking company, to Uber Technologies.  In 2018, he co-founded the autonomous trucking company Pronto; the first self-driving technology company to complete a cross-country drive in an autonomous vehicle in October 2018. At the 2019 AV Summit hosted by The Information, Levandowski remarked that a fundamental breakthrough in artificial intelligence is needed to move autonomous vehicle technology forward.
+
+In 2019, Levandowski was indicted on 33 federal charges of theft of self-driving car trade secrets. In August 2020, Levandowski pled guilty to one of the 33 charges, and was sentenced to 18 months in prison. He was pardoned less than six months later on January 20, 2021, the last day of Donald Trump's presidency. In September, 2021 Levandowski rejoined Pronto as CEO; subsequently announcing the company's new offroad autonomous division.
+
+Early life and education
+
+Levandowski was born on March 15, 1980, in Brussels, Belgium to a French diplomat mother and an American businessman. He moved to California in the mid-1990s. During his teenage years, he developed websites for local businesses. As a freshman, he founded La Raison, an intranet and IT services company that made fifty thousand dollars in its first year. It was built over several years for an estimated $100,000 and competed in the DARPA Grand Challenge in 2004 and 2005. It was the only autonomous two-wheeled vehicle in the competitions. The motorcycle was retrofitted with video cameras, computers, a GPS receiver, an IMU, and motors to power the clutch and steering. At the DARPA Grand Challenge, the motorcycle collapsed at the starting line due to a forgotten switch preventing it from stabilizing.  Despite this, as the team lead, participation in the DARPA Grand Challenge paved the way for Levandowski to build PriBot, the first self-driving car to drive on public roads. In 2007, Levandowski donated Ghostrider to the Smithsonian National Museum of American History, where it resides. In early 2007, Google X hired Thrun, Levandowski, and their entire team to help develop the Google Street View system. To meet Larry Page's target of capturing  of roadways before the end of 2007, Levandowski ordered 100 Toyota Priuses from a local dealership. For the show footage, the police cleared the road and escorted the driverless Prius on a pre-determined route from San Francisco across the Bay Bridge. The drive was successful, aside from scraping against a guard rail on a sharp turn. Within the span of weeks, Levandowski had demonstrated that self-driving cars were possible, even on a budget.
+
+Waymo and Otto
+
+In 2009, Levandowski and Thrun co-founded Google's self-driving car project Chauffeur, now known as Waymo. Over the next two years, Levandowski's 510 Systems built five additional self-driving Priuses for Google. Levandowski continued to work as a technical lead on Google's self-driving car project alongside Chris Urmson, Dmitri Dolgov, and Mike Montemerlo until January 2016, when he left to launch Otto. In addition to Project Chauffeur, Levandowski's contributions to Google include work on Street View, Cardboard, Telepresence, Ground Truth, Oblique Aerial Imagery, and Tiramisu. Levandowski stated he left Google because he, "was eager to commercialize a self-driving vehicle as quickly as possible." ln May 2017 Levandowski was fired from Uber after Waymo and Google charged he had raided Waymo's design server.  In July 2018  Uber's autonomous trucking program was shut down.
+
+In 2015, Levandowski established a religious organisation called Way of the Future with the stated intention of creating a god with "Christian morals" through artificial intelligence. He dissolved the organization in 2021.
+
+Pronto AI
+
+In 2018, Levandowski launched Pronto AI to produce a camera-based, self-driving highway-only retrofit system for semi-trucks. Levandwoski's bankruptcy filings in 2019 showed that he had invested over $8.5 million into the company. As proof of concept, Levandowski claimed to have taken a modified self-driving Prius  across the United States. Some publications expressed doubt over the video's authenticity. Engadget noted that the video was uploaded as a timelapse, making it difficult to verify the footage. As of 2022, the company had pivoted to developing self-driving vehicles for more limited use in environments such as quarries.
+
+In February 2022, Levandowski launched Pollen Mobile, an open-source wireless network. Pollen Mobile distributed antennas and other devices, called Flowers, Hummingbirds and Bumblebees to consumers. The network is used by Pronto AI’s autonomous vehicles and is operational in the Bay Area.
+
+In October 2022, Levandowski expressed doubt that self-driving cars would find mainstream success in the near future. Levandowski allegedly "downloaded 9.7 GB of Waymo's confidential files and trade secrets, including blueprints, design files, and testing documentation" before resigning to found Otto. Google co-founder Larry Page was reluctant to file the suit. However, he was pushed over the edge when one of Waymo's suppliers inadvertently copied a Waymo engineer on an email of a schematic of Uber's Lidar design. Uber's design appeared to be almost identical to that of Waymo. The civil suit between Uber and Waymo was settled in February 2018 with Uber agreeing to pay Waymo 0.34% of its equity, valued at approximately $245 million, and not to use the unit's technology.
+
+Before filing its lawsuit against Uber in 2017, Google had separately taken Levandowski to private arbitration over a contract dispute. On March 4, 2020, Levandowski filed for bankruptcy protection after the court confirmed an arbitration panel's ruling that Levandowski and his colleague Lior Ron had breached their employment contracts with Google by poaching employees for their startup. The panel found that Levandowski owed Google $179 million—$120 million accounted for the salary he received while at the company, and the remainder for interest and legal fees accrued.
+
+On March 30, 2020, Levandowski filed a motion with a California bankruptcy judge to force Uber to honor its contractual obligation to indemnify Levandowski. At issue is the validity of the indemnification agreement that Uber, Levandowski, and Ron entered into pre-acquisition. According to a court document, "The indemnification agreement was structured to ensure that Mr. Levandowski would not be left unprotected against Google, which had inexhaustible resources to attack Mr. Levandowski." Uber initially honored the agreement and covered both Levandowski and Ron's legal costs. However, in April 2018, days before the final arbitration hearing that resulted in Levandowski owing Google $179 million, Uber informed him it would be seeking reimbursement for his defense costs, arguing he had breached their agreement by refusing to testify. after Levandowski exercised his Fifth Amendment right against self-incrimination. In May 2017, Judge Alsup ordered Levandowski to refrain from working on Lidar at Uber and required Uber to disclose its discussions on the technology. Levandowski was later fired by Uber for failing to cooperate in an internal investigation. Soon after the case went to trial, Uber, through its lawyers, publicly apologized for hiring Levandowski.
+
+In April 2022, the settlement agreement faced objections from the U.S. Department of Justice and California’s Internal Revenue Service over the tax implications for Levandowski’s estate.
+
+Criminal conviction and pardon
+
+On August 27, 2019, Levandowski was charged by the Department of Justice for the alleged theft of trade secrets from Google's self-driving unit Waymo. In months before he left Google, the charges alleged Levandowski downloaded thousands of files from Waymo's predecessor, Project Chauffeur. The data allegedly included "critical engineering information about the hardware used on Project Chauffeur self-driving vehicles," and that Levandowski transferred files onto his laptop before leaving the company. Following the indictment, Pronto, a new self-driving trucking company that Levandowski co-founded, announced that its Chief Safety Officer, Robbie Miller, would take over as CEO.
+
+On March 19, 2020, Levandowski agreed to plead guilty to one of the thirty-three charges initially brought against him by the Department of Justice. Originally charged with stealing documents containing trade secrets, technical specifications, and Lidar design, Levandowski's pleaded guilty to downloading an internal project tracking document called, "Chauffeur TL Weekly – Q4 2015"&mdash;a spreadsheet consisting of team goals, project metrics, and weekly status updates accessible by Levandowski's team on an unsecured Google Drive. Levandowski admitted to accessing the document about one month after leaving Google in February 2016.
+
+On August 4, 2020, Levandowski formally pleaded guilty to one count of trade secret theft, and Judge William Alsup sentenced him to 18 months in prison.  Prosecutors agreed to drop the remaining 32 charges as a part of the plea agreement. During the sentencing, Alsup said, "this is the biggest trade secret crime I have ever seen.  This was not small.  This was massive in scale." In addition to time served, Levandowski was ordered to pay $756,499.22 in restitution to Waymo&nbsp;and a fine of $95,000.
+
+On January 20, 2021, his last day of his first term, President Donald Trump granted a full pardon to Levandowski.
+
+Media representations
+
+In February 2022, Showtime released the series Super Pumped, which portrays the history of Uber from CEO Travis Kalanick’s perspective. Levandowski was portrayed by Jeremy Howard in episodes 5 and 6.
+
+References
+
+External links
+
+Category:1980 births
+
+Category:Silicon Valley people
+
+Category:Living people
+
+Category:Artificial intelligence researchers
+
+Category:Machine learning researchers
+
+Category:Businesspeople from the San Francisco Bay Area
+
+Category:American technology company founders
+
+Category:Google employees
+
+Category:UC Berkeley College of Engineering alumni
+
+Category:American transhumanists
+
+Category:American people of Polish descent
+
+Category:People pardoned by Donald Trump
+
+Category:Uber people

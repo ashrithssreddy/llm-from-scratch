@@ -1,0 +1,19 @@
+Diffusion maps is a dimensionality reduction or feature extraction algorithm introduced by Coifman and Lafon spectral clustering, low dimensional representation of images, image segmentation, and identification, image inpainting,  and so on.
+
+Furthermore, the diffusion maps framework has been productively extended to complex networks, revealing a functional organisation of networks which differs from the purely topological or structural one.
+
+See also
+
+Nonlinear dimensionality reduction
+
+Spectral clustering
+
+References
+
+{{Reflist|30em|
+
+refs=
+
+}}
+
+Category:Machine learning algorithms

@@ -1,0 +1,81 @@
+{{infobox scientist
+
+name              = Karsten Borgwardt
+
+image             =
+
+image_size        =
+
+alt               = Karsten Michael Borgwardt
+
+caption           =
+
+birth_date        =
+
+birth_place       = Kaiserslautern, Rhineland-Palatinate, Germany
+
+nationality       = German
+
+fields            = Computer science, Machine learning, Computational biology, Systems biology, Bioinformatics
+
+workplaces        = Max Planck Institute of Biochemistry (2023-), Ludwig Maximilian University of Munich (2023-), ETH Zurich (2014-2023), University of Tübingen (2011-2014), Max Planck Institutes Tübingen (2008-2014), University of Cambridge (2007-2008)
+
+alma_mater        = LMU MunichUniversity of Oxford
+
+website           =
+
+}}
+
+Karsten Borgwardt (born 1980) is a German computer scientist and biologist specializing in machine learning and computational biology. Since February 2023, he has been a director at the Max Planck Institute of Biochemistry in Martinsried, Germany, where he leads the Department of Machine Learning and Systems Biology.
+
+Education and career
+
+Borgwardt was born in Kaiserslautern. He obtained a Diplom (equivalent to a master’s degree) in computer science from LMU Munich in 2004 and a Master of Science in biology from the University of Oxford in 2003. In 2007, he obtained his PhD from LMU Munich in computer science. Following a postdoctoral position at the University of Cambridge, he became a research group leader for machine learning and computational biology at the Max Planck Institute for Biological Cybernetics and the former Max Planck Institute for Developmental Biology in Tübingen in 2008. During his tenure at ETH Zurich, he coordinated significant research programs, including two Marie Curie Innovative Training Networks and the Personalized Swiss Sepsis Study, focusing on the prediction of sepsis using machine learning.
+
+In 2023, he was appointed as Scientific Member of the Max Planck Society and as Director at the Max Planck Institute of Biochemistry in Martinsried.
+
+Research contributions
+
+Borgwardt’s research integrates big data analysis with biomedical research. He develops novel machine learning algorithms to detect patterns and statistical dependencies in large biological and medical datasets. His work aims to enable the automatic generation of new knowledge from big data and to understand the relationship between the function of biological systems and their molecular properties, which is fundamental for personalized medicine.
+
+Awards and honors
+
+During his studies, he was a scholar of the , and the Bavarian Foundation for the Promotion of the Gifted. Borgwardt received scholarships from the Studienstiftung des deutschen Volkes in 2002 and 2007. His PhD dissertation received the Heinz Schwärtzel Dissertation Award for Foundations of Computer Science in 2007.
+
+As a professor in Tübingen, he was awarded the Alfried-Krupp-Förderpreis for Young Professors in 2013. In 2015, he received an SNSF Starting Grant. In 2014, 2015 and 2016, he was listed in “Top 40 under 40” in Germany rankings selected by Capital magazine. In 2018, Borgwardt was named among “25 individuals who have the potential to shape the next 25 years” by Focus magazine. In 2023, Borgwardt received an honorary professorship from Ludwig Maximilian University of Munich by the Faculty of Chemistry and Pharmacy.
+
+Publications from Borgwardt's group have received the Outstanding Student Paper Award in NIPS in 2009, the SIB Graduate Paper Award in 2020 and SIB Remarkable Output Awards in 2020 and 2021 from the Swiss Institute of Bioinformatics (SIB).
+
+Selected publications
+
+Weisfeiler-Lehman Graph Kernels (’‘Journal of Machine Learning Research’’, 2011): Introduced an efficient graph kernel based on the Weisfeiler-Lehman algorithm.
+
+“Direct antimicrobial resistance prediction from clinical MALDI-TOF mass spectra using machine learning” (’‘Nature Medicine’’, 2022): showcased the feasibility of predicting antimicrobial resistance from readily collected mass spectrometry data in the hospital. The new method is able to identify antibiotic resistance 24 hours earlier than previous methods.
+
+References
+
+Category:1980 births
+
+Category:Living people
+
+Category:German computer scientists
+
+Category:German bioinformaticians
+
+Category:Academic staff of ETH Zurich
+
+Category:Ludwig Maximilian University of Munich alumni
+
+Category:Alumni of the University of Oxford
+
+Category:Academic staff of the University of Tübingen
+
+Category:Max Planck Institute directors
+
+Category:Max Planck Institutes researchers
+
+Category:People from Kaiserslautern
+
+Category:Machine learning researchers
+
+Category:Computational biologists

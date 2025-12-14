@@ -1,0 +1,35 @@
+The Texas sharpshooter fallacy is an informal fallacy which is committed when differences in data are ignored, but similarities are overemphasized. From this reasoning, a false conclusion is inferred. This fallacy is the philosophical or rhetorical application of the multiple comparisons problem (in statistics) and apophenia (in cognitive psychology). It is related to the clustering illusion, which is the tendency in human cognition to interpret patterns where none actually exist.
+
+The name comes from a metaphor about a person from Texas who fires a gun at the side of a barn, then paints a shooting target centered on the tightest cluster of shots and claims to be a sharpshooter.
+
+Structure
+
+The Texas sharpshooter fallacy often arises when a person has a large amount of data at their disposal but only focuses on a small subset of that data. Some factor other than the one attributed may give all the elements in that subset some kind of common property (or pair of common properties, when arguing for correlation). If the person attempts to account for the likelihood of finding some subset in the large data with some common property by a factor other than its actual cause, then that person is likely committing a Texas sharpshooter fallacy.
+
+The fallacy is characterized by a lack of a specific hypothesis prior to the gathering of data, or the formulation of a hypothesis only after data have already been gathered and examined. Thus, it typically does not apply if one had an ex ante, or prior, expectation of the particular relationship in question before examining the data. For example, one might, prior to examining the information, have in mind a specific physical mechanism implying the particular relationship. One could then use the information to give support or cast doubt on the presence of that mechanism. Alternatively, if a second set of additional information can be generated using the same process as the original information, one can use the first (original) set of information to construct a hypothesis, and then test the hypothesis on the second (new) set of information. (See hypothesis testing.) However, after constructing a hypothesis on a set of data, one would be committing the Texas sharpshooter fallacy if they then tested that hypothesis on the same data (see hypotheses suggested by the data).
+
+Examples
+
+A Swedish study in 1992 tried to determine whether power lines caused some kind of poor health effects. The researchers surveyed people living within 300 metres of high-voltage power lines over 25 years and looked for statistically significant increases in rates of over 800 ailments. The study found that the incidence of childhood leukemia was four times higher among those who lived closest to the power lines, which spurred calls to action by the Swedish government. The problem with the conclusion, however, was that the number of potential ailments, i.e., over 800, was so large that it created a high probability that at least one ailment would have a statistically significant correlation with living distance from power lines by chance alone, a situation known as the multiple comparisons problem. Subsequent studies failed to show any association between power lines and childhood leukemia.
+
+The fallacy is often found in modern-day interpretations of the quatrains of Nostradamus. Nostradamus's quatrains are often liberally translated from their original Middle French versions, in which their historical context is often lost, and then applied to support the erroneous conclusion that Nostradamus predicted a given modern-day event after the event actually occurred.
+
+See also
+
+, also known as p-hacking
+
+Related fallacies
+
+References
+
+External links
+
+Fallacy files entry
+
+Category:Causal fallacies
+
+Category:Metaphors referring to war and violence
+
+Category:Marksmanship
+
+Category:Cognitive biases

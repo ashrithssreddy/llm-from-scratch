@@ -1,0 +1,167 @@
+Kernel methods are a well-established tool to analyze the relationship between input data and the corresponding output of a function. Kernels encapsulate the properties of functions in a computationally efficient way and allow algorithms to easily swap functions of varying complexity.
+
+In typical machine learning algorithms, these functions produce a scalar output. Recent development of kernel methods for functions with vector-valued output is due, at least in part, to interest in simultaneously solving related problems. Kernels which capture the relationship between the problems allow them to borrow strength from each other. Algorithms of this type include multi-task learning (also called multi-output learning or vector-valued learning), transfer learning, and co-kriging. Multi-label classification can be interpreted as mapping inputs to (binary) coding vectors with length equal to the number of classes.
+
+In Gaussian processes, kernels are called covariance functions. Multiple-output functions correspond to considering multiple processes. See Bayesian interpretation of regularization for the connection between the two perspectives.
+
+History
+
+The history of learning vector-valued functions is closely linked to transfer learning- storing knowledge gained while solving one problem and applying it to a different but related problem. The fundamental motivation for transfer learning in the field of machine learning was discussed in a NIPS-95 workshop on “Learning to Learn”, which focused on the need for lifelong machine learning methods that retain and reuse previously learned knowledge. Research on transfer learning has attracted much attention since 1995 in different names: learning to learn, lifelong learning, knowledge transfer, inductive transfer, multitask learning, knowledge consolidation, context-sensitive learning, knowledge-based inductive bias, metalearning, and incremental/cumulative learning. Interest in learning vector-valued functions was particularly sparked by multitask learning, a framework which tries to learn multiple, possibly different tasks simultaneously.
+
+Much of the initial research in multitask learning in the machine learning community was algorithmic in nature, and applied to methods such as neural networks, decision trees and -nearest neighbors in the 1990s. The use of probabilistic models and Gaussian processes was pioneered and largely developed in the context of geostatistics, where prediction over vector-valued output data is known as cokriging. Geostatistical approaches to multivariate modeling are mostly formulated around the linear model of coregionalization (LMC), a generative approach for developing valid covariance functions that has been used for multivariate regression and in statistics for computer emulation of expensive multivariate computer codes. The regularization and kernel theory literature for vector-valued functions followed in the 2000s. While the Bayesian and regularization perspectives were developed independently, they are in fact closely related.
+
+Notation
+
+In this context, the supervised learning problem is to learn the function f which best predicts vector-valued outputs \mathbf{y_i} given inputs (data) \mathbf{x_i}.
+
+f(\mathbf{x_i}) = \mathbf{y_i} for i=1, \ldots ,N
+
+\mathbf{x_i} \in \mathcal{X}, an input space (e.g. \mathcal{X} = \mathbb{R}^p)
+
+\mathbf{y_i} \in \mathbb{R}^D
+
+In general, each component of (\mathbf{y_i}), could have different input data (\mathbf{x_{d,i}}) with different cardinality (p) and even different input spaces (\mathcal{X}).
+
+Here, for simplicity in the notation, we assume the number and sample space of the data for each output are the same.
+
+Regularization perspective
+
+Sources:
+
+From the regularization perspective, the problem is to learn f_* belonging to a reproducing kernel Hilbert space of vector-valued functions (\mathcal{H}). This is similar to the scalar case of Tikhonov regularization, with some extra care in the notation.
+
+^{\dagger}It is possible, though non-trivial, to show that a representer theorem also holds for Tikhonov regularization in the vector-valued setting.
+
+Derived from regularizer
+
+One way of obtaining k_T is to specify a regularizer which limits the complexity of f in a desirable way, and then derive the corresponding kernel. For certain regularizers, this kernel will turn out to be separable.
+
+Mixed-effect regularizer
+
+R(\mathbf{f}) = A_\omega(C_\omega \sum\limits_{l=1}^D \| f_l \|_k^2 + \omega D \sum\limits_{l=1}^D \| f_l - \bar{f} \|_k^2)
+
+where:
+
+A_\omega = \frac{1}{2(1 - \omega)(1 - \omega + \omega D)}
+
+C_\omega = (2 - 2\omega + \omega D)
+
+\bar{f} = \frac{1}{D} \sum\limits_{q=1}^D f_q
+
+K_\omega(x,x') = k(x,x')(\omega \mathbf{1} + (1-\omega) \mathbf{I}_D
+
+where \mathbf{1} \text{ is a } D \times D  matrix with all entries equal to 1.
+
+This regularizer is a combination of limiting the complexity of each component of the estimator (f_l) and forcing each component of the estimator to be close to the mean of all the components. Setting \omega = 0 treats all the components as independent and is the same as solving the scalar problems separately. Setting \omega = 1 assumes all the components are explained by the same function.
+
+Cluster-based regularizer
+
+R(\mathbf{f}) = \varepsilon_1 \sum_{c=1}^r \sum_{l \in I(c)} \| f_l - \bar{f_c}\|_k^2 + \varepsilon_2 \sum\limits_{c=1}^r m_c \| \bar{f_c}\|_k^2
+
+where:
+
+I(c) is the index set of components that belong to cluster  c
+
+m_c is the cardinality of cluster c
+
+\bar{f_c} = \frac{1}{m_c} \sum\limits_{q \in I(c)} f_q
+
+\mathbf{M}_{l,q} = \frac{1}{m_c}  if l and q both belong to cluster c &nbsp;( \mathbf{M}_{l,q} = 0  otherwise
+
+K(x,x') = k(x,x') \mathbf{G}^\dagger
+
+where  \mathbf{G}_{l,q} = \varepsilon_1 \delta_{lq} + (\varepsilon_2 - \varepsilon_1)\mathbf{M}_{l,q}
+
+This regularizer divides the components into r clusters and forces the components in each cluster to be similar.
+
+Graph regularizer
+
+R(\mathbf{f}) = \frac{1}{2} \sum\limits_{l,q=1}^D \Vert f_l - f_q \Vert_k^2 \mathbf{M}_{lq} + \sum\limits_{l=1}^D \Vert f_l \Vert_k^2 \mathbf{M}_{l,l}
+
+where \mathbf{M} \text{ is a } D \times D  matrix of weights encoding the similarities between the components
+
+K(x,x') = k(x,x') \mathbf{L}^\dagger
+
+where \mathbf{L} = \mathbf{D} - \mathbf{M}, &nbsp; \mathbf{D}_{l,q} = \delta_{l,q}(\sum\limits_{h=1}^D \mathbf{M}_{l,h} + \mathbf{M}_{l,q})
+
+Note, \mathbf{L} is the graph laplacian. See also: graph kernel.
+
+Learned from data
+
+Several approaches to learning \mathbf{B} from data have been proposed. and sparsity-based approaches which assume only a few of the features are needed.
+
+From Bayesian literature
+
+Linear model of coregionalization (LMC)
+
+In LMC, outputs are expressed as linear combinations of independent random functions such that the resulting covariance function (over all inputs and outputs) is a valid positive semidefinite function. Assuming D outputs \left\{f_d(\textbf{x})\right\}_{d=1}^D with \textbf{x} \in \mathcal{\textbf{R}}^p, each f_d is expressed as:
+
+f_d(\textbf{x}) = \sum_{q=1}^Q{a_{d,q}u_q(\textbf{x})}
+
+where a_{d,q} are scalar coefficients and the independent functions u_q(\textbf{x}) have zero mean and covariance cov[u_q(\textbf{x}),u_{q'}(\textbf{x}')] = k_q(\textbf{x},\textbf{x}') if q=q' and 0 otherwise. The cross covariance between any two functions f_d(\textbf{x}) and f_{d'}(\textbf{x}) can then be written as:
+
+\operatorname{cov}[f_d(\textbf{x}),f_{d'}(\textbf{x}')] = \sum_{q=1}^Q{\sum_{i=1}^{R_q}{a_{d,q}^ia_{d',q}^{i}k_q(\textbf{x},\textbf{x}')}} = \sum_{q=1}^Q{b_{d,d'}^qk_q(\textbf{x},\textbf{x}')}
+
+where the functions u_q^i(\textbf{x}), with q=1,\cdots,Q and i=1,\cdots,R_q have zero mean and covariance cov[u_q^i(\textbf{x}),u_{q'}^{i'}(\textbf{x})'] = k_q(\textbf{x},\textbf{x}') if i=i' and q=q'. But \operatorname{cov}[f_d(\textbf{x}),f_{d'}(\textbf{x}')] is given by (\textbf{K}(\textbf{x},\textbf{x}'))_{d,d'}. Thus the kernel \textbf{K}(\textbf{x},\textbf{x}') can now be expressed as
+
+\textbf{K}(\textbf{x},\textbf{x}') = \sum_{q=1}^Q{\textbf{B}_qk_q(\textbf{x},\textbf{x}')}
+
+where each \textbf{B}_q \in \mathcal{\textbf{R}}^{D \times D} is known as a coregionalization matrix. Therefore, the kernel derived from LMC is a sum of the products of two covariance functions, one that models the dependence between the outputs, independently of the input vector \textbf{x} (the coregionalization matrix \textbf{B}_q), and one that models the input dependence, independently of \left\{f_d(\textbf{x})\right\}_{d=1}^D(the covariance function k_q(\textbf{x},\textbf{x}')).
+
+Intrinsic coregionalization model (ICM)
+
+The ICM is a simplified version of the LMC, with Q=1. ICM assumes that the elements b_{d,d'}^q of the coregionalization matrix \mathbf{B}_q can be written as b_{d,d'}^q = v_{d,d'}b_q, for some suitable coefficients v_{d,d'}. With this form for b_{d,d'}^q:
+
+\operatorname{cov} \left [f_d(\mathbf{x}),f_{d'}(\mathbf{x}') \right ] =  \sum_{q=1}^Q{v_{d,d'}b_qk_q (\mathbf{x},\mathbf{x}')} = v_{d,d'}\sum_{q=1}^Q{b_qk_q(\mathbf{x},\mathbf{x}')} =  v_{d,d'}k(\mathbf{x},\mathbf{x}')
+
+where
+
+k(\mathbf{x},\mathbf{x}') = \sum_{q=1}^Q{b_qk_q(\mathbf{x},\mathbf{x}')}.
+
+In this case, the coefficients
+
+v_{d,d'} = \sum_{i=1}^{R_1}{a_{d,1}^ia_{d',1}^i} = b_{d,d'}^1
+
+and the kernel matrix for multiple outputs becomes \mathbf{K}(\mathbf{x},\mathbf{x}') = k(\mathbf{x},\mathbf{x}')\mathbf{B}. ICM is much more restrictive than the LMC since it assumes that each basic covariance k_q(\mathbf{x},\mathbf{x}') contributes equally to the construction of the autocovariances and cross covariances for the outputs. However, the computations required for the inference are greatly simplified.
+
+Semiparametric latent factor model (SLFM)
+
+Another simplified version of the LMC is the semiparametric latent factor model (SLFM), which corresponds to setting R_q = 1 (instead of Q = 1 as in ICM). Thus each latent function u_q has its own covariance.
+
+Non-separable
+
+While simple, the structure of separable kernels can be too limiting for some problems.
+
+Notable examples of non-separable kernels in the regularization literature include:
+
+Matrix-valued exponentiated quadratic (EQ) kernels designed to estimate divergence-free or curl-free vector fields (or a convex combination of the two)
+
+Kernels defined by transformations
+
+In the Bayesian perspective, LMC produces a separable kernel because the output functions evaluated at a point \textbf{x} only depend on the values of the latent functions at \textbf{x}. A non-trivial way to mix the latent functions is by convolving a base process with a smoothing kernel. If the base process is a Gaussian process, the convolved process is Gaussian as well. We can therefore exploit convolutions to construct covariance functions. This method of producing non-separable kernels is known as process convolution. Process convolutions were introduced for multiple outputs in the machine learning community as "dependent Gaussian processes".
+
+Implementation
+
+When implementing an algorithm using any of the kernels above, practical considerations of tuning the parameters and ensuring reasonable computation time must be considered.
+
+Regularization perspective
+
+Approached from the regularization perspective, parameter tuning is similar to the scalar-valued case and can generally be accomplished with cross validation. Solving the required linear system is typically expensive in memory and time. If the kernel is separable, a coordinate transform can convert \mathbf{K}(\mathbf{X},\mathbf{X}) to a block-diagonal matrix, greatly reducing the computational burden by solving D independent subproblems (plus the eigendecomposition of \mathbf{B}). In particular, for a least squares loss function (Tikhonov regularization), there exists a closed form solution for \bar{\mathbf{c}}:
+
+\bar{\mathbf{c}}^d = \left (k(\mathbf{X},\mathbf{X}) + \frac{\lambda_N}{\sigma_d} \mathbf{I} \right )^{-1}\frac{\bar{\mathbf{y}}^d}{\sigma_d}
+
+Bayesian perspective
+
+There are many works related to parameter estimation for Gaussian processes. Some methods such as maximization of the marginal likelihood (also known as evidence approximation, type II maximum likelihood, empirical Bayes), and least squares give point estimates of the parameter vector \phi. There are also works employing a full Bayesian inference by assigning priors to \phi and computing the posterior distribution through a sampling procedure. For non-Gaussian likelihoods, there is no closed form solution for the posterior distribution or for the marginal likelihood. However, the marginal likelihood can be approximated under a Laplace, variational Bayes or expectation propagation (EP) approximation frameworks for multiple output classification and used to find estimates for the hyperparameters.
+
+The main computational problem in the Bayesian viewpoint is the same as the one appearing in regularization theory of inverting the matrix
+
+\overline{\mathbf{K}(\mathbf{X},\mathbf{X})} =  \mathbf{K}(\mathbf{X},\mathbf{X})  + \boldsymbol{\Sigma}.
+
+This step is necessary for computing the marginal likelihood and the predictive distribution. For most proposed approximation methods to reduce computation, the computational efficiency gained is independent of the particular method employed (e.g. LMC, process convolution) used to compute the multi-output covariance matrix. A summary of different methods for reducing computational complexity in multi-output Gaussian processes is presented in.
+
+References
+
+Category:Machine learning algorithms
+
+Category:Kernel methods for machine learning

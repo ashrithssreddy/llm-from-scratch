@@ -1,0 +1,153 @@
+The softmax function, also known as softargmax or normalized exponential function, the index set {1,\, \dots,\, k} are the microstates of the system; the inputs z_i are the energies of that state; the denominator is known as the partition function, often denoted by ; and the factor  is called the coldness (or thermodynamic beta, or inverse temperature).
+
+Applications
+
+The softmax function is used in various multiclass classification methods, such as multinomial logistic regression (also known as softmax regression), multiclass linear discriminant analysis, naive Bayes classifiers, and artificial neural networks. Specifically, in multinomial logistic regression and linear discriminant analysis, the input to the function is the result of  distinct linear functions, and the predicted probability for the th class given a sample tuple  and a weighting vector  is:
+
+P(y=j\mid \mathbf{x}) = \frac{e^{\mathbf{x}^\mathsf{T}\mathbf{w}_j}}{\sum_{k=1}^K e^{\mathbf{x}^\mathsf{T}\mathbf{w}_k}}
+
+This can be seen as the composition of  linear functions \mathbf{x} \mapsto \mathbf{x}^\mathsf{T}\mathbf{w}_1, \ldots, \mathbf{x} \mapsto \mathbf{x}^\mathsf{T}\mathbf{w}_K and the softmax function (where \mathbf{x}^\mathsf{T}\mathbf{w} denotes the inner product of \mathbf{x} and \mathbf{w}). The operation is equivalent to applying a linear operator defined by \mathbf{w} to tuples \mathbf{x}, thus transforming the original, probably highly-dimensional, input to vectors in a -dimensional space \mathbb{R}^K.
+
+Neural networks
+
+The standard softmax function is often used in the final layer of a neural network-based classifier. Such networks are commonly trained under a log loss (or cross-entropy) regime, giving a non-linear variant of multinomial logistic regression.
+
+Since the function maps a tuple and a specific index i to a real value, the derivative needs to take the index into account:
+
+\frac{\partial}{\partial q_k}\sigma(\textbf{q}, i) =  \sigma(\textbf{q}, i)(\delta_{ik} - \sigma(\textbf{q}, k)).
+
+This expression is symmetrical in the indexes i, k and thus may also be expressed as
+
+\frac{\partial}{\partial q_k}\sigma(\textbf{q}, i) =  \sigma(\textbf{q}, k)(\delta_{ik} - \sigma(\textbf{q}, i)).
+
+Here, the Kronecker delta is used for simplicity (cf. the derivative of a sigmoid function, being expressed via the function itself).
+
+To ensure stable numerical computations subtracting the maximum value from the input tuple is common. This approach, while not altering the output or the derivative theoretically, enhances stability by directly controlling the maximum exponent value computed.
+
+If the function is scaled with the parameter \beta, then these expressions must be multiplied by \beta.
+
+See multinomial logit for a probability model which uses the softmax activation function.
+
+Reinforcement learning
+
+In the field of reinforcement learning, a softmax function can be used to convert values into action probabilities. The function commonly used is:
+
+P_t(a) = \frac{\exp(q_t(a)/\tau)}{\sum_{i=1}^n\exp(q_t(i)/\tau)} \text{,}
+
+where the action value q_t(a) corresponds to the expected reward of following action a and \tau is called a temperature parameter (in allusion to statistical mechanics). For high temperatures (\tau \to \infty), all actions have nearly the same probability and the lower the temperature, the more expected rewards affect the probability. For a low temperature (\tau \to 0^+), the probability of the action with the highest expected reward tends to 1.
+
+Computational complexity and remedies
+
+In neural network applications, the number  of possible outcomes is often large, e.g. in case of neural language models that predict the most likely outcome out of a vocabulary which might contain millions of possible words. This can make the calculations for the softmax layer (i.e. the matrix multiplications to determine the z_i, followed by the application of the softmax function itself) computationally expensive. What's more, the gradient descent backpropagation method for training such a neural network involves calculating the softmax for every training example, and the number of training examples can also become large. The computational effort for the softmax became a major limiting factor in the development of larger neural language models, motivating various remedies to reduce training times. The desired probability (softmax value) of a leaf (outcome) can then be calculated as the product of the probabilities of all nodes on the path from the root to that leaf.\begin{aligned}
+
+z_i &= q^T k_i &\\
+
+m_i &= \max(z_1, \dots, z_i) &=& \max(m_{i-1}, z_i)\\
+
+l_i &= e^{z_1 - m_i} + \dots + e^{z_i - m_i} &=& e^{m_{i-1}-m_i} l_{i-1}  + e^{z_i - m_i}\\
+
+o_i &= e^{z_1 - m_i} v_1 + \dots + e^{z_i - m_i}v_i &=& e^{m_{i-1}-m_i} o_{i-1} + e^{z_i - m_i}v_i
+
+\end{aligned}and returns o_N/l_N. In practice, FlashAttention operates over multiple queries and keys per loop iteration, in a similar way as blocked matrix multiplication. If backpropagation is needed, then the output vectors and the intermediate arrays [m_1, \dots, m_N], [l_1, \dots, l_N] are cached, and during the backward pass, attention matrices are rematerialized from these, making it a form of gradient checkpointing.
+
+Mathematical properties
+
+Geometrically the softmax function maps the Euclidean space \mathbb{R}^K to the boundary of the standard (K-1)-simplex, cutting the dimension by one (the range is a (K - 1)-dimensional simplex in K-dimensional space), due to the linear constraint that all output sum to 1 meaning it lies on a hyperplane.
+
+Along the main diagonal (x,\, x,\, \dots,\, x), softmax is just the uniform distribution on outputs, (1/n, \dots, 1/n): equal scores yield equal probabilities.
+
+More generally, softmax is invariant under translation by the same value in each coordinate: adding \mathbf{c} = (c,\, \dots,\, c) to the inputs \mathbf{z} yields \sigma(\mathbf{z} + \mathbf{c}) = \sigma(\mathbf{z}), because it multiplies each exponent by the same factor, e^c (because e^{z_i + c} = e^{z_i} \cdot e^c), so the ratios do not change:
+
+\sigma(\mathbf{z} + \mathbf{c})_j = \frac{e^{z_j + c}}{\sum_{k=1}^K e^{z_k + c}} = \frac{e^{z_j} \cdot e^c}{\sum_{k=1}^K e^{z_k} \cdot e^c} = \sigma(\mathbf{z})_j.
+
+Geometrically, softmax is constant along diagonals: this is the dimension that is eliminated, and corresponds to the softmax output being independent of a translation in the input scores (a choice of 0 score). One can normalize input scores by assuming that the sum is zero (subtract the average: \mathbf{c} where c = \frac{1}{n} \sum z_i), and then the softmax takes the hyperplane of points that sum to zero, \sum z_i = 0, to the open simplex of positive values that sum to 1\sum \sigma(\mathbf{z})_i = 1, analogously to how the exponent takes 0 to 1, e^0 = 1 and is positive.
+
+By contrast, softmax is not invariant under scaling. For instance, \sigma\bigl((0,\, 1)\bigr) = \bigl(1/(1 + e),\, e/(1 + e)\bigr) but \sigma\bigl((0, 2)\bigr) = \bigl(1/\left(1 + e^2\right),\, e^2/\left(1 + e^2\right)\bigr).
+
+The standard logistic function is the special case for a 1-dimensional axis in 2-dimensional space, say the x-axis in the  plane. One variable is fixed at 0 (say z_2 = 0), so e^0 = 1, and the other variable can vary, denote it z_1 = x, so e^{z_1}/\sum_{k=1}^2 e^{z_k} = e^x/\left(e^x + 1\right), the standard logistic function, and e^{z_2}/\sum_{k=1}^2 e^{z_k} = 1/\left(e^x + 1\right), its complement (meaning they add up to 1). The 1-dimensional input could alternatively be expressed as the line (x/2,\, -x/2), with outputs e^{x/2}/\left(e^{x/2} + e^{-x/2}\right) = e^x/\left(e^x + 1\right) and e^{-x/2}/\left(e^{x/2} + e^{-x/2}\right) = 1/\left(e^x + 1\right).
+
+Gradients
+
+The softmax function is also the gradient of the LogSumExp function:\frac{\partial}{\partial z_i} \operatorname{LSE}(\mathbf{z}) = \frac{\exp z_i}{\sum_{j=1}^{K} \exp z_j} = \sigma(\mathbf{z})_i, \quad \text{ for } i = 1, \dotsc , K, \quad \mathbf{z} = (z_1,\, \dotsc,\, z_K) \in\R^K,where the LogSumExp function is defined as \operatorname{LSE}(z_1,\, \dots,\, z_n) = \log\left(\exp(z_1) + \cdots + \exp(z_n)\right).
+
+The gradient of softmax is thus \partial_{z_j} \sigma_i = \sigma_i (\delta_{ij} - \sigma_j).
+
+History
+
+The softmax function was used in statistical mechanics as the Boltzmann distribution in the foundational paper , formalized and popularized in the influential textbook .
+
+The use of the softmax in decision theory is credited to R. Duncan Luce, who used the axiom of independence of irrelevant alternatives in rational choice theory to deduce the softmax in Luce's choice axiom for relative preferences.
+
+In machine learning, the term "softmax" is credited to John S. Bridle in two 1989 conference papers, :
+
+}}
+
+{{blockquote
+
+For any input, the outputs must all be positive and they must sum to unity. ...
+
+Given a set of unconstrained values, , we can ensure both conditions by using a Normalised Exponential transformation:
+
+Q_j(x) = \left. e^{V_j(x)} \right/ \sum_k e^{V_k(x)}
+
+This transformation can be considered a multi-input generalisation of the logistic, operating on the whole output layer. It preserves the rank order of its input values, and is a differentiable generalisation of the 'winner-take-all' operation of picking the maximum value. For this reason we like to refer to it as softmax.
+
+}}
+
+Example
+
+With an input of , the softmax is approximately . The output has most of its weight where the "4" was in the original input. This is what the function is normally used for: to highlight the largest values and suppress values which are significantly below the maximum value. But note: a change of temperature changes the output.  When the temperature is multiplied by 10, the inputs are effectively  and the softmax is approximately . This shows that high temperatures de-emphasize the maximum value.
+
+Computation of this example using Python code:
+
+>>> import numpy as np
+
+>>> z = np.array([1.0, 2.0, 3.0, 4.0, 1.0, 2.0, 3.0])
+
+>>> beta = 1.0
+
+>>> np.exp(beta * z) / np.sum(np.exp(beta * z))
+
+array([0.02364054, 0.06426166, 0.1746813, 0.474833, 0.02364054,
+
+0.06426166, 0.1746813])
+
+Alternatives
+
+The softmax function generates probability predictions densely distributed over its support. Other functions like sparsemax or α-entmax can be used when sparse probability predictions are desired. Also the Gumbel-softmax reparametrization trick can be used when sampling from a discrete-discrete distribution needs to be mimicked in a differentiable manner.
+
+See also
+
+Softplus
+
+Multinomial logistic regression
+
+Dirichlet distribution – an alternative way to sample categorical distributions
+
+Partition function
+
+Exponential tilting – a generalization of Softmax to more general probability distributions
+
+Notes
+
+References
+
+{{reflist|refs=
+
+}}
+
+Category:Computational neuroscience
+
+Category:Logistic regression
+
+Category:Artificial neural networks
+
+Category:Functions and mappings
+
+Category:Articles with example Python (programming language) code
+
+Category:Exponentials
+
+Category:Articles with example Julia code
+
+Category:Articles with example R code

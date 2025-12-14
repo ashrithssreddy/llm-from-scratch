@@ -1,0 +1,113 @@
+{{Infobox scientist
+
+name              = Prof Mark Keane
+
+image             = ProfMKeane.png
+
+caption           = Keane, 2014
+
+birth_date        =
+
+birth_place       = Dublin, Ireland
+
+death_date        =
+
+death_place       =
+
+residence         =
+
+fields            = Cognitive Psychology Cognitive Science Artificial Intelligence
+
+workplaces        = University College DublinTrinity College DublinCardiff UniversityOpen UniversityQueen Mary, University of London
+
+alma_mater        = University College DublinTrinity College Dublin
+
+doctoral_advisor  =
+
+academic_advisors =
+
+doctoral_students =
+
+known_for         =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+awards            =
+
+signature         =
+
+footnotes         =
+
+ethnicity         =
+
+thesis_title      = Analogical problem solving
+
+thesis_url        = https://library.catalogue.tcd.ie/record=b12671422~S7
+
+thesis_year       = 1987
+
+}}
+
+Mark Thomas Gerard Keane (Irish: Marcus Ó Cathain, born 3 July 1961, Dublin, Ireland) is a cognitive scientist and author of several books on human cognition and artificial intelligence, including  Cognitive Psychology: A Student's Handbook (8 editions, with Michael Eysenck),  Advances in the Psychology of Thinking (1992, with Ken Gilhooly), Novice Programming Environments (1992/2018, with Marc Eisenstadt and Tim Rajan), Advances in Case-Based Reasoning (1995, with J-P Haton and Michel Manago)., Case-Based Reasoning: Research & Development (2022, with N Wiratunga).
+
+Education
+
+Keane received a B.A. in Psychology from University College Dublin in 1982. He then moved to postdoctoral positions in Queen Mary University of London and the Open University.
+
+Academic career
+
+He was a Lecturer in Psychology at Cardiff University. Keane moved to become Chair of Computer Science at University College Dublin in 1998. In 2006, he was seconded to Science Foundation Ireland as Director of ICT, overseeing on a $700m research investment. He advised the Irish Government on its 3.7B euro Strategy for Science, Technology & Innovation (SSTI). From 2006 to 2007, he was Director General of Science Foundation Ireland before returning to  University College Dublin where he was appointed VP of Innovation & Partnerships  (2007-2009).
+
+Keane's research has been split between cognitive science and computer science. His cognitive science research has been in analogy, metaphor,  conceptual combination and similarity. His computer science research has been in natural language processing,  machine learning, case-based reasoning, text analytics and explainable artificial intelligence.  He has been a PI in  the  Science Foundation Ireland  funded Insight Centre for Data Analytics  working on digital journalism and digital humanities.  More recently, he was deputy director of the VistaMilk SFI Research Centre that is exploring precision agriculture in the dairy sector.
+
+References
+
+External links
+
+SiliconRepublic.com article "The Keane Edge"
+
+Google Scholar
+
+VistaMilk Keane PI
+
+Eysenck & Keane (2020)
+
+UCD Appoints Keane as VP
+
+VistaMilk SFI Research Centre
+
+Category:1961 births
+
+Category:Living people
+
+Category:Scientists from Dublin (city)
+
+Category:Academics of Cardiff University
+
+Category:Academics of the Open University
+
+Category:Academics of the University of London
+
+Category:Alumni of University College Dublin
+
+Category:Alumni of Trinity College Dublin
+
+Category:Academics of Trinity College Dublin
+
+Category:Academics of University College Dublin
+
+Category:Fellows of Trinity College Dublin
+
+Category:Natural language processing researchers
+
+Category:Artificial intelligence researchers
+
+Category:Science Foundation Ireland
+
+Category:University College Dublin

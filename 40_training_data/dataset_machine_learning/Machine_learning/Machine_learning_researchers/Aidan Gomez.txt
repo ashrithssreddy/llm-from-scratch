@@ -1,0 +1,67 @@
+{{Infobox person
+
+name               = Aidan Gomez
+
+image              = File:Aidan Gomez at "ALL IN" 2025 06.jpg
+
+caption            = Gomez in 2025
+
+birth_date         =
+
+birth_place        = Toronto, Ontario, Canada
+
+education          = University of Toronto  University of Oxford
+
+spouse             =
+
+occupation         = CEO, Cohere
+
+known_for          =
+
+website            =
+
+}}
+
+Aidan Gomez is a British-Canadian computer scientist working in the field of artificial intelligence, with a focus on natural language processing. He is the co-founder and CEO of the technology company Cohere.
+
+Early life and education
+
+Gomez grew up in Brighton, Ontario. He graduated from the University of Toronto with a bachelor's degree in computer science and mathematics. He was pursuing a PhD in computer science from the University of Oxford. He paused his studies to launch Cohere. He was granted the PhD in 2024.
+
+Career
+
+In 2017, as a 20 year-old intern at Google Brain, Gomez was one of eight authors of the research paper "Attention Is All You Need", which is credited with changing the AI industry and helping lead to the creation of ChatGPT. The paper proposed a novel deep learning architecture called the transformer, that enables machine learning models to analyze large amounts of data for patterns, and then use those patterns to make predictions while leveraging GPU parallelization.  It has been commonly adopted for training large language models and in the development of generative AI.
+
+As a PhD student, Gomez worked as a machine learning researcher at Google Brain. He is CEO of the company, which has been valued at $5.5 billion as of July 2024.
+
+In April 2025, Gomez was elected to the board of Rivian.
+
+References
+
+Category:Living people
+
+Category:Year of birth missing (living people)
+
+Category:British computer scientists
+
+Category:Canadian computer scientists
+
+Category:Artificial intelligence researchers
+
+Category:British chief executives in technology
+
+Category:Canadian chief executives in technology
+
+Category:British technology company founders
+
+Category:Canadian technology company founders
+
+Category:Machine learning researchers
+
+Category:Businesspeople in information technology
+
+Category:University of Toronto alumni
+
+Category:Alumni of the University of Oxford
+
+Category:Google employees

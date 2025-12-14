@@ -1,0 +1,105 @@
+{{Infobox scientist
+
+name              = David Horn
+
+native_name       = דוד הורן
+
+birth_date        =
+
+birth_place       = Haifa, Mandatory Palestine (now Israel)
+
+nationality       = Israeli
+
+native_name_lang  = he
+
+image             = דוד הורן - פורטרט.jpg
+
+fields            = Physics, Neural Computation,  Bioinformatics
+
+workplaces        = Tel Aviv University
+
+alma_mater        = Hebrew UniversityTechnion
+
+thesis_title      = Some Aspects of the Structure of  Weak Interactions
+
+thesis_year       = 1965
+
+doctoral_advisor  = Yuval Ne'eman
+
+}}
+
+David Horn (; born 10 September 1937) is a Professor (Emeritus) of Physics in the School of Physics and Astronomy at Tel Aviv University (TAU), Israel. He has served as Vice-Rector of TAU, Chairman of the School of Physics and Astronomy and as Dean of the Faculty of Exact Sciences in TAU. He is a fellow of the American Physical Society, nominated for "contributions to theoretical particle physics, including the seminal work on finite energy sum rules, research of the phenomenology of hadronic processes, and investigation of Hamiltonian lattice theories".
+
+Early life and education
+
+David Horn was born and educated in Haifa. He graduated from the Reali School in 1955. He began his academic studies in Physics at the Technion in Haifa in 1957, and received his B.Sc. (Summa Cum Laude) in 1961, and M.Sc. in 1962. He continued his Ph.D. studies at the Hebrew University of Jerusalem until 1965. His thesis on "Some Aspects of the Structure of Weak Interactions" was supervised by Prof. Yuval Ne'eman.
+
+Horn spent a significant part of his career holding visiting academic positions at other universities and research institutes, including:  Postdoctoral Fellow at Argonne National Lab, ILL, Research Fellow and three times Visiting Associate at California Institute of Technology, Pasadena, CA, Visitor at CERN in Geneva, Visiting Professor at Cornell University, NY, Member of the Institute for Advanced Study, Princeton, NJ,  Visiting Professor at SLAC in Stanford University, CA, and Visiting Professor at Kyoto University, Japan.
+
+Beginning from 1980, Horn held official positions at Tel Aviv University, starting with tenure as Vice-Rector (1980-1983), a position he left for research at SLAC. After returning he was nominated Chairman of the Department of High Energy Physics (1984-1986), followed by tenures as Chairman of the School of Physics and Astronomy (1986-9),  Dean of the Raymond and Beverly Sackler Faculty of Exact Sciences (1990-1995), and first Director of the Adams Super Center for Brain Studies (1993-2000).
+
+He served as member of the Israel Council for Higher Education (1987-1991), member of the Executive Committee of the European Physical Society (1989-1992) and member of the European Strategy Forum on Research Infrastructures (2005-2017). He chaired the Israeli Committee of Research Infrastructures (2012-2016), issuing roadmaps for scientific RI in 2013 and 2016.
+
+Together with Richard Silver he investigated a model of coherent production of pions at high energy hadron collisions in 1971,
+
+and  together with Jeffrey Mandula he undertook the investigation of mesons with constituent gluons in 1978.
+
+Moving to lattice gauge theories in 1979, he discovered,  together with Shimon Yankielowic and Marvin Weinstein, a non-confining phase in Z(N) theories for large N.
+
+In 1981 he demonstrated the existence of finite matrix models with link gauge fields, nowadays known as quantum link models.
+
+In 1984 Horn and Weinstein developed the t-expansion methodology.
+
+Horn's contributions to neural modeling include a novel mechanism for memory maintenance via neuronal regulation in 1998, developed with Nir Levy and Eytan Ruppin
+
+and unsupervised learning of natural languages in 2005, a joint work with Zach Solan, Eytan Ruppin and Shimon Edelman, introducing novel algorithms for motif and grammar extraction from text. Horn has contributed to algorithms of clustering, an important topic in Machine Learning, by developing Support Vector Clustering (SVC) in 2001, together with Asa Ben Hur, Hava Siegelmann and Vladimir Vapnik. This was followed shortly thereafter by a joint work with Assaf Gottlieb on Quantum Clustering (QC).
+
+His contributions to Bioinformatics include motif descriptions of function and structure of proteins,  as well as motif studies of genomic structures. Together with Erez Persi he studied compositional order of proteomes,  and repeat instability of genomes, as evolution markers of organisms and of cancer (a joint work with Persi and others).
+
+Honors
+
+Horn is a Fellow of the American Physical Society (1985)
+
+Patents
+
+Method and Apparatus for Quantum Clustering.  USA Patent No. 7,653,646 B2.
+
+Method for discovering relationships in data by dynamic quantum clustering USA Patent No  8874412 and USA Patent No. 9,646,074.
+
+Personal life
+
+Horn was married to Nira Fuss since 1963 until her death in 2019. He is a father of three, Yuval, Tamar, and Oded, and grandfather of nine. He lives in Tel Aviv, Israel.
+
+References
+
+External links
+
+David Horn, Tel Aviv university
+
+Challenges of Science and Technology in the 21st Century - Interdisciplinary TAU Symposium in honor of David Horn on his 80th birthday, YouTube
+
+Category:Israeli physicists
+
+Category:Artificial intelligence researchers
+
+Category:Living people
+
+Category:Academic staff of Tel Aviv University
+
+Category:Technion – Israel Institute of Technology alumni
+
+Category:1937 births
+
+Category:Machine learning researchers
+
+Category:Israeli bioinformaticians
+
+Category:Particle physicists
+
+Category:Hebrew University of Jerusalem alumni
+
+Category:Fellows of the American Physical Society
+
+Category:People associated with CERN
+
+Category:Hebrew Reali School alumni

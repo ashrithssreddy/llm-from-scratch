@@ -1,0 +1,89 @@
+Actor–observer asymmetry (also actor–observer bias or actor–observer difference) is a bias one exhibits when forming attributions about the behavior of others or themselves. When explaining their own behavior, people are more likely to attribute their actions to the particular situation rather than their personality, also known as a situational attribution. However, when an observer is explaining the behavior of another person, they are more likely to attribute this behavior to the actors' personality rather than situational factors, also known as dispositional attribution. defined as when people tend to explain behavior using internal, personal characteristics rather than the external factors or situational influences. However, Bertram F. Malle (2006) highlights that these two phenomena should be distinguished because the fundamental attribution error refers to inferring stable internal traits from behaviour, whereas actor-observer asymmetry specifically refers to explanations of behaviour.
+
+Actor-observer asymmetry is often explained using perspectives and salience. When forming attributions, perspective highlights the situation, and what is occurring around the perceiver is most salient. As a result, perceivers may be more likely to make attributions based on these salient situational factors. However, when judging someone else, their behaviour is more salient than the situation. This may explain the greater chance of making dispositional attributions. Furthermore, when making judgements on one's own behaviour, much more information regarding the self is available, including knowledge of past behaviour.
+
+The specific hypothesis of an actor–observer asymmetry in attribution was originally proposed by Edward Jones and Richard Nisbett, who stated that "actors tend to attribute the causes of their behavior to stimuli inherent in the situation, while observers tend to attribute behavior to stable dispositions of the actor". Supported by initial evidence, the hypothesis was long held as firmly established. However, a meta-analysis of all the published tests of the hypothesis between 1971 and 2004 found that there was no actor–observer asymmetry of the sort that had been previously proposed.
+
+Considerations of actor–observer differences can be found in other disciplines as well, such as philosophy (e.g. privileged access, incorrigibility), management studies, artificial intelligence, semiotics, anthropology, and political science.
+
+Background and Initial Formulation
+
+The background of the actor-observer asymmetry was established in the 1960s, with social psychology's increasing interest in the cognitive mechanisms by which people make sense of their own and other people's behavior. This interest was instigated by Fritz Heider's book, The Psychology of Interpersonal Relations, and the research in its wake has become known as "attribution research" or "attribution theory."
+
+The specific hypothesis of an "actor–observer asymmetry" was first proposed by social psychologists Jones and Nisbett in 1971. Jones and Nisbett hypothesized that these two roles (actors and observers) produce asymmetric explanations.Their research findings were that "there is pervasive tendency for actors to attribute their actions to situational requirements, whereas observers tend to attribute the same actions to stable personal dispositions". The authors found initial evidence for the hypothesis,who also examined one possible explanation of the hypothesis: actors explain their behaviors because they attend to the situation (not to their own behaviors) whereas observers attend to the actor's behavior (not to the situation). Based largely on this initial supporting evidence, the confidence in the hypothesis became uniformly high.
+
+In the Nisbett et al. (1973) study, actor-observer asymmetry was tested by having participants select between two traits (such as energetic and relaxed), choosing which trait best matched the personality of the target, or if the trait that best matched them depended on the situation.
+
+Functional neuroimaging studies have also demonstrated differential activation of brain regions when making self-focused vs. other-focused judgments. The medial prefrontal cortex (mPFC), left temporoparietal junction (TPJ), and posterior cingulate were involved in both self-related and other-related judgments. However, self-related judgments more often activated the ventral mPFC (vmPFC), left ventrolateral PFC, and left insula. In contrast, other-related judgments more frequently activated the dorsal mPFC (dmPFC), bilateral TPJ, and cuneus.
+
+Recent Evidence and Refutation
+
+Over 100 studies have been published since 1971 in which the hypothesis was put to further tests (often in the context of testing another hypothesis about causal attributions). Bertram Malle examined this entire literature in a meta-analysis, finding that, across 170 individual tests, the asymmetry practically did not exist.
+
+External influences on the actor-observer effect are largely underemphasized. Research has shown that the actor-observer asymmetry is more likely to occur when an outcome is uncertain, partially controllable, and important.
+
+Theoretical reformulation
+
+Bertram Malle interpreted his meta-analytic findings not as proof that actors and observers always explain behavior in exactly the same way, but as evidence that the classic framing of attributions in terms of a simple dispositional–situational dichotomy is inadequate for most everyday, intentional actions.
+
+Within this framework, explanations of intentional action are organized along several key distinctions. One is between reason explanations and causal history of reason (CHR) explanations, where the latter appeal to background factors such as culture, personality, or contextual pressures that gave rise to an agent’s reasons but were not themselves reasons for acting. A second distinction is between explanations that cite an agent’s beliefs and those that cite desires, and a third is whether belief reasons are explicitly marked with mental-state verbs (for example, “she thought that …” or “he assumed that …”).
+
+Reformulated in folk-conceptual terms, actor–observer differences do emerge, but they concern these more fine-grained choices in explanation rather than a wholesale preference for dispositional or situational causes. Across several studies, actors offered a higher proportion of reason explanations (relative to CHR explanations) than observers, gave relatively more belief reasons than desire reasons, and used fewer explicit mental-state markers for belief reasons than observers did.
+
+The same framework has also been used to embed actor–observer differences in a broader continuum of psychological distance. People are more likely to give reason explanations when talking about their own behavior, when describing another person they see in a positive light, or when explaining the behavior of non-human agents toward whom they feel attachment (such as a pet), and more likely to give CHR explanations when talking about large collectives or abstract groups.
+
+Cross-Cultural Perspective
+
+A significant body of literature exists to support the idea that there are cross-cultural differences in the attribution process. When considering the fundamental attribution error, it was originally named for its universal and 'fundamental' application, It has since been demonstrated that Western cultures are more susceptible to making the fundamental attribution error in comparison to Eastern cultures. This has been tied to a cultural difference seen in cognitive functions such as attention and perception, where western cultures tend to emphasize focal objects, and eastern cultures place more emphasis on background context. In a 1984 study by Joan Miller, Indian and American adults were asked to describe and explain both a prosocial and a deviant behavior of a person they knew, and specifically regarding deviant behavior, American adults were significantly more likely to attribute the actions to dispositional reasoning compared to Indian adults, who lead towards contextual reasoning. This difference has been further confirmed in later studies and metanalyses in recent years, comparing individualistic countries like the United States, and collectivist cultures such as China.
+
+Broader Implications
+
+Findings on the actor-observer asymmetry extend beyond social perception, influencing how individuals internalize judgments from others. Others’ attributions can influence one’s self-view. When someone is frequently exposed to a critical observer who attributes mistakes to personal flaws or enduring character traits, they may begin to adopt this perspective, interpreting their own actions through the same lens. Internalizing such criticism can lead to a belief that their abilities are severely lacking and that their character is fundamentally flawed. Conversely, if a person regularly hears a supportive observer acknowledge their competence while recognizing that certain tasks are inherently challenging, they are more likely to develop a balanced approach to interpreting both their successes and setbacks.
+
+Beyond close interpersonal contexts, actor–observer patterns have also been studied in political judgment. Experimental and survey research suggests that strong emotional reactions (such as anger or fear) and in-group identification can amplify the tendency to attribute the misdeeds of political opponents to bad character while interpreting comparable actions by in-group politicians as the product of situational pressures.
+
+Related concepts
+
+Self-serving bias
+
+In attribution, the actor–observer asymmetry is often confused with the concept of self-serving bias — the claim that people attribute positive outcomes of their behaviour to dispositional factors, while attributing negative outcomes to situational factors. The difference between the two hypotheses is that the actor–observer asymmetry requires a specific comparison between actor explanations and observer explanations, while the self-serving bias refers only to actor explanations. Furthermore, actor-observer asymmetry is expected to hold for all events and behaviors (whether they are positive or negative), while the self-serving bias is often formulated as a complete reversal in actors' and observers' explanation tendencies as a function of positive or negative events.
+
+Correspondence bias
+
+The correspondence bias is similar to actor-observer asymmetry in that both involve systematic differences in how people attribute behavior. However, the correspondence bias specifically focuses on disposition-congruent judgements of others based on their behaviours, even if these behaviours originate due to the situation. It states that observers believe they know an individual’s underlying disposition solely based on their actions.
+
+Much like actor-observer asymmetry, correspondence bias is supported by several cognitive and environmental factors that contribute to its prevalence. There are four key mechanisms that each produce different forms of this bias: lack of awareness, unrealistic expectations, inflated categorizations, and incomplete corrections.
+
+A lack of awareness is constituted by ignorance of the situation in forming attributions. This often occurs due to naive realism, the tendency to believe that one’s own perception of reality is objective and unbiased. Such beliefs may cause observers to think the actor shares their interpretation of the situation, preventing further deliberation to consider situational factors.
+
+Trait Ascription
+
+The concept of trait ascription bias provides an alternative explanation for actor-observer asymmetry. Trait ascription bias refers to the tendency to perceive one's own personality, beliefs, and behaviors as dynamic and adaptable while viewing others as more fixed and predictable.
+
+See also
+
+Attribution (psychology)
+
+Fundamental attribution error
+
+List of biases in judgment and decision making
+
+Self-serving bias
+
+References
+
+Bibliography
+
+Also available in:
+
+{{cite journal |last1=Malle |first1=Bertram F. |last2=Knobe |first2=Joshua M. |last3=Nelson |first3=Sarah E. |title=Actor-observer asymmetries in explanations of behavior: New answers to an old question. |journal=Journal of Personality and Social Psychology |date=2007 |volume=93 |issue=4 |pages=491–514 |doi=10.1037/0022-3514.93.4.491 |pmid=17892328 |url=https://philarchive.org/rec/KNOAAI |ref=}}
+
+{{cite journal |last1=Nisbett |first1=Richard E. |last2=Caputo |first2=Craig |last3=Legant |first3=Patricia |last4=Marecek |first4=Jeanne |title=Behavior as seen by the actor and as seen by the observer. |journal=Journal of Personality and Social Psychology |date=August 1973 |volume=27 |issue=2 |pages=154–164 |doi=10.1037/h0034779 |ref= }}
+
+Category:Cognitive biases
+
+Category:Asymmetry
+
+Category:Error
+
+Category:Causal fallacies

@@ -1,0 +1,103 @@
+{{Infobox scientist
+
+name              = Jerome H. Friedman
+
+image             =
+
+image_size        =
+
+image_upright     =
+
+alt               =
+
+caption           =
+
+birth_date        =
+
+birth_place       = Yreka, California, US
+
+death_date        =
+
+death_place       =
+
+fields            = StatisticsMachine Learning
+
+workplaces        = Stanford Linear Accelerator CenterStanford University
+
+alma_mater        =
+
+education         = Chico State CollegeUniversity of California, Berkeley
+
+thesis_title      =
+
+thesis_url        =
+
+thesis_year       =
+
+doctoral_advisor  = Ronald R. Ross
+
+doctoral_students =
+
+known_for         = Projection pursuit regressionGradient boostingCART
+
+awards            =
+
+}}
+
+Jerome Harold Friedman (born December 29, 1939) is an American statistician, consultant and Professor of Statistics at Stanford University, known for his contributions in the field of statistics and data mining.
+
+Biography
+
+Friedman studied at Chico State College for two years before transferring to the University of California, Berkeley in 1959, where he received his AB in Physics in 1962, and his PhD in High Energy Particle Physics in 1967.
+
+In 1968 he started his academic career as research physicist at the Lawrence Berkeley National Laboratory. In 1972 he started at Stanford University as leader of the Computation Research Group at the Stanford Linear Accelerator Center, where he would participate until 2003. In the year 1976–77 he was a visiting scientist at CERN in Geneva. From 1981 to 1984 he was visiting professor at the University of California, Berkeley. In 1982 he was appointed Professor of Statistics at Stanford University.
+
+In 2002 he was awarded the SIGKDD Innovation Award by the Association for Computing Machinery (ACM). In 2010 he was elected as a member of the National Academy of Sciences (Applied mathematical sciences).
+
+Publications
+
+Friedman has authored and co-authored many publications in the field of data-mining including "nearest neighbor classification, logistical regressions, and high dimensional data analysis. His primary research interest is in the area of machine learning."  A selection:
+
+See also
+
+Gradient boosting
+
+LogitBoost
+
+Multivariate adaptive regression splines
+
+Projection pursuit regression
+
+External links
+
+Jerome H. Friedman Professor of Statistics
+
+https://jerryfriedman.su.domains/ Homepage
+
+Category:1939 births
+
+Category:20th-century American mathematicians
+
+Category:21st-century American mathematicians
+
+Category:People associated with CERN
+
+Category:Living people
+
+Category:Machine learning researchers
+
+Category:Stanford University faculty
+
+Category:Stanford University Department of Statistics faculty
+
+Category:University of California, Berkeley alumni
+
+Category:Fellows of the American Statistical Association
+
+Category:People from Yreka, California
+
+Category:Data miners
+
+Category:American mathematical statisticians
+
+Category:Computational statisticians

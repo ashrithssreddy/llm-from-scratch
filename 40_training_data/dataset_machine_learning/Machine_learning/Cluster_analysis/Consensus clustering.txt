@@ -1,0 +1,89 @@
+Consensus clustering is a method of aggregating (potentially conflicting) results from multiple clustering algorithms. Also called cluster ensembles or aggregation of clustering (or partitions), it refers to the situation in which a number of different (input) clusterings have been obtained for a particular dataset and it is desired to find a single (consensus) clustering which is a better fit in some sense than the existing clusterings. Consensus clustering is thus the problem of reconciling clustering information about the same data set coming from different sources or from different runs of the same algorithm. When cast as an optimization problem, consensus clustering is known as median partition, and has been shown to be NP-complete, even when the number of input clusterings is three. Consensus clustering for unsupervised learning is analogous to ensemble learning in supervised learning.
+
+Issues with existing clustering techniques
+
+Current clustering techniques do not address all the requirements adequately.
+
+Dealing   with   large   number   of   dimensions   and   large   number   of   data   items   can   be problematic because of time complexity;
+
+Effectiveness of the method depends on the definition of "distance" (for distance-based clustering)
+
+If an obvious distance measure doesn't exist, we must "define" it, which is not always easy, especially in multidimensional spaces.
+
+The result of the clustering algorithm (that, in many cases, can be arbitrary itself) can be interpreted in different ways.
+
+Justification for using consensus clustering
+
+There are potential shortcomings for all existing clustering techniques. This may cause interpretation of results to become difficult, especially when there is no knowledge about the number of clusters. Clustering methods are also very sensitive to the initial clustering settings, which can cause non-significant data to be amplified in non-reiterative methods. An extremely important issue in cluster analysis is the validation of the clustering results, that is, how to gain confidence about the significance of the clusters provided by the clustering technique (cluster numbers and cluster assignments). Lacking an external objective criterion (the equivalent of a known class label in supervised analysis), this validation becomes somewhat elusive.
+
+Iterative descent clustering methods, such as the SOM and k-means clustering circumvent some of the shortcomings of hierarchical clustering by providing for univocally defined clusters and cluster boundaries. Consensus clustering provides a method that represents the consensus across multiple runs of a clustering algorithm, to  determine the number of clusters in the data, and to assess the stability of the discovered clusters. The method can also be used to represent the consensus over multiple runs of a clustering algorithm with random restart (such as K-means, model-based Bayesian clustering, SOM, etc.), so as to account for its sensitivity to the initial conditions. It can provide data for a visualization tool to inspect cluster number, membership, and boundaries. However, they lack the intuitive and visual appeal of hierarchical clustering dendrograms, and the number of clusters must be chosen a priori.
+
+The Monti consensus clustering algorithm
+
+The Monti consensus clustering algorithm is one of the most popular consensus clustering algorithms and is used to determine the number of clusters, K. Given a dataset of N total number of points to cluster, this algorithm works by resampling and clustering the data, for each K and a N \times N consensus matrix is calculated, where each element represents the fraction of times two samples clustered together. A perfectly stable matrix would consist entirely of zeros and ones, representing all sample pairs always clustering together or not together over all resampling iterations. The relative stability of the consensus matrices can be used to infer the optimal K.
+
+More specifically, given a set of points to cluster, D=\{e_1,e_2,...e_N\}, let D^1,D^2,...,D^H be the list of H perturbed (resampled) datasets of the original dataset D, and let M^h denote the N \times N connectivity matrix resulting from applying a clustering algorithm to the dataset D^h. The entries of M^h are defined as follows:
+
+M^h(i,j)= \begin{cases} 1, & \text{if}\text{ points i and j belong to the same cluster} \\ 0, & \text{otherwise} \end{cases}
+
+Let I^h be the N \times N identicator matrix where the (i,j)-th entry is equal to 1 if points i and j are in the same perturbed dataset D^h, and 0 otherwise. The indicator matrix is used to keep track of which samples were selected during each resampling iteration for the normalisation step. The consensus matrix C is defined as the normalised sum of all connectivity matrices of all the perturbed datasets and a different one is calculated for every K.
+
+C(i,j)=\left ( \frac{\textstyle \sum_{h=1}^H M^h(i,j) \displaystyle}{\sum_{h=1}^H I^h(i,j)} \right )
+
+That is the entry (i,j) in the consensus matrix is the number of times points i and j were clustered together divided by the total number of times they were selected together. The matrix is symmetric and each element is defined within the range [0,1]. A consensus matrix is calculated for each K to be tested, and the stability of each matrix, that is how far the matrix is towards a matrix of perfect stability (just zeros and ones) is used to determine the optimal K. One way of quantifying the stability of the Kth consensus matrix is examining its CDF curve (see below).
+
+Over-interpretation potential of the Monti consensus clustering algorithm
+
+Monti consensus clustering can be a powerful tool for identifying clusters, but it needs to be applied with caution as shown by Şenbabaoğlu et al.  If clusters are not well separated, consensus clustering could lead one to conclude apparent structure when there is none, or declare cluster stability when it is subtle. Identifying false positive clusters is a common problem throughout cluster research, and has been addressed by methods such as SigClust However, these methods rely on certain assumptions for the null model that may not always be appropriate.
+
+Şenbabaoğlu et al
+
+Fred and Jain: They proposed to use a single linkage algorithm to combine multiple runs of the k-means algorithm.
+
+Dana Cristofor and Dan Simovici: They observed the connection between clustering aggregation and clustering of categorical data. They proposed information theoretic distance measures, and they propose genetic algorithms for finding the best aggregation solution.
+
+Topchy et al.: They defined clustering aggregation as a maximum likelihood estimation problem, and they proposed an EM algorithm for finding the consensus clustering.
+
+Hard ensemble clustering
+
+This approach by Strehl and Ghosh introduces the problem of combining multiple partitionings of a set of objects into a single consolidated clustering without accessing the features or algorithms that determined these partitionings. They discuss three approaches towards solving this problem to obtain high quality consensus functions. Their techniques have low computational costs and this makes it feasible to evaluate each of the techniques discussed below and arrive at the best solution by comparing the results against the objective function.
+
+Efficient consensus functions
+
+Cluster-based similarity partitioning algorithm (CSPA):In CSPA the similarity between two data-points is defined to be directly proportional to number of constituent clusterings of the ensemble in which they are clustered together. The intuition is that the more similar two data-points are the higher is the chance that constituent clusterings will place them in the same cluster. CSPA is the simplest heuristic, but its computational and storage complexity are both quadratic in n. SC3 is an example of a CSPA type algorithm. The following two methods are computationally less expensive:
+
+Hyper-graph partitioning algorithm (HGPA): The HGPA algorithm takes a very different approach to finding the consensus clustering than the previous method. The cluster ensemble problem is formulated as partitioning the hypergraph by cutting a minimal number of hyperedges. They make use of hMETIS which is a hypergraph partitioning package system.
+
+Meta-clustering algorithm (MCLA):The meta-cLustering algorithm (MCLA) is based on clustering clusters. First, it tries to solve the cluster correspondence problem and then uses voting to place data-points into the final consensus clusters. The cluster correspondence problem is solved by grouping the clusters identified in the individual clusterings of the ensemble. The clustering is performed using METIS and Spectral clustering.
+
+Soft clustering ensembles
+
+Punera and Ghosh extended the idea of hard clustering ensembles to the soft clustering scenario. Each instance in a soft ensemble is represented by a concatenation of r posterior membership probability distributions obtained from the constituent clustering algorithms. We can define a distance measure between two instances using the Kullback–Leibler (KL) divergence, which calculates the "distance" between two probability distributions.
+
+extends CSPA by calculating a similarity matrix. Each object is visualized as a point in dimensional space, with each dimension corresponding to probability of its belonging to a cluster. This technique first transforms the objects into a label-space and then interprets the dot product between the vectors representing the objects as their similarity.
+
+extends MCLA by accepting soft clusterings as input. sMCLA's working can be divided into the following steps:
+
+Construct Soft Meta-Graph of Clusters
+
+Group the Clusters into Meta-Clusters
+
+Collapse Meta-Clusters using Weighting
+
+Compete for Objects
+
+represents the ensemble as a bipartite graph with clusters and instances as nodes, and edges between the instances and the clusters they belong to. This approach can be trivially adapted to consider soft ensembles since the graph partitioning algorithm METIS accepts weights on the edges of the graph to be partitioned. In sHBGF, the graph has n&nbsp;+&nbsp;t vertices, where t is the total number of underlying clusters.
+
+Bayesian consensus clustering (BCC): defines a fully Bayesian model for soft consensus clustering in which multiple source clusterings, defined by different input data or different probability models, are assumed to adhere loosely to a consensus clustering.  The full posterior for the separate clusterings, and the consensus clustering, are inferred simultaneously via Gibbs sampling.
+
+Ensemble Clustering Fuzzification Means (ECF-Means): ECF-means is a clustering algorithm, which combines different clustering results in ensemble, achieved by different runs of a chosen algorithm (k-means), into a single final clustering configuration.
+
+References
+
+Aristides Gionis, Heikki Mannila, Panayiotis Tsaparas. Clustering Aggregation. 21st International Conference on Data Engineering (ICDE 2005)
+
+Hongjun Wang, Hanhuai Shan, Arindam Banerjee. Bayesian Cluster Ensembles, SIAM International Conference on Data Mining, SDM 09
+
+Category:Cluster analysis
+
+Category:NP-complete problems

@@ -1,0 +1,39 @@
+Multiscale decision-making, also referred to as multiscale decision theory (MSDT), is an approach in operations research that combines game theory, multi-agent influence diagrams, in particular dependency graphs, and Markov decision processes to solve multiscale challenges in sociotechnical systems. MSDT considers interdependencies within and between the following scales: system level, time and information.
+
+Multiscale decision theory builds upon decision theory and multiscale mathematics. Multiscale decision theory can model and analyze complex decision-making networks that exhibit multiscale phenomena. The theory's results can be used by mechanism designers and decision-makers in organizations and complex systems to improve system performance and decision quality.
+
+Multiscale decision theory has been applied to manufacturing enterprise enterprises, service systems, supply chain management, healthcare, systems engineering, among others. In healthcare, for example, MSDT has been used to identify multi-level incentives that can improve healthcare value (quality of outcomes per dollar spent). The Multiscale Decision Making Laboratory at Virginia Tech directed by Dr. Christian Wernz is working at the forefront of MSDT theory and applications.
+
+Multiscale decision theory is related to:
+
+Multiscale modeling
+
+Decision analysis
+
+Cooperative distributed problem solving
+
+Decentralized decision making
+
+References
+
+Bibliography
+
+Filar, J., Vrieze, K., Competitive Markov Decision Processes, Springer, 1996.
+
+Mesarović, M. D., Macko, D. and Takahara, Y., Theory of Hierarchical, Multilevel, Systems, Mathematics in Science and Engineering, Volume 68, Academic Press, 1970.
+
+Schneeweiss, C., Distributed Decision Making, Springer, 2003.
+
+Wernz, C., Multiscale Decision-Making: Bridging Temporal and Organizational Scales in Hierarchical Systems, Dissertation, University of Massachusetts Amherst. http://scholarworks.umass.edu/dissertations/AAI3336994/
+
+External links
+
+Multiscale Mathematics Initiative: A Roadmap
+
+Multiscale Decision Making Laboratory, Virginia Tech
+
+Multi-Scale Behavioral Modeling and Analysis Promoting a Fundamental Understanding of Agent-Based System Design and Operation
+
+Category:Decision analysis
+
+Category:Markov processes

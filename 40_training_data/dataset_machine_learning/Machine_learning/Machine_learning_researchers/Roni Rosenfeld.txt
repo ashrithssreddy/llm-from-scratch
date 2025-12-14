@@ -1,0 +1,137 @@
+{{Infobox scientist
+
+name = Roni Rosenfeld
+
+image =
+
+image_size =
+
+birth_name = רוני רוזנפלד
+
+caption =
+
+birth_date =
+
+birth_place =
+
+death_date =
+
+death_place =
+
+residence =
+
+citizenship =
+
+nationality = Israeli-American
+
+ethnicity =
+
+fields = Computer ScienceStatistical EpidemiologyMachine Learning
+
+work_institutions =
+
+education = Tel Aviv UniversityUniversity of ChicagoCarnegie Mellon University
+
+thesis_url =
+
+thesis_title =
+
+thesis_year =
+
+doctoral_advisors = Raj ReddyXuedong Huang
+
+doctoral_students =
+
+known_for =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences =
+
+influenced =
+
+prizes =
+
+religion =
+
+footnotes =
+
+website =
+
+notable_students =
+
+}}
+
+Roni Rosenfeld (Hebrew: רוני רוזנפלד) is an Israeli-American computer scientist and computational epidemiologist, currently serving as the head of the Machine Learning Department at Carnegie Mellon University. He is an international expert in machine learning, infectious disease forecasting, statistical language modeling and artificial intelligence.
+
+Education
+
+Rosenfeld received his B.Sc. in mathematics and physics from Tel Aviv University in 1985. He received his Ph.D. in computer science from Carnegie Mellon University in 1994. While a graduate student, he developed and open-sourced a statistical language-modeling toolkit to allow anyone to create statistical language models from their own corpora and experiment with and extend the toolkit's capabilities. The toolkit has been used by more than 100 NLP laboratories in more than 20 countries.
+
+Rosenfeld's Ph.D. thesis, A Maximum Entropy Approach to Adaptive Statistical Language Modeling, was advised by Raj Reddy and Xuedong Huang and won the 2001 Computer, Speech and Language award for "Most Influential Paper in the Last 5 Years."
+
+Career
+
+Shortly after receiving his Ph.D., Rosenfeld joined the faculty of the Carnegie Mellon School of Computer Science as an assistant professor. He was promoted to the rank of associate professor in 1999 and received tenure in 2001. In 2005 he was promoted to professor of language technologies, machine learning computer science and computational biology in the School of Computer Science at Carnegie Mellon University. Rosenfeld also holds adjunct appointments at the University of Pittsburgh School of Medicine, department of computational and systems biology.
+
+From 2002 to 2003, Rosenfeld was a visiting professor at the University of Hong Kong. He has held educational leadership positions in a variety of programs, including the M.S. in computational finance (1997–1999), graduate computational and statistical learning (2001–2003), M.S. in machine learning (2017) and undergraduate minor in machine learning.
+
+Epidemiological forecasting
+
+Rosenfeld is a world expert in epidemiological forecasting. He founded and directs the Delphi research group, which has won most of the epidemiological forecasting challenges organized by the U.S. CDC and other U.S. government agencies. In December 2016, the CDC named his group the "Most Accurate Forecaster" for 2015–2016, and in October 2017, the Delphi group's two systems took the top two spots in the 2016-2017 flu forecasting challenge. The CDC recognized Rosenfeld's Delphi group at Carnegie Mellon University as having contributed the most accurate national-, regional-, and state-level influenza-like illness forecasts and national-level hospitalization forecasts to the site.  In 2019, the CDC recognized forecasts provided by the Delphi group at Carnegie Mellon as having been the most accurate for five seasons in a row, and named the Delphi group an Influenza Forecasting Center of Excellence, a five-year designation that includes $3 million in research funding.
+
+Rosenfeld describes his forecasting research goal as "to make epidemiological forecasting as universally accepted and useful as weather forecasting is today." His recent work in the area has focused on selecting high value epidemiological forecasting targets (e.g. Influenza and Dengue); creating baseline forecasting methods for them; establishing metrics for measuring and tracking forecasting accuracy; estimating the limits of forecastability for each target; and identifying new sources of data that could be helpful to the forecasting goal.
+
+Honors and awards
+
+2017 Joel and Ruth Spira Teaching Award
+
+2017 CDC Influenza Forecasting Challenge "Most Accurate Forecaster"
+
+1992 Allen Newell Medal for Research Excellence
+
+References
+
+External links
+
+Roni Rosenfeld at Carnegie Mellon
+
+Flu Season is Here Why Didn't We See It Coming via Wired
+
+Flu Season Comes Around Computer Scientists Prepare & Make Predictions via WESA
+
+AI Helping Turn the Tide Against Flu in 2 Important Ways via NBCNews
+
+When Will Flu Season Be Worst? These Researchers Think They Might Know via NewsWeek
+
+How Bad Will the Flu Season Get? Forecasters Are Competing to Figure it Out via The Scientist
+
+CMU Receives 1M from Chicago Software Company to Fund Machine Learning Projects via Triblive
+
+How funny messages from ‘Polly’ can fight Ebola via Futurity
+
+CMU Researchers Fine Tune Flu Season Forecasting via CampusTechnology
+
+CMU is the world's best at predicting influenza activity  via Pittsburgh Post-Gazette
+
+How a Drunken Chipmunk Voice Helps Send a Public Service Message via NPR
+
+Phone game helps illiterate Pakistanis find employment  via The Tartan
+
+Carnegie Mellon flu forecasting named CDC center of excellence  via Pittsburgh Post-Gazette
+
+CDC FluSight: Flu Forecasting
+
+Category:Tel Aviv University alumni
+
+Category:Carnegie Mellon University faculty
+
+Category:Machine learning researchers
+
+Category:American people of Israeli descent
+
+Category:1959 births
+
+Category:Living people

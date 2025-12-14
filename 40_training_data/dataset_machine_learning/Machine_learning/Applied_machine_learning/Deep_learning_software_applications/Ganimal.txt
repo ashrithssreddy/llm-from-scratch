@@ -1,0 +1,19 @@
+and a golden retriever]]
+
+A ganimal, also commonly referred to as GANimal, is a hybrid animal created with generative artificial intelligence systems, such as generative adversarial networks (GANs)  or diffusion models. The concept was created for a website from the MIT Media Lab in 2020, where users could create ganimal images. 78,210 ganimals were generated from hybrid pairs of animal labels from BigGAN (G1) and 3,058,362,945 ganimals generated from blending G1 ganimals. By June 2020,  44,791 ganimals had been generated, 8,547 ganimals bred, and 743 ganimals named by a total of 10,657 users. The site also had an educational component where visitors could play with blending and learn about AI.
+
+Evolution and ganimal morphology
+
+Because ganimals exist within an attention economy and evolve based on human preferences, charismatic megafauna (e.g. ganimals with cute, dog-like morphologies) become the most popular. However, social cues can increase the diversity of the ganimals ecosystem and lead to the success of unconventional ganimals, such as those without eyes or that live underwater.  This occurs because many pictures on the internet of barracudas include a human holding the fish up as a prized catch. This highlights a cultural form of algorithmic bias embedded in the training data of AI systems.
+
+Ganimals have appeared in the Artificial Intelligence exhibition at the Vienna Technical Museum. They also appeared in the Ties That Cannot Be Unbound virtual exhibition at New Art City.
+
+References
+
+Category:Artificial intelligence art
+
+Category:Text-to-image generation
+
+Category:Deep learning software applications
+
+Category:MIT Media Lab

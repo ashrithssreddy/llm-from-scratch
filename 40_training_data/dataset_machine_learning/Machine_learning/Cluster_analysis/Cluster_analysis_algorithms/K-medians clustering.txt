@@ -1,0 +1,41 @@
+K-medians clustering is a partitioning technique used in cluster analysis. It groups data into k clusters by minimizing the sum of distances—typically using the Manhattan (L1) distance—between data points and the median of their assigned clusters. This method is especially robust to outliers and is well-suited for discrete or categorical data. It is a generalization of the geometric median or 1-median algorithm, defined for a single cluster. k-medians is a variation of k-means clustering where instead of calculating the mean for each cluster to determine its centroid, one instead calculates the median. This has the effect of minimizing error over all clusters with respect to the 1-norm distance metric, as opposed to the squared 2-norm distance metric (which k-means does).
+
+This relates directly to the k-median problem which is the problem of finding k centers such that the clusters formed by them are the most compact with respect to the 2-norm. Formally, given a set of data points x, the k centers c'i are to be chosen so as to minimize the sum of the distances from each x to the nearest&nbsp;c'i.
+
+The criterion function formulated in this way is sometimes a better criterion than that used in the k-means clustering algorithm, in which the sum of the squared distances is used. The sum of distances is widely used in applications such as the facility location problem.
+
+The proposed algorithm uses Lloyd-style iteration which alternates between an expectation (E) and maximization (M) step, making this an expectation–maximization algorithm. In the E step, all objects are assigned to their nearest median. In the M step, the medians are recomputed by using the median in each single dimension.
+
+Medians and Medioids
+
+The median is computed in each single dimension in the Manhattan-distance formulation of the k-medians problem, so the individual attributes will come from the dataset (or be an average of two values from the dataset).  This makes the algorithm more reliable for discrete or even binary data sets. In contrast, the use of means or Euclidean-distance medians will not necessarily yield individual attributes from the dataset.  Even with the Manhattan-distance formulation, the individual attributes may come from different instances in the dataset; thus, the resulting median may not be a member of the input dataset.
+
+This algorithm is often confused with the k-medoids algorithm. However, a medoid has to be an actual instance from the dataset, while for the multivariate Manhattan-distance median this only holds for single attribute values. The actual median can thus be a combination of multiple instances. For example, given the vectors (0,1), (1,0) and (2,2), the Manhattan-distance median is (1,1), which does not exist in the original data, and thus cannot be a medoid.
+
+Comparison with Related Algorithms
+
+K-medians clustering is closely related to other partitional clustering techniques such as k-means and k-medoids, each differing primarily in how cluster centers are determined and the type of distance metric employed. These differences lead to distinct behaviors with respect to robustness, computational cost, and applicability to various data distributions. The k-means algorithm minimizes the sum of squared Euclidean distances between data points and their corresponding cluster mean (centroid). It uses the arithmetic mean as the cluster representative, which makes it sensitive to outliers and noise because the mean can be heavily influenced by extreme values. In contrast, k-medians minimizes the sum of absolute differences (typically using the Manhattan/L1 distance), selecting the median along each dimension as the cluster center. Because the median is resistant to extreme values, k-medians is generally more robust in the presence of outliers. K-medoids also emphasizes robustness, but instead of using computed medians or means, it selects actual data points (medoids) as cluster centers. This makes k-medoids particularly suitable for non-Euclidean or categorical data. However, because it involves evaluating pairwise dissimilarities and repeatedly searching for representative points, it tends to be more computationally intensive than both k-means and k-medians, especially on large datasets.
+
+Software
+
+ELKI includes various k-means variants, including k-medians.
+
+FORTRAN kmedians
+
+GNU R includes k-medians in the "flexclust" package.
+
+Stata kmedians
+
+See also
+
+Cluster analysis
+
+k-means
+
+Medoid
+
+Silhouette
+
+References
+
+Category:Cluster analysis algorithms

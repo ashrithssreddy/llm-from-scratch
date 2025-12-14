@@ -1,0 +1,475 @@
+Policy gradient methods are a class of reinforcement learning algorithms.
+
+Policy gradient methods are a sub-class of policy optimization methods. Unlike value-based methods which learn a value function to derive a policy, policy optimization methods directly learn a policy function \pi that selects actions without consulting a value function. For policy gradient to apply, the policy function \pi_\theta is parameterized by a differentiable parameter \theta.
+
+REINFORCE
+
+Policy gradient
+
+The REINFORCE algorithm, introduced by Ronald J. Williams in 1992, was the first policy gradient method. It is based on the identity for the policy gradient\nabla_\theta J(\theta)= \mathbb{E}_{\pi_\theta}\left[
+
+\sum_{t\in 0:T} \nabla_\theta\ln\pi_\theta(A_t \mid S_t)\; \sum_{t \in 0:T} (\gamma^t R_t)
+
+\Big|S_0 = s_0
+
+\right] which can be improved via the "causality trick"
+
+\nabla_\theta J(\theta)= \mathbb{E}_{\pi_\theta}\left[\sum_{t\in 0:T} \nabla_\theta\ln\pi_\theta(A_t\mid  S_t)\sum_{\tau \in t:T} (\gamma^\tau R_\tau)
+
+\Big|S_0 = s_0 \right]
+
+{{Math theorem|name=Lemma|note=|math_statement=
+
+The expectation of the score function is zero, conditional on any present or past state. That is, for any
+
+0 \leq i \leq j \leq T
+
+and any state
+
+s_i
+
+, we have
+
+\mathbb{E}_{\pi_\theta}[\nabla_\theta \ln \pi_\theta (A_j|S_j)|S_i=s_i] = 0.
+
+Further, if \Psi_i is a random variable that is independent of A_i, S_{i+1}, A_{i+1}, \dots, then \mathbb{E}_{\pi_\theta}[\nabla_\theta \ln \pi_\theta(A_j | S_j) \cdot \Psi_i | S_i = s_i] = 0.
+
+}}
+
+{{Math proof|title=Proof of the lemma|proof=
+
+Use the reparameterization trick.
+
+\begin{align}
+
+\mathbb{E}_{\pi_\theta}[\nabla_\theta \ln \pi_\theta (A_j|S_j)|S_i=s_i]
+
+&=\sum_s Pr(S_j=s|S_i=s_i)\sum_a \pi_\theta(a|s) \nabla_\theta \ln \pi_\theta (a|s)\\
+
+&= \sum_s Pr(S_j=s|S_i=s_i)\sum_a \pi_\theta(a|s) \frac{\nabla_\theta \pi_\theta (a|s)}{\pi_\theta(a|s)} \\
+
+&= \sum_s Pr(S_j=s|S_i=s_i)\sum_a \nabla_\theta \pi_\theta (a|s) \\
+
+&= \sum_s Pr(S_j=s|S_i=s_i)\nabla_\theta \sum_a \pi_\theta (a|s)
+
+\end{align}
+
+Since the policy \pi_\theta(a|s) is a probability distribution over actions for a given state,
+
+\sum_a \pi_\theta (a|s) = 1
+
+.
+
+\begin{align}
+
+\mathbb{E}_{\pi_\theta}[\nabla_\theta \ln \pi_\theta (A|S)] &= \sum_s Pr(S_j=s|S_i=s_i)\nabla_\theta (1) \\
+
+&= \sum_s Pr(S_j=s|S_i=s_i) 0 \\
+
+&= 0
+
+\end{align}
+
+By the tower law and the previous lemma.
+
+\begin{aligned}
+
+\mathbb{E}_{\pi_\theta}\left[\Psi_i \nabla_\theta \ln \pi_\theta(A_j | S_j) \Big| S_i = s_i\right]
+
+&= \mathbb{E}_{\pi_\theta}\left[\mathbb{E}_{\pi_\theta}[\Psi_i \nabla_\theta \ln \pi_\theta(A_j | S_j) | S_j] \Big| S_i = s_i\right]\\
+
+&= \mathbb{E}_{\pi_\theta}\left[\Psi_i \mathbb{E}_{\pi_\theta}[\nabla_\theta \ln \pi_\theta(A_j | S_j) | S_j] \Big| S_i = s_i\right]\\
+
+&= \mathbb{E}_{\pi_\theta}\left[\Psi_i 0 \Big| S_i = s_i\right]\\
+
+&= 0
+
+\end{aligned}
+
+}}
+
+{{Math proof|title=Proof of the two identities|proof=
+
+Applying the reparameterization trick,
+
+\begin{align}
+
+\nabla_\theta J(\theta) &=\nabla_\theta \mathbb{E}_{\pi_\theta}\left[\sum_{i \in 0:T} \gamma^i R_i \Big|S_0=s_0 \right]\\
+
+&= \mathbb{E}_{\pi_\theta}\left[\left(\sum_{i \in 0:T} \gamma^i R_i \right)\nabla_\theta\ln(\pi_\theta(A_0, A_1, \dots, A_T| S_0, S_1, \dots, S_T)) \Big|S_0 = s_0 \right]\\            &= \mathbb{E}_{\pi_\theta}\left[\left(\sum_{i \in 0:T} \gamma^i R_i \right)\sum_{j\in 0:T} \nabla_\theta\ln(\pi_\theta(A_j|S_j)) \Big|S_0 = s_0 \right]\\
+
+&= \mathbb{E}_{\pi_\theta}\left[\sum_{i, j \in 0:T} (\gamma^i R_i) \nabla_\theta\ln\pi_\theta(A_j| S_j) \Big|S_0 = s_0 \right]
+
+\end{align}
+
+which is the first equation.
+
+By the lemma, \mathbb{E}_{\pi_\theta}\left[(\gamma^i R_i) \nabla_\theta\ln\pi_\theta(A_j| S_j) \Big|S_0=s_0\right] 0 for any 0\leq i . Plugging this into the previous formula, we zero out a whole triangle of terms, to get \begin{align}
+
+\nabla_\theta J(\theta)&= \mathbb{E}_{\pi_\theta}\left[\sum_{0\leq j \leq i \leq T} (\gamma^i R_i) \nabla_\theta\ln\pi_\theta(A_j| S_j) \Big|S_0 = s_0 \right]\\
+
+& = \mathbb{E}_{\pi_\theta}\left[\sum_{j\in 0:T} \nabla_\theta\ln\pi_\theta(A_j| S_j)\sum_{i \in j:T} (\gamma^i R_i)
+
+\Big|S_0 = s_0 \right]
+
+\end{align}
+
+which is the second equation.
+
+}}
+
+Thus, we have an unbiased estimator of the policy gradient:
+
+\nabla_\theta J(\theta) \approx \frac 1N \sum_{n=1}^N \left[\sum_{t\in 0:T} \nabla_\theta\ln\pi_\theta(A_{t,n}\mid S_{t,n})\sum_{\tau \in t:T} (\gamma^{\tau-t} R_{\tau ,n}) \right]
+
+where the index n ranges over N rollout trajectories using the policy \pi_\theta .
+
+The score function \nabla_\theta \ln \pi_\theta (A_t \mid S_t) can be interpreted as the direction in the parameter space that increases the probability of taking action A_t in state S_t. The policy gradient, then, is a weighted average of all possible directions to increase the probability of taking any action in any state, but weighted by reward signals, so that if taking a certain action in a certain state is associated with high reward, then that direction would be highly reinforced, and vice versa.
+
+Algorithm
+
+The REINFORCE algorithm is a loop:
+
+Rollout N trajectories in the environment, using \pi_{\theta_t} as the policy function.
+
+Compute the policy gradient estimation: g_i \leftarrow \frac 1N \sum_{n=1}^N \left[\sum_{t\in 0:T} \nabla_{\theta_t}\ln\pi_\theta(A_{t,n}\mid S_{t,n})\sum_{\tau \in t:T} (\gamma^\tau R_{\tau,n}) \right]
+
+Update the policy by gradient ascent: \theta_{i+1} \leftarrow \theta_i + \alpha_i g_i
+
+Here, \alpha_i is the learning rate at update step i.
+
+Variance reduction
+
+REINFORCE is an on-policy algorithm, meaning that the trajectories used for the update must be sampled from the current policy \pi_\theta. This can lead to high variance in the updates, as the returns R(\tau) can vary significantly between trajectories. Many variants of REINFORCE have been introduced, under the title of variance reduction.
+
+REINFORCE with baseline
+
+A common way for reducing variance is the REINFORCE with baseline algorithm, based on the following identity:\nabla_\theta J(\theta)= \mathbb{E}_{\pi_\theta}\left[\sum_{t\in 0:T} \nabla_\theta\ln\pi_\theta(A_t| S_t)\left(\sum_{\tau \in t:T} (\gamma^\tau R_\tau) - b(S_t)\right)
+
+\Big|S_0 = s_0 \right]for any function b: \text{States} \to \R. This can be proven by applying the previous lemma.
+
+The algorithm uses the modified gradient estimatorg_i \leftarrow
+
+\frac 1N \sum_{n=1}^N \left[\sum_{t\in 0:T} \nabla_{\theta_t}\ln\pi_\theta(A_{t,n}| S_{t,n})\left(\sum_{\tau \in t:T} (\gamma^\tau R_{\tau,n}) - b_i(S_{t,n})\right) \right] and the original REINFORCE algorithm is the special case where b_i \equiv 0.
+
+Actor-critic methods
+
+If b_i is chosen well, such that b_i(S_t) \approx \sum_{\tau \in t:T} (\gamma^\tau R_\tau) = \gamma^t V^{\pi_{\theta_i}}(S_t), this could significantly decrease variance in the gradient estimation. That is, the baseline should be as close to the value function V^{\pi_{\theta_i}}(S_t) as possible, approaching the ideal of:\nabla_\theta J(\theta)= \mathbb{E}_{\pi_\theta}\left[\sum_{t\in 0:T} \nabla_\theta\ln\pi_\theta(A_t| S_t)\left(\sum_{\tau \in t:T} (\gamma^\tau R_\tau) - \gamma^t V^{\pi_\theta}(S_t)\right)
+
+\Big|S_0 = s_0 \right]Note that, as the policy \pi_{\theta_t} updates, the value function V^{\pi_{\theta_i}}(S_t) updates as well, so the baseline should also be updated. One common approach is to train a separate function that estimates the value function, and use that as the baseline. This is one of the actor-critic methods, where the policy function is the actor and the value function is the critic.
+
+The Q-function Q^\pi can also be used as the critic, since\nabla_\theta J(\theta)= E_{\pi_\theta}\left[\sum_{0\leq t \leq T} \gamma^t \nabla_\theta\ln\pi_\theta(A_t| S_t)
+
+\cdot Q^{\pi_\theta}(S_t, A_t)
+
+\Big|S_0 = s_0 \right] by a similar argument using the tower law.
+
+Subtracting the value function as a baseline, we find that the advantage function A^{\pi}(S,A) = Q^{\pi}(S,A) - V^{\pi}(S) can be used as the critic as well:\nabla_\theta J(\theta)= E_{\pi_\theta}\left[\sum_{0\leq t \leq T} \gamma^t \nabla_\theta\ln\pi_\theta(A_t| S_t)
+
+\cdot A^{\pi_\theta}(S_t, A_t)
+
+\Big|S_0 = s_0 \right]In summary, there are many unbiased estimators for \nabla_\theta J_\theta, all in the form of: \nabla_\theta J(\theta) = E_{\pi_\theta}\left[\sum_{0\leq t \leq T}  \nabla_\theta\ln\pi_\theta(A_t| S_t)
+
+\cdot \Psi_t
+
+\Big|S_0 = s_0 \right] where \Psi_t is any linear sum of the following terms:
+
+\sum_{0 \leq \tau\leq T} (\gamma^\tau R_\tau): never used.
+
+\gamma^t\sum_{t \leq \tau\leq T} (\gamma^{\tau-t} R_\tau): used by the REINFORCE algorithm.
+
+\gamma^t \sum_{t \leq \tau\leq T} (\gamma^{\tau-t} R_\tau) - b(S_t) : used by the REINFORCE with baseline algorithm.
+
+\gamma^t \left(R_t + \gamma V^{\pi_\theta}( S_{t+1}) - V^{\pi_\theta}( S_{t})\right): 1-step TD learning.
+
+\gamma^t Q^{\pi_\theta}(S_t, A_t).
+
+\gamma^t A^{\pi_\theta}(S_t, A_t).
+
+Some more possible \Psi_t are as follows, with very similar proofs.
+
+\gamma^t \left(R_t + \gamma R_{t+1} + \gamma^2 V^{\pi_\theta}( S_{t+2}) - V^{\pi_\theta}( S_{t})\right): 2-step TD learning.
+
+\gamma^t \left(\sum_{k=0}^{n-1} \gamma^k R_{t+k} + \gamma^n V^{\pi_\theta}( S_{t+n}) - V^{\pi_\theta}( S_{t})\right): n-step TD learning.
+
+\gamma^t \sum_{n=1}^\infty \frac{\lambda^{n-1}}{1-\lambda}\cdot \left(\sum_{k=0}^{n-1} \gamma^k R_{t+k} + \gamma^n V^{\pi_\theta}( S_{t+n}) - V^{\pi_\theta}( S_{t})\right): TD(λ) learning, also known as GAE (generalized advantage estimate). This is obtained by an exponentially decaying sum of the n-step TD learning ones.
+
+Natural policy gradient
+
+The natural policy gradient method is a variant of the policy gradient method, proposed by Sham Kakade in 2001. Unlike standard policy gradient methods, which depend on the choice of parameters \theta (making updates coordinate-dependent), the natural policy gradient aims to provide a coordinate-free update, which is geometrically "natural".
+
+Motivation
+
+Standard policy gradient updates \theta_{i+1} = \theta_i + \alpha \nabla_\theta J(\theta_i) solve a constrained optimization problem:
+
+\begin{cases}
+
+\max_{\theta_{i+1}} J(\theta_i) + (\theta_{i+1} - \theta_i)^T \nabla_\theta J(\theta_i)\\
+
+\|\theta_{i+1} - \theta_{i}\|\leq \alpha \cdot \|\nabla_\theta J(\theta_i)\|
+
+\end{cases}
+
+While the objective (linearized improvement) is geometrically meaningful, the Euclidean constraint \|\theta_{i+1} - \theta_i\|  introduces coordinate dependence. To address this, the natural policy gradient replaces the Euclidean constraint with a Kullback–Leibler divergence (KL) constraint:\begin{cases}
+
+\max_{\theta_{i+1}} J(\theta_i) + (\theta_{i+1} - \theta_i)^T \nabla_\theta J(\theta_i)\\
+
+\bar{D}_{KL}(\pi_{\theta_{i+1}} \| \pi_{\theta_{i}}) \leq \epsilon
+
+\end{cases}where the KL divergence between two policies is averaged over the state distribution under policy \pi_{\theta_i}. That is,\bar{D}_{KL}(\pi_{\theta_{i+1}} \| \pi_{\theta_{i}}) := \mathbb E_{s \sim \pi_{\theta_i}}[D_{KL}( \pi_{\theta_{i+1}}(\cdot | s) \| \pi_{\theta_{i}}(\cdot | s) )] This ensures updates are invariant to invertible affine parameter transformations.
+
+Fisher information approximation
+
+For small \epsilon, the KL divergence is approximated by the Fisher information metric:
+
+\bar{D}_{KL}(\pi_{\theta_{i+1}} \| \pi_{\theta_{i}}) \approx \frac{1}{2} (\theta_{i+1} - \theta_i)^T F(\theta_i) (\theta_{i+1} - \theta_i)
+
+where F(\theta) is the Fisher information matrix of the policy, defined as:
+
+F(\theta) = \mathbb{E}_{s, a \sim \pi_\theta}\left[ \nabla_\theta \ln \pi_\theta(a|s) \left(\nabla_\theta \ln \pi_\theta(a|s)\right)^T \right]
+
+This transforms the problem into a problem in quadratic programming, yielding the natural policy gradient update:
+
+\theta_{i+1} = \theta_i + \alpha F(\theta_i)^{-1} \nabla_\theta J(\theta_i)
+
+The step size \alpha is typically adjusted to maintain the KL constraint, with \alpha \approx \sqrt{\frac{2\epsilon}{(\nabla_\theta J(\theta_i))^T F(\theta_i)^{-1} \nabla_\theta J(\theta_i)}}.
+
+Inverting F(\theta) is computationally intensive, especially for high-dimensional parameters (e.g., neural networks). Practical implementations often use approximations.
+
+Trust Region Policy Optimization (TRPO)
+
+Trust Region Policy Optimization (TRPO) is a policy gradient method that extends the natural policy gradient approach by enforcing a trust region constraint on policy updates. Developed by Schulman et al. in 2015, TRPO improves upon the natural policy gradient method.
+
+The natural gradient descent is theoretically optimal, if the objective is truly a quadratic function, but this is only an approximation. TRPO's line search and KL constraint attempts to restrict the solution to within a "trust region" in which this approximation does not break down. This makes TRPO more robust in practice.
+
+Formulation
+
+Like natural policy gradient, TRPO iteratively updates the policy parameters \theta by solving a constrained optimization problem specified coordinate-free:
+
+\begin{cases}
+
+\max_{\theta} L(\theta, \theta_i)\\
+
+\bar{D}_{KL}(\pi_{\theta} \| \pi_{\theta_{i}}) \leq \epsilon
+
+\end{cases}
+
+where
+
+L(\theta, \theta_i) = \mathbb{E}_{s, a \sim \pi_{\theta_i}}\left[ \frac{\pi_\theta(a|s)}{\pi_{\theta_i}(a|s)} A^{\pi_{\theta_i}}(s, a) \right] is the surrogate advantage, measuring the performance of \pi_\theta relative to the old policy \pi_{\theta_i}.
+
+\epsilon is the trust region radius.
+
+Note that in general, other surrogate advantages are possible:L(\theta, \theta_i) = \mathbb{E}_{s, a \sim \pi_{\theta_i}}\left[ \frac{\pi_\theta(a|s)}{\pi_{\theta_i}(a|s)}\Psi^{\pi_{\theta_i}}(s, a) \right]where \Psi is any linear sum of the previously mentioned type. Indeed, OpenAI recommended using the Generalized Advantage Estimate, instead of the plain advantage A^{\pi_\theta}.
+
+The surrogate advantage L(\theta, \theta_t)
+
+is designed to align with the policy gradient \nabla_\theta J(\theta). Specifically, when \theta = \theta_t, '''
+
+\nabla_\theta L(\theta, \theta_t)
+
+''' equals the policy gradient derived from the advantage function:
+
+\nabla_\theta J(\theta) = \mathbb{E}_{(s, a) \sim \pi_\theta}\left[\nabla_\theta \ln \pi_\theta(a | s) \cdot A^{\pi_\theta}(s, a) \right] = \nabla_\theta L(\theta, \theta_t)However, when \theta \neq \theta_i, this is not necessarily true. Thus it is a "surrogate" of the real objective.
+
+As with natural policy gradient, for small policy updates, TRPO approximates the surrogate advantage and KL divergence using Taylor expansions around \theta_t:
+
+\begin{aligned}
+
+L(\theta, \theta_i) &\approx g^T (\theta - \theta_i), \\
+
+\bar{D}_{\text{KL}}(\pi_{\theta} \| \pi_{\theta_i}) &\approx \frac{1}{2} (\theta - \theta_i)^T H (\theta - \theta_i),
+
+\end{aligned}
+
+where:
+
+g = \nabla_\theta L(\theta, \theta_i) \big|_{\theta = \theta_i} is the policy gradient.
+
+F = \nabla_\theta^2 \bar{D}_{\text{KL}}(\pi_{\theta} \| \pi_{\theta_i}) \big|_{\theta = \theta_i} is the Fisher information matrix.
+
+This reduces the problem to a quadratic optimization, yielding the natural policy gradient update:
+
+\theta_{i+1} = \theta_i + \sqrt{\frac{2\epsilon}{g^T F^{-1} g}} F^{-1} g.
+
+So far, this is essentially the same as natural gradient method. However, TRPO improves upon it by two modifications:
+
+Use conjugate gradient method to solve for
+
+x
+
+in Fx = g iteratively without explicit matrix inversion.
+
+Use backtracking line search to ensure the trust-region constraint is satisfied. Specifically, it backtracks the step size to ensure the KL constraint and policy improvement. That is, it tests each of the following test-solutions
+
+\theta_{i+1} = \theta_i + \sqrt{\frac{2\epsilon}{x^T F x}} x, \; \theta_i + \alpha \sqrt{\frac{2\epsilon}{x^T F x}} x, \; \theta_i + \alpha^2 \sqrt{\frac{2\epsilon}{x^T F x}} x, \; \dots
+
+until it finds one that both satisfies the KL constraint \bar{D}_{KL}(\pi_{\theta_{i+1}} \| \pi_{\theta_{i}}) \leq \epsilon  and results in a higher
+
+L(\theta_{i+1}, \theta_i) \geq L(\theta_i, \theta_i)
+
+. Here, \alpha \in (0,1) is the backtracking coefficient.
+
+Proximal Policy Optimization (PPO)
+
+A further improvement is proximal policy optimization (PPO), which avoids even computing F(\theta) and F(\theta)^{-1} via a first-order approximation using clipped probability ratios.
+
+Specifically, instead of maximizing the surrogate advantage\max_\theta L(\theta, \theta_t) = \mathbb{E}_{s, a \sim \pi_{\theta_t}}\left[ \frac{\pi_\theta(a|s)}{\pi_{\theta_t}(a|s)} A^{\pi_{\theta_t}}(s, a) \right] under a KL divergence constraint, it directly inserts the constraint into the surrogate advantage:
+
+\max_\theta \mathbb{E}_{s, a \sim \pi_{\theta_t}}\left[
+
+\begin{cases}
+
+\min \left(\frac{\pi_\theta(a|s)}{\pi_{\theta_t}(a|s)}, 1 + \epsilon \right) A^{\pi_{\theta_t}}(s, a) & \text{ if } A^{\pi_{\theta_t}}(s, a) > 0
+
+\\
+
+\max \left(\frac{\pi_\theta(a|s)}{\pi_{\theta_t}(a|s)}, 1 - \epsilon \right) A^{\pi_{\theta_t}}(s, a) & \text{ if } A^{\pi_{\theta_t}}(s, a)  and PPO maximizes the surrogate advantage by stochastic gradient descent, as usual.
+
+In words, gradient-ascending the new surrogate advantage function means that, at some state
+
+s, a
+
+, if the advantage is positive:
+
+A^{\pi_{\theta_t}} (s, a) > 0
+
+, then the gradient should direct
+
+\theta
+
+towards the direction that increases the probability of performing action
+
+a
+
+under the state
+
+s
+
+. However, as soon as
+
+\theta
+
+has changed so much that
+
+\pi_\theta(a | s) \geq (1 + \epsilon) \pi_{\theta_t}(a | s)
+
+, then the gradient should stop pointing it in that direction. And similarly if
+
+A^{\pi_{\theta_t}} (s, a) . Thus, PPO avoids pushing the parameter update too hard, and avoids changing the policy too much.
+
+To be more precise, to update
+
+\theta_t
+
+to
+
+\theta_{t+1}
+
+requires multiple update steps on the same batch of data. It would initialize
+
+\theta = \theta_t
+
+, then repeatedly apply gradient descent (such as the Adam optimizer) to update
+
+\theta
+
+until the surrogate advantage has stabilized. It would then assign
+
+\theta_{t+1}
+
+to
+
+\theta
+
+, and do it again.
+
+During this inner-loop, the first update to
+
+\theta
+
+would not hit the
+
+1 - \epsilon, 1 + \epsilon
+
+bounds, but as
+
+\theta
+
+is updated further and further away from
+
+\theta_t
+
+, it eventually starts hitting the bounds. For each such bound hit, the corresponding gradient becomes zero, and thus PPO avoid updating
+
+\theta
+
+too far away from
+
+\theta_t
+
+.
+
+This is important, because the surrogate loss assumes that the state-action pair
+
+s, a
+
+is sampled from what the agent would see if the agent runs the policy
+
+\pi_{\theta_t}
+
+, but policy gradient should be on-policy. So, as
+
+\theta
+
+changes, the surrogate loss becomes more and more off-policy. This is why keeping
+
+\theta
+
+proximal to
+
+\theta_t
+
+is necessary.
+
+If there is a reference policy
+
+\pi_{\text{ref}}
+
+that the trained policy should not diverge too far from, then additional KL divergence penalty can be added:-\beta  \mathbb{E}_{s, a \sim \pi_{\theta_t}}\left[\log\left(\frac{\pi_{\theta}(a|s)}{\pi_{\text{ref}}(a|s)}\right) \right]where
+
+\beta
+
+adjusts the strength of the penalty. This has been used in training reasoning language models with reinforcement learning from human feedback. The KL divergence penalty term can be estimated with lower variance using the equivalent form (see f-divergence for details):A^{\pi_{\theta_t}}(s, a_{j}) = \frac{r(s, a_{j}) - \mu}{\sigma} where \mu, \sigma   are the mean and standard deviation of r(s, a_1), \dots, r(s, a_G)  . That is, it is the standard score of the rewards.
+
+Then, it maximizes the PPO objective, averaged over all actions:\max_\theta \frac{1}{G} \sum_{i=1}^G \mathbb{E}_{(s, a_1, \dots, a_G) \sim \pi_{\theta_t}}\left[
+
+\begin{cases}
+
+\min \left(\frac{\pi_\theta(a_i|s)}{\pi_{\theta_t}(a_i|s)}, 1 + \epsilon \right) A^{\pi_{\theta_t}}(s, a_i) & \text{ if } A^{\pi_{\theta_t}}(s, a_i) > 0
+
+\\
+
+\max \left(\frac{\pi_\theta(a_i|s)}{\pi_{\theta_t}(a_i|s)}, 1 - \epsilon \right) A^{\pi_{\theta_t}}(s, a_i) & \text{ if } A^{\pi_{\theta_t}}(s, a_i) Intuitively, each policy update step in GRPO makes the policy more likely to respond to each state with an action that performed relatively better than other actions tried at that state, and less likely to respond with one that performed relatively worse.
+
+As before, the KL penalty term can be applied to encourage the trained policy to stay close to a reference policy. GRPO was first proposed in the context of training reasoning language models by researchers at DeepSeek. There, \mathbf{x}  , the proposed minimizer of f  in some constraint set \mathcal{C} , is iteratively updated in the direction of the gradient \nabla f , with a proximity penalty with respect to the current \mathbf{x}_t   measured by some Bregman divergence B_\omega  , which can formalized by the following formula:\mathbf{x}_{t+1}\in\arg \min_{\mathbf{x}\in\mathcal{C}} \nabla f(\mathbf{x}_t)^T (\mathbf{x} - \mathbf{x}_t) + \frac{1}{\eta_t} B_\omega(x,x_t), where  \eta_t controls the proximity between consecutive iterates, similar to the learning rate in gradient descent.
+
+This leads to reconsidering the policy update procedure as an optimization procedure aimed at finding an optimal policy, in the (non-convex) optimization landscape of the underlying Markov decision process (MDP). This optimization viewpoint of using the policy gradient is termed Mirror Descent Policy Optimization (MDPO), leading to the following update when the KL is the chosen Bregman divergence:\pi_{t+1}\in \arg \max_{\pi} \mathbb{E}_{s, a \sim \pi}  \left[ A^{\pi_{t}}(s, a) \right] + \frac{1}{\eta_t} D_{KL}(\pi ||\pi_t)With a parameterized policy \pi_\theta , the MDPO loss becomes:\max_{\theta} L(\theta, \theta_t) = \mathbb{E}_{s, a \sim \pi_{\theta_t}}\left[ \frac{\pi_\theta(a|s)}{\pi_{\theta_t}(a|s)} A^{\pi_{\theta_t}}(s, a) \right] + \frac{1}{\eta_t} D_{KL}(\pi_\theta ||\pi_{\theta_t})This objective can be used together with other common techniques like the clipping done in PPO. In fact, the KL divergence penalty also appears in the original PPO paper, suggesting the MDPO perspective as a theoretical unification of the main derivation concepts behind many concurrent policy gradient techniques.
+
+See also
+
+Reinforcement learning
+
+Deep reinforcement learning
+
+Actor-critic method
+
+References
+
+External links
+
+Category:Reinforcement learning
+
+Category:Machine learning algorithms
+
+Category:Optimization algorithms and methods

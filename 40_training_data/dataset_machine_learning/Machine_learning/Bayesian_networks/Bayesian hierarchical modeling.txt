@@ -1,0 +1,129 @@
+Bayesian hierarchical modelling is a statistical model written in multiple levels (hierarchical form) that estimates the posterior distribution of model parameters using the Bayesian method. The sub-models combine to form the hierarchical model, and Bayes' theorem is used to integrate them with the observed data and account for all the uncertainty that is present. This integration enables calculation of updated posterior over the (hyper)parameters, effectively updating prior beliefs in light of the observed data.
+
+Frequentist statistics may yield conclusions seemingly incompatible with those offered by Bayesian statistics due to the Bayesian treatment of the parameters as random variables and its use of subjective information in establishing assumptions on these parameters. As the approaches answer different questions the formal results aren't technically contradictory but the two approaches disagree over which answer is relevant to particular applications.  Bayesians argue that relevant information regarding decision-making and updating beliefs cannot be ignored and that hierarchical modeling has the potential to overrule classical methods in applications where respondents give multiple observational data. Moreover, the model has proven to be robust, with the posterior distribution less sensitive to the more flexible hierarchical priors.
+
+Hierarchical modeling, as its name implies, retains nested data structure, and is used when information is available at several different levels of observational units. For example, in epidemiological modeling to describe infection trajectories for multiple countries, observational units are countries, and each country has its own time-based profile of daily infected cases. In decline curve analysis to describe oil or gas production decline curve for multiple wells, observational units are oil or gas wells in a reservoir region, and each well has each own time-based profile of oil or gas production rates (usually, barrels per month). Hierarchical modeling is used to devise computation based strategies for multiparameter problems.
+
+Philosophy
+
+Statistical methods and models commonly involve multiple parameters that can be regarded as related or connected in such a way that the problem implies a dependence of the joint probability model for these parameters.
+
+Individual degrees of belief, expressed in the form of probabilities, come with uncertainty. Amidst this is the change of the degrees of belief over time. As was stated by Professor José M. Bernardo and Professor Adrian F. Smith, "The actuality of the learning process consists in the evolution of individual and subjective beliefs about the reality."  These subjective probabilities are more directly involved in the mind rather than the physical probabilities.
+
+Bayes' theorem
+
+The assumed occurrence of a real-world event will typically modify preferences between certain options. This is done by modifying the degrees of belief attached, by an individual, to the events defining the options.
+
+Suppose in a study of the effectiveness of cardiac treatments, with the patients in hospital j having survival probability \theta_j, the survival probability will be updated with the occurrence of y, the event in which a controversial serum is created which, as believed by some, increases survival in cardiac patients.
+
+In order to make updated probability statements about \theta_j, given the occurrence of event y, we must begin with a model providing a joint probability distribution for \theta_j and y. This can be written as a product of the two distributions that are often referred to as the prior distribution P(\theta) and the sampling distribution P(y\mid\theta) respectively:
+
+P(\theta, y) = P(\theta)P(y\mid\theta)
+
+Using the basic property of conditional probability, the posterior distribution will yield:
+
+P(\theta\mid y)=\frac{P(\theta,y)}{P(y)} = \frac{P(y\mid\theta)P(\theta)}{P(y)}
+
+This equation, showing the relationship between the conditional probability and the individual events, is known as Bayes' theorem. This simple expression encapsulates the technical core of Bayesian inference which aims to deconstruct the probability, P(\theta\mid y), relative to solvable subsets of its supportive evidence.
+
+Exchangeability
+
+The usual starting point of a statistical analysis is the assumption that the n values y_1, y_2, \ldots, y_n are exchangeable. If no information – other than data y – is available to distinguish any of the \theta_j's from any others, and no ordering or grouping of the parameters can be made, one must assume symmetry of prior distribution parameters. This symmetry is represented probabilistically by exchangeability. Generally, it is useful and appropriate to model data from an exchangeable distribution as independently and identically distributed, given some unknown parameter vector \theta, with distribution P(\theta).
+
+Finite exchangeability
+
+For a fixed number n, the set y_1, y_2, \ldots, y_n  is exchangeable if the joint probability P(y_1, y_2, \ldots, y_n) is invariant under permutations of the indices. That is, for every permutation \pi or (\pi_1,  \pi_2, \ldots, \pi_n)  of (1, 2, …, n), P(y_1, y_2, \ldots, y_n)= P(y_{\pi_1}, y_{\pi_2}, \ldots, y_{\pi_n}).
+
+The following is an exchangeable, but not independent and identical (iid), example:
+
+Consider an urn with a red ball and a blue ball inside, with probability \frac{1}{2} of drawing either. Balls are drawn without replacement, i.e. after one ball is drawn from the n balls, there will be n - 1 remaining balls left for the next draw.
+
+\text{Let }
+
+Y_i =
+
+\begin{cases}
+
+1, & \text{if the }i\text{th ball is red},\\
+
+0, & \text{otherwise}.
+
+\end{cases}
+
+The probability of selecting a red ball in the first draw and a blue ball in the second draw is equal to the probability of selecting a blue ball on the first draw and a red on the second, both of which are 1/2:
+
+P(y_1=1, y_2=0) = P(y_1=0,y_2=1) = \frac{1}{2}.
+
+This makes y_1 and y_2 exchangeable.
+
+But the probability of selecting a red ball on the second draw given that the red ball has already been selected in the first is 0. This is not equal to the probability that the red ball is selected in the second draw, which is 1/2:
+
+P(y_2=1\mid y_1=1) = 0 \ne P(y_2=1) = \frac{1}{2}.
+
+Thus, y_1 and y_2 are not independent.
+
+If x_1, \ldots, x_n are independent and identically distributed, then they are exchangeable, but the converse is not necessarily true.
+
+Infinite exchangeability
+
+Infinite exchangeability is the property that every finite subset of an infinite sequence y_1, y_2, \ldots is exchangeable. For any n, the sequence y_1, y_2, \ldots, y_n is exchangeable.
+
+Example calculation
+
+As an example, a teacher wants to estimate how well a student did on the SAT. The teacher uses the current grade point average (GPA) of the student for an estimate. Their current GPA, denoted by Y, has a likelihood given by some probability function with parameter \theta, i.e. Y\mid\theta \sim P(Y\mid\theta). This parameter \theta is the SAT score of the student. The SAT score is viewed as a sample coming from a common population distribution indexed by another parameter \phi, which is the high school grade of the student (freshman, sophomore, junior or senior). That is, \theta\mid\phi \sim P(\theta\mid\phi). Moreover, the hyperparameter \phi follows its own distribution given by P(\phi), a hyperprior.
+
+These relationships can be used to calculate the likelihood of a specific SAT score relative to a particular GPA:
+
+P(\theta,\phi\mid Y) \propto P(Y\mid\theta,\phi)P(\theta,\phi)
+
+P(\theta,\phi\mid Y) \propto P(Y\mid\theta)P(\theta\mid\phi)P(\phi)
+
+All information in the problem will be used to solve for the posterior distribution. Instead of solving only using the prior distribution and the likelihood function, using hyperpriors allows a more nuanced distinction of relationships between given variables.
+
+2-stage hierarchical model
+
+In general, the joint posterior distribution of interest in 2-stage hierarchical models is:
+
+P(\theta,\phi\mid Y) = {P(Y\mid\theta,\phi) P(\theta,\phi) \over P(Y)} = {P(Y\mid\theta)P(\theta\mid\phi)P(\phi) \over P(Y)}
+
+P(\theta,\phi\mid Y) \propto P(Y\mid\theta)P(\theta\mid\phi)P(\phi)]]
+
+A three stage version of Bayesian hierarchical modeling could be used to calculate probability at 1) an individual level, 2) at the level of population and 3) the prior, which is an assumed probability distribution that takes place before evidence is initially acquired:
+
+Stage 1: Individual-Level Model
+
+{y}_{ij} = f(t_{ij};\theta_{1i},\theta_{2i},\ldots,\theta_{li},\ldots,\theta_{Ki} ) + \epsilon_{ij},\quad \epsilon_{ij} \sim  N(0, \sigma^2), \quad i =1,\ldots, N, \, j = 1,\ldots, M_i.
+
+Stage 2: Population Model
+
+\theta_{li}= \alpha_l + \sum_{b=1}^{P}\beta_{lb}x_{ib} + \eta_{li}, \quad  \eta_{li} \sim N(0, \omega_l^2), \quad i =1,\ldots, N, \, l=1,\ldots, K.
+
+Stage 3: Prior
+
+\sigma^2 \sim \pi(\sigma^2),\quad  \alpha_l \sim \pi(\alpha_l),  \quad (\beta_{l1},\ldots,\beta_{lb},\ldots,\beta_{lP}) \sim  \pi(\beta_{l1},\ldots,\beta_{lb},\ldots,\beta_{lP}), \quad \omega_l^2 \sim \pi(\omega_l^2), \quad l=1,\ldots, K.
+
+Here, y_{ij} denotes the continuous response of the i-th subject at the time point t_{ij}, and x_{ib} is the b-th covariate of the i-th subject. Parameters involved in the model are written in Greek letters. The variable f(t ; \theta_{1},\ldots,\theta_{K}) is a known function parameterized by the K-dimensional vector (\theta_{1},\ldots,\theta_{K}).
+
+Typically, f is a `nonlinear' function and describes the temporal trajectory of individuals. In the model, \epsilon_{ij} and  \eta_{li} describe within-individual variability and between-individual variability, respectively. If the prior is not considered, the relationship reduces to a frequentist nonlinear mixed-effect model.
+
+A central task in the application of the Bayesian nonlinear mixed-effect models is to evaluate posterior density:
+
+\pi(\{\theta_{li}\}_{i=1,l=1}^{N,K},\sigma^2, \{\alpha_l\}_{l=1}^K, \{\beta_{lb}\}_{l=1,b=1}^{K,P},\{\omega_l\}_{l=1}^K | \{y_{ij}\}_{i=1,j=1}^{N,M_i})
+
+\propto \pi(\{y_{ij}\}_{i=1,j=1}^{N,M_i}, \{\theta_{li}\}_{i=1,l=1}^{N,K},\sigma^2, \{\alpha_l\}_{l=1}^K, \{\beta_{lb}\}_{l=1,b=1}^{K,P},\{\omega_l\}_{l=1}^K)
+
+= \underbrace{\pi(\{y_{ij}\}_{i=1,j=1}^{N,M_i} |\{\theta_{li}\}_{i=1,l=1}^{N,K},\sigma^2)}_{Stage 1: Individual-Level Model}
+
+\times
+
+\underbrace{\pi(\{\theta_{li}\}_{i=1,l=1}^{N,K}|\{\alpha_l\}_{l=1}^K, \{\beta_{lb}\}_{l=1,b=1}^{K,P},\{\omega_l\}_{l=1}^K)}_{Stage 2: Population Model}
+
+\times
+
+\underbrace{p(\sigma^2, \{\alpha_l\}_{l=1}^K, \{\beta_{lb}\}_{l=1,b=1}^{K,P},\{\omega_l\}_{l=1}^K)}_{Stage 3: Prior}
+
+The panel on the right displays Bayesian research cycle using Bayesian nonlinear mixed-effects model. antigen mutation effects on the immune system, and ecological processes affecting species distribution, to mention a few. Pymc is a flexible open source Python package supporting such modeling.
+
+References
+
+Category:Bayesian networks

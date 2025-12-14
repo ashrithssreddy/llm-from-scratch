@@ -1,0 +1,17 @@
+In mathematics applied to analysis of social structures, homogeneity blockmodeling is an approach in blockmodeling, which is best suited for a preliminary or main approach to valued networks, when a prior knowledge about these networks is not available. This is because homogeneity blockmodeling emphasizes the similarity of link (tie) strengths within the blocks over the pattern of links. In this approach, tie (link) values (or statistical data computed on them) are assumed to be equal (homogenous) within blocks.
+
+This approach to the generalized blockmodeling of valued networks was first proposed by Aleš Žiberna in 2007 with the basic idea, "that the inconsistency of an empirical block with its ideal block can be measured by within block variability of appropriate values". The newly–formed ideal blocks, which are appropriate for blockmodeling of valued networks, are then presented together with the definitions of their block inconsistencies. Similar approach to the homogeneity blockmodeling, dealing with direct approach for structural equivalence, was previously suggested by Stephen P. Borgatti and Martin G. Everett (1992).
+
+References
+
+See also
+
+Generalized blockmodeling of binary networks
+
+implicit blockmodeling
+
+blockmodeling linked networks
+
+Homogeneity and heterogeneity
+
+Category:Blockmodeling

@@ -1,0 +1,11 @@
+In artificial neural networks, a hybrid Kohonen self-organizing map is a type of self-organizing map (SOM) named for the Finnish professor Teuvo Kohonen, where the network architecture consists of an input layer fully connected to a 2–D SOM or Kohonen layer.
+
+The output from the Kohonen layer, which is the winning neuron, feeds into a hidden layer and finally into an output layer.  In other words, the Kohonen SOM is the front–end, while the hidden and output layer of a multilayer perceptron is the back–end of the
+
+hybrid Kohonen SOM.  The hybrid Kohonen SOM was first applied to machine vision systems for image classification and recognition.
+
+Hybrid Kohonen SOM has been used in weather prediction and especially in forecasting stock prices, which has made a challenging task considerably easier. It is fast and efficient with less classification error, hence is a better predictor, when compared to Kohonen SOM and backpropagation networks.
+
+References
+
+Category:Artificial neural networks

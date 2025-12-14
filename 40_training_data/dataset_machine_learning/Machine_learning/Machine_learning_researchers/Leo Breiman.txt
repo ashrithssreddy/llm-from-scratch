@@ -1,0 +1,81 @@
+{{Infobox scientist
+
+name              = Leo Breiman
+
+image             = Leo_Breiman.jpg
+
+image_size        = 200px
+
+caption           = Breiman in 2003
+
+birth_date        =
+
+birth_place       = New York City, U.S.
+
+death_date        =
+
+death_place       = Berkeley, California, U.S.
+
+field             = Statistics
+
+work_institutions = University of California, Berkeley
+
+alma_mater        = University of California, Berkeley
+
+doctoral_advisor  = Michel Loève
+
+doctoral_students = Adele Cutler
+
+thesis_title      = Homogeneous Processes
+
+thesis_year       = 1954
+
+thesis_url        = http://oskicat.berkeley.edu/record=b12056407~S1
+
+known_for         = CART, Bagging, Random forest
+
+influences        =
+
+influenced        =
+
+prizes            =
+
+footnotes         =
+
+}}
+
+Leo Breiman (January 27, 1928 – July 5, 2005) was an American statistician at the University of California, Berkeley and a member of the United States National Academy of Sciences.
+
+Breiman's work helped to bridge the gap between statistics and computer science, particularly in the field of machine learning. His most important contributions were his work on classification and regression trees and ensembles of trees fit to bootstrap samples. Bootstrap aggregation was given the name bagging by Breiman. Another of Breiman's ensemble approaches is the random forest.
+
+See also
+
+Shannon–McMillan–Breiman theorem
+
+Further reading
+
+Leo Breiman obituary, from the University of California, Berkeley
+
+Richard A. Olshen "A Conversation with Leo Breiman," Statistical Science Volume 16, Issue 2, 2001
+
+External links
+
+Leo Breiman from PORTRAITS OF STATISTICIANS
+
+A video record of a Leo Breiman's lecture about one of his machine learning techniques
+
+Category:1928 births
+
+Category:2005 deaths
+
+Category:American statisticians
+
+Category:Fellows of the American Statistical Association
+
+Category:Machine learning researchers
+
+Category:Members of the United States National Academy of Sciences
+
+Category:University of California, Berkeley College of Letters and Science faculty
+
+Category:Computational statisticians

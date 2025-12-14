@@ -1,0 +1,137 @@
+{{Infobox scientist
+
+name              = Chih-Jen Lin
+
+native_name       = 林智仁
+
+native_name_lang  = zh
+
+image             =
+
+image_size        =
+
+alt               =
+
+caption           =
+
+birth_date        =
+
+birth_place       =
+
+death_date        =
+
+death_place       =
+
+death_cause       =
+
+resting_place     =
+
+resting_place_coordinates =
+
+other_names       =
+
+citizenship       =
+
+nationality       =
+
+fields            = machine learning  data mining  optimization
+
+workplaces        = National Taiwan University
+
+patrons           =
+
+education         = National Taiwan University (BS)  University of Michigan (MS, PhD)
+
+thesis_title      = Studies in large-scale optimization
+
+thesis_url        = https://deepblue.lib.umich.edu/handle/2027.42/131260
+
+thesis_year       =
+
+doctoral_advisor  =
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students  =
+
+known_for         = LIBSVM
+
+awards            = ACM Fellow (2015)  AAAI Fellow (2014)  IEEE Fellow (2011)
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+spouse            =
+
+partner           =
+
+children          =
+
+signature         =
+
+signature_alt     =
+
+website           =
+
+footnotes         =
+
+}}
+
+Chih-Jen Lin () is Distinguished Professor of Computer Science at National Taiwan University, and a leading researcher in machine learning, optimization, and data mining. He is best known for the open-source library LIBSVM, an implementation of support vector machines.
+
+Biography
+
+Chih-Jen Lin received his B.S. (1993) in mathematics at National Taiwan University, and M.S.E. (1996) and Ph.D. (1998) in computer science at the University of Michigan.
+
+Awards and honors
+
+ACM Fellow (2015)
+
+For contributions to the theory and practice of machine learning and data mining.
+
+AAAI Fellow (2014)
+
+For significant contributions to the field of machine learning, and the development of a widely used SVM software.
+
+IEEE Fellow (2011)
+
+For contributions to support vector machine algorithms and software.
+
+Selected works
+
+Software
+
+LIBSVM implements the sequential minimal optimization algorithm for kernelized support vector machines. LIBSVM Homepage
+
+Articles
+
+References
+
+External links
+
+Chih-Jen Lin Google Scholar, h-index is 63.
+
+Category:Academic staff of the National Taiwan University
+
+Category:Taiwanese computer scientists
+
+Category:University of Michigan College of Engineering alumni
+
+Category:Living people
+
+Category:Scientists from Taipei
+
+Category:National Taiwan University alumni
+
+Category:2015 fellows of the Association for Computing Machinery
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Fellows of the IEEE
+
+Category:Machine learning researchers
+
+Category:Year of birth missing (living people)

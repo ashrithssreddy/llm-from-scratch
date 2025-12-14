@@ -1,0 +1,7 @@
+redirect Kruskal count
+
+Category:Probability theory
+
+Category:Markov processes
+
+Category:Markov models

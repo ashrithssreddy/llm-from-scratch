@@ -1,0 +1,223 @@
+The growth function, also called the shatter coefficient or the shattering number, measures the richness of a set family or class of functions. It is especially used in the context of statistical learning theory, where it is used to study properties of statistical learning methods.
+
+The term 'growth function' was coined by Vapnik and Chervonenkis in their 1968 paper, where they also proved many of its properties.
+
+It is a basic concept in machine learning.
+
+Definitions
+
+Set-family definition
+
+Let H be a set family (a set of sets) and C a set. Their intersection is defined as the following set-family:
+
+H\cap C := \{h\cap C\mid h\in H\}
+
+The intersection-size (also called the index) of H with respect to C is |H\cap C|. If a set C_m has m elements then the index is at most 2^m. If the index is exactly 2m then the set C is said to be shattered by H, because  H\cap C contains all the subsets of C, i.e.:
+
+H\cap C|=2^,
+
+The growth function measures the size of H\cap C as a function of |C|. Formally:
+
+\operatorname{Growth}(H,m) := \max_{C: |C|=m} |H\cap C|
+
+Hypothesis-class definition
+
+Equivalently, let H be a hypothesis-class (a set of binary functions) and C a set with m elements. The restriction of H to C is the set of binary functions on  C that can be derived from H:
+
+H_{C} := \{(h(x_1),\ldots,h(x_m))\mid h\in H, x_i\in C\}
+
+The growth function measures the size of H_C as a function of |C|:
+
+\operatorname{Growth}(H,m) := \max_{C: |C|=m} |H_C|
+
+Examples
+
+1. The domain is the real line \mathbb{R}.
+
+The set-family H contains all the half-lines (rays) from a given number to positive infinity, i.e., all sets of the form \{x > x_0 \mid x\in \mathbb{R}\} for some x_0\in \mathbb{R}.
+
+For any set C of m real numbers, the intersection H\cap C contains m+1 sets: the empty set, the set containing the largest element of C, the set containing the two largest elements of C, and so on. Therefore: \operatorname{Growth}(H,m)=m+1. The same is true whether H contains open half-lines, closed half-lines, or both.
+
+2. The domain is the segment [0,1].
+
+The set-family H contains all the open sets.
+
+For any finite set C of m real numbers, the intersection H\cap C contains all possible subsets of C. There are 2^m such subsets, so \operatorname{Growth}(H,m)=2^m.
+
+3. The domain is the Euclidean space \mathbb{R}^n.
+
+The set-family H contains all the half-spaces of the form: x\cdot \phi \geq 1, where \phi is a fixed vector.
+
+Then \operatorname{Growth}(H,m)=\operatorname{Comp}(n,m),
+
+where Comp is the number of components in a partitioning of an n-dimensional space by m hyperplanes.
+
+4. The domain is the real line \mathbb{R}. The set-family H contains all the real intervals, i.e., all sets of the form \{x \in [x_0,x_1] | x\in \mathbb{R}\} for some x_0,x_1\in \mathbb{R}.  For any set C of m real numbers, the intersection H\cap C contains all runs of between 0 and m consecutive elements of C. The number of such runs is {m+1 \choose 2}+1, so \operatorname{Growth}(H,m)={m+1 \choose 2}+1.
+
+Polynomial or exponential
+
+The main property that makes the growth function interesting is that it can be either polynomial or exponential - nothing in-between.
+
+The following is a property of the intersection-size:
+
+If, for some set C_m of size m, and for some number n\leq m, |H\cap C_m| \geq \operatorname{Comp}(n,m) -
+
+then, there exists a subset C_n\subseteq C_m of size n such that |H\cap C_n| = 2^n.
+
+This implies the following property of the Growth function.
+
+For every family H there are two cases:
+
+The exponential case: \operatorname{Growth}(H,m) = 2^m identically.
+
+The polynomial case: \operatorname{Growth}(H,m) is majorized by \operatorname{Comp}(n,m) \leq m^n+1, where n is the smallest integer for which \operatorname{Growth}(H,n) .
+
+Other properties
+
+Trivial upper bound
+
+For any finite H:
+
+\operatorname{Growth}(H,m) \leq |H|
+
+since for every C, the number of elements in H\cap C is at most |H|. Therefore, the growth function is mainly interesting when H is infinite.
+
+Exponential upper bound
+
+For any nonempty H:
+
+\operatorname{Growth}(H,m) \leq 2^m
+
+I.e, the growth function has an exponential upper-bound.
+
+We say that a set-family H shatters a set C if their intersection contains all possible subsets of C, i.e. H\cap C = 2^C.
+
+If H shatters C of size m, then \operatorname{Growth}(H,C)=2^{m}, which is the upper bound.
+
+Cartesian intersection
+
+Define the Cartesian intersection of two set-families as:
+
+H_1\bigotimes H_2 := \{h_1\cap h_2 \mid h_1\in H_1, h_2\in H_2\}.
+
+Then:
+
+\operatorname{Growth}(H_1\bigotimes H_2, m) \leq \operatorname{Growth}(H_1, m)\cdot \operatorname{Growth}(H_2, m)
+
+Union
+
+For every two set-families:
+
+\operatorname{Growth}(H_1\cup H_2, m) \leq \operatorname{Growth}(H_1, m) + \operatorname{Growth}(H_2, m)
+
+VC dimension
+
+The VC dimension of H is defined according to these two cases:
+
+In the polynomial case, \operatorname{VCDim}(H) = n-1 = the largest integer d for which \operatorname{Growth}(H,d) = 2^d.
+
+In the exponential case   \operatorname{VCDim}(H) = \infty.
+
+So \operatorname{VCDim}(H)\geq d if-and-only-if \operatorname{Growth}(H,d)=2^d.
+
+The growth function can be regarded as a refinement of the concept of VC dimension. The VC dimension only tells us whether \operatorname{Growth}(H,d) is equal to or smaller than 2^d, while the growth function tells us exactly how \operatorname{Growth}(H,m) changes as a function of m.
+
+Another connection between the growth function and the VC dimension is given by the Sauer–Shelah lemma:
+
+If \operatorname{VCDim}(H)=d, then:
+
+for all m: \operatorname{Growth}(H,m)\leq \sum_{i=0}^{d} {m\choose i}
+
+In particular,
+
+for all m>d+1: \operatorname{Growth}(H,m)\leq (em/d)^d = O(m^d)
+
+so when the VC dimension is finite, the growth function grows polynomially with m.
+
+This upper bound is tight, i.e., for all m>d there exists H with VC dimension d such that:
+
+\operatorname{Growth}(H,m)= \sum_{i=0}^{d} {m\choose i}
+
+Entropy
+
+While the growth-function is related to the maximum intersection-size,
+
+the entropy is related to the average intersection size:
+
+\operatorname{Entropy}(H, m) = E_{|C_m|=m}\big[\log_2(|H\cap C_m|)\big]
+
+The intersection-size has the following property. For every set-family H:
+
+H\cap (C_1 \cup C_2)|
+
+\leq
+
+H\cap C_1|\cdot |H \cap C_2|
+
+Hence:
+
+\operatorname{Entropy}(H, m_1+m_2)
+
+\leq
+
+\operatorname{Entropy}(H, m_1) + \operatorname{Entropy}(H, m_2)
+
+Moreover, the sequence \operatorname{Entropy}(H, m)/m converges to a constant c\in [0,1] when m\to\infty.
+
+Moreover, the random-variable \log_2{|H\cap C_m|/m} is concentrated near c.
+
+Applications in probability theory
+
+Let \Omega be a set on which a probability measure \Pr is defined.
+
+Let H be family of subsets of \Omega (= a family of events).
+
+Suppose we choose a set C_m that contains m elements of \Omega,
+
+where each element is chosen at random according to the probability measure P, independently of the others (i.e., with replacements). For each event h\in H, we compare the following two quantities:
+
+Its relative frequency in C_m, i.e., |h\cap C_m|/m;
+
+Its probability \Pr[h].
+
+We are interested in the difference, D(h,C_m) := \big||h\cap C_m|/m - \Pr[h]\big|. This difference satisfies the following upper bound:
+
+\Pr\left[\forall h\in H: D(h,C_m) \leq
+
+\sqrt{8(\ln\operatorname{Growth}(H, 2m) + \ln(4/\delta)) \over m}
+
+\right]
+
+~~~~
+
+>
+
+~~~~
+
+1 - \delta
+
+which is equivalent to:
+
+\Pr\big[\forall h\in H: D(h,C_m) \leq \varepsilon\big]
+
+~~~~
+
+>
+
+~~~~
+
+1 - 4\cdot \operatorname{Growth}(H, 2m)\cdot \exp(-\varepsilon^2\cdot m/8)
+
+In words: the probability that for all events in H, the relative-frequency is near the probability, is lower-bounded by an expression that depends on the growth-function of H.
+
+A corollary of this is that, if the growth function is polynomial in m (i.e., there exists some n such that \operatorname{Growth}(H,m)\leq m^n+1), then the above probability approaches 1 as m\to\infty. I.e, the family H enjoys uniform convergence in probability.
+
+References
+
+Category:Measures of complexity
+
+Category:Statistical classification
+
+Category:Computational learning theory
+
+Category:Families of sets

@@ -1,0 +1,7 @@
+The Inception Score (IS) is an algorithm used to assess the quality of images created by a generative image model such as a generative adversarial network (GAN).
+
+}}
+
+Category:Machine learning
+
+Category:Computer graphics

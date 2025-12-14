@@ -1,0 +1,129 @@
+{{Infobox scientist
+
+name              = Michael Justin Kearns
+
+image             =
+
+image_size        =
+
+alt               =
+
+caption           =
+
+birth_date        =
+
+birth_place       = California
+
+death_date        =
+
+death_place       =
+
+resting_place             =
+
+resting_place_coordinates =
+
+citizenship       =
+
+nationality       =
+
+fields            =
+
+workplaces        = University of Pennsylvania (2002–)AT&T Bell Labs (1991–2001)
+
+alma_mater        = University of California at Berkeley (BS, 1985)  Harvard University (PhD, 1989)
+
+thesis_title      = The Computational Complexity of Machine Learning
+
+thesis_url        = http://www.cis.upenn.edu/~mkearns/papers/thesis.pdf
+
+thesis_year       = 1989
+
+doctoral_advisor  = Leslie Valiant
+
+academic_advisors = Ronald Rivest (postdoctoral, MIT)  Richard M. Karp (postdoctoral, UC Berkeley)
+
+doctoral_students = Jennifer Wortman Vaughan
+
+notable_students  = John Langford (postdoctoral visitor)
+
+known_for         =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+awards            = Member of U.S. National Academy of Sciences (2021)  Fellow of the American Academy of Arts and Sciences (2012)  ACM Fellow (2014) He previously led the Advisory and Research function in Morgan Stanley's Artificial Intelligence Center of Excellence team, and is currently an Amazon Scholar within Amazon Web Services.
+
+Biography
+
+Kearns was born into an academic family, where his father David R Kearns is Professor Emeritus at University of California, San Diego in chemistry, who won Guggenheim Fellowship in 1969, and his uncle Thomas R. Kearns is Professor Emeritus at Amherst College in Philosophy and Law, Jurisprudence, and Social Thought. His paternal grandfather Clyde W. Kearns was a pioneer  in insecticide toxicology and was a professor at University of Illinois at Urbana–Champaign in Entomology, and his maternal grandfather Chen Shou-Yi (1899–1978) was a professor at Pomona College in history and literature, who was born in Canton (Guangzhou, China) into a family noted for their scholarship and educational leadership.
+
+Kearns received his B.S. degree at the University of California at Berkeley in math and computer science in 1985, and  Ph.D. in computer science from Harvard University in 1989, under the supervision of Turing Award winner Leslie Valiant. His doctoral dissertation was The Computational Complexity of Machine Learning, later published by MIT press as part of the ACM Doctoral Dissertation Award Series in 1990. Before joining AT&T Bell Labs in 1991, he continued with postdoctoral positions at the Laboratory for Computer Science at MIT hosted by Ronald Rivest, and at the International Computer Science Institute (ICSI) in UC Berkeley hosted by Richard M. Karp, both of whom are Turing Award winners.
+
+Kearns is currently a full professor and National Center Chair at the University of Pennsylvania, where his appointment is split across the Department of Computer and Information Science, and Statistics and Operations and Information Management in the Wharton School. Prior to joining the Penn faculty in 2002, he spent a decade (1991–2001) in AT&T Labs and Bell Labs, including as head of the AI department with colleagues including Michael L. Littman, David A. McAllester, and Richard S. Sutton; Secure Systems Research department; and Machine Learning department with members such as Michael Collins and the leader Fernando Pereira. Other AT&T Labs colleagues in Algorithms and Theoretical Computer Science included Yoav Freund, Ronald Graham, Mehryar Mohri, Robert Schapire, and Peter Shor, as well as Sebastian Seung, Yann LeCun, Corinna Cortes, and Vladimir Vapnik (the V in VC dimension).
+
+Kearns was named Fellow of the Association for Computing Machinery (2014) for contributions to machine learning, is the origin of boosting machine learning algorithms, which got a positive answer by Robert Schapire (1990, proof by construction, not practical) and Yoav Freund (1993, by voting, not practical) and then they developed the practical AdaBoost (European Conference on Computational Learning Theory 1995, Journal of Computer and System Sciences 1997), an adaptive boosting algorithm that won the prestigious Gödel Prize (2003).
+
+Honors and awards
+
+2021. Member of the U. S. National Academy of Sciences.
+
+2014. ACM Fellow.
+
+For contributions to machine learning, artificial intelligence, and algorithmic game theory and computational social science.
+
+1990. The computational complexity of machine learning. MIT press.
+
+Based on his 1989 doctoral dissertation;
+
+ACM Doctoral Dissertation Award Series in 1990
+
+1989. Cryptographic limitations on learning Boolean formulae and finite automata. (with Leslie Valiant) Proceedings of the twenty-first annual ACM symposium on Theory of computing (STOC'89).
+
+The open question: is weakly learnability equivalent to strong learnability?;
+
+The origin of boosting algorithms;
+
+Important publication in machine learning.
+
+See also
+
+Boosting (machine learning)
+
+References
+
+External links
+
+Tribute Day for Leslie Valiant's 60 birthday, May 2009
+
+the speakers included Stephen Cook and Michael O. Rabin, both of whom are Turing Award winners, and Vijay Vazirani.
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:American computer scientists
+
+Category:UC Berkeley College of Letters and Science alumni
+
+Category:Harvard University alumni
+
+Category:University of Pennsylvania faculty
+
+Category:Scientists at Bell Labs
+
+Category:Fellows of the American Academy of Arts and Sciences
+
+Category:American game theorists
+
+Category:Machine learning researchers
+
+Category:Members of the United States National Academy of Sciences
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:University of Pennsylvania Department of Computer and Information Science faculty

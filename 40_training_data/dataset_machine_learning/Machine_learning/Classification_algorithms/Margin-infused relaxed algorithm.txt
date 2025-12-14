@@ -1,0 +1,37 @@
+Margin-infused relaxed algorithm (MIRA) is a machine learning and online algorithm for multiclass classification problems. It is designed to learn a set of parameters (vector or matrix) by processing all the given training examples one-by-one and updating the parameters according to each training example, so that the current training example is classified correctly with a margin against incorrect classifications at least as large as their loss. The change of the parameters is kept as small as possible.
+
+A two-class version called binary MIRA looks as follows:
+
+Input: Training examples T = \{x_i, y_i\}
+
+Output: Set of parameters w
+
+i ← 0, w^{(0)} ← 0
+
+for n ← 1 to N
+
+for t ← 1 to |T|
+
+w^{(i+1)} ← update w^{(i)} according to \{x_t, y_t\}
+
+i ← i + 1
+
+end for
+
+end for
+
+return \frac{\sum_{j=1}^{N \times |T|} w^{(j)}}{N \times |T|}
+
+The update step is then formalized as a quadratic programming problem: Find min\|w^{(i+1)} - w^{(i)}\|, so that score(x_t,y_t) - score(x_t,y')\geq L(y_t,y')\ \forall y', i.e. the score of the current correct training y must be greater than the score of any other possible y' by at least the loss (number of errors) of that y' in comparison to y.
+
+References
+
+External links
+
+adMIRAble – MIRA implementation in C++
+
+Miralium – MIRA implementation in Java
+
+MIRA implementation for Mahout in Hadoop
+
+Category:Classification algorithms

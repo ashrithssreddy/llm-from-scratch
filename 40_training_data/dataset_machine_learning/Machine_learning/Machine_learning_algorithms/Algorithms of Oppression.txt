@@ -1,0 +1,59 @@
+Algorithms of Oppression: How Search Engines Reinforce Racism is a 2018 book by Safiya Umoja Noble in the fields of information science, machine learning, and human-computer interaction.
+
+Background
+
+Noble earned an undergraduate degree in sociology from California State University, Fresno in the 1990s, then worked in advertising and marketing for fifteen years before going to the University of Illinois Urbana-Champaign for a Master of Library and Information Science degree in the early 2000s. The book's first inspiration came in 2011, when Noble Googled the phrase "black girls" and saw results for pornography on the first page. At this time, Noble thought of the title "Algorithms of Oppression" for the eventual book. Noble became an assistant professor at University of California, Los Angeles in 2014. In 2017, she published an article on racist and sexist bias in search engines in The Chronicle of Higher Education. The book was published by New York University Press on February 20, 2018. By this time, changes to Google's algorithm had changed the most common results for a search of "black girls," though the underlying biases remain influential.
+
+Overview
+
+Algorithms of Oppression addresses the relationship between search engines and discriminatory biases. She takes a Black intersectional feminist approach. Intersectional feminism takes into account the experiences of women of different races and sexualities when discussing the oppression of women. Noble argues that search algorithms are racist and perpetuate societal problems because they reflect the negative biases that exist in society and the people who create them. Noble rejects the idea that search engines are inherently neutral, explaining how algorithms in search engines privilege whiteness by depicting positive cues when key words like "white" are searched as opposed to "Asian," "Hispanic," or "Black." Her main example surrounds the search results of "Black girls" versus "white girls" and the biases that are depicted in the results.
+
+Synopsis
+
+Chapter 1 explores how Google search's auto suggestion feature is demoralizing, discussing example searches for terms like "black girls" (which returned pornography) and "Jew" (which returned anti-Semitic pages). Noble coins the term algorithmic oppression to describe data failures specific to people of color, women, and other marginalized groups. She discusses how Google could use human curation to eliminate slurs or inappropriate images from the first page of results, and criticizes Google's policy that unless pages are unlawful, Google will allow its algorithm to act without human curation. She identifies AdWords as a hypocritical use of curation to promote commercial interests, since it allows advertisers to pay for controversial or less-relevant topics to appear above the algorithm's selections.
+
+Chapter 2 examines Google's claims that they are not responsible for the content of search results, instead blaming the content creators and searchers. Noble highlights aspects of the algorithm which normalize whiteness and men. She argues that Google hides behind their algorithm, while reinforcing social inequalities and stereotypes for Black, Latina, and Asian women.
+
+Chapter 3 discusses how Google's search engine combines multiple sources to create threatening narratives about minorities. She explains a case study where she searched "black on white crimes" on Google. Noble highlights that the sources and information that were found after the search pointed to conservative sources that skewed information. These sources displayed racist and anti-black information from white supremacist sources. Ultimately, she believes this readily-available, false information fueled the actions of white supremacist Dylann Roof, who committed a massacre.
+
+Chapter 4 examines examples of women being shamed due to their activity in the porn industry, regardless if it was consensual or not. She critiques the internet's ability to influence one's future and compares U.S. privacy laws to those of the European Union, which provides citizens with "the right to forget or be forgotten." She argues that these breaches of privacy disproportionately affect women and people of color.
+
+Chapter 5 moves away from Google and onto other information sources deemed credible and neutral. Noble says that prominent libraries, including the Library of Congress, reinforce hegemonies such as whiteness, heteronormativity, and patriarchy. As an example, she discusses a two-year effort to change the Library of Congress's catalog terminology from "illegal aliens" to "noncitizen" or "unauthorised immigrants".
+
+Chapter 6 discusses possible solutions for the problem of algorithmic bias. She insists that governments and corporations bear the most responsibility to reform their systemic issues, and rejects the neoliberal argument that algorithmic biases will disappear if more women and racial minorities enter the industry as software engineers. She critiques a mindset she calls "big-data optimism," or the notion that large institutions solve inequalities. She argues that policies enacted by local and federal governments could reduce Google's "information monopoly" and regulate the ways in which search engines filter their results. To illustrate this point, she uses the example a Black hairdresser whose business faces setbacks because the review site Yelp has used biased advertising practices and searching strategies against her. She closes the chapter by calling upon the Federal Communications Commission (FCC) and the Federal Trade Commission (FTC) to "regulate decency," or to limit the amount of racist, homophobic, or prejudiced rhetoric on the Internet. She urges the public to shy away from "colorblind" ideologies toward race, arguing that these erase the struggles faced by racial minorities.
+
+The conclusion synthesizes the previous chapters, and challenges the idea that the internet is a fully democratic or post-racial environment.
+
+Critical reception
+
+Critical reception for Algorithms of Oppression has been largely positive. In the Los Angeles Review of Books, Emily Drabinski writes, "What emerges from these pages is the sense that Google’s algorithms of oppression comprise just one of the hidden infrastructures that govern our daily lives, and that the others are likely just as hard-coded with white supremacy and misogyny as the one that Noble explores." In PopMatters, Hans Rollman writes that Algorithms of Oppression "demonstrate[s] that search engines, and in particular Google, are not simply imperfect machines, but systems designed by humans in ways that replicate the power structures of the western countries where they are built, complete with all the sexism and racism that are built into those structures."
+
+In early February 2018, Algorithms of Oppression received press attention when the official Twitter account for the Institute of Electrical and Electronics Engineers expressed criticism of the book, saying that the results of a Google search suggested in its blurb did not match Noble's predictions. IEEE's outreach historian, Alexander Magoun, later revealed that he had not read the book, and issued an apology.
+
+See also
+
+Algorithmic bias
+
+Techlash
+
+References
+
+External links
+
+Algorithms of Oppression: How Search Engines Reinforce Racism
+
+Category:Books about race and ethnicity
+
+Category:Algorithms
+
+Category:2018 non-fiction books
+
+Category:English-language non-fiction books
+
+Category:Information science
+
+Category:Human–computer interaction
+
+Category:Machine learning algorithms
+
+Category:New York University Press books

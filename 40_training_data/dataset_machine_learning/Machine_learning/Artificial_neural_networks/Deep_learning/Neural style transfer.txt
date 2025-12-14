@@ -1,0 +1,31 @@
+Neural style transfer (NST) software algorithms are able to manipulate digital images, or videos, in order to adopt the appearance or visual style of another image. NST algorithms are characterized by their use of deep neural networks for the sake of image transformation. Common uses for NST are the creation of artificial artwork from photographs, for example by transferring the appearance of famous paintings to user-supplied photographs.  Several notable mobile apps use NST techniques for this purpose, including DeepArt and Prisma. This method has been used by artists and designers around the globe to develop new artwork based on existent style(s).
+
+History
+
+NST is an example of image stylization, a problem studied for over two decades within the field of non-photorealistic rendering.  The first two example-based style transfer algorithms were image analogies and image quilting. Both of these methods were based on patch-based texture synthesis algorithms.
+
+Given a training pair of images–a photo and an artwork depicting that photo–a transformation could be learned and then applied to create new artwork from a new photo, by analogy. If no training photo was available, it would need to be produced by processing the input artwork; image quilting did not require this processing step, though it was demonstrated on only one style.
+
+NST was first published in the paper "A Neural Algorithm of Artistic Style" by Leon Gatys et al., originally released to ArXiv 2015, and subsequently accepted by the peer-reviewed CVPR conference in 2016. The original paper used a  VGG-19 architecture that has been pre-trained to perform object recognition using the ImageNet dataset.
+
+In 2017, Google AI introduced a method that allows a single deep convolutional style transfer network to learn multiple styles at the same time. This algorithm permits style interpolation in real-time, even when done on video media.
+
+Mathematics
+
+This section closely follows the original paper.
+
+Compared to VGGNet, AlexNet does not work well for neural style transfer.
+
+NST has also been extended to videos.
+
+Subsequent work improved the speed of NST for images by using special-purpose normalizations.
+
+In a paper by Fei-Fei Li et al. adopted a different regularized loss metric and accelerated method for training to produce results in real-time (three orders of magnitude faster than Gatys). Their idea was to use not the pixel-based loss defined above but rather a 'perceptual loss' measuring the differences between higher-level layers within the CNN. They used a symmetric convolution-deconvolution CNN. Training uses a similar loss function to the basic NST method but also regularizes the output for smoothness using a total variation (TV) loss. Once trained, the network may be used to transform an image into the style used during training, using a single feed-forward pass of the network. However the network is restricted to the single style in which it has been trained.
+
+Most recently, feature transform based NST methods have been explored for fast stylization that are not coupled to single specific style and enable user-controllable blending of styles, for example the whitening and coloring transform (WCT).
+
+References
+
+Category:Algorithms
+
+Category:Deep learning

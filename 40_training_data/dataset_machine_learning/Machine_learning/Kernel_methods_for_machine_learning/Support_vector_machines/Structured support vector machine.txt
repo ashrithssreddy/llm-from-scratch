@@ -1,0 +1,65 @@
+The structured support-vector machine is a machine learning algorithm that generalizes the Support-Vector Machine (SVM) classifier.  Whereas the SVM classifier supports binary classification, multiclass classification and regression, the structured SVM allows training of a classifier for general structured output labels.
+
+As an example, a sample instance might be a natural language sentence, and the output label is an annotated parse tree.  Training a classifier consists of showing pairs of correct sample and output label pairs.  After training, the structured SVM model allows one to predict for new sample instances the corresponding output label; that is, given a natural language sentence, the classifier can produce the most likely parse tree.
+
+Training
+
+For a set of n training instances (\boldsymbol{x}_i,y_i) \in \mathcal{X}\times\mathcal{Y}, i=1,\dots,n from a sample space \mathcal{X} and label space \mathcal{Y}, the structured SVM minimizes the following regularized risk function.
+
+\underset{\boldsymbol{w}}{\min} \quad \|\boldsymbol{w}\|^2 + C \sum_{i=1}^{n}
+
+\underset{y\in\mathcal{Y}}{\max} \left(0, \Delta(y_i,y) + \langle\boldsymbol{w},\Psi(\boldsymbol{x}_i,y)\rangle - \langle\boldsymbol{w},\Psi(\boldsymbol{x}_i,y_i)\rangle\right)
+
+The function is convex in \boldsymbol{w} because the maximum of a set of affine functions is convex.  The function \Delta: \mathcal{Y} \times \mathcal{Y} \to \mathbb{R}_+ measures a distance in label space and is an arbitrary function (not necessarily a metric) satisfying \Delta(y,z) \geq 0 and  \Delta(y,y)=0 \;\; \forall y,z \in \mathcal{Y}.  The function \Psi: \mathcal{X} \times \mathcal{Y} \to \mathbb{R}^d is a feature function, extracting some feature vector from a given sample and label.  The design of this function depends very much on the application.
+
+Because the regularized risk function above is non-differentiable, it is often reformulated in terms of a quadratic program by introducing one slack variable \xi_i for each sample, each representing the value of the maximum.  The standard structured SVM primal formulation is given as follows.
+
+\begin{array}{cl}
+
+\underset{\boldsymbol{w},\boldsymbol{\xi}}{\min} & \|\boldsymbol{w}\|^2 + C \sum_{i=1}^{n} \xi_i\\
+
+\textrm{s.t.} & \langle\boldsymbol{w}, \Psi(\boldsymbol{x}_i,y_i)\rangle - \langle\boldsymbol{w}, \Psi(\boldsymbol{x}_i,y)\rangle + \xi_i \geq \Delta(y_i,y),\qquad i=1,\dots,n,\quad \forall y \in \mathcal{Y}
+
+\end{array}
+
+Inference
+
+At test time, only a sample \boldsymbol{x} \in \mathcal{X} is known, and a prediction function f: \mathcal{X} \to \mathcal{Y} maps it to a predicted label from the label space \mathcal{Y}.  For structured SVMs, given the vector \boldsymbol{w} obtained from training, the prediction function is the following.
+
+f(\boldsymbol{x}) = \underset{y \in \mathcal{Y}}{\textrm{argmax}} \quad \langle\boldsymbol{w},\Psi(\boldsymbol{x},y)\rangle
+
+Therefore, the maximizer over the label space is the predicted label.  Solving for this maximizer is the so-called inference problem and similar to making a maximum a-posteriori (MAP) prediction in probabilistic models.  Depending on the structure of the function \Psi, solving for the maximizer can be a hard problem.
+
+Separation
+
+The above quadratic program involves a very large, possibly infinite number of linear inequality constraints.  In general, the number of inequalities is too large to be optimized over explicitly.  Instead the problem is solved by using delayed constraint generation where only a finite and small subset of the constraints is used.  Optimizing over a subset of the constraints enlarges the feasible set and will yield a solution that provides a lower bound on the objective.  To test whether the solution \boldsymbol{w} violates constraints of the complete set inequalities, a separation problem needs to be solved.   As the inequalities decompose over the samples, for each sample (\boldsymbol{x}_i,y_i) the following problem needs to be solved.
+
+y_n^* = \underset{y \in \mathcal{Y}}{\textrm{argmax}} \left(
+
+\Delta(y_i,y) + \langle\boldsymbol{w},\Psi(\boldsymbol{x}_i,y)\rangle - \langle\boldsymbol{w},\Psi(\boldsymbol{x}_i,y_i)\rangle - \xi_i\right)
+
+The right hand side objective to be maximized is composed of the constant -\langle\boldsymbol{w},\Psi(\boldsymbol{x}_i,y_i)\rangle - \xi_i and a term dependent on the variables optimized over, namely \Delta(y_i,y) + \langle\boldsymbol{w},\Psi(\boldsymbol{x}_i,y)\rangle.  If the achieved right hand side objective is smaller or equal to zero, no violated constraints for this sample exist.  If it is strictly larger than zero, the most violated constraint with respect to this sample has been identified.  The problem is enlarged by this constraint and resolved.  The process continues until no violated inequalities can be identified.
+
+If the constants are dropped from the above problem, we obtain the following problem to be solved.
+
+y_i^* = \underset{y \in \mathcal{Y}}{\textrm{argmax}} \left(\Delta(y_i,y) + \langle\boldsymbol{w},\Psi(\boldsymbol{x}_i,y)\rangle\right)
+
+This problem looks very similar to the inference problem.  The only difference is the addition of the term \Delta(y_i,y).  Most often, it is chosen such that it has a natural decomposition in label space.  In that case, the influence of \Delta can be encoded into the inference problem and solving for the most violating constraint is equivalent to solving the inference problem.
+
+References
+
+Ioannis Tsochantaridis, Thorsten Joachims, Thomas Hofmann and Yasemin Altun (2005), Large Margin Methods for Structured and Interdependent Output Variables, JMLR, Vol. 6, pages 1453-1484.
+
+Thomas Finley and Thorsten Joachims (2008), Training Structural SVMs when Exact Inference is Intractable, ICML 2008.
+
+Sunita Sarawagi and Rahul Gupta (2008), Accurate Max-margin Training for Structured Output Spaces, ICML 2008.
+
+Gökhan BakIr, Ben Taskar, Thomas Hofmann, Bernhard Schölkopf, Alex Smola and SVN Vishwanathan (2007), Predicting Structured Data, MIT Press.
+
+Vojtěch Franc and Bogdan Savchynskyy Discriminative Learning of Max-Sum Classifiers, 	Journal of Machine Learning Research, 9(Jan):67—104, 2008, Microtome Publishing
+
+Kevin Murphy  Machine Learning, MIT Press
+
+Category:Structured prediction
+
+Category:Support vector machines

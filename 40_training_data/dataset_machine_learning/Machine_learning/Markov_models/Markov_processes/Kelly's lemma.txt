@@ -1,0 +1,31 @@
+In probability theory, Kelly's lemma states that for a stationary continuous-time Markov chain, a process defined as the time-reversed process has the same stationary distribution as the forward-time process. The theorem is named after Frank Kelly.
+
+Statement
+
+For a continuous time Markov chain with an at most countable state space S and transition-rate matrix Q (with elements q_{ij}), if we can find a set of non-negative numbers q_{ij}' and a positive measure \pi that satisfy the following conditions:
+
+\begin{align}
+
+\sum_{j \in S} q_{ij} &= \sum_{j \in S} q'_{ij} \quad \forall i\in S\\
+
+\pi_i q_{ij} &= \pi_jq_{ji}' \quad \forall i,j \in S,
+
+\end{align}
+
+then q_{ij}' are the rates for the reversed process and \pi is proportional to the stationary distribution for both processes.
+
+Proof
+
+Given the assumptions made on the q_{ij} and \pi we have
+
+\sum_{i \in S} \pi_i q_{ij} = \sum_{i \in S} \pi_j q'_{ji} = \pi_j \sum_{i \in S} q'_{ji} = \pi_j \sum_{i \in S} q_{ji} =\pi_j,
+
+so the global balance equations are satisfied and the measure \pi is proportional to the stationary distribution of the original process.
+
+By symmetry, the same argument shows that \pi is also proportional to the stationary distribution of the reversed process.
+
+References
+
+Category:Markov processes
+
+Category:Queueing theory

@@ -1,0 +1,47 @@
+Adam Tauman Kalai is an American computer scientist who specializes in artificial intelligence and works at OpenAI.
+
+Education and career
+
+Kalai graduated from Harvard University in 1996 with a BA in computer science and received a MA and PhD, both in computer science, from Carnegie Mellon University in 1999 and 2001, respectively. His doctoral advisor was Avrim Blum. After graduation, Kalai did his postdoctoral research at Massachusetts Institute of Technology under Santosh Vempala until 2003. Kalai became a faculty member at the Toyota Technological Institute at Chicago from 2003 to 2006, followed by a stint as an assistant professor at Georgia Institute of Technology from 2007 to 2008. He joined Microsoft Research in 2008 and subsequently moved to OpenAI in 2023.
+
+Contributions
+
+Kalai is known for his algorithm for generating random factored numbers (see Bach's algorithm), for efficiently learning learning mixtures of Gaussians, for the Blum-Kalai-Wasserman algorithm for learning parity with noise, and for the intractability of the folk theorem in game theory.
+
+More recently, Kalai is known for identifying and reducing gender bias in word embeddings, which are a representation of words commonly used in AI systems.
+
+Personal life
+
+Kalai is the son of game theorist Ehud Kalai and is married to cryptographer Yael Tauman Kalai. His mother is Fern Moss, sister of entrepreneur and art curator Murray Moss.
+
+References
+
+{{reflist|refs=
+
+}}
+
+External links
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:American computer scientists
+
+Category:Georgia Tech faculty
+
+Category:Carnegie Mellon University alumni
+
+Category:Harvard University alumni
+
+Category:OpenAI people
+
+Category:Microsoft Research people
+
+Category:Theoretical computer scientists
+
+Category:Artificial intelligence researchers
+
+Category:Machine learning researchers
+
+Category:Toyota Technological Institute at Chicago faculty

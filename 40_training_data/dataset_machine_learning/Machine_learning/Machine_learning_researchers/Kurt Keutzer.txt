@@ -1,0 +1,123 @@
+{{Infobox scientist
+
+name = Kurt Keutzer
+
+image =
+
+image_size =
+
+caption =
+
+birth_name = Kurt William Keutzer
+
+birth_date =
+
+birth_place =
+
+death_date =
+
+death_place =
+
+residence =
+
+citizenship =
+
+nationality = American
+
+fields = Computer science
+
+workplaces = Bell Labs, Synopsys, University of California, Berkeley, DeepScale
+
+alma_mater = Maharishi University of Management (B.S.)
+
+Indiana University Bloomington (M.S. and PhD)
+
+thesis_title =
+
+thesis_year =
+
+doctoral_advisor =
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students =
+
+known_for =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+awards = Fellow, IEEE
+
+signature =
+
+footnotes =
+
+spouse =
+
+}}
+
+Kurt Keutzer (born November 9, 1955) is an American computer scientist.
+
+Early life and education
+
+Kurt Keutzer grew up in Indianapolis, Indiana. He earned a bachelor's degree in mathematics from Maharishi University of Management (formerly Mararishi International University) in 1978, and a PhD in computer science from Indiana University Bloomington in 1984.
+
+Career
+
+Keutzer joined Bell Labs in 1984, where he worked on logic synthesis. He subsequently  joined the University of California, Berkeley as a professor in 1998. Keutzer and his students also developed deep neural networks such as SqueezeNet, SqueezeDet, and SqueezeSeg, which can run efficiently on mobile devices.
+
+Keutzer co-founded DeepScale with his PhD student Forrest Iandola in 2015, and Keutzer served as the company's chief strategy officer. The firm was focused on developing deep neural networks for advanced driver assistance systems in passenger cars.
+
+On October 1, 2019, electric vehicle manufacturer Tesla, Inc. purchased DeepScale to augment and accelerate its self-driving vehicle work.
+
+Honors and awards
+
+Keutzer was named a Fellow of the IEEE in 1996.
+
+Recipient of DAC Most Influential Paper (MIP) award (24th DAC, 1987) for his "Dagon: technology binding and local optimization by DAG matching” publication.
+
+Books by Keutzer
+
+1988. Dwight Hill, Don Shugard, John Fishburn, and Kurt Keutzer. Algorithms and Techniques for VLSI Layout Synthesis. Springer.
+
+1994. Srinivas Devadas, Abhijit Ghosh, and Kurt Keutzer. Logic Synthesis. McGraw-Hill.
+
+2002. David Chinnery and Kurt Keutzer. Closing the Gap Between ASIC & Custom: Tools and Techniques for High-Performance ASIC Design. Springer. (2nd edition appeared in 2007.)
+
+2004. Pinhong Chen, Desmond A. Kirkpatrick, and Kurt Keutzer. Static Crosstalk-Noise Analysis: For Deep Sub-Micron Digital Designs. Springer.
+
+2005. Matthias Gries and Kurt Keutzer. Building ASIPs: The Mescal Methodology. Springer.
+
+References
+
+Category:1955 births
+
+Category:Living people
+
+Category:20th-century American businesspeople
+
+Category:20th-century American scientists
+
+Category:21st-century American scientists
+
+Category:21st-century American businesspeople
+
+Category:American computer scientists
+
+Category:Scientists at Bell Labs
+
+Category:Machine learning researchers
+
+Category:Indiana University Bloomington alumni
+
+Category:Fellows of the IEEE
+
+Category:UC Berkeley College of Engineering faculty
+
+Category:American technology company founders
+
+Category:American chief technology officers

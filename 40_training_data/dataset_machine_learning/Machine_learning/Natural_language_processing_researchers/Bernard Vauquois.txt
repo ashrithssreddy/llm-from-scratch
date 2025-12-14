@@ -1,0 +1,151 @@
+{{Infobox scientist
+
+name = Bernard Vauquois
+
+native_name =
+
+native_name_lang =
+
+image =
+
+image_size =
+
+image_upright =
+
+landscape =
+
+alt =
+
+caption =
+
+birth_name =
+
+birth_date =
+
+birth_place = Paris, 16th arrondissement
+
+death_date =
+
+death_place =
+
+resting_place =
+
+resting_place_coordinates =
+
+other_names =
+
+pronounce =
+
+nationality = French
+
+occupation = Researcher, computer scientist, university professor
+
+fields = Astronomy, mathematics, computer science
+
+workplaces = French National Centre for Scientific Research, Meudon Observatory,Grenoble University,Association for Natural Language Processing (ATALA)
+
+patrons =
+
+education = Ph.D.
+
+alma_mater =
+
+thesis_title =
+
+thesis_url =
+
+thesis_year = 1958
+
+doctoral_advisor =
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students =
+
+known_for = Pioneered computer science in France,Machine translation (MT) theory and practice including Vauquois triangleFounded Centre d'Étude pour la Traduction Automatique (CETA)Helped define ALGOL 60Founded The Center for Studies on Automatic Translation
+
+influences =
+
+influenced =
+
+awards =
+
+spouse =
+
+partner =
+
+children =
+
+parents =
+
+father =
+
+mother =
+
+relatives =
+
+signature =
+
+signature_type =
+
+signature_alt =
+
+website =
+
+footnotes =
+
+}}
+
+Bernard Vauquois ( — ) was a French mathematician and computer scientist. He was a pioneer of computer science and machine translation (MT) in France. An astronomer-turned-computer scientist, he is known for his work on the programming language ALGOL 60, and later for extensive work on the theoretical and practical problems of MT, of which the eponymous Vauquois triangle is one of the most widely-known contributions. a team at the Laboratoire d'informatique de Grenoble, and soon showed his gift for rapid understanding, synthesis, and innovation, and his taste for personal communication across linguistic borders and barriers.
+
+After visiting a number of centers, mainly in the United States, where machine translation research was conducted, he analyzed the shortcomings of the "first-generation" approach and evaluated the potential of a new generation based on grammar and formal language theory, and proposed a new approach based on a representational "pivot" and the use of (declarative) rule systems that transform a sequential sentence from one level of representation to another. He led the GETA in constructing the first large second-generation system, applied to Russian–French, from 1962 to 1971.
+
+At the end of this period, the accumulated experience led him to correct some defects of the "pure" declarative and interlingual approach, and to use heuristic programming methods, implemented with procedural grammars written in LSPLs ("specialized languages for linguistic programming", langages spécialisés pour la programmation linguistique) that were developed under his direction, and integrated into the ARIANE-78 machine translation system.
+
+In 1974, when he cofounded the Leibniz laboratory, he proposed "multilevel structure descriptors" (descripteurs de structures multiniveaux) for units larger than sentence translation. This idea, premonitory of later theoretical work (Ray Jackendoff, Gerald Gazdar) is still the cornerstone of all machine translation software built by GETA and the French national TA project.
+
+Bernard Vauquois' last contribution was "static grammar" (grammaire statique) in 1982–83, during the ESOPE project, the preparatory phase of the French national MT project.
+
+He was a key figure in the field of computational linguistics in France. At CNRS, he was a member of section 22 of the National Committee in 1963: "General Linguistics, Modern Languages and Comparative Literature", and then, in 1969, of section 28: "General Linguistics, Foreign Languages and Literature". Since 1965, he has been vice-president of the Association for Natural Language Processing (ATALA). He was its president from 1966 to 1971. He was also one of the founders, in 1965, of the ICCL (International Committee on Computational Linguistics), which organizes COLING conferences. He was its president from 1969 to 1984.
+
+File:Traduction automatique pivot.svg
+
+File:Triangle de vauquois.svg
+
+File:Directe.jpg
+
+File:Vauquois´ püramiid.PNG
+
+File:The Vauquois triangle version 1985.svg|The 1985 version of the Vauquois Triangle.
+
+Legacy
+
+Bernard Vauquois is regarded as a pioneer of machine translation in France. He played a key role in developing the first large-scale second-generation machine translation system, and his work influenced the field of machine translation for many years.
+
+The Center for Studies on Automatic Translation, which Vauquois founded in 1960, later became the Group for the Study of Machine Translation and Automated Processing of Languages and Speech (GETALP). It is still a research institution in natural language processing.
+
+Vauquois was a prolific writer and speaker, disseminating knowledge about machine translation and related topics. His papers and presentations were instrumental in establishing the field of machine translation in France and beyond.
+
+Publications
+
+References
+
+Category:1929 births
+
+Category:1985 deaths
+
+Category:French mathematicians
+
+Category:French computer scientists
+
+Category:Machine translation
+
+Category:Natural language processing researchers
+
+Category:People from Paris
+
+Category:ALGOL 60
+
+Category:Programming language designers

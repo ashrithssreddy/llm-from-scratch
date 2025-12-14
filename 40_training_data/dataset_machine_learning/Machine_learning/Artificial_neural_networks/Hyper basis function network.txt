@@ -1,0 +1,45 @@
+In machine learning, a Hyper basis function network, or HyperBF network, is a generalization of radial basis function (RBF) networks concept, where the Mahalanobis-like distance is used instead of the Euclidean distance measure. Hyper basis function networks were first introduced by Poggio and Girosi in the 1990 paper “Networks for Approximation and Learning”.
+
+Network Architecture
+
+The typical HyperBF network structure consists of a real input vector x\in \mathbb{R}^n, a hidden layer of activation functions and a linear output layer. The output of the network is a scalar function of the input vector, \phi: \mathbb{R}^n\to\mathbb{R}, is given by
+
+\phi(x)=\sum_{j=1}^{N}a_j\rho_j(||x-\mu_j||)
+
+where N is a number of neurons in the hidden layer, \mu_j  and a_j are the center and weight of neuron j. The activation function \rho_j(||x-\mu_j||) at the HyperBF network takes the following form
+
+\rho_j(||x-\mu_j||)=e^{(x-\mu_j)^T R_j(x-\mu_j)}
+
+where R_j is a positive definite d\times d matrix. Depending on the application, the following types of matrices R_j are usually considered
+
+R_j=\frac{1}{2\sigma^2}\mathbb{I}_{d\times d}, where \sigma>0. This case corresponds to the regular RBF network.
+
+R_j=\frac{1}{2\sigma_j^2}\mathbb{I}_{d\times d}, where \sigma_j>0. In this case, the basis functions are radially symmetric, but are scaled with different width.
+
+R_j=diag\left(\frac{1}{2\sigma_{j1}^2},...,\frac{1}{2\sigma_{jz}^2}\right)\mathbb{I}_{d\times d}, where \sigma_{ji}>0. Every neuron has an elliptic shape with a varying size.
+
+Positive definite matrix, but not diagonal.
+
+Training
+
+Training HyperBF networks involves estimation of weights a_j, shape and centers of neurons R_j and \mu_j. Poggio and Girosi (1990) describe the training method with moving centers and adaptable neuron shapes. The outline of the method is provided below.
+
+Consider the quadratic loss of the network H[\phi^*]=\sum_{i=1}^{N}(y_i-\phi^* (x_i))^2.  The following conditions must be satisfied at the optimum:
+
+\frac{\partial H(\phi^*)}{\partial a_j}=0     , \frac{\partial H(\phi^*)}{\partial \mu_j}=0     , \frac{\partial H(\phi^*)}{\partial W}=0
+
+where R_j=W^TW. Then in the gradient descent method the values of a_j, \mu_j, W that minimize H[\phi^*] can be found as a stable fixed point of the following dynamic system:
+
+\dot{a_j}=-\omega\frac{\partial H(\phi^*)}{\partial a_j}, \dot{\mu_j}=-\omega\frac{\partial H(\phi^*)}{\partial \mu_j}     , \dot{W}=-\omega\frac{\partial H(\phi^*)}{\partial W}
+
+where \omega determines the rate of convergence.
+
+Overall, training HyperBF networks can be computationally challenging. Moreover, the high degree of freedom of HyperBF leads to overfitting and poor generalization. However, HyperBF networks have an important advantage that a small number of neurons is enough for learning complex functions.
+
+References
+
+Category:Artificial neural networks
+
+Category:Classification algorithms
+
+Category:Machine learning algorithms

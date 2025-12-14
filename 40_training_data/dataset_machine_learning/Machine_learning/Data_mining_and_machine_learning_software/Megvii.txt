@@ -1,0 +1,79 @@
+{{Infobox company
+
+name = Megvii Technology Limited
+
+logo = Megvii logo.png
+
+native_name = 旷视
+
+native_name_lang = zh
+
+type = Privately held
+
+industry = Technology
+
+genre = Artificial intelligence
+
+founded =
+
+founders =
+
+hq_location = Beijing, China
+
+hq_location_city =
+
+hq_location_country =
+
+num_locations =
+
+key_people =
+
+products =
+
+brands =
+
+services =
+
+equity = USD $4 billion (2019)
+
+num_employees = 2,349 (2019)
+
+website =
+
+}}
+
+Megvii () is a Chinese technology company that designs image recognition and deep-learning software. Based in Beijing, the company develops artificial intelligence (AI) technology for businesses and for the public sector.
+
+Megvii is the largest provider of third-party authentication software in the world, and its product, Face++, is the world's largest computer vision platform. In 2019, the company was valued at $USD 4 billion.  It was started by Yin Qi and two college friends.
+
+The company's core product, Face++, launched in 2012 as the first online facial recognition platform in China. In 2015 Megvii created Brain++, a deep-learning engine to help train its algorithms. Megvii raised $100 million in 2016, and $750 million in May 2019.
+
+In 2017, Megvii marketed authentication and computational photography functions to smart phone companies and mobile application developers, then smart logistics. Megvii's AI-empowered products include personal IoT, city IoT and supply chain IoT. In 2017 and 2018,
+
+By June 2019, Megvii had 2,349 employees, and was valued at over $4 billion,
+
+As of 2024, Megvii operates the world's largest computer vision research institute.
+
+US sanctions
+
+Megvii was sanctioned by the US government, and placed on the United States Bureau of Industry and Security's Entity List on October 9, 2019, due to the use of its technology for human rights abuses against Uyghurs in Xinjiang. In January 2024, the United States Department of Defense named Megvii on its list of "Chinese Military Companies Operating in the United States."
+
+Following US sanctions, GGV Capital announced its intention to divest from Megvii.
+
+References
+
+External links
+
+Category:Chinese brands
+
+Category:Chinese companies established in 2011
+
+Category:Chinese entities subject to U.S. Department of the Treasury sanctions
+
+Category:Data mining and machine learning software
+
+Category:Facial recognition software
+
+Category:Software companies based in Beijing
+
+Category:Mass surveillance in China

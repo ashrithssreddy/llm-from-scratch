@@ -1,0 +1,7 @@
+REDIRECT Special Interest Group on Knowledge Discovery and Data Mining
+
+{{Rcat shell|
+
+}}
+
+Category:Artificial intelligence conferences

@@ -1,0 +1,163 @@
+{{multiple image
+
+| direction = vertical
+
+| width    = 300
+
+| image1   = Intersection over Union - object detection bounding boxes.jpg
+
+| image2   = Intersection over Union - visual equation.png
+
+| image3   = Intersection over Union - poor, good and excellent score.png
+
+| footer   = Intersection over union as a similarity measure for object detection on images an important task in computer vision.
+
+}}
+
+The Jaccard index is a statistic used for gauging the similarity and diversity of sample sets.
+
+It is defined in general taking the ratio of two sizes (areas or volumes), the intersection size divided by the union size, also called intersection over union (IoU).
+
+It was developed by Grove Karl Gilbert in 1884 as his ratio of verification (v) and now is often called the critical success index in meteorology. It was later developed independently by Paul Jaccard, originally giving the French name  (coefficient of community), and independently formulated again by Taffee Tadashi Tanimoto.
+
+Jaccard similarity also applies to bags, i.e., multisets. This has a similar formula, but the symbols used represent bag intersection and bag sum (not union). The maximum value is 1/2.
+
+J(A, B) = \frac = \frac.
+
+The Jaccard distance, which measures dissimilarity between sample sets, is complementary to the Jaccard index and is obtained by subtracting the Jaccard index from 1 or, equivalently, by dividing the difference of the sizes of the union and the intersection of two sets by the size of the union:
+
+d_J(A, B) = 1 - J(A, B) = \frac.
+
+An alternative interpretation of the Jaccard distance is as the ratio of the size of the symmetric difference A \mathbin\triangle B = (A \cup B) - (A \cap B) to the union.
+
+Jaccard distance is commonly used to calculate an  matrix for clustering and multidimensional scaling  of n sample sets.
+
+This distance is a metric on the collection of all finite sets.
+
+There is also a version of the Jaccard distance for measures, including probability measures. If \mu is a measure on a measurable space X, then we define the Jaccard index by
+
+J_\mu(A, B) = \frac{\mu(A \cap B)}{\mu(A \cup B)},
+
+and the Jaccard distance by
+
+d_\mu(A, B) = 1 - J_\mu(A,B) = \frac{\mu(A \mathbin\triangle B)}{\mu(A \cup B)}.
+
+Care must be taken if \mu(A \cup B) = 0 or \infty, since these formulas are not well defined in these cases.
+
+The MinHash min-wise independent permutations locality sensitive hashing scheme may be used to efficiently compute an accurate estimate of the Jaccard similarity index of pairs of sets, where each set is represented by a constant-sized signature derived from the minimum values of a hash function.
+
+Similarity of asymmetric binary attributes
+
+Given two objects, A and B, each with n binary attributes, the Jaccard index is a useful measure of the overlap that A and B share with their attributes.  Each attribute of A and B can either be 0 or 1.  The total number of each combination of attributes for both A and B are specified as follows:
+
+M_{11} represents the total number of attributes where A and B both have a value of 1.
+
+M_{01} represents the total number of attributes where the attribute of A is 0 and the attribute of B is 1.
+
+M_{10} represents the total number of attributes where the attribute of A is 1 and the attribute of B is 0.
+
+M_{00} represents the total number of attributes where A and B both have a value of 0.
+
+Each attribute must fall into one of these four categories, meaning that
+
+M_{11} + M_{01} + M_{10} + M_{00} = n.
+
+The Jaccard similarity index, J, is given as
+
+J = {M_{11} \over M_{01} + M_{10} + M_{11}}.
+
+The Jaccard distance, dJ, is given as
+
+d_J = {M_{01} + M_{10} \over M_{01} + M_{10} + M_{11}} = 1 - J.
+
+Statistical inference can be made based on the Jaccard similarity index, and consequently related metrics. It has the following bounds against the Weighted Jaccard on probability vectors.
+
+J_\mathcal{W}(x,y) \leq J_\mathcal{P}(x,y) \leq \frac{2J_\mathcal{W}(x,y)}{1+J_\mathcal{W}(x,y)}
+
+Here the upper bound is the (weighted) Sørensen–Dice coefficient.
+
+The corresponding distance, 1 - J_\mathcal{P}(x,y), is a metric over probability distributions, and a pseudo-metric over non-negative vectors.
+
+The Probability Jaccard Index has a geometric interpretation as the area of an intersection of simplices. Every point on a unit k-simplex corresponds to a probability distribution on k+1 elements, because the unit k-simplex is the set of points in k+1 dimensions that sum to 1. To derive the Probability Jaccard Index geometrically, represent a probability distribution as the unit simplex divided into sub simplices according to the mass of each item. If you overlay two distributions represented in this way on top of each other, and intersect the simplices corresponding to each item, the area that remains is equal to the Probability Jaccard Index of the distributions.
+
+Optimality of the Probability Jaccard Index
+
+Consider the problem of constructing random variables such that they collide with each other as much as possible. That is, if X\sim x and Y\sim y, we would like to construct X and Y to maximize \Pr[X=Y]. If we look at just two distributions x,y in isolation, the highest \Pr[X=Y] we can achieve is given by 1 - \text{TV}(x,y) where \text{TV} is the Total Variation distance. However, suppose we weren't just concerned with maximizing that particular pair, suppose we would like to maximize the collision probability of any arbitrary pair. One could construct an infinite number of random variables one for each distribution x, and seek to maximize \Pr[X=Y] for all pairs x,y. In a fairly strong sense described below, the Probability Jaccard Index is an optimal way to align these random variables.
+
+For any sampling method G and discrete distributions x,y, if \Pr[G(x) =  G(y)] > J_\mathcal{P}(x,y) then for some z where J_\mathcal{P}(x,z)>J_\mathcal{P}(x,y) and J_\mathcal{P}(y,z)>J_\mathcal{P}(x,y), either \Pr[G(x) =  G(z)]  or \Pr[G(y) =  G(z)] . cite an IBM Technical Report as the seminal reference.
+
+In "A Computer Program for Classifying Plants", published in October 1960, a method of classification based on a similarity ratio, and a derived distance function, is given. It seems that this is  the most authoritative  source for the meaning of the terms "Tanimoto similarity" and "Tanimoto Distance". The similarity ratio is equivalent to Jaccard similarity, but the distance function is not the same as Jaccard distance.
+
+Tanimoto's definitions of similarity and distance
+
+In that paper, a "similarity ratio" is  given over bitmaps, where each bit of a fixed-size array represents the presence or absence of a characteristic in the plant being modelled. The definition of the ratio is the number of common bits, divided by the number of bits set (i.e. nonzero) in either sample.
+
+Presented in mathematical terms, if samples X and Y are bitmaps, X_i is the ith bit of X, and  \land , \lor  are bitwise and, or operators respectively, then the similarity ratio T_s is
+
+T_s(X,Y) =  \frac{\sum_i ( X_i \land Y_i)}{\sum_i ( X_i \lor Y_i)}
+
+If each sample is modelled instead as a set of attributes, this value is equal to the Jaccard index of the two sets. Jaccard is not cited in the paper, and it seems likely that the authors were not aware of it.
+
+Tanimoto goes on to define a "distance" based on this ratio, defined for bitmaps with non-zero similarity:
+
+T_d(X,Y) = -\log_2 ( T_s(X,Y) )
+
+This coefficient is, deliberately, not a distance metric. It is chosen to allow the possibility of two specimens, which are quite different from each other, to both be similar to a third. It is  easy to construct an example which disproves the property of triangle inequality.
+
+Other definitions of Tanimoto distance
+
+Tanimoto distance is often referred to, erroneously, as a synonym for Jaccard distance 1-T_s. This function is a proper distance metric. "Tanimoto Distance" is often stated as being a proper distance metric, probably because of its confusion with Jaccard distance.
+
+If Jaccard or Tanimoto similarity is expressed over a bit vector, then it can be written as
+
+f(A,B) =\frac{ A \cdot B}{\|A\|^2 +\|B\|^2 - A \cdot B}
+
+where the same calculation is expressed in terms of vector scalar product and magnitude. This representation relies on the fact that, for a bit vector (where the value of each dimension is either 0 or 1) then
+
+A \cdot B = \sum_i A_iB_i = \sum_i ( A_i \land B_i)
+
+and
+
+\|A\|^2 = \sum_i A_i^2 = \sum_i A_i.
+
+This is a potentially confusing representation, because the function as expressed over vectors is more general, unless its domain is explicitly restricted. Properties of  T_s  do not necessarily extend to f. In particular, the difference function 1-f does not preserve triangle inequality, and is not therefore a proper distance metric, whereas 1 - T_s  is.
+
+There is a real danger that the combination of "Tanimoto Distance" being defined using this formula, along with the statement "Tanimoto Distance is a proper distance metric" will lead to the false conclusion that the function 1-f is in fact a distance metric over vectors or multisets in general, whereas its use in similarity search or clustering algorithms may fail to produce correct results.
+
+Lipkus
+
+See also
+
+Overlap coefficient
+
+Simple matching coefficient
+
+Hamming distance
+
+Sørensen–Dice coefficient, which is equivalent: J=S/(2-S) and S=2J/(1+J) (J: Jaccard index, S: Sørensen–Dice coefficient)
+
+Tversky index
+
+Correlation
+
+Mutual information, a normalized metricated variant of which is an entropic Jaccard distance.
+
+References
+
+Further reading
+
+External links
+
+Introduction to Data Mining lecture notes from Tan, Steinbach, Kumar
+
+Kaggle Dstl Satellite Imagery Feature Detection - Evaluation
+
+Category:Index numbers
+
+Category:Measure theory
+
+Category:Clustering criteria
+
+Category:String metrics
+
+Category:Similarity measures

@@ -1,0 +1,163 @@
+{{Infobox scientist
+
+honorific_prefix  =
+
+name              = Vladimir Batagelj
+
+honorific_suffix  =
+
+native_name       =
+
+native_name_lang  =
+
+image             = Batagelj Vladimir.jpg
+
+image_size        =
+
+image_upright     = 1
+
+alt               =
+
+caption           =
+
+birth_name        =
+
+birth_date        =
+
+birth_place       =
+
+death_date        =
+
+death_place       =
+
+death_cause       =
+
+resting_place     =
+
+resting_place_coordinates =
+
+home_town         =
+
+other_names       =
+
+pronounce         =
+
+residence         =
+
+citizenship       =
+
+nationality       = Slovenian
+
+fields            = Mathematics
+
+workplaces        = University of Ljubljana
+
+patrons           =
+
+education         =
+
+alma_mater        =
+
+thesis_title      = Induktivni razredi grafov (Inductive classes of graphs)
+
+thesis_url        =
+
+thesis_year       = 1986
+
+doctoral_advisor  = Tomaž Pisanski
+
+academic_advisors =
+
+doctoral_students = Jernej BodlajMatevž BrenKristijan BreznikMonika CerinšekNataša KejžarSelena PraprotnikMatjaž Zaveršnik
+
+notable_students  =
+
+known_for         = Pajek
+
+influences        =
+
+influenced        =
+
+awards            =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+spouse            =
+
+partner           =
+
+children          =
+
+signature         =
+
+signature_alt     =
+
+website           = http://vlado.fmf.uni-lj.si
+
+footnotes         =
+
+}}
+
+Vladimir Batagelj (born June 14, 1948 in Idrija, Yugoslavia) is a Slovenian mathematician and an emeritus professor of mathematics at the University of Ljubljana.  He is known for his work in discrete mathematics and combinatorial optimization, particularly analysis of social networks and other large networks (blockmodeling).
+
+Education and career
+
+Vladimir Batagelj completed his Ph.D. at the University of Ljubljana in 1986 under the direction of Tomaž Pisanski.
+
+He stayed at the University of Ljubljana as a professor until his retirement, where he was a professor of sociology and statistics, while also being a chair of the Department of Sociology of the Faculty of Social Sciences. As visiting professor, he was taught at the University of Pittsburgh (1990-91) and at the University of Konstanz (2002). He was also a member of editorial boards of two journals: Informatica and Journal of Social Structure.
+
+His work has been cited over 11000 times.
+
+His book Exploratory Social Network Analysis with Pajek on blockmodeling, coauthored with Wouter de Nooy and Andrej Mrvar, is Batagelj's most cited work and has over 3300 citations. The book was translated into Chinese and Japanese. The revised and expanded third edition has been published by Cambridge University Press.
+
+In 1975, 11 years before completing his PhD, Batagelj published a solo paper in Communications of the ACM.
+
+Batagelj has advised 9 Ph.D. students.
+
+Pajek
+
+Batagelj is particularly known for his work on Pajek, a freely available software for analysis and visualization of large networks.
+
+In 2007 the book Generalized blockmodeling was awarded the Harrison White Outstanding Book Award by the Mathematical Sociology Section of American Sociological Association
+
+In 2007 he was awarded (together with Anuška Ferligoj) the Simmel Award by INSNA.
+
+In 2013, Vladimir Batagelj and Andrej Mrvar received the INSNA's William D. Richards Software award for their work on Pajek.
+
+Selected bibliography
+
+Vladimir Batagelj, Social Network Analysis, Large-Scale in R.A. Meyers, ed., Encyclopedia of Complexity and Systems Science, Springer 2009: 8245–8265.
+
+Vladimir Batagelj, Complex Networks, Visualization of [https://doi.org/10.1007%2F978-0-387-30440-3_84. in R.A. Meyers, ed., Encyclopedia of Complexity and Systems Science, Springer 2009: 1253–1268.
+
+Wouter de Nooy, Andrej Mrvar, Vladimir Batagelj, Mark Granovetter (Series Editor), Exploratory Social Network Analysis with Pajek (Structural Analysis in the Social Sciences), Cambridge University Press 2005 ().  ESNA in Japanese,  TDU, 2010.
+
+Patrick Doreian, Vladimir Batagelj, Anuška Ferligoj, Mark Granovetter (Series Editor), Generalized Blockmodeling (Structural Analysis in the Social Sciences), Cambridge University Press 2004 ()
+
+References
+
+External links
+
+ResearcherId: B-9105-2008
+
+Category:1948 births
+
+Category:Living people
+
+Category:21st-century Slovenian mathematicians
+
+Category:20th-century Slovenian mathematicians
+
+Category:Academic staff of the University of Ljubljana
+
+Category:People from Idrija
+
+Category:Network scientists
+
+Category:Blockmodeling
+
+Category:Slovenian statisticians
+
+Category:Yugoslav mathematicians

@@ -1,0 +1,249 @@
+In artificial neural networks, the activation function of a node is a function that calculates the output of the node based on its individual inputs and their weights. Nontrivial problems can be solved using only a few nodes if the activation function is nonlinear.
+
+Modern activation functions include the logistic (sigmoid) function used in the 2012 speech recognition model developed by Hinton et al; the ReLU used in the 2012 AlexNet computer vision model and in the 2015 ResNet model; and the smooth version of the ReLU, the GELU, which was used in the 2018 BERT model.
+
+Comparison of activation functions
+
+Aside from their empirical performance, activation functions also have different mathematical properties:
+
+Nonlinear: When the activation function is non-linear, then a two-layer neural network can be proven to be a universal function approximator. This is known as the Universal Approximation Theorem. The identity activation function does not satisfy this property. When multiple layers use the identity activation function, the entire network is equivalent to a single-layer model.
+
+Range: When the range of the activation function is finite, gradient-based training methods tend to be more stable, because pattern presentations significantly affect only limited weights. When the range is infinite, training is generally more efficient because pattern presentations significantly affect most of the weights. In the latter case, smaller learning rates are typically necessary.
+
+Continuously differentiable: This property is desirable for enabling gradient-based optimization methods (ReLU is not continuously differentiable and has some issues with gradient-based optimization, but it is still possible). The binary step activation function is not differentiable at 0, and it differentiates to 0 for all other values, so gradient-based methods can make no progress with it.
+
+These properties do not decisively influence performance, nor are they the only mathematical properties that may be useful. For instance, the strictly positive range of the softplus makes it suitable for predicting variances in variational autoencoders.
+
+Mathematical details
+
+The most common activation functions can be divided into three categories: ridge functions, radial functions and fold functions.
+
+An activation function f is saturating if \lim_
+
+\frac{1}{(1+|x|)^2}
+
+(-1, 1)
+
+C^1
+
+-
+
+Rectified linear unit (ReLU)
+
+\begin{align}
+
+(x)^+ \doteq {}   &\begin{cases}
+
+0 & \text{if } x \le 0\\
+
+x & \text{if } x > 0
+
+\end{cases} \\
+
+= {} &\max(0,x) = x \textbf{1}_{x>0}
+
+\end{align}
+
+\begin{cases}
+
+0 & \text{if } x  0
+
+\end{cases}
+
+[0,\infty)
+
+C^0
+
+-
+
+Gaussian Error Linear Unit (GELU)
+
+\ln\left(1 + e^x\right)
+
+\frac{1}{1 + e^{-x}}
+
+(0,\infty)
+
+C^\infty
+
+-
+
+Exponential linear unit (ELU)
+
+\begin{cases}
+
+\alpha\left(e^x - 1\right) & \text{if } x \le 0\\
+
+x & \text{if } x > 0
+
+\end{cases}
+
+with parameter \alpha
+
+\begin{cases}
+
+\alpha e^x & \text{if } x  0
+
+\end{cases}
+
+(-\alpha,\infty)
+
+\begin{cases}
+
+C^1 & \text{if } \alpha = 1 \\
+
+C^0 & \text{otherwise}
+
+\end{cases}
+
+-
+
+Scaled exponential linear unit (SELU)
+
+\lambda \begin{cases}
+
+\alpha(e^x - 1) & \text{if } x
+
+with parameters \lambda = 1.0507 and \alpha = 1.67326
+
+\lambda \begin{cases}
+
+\alpha e^x & \text{if } x
+
+(-\lambda\alpha,\infty)
+
+C^0
+
+-
+
+Leaky rectified linear unit (Leaky ReLU)
+
+\begin{cases}
+
+0.01x & \text{if } x \le 0\\
+
+x     & \text{if } x > 0
+
+\end{cases}
+
+\begin{cases}
+
+0.01 & \text{if } x  0
+
+\end{cases}
+
+(-\infty,\infty)
+
+C^0
+
+-
+
+Parametric rectified linear unit (PReLU)
+
+\begin{cases}
+
+\alpha x & \text{if } x
+
+with parameter \alpha
+
+\begin{cases}
+
+\alpha & \text{if } x
+
+(-\infty,\infty)
+
+C^0
+
+-
+
+Rectified Parametric Sigmoid Units (flexible, 5 parameters)
+
+\alpha (2x {1}_{ \{ x \geqslant \lambda \}  }  - g_{\lambda, \sigma, \mu, \beta}(x)) + (1-\alpha) g_{\lambda, \sigma, \mu, \beta}(x)
+
+where
+
+g_{\lambda, \sigma, \mu, \beta}(x) = \frac{ (x - \lambda) {1}_{ \{ x \geqslant \lambda \}  } }{ 1 + e^{-   \sgn(x-\mu)    \left( \frac{\vert x-\mu \vert}{\sigma} \right)^\beta    } }
+
+-
+
+(-\infty,+\infty)
+
+C^0
+
+-
+
+Sigmoid linear unit (SiLU, SiL, or Swish-1)
+
+\frac{x}{1 + e^{-x}}
+
+\frac{1 + e^{-x} + xe^{-x}}{\left(1 + e^{-x}\right)^2}
+
+[-0.278\ldots, \infty)
+
+C^\infty
+
+-
+
+Exponential Linear Sigmoid SquasHing (ELiSH)
+
+\begin{cases}
+
+\frac{e^x - 1}{1 + e^{-x}} & \text{if } x
+
+\begin{cases} \frac{2e^{2x}+e^{3x}-e^x}{e^{2x}+2e^x+1} & \text{if }x
+
+[-0.881\ldots, \infty)
+
+C^1
+
+-
+
+Gaussian
+
+e^{-x^2}
+
+-2xe^{-x^2}
+
+(0,1]
+
+C^\infty
+
+-
+
+Sinusoid
+
+\sin x
+
+\cos x
+
+[-1, 1]
+
+C^\infty
+
+}
+
+The following table lists activation functions that are not functions of a single fold  from the previous layer or layers:
+
+Here, \delta_{ij} is the Kronecker delta.
+
+For instance, j could be iterating through the number of kernels of the previous neural network layer while i iterates through the number of kernels of the current layer.
+
+Quantum activation functions
+
+In quantum neural networks programmed on gate-model quantum computers, based on quantum perceptrons instead of variational quantum circuits, the non-linearity of the activation function can be implemented with no need of measuring the output of each perceptron at each layer. The quantum properties loaded within the circuit such as superposition can be preserved by creating the Taylor series of the argument computed by the perceptron itself, with suitable quantum circuits computing the powers up to a wanted approximation degree. Because of the flexibility of such quantum circuits, they can be designed in order to approximate any arbitrary classical activation function.
+
+See also
+
+Logistic function
+
+Rectifier (neural networks)
+
+Stability (learning theory)
+
+Softmax function
+
+References
+
+Further reading
+
+Category:Artificial neural networks

@@ -1,0 +1,43 @@
+A stochastic grammar (statistical grammar) is a grammar framework with a probabilistic notion of grammaticality:
+
+Stochastic context-free grammar
+
+Statistical parsing
+
+Data-oriented parsing
+
+Hidden Markov model (or stochastic regular grammar)
+
+Estimation theory
+
+The grammar is realized as a language model. Allowed sentences are stored in a database together with the frequency how common a sentence is. Statistical natural language processing uses stochastic, probabilistic and statistical methods, especially to resolve difficulties that arise because longer sentences are highly ambiguous when processed with realistic grammars, yielding thousands or millions of possible analyses. Methods  for disambiguation often involve the use of corpora and Markov models.  "A probabilistic model consists of a non-probabilistic model plus some numerical quantities; it is not true that probabilistic models are inherently simpler or less structural than non-probabilistic models."
+
+Examples
+
+A probabilistic method for rhyme detection is implemented by Hirjee & Brown in their study in 2013 to find internal and imperfect rhyme pairs in rap lyrics.  The concept is adapted from a sequence alignment technique using BLOSUM (BLOcks SUbstitution Matrix).  They were able to detect rhymes undetectable by non-probabilistic models.
+
+See also
+
+Colorless green ideas sleep furiously
+
+Computational linguistics
+
+L-system#Stochastic grammars
+
+Stochastic context-free grammar
+
+Statistical language acquisition
+
+References
+
+Further reading
+
+Christopher D. Manning, Hinrich Schütze: Foundations of Statistical Natural Language Processing, MIT Press (1999), .
+
+Stefan Wermter, Ellen Riloff, Gabriele Scheler (eds.): Connectionist, Statistical and Symbolic Approaches to Learning for Natural Language Processing, Springer (1996), .
+
+Pirani, Giancarlo, ed. Advanced algorithms and architectures for speech understanding. Vol. 1. Springer Science & Business Media, 2013.
+
+Category:Grammar frameworks
+
+Category:Probabilistic models

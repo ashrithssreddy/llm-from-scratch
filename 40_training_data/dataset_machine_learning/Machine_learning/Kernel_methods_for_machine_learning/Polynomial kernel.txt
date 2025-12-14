@@ -1,0 +1,79 @@
+In machine learning, the polynomial kernel is a kernel function commonly used with support vector machines (SVMs) and other kernelized models, that represents the similarity of vectors (training samples) in a feature space over polynomials of the original variables, allowing learning of non-linear models.
+
+Intuitively, the polynomial kernel looks not only at the given features of input samples to determine their similarity, but also combinations of these. In the context of regression analysis, such combinations are known as interaction features. The (implicit) feature space of a polynomial kernel is equivalent to that of polynomial regression, but without the combinatorial blowup in the number of parameters to be learned. When the input features are binary-valued (booleans), then the features correspond to logical conjunctions of input features.
+
+Definition
+
+For degree- polynomials, the polynomial kernel is defined as
+
+K(\mathbf{x},\mathbf{y}) = (\mathbf{x}^\mathsf{T} \mathbf{y} + c)^{d}
+
+where  and  are vectors of size  in the input space, i.e. vectors of features computed from training or test samples and  is a free parameter trading off the influence of higher-order versus lower-order terms in the polynomial. When {{math|c  0}}, the kernel is called homogeneous. (A further generalized polykernel divides  by a user-specified scalar parameter .)
+
+As a kernel,  corresponds to an inner product in a feature space based on some mapping :
+
+K(\mathbf{x},\mathbf{y}) = \langle \varphi(\mathbf{x}), \varphi(\mathbf{y}) \rangle
+
+The nature of  can be seen from an example. Let {{math|d  2}}, so we get the special case of the quadratic kernel. After using the multinomial theorem (twice—the outermost application is the binomial theorem) and regrouping,
+
+K(\mathbf{x},\mathbf{y}) = \left(\sum_{i=1}^n x_i y_i + c\right)^2 =
+
+\sum_{i=1}^n \left(x_i^2\right) \left(y_i^2 \right) +
+
+\sum_{i=2}^n \sum_{j=1}^{i-1} \left( \sqrt{2} x_i x_j \right) \left( \sqrt{2} y_i y_j \right)
+
++ \sum_{i=1}^n \left( \sqrt{2c} x_i \right) \left( \sqrt{2c} y_i \right) + c^2
+
+From this it follows that the feature map is given by:
+
+\varphi(x) = \left( x_n^2, \ldots, x_1^2, \sqrt{2} x_n x_{n-1}, \ldots, \sqrt{2} x_n x_1, \sqrt{2} x_{n-1} x_{n-2}, \ldots, \sqrt{2} x_{n-1} x_{1}, \ldots, \sqrt{2} x_{2} x_{1}, \sqrt{2c} x_n, \ldots, \sqrt{2c} x_1, c \right)
+
+generalizing for \left(\mathbf{x}^{T}\mathbf{y} + c\right)^d,
+
+where \mathbf{x}\in\mathbb{R}^{n}, \mathbf{y}\in \mathbb{R}^{n} and applying the multinomial theorem:
+
+\begin{alignat}{2}
+
+\left(\mathbf{x}^{T}\mathbf{y} + c\right)^d & =
+
+\sum_{j_1+j_2+\dots +j_{n+1}=d}
+
+\frac{\sqrt{d!}}{\sqrt{j_1! \cdots j_n! j_{n+1}!}} x_1^{j_1}\cdots x_n^{j_n} \sqrt{c}^{j_{n+1}}
+
+\frac{\sqrt{d!}}{\sqrt{j_1! \cdots j_n! j_{n+1}!}} y_1^{j_1}\cdots y_n^{j_n} \sqrt{c}^{j_{n+1}}\\
+
+&=\varphi(\mathbf{x})^{T} \varphi(\mathbf{y})
+
+\end{alignat}
+
+The last summation has l_d=\tbinom {n+d}{d} elements, so that:
+
+\varphi(\mathbf{x})
+
+=
+
+\left(a_{1},\dots, a_{l},\dots,a_{l_d} \right )
+
+where l=(j_1,j_2,...,j_{n},j_{n+1}) and
+
+a_{l}=\frac{\sqrt{d!} }{\sqrt{j_1! \cdots j_n!j_{n+1}! }} x_1^{j_1}\cdots x_n^{j_n} \sqrt{c}^{j_{n+1}}\quad|\quad j_1+j_2+\dots+j_n +j_{n+1} = d
+
+Practical use
+
+Although the RBF kernel is more popular in SVM classification than the polynomial kernel, the latter is quite popular in natural language processing (NLP).
+
+The most common degree is {{math|d  2}} (quadratic), since larger degrees tend to overfit on NLP problems.
+
+Various ways of computing the polynomial kernel (both exact and approximate) have been devised as alternatives to the usual non-linear SVM training algorithms, including:
+
+full expansion of the kernel prior to training/testing with a linear SVM, i.e. full computation of the mapping  as in polynomial regression;
+
+basket mining (using a variant of the apriori algorithm) for the most commonly occurring feature conjunctions in a training set to produce an approximate expansion;
+
+inverted indexing of support vectors.
+
+One problem with the polynomial kernel is that it may suffer from numerical instability: when , {{math|K(x, y)  (xTy + c)d}} tends to zero with increasing , whereas when ,  tends to infinity.
+
+References
+
+Category:Kernel methods for machine learning

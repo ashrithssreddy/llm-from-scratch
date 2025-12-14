@@ -1,0 +1,129 @@
+{{Infobox company
+
+name              = RealSense
+
+logo              = Real-sense-logo-rgb.png
+
+logo_size         = 200px
+
+logo_alt          = RealSense company logo
+
+type              = Private
+
+industry          = Computer vision
+
+founded           =
+
+founder           = Intel
+
+key_people        = Nadav Orbach, Guy Halperin, Eyal Rond, Mike Nielsen, Fred Angelopolous, Mark Yahiro, Roy Cohen, Joel Hagberg
+
+hq_location_city  = Cupertino, California
+
+hq_location_country = United States
+
+products          = Depth cameras, vision processors, AI vision systems
+
+website           =
+
+}}
+
+RealSense is an American technology company that develops depth cameras and computer-vision systems used in robotics, access control, industrial automation and healthcare. The company’s stereoscopic 3D cameras and software are marketed as a perception platform for “physical AI”, particularly for humanoid robots and autonomous mobile robots (AMRs).
+
+RealSense was incubated for more than a decade inside Intel’s perceptual computing and depth-sensing group before being spun out as an independent company in July 2025 with a US$50&nbsp;million Series&nbsp;A round backed by a semiconductor-focused private equity firm and strategic investors including Intel Capital and the MediaTek Innovation Fund. Following the spin-out, RealSense announced a strategic collaboration with Nvidia to integrate its AI depth cameras with the Nvidia Jetson Thor robotics platform, the Isaac Sim simulation environment and the Holoscan Sensor Bridge for low-latency sensor fusion.
+
+In November 2025, Swiss access-solutions provider dormakaba acquired a minority stake in RealSense and formed a partnership to develop AI-powered biometric access-control and security systems for data centres, airports and other critical infrastructure.
+
+History
+
+Origins in Intel Perceptual Computing
+
+Intel began developing depth-sensing and perceptual-computing technologies in the early 2010s under the Perceptual Computing brand, with research spanning gesture control, facial recognition and eye-tracking systems. The work led to a series of 3D cameras and developer challenge programmes intended to stimulate software ecosystems for natural-user interfaces.
+
+In 2014 Intel rebranded the effort as Intel RealSense, positioning the technology as a family of depth cameras and vision processors for PCs, mobile devices and embedded systems. Early devices such as the F200 and R200 were integrated into laptops and tablets from OEMs including Asus, HP, Dell, Lenovo and Acer, and were also sold as standalone webcams by partners such as Razer and Creative.
+
+Refocus on robotics and near-closure
+
+By the late 2010s Intel had steered RealSense away from mainstream PC peripherals toward robotics, industrial and embedded applications, adding stereo and lidar-based depth cameras to the portfolio. In August 2021, trade publication CRN reported that Intel planned to wind down the RealSense business as part of a broader restructuring, raising questions about the future of the product line.
+
+Despite that announcement, Intel continued to invest in new custom silicon for depth cameras, and RealSense remained widely used in mobile robots and automation projects.
+
+Independent coverage described RealSense as serving more than 3,000 active customers and supplying depth cameras to a large share of global AMR and humanoid robot platforms. The company stated that it would continue to support the existing Intel RealSense product roadmap while accelerating development of AI-enabled cameras and perception software.
+
+Strategic partnerships and investments
+
+In October 2025 RealSense and Nvidia announced a strategic collaboration centered on integrating RealSense AI depth cameras with Nvidia’s Jetson Thor robotics compute modules, the Isaac Sim simulation environment and the Holoscan Sensor Bridge for multi-sensor streaming. The collaboration is positioned as enabling “physical AI” workloads such as whole-body humanoid control, real-time mapping and safety-critical human–robot interaction.
+
+On 19 November 2025, dormakaba announced that it had acquired a minority stake in RealSense and entered into a partnership to co-develop intelligent access-control solutions, including biometric gates for airports and enterprise facilities. These devices combine a RealSense Vision Processor from the D4 family with dual infrared imagers and, on some models, an RGB camera.
+
+Earlier generations of Intel RealSense cameras, including the F200, R200, SR300 and the L515 lidar camera, remain in use in niche and legacy applications but are no longer the focus of the independent company’s roadmap.
+
+Key features highlighted in technical coverage include:
+
+Power over Ethernet (PoE), allowing power and data to be delivered over a single cable and supporting both RJ45 and ruggedised M12 connections;
+
+an IP-rated enclosure designed for harsh indoor and outdoor environments;
+
+a built-in inertial measurement unit (IMU) to support simultaneous localisation and mapping (SLAM) and motion tracking;
+
+According to independent reporting, the D555 is used in AI-enabled embedded-vision applications in mobile robots and fixed industrial systems, and was among the first RealSense products to be tightly integrated with Nvidia’s Jetson Thor and Holoscan platforms for low-latency sensor fusion.
+
+Software and SDK
+
+RealSense cameras are supported by a cross-platform, open-source software stack historically branded as Intel RealSense SDK 2.0. The SDK provides device drivers, depth and point-cloud processing, tracking and calibration tools, and bindings for languages such as C++, Python and C#. The independent company has continued to maintain and extend the SDK for new hardware, including D555 and other Vision SoC V5-based devices, and publishes reference integrations for ROS&nbsp;2 and industrial-automation frameworks.
+
+Biometrics and access-control products
+
+In addition to general-purpose depth cameras, RealSense offers facial-authentication hardware and software, commonly referred to as RealSense ID, for biometric access control and identity verification. The dormakaba partnership announced in 2025 extends this portfolio to integrated biometric gates and sensor-equipped doors in airports and data centres. Later reporting on the spin-out has characterised the new company as part of a broader wave of investment in robotics and physical AI, with some analysts suggesting that RealSense’s installed base and patent portfolio give it an advantage as depth sensing becomes standard in industrial robots and autonomous systems.
+
+See also
+
+Intel RealSense
+
+Kinect
+
+OpenCV
+
+Computer vision
+
+Humanoid robot
+
+References
+
+https://www.reuters.com/business/realsense-spins-out-intel-secures-50-million-drive-ai-vision-robotics-2025-07-11/?utm_source=chatgpt.com "RealSense spins out from Intel, secures $50 million to drive AI vision in robotics"
+
+https://www.businesswire.com/news/home/20251008178223/en/RealSense-Spins-Out-from-Intel-Secures-%2450-Million-and-Announces-Strategic-Collaboration-With-NVIDIA-to-Accelerate-Physical-AI-and-Robotics?utm_source=chatgpt.com "RealSense Spins Out from Intel, Secures $50 Million and Announces ..."
+
+https://www.dormakabagroup.com/en/news/17b0f5e5-c174-4590-9f9c-ce9a8722eaf7/dormakaba-invests-in-realsense-in-the-us-to-strengthen-innovation-and-forms-partnership-to-advance-ai-powered-access-control-and-security-solutions?utm_source=chatgpt.com "dormakaba invests in RealSense in the US to strengthen innovation and ..."
+
+https://www.vision-systems.com/embedded/article/55303384/intel-completes-realsense-spinoff?utm_source=chatgpt.com "Intel Completes RealSense Spinoff | Vision Systems Design"
+
+External links
+
+Category:Computing input devices
+
+Category:Game controllers
+
+Category:Pointing devices
+
+Category:3D imaging
+
+Category:Devices capable of speech recognition
+
+Category:Infrared imaging
+
+Category:Applied machine learning
+
+Category:Computer vision software
+
+Category:C++ libraries
+
+Category:C Sharp libraries
+
+Category:2025 establishments in California
+
+Category:Technology companies based in California
+
+Category:American companies established in 2025
+
+Category:Privately held companies based in California

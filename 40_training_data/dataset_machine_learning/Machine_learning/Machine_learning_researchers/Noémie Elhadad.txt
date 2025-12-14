@@ -1,0 +1,45 @@
+Noémie Elhadad is an American data scientist who is an associate professor of biomedical informatics at the Columbia University Vagelos College of Physicians and Surgeons. As of 2022, she serves as the chair of the Department of Biomedical Informatics. Her research considers machine learning in bioinformatics, natural language processing and medicine.
+
+Early life and education
+
+Elhadad studied computer software engineering at École nationale supérieure d'électronique, informatique, télécommunications, mathématique et mécanique de Bordeaux (ENSEIRB). She completed her doctoral research at Columbia University. She was based in the Department of Computer Science, where she developed patient-focused text summaries of clinical literature.
+
+Research and career
+
+Elhadad joined the faculty at the City College of New York. In 2007 she joined the Department of Biomedical Informatics at Columbia University. She developed an artificial intelligence tool that supported patients in the NewYork-Presbyterian Hospital.
+
+Elhadad is interested in using data to advance women's health. She led the Citizen Endo Project that looks to comprehensively describe how patients experience endometriosis. It was built using principles of citizen science, using patient testimonials from focus groups in New York City and data aggregation. She created the app, Phendo, which asks patients about their experience of the disease. The name Phendo is a portmanteau of phenotyping endometriosis.
+
+Elhadad was announced as chair of the Department of Biomedical Informatics in December 2022.
+
+Selected publications
+
+Personal life
+
+Elhadad suffers from endometriosis.
+
+References
+
+Category:Living people
+
+Category:Year of birth missing (living people)
+
+Category:Columbia University faculty
+
+Category:Columbia School of Engineering and Applied Science alumni
+
+Category:American women data scientists
+
+Category:American data scientists
+
+Category:Machine learning researchers
+
+Category:Natural language processing researchers
+
+Category:French computer scientists
+
+Category:21st-century French women scientists
+
+Category:French bioinformaticians
+
+Category:Women bioinformaticians

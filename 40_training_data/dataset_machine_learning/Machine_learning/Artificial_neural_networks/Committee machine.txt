@@ -1,0 +1,33 @@
+A committee machine is a type of artificial neural network using a divide and conquer strategy in which the responses of multiple neural networks (experts) are combined into a single response.  The combined response of the committee machine is supposed to be superior to those of its constituent experts.  Compare with ensembles of classifiers.
+
+Types
+
+Static structures
+
+In this class of committee machines, the responses of several predictors (experts) are combined by means of a mechanism that does not involve the input signal, hence the designation static. This category includes  the following methods:
+
+Ensemble averaging
+
+In ensemble averaging, outputs of different predictors are linearly combined to produce an overall output.
+
+Boosting
+
+In boosting, a weak algorithm is converted into one that achieves arbitrarily high accuracy.
+
+Dynamic structures
+
+In this second class of committee machines, the input signal is directly involved in actuating the mechanism that integrates the outputs of the individual experts into an overall output, hence the designation dynamic. There are two kinds of dynamic structures:
+
+Mixture of experts
+
+In mixture of experts, the individual responses of the experts are non-linearly combined by means of a single gating network.
+
+Hierarchical mixture of experts
+
+In hierarchical mixture of experts, the individual responses of the individual experts are non-linearly combined by means of several gating networks arranged in a hierarchical fashion.
+
+References
+
+Category:Artificial neural networks
+
+Category:Learning

@@ -1,0 +1,97 @@
+{{Infobox scientist
+
+name = Karen Spärck Jones
+
+image = Karen Spärck.jpg
+
+caption = Spärck Jones in 2002
+
+honorific_suffix =
+
+birth_name = Karen Ida Boalth Spärck Jones
+
+birth_date =
+
+birth_place = Huddersfield, Yorkshire, England
+
+death_date =
+
+thesis_title = Synonymy and Semantic Classification
+
+thesis_url = https://dl.acm.org/doi/book/10.5555/22908
+
+thesis_year = 1964
+
+doctoral_students =
+
+prizes =
+
+spouse =
+
+website =
+
+}}
+
+Karen Ida Boalth Spärck Jones  (26 August 1935 – 4 April 2007) was a self-taught programmer and a pioneering British computer and information scientist responsible for the concept of inverse document frequency (IDF), a technology that underlies most modern search engines. She was an advocate for women in computer science, her slogan being, "Computing is too important to be left to men." In 2019, The New York Times published her belated obituary in its series Overlooked, calling her "a pioneer of computer science for work combining statistics and linguistics, and an advocate for women in the field." (IR) and natural language processing (NLP), the Karen Spärck Jones Award is awarded annually to a recipient for outstanding research in one or both of her fields.
+
+Early life and education
+
+Karen Ida Boalth Spärck Jones was born in Huddersfield, Yorkshire, England. Her parents were Alfred Owen Jones, a chemistry lecturer, and Ida Spärck, a Norwegian who worked for the Norwegian government while in exile in London during World War II.
+
+Spärck Jones was educated at a grammar school in Huddersfield and then from 1953 to 1956 at Girton College, Cambridge, studying history, with an additional final year in Moral Sciences (philosophy). While at Cambridge, Spärck Jones joined the organisation known as the Cambridge Language Research Unit (CLRU) and met the head of CLRU Margaret Masterman, who would inspire her to go into computer science. She briefly became a school teacher before moving into computer science. Spärck Jones married fellow Cambridge computer scientist Roger Needham in 1958. then at Cambridge University Computer Laboratory from 1974 until her retirement in 2002.
+
+From 1999, she held the post of Professor of Computers and Information.
+
+Spärck Jones' main research interests, since the late 1950s, were natural language processing and information retrieval.  In 1964, Spärck Jones published "Synonymy and Semantic Classification", which is now seen as a foundational paper in the field of natural language processing. One of her most important contributions was the concept of inverse document frequency (IDF) weighting in information retrieval, which she introduced in a 1972 paper. IDF is used in most search engines today, usually as part of the term frequency–inverse document frequency (TF–IDF) weighting scheme.  In the 1980s, Spärck Jones began her work on early speech recognition systems. In 1982 she became involved in the Alvey Programme
+
+Elected a Fellow of Association for the Advancement of Artificial Intelligence (AAAI) in 1993
+
+President of the Association for Computational Linguistics (ACL) in 1994
+
+Fellow of European Association for Artificial Intelligence (ECCAI)
+
+ACM - AAAI Allen Newell Award (2006)
+
+In August 2017, the University of Huddersfield renamed one of its campus buildings in her honour. Formerly known as Canalside West, the Spärck Jones building houses the University's School of Computing and Engineering.
+
+References
+
+Category:1935 births
+
+Category:2007 deaths
+
+Category:20th-century English women scientists
+
+Category:Alumni of Girton College, Cambridge
+
+Category:British artificial intelligence researchers
+
+Category:British women computer scientists
+
+Category:Deaths from cancer in England
+
+Category:English computer scientists
+
+Category:English people of Norwegian descent
+
+Category:Fellows of the British Academy
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Fellows of Newnham College, Cambridge
+
+Category:Fellows of Wolfson College, Cambridge
+
+Category:Information retrieval researchers
+
+Category:Members of the University of Cambridge Computer Laboratory
+
+Category:Natural language processing researchers
+
+Category:People from Huddersfield
+
+Category:People from South Cambridgeshire District
+
+Category:Presidents of the Association for Computational Linguistics
+
+Category:Scientists from West Yorkshire

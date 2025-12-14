@@ -1,0 +1,81 @@
+{{Infobox scientist
+
+name              = Simon Godsill
+
+image             =
+
+image_size        =
+
+caption           =
+
+work_institutions = University of Cambridge
+
+birth_name        = Simon John Godsill
+
+birth_date        =
+
+birth_place       =
+
+nationality       =
+
+known_for         =
+
+field             =
+
+alma_mater        = University of Cambridge (MA 1988, PhD 1993)
+
+thesis_title      = The Restoration of Degraded Audio Signals
+
+thesis_year       = 1993
+
+thesis_url        = https://idiscover.lib.cam.ac.uk/permalink/f/t9gok8/44CAM_ALMA21432435370003606
+
+doctoral_students =
+
+doctoral_advisor  = Peter J. W. Rayner
+
+awards            =
+
+website           =
+
+prizes            =
+
+}}
+
+Simon John Godsill (born 2 December 1965) is professor of statistical signal processing at the University of Cambridge, and a professorial fellow at Corpus Christi College. He is also a member of the Centre for Science and Policy. His main area of research is Bayesian statistics and stochastic sampling methodologies, particularly particle filtering.
+
+Education
+
+Godsill obtained both undergraduate and Ph.D. degrees from the Department of Engineering at Cambridge University, whilst a member of Selwyn College. He obtained a first class degree in the Electrical and Information Sciences Tripos. The title of his 1993 Ph.D. thesis was "The Restoration of Degraded Audio Signals" and his Ph.D. supervisor was Peter Rayner, whom he shared with Michael Richard Lynch.
+
+Career
+
+Godsill has published over 250 articles in peer reviewed journals, along with the books Digital audio restoration: a statistical model based approach and Compressed sensing & sparse filtering.
+
+Business interests
+
+Godsill is currently a director of CEDAR Audio Ltd, a Cambridge-based company that applies Bayesian mathematics for purposes of noise reduction in audio data. In February 2005, the company received a Sci-Tech Academy Award (a 'Technical Oscar') for its services to the movie industry, and a stream of innovations appeared over the following years with corresponding recognition including induction into the Audio Technology Hall of Fame (2008), a Cinema Audio Society Award (2009). Godsill is also a director at Input Dynamics Ltd, a Cambridge-based company that applies Bayesian techniques to touch screen technology. Godsill is involved with the research effort at BMLL Technologies, a Cambridge spin-off working in the field of machine learning application in the financial sector.
+
+References
+
+Category:1965 births
+
+Category:Living people
+
+Category:British statisticians
+
+Category:Bayesian statisticians
+
+Category:Engineering professors at the University of Cambridge
+
+Category:Alumni of Sidney Sussex College, Cambridge
+
+Category:Members of the University of Cambridge Department of Engineering
+
+Category:Machine learning researchers
+
+Category:Fellows of Corpus Christi College, Cambridge
+
+Category:Fellows of the IEEE
+
+Category:Fellows of the Institution of Engineering and Technology

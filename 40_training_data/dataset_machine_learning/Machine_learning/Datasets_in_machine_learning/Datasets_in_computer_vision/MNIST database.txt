@@ -1,0 +1,57 @@
+The MNIST database (Modified National Institute of Standards and Technology database) is a large database of handwritten digits that is commonly used for training various image processing systems. The database is also widely used for training and testing in the field of machine learning. It was created by "re-mixing" the samples from NIST's original datasets. The creators felt that since NIST's training dataset was taken from American Census Bureau employees, while the testing dataset was taken from American high school students, it was not well-suited for machine learning experiments. Furthermore, the black and white images from NIST were normalized to fit into a 28x28 pixel bounding box and anti-aliased, which introduced grayscale levels. Half of the training set and half of the test set were taken from NIST's training dataset, while the other half of the training set and the other half of the test set were taken from NIST's testing dataset. The original creators of the database keep a list of some of the methods tested on it.
+
+The original MNIST dataset contains at least 4 wrong labels.
+
+History
+
+USPS database
+
+In 1988, a dataset of digits from the US Postal Service was constructed. It contained 16×16 grayscale images digitized from handwritten zip codes that appeared on U.S. mail passing through the Buffalo, New York post office. The training set had 7291 images, and test set had 2007, making a total of 9298. Both training and test set contained ambiguous, unclassifiable, and misclassified data. The dataset was used to train and benchmark the 1989 LeNet.
+
+The task is rather difficult. On the test set, two humans made errors at an average rate of 2.5%. Several years of work resulted in several "Special Databases" and benchmarks. Of particular importance to MNIST are Special Database 1 (SD-1), released in May 1990, Special Database 3 (SD-3), released in February 1992, and Special Database 7 (SD-7), or NIST Test Data 1 (TD-1), released in April 1992. They were released on ISO-9660 CD-ROMs.
+
+SD-3 was much cleaner and easier to recognize than images in SD-7. It was suspected that SD-3 was produced by people more motivated than those who produced SD-7. Also, the character segmenter for SD-3 was an older design than that of SD-7, and failed more often. It was suspected that the harder instances were filtered out of the construction of SD-3, since the hard instances failed to even pass the segmenter.
+
+SD-19 was published in 1995, as a compilation of SD-1, SD-3, SD-7 and some further data. It contained 814,255 binary images of alphanumericals and binary images of 4169 HSFs, including those 500 HSFs that were used to generate SD-7. It was updated in 2016.
+
+The training set and the test set both originally had 60k samples, but 50k of the test set samples were discarded, and only the samples indexed 24476 to 34475 were used, giving just 10k samples in the test set.
+
+Further versions
+
+In 2019, the full 60k test set from MNIST was restored to construct the QMNIST, which has 60k images in the training set and 60k in the test set. MNIST included images only of handwritten digits.  EMNIST was constructed from all the images from SD-19, converted into the same 28x28 pixel format, by the same process, as were the MNIST images. Accordingly, tools which work with MNIST would likely work unmodified with EMNIST.
+
+Fashion MNIST was created in 2017 as a more challenging alternative for MNIST. The dataset consists of 70,000 28x28 grayscale images of fashion products from 10 categories.
+
+Performance
+
+Some researchers have achieved "near-human performance" on the MNIST database, using a committee of neural networks; in the same paper, the authors achieve performance double that of humans on other recognition tasks. The highest error rate listed
+
+Some studies have used Data Augmentation to increase the training data set size and thereby performance. The systems in these cases are usually neural networks and the distortions used tend to be either affine distortions or elastic distortions.
+
+In 2011, an error rate of 0.27 percent, improving on the previous best result, was reported by researchers using a similar system of neural networks. In 2013, an approach based on regularization of neural networks using DropConnect has been claimed to achieve a 0.21 percent error rate. In 2016, the single convolutional neural network best performance was 0.25 percent error rate. As of August 2018, the best performance of a single convolutional neural network trained on MNIST training data using no data augmentation is 0.25 percent error rate. Also, the Parallel Computing Center (Khmelnytskyi, Ukraine) obtained an ensemble of only 5 convolutional neural networks which performs on MNIST at 0.21 percent error rate.
+
+Classifiers
+
+This is a table of some of the machine learning methods used on the dataset and their error rates, by type of classifier:
+
+See also
+
+List of datasets for machine learning research
+
+Caltech 101
+
+LabelMe
+
+OCR
+
+References
+
+Further reading
+
+{{cite book |last1=Ciresan |first1=Dan |first2=Ueli |last2=Meier |first3=Jürgen |last3=Schmidhuber |chapter=Multi-column deep neural networks for image classification |title=2012 IEEE Conference on Computer Vision and Pattern Recognition |date=June 2012 |pages=36423649 |chapter-url=http://repository.supsi.ch/5145/1/IDSIA-04-12.pdf |doi=10.1109/CVPR.2012.6248110 |arxiv=1202.2745 |access-date=2013-12-09 |isbn=9781467312264 |oclc=812295155 |publisher=Institute of Electrical and Electronics Engineers |location=New York, NY|citeseerx=10.1.1.300.3283 |s2cid=2161592}}
+
+External links
+
+Visualization of the MNIST database groups of images of MNIST handwritten digits on GitHub
+
+Category:Datasets in computer vision

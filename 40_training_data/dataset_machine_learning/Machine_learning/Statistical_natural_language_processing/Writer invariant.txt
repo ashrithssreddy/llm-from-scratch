@@ -1,0 +1,13 @@
+Writer invariant, also called authorial invariant or author's invariant, is a property of a text which is invariant of its author, that is, it will be similar in all texts of a given author and different in texts of different authors. It can be used to find plagiarism or discover who is real author of anonymously published text. Writer invariant is also an author's pattern of writing a letter in handwritten text recognition.
+
+While it is generally recognised that writer invariants exist, it is not agreed what properties of a text should be used. Among the first ones used was distribution of word lengths;
+
+See also
+
+Stylometry
+
+Writeprint
+
+References
+
+Category:Statistical natural language processing

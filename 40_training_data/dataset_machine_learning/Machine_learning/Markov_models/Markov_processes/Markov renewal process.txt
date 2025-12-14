@@ -1,0 +1,55 @@
+{{Multiple issues|
+
+}}
+
+Markov renewal processes are a class of random processes in probability and statistics that generalize the class of Markov jump processes. Other classes of random processes, such as Markov chains and Poisson processes, can be derived as special cases among the class of Markov renewal processes, while Markov renewal processes are special cases among the more general class of renewal processes.
+
+Definition
+
+In the context of a jump process that takes states in a state space \mathrm{S}, consider the set of random variables (X_n,T_n), where T_n represents the jump times and X_n represents the associated states in the sequence of states (see Figure). Let the sequence of inter-arrival times \tau_n=T_n-T_{n-1}. In order for the sequence (X_n,T_n) to be considered a Markov renewal process the following condition should hold:
+
+\begin{align}
+
+& \Pr(\tau_{n+1}\le t, X_{n+1}=j\mid(X_0, T_0), (X_1, T_1),\ldots, (X_n=i, T_n)) \\[5pt]
+
+= {} & \Pr(\tau_{n+1}\le t, X_{n+1}=j\mid X_n=i)\, \forall n \ge1,t\ge0, i,j \in \mathrm{S}
+
+\end{align}
+
+Relation to other stochastic processes
+
+Let X_n and T_n be as defined in the previous statement. Defining a new stochastic process Y_t:=X_n for t \in [T_n,T_{n+1}), then the process Y_t is called a semi-Markov process as it happens in a continuous-time Markov chain. The process is Markovian only at the specified jump instants, justifying the name semi-Markov. (See also: hidden semi-Markov model.)
+
+A semi-Markov process (defined in the above bullet point) in which all the holding times are exponentially distributed is called a continuous-time Markov chain. In other words, if the inter-arrival times are exponentially distributed and if the waiting time in a state and the next state reached are independent, we have a continuous-time Markov chain.
+
+\begin{align}
+
+& \Pr(\tau_{n+1}\le t, X_{n+1}=j\mid(X_0, T_0), (X_1, T_1),\ldots, (X_n=i, T_n)) \\[3pt]
+
+= {} & \Pr(\tau_{n+1}\le t, X_{n+1}=j\mid X_n=i) \\[3pt]
+
+= {} & \Pr(X_{n+1}=j\mid X_n=i)(1-e^{-\lambda_i t}), \text{ for all } n \ge1,t\ge0, i,j \in \mathrm{S}, i \ne j
+
+\end{align}
+
+The sequence X_n in the Markov renewal process is a discrete-time Markov chain. In other words, if the time variables are ignored in the Markov renewal process equation, we end up with a discrete-time Markov chain.
+
+\Pr(X_{n+1}=j\mid X_0, X_1, \ldots, X_n=i)=\Pr(X_{n+1}=j\mid X_n=i)\, \forall n \ge1, i,j \in \mathrm{S}
+
+If the sequence of \taus is independent and identically distributed, and if their distribution does not depend on the state X_n, then the process is a renewal. So, if the states are ignored and we have a chain of iid times, then we have a renewal process.
+
+\Pr(\tau_{n+1}\le t\mid T_0, T_1, \ldots, T_n)=\Pr(\tau_{n+1}\le t)\, \forall n \ge1, \forall t\ge0
+
+See also
+
+Markov process
+
+Renewal theory
+
+Variable-order Markov model
+
+Hidden semi-Markov model
+
+References
+
+Category:Markov processes

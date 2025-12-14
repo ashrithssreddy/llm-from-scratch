@@ -1,0 +1,111 @@
+In decision tree learning, ID3 (Iterative Dichotomiser 3) is an algorithm invented by Ross Quinlan used to generate a decision tree from a dataset. ID3 is the precursor to the C4.5 algorithm, and is typically used in the machine learning and natural language processing domains.
+
+Algorithm
+
+The ID3 algorithm begins with the original set S as the root node. On each iteration of the algorithm, it iterates through every unused attribute of the set S and calculates the entropy \Eta{(S)} or the information gain IG(S) of that attribute. It then selects the attribute which has the smallest entropy (or largest information gain) value. The set S is then split or partitioned by the selected attribute to produce subsets of the data. (For example, a node can be split into child nodes based upon the subsets of the population whose ages are less than 50, between 50 and 100, and greater than 100.) The algorithm continues to recurse on each subset, considering only attributes never selected before.
+
+Recursion on a subset may stop in one of these cases:
+
+every element in the subset belongs to the same class; in which case the node is turned into a leaf node and labelled with the class of the examples.
+
+there are no more attributes to be selected, but the examples still do not belong to the same class. In this case, the node is made a leaf node and labelled with the most common class of the examples in the subset.
+
+there are no examples in the subset, which happens when no example in the parent set was found to match a specific value of the selected attribute.  An example could be the absence of a person among the population with age over 100 years. Then a leaf node is created and labelled with the most common class of the examples in the parent node's set.
+
+Throughout the algorithm, the decision tree is constructed with each non-terminal node (internal node) representing the selected attribute on which the data was split, and terminal nodes (leaf nodes) representing the class label of the final subset of this branch.
+
+Summary
+
+Calculate the entropy of every attribute a of the data set S.
+
+Partition ("split") the set S into subsets using the attribute for which the resulting entropy after splitting is minimized; or, equivalently, information gain is maximum.
+
+Make a decision tree node containing that attribute.
+
+Recurse on subsets using the remaining attributes.
+
+Properties
+
+ID3 does not guarantee an optimal solution. It can converge upon local optima. It uses a greedy strategy by selecting the locally best attribute to split the dataset on each iteration.  The algorithm's optimality can be improved by using backtracking during the search for the optimal decision tree at the cost of possibly taking longer.
+
+ID3 can overfit the training data. To avoid overfitting, smaller decision trees should be preferred over larger ones.  This algorithm usually produces small trees, but it does not always produce the smallest possible decision tree.
+
+ID3 is harder to use on continuous data than on factored data (factored data has a discrete number of possible values, thus reducing the possible branch points).  If the values of any given attribute are continuous, then there are many more places to split the data on this attribute, and searching for the best value to split by can be time-consuming.
+
+Usage
+
+The ID3 algorithm is used by training on a data set S to produce a decision tree which is stored in memory.  At runtime, this decision tree is used to classify new test cases (feature vectors) by traversing the decision tree using the features of the datum to arrive at a leaf node.
+
+The ID3 metrics
+
+Entropy
+
+Entropy \Eta{(S)} is a measure of the amount of uncertainty in the (data) set S (i.e. entropy characterizes the (data) set S).
+
+\Eta{(S)} = \sum_{x \in X}{-p(x) \log_{2}p(x)}
+
+Where,
+
+S – The current dataset for which entropy is being calculated
+
+This changes at each step of the ID3 algorithm, either to a subset of the previous set in the case of splitting on an attribute or to a "sibling" partition of the parent in case the recursion terminated previously.
+
+X – The set of classes in S
+
+p(x) – The proportion of the number of elements in class x to the number of elements in set S
+
+When \Eta{(S)} = 0, the set S is perfectly classified (i.e. all elements in S are of the same class).
+
+In ID3, entropy is calculated for each remaining attribute.  The attribute with the smallest entropy is used to split the set S on this iteration.  Entropy in information theory measures how much information is expected to be gained upon measuring a random variable; as such, it can also be used to quantify the amount to which the distribution of the quantity's values is unknown.  A constant quantity has zero entropy, as its distribution is perfectly known.  In contrast, a uniformly distributed random variable (discretely or continuously uniform) maximizes entropy.  Therefore, the greater the entropy at a node, the less information is known about the classification of data at this stage of the tree; and therefore, the greater the potential to improve the classification here.
+
+As such, ID3 is a greedy heuristic performing a best-first search for locally optimal entropy values. Its accuracy can be improved by preprocessing the data.
+
+Information gain
+
+Information gain IG(A) is the measure of the difference in entropy from before to after the set S is split on an attribute A. In other words, how much uncertainty in S was reduced after splitting set S on attribute A.
+
+IG(S, A) = \Eta{(S)} - \sum_{t \in T} p(t)\Eta{(t)}
+
+= \Eta{(S)} - \Eta{(S|A)}.
+
+Where,
+
+\Eta(S) – Entropy of set S
+
+T – The subsets created from splitting set S by attribute A such that S = \bigcup_{t \in T} t
+
+p(t) – The proportion of the number of elements in t to the number of elements in set S
+
+\Eta(t) – Entropy of subset t
+
+In ID3, information gain can be calculated (instead of entropy) for each remaining attribute. The attribute with the largest information gain is used to split the set S on this iteration.
+
+See also
+
+Classification and regression tree (CART)
+
+C4.5 algorithm
+
+Decision tree learning
+
+Decision tree model
+
+References
+
+Further reading
+
+External links
+
+Seminars – http://www2.cs.uregina.ca/
+
+Description and examples – http://www.cise.ufl.edu/
+
+Description and examples – http://www.cis.temple.edu/
+
+Decision Trees and Political Party Classification
+
+Category:Decision trees
+
+Category:Classification algorithms
+
+Category:Articles with example pseudocode

@@ -1,0 +1,87 @@
+{{Infobox software
+
+name = Neural Network Exchange Format (NNEF)
+
+logo = NNEF logo.svg
+
+logo size = 200px
+
+author =
+
+developer = Khronos Group
+
+latest_release_version = 1.0.5
+
+latest_release_date =
+
+programming_language =
+
+operating_system = Cross-platform
+
+platform = Cross-platform
+
+genre = API
+
+license =
+
+website =
+
+}}
+
+Neural Network Exchange Format (NNEF) is an artificial neural network data exchange format developed by the Khronos Group. It is intended to reduce machine learning deployment fragmentation by enabling a rich mix of neural network training tools and inference engines to be used by applications across a diverse range of devices and platforms.
+
+History
+
+NNEF was proposed in 2015 by member companies of the Khronos Group as a device and implementation independent transfer format capable of describing any artificial neural net in terms of its structure, operations and data.
+
+The first version of the standard was launched in provisional form in December 2017, and was ratified as an official Khronos standard in August 2018.
+
+Objectives
+
+The goal of NNEF is to enable data scientists and engineers to easily transfer trained networks from their chosen training framework into a wide variety of inference engines. NNEF encapsulates a complete description of the structure, operations and parameters of a trained neural network, independent of the training tools used to produce it and the inference engine used to execute it.
+
+Governance and Availability
+
+NNEF is maintained by the Khronos Group under its Open Governance Principles as follows:
+
+Any company is invited and able to join Khronos to contribute to and influence the development of its specifications;
+
+Finalized specifications are publicly and freely distributed at zero cost from the Khronos web-site;
+
+Any company can implement a Khronos specification and participating implementers can obtain a trademark license for conformant implementations and pay zero royalties to Khronos participants; and
+
+Developers may freely use implementations of Khronos specifications.
+
+The NNEF specification is available on the Khronos NNEF registry and tools are available on Github
+
+Versions
+
+NNEF 1.0 Provisional, Released 20 December 2017.
+
+NNEF 1.0, Released 13 August 2018
+
+NNEF 1.0.1, Released 10 May 2019
+
+NNEF 1.0.2, Released 13 July 2019
+
+Industry Participation
+
+The following Khronos members have participated in the NNEF working group:
+
+Tools
+
+The NNEF tools project on GitHub contains the following open source tools:
+
+File format Parser
+
+Bidirectional converters between NNEF and ONNX, Caffe, Caffe2, TensorFlow (python), TensorFlow (protobuf)
+
+Model zoo: reference collection of models converted to NNEF
+
+See also
+
+Open Neural Network Exchange
+
+References
+
+Category:Neural network data exchange formats

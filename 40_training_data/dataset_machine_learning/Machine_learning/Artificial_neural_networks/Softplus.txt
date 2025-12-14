@@ -1,0 +1,67 @@
+]]
+
+In mathematics and machine learning, the softplus function is
+
+f(x) = \ln(1 + e^x).
+
+It is a smooth approximation (in fact, an analytic function) to the ramp function, which is known as the rectifier or ReLU (rectified linear unit) in machine learning. For large negative x it is \ln(1 + e^x) = \ln (1 + \epsilon) \gtrapprox \ln 1 = 0, so just above 0, while for large positive x it is \ln(1 + e^x) \gtrapprox \ln(e^x) = x, so just above x.
+
+The names softplus and SmoothReLU are used in machine learning. The name "softplus" (2000), by analogy with the earlier softmax (1989) is presumably because it is a smooth (soft) approximation of the positive part of , which is sometimes denoted with a superscript plus, x^+ := \max(0, x).
+
+Alternative forms
+
+This function can be approximated as:
+
+\ln\left( 1 + e^x \right) \approx \begin{cases} \ln2, & x=0,\\[6pt] \frac x {1-e^{-x/\ln2}}, & x\neq 0 \end{cases}
+
+By making the change of variables x = y\ln(2), this is equivalent to
+
+\log_2(1 + 2^y) \approx \begin{cases} 1,& y=0,\\[6pt] \frac{y}{1-e^{-y}}, & y\neq 0. \end{cases}
+
+A sharpness parameter k may be included:
+
+f(x) = \frac{\ln(1 + e^{kx})} k, \qquad\qquad
+
+f'(x) = \frac{e^{kx}}{1 + e^{kx}} = \frac{1}{1 + e^{-kx}}.
+
+Related functions
+
+The derivative of softplus is the standard logistic function:
+
+f'(x) = \frac{e^{x}}{1 + e^{x}} = \frac{1}{1 + e^{-x}}
+
+The logistic function or the sigmoid function is a smooth approximation of the rectifier, the Heaviside step function.
+
+LogSumExp
+
+The multivariable generalization of single-variable softplus is the LogSumExp with the first argument set to zero:
+
+\operatorname{LSE_0}^+(x_1, \dots, x_n) := \operatorname{LSE}(0, x_1, \dots, x_n) = \ln(1 + e^{x_1} + \cdots + e^{x_n}).
+
+The LogSumExp function is
+
+\operatorname{LSE}(x_1, \dots, x_n) = \ln(e^{x_1} + \cdots + e^{x_n}),
+
+and its gradient is the softmax; the softmax with the first argument set to zero is the multivariable generalization of the logistic function. Both LogSumExp and softmax are used in machine learning.
+
+Convex conjugate
+
+The convex conjugate (specifically, the Legendre transformation) of the softplus function is the negative binary entropy function (with base ). This is because (following the definition of the Legendre transformation: the derivatives are inverse functions) the derivative of softplus is the logistic function, whose inverse function is the logit, which is the derivative of negative binary entropy.
+
+Softplus can be interpreted as logistic loss (as a positive number), so, by duality, minimizing logistic loss corresponds to maximizing entropy. This justifies the principle of maximum entropy as loss minimization.
+
+References
+
+Category:Artificial neural networks
+
+Category:Computational neuroscience
+
+Category:Entropy and information
+
+Category:Exponentials
+
+Category:Functions and mappings
+
+Category:Logistic regression
+
+Category:Loss functions

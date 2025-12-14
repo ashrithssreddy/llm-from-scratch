@@ -1,0 +1,79 @@
+In machine learning, the kernel perceptron is a variant of the popular perceptron learning algorithm that can learn kernel machines, i.e. non-linear classifiers that employ a kernel function to compute the similarity of unseen samples to training samples. The algorithm was invented in 1964, making it the first kernel classification learner.
+
+Preliminaries
+
+The perceptron algorithm
+
+The perceptron algorithm is an online learning algorithm that operates by a principle called "error-driven learning". It iteratively improves a model by running it on training samples, then updating the model whenever it finds it has made an incorrect classification with respect to a supervised signal. The model learned by the standard perceptron algorithm is a linear binary classifier: a vector of weights  (and optionally an intercept term , omitted here for simplicity) that is used to classify a sample vector  as class "one" or class "minus one" according to
+
+\hat{y} = \sgn(\mathbf{w}^\top \mathbf{x})
+
+where a zero is arbitrarily mapped to one or minus one. (The "hat" on  denotes an estimated value.)
+
+In pseudocode, the perceptron algorithm is given by:
+
+Initialize  to an all-zero vector of length , the number of predictors (features).
+
+For some fixed number of iterations, or until some stopping criterion is met:
+
+For each training example  with ground truth label {{math|yi ∈ {-1, 1}}}:
+
+Let {{math|ŷ  sgn(wT xi)}}.
+
+If , update .
+
+Kernel Methods
+
+By contrast with the linear models learned by the perceptron, a kernel method is a classifier that stores a subset of its training examples , associates with each a weight , and makes decisions for new samples  by evaluating
+
+\sgn \sum_i \alpha_i y_i K(\mathbf{x}_i, \mathbf{x'}).
+
+Here,  is some kernel function. Formally, a kernel function is a non-negative semidefinite kernel (see Mercer's condition), representing an inner product between samples in a high-dimensional space, as if the samples had been expanded to include additional features by a function : {{math|K(x, x')  Φ(x) · Φ(x')}}. Intuitively, it can be thought of as a similarity function between samples, so the kernel machine establishes the class of a new sample by weighted comparison to the training set. Each function  serves as a basis function in the classification.
+
+Algorithm
+
+To derive a kernelized version of the perceptron algorithm, we must first formulate it in dual form, starting from the observation that the weight vector  can be expressed as a linear combination of the  training samples. The equation for the weight vector is
+
+\mathbf{w} = \sum_i^n \alpha_i y_i \mathbf{x}_i
+
+where  is the number of times  was misclassified, forcing an update . Using this result, we can formulate the dual perceptron algorithm, which loops through the samples as before, making predictions, but instead of storing and updating a weight vector , it updates a "mistake counter" vector .
+
+We must also rewrite the prediction formula to get rid of :
+
+\begin{align}
+
+\hat{y} & = \sgn(\mathbf{w}^\mathsf{T} \mathbf{x}) \\
+
+& = \sgn \left( \sum_i^n  \alpha_i y_i \mathbf{x}_i \right)^\mathsf{T} \mathbf{x} \\
+
+& = \sgn \sum_i^n \alpha_i y_i (\mathbf{x}_i \cdot \mathbf{x})
+
+\end{align}
+
+Plugging these two equations into the training loop turn it into the dual perceptron algorithm.
+
+Finally, we can replace the dot product in the dual perceptron by an arbitrary kernel function, to get the effect of a feature map  without computing  explicitly for any samples. Doing this yields the kernel perceptron algorithm:
+
+Initialize  to an all-zeros vector of length , the number of training samples.
+
+For some fixed number of iterations, or until some stopping criterion is met:
+
+For each training example :
+
+Let \hat{y} = \sgn \sum_i^n \alpha_i y_i K(\mathbf{x}_i, \mathbf{x}_j)
+
+If , perform an update by incrementing the mistake counter:
+
+Variants and extensions
+
+One problem with the kernel perceptron, as presented above, is that it does not learn sparse kernel machines. Initially, all the  are zero so that evaluating the decision function to get  requires no kernel evaluations at all, but each update increments a single , making the evaluation increasingly more costly. Moreover, when the kernel perceptron is used in an online setting, the number of non-zero  and thus the evaluation cost grow linearly in the number of examples presented to the algorithm.
+
+The forgetron variant of the kernel perceptron was suggested to deal with this problem. It maintains an active set of examples with non-zero , removing ("forgetting") examples from the active set when it exceeds a pre-determined budget and "shrinking" (lowering the weight of) old examples as new ones are promoted to non-zero .
+
+Another problem with the kernel perceptron is that it does not regularize, making it vulnerable to overfitting. The NORMA online kernel learning algorithm can be regarded as a generalization of the kernel perceptron algorithm with regularization. The sequential minimal optimization (SMO) algorithm used to learn support vector machines can also be regarded as a generalization of the kernel perceptron. giving generalization bounds comparable to the kernel SVM.
+
+References
+
+Category:Kernel methods for machine learning
+
+Category:Statistical classification

@@ -1,0 +1,81 @@
+The charge-based formulation of the boundary element method (BEM) is a dimensionality reduction numerical technique that is used to model quasistatic electromagnetic phenomena in highly complex conducting media (targeting, e.g., the human brain) with a very large (up to approximately 1 billion) number of unknowns. The charge-based BEM solves an integral equation of the potential theory written in terms of the induced surface charge density. This formulation is naturally combined with fast multipole method (FMM) acceleration, and the entire method is known as charge-based BEM-FMM. The combination of BEM and FMM is a common technique in different areas of computational electromagnetics and, in the context of bioelectromagnetism, it provides improvements over the finite element method. the quasistatic charge-based BEM, derived in terms of the single-layer (charge) density, for a single-compartment medium has been known in the potential theory A subsequent continuous form, including time-dependent and dielectric effects, appeared in the 1967 paper by Barnard, Duck, and Lynn. The charge-based BEM has also been formulated for conducting, dielectric, and magnetic media, and used in different applications.
+
+In 2009, Greengard et al. successfully applied the charge-based BEM with fast multipole acceleration to molecular electrostatics of dielectrics. A similar approach to realistic modeling of the human brain with multiple conducting compartments was first described by Makarov et al. in 2018. Along with this, the BEM-based multilevel fast multipole method has been widely used in radar and antenna studies at microwave frequencies as well as in acoustics.
+
+Physical background - surface charges in biological media
+
+The charge-based BEM is based on the concept of an impressed (or primary) electric field \mathbf{E}^i and a secondary electric field \mathbf{E}^s. The impressed field is usually known a priori or is trivial to find. For the human brain, the impressed electric field can be classified as one of the following:
+
+A conservative field \mathbf{E}^i derived from an impressed density of EEG or MEG current sources in a homogeneous infinite medium with the conductivity \sigma at the source location;
+
+An instantaneous solenoidal field \mathbf{E}^i of an induction coil obtained from Faraday's law of induction in a homogeneous infinite medium (air), when transcranial magnetic stimulation (TMS) problems are concerned;
+
+A surface field \mathbf{E}^iderived from an impressed surface current density \mathbf{J}^i=\sigma\mathbf{E}^i of current electrodes injecting electric current at a boundary of a compartment with conductivity \sigma when transcranial direct-current stimulation (tDCS) or deep brain stimulation (DBS) are concerned;
+
+A conservative field \mathbf{E}^i of charges deposited on voltage electrodes for tDCS or DBS. This specific problem requires a coupled treatment since these charges will depend on the environment;/DBS/tDCS/ICMS) and neurophysiological recordings (EEG/MEG). WM is white matter, GM - grey matter, and CSF - cerebrospinal fluid.]]
+
+When the impressed field is "turned on", free charges located within a conducting volume  immediately begin to redistribute and accumulate at the boundaries (interfaces) of regions of different conductivity in . A surface charge density \rho(\mathbf{r}) appears on the conductivity interfaces. This charge density induces a secondary conservative electric field \mathbf{E}^s following Coulomb's law.
+
+One example is a human under a direct current powerline with the known field  \mathbf{E}^i directed down. The superior surface of the human's conducting body will be charged negatively while its inferior portion is charged positively. These surface charges create a secondary electric field that effectively cancels or blocks the primary field everywhere in the body so that no current will flow within the body under DC steady state conditions.
+
+Another example is a human head with electrodes attached. At any conductivity interface with a normal vector \mathbf{n} pointing from an "inside" (-) compartment of conductivity \sigma^-to an "outside" (+) compartment of conductivity \sigma^+, Kirchhoff's current law requires continuity of the normal component of the electric current density. This leads to the interfacial boundary condition in the form
+
+for every facet at a triangulated interface. As long as \sigma^{\pm} are different from each other, the two normal components of the electric field, \mathbf{E}^{\pm}\cdot\mathbf{n}, must also be different. Such a jump across the interface is only possible when a sheet of surface charge exists at that interface. Thus, if an electric current or voltage is applied, the surface charge density follows.
+
+The goal of the numerical analysis is to find the unknown surface charge distribution and thus the total electric field  \mathbf{E}=\mathbf{E}^i+\mathbf{E}^s (and the total electric potential if required) anywhere in space.
+
+System of equations for surface charges
+
+Below, a derivation is given based on Gauss's law and Coulomb's law. All conductivity interfaces, denoted by , are discretized into planar triangular facets t_m with centers \mathbf{r}_m. Assume that an -th facet with the normal vector \mathbf{n}_m and area A_m carries a uniform surface charge density \rho_m. If a volumetric tetrahedral mesh were present, the charged facets would belong to tetrahedra with different conductivity values. We first compute the electric field \mathbf{E}^+_{m} at the point \mathbf{r}_m+\delta \mathbf{n}_m, for \delta\rightarrow 0 ^+ i.e., just outside facet 𝑚 at its center. This field contains three contributions:
+
+The continuous impressed electric field \mathbf{E}^i itself;
+
+An electric field of the -th charged facet itself. Very close to the facet, it can be approximated as the electric field of an infinite sheet of uniform surface charge \rho_m. By Gauss's law, it is given by +\rho_m/2\varepsilon_0\cdot \mathbf{n}_m where \varepsilon_0 is a background electrical permittivity;
+
+An electric field generated by all other facets t_n, which we approximate as point charges of charge A_n \rho_n at each center \mathbf{r}_n.
+
+A similar treatment holds for the electric field \mathbf{E}^-_{m} just inside facet 𝑚, but the electric field of the flat sheet of charge changes its sign. Using Coulomb's law to calculate the contribution of facets different from t_m, we find
+
+From this equation, we see that the normal component of the electric field indeed undergoes a jump through the charged interface. This is equivalent to a jump relation of the potential theory. employs the simple Jacobi iterative method. The more rigorous generalized minimum residual method (GMRES) yields a much faster convergence of the BEM-FMM. realized in both Python and MATLAB can be used for this purpose. It is therefore unnecessary to form or store the dense system matrix typical for the standard BEM.
+
+Continuous charge-based BEM. Near-field correction
+
+The system of equations formulated above is derived with the collocation method and is less accurate. and the local interfacial boundary condition of normal electric current continuity. It is a Fredholm integral equation of the second kind
+
+Its derivation does not involve Green's identities (integrations by parts) and is applicable to non-nested geometries. When the Galerkin method is applied and the same zeroth-order basis functions (with a constant charge density for each facet) are still used on triangulated interfaces, we obtain exactly the same discretization as before if we replace the double integrals over surfaces S_m and S_n of triangles t_m and t_n, respectively, by
+
+\int_{S_m}\int_{S_n}\frac{\mathbf{r}-\mathbf{r^\prime}}{|\mathbf{r}-\mathbf{r^\prime}|^3}ds(\mathbf{r^\prime})ds(\mathbf{r}) \approx{A_m }{A_n}\frac{\mathbf{r}_m-\mathbf{r}_n }{|\mathbf{r}_m-\mathbf{r}_n|^3},
+
+where {A_n} is the surface area of the triangle {t_n}. This approximation is only valid when |\mathbf{r}_m-\mathbf{r}_n  | is much larger than a typical facet size i.e., in the "far field". Otherwise, semi-analytical formulae and Gaussian quadratures for triangles should be used' This is an important correction to the plain fast multipole method in the "near field" which should also be used in the simple discrete formulation derived above. Such a correction makes it possible to obtain an unconstrained'' numerical (but not anatomical) resolution in the brain. as well as neurophysiological recordings. The BEM-FMM allows for straightforward adaptive mesh refinement including multiple extracerebral brain compartments.
+
+In its present form, the charge-based BEM-FMM is applicable to multi-compartment piecewise homogeneous media only; it cannot handle macroscopically anisotropic tissues. Additionally, the maximum number of facets (degrees of freedom) is limited to approximately 10^9 for typical academic computer hardware resources used as of 2023.
+
+See also
+
+Computational electromagnetics
+
+Boundary element method
+
+Fast multipole method
+
+Computational neuroscience
+
+Transcranial magnetic stimulation
+
+Transcranial direct-current stimulation
+
+Electroencephalography
+
+Magnetoencephalography
+
+External links
+
+A survey on integral equations for bioelectric modeling, preprint.
+
+Flatiron Institute - Simons Foundation FMM3D GitHub Project Site.
+
+References
+
+Category:Computational electromagnetics
+
+Category:Dimension reduction

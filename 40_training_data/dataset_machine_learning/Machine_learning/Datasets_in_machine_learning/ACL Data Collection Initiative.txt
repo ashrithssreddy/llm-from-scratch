@@ -1,0 +1,83 @@
+The ACL Data Collection Initiative (ACL/DCI) was a project established in 1989 by the Association for Computational Linguistics (ACL) to create and distribute large text and speech corpora for computational linguistics research. The initiative aimed to address the growing need for substantial text databases that could support research in areas such as natural language processing, speech recognition, and computational linguistics. By 1993, the initiative’s activities had effectively ceased, with its functions and datasets absorbed by the Linguistic Data Consortium (LDC), which was founded in 1992.
+
+Objectives
+
+The ACL/DCI had several key objectives:
+
+To acquire a large and diverse text corpus from various sources
+
+To transform the collected texts into a common format based on the Standard Generalized Markup Language (SGML)
+
+To make the corpus available for scientific research at low cost with minimal restrictions
+
+To provide a common database that would allow researchers to replicate or extend published results
+
+To reduce duplication of effort among researchers in obtaining and preparing text data
+
+These objectives were designed to address the growing demand for very large amounts of text arising from applications in recognition and analysis of text and speech. Its core objective was to "oversee the acquisition and preparation of a large text corpus to be made available for scientific research at cost and without royalties".
+
+The ACL/DCI committee was established in February 1989. The committee included members from academic and industrial research laboratories in the United States and Europe.
+
+The initiative was chaired by Mark Liberman from the University of Pennsylvania (formerly of AT&T Bell Laboratories). Other committee members included representatives from organizations such as Bellcore, IBM T.J. Watson Research Center, Cambridge University, Virginia Polytechnic Institute & State University, Northeastern University, University of Pennsylvania, SRI International, MCC, Xerox PARC, ISSCO, and University of Pisa.
+
+Data
+
+As of 1990, the ACL/DCI had collected hundreds of millions of words of diverse text. The collection included:
+
+U.S. Department of Justice Justice Retrieval and Inquiry System (JURIS) materials;
+
+The Swiss Civil Code in parallel German, French and Italian;
+
+Economic reports from the Union Bank of Switzerland, in parallel English, German, French and Italian;
+
+About 12K words of administrative policy manuals and 14K words of administrative memos, contributed by Geoff Pullum of U.C.S.C.;
+
+Material from various ACM journals and the ACL journal Computational Linguistics;
+
+The CSLI publications series: 50-100 reports (8K words each) and 5-10 books (80K words each).
+
+The initiative started with North American English text but expanded to include Canadian French and planned to include Japanese, Chinese, and other Asian languages.
+
+After DCI was absorbed by the LDC, the datasets were curated under LDC.
+
+Format
+
+The ACL/DCI corpus was coded in a standard form based on SGML (Standard Generalized Markup Language, ISO 8879), community's Continuous Speech Recognition (CSR) Corpus. The WSJ corpus became a standard benchmark for evaluating speech recognition systems and has been used in numerous research papers.
+
+The WSJ CSR Corpus provided DARPA with its first general-purpose English, large vocabulary, natural language, high perplexity corpus containing speech (400 hours) and text (47 million words) during 1987–89. The text corpus was 313 MB in size.
+
+Distribution
+
+Materials from the ACL/DCI collection were distributed to research groups on a non-commercial basis. By 1990, about 25 research groups and individual researchers had received tapes containing various portions of the collected material.
+
+To obtain the data, researchers had to sign an agreement not to redistribute the data or make direct commercial use of it. However, commercial application of "analytical materials" derived from the text, such as statistical tables or grammar rules, was explicitly permitted.
+
+The initiative first distributed data via 12-inch reels of 9-track tape, then via CD-ROMs. Each such tape could contain 30 million words compressed via the Lempel-Ziv algorithms. The first CD-ROM distribution was in 1991, funded by Dragon Systems Inc. It contained Collins English Dictionary, WSJ, scientific abstracts provided by the U.S. Department of Energy, and the Penn Treebank.
+
+See also
+
+Linguistic Data Consortium
+
+Penn Treebank
+
+Text Encoding Initiative
+
+Computational linguistics
+
+Natural language processing
+
+Speech recognition
+
+References
+
+Category:Computational linguistics
+
+Category:Natural language processing
+
+Category:Speech recognition
+
+Category:Association for Computational Linguistics
+
+Category:Datasets
+
+Category:Datasets in machine learning

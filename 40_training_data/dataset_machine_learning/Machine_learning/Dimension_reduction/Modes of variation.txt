@@ -1,0 +1,65 @@
+In statistics, modes of variation are a continuously indexed set of vectors or functions that are centered at a mean and are used to depict the variation in a population or sample. Typically, variation patterns in the data can be decomposed in descending order of eigenvalues with the directions represented by the corresponding eigenvectors or eigenfunctions. Modes of variation provide a visualization of this decomposition and an efficient description of variation around the mean. Both in principal component analysis (PCA) and in functional principal component analysis (FPCA), modes of variation play an important role in visualizing and describing the variation in the data contributed by each eigencomponent. In real-world applications, the eigencomponents and associated modes of variation aid to interpret complex data, especially in exploratory data analysis (EDA).
+
+Formulation
+
+Modes of variation are a natural extension of PCA and FPCA.
+
+Modes of variation in PCA
+
+If a random vector \mathbf{X}=(X_1, X_2, \cdots, X_p)^T has the mean vector \boldsymbol{\mu}_p, and the covariance matrix \mathbf{\Sigma}_{p\times p} with eigenvalues \lambda_1\geq \lambda_2\geq \cdots \geq \lambda_p\geq0 and corresponding orthonormal eigenvectors \mathbf{e}_1, \mathbf{e}_2, \cdots,\mathbf{e}_p, by eigendecomposition of a real symmetric matrix, the covariance matrix \mathbf{\Sigma} can be decomposed as
+
+\mathbf{\Sigma}=\mathbf{Q}\mathbf{\Lambda}\mathbf{Q}^T,
+
+where \mathbf{Q} is an orthogonal matrix whose columns are the eigenvectors of \mathbf{\Sigma}, and \mathbf{\Lambda} is a diagonal matrix whose entries are the eigenvalues of \mathbf{\Sigma}. By the Karhunen–Loève expansion for random vectors, one can express the centered random vector in the eigenbasis
+
+\mathbf{X}-\boldsymbol{\mu}=\sum_{k=1}^p\xi_k\mathbf{e}_k,
+
+where \xi_k=\mathbf{e}_k^T(\mathbf{X}-\boldsymbol{\mu}) is the principal component associated with the  k-th eigenvector \mathbf{e}_k, with the properties
+
+\operatorname{E}(\xi_k)=0, \operatorname{Var}(\xi_k)=\lambda_k, and \operatorname{E}(\xi_k\xi_l)=0\ \text{for}\ l\neq k.
+
+Then the k-th mode of variation of \mathbf{X} is the set of vectors, indexed by \alpha,
+
+\mathbf{m}_{k, \alpha}=\boldsymbol{\mu}\pm \alpha\sqrt{\lambda_k}\mathbf{e}_k, \alpha\in[-A, A],
+
+where A is typically selected as 2\ \text{or}\ 3.
+
+Modes of variation in FPCA
+
+For a square-integrable random function X(t), t \in \mathcal{T}\subset R^p, where typically p=1 and \mathcal{T} is an interval, denote the mean function by  \mu(t) = \operatorname{E}(X(t)) , and the covariance function by
+
+G(s, t) = \operatorname{Cov}(X(s), X(t)) = \sum_{k=1}^\infty \lambda_k \varphi_k(s) \varphi_k(t),
+
+where \lambda_1\geq \lambda_2\geq \cdots \geq 0 are the eigenvalues and \{\varphi_1, \varphi_2, \cdots\} are the orthonormal eigenfunctions of the linear Hilbert–Schmidt operator
+
+G: L^2(\mathcal{T}) \rightarrow L^2(\mathcal{T}),\, G(f) = \int_\mathcal{T} G(s, t) f(s) ds.
+
+By the Karhunen–Loève theorem, one can express the centered function in the eigenbasis,
+
+X(t) - \mu(t) = \sum_{k=1}^\infty \xi_k \varphi_k(t),
+
+where
+
+\xi_k = \int_\mathcal{T} (X(t) - \mu(t)) \varphi_k(t) dt
+
+is the k-th principal component with the properties
+
+\operatorname{E}(\xi_k) = 0, \operatorname{Var}(\xi_k) = \lambda_k, and \operatorname{E}(\xi_k \xi_l) = 0 \text{ for } l \ne k.
+
+Then the k-th mode of variation of X(t) is the set of functions, indexed by \alpha,
+
+m_{k, \alpha}(t)=\mu(t)\pm \alpha\sqrt{\lambda_k}\varphi_k(t),\ t\in \mathcal{T},\ \alpha\in [-A, A]
+
+that are viewed simultaneously over the range of \alpha, usually for A=2\ \text{or}\ 3. and other infinite-dimensional data. To illustrate how modes of variation work in practice, two examples are shown in the graphs to the right, which display the first two modes of variation. The solid curve represents the sample mean function. The dashed, dot-dashed, and dotted curves correspond to modes of variation with \alpha=\pm1, \pm2, and \pm3, respectively.
+
+The first graph displays the first two modes of variation of female mortality data from 41 countries in 2003. The object of interest is log hazard function between ages 0 and 100 years. The first mode of variation suggests that the variation of female mortality is smaller for ages around 0 or 100, and larger for ages around 25. An appropriate and intuitive interpretation is that mortality around 25 is driven by accidental death, while around 0 or 100, mortality is related to congenital disease or natural death.
+
+Compared to female mortality data, modes of variation of male mortality data shows higher mortality after around age 20, possibly related to the fact that life expectancy for women is higher than that for men.
+
+References
+
+Category:Dimension reduction
+
+Category:Functional analysis
+
+Category:Matrix decompositions

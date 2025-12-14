@@ -1,0 +1,43 @@
+The Rubin causal model (RCM), also known as the Neyman–Rubin causal model, is an approach to the statistical analysis of cause and effect based on the framework of potential outcomes, named after Donald Rubin. The name "Rubin causal model" was first coined by Paul W. Holland. The potential outcomes framework was first proposed by Jerzy Neyman in his 1923 Master's thesis, though he discussed it only in the context of completely randomized experiments.  Rubin extended it into a general framework for thinking about causation in both observational and experimental studies. A randomized experiment assigns people randomly to treatments: college or no college. Because of this random assignment, the groups are (on average) equivalent, and the difference in income at age 40 can be attributed to the college assignment since that was the only difference between the groups. An estimate of the average causal effect (also referred to as the average treatment effect or ATE) can then be obtained by computing the difference in means between the treated (college-attending) and control (not-college-attending) samples.
+
+In many circumstances, however, randomized experiments are not possible due to ethical or practical concerns. In such scenarios there is a non-random assignment mechanism. This is the case for the example of college attendance: people are not randomly assigned to attend college. Rather, people may choose to attend college based on their financial situation, parents' education, and so on. Many statistical methods have been developed for causal inference, such as propensity score matching.  These methods attempt to correct for the assignment mechanism by finding control units similar to treatment units.
+
+An extended example
+
+Rubin defines a causal effect:
+
+Intuitively, the causal effect of one treatment, E, over another, C, for a particular unit and an interval of time from t_1 to t_2 is the difference between what would have happened at time t_2 if the unit had been exposed to E initiated at t_1 and what would have happened at t_2 if the unit had been exposed to C initiated at t_1: 'If an hour ago I had taken two aspirins instead of just a glass of water, my headache would now be gone,' or 'because an hour ago I took two aspirins instead of just a glass of water, my headache is now gone.'  Our definition of the causal effect of the E versus C treatment will reflect this intuitive meaning." negative controls, and other techniques for causal inference. For more on the connections between the Rubin causal model, structural equation modeling, and other statistical methods for causal inference, see Morgan and Winship (2007), Pearl (2000), Peters et al. (2017), and Ibeling & Icard (2023). Pearl (2000) argues that all potential outcomes can be derived from Structural Equation Models (SEMs) thus unifying econometrics and modern causal analysis.
+
+See also
+
+Causation
+
+Principal stratification
+
+Propensity score matching
+
+References
+
+Further reading
+
+Guido Imbens & Donald Rubin (2015). Causal Inference for Statistics, Social, and Biomedical Sciences: An Introduction. Cambridge: Cambridge University Press. doi:10.1017/CBO9781139025751
+
+Donald Rubin (1977). "Assignment to Treatment Group on the Basis of a Covariate", Journal of Educational Statistics, 2, pp.&nbsp;1–26.
+
+Rubin, Donald (1978). "Bayesian Inference for Causal Effects: The Role of Randomization", The Annals of Statistics, 6, pp.&nbsp;34–58.
+
+External links
+
+"Rubin Causal Model": an article for the New Palgrave Dictionary of Economics by Guido Imbens and Donald Rubin.
+
+"Counterfactual Causal Analysis":  a webpage maintained by Stephen Morgan, Christopher Winship, and others with links to many research articles on causal inference.
+
+Category:Causal inference
+
+Category:Statistical models
+
+Category:Econometric models
+
+Category:Observational study
+
+Category:Experiments

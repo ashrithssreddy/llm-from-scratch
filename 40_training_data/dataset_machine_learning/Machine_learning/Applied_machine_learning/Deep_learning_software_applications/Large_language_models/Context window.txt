@@ -1,0 +1,7 @@
+REDIRECT Large language model#Attention mechanism and context window
+
+{{Redirect category shell|
+
+}}
+
+Category:Large language models

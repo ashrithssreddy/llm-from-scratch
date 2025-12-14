@@ -1,0 +1,21 @@
+John Langford (born January 2, 1975) is a computer scientist working in machine learning and learning theory, a field that he says, "is shifting from an academic discipline to an industrial tool".
+
+He is well known for work on the Isomap embedding algorithm, CAPTCHA challenges, Cover Trees for nearest neighbor search, Contextual Bandits (which he coined) for reinforcement learning applications, and learning reductions.
+
+John is the author of the blog hunch.net and the principal developer of Vowpal Wabbit.  He works at Microsoft Research New York, of which he was one of the founding members, and was previously affiliated with Yahoo! Research, general chair for the 2016 ICML, and is the president of ICML from 2019 to 2021.
+
+References
+
+Category:California Institute of Technology alumni
+
+Category:Carnegie Mellon University alumni
+
+Category:Living people
+
+Category:American computer scientists
+
+Category:Machine learning researchers
+
+Category:Microsoft employees
+
+Category:1975 births

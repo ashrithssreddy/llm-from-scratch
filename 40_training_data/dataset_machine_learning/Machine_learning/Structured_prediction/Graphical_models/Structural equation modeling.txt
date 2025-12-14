@@ -1,0 +1,177 @@
+are thought to causally connect to one another. Structural equation models often contain postulated causal connections among some latent variables (variables thought to exist but which can't be directly observed). Additional causal connections link those latent variables to observed variables whose values appear in a data set. The causal connections are represented using equations, but the postulated structuring can also be presented using diagrams containing arrows as in Figures 1 and 2. The causal structures imply that specific patterns should appear among the values of the observed variables. This makes it possible to use the connections between the observed variables' values to estimate the magnitudes of the postulated effects, and to test whether or not the observed data are consistent with the requirements of the hypothesized causal structures.
+
+The boundary between what is and is not a structural equation model is not always clear, but SE models often contain postulated causal connections among a set of latent variables (variables thought to exist but which can't be directly observed, like an attitude, intelligence, or mental illness) and causal connections linking the postulated latent variables to variables that can be observed and whose values are available in some data set. Variations among the styles of latent causal connections, variations among the observed variables measuring the latent variables, and variations in the statistical estimation strategies result in the SEM toolkit including confirmatory factor analysis (CFA), confirmatory composite analysis, path analysis, multi-group modeling, longitudinal modeling, partial least squares path modeling, latent growth modeling and hierarchical or multilevel modeling.
+
+SEM researchers use computer programs to estimate the strength and sign of the coefficients corresponding to the modeled structural connections, for example the numbers connected to the arrows in Figure 1. Because a postulated model such as Figure 1 may not correspond to the worldly forces controlling the observed data measurements, the programs also provide model tests and diagnostic clues suggesting which indicators, or which model components, might introduce inconsistency between the model and observed data. Criticisms of SEM methods include disregard of available model tests, problems in the model's specification, a tendency to accept models without considering external validity, and potential philosophical biases.
+
+A great advantage of SEM is that all of these measurements and tests occur simultaneously in one statistical estimation procedure, where all the model coefficients are calculated using all information from the observed variables. This means the estimates are more accurate than if a researcher were to calculate each part of the model separately.
+
+History
+
+Structural equation modeling (SEM) began differentiating itself from correlation and regression when Sewall Wright provided explicit causal interpretations for a set of regression-style equations based on a solid understanding of the physical and physiological mechanisms producing direct and indirect effects among his observed variables. The equations were estimated like ordinary regression equations but the substantive context for the measured variables permitted clear causal, not merely predictive, understandings.  O. D. Duncan introduced SEM to the social sciences in his 1975 book, and SEM blossomed in the late 1970's and 1980's when increasing computing power permitted practical model estimation. In 1987 Hayduk
+
+Different yet mathematically related modeling approaches developed in psychology, sociology, and economics. Early Cowles Commission work on simultaneous equations estimation centered on Koopman and Hood's (1953) algorithms from transport economics and optimal routing, with maximum likelihood estimation, and closed form algebraic calculations, as iterative solution search techniques were limited in the days before computers. The convergence of two of these developmental streams (factor analysis from psychology, and path analysis from sociology via Duncan) produced the current core of SEM. One of several programs Karl Jöreskog developed at Educational Testing Services, LISREL embedded latent variables (which psychologists knew as the latent factors from factor analysis) within path-analysis-style equations (which sociologists inherited from Wright and Duncan). The factor-structured portion of the model incorporated measurement errors which permitted measurement-error-adjustment, though not necessarily error-free estimation, of effects connecting different postulated latent variables.
+
+Traces of the historical convergence of the factor analytic and path analytic traditions persist as the distinction between the measurement and structural portions of models; and as continuing disagreements over model testing, and whether measurement should precede or accompany structural estimates. Viewing factor analysis as a data-reduction technique deemphasizes testing, which contrasts with path analytic appreciation for testing postulated causal connections – where the test result might signal model misspecification. The friction between factor analytic and path analytic traditions continue to surface in the literature.
+
+Wright's path analysis influenced Hermann Wold, Wold's student Karl Jöreskog, and Jöreskog's student Claes Fornell, but SEM never gained a large following among U.S. econometricians, possibly due to fundamental differences in modeling objectives and typical data structures. The prolonged separation of SEM's economic branch led to procedural and terminological differences, though deep mathematical and statistical connections remain. Disciplinary differences in approaches can be seen in SEMNET discussions of endogeneity, and in discussions on causality via directed acyclic graphs (DAGs). highlighting disciplinary differences in data structures and the concerns motivating economic models.
+
+Judea Pearl The use of experimental designs may address some of these doubts.
+
+Today, SEM forms part of a basis of machine learning and (interpretable) neural networks. Exploratory and confirmatory factor analyses in classical statistics mirror unsupervised and supervised machine learning.
+
+General steps and considerations
+
+The following considerations apply to the construction and assessment of many structural equation models.
+
+Model specification
+
+Building or specifying a model requires attending to:
+
+the set of variables to be employed,
+
+what is known about the variables,
+
+what is theorized or hypothesized about the variables' causal connections and disconnections,
+
+what the researcher seeks to learn from the modeling, and
+
+the instances of missing values and/or the need for imputation.
+
+Structural equation models attempt to mirror the worldly forces operative for causally homogeneous cases – namely cases enmeshed in the same worldly causal structures but whose values on the causes differ and who therefore possess different values on the outcome variables. Causal homogeneity can be facilitated by case selection, or by segregating cases in a multi-group model. A model's specification is not complete until the researcher specifies:
+
+which effects and/or correlations/covariances are to be included and estimated,
+
+which effects and other coefficients are forbidden or presumed unnecessary,
+
+and which coefficients will be given fixed/unchanging values (e.g. to provide measurement scales for latent variables as in Figure 2).
+
+The latent level of a model is composed of endogenous and exogenous variables. The endogenous latent variables are the true-score variables postulated as receiving effects from at least one other modeled variable. Each endogenous variable is modeled as the dependent variable in a regression-style equation. The exogenous latent variables are background variables postulated as causing one or more of the endogenous variables and are modeled like the predictor variables in regression-style equations. Causal connections among the exogenous variables are not explicitly modeled but are usually acknowledged by modeling the exogenous variables as freely correlating with one another. The model may include intervening variables – variables receiving effects from some variables but also sending effects to other variables. As in regression, each endogenous variable is assigned a residual or error variable encapsulating the effects of unavailable and usually unknown causes. Each latent variable, whether exogenous or endogenous, is thought of as containing the cases' true-scores on that variable, and these true-scores causally contribute valid/genuine variations into one or more of the observed/reported indicator variables.
+
+The LISREL program assigned Greek names to the elements in a set of matrices to keep track of the various model components. These names became relatively standard notation, though the notation has been extended and altered to accommodate a variety of statistical considerations.  Texts and programs "simplifying" model specification via diagrams or by using equations permitting user-selected variable names, re-convert the user's model into some standard matrix-algebra form in the background. The "simplifications" are achieved by implicitly introducing default program "assumptions" about model features with which users supposedly need not concern themselves. Unfortunately, these default assumptions easily obscure model components that leave unrecognized issues lurking within the model's structure, and underlying matrices.
+
+Two main components of models are distinguished in SEM: the structural model showing potential causal dependencies between endogenous and exogenous latent variables, and the measurement model showing the causal connections between the latent variables and the indicators. Exploratory and confirmatory factor analysis models, for example, focus on the causal measurement connections, while path models more closely correspond to SEMs latent structural connections.
+
+Modelers specify each coefficient in a model as being free to be estimated, or fixed at some value. The free coefficients may be postulated effects the researcher wishes to test, background correlations among the exogenous variables, or the variances of the residual or error variables providing additional variations in the endogenous latent variables. The fixed coefficients may be values like the 1.0 values in Figure 2 that provide a scales for the latent variables, or values of 0.0 which assert causal disconnections such as the assertion of no-direct-effects (no arrows) pointing from Academic Achievement to any of the four scales in Figure 1. SEM programs provide estimates and tests of the free coefficients, while the fixed coefficients contribute importantly to testing the overall model structure. Various kinds of constraints between coefficients can also be used.
+
+"Accepting" failing models as "close enough" is also not a reasonable alternative. A cautionary instance was provided by Browne, MacCallum, Kim, Anderson, and Glaser who addressed the mathematics behind why the  test can have (though it does not always have) considerable power to detect model misspecification. The probability accompanying a  test is the probability that the data could arise by random sampling variations if the current model, with its optimal estimates, constituted the real underlying population forces. A small  probability reports it would be unlikely for the current data to have arisen if the current model structure constituted the real population causal forces – with the remaining differences attributed to random sampling variations.  Browne, McCallum, Kim, Andersen, and Glaser presented a factor model they viewed as acceptable despite the model being significantly inconsistent with their data according to . The fallaciousness of their claim that close-fit should be treated as good enough was demonstrated by Hayduk, Pazkerka-Robinson, Cummings, Levers and Beres  who demonstrated a fitting model for Browne, et al.'s own data by incorporating an experimental feature Browne, et al. overlooked. The fault was not in the math of the indices or in the over-sensitivity of  testing. The fault was in Browne, MacCallum, and the other authors forgetting, neglecting, or overlooking, that the amount of ill fit cannot be trusted to correspond to the nature, location, or seriousness of problems in a model's specification.
+
+Many researchers tried to justify switching to fit-indices, rather than testing their models, by claiming that  increases (and hence   probability decreases) with increasing sample size (N). There are two mistakes in discounting  on this basis. First, for proper models,  does not increase with increasing N, is the strongest available structural equation model test.
+
+Numerous fit indices quantify how closely a model fits the data but all fit indices suffer from the logical difficulty that the size or amount of ill fit is not trustably coordinated with the severity or nature of the issues producing the data inconsistency. The  evidence of model-data inconsistency was too statistically solid to be dislodged or discarded, but people could at least be provided a way to distract from the "disturbing" evidence. Career-profits can still be accrued by developing additional indices, reporting investigations of index behavior, and publishing models intentionally burying evidence of model-data inconsistency under an MDI (a mound of distracting indices). There seems no general justification for why a researcher should "accept" a causally wrong model, rather than attempting to correct detected misspecifications. And some portions of the literature seems not to have noticed that "accepting a model" (on the basis of "satisfying" an index value) suffers from an intensified version of the criticism applied to "acceptance" of a null-hypothesis. Introductory statistics texts usually recommend replacing the term "accept" with "failed to reject the null hypothesis" to acknowledge the possibility of Type II error. A Type III error arises from "accepting" a model hypothesis when the current data are sufficient to reject the model.
+
+Whether or not researchers are committed to seeking the world's structure is a fundamental concern. Displacing test evidence of model-data inconsistency by hiding it behind index claims of acceptable-fit, introduces the discipline-wide cost of diverting attention away from whatever the discipline might have done to attain a structurally-improved understanding of the discipline's substance. The discipline ends up paying a real costs for index-based displacement of evidence of model misspecification. The frictions created by disagreements over the necessity of correcting model misspecifications will likely increase with increasing use of non-factor-structured models, and with use of fewer, more-precise, indicators of similar yet importantly-different latent variables.
+
+Akaike information criterion (AIC)
+
+An index of relative model fit: The preferred model is the one with the lowest AIC value.
+
+\mathit{AIC} = 2k - 2\ln(L)\,
+
+where k is the number of parameters in the statistical model, and L is the maximized value of the likelihood of the model.
+
+Root Mean Square Error of Approximation (RMSEA)
+
+Fit index where a value of zero indicates the best fit. Guidelines for determining a "close fit" using RMSEA are highly contested.
+
+Standardized Root Mean Squared Residual (SRMR)
+
+The SRMR is a popular absolute fit indicator. Hu and Bentler (1999) suggested .08 or smaller as a guideline for good fit.
+
+Comparative Fit Index (CFI)
+
+In examining baseline comparisons, the CFI depends in large part on the average size of the correlations in the data.  If the average correlation between variables is not high, then the CFI will not be very high. A CFI value of .95 or higher is desirable.
+
+The following table provides references documenting these, and other, features for some common indices: the RMSEA (Root Mean Square Error of Approximation), SRMR (Standardized Root Mean Squared Residual), CFI (Confirmatory Fit Index), and the TLI (the Tucker-Lewis Index). Additional indices such as the AIC (Akaike Information Criterion) can be found in most SEM introductions.
+
+Direct-effect estimates are interpreted in parallel to the interpretation of coefficients in regression equations but with causal commitment. Each unit increase in a causal variable's value is viewed as producing a change of the estimated magnitude in the dependent variable's value given control or adjustment for all the other operative/modeled causal mechanisms. Indirect effects are interpreted similarly, with the magnitude of a specific indirect effect equaling the product of the series of direct effects comprising that indirect effect. The units involved are the real scales of observed variables' values, and the assigned scale values for latent variables. A specified/fixed 1.0 effect of a latent on a specific indicator coordinates that indicator's scale with the latent variable's scale. The presumption that the remainder of the model remains constant or unchanging may require discounting indirect effects that might, in the real world, be simultaneously prompted by a real unit increase. And the unit increase itself might be inconsistent with what is possible in the real world because there may be no known way to change the causal variable's value. If a model adjusts for measurement errors, the adjustment permits interpreting latent-level effects as referring to variations in true scores. Understanding causal implications implicitly connects to understanding "controlling", and potentially explaining why some variables, but not others, should be controlled. As models become more complex these fundamental components can combine in non-intuitive ways, such as explaining how there can be no correlation (zero covariance) between two variables despite the variables being connected by a direct non-zero causal effect.
+
+The caution appearing in the Model Assessment section warrants repeat. Interpretation should be possible whether a model is or is not consistent with the data. The estimates report how the world would appear to someone believing the model – even if that belief is unfounded because the model happens to be wrong. Interpretation should acknowledge that the model coefficients may or may not correspond to "parameters" – because the model's coefficients may not have corresponding worldly structural features.
+
+Adding new latent variables entering or exiting the original model at a few clear causal locations/variables contributes to detecting model misspecifications which could otherwise ruin coefficient interpretations. The correlations between the new latent's indicators and all the original indicators contribute to testing the original model's structure because the few new and focused effect coefficients must work in coordination with the model's original direct and indirect effects to coordinate the new indicators with the original indicators. If the original model's structure was problematic, the sparse new causal connections will be insufficient to coordinate the new indicators with the original indicators, thereby signaling the inappropriateness of the original model's coefficients through model-data inconsistency. Dependable fitting models are rarer than failing models or models inappropriately bludgeoned into fitting, but appropriately-fitting models are possible.
+
+The multiple ways of conceptualizing PLS models complicate interpretation of PLS models. Many of the above comments are applicable if a PLS modeler adopts a realist perspective by striving to ensure their modeled indicators combine in a way that matches some existing but unavailable latent variable. Non-causal PLS models, such as those focusing primarily on R2 or out-of-sample predictive power, change the interpretation criteria by diminishing concern for whether or not the model's coefficients have worldly counterparts. The fundamental features differentiating the five PLS modeling perspectives discussed by Rigdon, Sarstedt and Ringle
+
+The controversy over model testing declined as clear reporting of significant model-data inconsistency becomes mandatory. Scientists do not get to ignore, or fail to report, evidence just because they do not like what the evidence reports. The comments by Bollen and Pearl regarding myths about causality in the context of SEM for example, makes it easy to overlook that a researcher might begin with one terrible model and one atrocious model, and end by retaining the structurally terrible model because some index reports it as better fitting than the atrocious model. It is unfortunate that  even otherwise strong SEM texts like Kline (2016)  Overall, the contributions that can be made by structural equation modeling depend on careful and detailed model assessment, even if a failing model happens to be the best available.
+
+An additional controversy that touched the fringes of the previous controversies awaits ignition.  Factor models and theory-embedded factor structures having multiple indicators tend to fail, and dropping weak indicators tends to reduce the model-data inconsistency. Reducing the number of indicators leads to concern for, and controversy over, the minimum number of indicators required to support a latent variable in a structural equation model. Researchers tied to factor tradition can be persuaded to reduce the number of indicators to three per latent variable, but three or even two indicators may still be inconsistent with a proposed underlying factor common cause. Hayduk and Littvay (2012)
+
+Fusion validity models
+
+Item response theory models
+
+Latent class models
+
+Latent growth modeling
+
+Link functions
+
+Longitudinal models
+
+Measurement invariance models
+
+Meta-analytic Structural Equation Modeling (MASEM) and Individual Participant Data Meta-analytic Structural Equation Modeling (IPD MASEM)
+
+Mixture model
+
+Multilevel models, hierarchical models (e.g. people nested in groups)
+
+Multiple group modelling with or without constraints between groups (genders, cultures, test forms, languages, etc.)
+
+Multi-method multi-trait models
+
+Random intercepts models
+
+Structural Equation Model Trees
+
+Structural Equation Multidimensional scaling
+
+Software
+
+Structural equation modeling programs differ widely in their capabilities and user requirements. Below is a table of available software.
+
+See also
+
+Judea Pearl
+
+References
+
+{{Reflist|30em|refs=
+
+}}
+
+Bibliography
+
+Further reading
+
+Bartholomew, D. J., and Knott, M. (1999) Latent Variable Models and Factor Analysis Kendall's Library of Statistics, vol. 7, Edward Arnold Publishers,
+
+{{cite journal |last1=Bentler |first1=P. M. |last2=Bonett |first2=Douglas G. |title=Significance tests and goodness of fit in the analysis of covariance structures. |journal=Psychological Bulletin |date=November 1980 |volume=88 |issue=3 |pages=588–606 |id= |doi=10.1037/0033-2909.88.3.588 }}
+
+Bollen, K. A. (1989). Structural Equations with Latent Variables. Wiley,
+
+Byrne, B. M. (2001) Structural Equation Modeling with AMOS - Basic Concepts, Applications, and Programming.LEA,
+
+{{cite book|author-link1=Karl Jöreskog|last1=Jöreskog|first1=Karl G.|first2=Fan|last2=Yang|year=1996|chapter=Non-linear structural equation models: The Kenny-Judd model with interaction effects|editor1-first=George A.|editor1-last=Marcoulides|editor2-first=Randall E.|editor2-last=Schumacker|title=Advanced structural equation modeling: Concepts, issues, and applications|location=Thousand Oaks, CA|publisher=Sage Publications|chapter-url=|pages=57–88|isbn=978-1-317-84380-1}}
+
+.
+
+External links
+
+Structural equation modeling page under David Garson's StatNotes, NCSU
+
+Issues and Opinion on Structural Equation Modeling, SEM in IS Research
+
+The causal interpretation of structural equations (or SEM survival kit) by Judea Pearl 2000.
+
+Structural Equation Modeling Reference List by Jason Newsom: journal articles and book chapters on structural equation models
+
+Handbook of Management Scales, a collection of previously used multi-item scales to measure constructs for SEM
+
+Category:Graphical models
+
+Category:Latent variable models
+
+Category:Regression models
+
+Category:Structural equation models

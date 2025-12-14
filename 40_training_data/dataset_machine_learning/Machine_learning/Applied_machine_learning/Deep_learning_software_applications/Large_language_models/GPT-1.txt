@@ -1,0 +1,57 @@
+{{Infobox software
+
+name = Generative Pre-trained Transformer 1 (GPT-1)
+
+logo =
+
+screenshot             =
+
+screenshot size        =
+
+caption                =
+
+author = OpenAI
+
+developer =
+
+released =
+
+latest release version =
+
+latest release date =
+
+repo =
+
+programming language =
+
+operating system =
+
+replaces =
+
+replaced_by = GPT-2
+
+genre =
+
+license = MIT
+
+website =
+
+}}
+
+Generative Pre-trained Transformer 1 (GPT-1) was the first of OpenAI's large language models following Google's invention of the transformer architecture in 2017. In June 2018, OpenAI released a paper entitled "Improving Language Understanding by Generative Pre-Training",
+
+Up to that point, the best-performing neural NLP models primarily employed supervised learning from large amounts of manually labeled data. This reliance on supervised learning limited their use of datasets that were not well-annotated, in addition to making it prohibitively expensive and time-consuming to train extremely large models;
+
+}}
+
+Category:Large language models
+
+Category:Generative pre-trained transformers
+
+Category:Software using the MIT license
+
+Category:OpenAI
+
+Category:2018 in artificial intelligence
+
+Category:2018 software

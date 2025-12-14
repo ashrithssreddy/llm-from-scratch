@@ -1,0 +1,79 @@
+{{Infobox scientist
+
+name        = Pushpak Bhattacharyya
+
+image       = PushpakBhattacharyya.png
+
+birth_date  =
+
+birth_place = Shillong, Assam, India
+
+death_date  =
+
+death_place =
+
+citizenship = India
+
+nationality = Indian
+
+website     =
+
+fields      = Computer science, Artificial Intelligence, Natural Language Processing
+
+workplaces  = IIT PatnaIIT Bombay
+
+alma_mater  = IIT KharagpurIIT KanpurIIT Bombay
+
+known_for   = Director at IIT Patna, Machine translation, Word-sense disambiguation, Sentiment analysis, Psycholinguistics, IndoWordNet, Information Retrieval
+
+}}
+
+Pushpak Bhattacharyya (3 July 1962 – 5 October 2025) was an Indian computer scientist and professor in the Department of Computer Science and Engineering at the IIT Bombay. He served as the Director of the IIT Patna from 2015 to 2021.
+
+He was a past President of the Association for Computational Linguistics (2016–17), and held the Vijay and Sita Vashee Chair Professorship at IIT Bombay. Bhattacharyya led the Natural Language Processing (NLP) research group at the Centre for Indian Language Technology (CFILT) at IIT Bombay until his death.
+
+At the inauguration of the Nilekani Centre at AI4Bharat, IIT Madras, Nandan Nilekani, Co-founder and Non-Executive Chairman of Infosys, referred to Bhattacharyya as the "Godfather of Indian NLP".
+
+Early life and education
+
+Bhattacharyya was born in Shillong in 1962. He completed his schooling at Jail Road Boys' High School, Shillong. He obtained a B.Tech. in Computer Science from the IIT Kharagpur, followed by an M.Tech. from the IIT Kanpur, and a Ph.D. in Computer Science from IIT Bombay in 1994.
+
+He authored and co-authored multiple academic works, including Investigations in Computational Sarcasm (with Aditya Joshi), Cognitively Inspired Natural Language Processing: An Investigation Based on Eye Tracking (with Abhijit Mishra), and Machine Translation and Transliteration of Low Resource Related Languages (with Anoop Kunchukuttan).
+
+Over his career, Bhattacharyya published more than 350 research papers in journals and conference proceedings and supervised over 300 undergraduate, master’s, and doctoral students. His projects often addressed computational challenges for Indian languages, such as developing wordnets, building translation systems for low-resource languages, and studying cognitive aspects of language processing.
+
+He also led government- and industry-funded research initiatives supported by organizations including IBM, Microsoft, Yahoo, and the United Nations.
+
+Death
+
+Bhattacharyya died on 5 October 2025, at the age of 63.
+
+VNMM Award, IIT Roorkee, for Technology Development
+
+Eminent Engineer Award, Institution of Engineers (India)
+
+References
+
+External links
+
+Homepage
+
+Google Scholar profile
+
+NPTEL Lectures on NLP
+
+Centre for Indian Language Technology (CFILT)
+
+Category:1962 births
+
+Category:2025 deaths
+
+Category:Indian computer scientists
+
+Category:Natural language processing researchers
+
+Category:IIT Bombay alumni
+
+Category:Academic staff of the Indian Institutes of Technology
+
+Category:Fellows of the Indian National Academy of Engineering

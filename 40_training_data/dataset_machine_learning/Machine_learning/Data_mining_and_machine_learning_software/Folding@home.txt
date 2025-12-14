@@ -1,0 +1,115 @@
+{{Infobox software
+
+name = Folding@home
+
+logo = FAH Logo.svg
+
+logo_size = 220px
+
+author = Vijay Pande
+
+developer = Pande Laboratory, Sony, Nvidia, ATI Technologies, Joseph Coffland, Cauldron Development
+
+language = English, French, Spanish, Swedish
+
+genre = Distributed computing
+
+license = Proprietary software (before version 8) Folding@home is currently based at the University of Pennsylvania and led by Greg Bowman, a former student of Vijay Pande. the system achieved a speed of approximately 1.22 exaflops by late March 2020 and reached 2.43 exaflops by April 12, 2020, making it the world's first exaflop computing system. This level of performance from its large-scale computing network has allowed researchers to run computationally costly atomic-level simulations of protein folding thousands of times longer than formerly achieved. Since its launch on October&nbsp;1, 2000, Folding@home has been involved in the production of 226 scientific research papers. Results from the project's simulations agree well with experiments.
+
+Drug design
+
+Drugs function by binding to specific locations on target molecules and causing some desired change, such as disabling a target or causing a conformational change. Ideally, a drug should act very specifically, and bind only to its target without interfering with other biological functions. However, it is difficult to precisely determine where and how tightly two molecules will bind. Due to limits in computing power, current in silico methods usually must trade speed for accuracy; e.g., use rapid protein docking methods instead of computationally costly free energy calculations. Folding@home's computing performance allows researchers to use both methods, and evaluate their efficiency and reliability. Many participants in citizen science have an underlying interest in the topic of the research and gravitate towards projects that are in disciplines of interest to them. Folding@home is no different in that respect. Research carried out recently on over 400 active participants revealed that they wanted to help make a contribution to research and that many had friends or relatives affected by the diseases that the Folding@home scientists investigate.
+
+Folding@home attracts participants who are computer hardware enthusiasts. These groups bring considerable expertise to the project and are able to build computers with advanced processing power. Other distributed computing projects attract these types of participants and projects are often used to benchmark the performance of modified computers, and this aspect of the hobby is accommodated through the competitive nature of the project. Individuals and teams can compete to see who can process the most computer processing units (CPUs).
+
+This latest research on Folding@home involving interview and ethnographic observation of online groups showed that teams of hardware enthusiasts can sometimes work together, sharing best practice with regard to maximizing processing output. Such teams can become communities of practice, with a shared language and online culture. This pattern of participation has been observed in other distributed computing projects.
+
+Another key observation of Folding@home participants is that many are male.
+
+Not all Folding@home participants are hardware enthusiasts. Many participants run the project software on unmodified machines and do take part competitively. By January 2020, the number of users was down to 30,000. However, it is difficult to ascertain what proportion of participants are hardware enthusiasts. Although, according to the project managers, the contribution of the enthusiast community is substantially larger in terms of processing power.
+
+Performance
+
+'s fastest supercomputer (black). However it was eclipsed by K computer in November 2011 and Blue Gene/Q in June 2012.]]
+
+Supercomputer FLOPS performance is assessed by running the legacy LINPACK benchmark. This short-term testing has difficulty in accurately reflecting sustained performance on real-world tasks because LINPACK more efficiently maps to supercomputer hardware. Computing systems vary in architecture and design, so direct comparison is difficult. Despite this, FLOPS remain the primary speed metric used in supercomputing. In contrast, Folding@home determines its FLOPS using wall-clock time by measuring how much time its work units take to complete.
+
+On September 16, 2007, due in large part to the participation of PlayStation 3 consoles, the Folding@home project officially attained a sustained performance level higher than one native petaFLOPS, becoming the first computing system of any kind to do so.
+
+Further use grew from increased awareness and participation in the project from the coronavirus pandemic in 2020. On March 20, 2020, Folding@home announced via Twitter that it was running with over 470 native petaFLOPS, the equivalent of 958 x86 petaFLOPS. By March 25 it reached 768 petaFLOPS, or 1.5 x86 exaFLOPS, making it the first exaFLOP computing system.
+
+, the computing power of Folding@home stands at 12.9 native petaFLOPS, or 24.8 x86 petaFLOPS.
+
+Points
+
+Similarly to other distributed computing projects, Folding@home quantitatively assesses user computing contributions to the project through a credit system. or by the redistribution of binaries by a third-party that have been previously modified either in their binary state (i.e. patched), or by decompiling and recompiling them after modification. These modifications are possible unless the binary files&nbsp;– and the transport channel&nbsp;– are signed and the recipient person/system is able to verify the digital signature, in which case unwarranted modifications should be detectable, but not always. Either way, since in the case of Folding@home the input data and output result processed by the client-software are both digitally signed,
+
+V7
+
+. In addition to a variety of controls and user details, V7 presents work unit information, such as its state, calculation progress, ETA, credit points, identification numbers, and description.]]
+
+The V7 client is the seventh generation of the Folding@home client software, and is a full rewrite and unification of the prior clients for Windows, macOS, and Linux operating systems.
+
+V8
+
+As of September 2025, V8.4 is the current release. Due to the phasing out of NaCl and changes at Folding@home, the web client was permanently shut down in June 2019.
+
+Android
+
+In July 2015, a client for Android mobile phones was released on Google Play for devices running Android 4.4 KitKat or newer.
+
+On February 16, 2018, the Android client, which was offered in cooperation with Sony, was removed from Google Play. Plans were announced to offer an open source alternative in the future. An ARM64-compatible client was launched in July 2020 allowing Folding@home to run on Raspberry Pi devices and ARM-based smartphones; however, there is no official Android app as of July 2025.
+
+Comparison to other molecular simulators
+
+Rosetta@home is a distributed computing project aimed at protein structure prediction and is one of the most accurate tertiary structure predictors.
+
+}}
+
+Sources
+
+External links
+
+Category:Bioinformatics
+
+Category:Computational biology
+
+Category:Computational chemistry
+
+Category:2000 software
+
+Category:Cross-platform software
+
+Category:Data mining and machine learning software
+
+Category:Distributed computing projects
+
+Category:Hidden Markov models
+
+Category:Mathematical and theoretical biology
+
+Category:Medical technology
+
+Category:Medical research organizations
+
+Category:Molecular dynamics software
+
+Category:Molecular modelling
+
+Category:Molecular modelling software
+
+Category:PlayStation 3 software
+
+Category:Protein folds
+
+Category:Protein structure
+
+Category:Simulation software
+
+Category:Science software for Linux
+
+Category:Science software for macOS
+
+Category:Science software for Windows
+
+Category:University of Pennsylvania

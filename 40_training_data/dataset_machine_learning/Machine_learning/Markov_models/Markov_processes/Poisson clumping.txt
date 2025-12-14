@@ -1,0 +1,27 @@
+Poisson clumping, or Poisson bursts, is a phenomenon where random events may appear to occur in clusters, clumps, or bursts.
+
+Etymology
+
+Poisson clumping is named for 19th-century French mathematician Siméon Denis Poisson, In many cases there is no other cause behind such indefinite groupings besides the nature of randomness following this distribution. However, obviously not all clumping in nature can be explained by this property — for example earthquakes, because of local seismic activity that causes groups of local aftershocks, in this case Weibull distribution is proposed.
+
+Applications
+
+Poisson clumping is used to explain marked increases or decreases in the frequency of an event, such as shark attacks, "coincidences", birthdays, heads or tails from coin tosses, and e-mail correspondence.
+
+Poisson clumping heuristic
+
+The poisson clumping heuristic (PCH), published by David Aldous in 1989, is a model for finding first-order approximations over different areas in a large class of stationary probability models. The probability models have a specific monotonicity property with large exclusions. The probability that this will achieve a large value is asymptotically small and is distributed in a Poisson fashion.
+
+See also
+
+Burstiness
+
+Clustering illusion
+
+Texas sharpshooter fallacy
+
+References
+
+Category:Poisson point processes
+
+Category:Markov processes

@@ -1,0 +1,77 @@
+images]]
+
+In metaphysics and statistics, a causal model (also called a structural causal model) is a conceptual model that represents the causal mechanisms of a system. Causal models often employ formal causal notation, such as structural equation modeling or causal directed acyclic graphs (DAGs), to describe relationships among variables and to guide inference.
+
+By clarifying which variables should be included, excluded, or controlled for, causal models can improve the design of empirical studies and the interpretation of results. They can also enable researchers to answer some causal questions using observational data, reducing the need for interventional studies such as randomized controlled trials.
+
+In cases where randomized experiments are impractical or unethical—for example, when studying the effects of environmental exposures or social determinants of health—causal models provide a framework for drawing valid conclusions from non-experimental data.
+
+Causal models can help with the question of external validity (whether results from one study apply to unstudied populations). Causal models can allow data from multiple studies to be merged (in certain circumstances) to answer questions that cannot be answered by any individual data set.
+
+Causal models have found applications in signal processing, epidemiology, machine learning, cultural studies, and urbanism, and they can describe both linear and nonlinear processes.
+
+Definition
+
+{{Blockquote|text=Causal models are mathematical models representing causal relationships within an individual system or population. They facilitate inferences about causal relationships from statistical data. They can teach us a good deal about the epistemology of causation, and about the relationship between causation and probability. They have also been applied to topics of interest to philosophers, such as the logic of counterfactuals, decision theory, and the analysis of actual causation.|sign=|source=Stanford Encyclopedia of Philosophy}} Judea Pearl defines a causal model as an ordered triple \langle U, V, E\rangle, where U is a set of exogenous variables whose values are determined by factors outside the model; V is a set of endogenous variables whose values are determined by factors within the model; and E is a set of structural equations that express the value of each endogenous variable as a function of the values of the other variables in U and V.
+
+History
+
+Aristotle defined a taxonomy of causality, including material, formal, efficient and final causes. Hume rejected Aristotle's taxonomy in favor of counterfactuals. At one point, he denied that objects have "powers" that make one a cause and another an effect. Later he adopted "if the first object had not been, the second had never existed" ("but-for" causation).
+
+In the late 19th century, the discipline of statistics began to form. After a years-long effort to identify causal rules for domains such as biological inheritance, Galton introduced the concept of mean regression (epitomized by the sophomore slump in sports) which later led him to the non-causal concept of correlation. He developed this approach while attempting to untangle the relative impacts of heredity, development and environment on guinea pig coat patterns. He backed up his then-heretical claims by showing how such analyses could explain the relationship between guinea pig birth weight, in utero time and litter size. Opposition to these ideas by prominent statisticians led them to be ignored for the following 40 years (except among animal breeders). Instead scientists relied on correlations, partly at the behest of Wright's critic (and leading statistician), Fisher.
+
+Counterfactuals
+
+The highest level, counterfactual, involves consideration of an alternate version of a past event, or what would happen under different circumstances for the same experimental unit. For example, what is the probability that, if a store had doubled the price of floss, the toothpaste-purchasing shopper would still have bought it?
+
+P (\mathrm{floss} | \mathrm{toothpaste}, 2*\mathrm{price})
+
+Counterfactuals can indicate the existence of a causal relationship. Models that can answer counterfactuals allow precise interventions whose consequences can be predicted. At the extreme, such models are accepted as physical laws (as in the laws of physics, e.g., inertia, which says that if force is not applied to a stationary object, it will not move).
+
+Necessary
+
+For x to be a necessary cause of y, the presence of y must imply the prior occurrence of x. The presence of x, however, does not imply that y will occur. Necessary causes are also known as "but-for" causes, as in y would not have occurred but for the occurrence of x.
+
+Model
+
+Causal diagram
+
+A causal diagram is a directed graph that displays causal relationships between variables in a causal model. A causal diagram includes a set of variables (or nodes). Each node is connected by an arrow to one or more other nodes upon which it has a causal influence. An arrowhead delineates the direction of causality, e.g., an arrow connecting variables A and B with the arrowhead at B indicates that a change in A causes a change in B (with an associated probability). A path is a traversal of the graph between two nodes following causal arrows.
+
+Because genes vary randomly across populations, presence of a gene typically qualifies as an instrumental variable, implying that in many cases, causality can be quantified using regression on an observational study.
+
+The following converts a do expression into a do-free expression by conditioning on the variables along the front-door path.
+
+See also
+
+Causal system
+
+Causal network – a Bayesian network with an explicit requirement that the relationships be causal
+
+Structural equation modeling – a statistical technique for testing and estimating causal relations
+
+Path analysis (statistics)
+
+Bayesian network
+
+Causal map
+
+Dynamic causal modeling
+
+Rubin causal model
+
+References
+
+Sources
+
+{{Cite book|url=|title=Causality|last=Pearl|first=Judea|date=2009-09-14|publisher=Cambridge University Press|isbn=978-1-139-64398-6|language=en}}
+
+External links
+
+Category:Causal diagrams
+
+Category:Causality
+
+Category:Scientific models
+
+Category:Concepts in metaphysics

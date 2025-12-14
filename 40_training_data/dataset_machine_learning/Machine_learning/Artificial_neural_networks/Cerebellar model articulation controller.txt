@@ -1,0 +1,47 @@
+The cerebellar model arithmetic computer (CMAC) is a type of neural network based on a model of the mammalian cerebellum. It is also known as the cerebellar model articulation controller. It is a type of associative memory.
+
+The CMAC was first proposed as a function modeler for robotic controllers by James Albus in 1975
+
+It is normal to add a kernel function to the hyper-rectangle, so that points falling towards the edge of a hyper-rectangle have a smaller activation than those falling near the centre.
+
+One of the major problems cited in practical use of CMAC is the memory size required, which is directly related to the number of cells used. This is usually ameliorated by using a hash function, and only providing memory storage for the actual cells that are activated by inputs.
+
+One-step convergent algorithm
+
+Initially least mean square (LMS) method is employed to update the weights of CMAC. The convergence of using LMS for training CMAC is sensitive to the learning rate and could lead to divergence. In 2004, a recursive least squares (RLS) algorithm was introduced to train CMAC online. It does not need to tune a learning rate.  Its convergence has been proved theoretically and can be guaranteed to converge in one step. The computational complexity of this RLS algorithm is O(N3).
+
+functions produce discontinuous staircase function approximation, by integrating CMAC with B-splines functions, continuous CMAC offers the capability of obtaining any order of derivatives of the approximate functions.
+
+Deep CMAC
+
+In recent years, numerous studies have confirmed that by stacking several shallow structures into a single deep structure, the overall system could achieve better data representation, and, thus, more effectively deal with nonlinear and high complexity tasks. In 2018, a deep CMAC (DCMAC) framework was proposed and a backpropagation algorithm was derived to estimate the DCMAC parameters. Experimental results of an adaptive noise cancellation task showed that the proposed DCMAC can achieve better noise cancellation performance when compared with that from the conventional single-layer CMAC.
+
+Summary
+
+See also
+
+References
+
+Further reading
+
+Albus, J.S. (1971). "Theory of Cerebellar Function". In: Mathematical Biosciences, Volume 10, Numbers 1/2, February 1971, pgs. 25–61
+
+Albus, J.S. (1975). "New Approach to Manipulator Control: The Cerebellar Model Articulation Controller (CMAC)". In: Transactions of the ASME Journal of Dynamic Systems, Measurement, and Control, September 1975, pgs. 220 – 227
+
+Albus, J.S. (1979). "Mechanisms of Planning and Problem Solving in the Brain". In: Mathematical Biosciences 45, pgs 247–293, 1979.
+
+Iwan, L., and Stengel, R., "The Application of Neural Networks to Fuel Processors for Fuel Cells" In IEEE Transactions on Vehicular Technology, Vol. 50 (1), pp. 125-143, 2001.
+
+Tsao, Y. (2018). "Adaptive Noise Cancellation Using Deep Cerebellar Model Articulation Controller". In: IEEE Access 6, April 2018, pgs 37395-37402.
+
+External links
+
+Blog on Cerebellar Model Articulation Controller (CMAC) by Ting Qin. More details on the one-step convergent algorithm, code development, etc.
+
+Category:Computational neuroscience
+
+Category:Artificial neural networks
+
+Category:Network architecture
+
+Category:Networks

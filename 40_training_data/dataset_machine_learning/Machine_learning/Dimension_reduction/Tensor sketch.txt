@@ -1,0 +1,467 @@
+In statistics, machine learning and algorithms, a tensor sketch is a type of dimensionality reduction that is particularly efficient when applied to vectors that have tensor structure. Such a sketch can be used to speed up explicit kernel methods, bilinear pooling in neural networks and is a cornerstone in many numerical linear algebra algorithms.
+
+Mathematical definition
+
+Mathematically, a dimensionality reduction or sketching matrix is a matrix M\in\mathbb R^{k \times d}, where k, such that for any vector x\in\mathbb R^d
+
+\|Mx\|_2 - \|x\|_2|
+
+with high probability.
+
+In other words, M preserves the norm of vectors up to a small error.
+
+A tensor sketch has the extra property that if x = y \otimes z for some vectors y\in\mathbb R^{d_1}, z\in\mathbb R^{d_2} such that d_1d_2=d, the transformation M(y\otimes z) can be computed more efficiently. Here  \otimes  denotes the Kronecker product, rather than the outer product, though the two are related by a flattening.
+
+The speedup is achieved by first rewriting M(y\otimes z) = M' y \circ M'' z, where \circ denotes the elementwise (Hadamard) product.
+
+Each of M' y and M'' z can be computed in time O(k d_1) and O(k d_2), respectively; including the Hadamard product gives overall time O(d_1 d_2 + k d_1 + k d_2). In most use cases this method is significantly faster than the full M(y\otimes z) requiring O(kd)=O(k d_1 d_2) time.
+
+For higher-order tensors, such as x = y\otimes z\otimes t, the savings are even more impressive.
+
+History
+
+The term tensor sketch was coined in 2013 describing a technique by Rasmus Pagh from the same year.
+
+Originally it was understood using the fast Fourier transform to do fast convolution of count sketches.
+
+Later research works generalized it to a much larger class of dimensionality reductions via Tensor random embeddings.
+
+Tensor random embeddings were introduced in 2010 in a paper on differential privacy and were first analyzed by Rudelson et al. in 2012 in the context of sparse recovery.
+
+Avron et al.
+
+were the first to study the subspace embedding properties of tensor sketches, particularly focused on applications to polynomial kernels.
+
+In this context, the sketch is required not only to preserve the norm of each individual vector with a certain probability but to preserve the norm of all vectors in each individual linear subspace.
+
+This is a much stronger property, and it requires larger sketch sizes, but it allows the kernel methods to be used very broadly as explored in the book by David Woodruff. in 1996 for radar and digital antenna array applications).
+
+More directly, let \mathbf{C}\in\mathbb R^{3\times 3} and \mathbf{D}\in\mathbb R^{3\times 3} be two matrices.
+
+Then the face-splitting product \mathbf{C}\bullet \mathbf{D} is was introduced by Ailon and Chazelle in 2006.
+
+A version of this method takes
+
+M = \operatorname{SHD}
+
+where
+
+D is a diagonal matrix where each diagonal entry D_{i,i} is \pm1 independently.
+
+The matrix-vector multiplication Dx can be computed in O(d) time.
+
+H is a Hadamard matrix, which allows matrix-vector multiplication in time O(d\log d)
+
+S is a k\times d sampling matrix which is all zeros, except a single 1 in each row.
+
+If the diagonal matrix is replaced by one which has a tensor product of \pm1 values on the diagonal, instead of being fully independent, it is possible to compute \operatorname{SHD}(x\otimes y) fast.
+
+For an example of this, let \rho,\sigma\in\{-1,1\}^2 be two independent \pm1 vectors and let D be a diagonal matrix with \rho\otimes\sigma on the diagonal.
+
+We can then split up \operatorname{SHD}(x\otimes y) as follows:
+
+\begin{align}
+
+&\operatorname{SHD}(x\otimes y)
+
+\\
+
+&\quad=
+
+\begin{bmatrix}
+
+1 & 0 & 0 & 0 \\
+
+0 & 0 & 1 & 0 \\
+
+0 & 1 & 0 & 0
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+1 & 1 & 1 & 1 \\
+
+1 & -1 & 1 & -1 \\
+
+1 & 1 & -1 & -1 \\
+
+1 & -1 & -1 & 1
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+\sigma_1 \rho_1 & 0 & 0 & 0 \\
+
+0 & \sigma_1 \rho_2 & 0 & 0 \\
+
+0 & 0 & \sigma_2 \rho_1 & 0 \\
+
+0 & 0 & 0 & \sigma_2 \rho_2 \\
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+x_1y_1 \\
+
+x_2y_1 \\
+
+x_1y_2 \\
+
+x_2y_2
+
+\end{bmatrix}
+
+\\[5pt]
+
+&\quad=
+
+\left(
+
+\begin{bmatrix}
+
+1 & 0 \\
+
+0 & 1 \\
+
+1 & 0
+
+\end{bmatrix}
+
+\bullet
+
+\begin{bmatrix}
+
+1 & 0 \\
+
+1 & 0 \\
+
+0 & 1
+
+\end{bmatrix}
+
+\right)
+
+\left(
+
+\begin{bmatrix}
+
+1 & 1 \\
+
+1 & -1
+
+\end{bmatrix}
+
+\otimes
+
+\begin{bmatrix}
+
+1 & 1 \\
+
+1 & -1
+
+\end{bmatrix}
+
+\right)
+
+\left(
+
+\begin{bmatrix}
+
+\sigma_1 & 0 \\
+
+0 & \sigma_2 \\
+
+\end{bmatrix}
+
+\otimes
+
+\begin{bmatrix}
+
+\rho_1 & 0 \\
+
+0 & \rho_2 \\
+
+\end{bmatrix}
+
+\right)
+
+\left(
+
+\begin{bmatrix}
+
+x_1 \\
+
+x_2
+
+\end{bmatrix}
+
+\otimes
+
+\begin{bmatrix}
+
+y_1 \\
+
+y_2
+
+\end{bmatrix}
+
+\right)
+
+\\[5pt]
+
+&\quad=
+
+\left(
+
+\begin{bmatrix}
+
+1 & 0 \\
+
+0 & 1 \\
+
+1 & 0
+
+\end{bmatrix}
+
+\bullet
+
+\begin{bmatrix}
+
+1 & 0 \\
+
+1 & 0 \\
+
+0 & 1
+
+\end{bmatrix}
+
+\right)
+
+\left(
+
+\begin{bmatrix}
+
+1 & 1 \\
+
+1 & -1
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+\sigma_1 & 0 \\
+
+0 & \sigma_2 \\
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+x_1 \\
+
+x_2
+
+\end{bmatrix}
+
+\,\otimes\,
+
+\begin{bmatrix}
+
+1 & 1 \\
+
+1 & -1
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+\rho_1 & 0 \\
+
+0 & \rho_2 \\
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+y_1 \\
+
+y_2
+
+\end{bmatrix}
+
+\right)
+
+\\[5pt]
+
+&\quad=
+
+\begin{bmatrix}
+
+1 & 0 \\
+
+0 & 1 \\
+
+1 & 0
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+1 & 1 \\
+
+1 & -1
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+\sigma_1 & 0 \\
+
+0 & \sigma_2 \\
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+x_1 \\
+
+x_2
+
+\end{bmatrix}
+
+\,\circ\,
+
+\begin{bmatrix}
+
+1 & 0 \\
+
+1 & 0 \\
+
+0 & 1
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+1 & 1 \\
+
+1 & -1
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+\rho_1 & 0 \\
+
+0 & \rho_2 \\
+
+\end{bmatrix}
+
+\begin{bmatrix}
+
+y_1 \\
+
+y_2
+
+\end{bmatrix}
+
+.
+
+\end{align}
+
+In other words, \operatorname{SHD}=S^{(1)}HD^{(1)} \bullet S^{(2)}HD^{(2)}, splits up into two Fast Johnson–Lindenstrauss transformations, and the total reduction takes time O(d_1\log d_1+d_2\log d_2) rather than d_1 d_2\log(d_1 d_2) as with the direct approach.
+
+The same approach can be extended to compute higher degree products, such as \operatorname{SHD}(x\otimes y\otimes z)
+
+Ahle et al. the same year, showed a similar result for the more general class of matrices call RIP, which includes the subsampled Hadamard matrices.
+
+They showed that these matrices allow splitting into tensors provided the number of rows is \varepsilon^{-2}(\log1/\delta)^{2c-1}\log d.
+
+In the case c=2 this matches the previous result.
+
+These fast constructions can again be combined with the recursion approach mentioned above, giving the fastest overall tensor sketch.
+
+Data aware sketching
+
+It is also possible to do so-called "data aware" tensor sketching.
+
+Instead of multiplying a random matrix on the data, the data points are sampled independently with a certain probability depending on the norm of the point.
+
+Applications
+
+Explicit polynomial kernels
+
+Kernel methods are popular in machine learning as they give the algorithm designed the freedom to design a "feature space" in which to measure the similarity of their data points.
+
+A simple kernel-based binary classifier is based on the following computation:
+
+\hat{y}(\mathbf{x'}) = \sgn \sum_{i=1}^n y_i k(\mathbf{x}_i, \mathbf{x'}),
+
+where \mathbf{x}_i\in\mathbb{R}^d are the data points, y_i is the label of the ith point (either −1 or +1), and \hat{y}(\mathbf{x'}) is the prediction of the class of \mathbf{x'}.
+
+The function k : \mathbb{R}^d \times \mathbb R^d \to \mathbb R is the kernel.
+
+Typical examples are the radial basis function kernel, k(x,x') = \exp(-\|x-x'\|_2^2), and polynomial kernels such as k(x,x') = (1+\langle x, x'\rangle)^2.
+
+When used this way, the kernel method is called "implicit".
+
+Sometimes it is faster to do an "explicit" kernel method, in which a pair of functions f, g : \mathbb{R}^d \to \mathbb{R}^D are found, such that k(x,x') = \langle f(x), g(x')\rangle.
+
+This allows the above computation to be expressed as
+
+\hat{y}(\mathbf{x'})
+
+= \sgn \sum_{i=1}^n y_i \langle f(\mathbf{x}_i), g(\mathbf{x'})\rangle
+
+= \sgn \left\langle\left(\sum_{i=1}^n y_i f(\mathbf{x}_i)\right), g(\mathbf{x'})\right\rangle,
+
+where the value \sum_{i=1}^n y_i f(\mathbf{x}_i) can be computed in advance.
+
+The problem with this method is that the feature space can be very large. That is D >> d.
+
+For example, for the polynomial kernel k(x,x') = \langle x,x'\rangle^3 we get f(x) = x\otimes x\otimes x and g(x') = x'\otimes x'\otimes x', where \otimes is the tensor product and f(x),g(x')\in\mathbb{R}^D where D=d^3.
+
+If d is already large, D can be much larger than the number of data points (n) and so the explicit method is inefficient.
+
+The idea of tensor sketch is that we can compute approximate functions f', g' : \mathbb R^d \to \mathbb R^t where t can even be smaller than d, and which still have the property that \langle f'(x), g'(x')\rangle \approx k(x,x').
+
+This method was shown in 2020 to work even for high degree polynomials and radial basis function kernels.
+
+Compressed matrix multiplication
+
+Assume we have two large datasets, represented as matrices X, Y\in\mathbb R^{n \times d}, and we want to find the rows i,j with the largest inner products \langle X_i, Y_j\rangle.
+
+We could compute Z = X Y^T \in \mathbb R^{n\times n} and simply look at all n^2 possibilities.
+
+However, this would take at least n^2 time, and probably closer to n^2d using standard matrix multiplication techniques.
+
+The idea of Compressed Matrix Multiplication is the general identity
+
+X Y^T = \sum_{i=1}^d X_i \otimes Y_i
+
+where \otimes is the tensor product.
+
+Since we can compute a (linear) approximation to X_i \otimes Y_i efficiently, we can sum those up to get an approximation for the complete product.
+
+Compact multilinear pooling
+
+.]]
+
+Bilinear pooling is the technique of taking two input vectors, x, y from different sources, and using the tensor product x\otimes y as the input layer to a neural network.
+
+In the authors considered using tensor sketch to reduce the number of variables needed.
+
+In 2017 another paper takes the FFT of the input features, before they are combined using the element-wise product.
+
+This again corresponds to the original tensor sketch.
+
+References
+
+Further reading
+
+Category:Dimension reduction
+
+Category:Tensors

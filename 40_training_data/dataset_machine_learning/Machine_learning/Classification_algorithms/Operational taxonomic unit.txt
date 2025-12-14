@@ -1,0 +1,37 @@
+An operational taxonomic unit (OTU) is an operational definition used to classify groups of closely related individuals. The term was originally introduced in 1963 by Robert R. Sokal and Peter H. A. Sneath in the context of numerical taxonomy, where an "operational taxonomic unit" is simply the group of organisms currently being studied. In this sense, an OTU is a pragmatic definition to group individuals by similarity, equivalent to but not necessarily in line with classical Linnaean taxonomy or modern evolutionary taxonomy.
+
+Nowadays, however, the term is commonly used in a different context and refers to clusters of (uncultivated or unknown) organisms, grouped by DNA sequence similarity of a specific taxonomic marker gene (originally coined as mOTU; molecular OTU). In other words, OTUs are pragmatic proxies for "species" (microbial or metazoan) at different taxonomic levels, in the absence of traditional systems of biological classification as are available for macroscopic organisms. For several years, OTUs have been the most commonly used units of diversity, especially when analysing small subunit 16S (for prokaryotes) or 18S rRNA (for eukaryotes) marker gene sequence datasets.
+
+Sequences can be clustered according to their similarity to one another, and operational taxonomic units are defined based on the similarity threshold (usually 97% similarity; however also 100% similarity is common, also known as single variants) set by the researcher.  It remains debatable how well this commonly used method recapitulates true microbial species phylogeny or ecology. Although OTUs can be calculated differently when using different algorithms or thresholds, research by Schmidt et al. (2014) demonstrated that microbial OTUs were generally ecologically consistent across habitats and several OTU clustering approaches. The number of OTUs defined may be inflated due to errors in DNA sequencing.
+
+OTU clustering approaches
+
+There are three main approaches to clustering OTUs:
+
+De novo, for which the clustering is based on similarities between sequencing reads.
+
+Closed-reference, for which the clustering is performed against a reference database of sequences.
+
+Open-reference, where clustering is first performed against a reference database of sequences, then any remaining sequences that could not be mapped to the reference are clustered de novo.
+
+OTU clustering algorithms
+
+Hierarchical clustering algorithms (HCA): uclust & cd-hit & ESPRIT
+
+See also
+
+Phylotype
+
+Amplicon sequence variant
+
+References
+
+Further reading
+
+Category:Genomics
+
+Category:Classification systems
+
+Category:Classification algorithms
+
+Category:Taxonomy (biology)

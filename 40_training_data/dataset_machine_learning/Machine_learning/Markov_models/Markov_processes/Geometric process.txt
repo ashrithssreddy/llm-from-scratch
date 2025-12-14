@@ -1,0 +1,23 @@
+In probability, statistics and related fields, the geometric process is a counting process, introduced by Lam in 1988. It is defined as
+
+The geometric process. Given a sequence of non-negative random variables : \{X_k,k=1,2, \dots\} , if they are independent and the cdf of  X_k  is given by F(a^{k-1}x) for  k=1,2, \dots , where a  is a positive constant, then \{X_k,k=1,2,\ldots\} is called a geometric process (GP).
+
+The GP has been widely applied in reliability engineering
+
+Below are some of its extensions.
+
+The α- series process. Given a sequence of non-negative random variables: \{X_k,k=1,2, \dots\} , if they are independent and the cdf of  \frac{X_k}{k^a}  is given by F(x) for  k=1,2, \dots , where a  is a positive constant, then \{X_k,k=1,2,\ldots\} is called an α- series process.
+
+The threshold geometric process. A stochastic process \{Z_n, n = 1,2, \ldots\} is said to be a threshold geometric process (threshold GP), if there exists real numbers a_i > 0, i = 1,2, \ldots , k and integers \{1 = M_1  such that for each i = 1, \ldots , k, \{a_i^{n-M_i}Z_n, M_i \le n  forms a renewal process.
+
+The doubly geometric process. Given a sequence of non-negative random variables : \{X_k,k=1,2, \dots\} , if they are independent and the cdf of  X_k  is given by F(a^{k-1}x^{h(k)}) for  k=1,2, \dots , where a  is a positive constant and h(k) is a function of k  and the parameters in h(k) are estimable, and h(k)>0 for natural number k, then \{X_k,k=1,2,\ldots\} is called a doubly geometric process (DGP).
+
+The semi-geometric process. Given a sequence of non-negative random variables  \{X_k, k=1,2,\dots\} , if  P\{X_k  and the marginal distribution of  X_k  is given by  P\{X_k , where  a  is a positive constant, then \{X_k, k=1,2,\dots\} is called a semi-geometric process
+
+The double ratio geometric process. Given a sequence of non-negative random variables \{Z_k^D,k=1,2, \dots\}, if they are independent and the cdf of  Z_k^D  is given by F_k^D(t)=1-\exp\{-\int_0^{t} b_k h(a_k u) du\} for k=1,2, \dots, where  a_k and  b_k  are positive parameters (or ratios) and  a_1=b_1=1. We call the stochastic process the double-ratio geometric process (DRGP).
+
+References
+
+Category:Point processes
+
+Category:Markov processes

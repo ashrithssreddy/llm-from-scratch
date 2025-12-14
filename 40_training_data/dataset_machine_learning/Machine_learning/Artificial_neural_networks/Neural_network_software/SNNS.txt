@@ -1,0 +1,55 @@
+{{Infobox software
+
+name                   = Stuttgart Neural Network Simulator
+
+screenshot             =
+
+caption                = Demonstration of the Stuttgart Neural Network Simulator
+
+collapsible            = yes
+
+developer              = University of Stuttgart
+
+latest release version = 4.3
+
+latest release date    =
+
+latest preview version =
+
+latest preview date    =
+
+operating system       = Cross-platform
+
+programming language   = C
+
+genre                  = Neural network software
+
+license                = GNU LGPL
+
+website                = http://www.ra.cs.uni-tuebingen.de/SNNS/welcome.html
+
+}}
+
+SNNS (Stuttgart Neural Network Simulator) is a neural network simulator originally developed at the University of Stuttgart. While it was originally built for X11 under Unix, there are Windows ports. Its successor JavaNNS never reached the same popularity.
+
+Features
+
+SNNS is written around a simulation kernel to which user written activation functions, learning procedures and output functions can be added. It has support for arbitrary network topologies and the standard release contains support for a number of standard neural network architectures and training algorithms.
+
+Status
+
+There is currently no ongoing active development of SNNS. In July 2008 the license was changed to the GNU LGPL.
+
+See also
+
+Artificial neural network
+
+Neural network software
+
+External links
+
+SNNS homepage
+
+Patches with bugfixes and a Python interface to the SNNS kernel
+
+Category:Neural network software

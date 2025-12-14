@@ -1,0 +1,95 @@
+Bing Liu is a Chinese-American professor of computer science who specializes in data mining, machine learning, and natural language processing. In 2002, he became a scholar at University of Illinois at Chicago.
+
+He holds a PhD from the University of Edinburgh (1988). His PhD advisors were Austin Tate and Kenneth Williamson Currie, and his PhD thesis was titled Reinforcement Planning for Resource Allocation and Constraint Satisfaction.
+
+Academic research
+
+He developed a mathematical model that can reveal fake advertising. Also, he teaches the course "Data Mining" during the Fall and Spring semesters at UIC. The course usually involves a project and various quiz/examinations as grading criteria.
+
+He is best known for his research on sentiment analysis (also called opinion mining), fake/deceptive opinion detection, and using association rules for prediction. He also made important contributions to learning from positive and unlabeled examples (or PU learning), Web data extraction, and interestingness in data mining.
+
+Two of his research papers published in KDD-1998 and KDD-2004 received KDD Test-of-Time awards in 2014 and 2015. In 2013, he was elected chair of SIGKDD, ACM Special Interest Group on Knowledge Discovery and Data Mining.
+
+Research on Association Rules For Prediction
+
+Association rule-based classification takes into account the relationships between each item in a dataset and the class into which one is trying to classify that item. Liu and his collaborators described a new association rule-based classification algorithm that takes into account the relationship between items and the positive and negative classes. Opinion lexicons are word sets and opinion targets are topics on which there is an opinion.
+
+In 2016, he was elected Fellow of AAAI "For significant contributions to data mining and development of widely used sentiment analysis, opinion spam detection, and Web mining algorithms."
+
+Publications
+
+Peer-reviewed Article List
+
+Liu, Bing, Yiming Ma, Ching Kian Wong, and Philip S. Yu. 2003. “Scoring the Data Using Association Rules.” Applied Intelligence 18(2):119–35.
+
+Liu, Bing. 1995. “A Unified Framework for Consistency Check.” International Journal of Intelligent Systems 10(8):691–713.
+
+Zhang, Lei, Shuai Wang, and Bing Liu. 2018. “Deep Learning for Sentiment Analysis: A Survey.” Wiley Interdisciplinary Reviews: Data Mining and Knowledge Discovery 8(4).
+
+Wang, Guan, Sihong Xie, Bing Liu, and Philip S. Yu. 2012. “Identify Online Store Review Spammers via Social Review Graph.” ACM Transactions on Intelligent Systems and Technology 3(4):1–21.
+
+Yu, Zeng et al. 2019. “Reconstruction of Hidden Representation for Robust Feature Extraction.” ACM Transactions on Intelligent Systems and Technology 10(2):1–24.
+
+Wang, Jing, Clement T. Yu, Philip S. Yu, Bing Liu, and Weiyi Meng. 2015. “Diversionary Comments under Blog Posts.” ACM Transactions on the Web 9(4):1–34.
+
+Bing Liu, Wynne Hsu, Lai-Fun Mun, and Hing-Yan Lee. 1999. “Finding Interesting Patterns Using User Expectations.” IEEE Transactions on Knowledge and Data Engineering 11(6):817–32.
+
+Yanhong Zhai and Bing Liu. 2006. “Structured Data Extraction from the Web Based on Partial Tree Alignment.” IEEE Transactions on Knowledge and Data Engineering 18(12):1614–28.
+
+Yu, Huilin, Tieyun Qian, Yile Liang, and Bing Liu. 2020. “AGTR: Adversarial Generation of Target Review for Rating Prediction.” Data Science and Engineering 5(4):346–59.
+
+Bing Liu. 1997. “Route Finding by Using Knowledge about the Road Network.” IEEE Transactions on Systems, Man, and Cybernetics - Part A: Systems and Humans 27(4):436–48.
+
+Liu, Bing. 1993. “Problem Acquisition in Scheduling Domains.” Expert Systems with Applications 6(3):257–65.
+
+Liu, Bing. 1993. “Knowledge-Based Factory Scheduling: Resource Allocation and Constraint Satisfaction.” Expert Systems with Applications 6(3):349–59.
+
+Bing Liu, R. Grossman, and Yanhong Zhai. 2004. “Mining Web Pages for Data Records.” IEEE Intelligent Systems 19(06):49–55.
+
+Bing Liu, Wynne Hsu, Shu Chen, and Yiming Ma. 2000. “Analyzing the Subjective Interestingness of Association Rules.” IEEE Intelligent Systems 15(5):47–55.
+
+Liu, Bing and Alexander Tuzhilin. 2008. “Managing Large Collections of Data Mining Models.” Communications of the ACM 51(2):85–89.
+
+Liu, Qian, Zhiqiang Gao, Bing Liu, and Yuanlin Zhang. 2016. “Automated Rule Selection for Opinion Target Extraction.” Knowledge-Based Systems 104:74–88.
+
+Liu, Bing. 2017. “Lifelong Machine Learning: a Paradigm for Continuous Learning.” Frontiers of Computer Science 11(3):359–61.
+
+Poria, Soujanya, Ong Yew Soon, Bing Liu, and Lidong Bing. 2020. “Affect Recognition for Multimodal Natural Language Processing.” Cognitive Computation 13(2):229–30.
+
+Qian, Yuhua, Hang Xu, Jiye Liang, Bing Liu, and Jieting Wang. 2015. “Fusing Monotonic Decision Trees.” IEEE Transactions on Knowledge and Data Engineering 27(10):2717–28.
+
+Wang, Hao, Yan Yang, Bing Liu, and Hamido Fujita. 2019. “A Study of Graph-Based System for Multi-View Clustering.” Knowledge-Based Systems 163:1009–19.
+
+Li, Huayi, Bing Liu, Arjun Mukherjee, and Jidong Shao. 2014. “Spotting Fake Reviews Using Positive-Unlabeled Learning.” Computación y Sistemas 18(3).
+
+Zhai, Zhongwu, Bing Liu, Jingyuan Wang, Hua Xu, and Peifa Jia. 2012. “Product Feature Grouping for Opinion Mining.” IEEE Intelligent Systems 27(4):37–44.
+
+Apte, Chidanand, Bing Liu, Edwin P. Pednault, and Padhraic Smyth. 2002. “Business Applications of Data Mining.” Communications of the ACM 45(8):49–53.
+
+Li, Yanni et al. 2020. “ESA-Stream: Efficient Self-Adaptive Online Data Stream Clustering.” IEEE Transactions on Knowledge and Data Engineering 1–1.
+
+Robert Grossman, Pavan Kasturi, Donald Hamelberg, and Bing Liu. 2004. "An Empirical Study of the Universal Chemical Key Algorithm for Assigning Unique Keys to Chemical Compounds." Journal of Bioinformatics and Computational Biology 02(01):155–71.
+
+Liu, Bing et al. 1994. “Finding the Shortest Route Using Cases, Knowledge, and Djikstra's Algorithm.” IEEE Expert 9(5):7–11.
+
+Liu, Bing. 1994. "Specific Constraint Handling in Constraint Satisfaction Problems.” International Journal on Artificial Intelligence Tools 03(01):79–96.
+
+References
+
+External links
+
+Category:Data miners
+
+Category:American computer scientists
+
+Category:University of Illinois Chicago faculty
+
+Category:Living people
+
+Category:Place of birth missing (living people)
+
+Category:Natural language processing researchers
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Year of birth missing (living people)

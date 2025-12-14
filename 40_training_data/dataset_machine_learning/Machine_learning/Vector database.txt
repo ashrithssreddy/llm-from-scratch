@@ -1,0 +1,35 @@
+A vector database, vector store or vector search engine is a database that uses the vector space model to store vectors (fixed-length lists of numbers) along with other data items. Vector databases typically implement one or more approximate nearest neighbor algorithms, so that one can search the database with a query vector to retrieve the closest matching database records.
+
+Vectors are mathematical representations of data in a high-dimensional space. In this space, each dimension corresponds to a feature of the data, with the number of dimensions ranging from a few hundred to tens of thousands, depending on the complexity of the data being represented. A vector's position in this space represents its characteristics. Words, phrases, or entire documents, as well as images, audio, and other types of data, can all be vectorized.
+
+These feature vectors may be computed from the raw data using machine learning methods such as feature extraction algorithms, word embeddings or deep learning networks. The goal is that semantically similar data items receive feature vectors close to each other.
+
+Vector databases can be used for similarity search, semantic search, multi-modal search, recommendations engines, large language models (LLMs), object detection,  etc.
+
+Techniques
+
+The most important techniques for similarity search on high-dimensional vectors include:
+
+Hierarchical Navigable Small World (HNSW) graphs
+
+Locality-sensitive Hashing (LSH) and Sketching
+
+Product Quantization (PQ)
+
+Inverted Files
+
+and combinations of these techniques.
+
+In recent benchmarks, HNSW-based implementations have been among the best performers. Conferences such as the International Conference on Similarity Search and Applications, SISAP and the Conference on Neural Information Processing Systems (NeurIPS) host competitions on vector search in large databases.
+
+Implementations
+
+See also
+
+References
+
+External links
+
+Category:Machine learning
+
+Category:Types of databases

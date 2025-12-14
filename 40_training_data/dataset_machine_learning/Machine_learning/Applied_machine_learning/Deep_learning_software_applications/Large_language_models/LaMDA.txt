@@ -1,0 +1,23 @@
+LaMDA (Language Model for Dialogue Applications) is a family of conversational large language models developed by Google. Originally developed and introduced as Meena in 2020, the first-generation LaMDA was announced during the 2021 Google I/O keynote, while the second generation was announced the following year.
+
+In June 2022, LaMDA gained widespread attention when Google engineer Blake Lemoine made claims that the chatbot had become sentient. The scientific community has largely rejected Lemoine's claims, though it has led to conversations about the efficacy of the Turing test, which measures whether a computer can pass for a human. In February 2023, Google announced Gemini (then Bard), a conversational artificial intelligence chatbot powered by LaMDA, to counter the rise of OpenAI's ChatGPT.
+
+History
+
+Background
+
+On January 28, 2020, Google unveiled Meena, a neural network-powered chatbot with 2.6&nbsp;billion parameters, which Google claimed to be superior to all other existing chatbots. IBM Watson lead developer David Ferrucci compared how LaMDA appeared to be human in the same way Watson did when it was first introduced.
+
+Category:2021 software
+
+Category:2022 controversies in the United States
+
+Category:Chatbots
+
+Category:Google software
+
+Category:Large language models
+
+Category:Philosophy of artificial intelligence
+
+Category:Generative pre-trained transformers

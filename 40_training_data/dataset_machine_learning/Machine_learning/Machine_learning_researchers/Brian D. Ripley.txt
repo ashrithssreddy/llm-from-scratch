@@ -1,0 +1,107 @@
+{{Infobox scientist
+
+name              = Brian David Ripley
+
+image             =
+
+birth_date        =
+
+birth_place       =
+
+death_date        =
+
+death_place       =
+
+citizenship       = British
+
+nationality       =
+
+ethnicity         =
+
+field             =
+
+work_institutions = Imperial College (1976&ndash;83)University of Strathclyde (1983&ndash;90)St Peter's College, Oxford (1990&ndash;2014)
+
+alma_mater        = University of Cambridge (BA, MA, PhD)
+
+thesis_title      = Stochastic Geometry and the Analysis of Spatial Patterns
+
+thesis_year       = 1976
+
+doctoral_advisor  = David George Kendall
+
+doctoral_students = Matthew StephensJonathan Marchini
+
+known_for         =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+prizes            = Smith's Prize (1975)Davidson Prize (1976)Adams Prize (1987)Guy Medal (Silver, 2013)
+
+religion          =
+
+footnotes         =
+
+signature         =
+
+}}
+
+Brian David Ripley FRSE (born 29 April 1952) is a British statistician. From 1990, he was professor of applied statistics at the University of Oxford and also a professorial fellow at St Peter's College. He retired August 2014 due to ill health.
+
+Biography
+
+Ripley has made contributions to the fields of spatial statistics and pattern recognition. His work on artificial neural networks in the 1990s helped to bring aspects of machine learning and data mining to the attention of statistical audiences. He emphasised the value of robust statistics in his books Pattern Recognition and Neural Networks and Modern Applied Statistics with S.
+
+Ripley helped develop the S-PLUS programming language and its open source derivative R. He co-authored two books based on S, S Programming and Modern Applied Statistics with S. and from 2000 to 2021 he was one of the most active committers to the R core. The package MASS is one of only fifteen "recommended packages" for R (with June 2024 more than 20,900).
+
+He was educated at the University of Cambridge, where he was awarded both the Smith's Prize (at the time awarded to the best graduate essay writer who had been undergraduate at Cambridge in that cohort) and the Rollo Davidson Prize. The university also awarded him the Adams Prize in 1987 for an essay entitled Statistical Inference for Spatial Processes, later published as a book. He served on the faculty of Imperial College, London from 1976 until 1983, at which point he moved to the University of Strathclyde.
+
+Authored books
+
+Ripley, B. D. (1981) Spatial Statistics. Wiley, 252pp. .
+
+Ripley, B. D. (1983) Stochastic Simulation. Wiley, .
+
+Ripley, B. D. (1996) Pattern Recognition and Neural Networks. Cambridge University Press. 403 pages. .
+
+Venables, W. N. and Ripley, B. D. (2000) S Programming. Springer, 264pp. .
+
+Venables, W. N. and Ripley, B. D. (2002) Modern Applied Statistics with S (Fourth Edition; previous editions published as Modern Applied Statistics with S-PLUS in 1994, 1997 & 1999). Springer, 462pp. .
+
+References
+
+External links
+
+Brian Ripley's home page at the University of Oxford
+
+Category:1952 births
+
+Category:Academics of Imperial College London
+
+Category:Academics of the University of Strathclyde
+
+Category:Alumni of the University of Cambridge
+
+Category:British statisticians
+
+Category:Fellows of the Royal Society of Edinburgh
+
+Category:Machine learning researchers
+
+Category:British artificial intelligence researchers
+
+Category:Living people
+
+Category:Fellows of St Peter's College, Oxford
+
+Category:R (programming language) people
+
+Category:Spatial statisticians
+
+Category:Computational statisticians

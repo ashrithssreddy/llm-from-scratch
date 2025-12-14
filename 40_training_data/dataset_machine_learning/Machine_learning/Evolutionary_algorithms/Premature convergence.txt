@@ -1,0 +1,51 @@
+Premature convergence is an unwanted effect in evolutionary algorithms (EA), a metaheuristic that mimics the basic principles of biological evolution as a computer algorithm for solving an optimization problem. The effect means that the population of an EA has converged too early, resulting in being suboptimal. In this context, the parental solutions, through the aid of genetic operators, are not able to generate offspring that are superior to, or outperform, their parents. Premature convergence is a common problem found in evolutionary algorithms, as it leads to a loss, or convergence of, a large number of alleles, subsequently making it very difficult to search for a specific gene in which the alleles were present. An allele is considered lost if, in a population, a gene is present, where all individuals are sharing the same value for that particular gene. An allele is, as defined by De Jong, considered to be a converged allele, when 95% of a population share the same value for a certain gene.
+
+Strategies for preventing premature convergence
+
+Strategies to regain genetic variation can be:
+
+a mating strategy called incest prevention,
+
+uniform crossover,
+
+mimicking sexual selection,
+
+favored replacement of similar individuals (preselection or crowding),
+
+segmentation of individuals of similar fitness (fitness sharing),
+
+increasing population size
+
+niche and specie
+
+The genetic variation can also be regained by mutation though this process is highly random.
+
+A general strategy to reduce the risk of premature convergence is to use structured populations instead of the commonly used panmictic ones.
+
+Identification of the occurrence of premature convergence
+
+It is hard to determine when premature convergence has occurred, and it is equally hard to predict its presence in the future. Population diversity is another measure which has been extensively used in studies to measure premature convergence. However, although it has been widely accepted that a decrease in the population diversity directly leads to premature convergence, there have been little studies done on the analysis of population diversity. In other words, by using the term population diversity, the argument for a study in preventing premature convergence lacks robustness, unless specified what their definition of population diversity is.
+
+There are models to counter the effect and risk of premature convergence that do not compromise core GA parameters like population size, mutation rate, and other core mechanisms. These models were inspired by biological ecology, where genetic interactions are limited by external mechanisms such as spatial topologies or speciation. These ecological models, such as the Eco-GA, adopt diffusion-based strategies to improve the robustness of GA runs and increase the likelihood of reaching near-global optima.
+
+Causes for premature convergence
+
+There are a number of presumed or hypothesized causes for the occurrence of premature convergence.
+
+Self-adaptive mutations
+
+Rechenberg introduced the idea of self-adaptation of mutation distributions in evolution strategies. According to Rechenberg, the control parameters for these mutation distributions evolved internally through self-adaptation, rather than predetermination. He called it the 1/5-success rule of evolution strategies (1 + 1)-ES: The step size control parameter would be increased by some factor if the relative frequency of positive mutations through a determined period of time is larger than 1/5, vice versa if it is smaller than 1/5. Self-adaptive mutations may very well be one of the causes for premature convergence. This is for non-convex objective functions with sets that include bounded lower levels of non-zero measurements. A study by Rudolph suggests that self-adaption mechanisms among elitist evolution strategies do resemble the 1/5-success rule, and could very well get caught by a local optimum that include a positive probability. Thus, The genetic information of an only slightly better individual can spread in a population within a few generations, provided that no better other offspring is produced during this time. Especially in comparatively small populations, this can quickly lead to a loss of genotypic diversity and thus to premature convergence. that preserve genotypic diversity over a longer period of time and thus counteract the tendency towards premature convergence. This has been shown for various EAs such as genetic algorithms, other EAs or memetic algorithms.
+
+See also
+
+Evolutionary computation
+
+Evolution
+
+References
+
+Category:Evolutionary biology
+
+Category:Evolutionary algorithms
+
+Category:Convergence (mathematics)

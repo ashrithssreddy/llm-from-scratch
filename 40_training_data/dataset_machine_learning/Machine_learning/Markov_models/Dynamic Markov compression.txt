@@ -1,0 +1,47 @@
+Dynamic Markov compression (DMC) is a lossless data compression algorithm developed by Gordon Cormack and Nigel Horspool.  It uses predictive arithmetic coding similar to prediction by partial matching (PPM), except that the input is predicted one bit at a time (rather than one byte at a time).  DMC has a good compression ratio and moderate speed, similar to PPM, but requires somewhat more memory and is not widely implemented.  Some recent implementations include the experimental compression programs hook by Nania Francesco Antonio, ocamyd by Frank Schwellinger, and as a submodel in paq8l by Matt Mahoney.  These are based on the 1993 implementation in C by Gordon Cormack.
+
+Algorithm
+
+DMC predicts and codes one bit at a time.  It differs from PPM in that it codes bits rather than bytes, and from context mixing algorithms such as PAQ in that there is only one context per prediction.  The predicted bit is then coded using arithmetic coding.
+
+Arithmetic coding
+
+A bitwise arithmetic coder such as DMC has two components, a predictor and an arithmetic coder.  The predictor accepts an n-bit input string x = x1x2...x'n and assigns it a probability p(x), expressed as a product of a series of predictions, p(x1)p(x2|x1)p(x3|x1x2) ... p(x'n| x1x2...x'n&ndash;1).  The arithmetic coder maintains two high precision binary numbers, plow and phigh, representing the possible range for the total probability that the model would assign to all strings lexicographically less than x, given the bits of x seen so far.  The compressed code for x is p'x, the shortest bit string representing a number between plow and phigh.  It is always possible to find a number in this range no more than one bit longer than the Shannon limit, log2&nbsp;1 / p(x).  One such number can be obtained from phigh by dropping all of the trailing bits after the first bit that differs from plow.
+
+Compression proceeds as follows.  The initial range is set to plow = 0, phigh = 1.  For each bit, the predictor estimates p0 = p(x'i = 0|x1x2...x'i&ndash;1) and p1 = 1&nbsp;&minus;&nbsp;p0, the probability of a 0 or 1, respectively.  The arithmetic coder then divides the current range, (plow,&nbsp;phigh) into two parts in proportion to p0 and p1.  Then the subrange corresponding to the next bit xi becomes the new range.
+
+For decompression, the predictor makes an identical series of predictions, given the bits decompressed so far.  The arithmetic coder makes an identical series of range splits, then selects the range containing p'x and outputs the bit x'i corresponding to that subrange.
+
+In practice, it is not necessary to keep plow and phigh in memory to high precision.  As the range narrows the leading bits of both numbers will be the same, and can be output immediately.
+
+DMC model
+
+The DMC predictor is a table which maps (bitwise) contexts to a pair of counts, n0 and n1, representing the number of zeros and ones previously observed in this context.  Thus, it predicts that the next bit will be a 0 with probability p0 = n0 / n = n0 / (n0&nbsp;+&nbsp;n1) and 1 with probability p1 = 1&nbsp;&minus;&nbsp;p0 = n1 / n.  In addition, each table entry has a pair of pointers to the contexts obtained by appending either a 0 or a 1 to the right of the current context (and possibly dropping bits on the left).  Thus, it is never necessary to look up the current context in the table; it is sufficient to maintain a pointer to the current context and follow the links.
+
+In the original DMC implementation, the initial table is the set of all contexts of length 8 to 15 bits that begin on a byte boundary.  The initial state is any of the 8 bit contexts.  The counts are floating point numbers initialized to a small nonzero constant such as 0.2.  The counts are not initialized to zero in order to allow values to be coded even if they have not been seen before in the current context.
+
+Modeling is the same for compression and decompression.  For each bit, p0 and p1 are computed, bit x'i is coded or decoded, the model is updated by adding 1 to the count corresponding to x'i, and the next context is found by traversing the link corresponding to xi.
+
+Adding new contexts
+
+DMC as described above is equivalent to an order-1 context model.  However, it is normal to add longer contexts to improve compression.  If the current context is A, and the next context B would drop bits on the left, then DMC may add (clone) a new context C from B.  C represents the same context as A after appending one bit on the right as with B, but without dropping any bits on the left.  The link from A will thus be moved from B to point to C.  B and C will both make the same prediction, and both will point to the same pair of next states.  The total count, n = n0&nbsp;+&nbsp;n1 for C will be equal to the count nx for A (for input bit&nbsp;x), and that count will be subtracted from B.
+
+For example, suppose that state A represents the context 11111.  On input bit 0, it transitions to state B representing context 110, obtained by dropping 3 bits on the left.  In context A, there have been 4 zero bits and some number of one bits.  In context B, there have been 3 zeros and 7 ones (n&nbsp;=&nbsp;10), which predicts p1 = 0.7.
+
+C is cloned from B.  It represents context 111110.  Both B and C predict p1 = 0.7, and both go to the same next states, E and F.  The count for C is n = 4, equal to n0 for A.  This leaves n = 6 for B.
+
+States are cloned just prior to transitioning to them.  In the original DMC, the condition for cloning a state is when the transition from A to B is at least 2, and the count for B is at least 2 more than that.  (When the second threshold is greater than 0, it guarantees that other states will still transition to B after cloning).  Some implementations such as hook allow these thresholds to be set as parameters.  In paq8l, these thresholds increase as memory is used up to slow the growth rate of new states.  In most implementations, when memory is exhausted the model is discarded and reinitialized back to the original bytewise order 1 model.
+
+References
+
+External links
+
+Data Compression Using Dynamic Markov Modelling
+
+Google Developers YouTube channel: Compressor Head Episode 3 (Markov Chain Compression)
+
+Category:Lossless compression algorithms
+
+Category:Markov models
+
+Category:Data compression

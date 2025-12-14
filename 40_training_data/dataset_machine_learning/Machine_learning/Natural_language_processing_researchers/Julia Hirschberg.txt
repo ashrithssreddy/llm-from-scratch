@@ -1,0 +1,143 @@
+{{Infobox scientist
+
+name              = Julia Hirschberg
+
+birth_place       = Liberty, Missouri
+
+death_date        =
+
+death_place       =
+
+nationality       = American
+
+fields            = Computer Science
+
+workplaces        =
+
+alma_mater        = University of PennsylvaniaUniversity of Michigan
+
+thesis_title      = A Theory of Scalar Implicature
+
+thesis_url        = http://repository.upenn.edu/dissertations/AAI8603648/
+
+thesis_year       = 1985
+
+known_for         = Natural Language Processing
+
+awards            =  National Academy of Artificial Intelligence member (2025)  Asia-Pacific Artificial Intelligence Association Fellow (2024)  American Academy of Arts and Sciences (2018)  IEEE Fellow (2017)  National Academy of Engineering (2017)
+
+ACM Fellow (2015)  ACL Fellow (2011)  AAAI Fellow (1994) International Speech Communication Association Fellow (2011)  Honorary Doctorate (Hedersdoktor) KTH (2007)  Columbia Engineering School Alumni Association Distinguished Faculty Teaching award (2009)  IEEE James L. Flanagan Speech and Audio Processing Award (2011)  ISCA Medal for Scientific Achievement (2011)
+
+website           =
+
+}}
+
+Julia Hirschberg is an American computer scientist noted for her research on computational linguistics and natural language processing.  She received her first PhD in history from the University of Michigan and the second from the University of Pennsylvania in computer science doing research in Natural Language Processing.  She worked at Bell Labs and AT&T Bell Labs from 1985-2002 and from 2002 at Columbia University where she is currently the Percy K. and Vida L. W. Hudson Professor of Computer Science.
+
+Biography
+
+Julia Linn Bell Hirschberg received her first Ph.D degree in History (16th-century Mexico) from University of Michigan in 1976. She served on the History faculty of Smith College from 1974 to 1982.  She subsequently shifted to Computer Science studies, receiving her M.S. in Computer and Information Science from University of Pennsylvania in 1982 and a Ph.D in Computer and Information Science from University of Pennsylvania in 1985.
+
+Upon graduation from University of Pennsylvania in 1985, Hirschberg joined AT&T Bell Labs as a Member of Technical staff in the Linguistics Research Department, where she worked on improving prosody assignment for Text-to-Speech Synthesis (TTS) in the Bell Labs TTS system. She was promoted to Department Head in 1994 when she created a new Human Computer Interface Research Lab.  She and her department remained at Bell Labs until 1996 when they moved to AT&T Labs Research as part of a corporate reorganization.  In 2002, she joined the Columbia University faculty as a Professor in the Department of Computer Science. She served as Chair of the Computer Science Department from 2012 to 2018.  She still leads classes at Columbia in speech and natural language research and supervises PhD students and a large number of research project students.
+
+Research
+
+Hirschberg's research has included prosody, discourse structure, conversational implicature, text-to-speech synthesis, speech summarization, spoken dialogue systems, emotional speech, deceptive speech, charismatic speech, entrainment, empathetic speech and code-switching. Hirschberg was among the first to combine Natural Language Processing  (NLP) approaches to discourse and dialogue with speech research.  She pioneered techniques in text analysis for prosody assignment in Text-to-Speech synthesis at Bell laboratories in the 1980s and 1990s,  developing corpus-based statistical models based upon syntactic and discourse information which are in general use today in TTS systems. With Janet Pierrehumbert, she developed a theoretical model of intonational meaning. She was a leader in the development of the ToBI conventions for intonational description, which have been extended to numerous languages and which today are the most widely used standard for intonational annotation.
+
+Hirschberg has been a pioneer together with Gregory Ward in much experimental work on intonational sources of language meaning and how these interact with pragmatic phenomena, particularly on the meaning of accent (intonational prominent) items and the meaning of intonational contours. She also has innovated in numerous other areas involving prosody and meaning, including the role of grammatical function and surface position in pitch accent location,  the use of prosody in disambiguating cue phrases (discourse markers) with Diane Litman,  the role of prosody in disambiguation in English, Italian, and Spanish with Cinzia Avesani and Pilar Prieto,  and the automatic identification of speech recognition errors using prosodic information,  At AT&T Labs she worked with Fernando Pereira, Steve Whittaker, and others on speech search  and developing new interfaces for speech navigation.  At Columbia, she and her students have continued and extended research on spoken dialogue systems (automatically detecting speech recognition errors  and inappropriate system queries,  modeling turn-taking behavior,  dialogue entrainment,  modeling and generating clarification dialogues); on the automatic classification of trust, charisma,  deception and emotion from speech; on speech summarization;  prosody translation, hedging behavior in text and speech,  text-to-speech synthesis, and speech search in low resource languages.  She also holds several patents in TTS and in speech search. Corpora she and collaborators have collected include the Boston Directions Corpus, the Columbia SRI Colorado Deception Corpus, and the Columbia Games Corpus.
+
+She has served on numerous technical boards and editorial committees.  She has served as a member of the Computing Research Association's (CRA) Board of Directors and as co-chair of CRA-W. She is also noted for her leadership in broadening participation in computing.
+
+Awards
+
+Hirschberg's notable honors and awards include:
+
+Elected as a member of the National Academy of Artificial Intelligence Academy of Sciences and recipient of the NAAI Artificial Intelligence Exploration Award, 2025
+
+Elected as a Fellow of Asia-Pacific Artificial Intelligence Association (AAIA), 2024.
+
+2020 ISCA Special Service Medal
+
+Honorary Doctorate (eredoctoraat) from Tilburg University, Netherlands, 2018.
+
+American Academy of Arts and Sciences, 2018.
+
+IEEE Fellow, 2017
+
+National Academy of Engineering, 2017
+
+ACM Fellow in 2015
+
+Elected member, American Philosophical Society, 2014.
+
+Honorary member, Association for Laboratory Phonology, 2014.
+
+Association for Computational Linguistics (ACL) (Founding) Fellow, 2011.
+
+International Speech Communication Association (ISCA) Medal for Scientific Achievement, 2011.
+
+IEEE James L. Flanagan Speech and Audio Processing Award, 2011.
+
+Honorary Doctorate (Hedersdoktorer), KTH (Royal Institute of Technology) Stockholm, Sweden, 2007.
+
+AAAI Fellow, 1994.
+
+Publications
+
+A social history of Puebla de Los Ángeles, 1531-60, 1976
+
+Empirical studies on the disambiguation of cue phrases, 1991
+
+Prosody and conversation, 1998
+
+Most recent publications and other information, https://www.cs.columbia.edu/speech/.
+
+References
+
+External links
+
+Julia Hirschberg's homepage
+
+Columbia Spoken Language Processing Group
+
+Category:American women computer scientists
+
+Category:Columbia University faculty
+
+Category:Columbia School of Engineering and Applied Science faculty
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:2015 fellows of the Association for Computing Machinery
+
+Category:Members of the United States National Academy of Engineering
+
+Category:Living people
+
+Category:University of Michigan alumni
+
+Category:Year of birth missing (living people)
+
+Category:Scientists at Bell Labs
+
+Category:University of Pennsylvania alumni
+
+Category:Speech processing researchers
+
+Category:Fellows of the Association for Computational Linguistics
+
+Category:American women linguists
+
+Category:People from Liberty, Missouri
+
+Category:Linguists from the United States
+
+Category:American computer scientists
+
+Category:Natural language processing researchers
+
+Category:Computational linguistics researchers
+
+Category:American women academics
+
+Category:21st-century American women

@@ -1,0 +1,89 @@
+{{Infobox scientist
+
+name              = Pushmeet Kohli
+
+birth_date        =
+
+birth_place       = Dehradun, Uttrakhand, India
+
+nationality       = Indian-British
+
+workplaces        = GoogleDeepMind
+
+doctoral_advisor  = Philip Torr He went on to study at Oxford Brookes University, where he earned a PhD in computer vision under Philip Torr in 2007. Kohli was also a postdoctoral associate at the Psychometric Centre, University of Cambridge.
+
+Career
+
+Before joining Google DeepMind, Pushmeet Kohli was partner scientist and director of research at Microsoft Research. His research investigates applications of machine learning and artificial intelligence.
+
+Pushmeet has made research contributions in the fields of computational biology,  program synthesis, superoptimization, discrete optimization, and psychometrics.
+
+Notable Research Projects
+
+AlphaFold - breakthrough AI system for protein structure prediction
+
+AlphaEvolve - agent for code super optimization.
+
+AlphaTensor - Reinforcement learning agent for discovering new algorithms for matrix multiplication
+
+SynthID - system for watermarking AI generated images.
+
+AlphaGenome and AlphaMissense - AI models for predicting the effect of mutations in the genome
+
+AlphaCode - Competition-level code generation with AI
+
+FunSearch - Discovering algorithms using LLMs to search over program space.
+
+Neural Program Synthesis
+
+Probabilistic Programming
+
+Community based Crowdsourcing of Data for Training AI Models
+
+Behavioral analysis and personality prediction using on online networks
+
+Human Pose Estimation using the Kinect
+
+Learnt Magnetic confinement control for Fusion
+
+Learnt Density Functional for solving the fractional electron problem
+
+Awards and honours
+
+Pushmeet's research in computer vision and machine learning has been recognized by a number of scientific awards and prizes. Some notable ones include:
+
+Koenderink Prize (Test of Time award) by the European Conference of Computer Vision
+
+British Machine Vision Association and Society for Pattern Recognition (BMVA) Sullivan Prize for the best PhD thesis.
+
+IEEE Mixed Augmented Reality (ISMAR) Impact Paper award
+
+Lasting Impact Award by the ACM Symposium on User Interface Software and Technology
+
+Best paper award at the International World Wide Web Conference 2014
+
+Best paper award in the European Conference on Computer Vision (ECCV) 2010
+
+Best paper award in the Conference on Uncertainty in Artificial Intelligence (UAI)
+
+References
+
+Category:Indian computer scientists
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:Microsoft employees
+
+Category:Scientists from Cambridge
+
+Category:Alumni of Oxford Brookes University
+
+Category:National Institutes of Technology alumni
+
+Category:Computer vision researchers
+
+Category:Machine learning researchers
+
+Category:DeepMind people

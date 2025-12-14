@@ -1,0 +1,55 @@
+{{Infobox scientist
+
+name              = Deepti Gurdasani
+
+birth_date        =
+
+workplaces        = Queen Mary University of London  Wellcome Sanger Institute
+
+alma_mater        = University of Cambridge Christian Medical College Vellore
+
+thesis_title      = Design strategies in the study of genetics of complex disease in diverse populations.
+
+thesis_url        = http://www.worldcat.org/oclc/1063777668
+
+thesis_year       = 2014
+
+website           =
+
+}}
+
+Deepti Gurdasani is a British-Indian clinical epidemiologist and statistical geneticist who is a senior lecturer in machine learning at the Queen Mary University of London.
+
+Research and career
+
+In 2013, Gurdasani joined the Wellcome Sanger Institute as a postdoctoral fellow, where she worked on the genomic diversity of African populations and how this diversity impacts susceptibility to disease. She makes use of dense genotypes and whole genome sequences to better understand how population movements determined genetic structure. In particular, Gurdasani develops machine learning algorithms to large-scale clinical data sets. At the Sanger Gurdasani co-led the African Genome Variation Project and the Uganda Resource Project. She has researched the incidence of long covid in the UK. In 2021 Gurdasani started to write for The Guardian.
+
+Selected publications
+
+References
+
+External links
+
+Category:Living people
+
+Category:Indian epidemiologists
+
+Category:British women epidemiologists
+
+Category:British epidemiologists
+
+Category:People from Vellore
+
+Category:Alumni of the University of Cambridge
+
+Category:Academics of Queen Mary University of London
+
+Category:1982 births
+
+Category:COVID-19 researchers
+
+Category:Genetic epidemiologists
+
+Category:Machine learning researchers
+
+Category:British public health researchers

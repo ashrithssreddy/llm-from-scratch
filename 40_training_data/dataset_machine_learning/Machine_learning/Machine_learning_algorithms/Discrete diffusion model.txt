@@ -1,0 +1,449 @@
+In machine learning, discrete diffusion models are a class of diffusion models, which themselves are a class of latent variable generative models. Each discrete diffusion model consists of two major components: the forward jump diffusion process, and the reverse jump diffusion process. The goal of diffusion modeling is, given a given dataset and a forward process, to learn a model for the reverse process, such that the reverse process can generate new elements that are distributed similarly as the original dataset. A trained discrete diffusion model can be sampled in many ways, which trades off computational efficiency and sample quality. In general, higher quality data can be obtained, but at the price of higher computational cost.
+
+In standard diffusion modeling, the diffusion process takes place over a state space that is continuous space of \R^n, but over a discrete set S. A discrete set is simply a set where one cannot speak of "infinitesimally close" points. Points can be more or less separated from each other, but the separation is always a finite number. This in particular means the standard framework of continuous diffusion does not apply, since it uses gaussian noise, which is continuous. Nevertheless, an analogous theory can be produced.
+
+Discrete diffusion is usually used for language modeling. In practice, the state space S is not only discrete, but finite, so this is what we will assume from now on.
+
+Continuous time Markov process
+
+In the case of continuous state space, during the forward discrete diffusion process, at each step t \to t + dt, we mix in an infinitesimal amount of gaussian noise dx_t = -\frac 12 \beta(t) x_t dt + \sqrt{\beta(t)} dW_t
+
+. This changes the probability density function, by first a convolution with the density of a gaussian, followed by a scaling.
+
+In the case of discrete state space, the gaussian noise must be replaced by a noise that takes values over a finite set. For example, if the noise is the uniform distribution over S, then the probability distribution at time t + dt satisfiesq_{t+dt}(x) = (1-dt) q_t(x) + dt \left(\frac{1} \sum_{y \in S} q_t(y)\right) More succinctly,\partial_t q_t(x) = -\left(1-\frac{1} \right)q_t(x) + \sum_{y \in S, y \neq x} \frac{1} q_t(y) In general, we do not need to convolve with a uniformly distributed noise, but with an arbitrary noise process. That is, we use an arbitrary matrix Q_t  such that\partial_t q_t(y) = \sum_{x\in S} Q_t(y, x) q_t(x)  where Q_t  is called the rate matrix. Any matrix may be used as a rate matrix if it has non-negative off-diagonals, and each column sums to 0:Q_t(y, x) \geq 0 \quad\forall y \neq x, \quad \sum_{y\in S} Q_t(y, x) = 0 \quad\forall xA continuous time Markov chain (CTMC) is defined by a continuous function Q  that maps any time t \in [0, T)  to a rate matrix Q_t . Given the function Q , time-evolution under the CTMC is done as follows: Given state x_t  at time t , and given an infinitesimal dt  , the state at t+dt  is x_{t+dt} , such that\Pr(x_{t+dt} | x_t) = \begin{cases}
+
+1+ Q_t(x_{t+dt} , x_t) dt&\text{if }x_{t+dt} = x_t \\
+
+Q_t(x_{t+dt} , x_t)  dt&\text {else}\end{cases}  This implies that the probability distribution function evolves according to\partial_t q_t(y) = \sum_{x\in S} Q_t(y, x) q_t(x)  which is what we previously specified.
+
+Backward process
+
+Similarly to the case of continuous diffusion, in discrete diffusion, there exists a backward diffusion process \bar Q_t  :s(x, t)_y := \frac{q_t(y)}{q_t(x)}, \quad \bar Q_t(y, x) :=
+
+\begin{cases}
+
+s(x, t)_y Q_t(x, y) &\text{if }y \neq x\\
+
+-\sum_{y: y \neq x}\bar Q_t(y, x) &\text{if }y = x
+
+\end{cases}  where s(x, t)_y   should be interpreted as the discrete score or concrete score, since, abusing notation a bit, the score function is \nabla \ln \rho_t(x) = \frac{1}{dx}\left(\frac{\rho_t(x + dx)}{\rho_t(x)} - 1\right)  .
+
+If we picture the distribution q_t   as a bunch of point-masses, one per state x \in S  , then the forward diffusion from time t   to t + dt   is performed by removing  Q_t(x, y) q_t(y)dt   from the mass at y   and moving it to the mass at x  , for each pair x \neq y  . Thus, the process is reversed in detail by the CTMC defined by \bar Q  , since \bar Q_t(y, x) q_t(x) = Q_t(x, y)q_t(y)  .
+
+Given \bar Q_t  , if we have a way to sample from q_t , then we can sample from q_{t-dt}  by first sampling x_t \sim q_t , then sampling x_{t-dt}  according to\Pr(x_{t-dt} | x_t) = \begin{cases}
+
+1+ \bar Q_t(x_{t-dt} , x_t) dt&\text{if }x_{t-dt} = x_t \\
+
+\bar Q_t(x_{t-dt} , x_t)  dt&\text {else}\end{cases}
+
+Overall plan of score-matching discrete diffusion modeling
+
+Similar to score-matching continuous diffusion, score-matching discrete diffusion is a method to sample an initial distribution.
+
+If we have a certain function s_\theta that approximates the true score function s_\theta(x, t)_y \approx s(x, t)_y, then it allows a corresponding \bar Q^\theta to be defined in the same way.
+
+If we also have a base distribution q_{\text{base}} such that it is easy to sample from, and approximately equal to the true terminal distribution q_{\text{base}} \approx q_T, then we can perform the backward CTMC with \bar Q^\theta and q_T^\theta := q_{\text{terminal}}.
+
+When both approximations are good, the backward CTMC would give q_0^\theta \approx q_0. This is the idea of score-matching discrete diffusion modeling.
+
+If q_{\text{data}}  is sharp, in the sense that for some x, x' , we have q_{\text{data}}(x) \gg q_{\text{data}}(x') , then the score function would diverge as 1/t  at the t \to 0  limit. To avoid this in practice, it is common to use early stopping, which is to stop the backward process at some time \delta > 0 , and sample from q_\delta^\theta  instead of q_0^\theta .
+
+Tractable forward processes
+
+The theory of CTMC works for any continuous choice of rate matrices Q. However, most choices are computationally expensive and cannot be used in practice.
+
+In the case of continuous diffusion, the gaussian noise is used for the simple reason that the sum of any number of gaussians is still a gaussian. This allows one to sample any x_t \sim \rho_t  by sampling a single x_0 \sim \rho_0 , followed by a single gaussian noise z \sim \mathcal N(0, I) , and let x_t = \sqrt{\bar\alpha_t} x_{0} + \sigma_{t} z
+
+, without needing any x_s  for any 0 .
+
+Similarly, the choice of rate matrices should also allow us to "skip forward" without needing any intermediate steps.
+
+The uniform noising process is defined by\partial_t q_t(x) = -\left(1-\frac{1} \right)q_t(x) + \sum_{y \in S, y \neq x} \frac{1} q_t(y) To see how to skip forward, note that the uniform noising process is equivalent to the following process: to evolve from time t  to time t + dt , either don't change anything with probability 1-dt , or sample a random state uniformly with probability dt . Since sampling uniform random states twice is the same as sampling it once, we see that the only question is whether we have ever sampled a random state. As time goes on, the probability of not sampling a random state decays exponentially. Therefore,q_t(y | x_0) = 1_{y = x_0} e^{-t} + \frac{1} (1-e^{-t}) Time may be rescaled as desired. For example, the CTMC defined for t \in [0, 1) q_t(y | x_0) = 1_{y = x_0} (1-t) + \frac{1} tis produced by the scaled-time uniform noising process\partial_t q_t(x) = -\frac{1}{1-t}\left(1-\frac{1} \right)q_t(x) + \frac{1}{1-t}\sum_{y \in S, y \neq x} \frac{1} q_t(y) The construction works in general for arbitrary rescaled time, and arbitrary noisy distribution on S . The idea is that if we have a fixed reference noise distribution q_{\text{noise}} , then sampling from it twice is the same as sampling from it once. Therefore, the noising process \partial_t q_t(x) = -\sigma'(t) q_t(x) + \sigma'(t) q_{\text{noise}}(x) produces q_t(y | x_0) = e^{-\sigma(t)} 1_{y = x_0}  + (1-e^{-\sigma(t)})q_{\text{noise}}(y). Here, the time-rescaling function \sigma(t)  must be strictly monotonic.
+
+More generally, if Q_t = \sigma'(t) Q , then q_t(\cdot | x_0) is the x_0-th column of the matrix e^{-\sigma(t) Q}. If \sigma(t) \to \infty, then q_t(\cdot | x_0) \to q_{\text{noise}}.
+
+In practice, when |S|  is sufficiently large, only two processes are efficient enough for training in practice: the uniform process and the absorbing process:\begin{aligned}
+
+Q^{\text{uniform}} &= \frac{1}\begin{bmatrix}
+
+1-|S| & 1   & \cdots & 1 \\
+
+1   & 1-|S| & \cdots & 1 \\
+
+\vdots & \vdots & \ddots & \vdots \\
+
+1 & 1 & \cdots & 1-|S|
+
+\end{bmatrix} = \frac{1} \mathbf{1}_\mathbf{1}_^T - I_{ \times },
+
+\\
+
+Q^{\text{absorb}} &= \begin{bmatrix}
+
+-1 & 0 & \cdots & 0 & 0 \\
+
+0 & -1 & \cdots & 0 & 0 \\
+
+\vdots & \vdots & \ddots & \vdots & \vdots \\
+
+0 & 0 & \cdots & -1 & 0 \\
+
+1 & 1 & \cdots & 1 & 0
+
+\end{bmatrix}
+
+\end{aligned}
+
+The uniform process is simply the uniform noising process with a rescalable time, converging to the uniform distribution on S .
+
+The absorbing process means that there is a special absorbing state s_{\text{absorbing}} ,  converging to the point distribution on the absorbing state \delta_{s_{\text{absorbing}}} . During time [t, t+ dt] , if the state x_t\neq s_{\text{absorbing}}
+
+, then it transitions into x_{t+dt}= s_{\text{absorbing}}
+
+with probability dt
+
+, and stays unchanged with probability 1-dt
+
+, but if the x_t= s_{\text{absorbing}}
+
+, then x_{t+dt}= s_{\text{absorbing}}
+
+always. In diffusion language modeling, that special state is usually called [MASK], which originated from masked language modeling.
+
+Score matching
+
+A discrete diffusion model is usually a score-matching network. That is, it is a neural network that takes as input x, t, y, and approximately computes the discrete score function:s_\theta(x, t)_y \approx s(x, t)_y  = \frac{q_t(y)}{q_t(x)} where \theta is the weights of the network. Once some good weights are found, the score network can be used to produce the backward diffusion process\bar Q_t^\theta(y, x) :=
+
+\begin{cases}
+
+s_\theta(x, t)_y Q_t(x, y) &\text{if }y \neq x\\
+
+-\sum_{y: y \neq x}\bar Q_t^\theta(y, x) &\text{if }y = x
+
+\end{cases}  and produce samples that are approximately distributed as q_0 := q_{\text{data}} . There are different algorithms for training a score-matching network.
+
+The concrete score matching algorithm minimizes the L2 loss by stochastic gradient descentL_{CSM} (\theta) := \mathbb E_{t} \left[\mathbb E_{x_0 \sim q_{\text{data}}, x_t \sim q_{t|0}(\cdot | x_0)}\left[\sum_{y: y\neq x_t}\left(s_\theta(x_t , t)_y - \frac{q_t(y)}{q_t(x_t)}\right)^2\right]\right] where the outer expectation \mathbb E_t  means averaging over a randomly sampled time-instance. For example, if we allow t \in [0, 1)  in the definition of the forward CTMC process, then a common choice is to sample t \sim \text{Uniform}([0, 1])  during training.
+
+The L2 loss has the problem that s_\theta
+
+should never be negative, but the L2 loss does not prevent s_\theta
+
+from becoming negative.
+
+SEDD
+
+The Score Entropy Discrete Diffusion (SEDD) algorithm minimizes a certain score entropy loss:L_{\text{SE}} (\theta) := \mathbb E_{t} \left[\mathbb E_{x_0 \sim q_{\text{data}}, x_t \sim q_{t|0}(\cdot | x_0)}\left[
+
+\sum_{y: y\neq x_t}w_{t, x_t, y}\left(s_\theta(x_t , t)_y - \frac{q_t(y)}{q_t(x_t)} \ln s_\theta(x_t , t)_y + K \left(\frac{q_t(y)}{q_t(x_t)}\right)\right)
+
+\right]\right] where K(a) := a(\ln a - 1)  is just a function, and w_{t, x, y}  is an arbitrary array of positive numbers that can be adjusted as hyperparameters of the training algorithm. In the next section, we will see that setting w_{t, x_t, y} = Q_t(y, x_t)  is a z
+
+The expression within the brackets is proportional to the Bregman divergence for -\ln, the negative logarithmic function:s_\theta(x_t , t)_y - \frac{q_t(y)}{q_t(x_t)} \ln s_\theta(x_t , t)_y + K \left(\frac{q_t(y)}{q_t(x_t)}\right) = \frac{q_t(y)}{q_t(x_t)} D_{-\ln}\left(s_\theta(x_t, t)_y, \frac{q_t(y)}{q_t(x_t)}\right) Since -\ln is used in definition of entropy, this explains why L_{\text{SE}} is called the "score entropy loss". Since the loss approaches infinity where s_\theta
+
+approaches zero, the score entropy loss prevents negative values of s_\theta
+
+Since the Bregman divergence is zero only when the two terms are equal, the score entropy loss is minimized to a value of zero iff the score matching is perfect: s_\theta(x, t)_y = \frac{q_t(y)}{q_t(x)} .
+
+There are 2 losses equivalent to SEDD. The implicit score entropy loss is L_{\text{ISE}} (\theta) := \mathbb E_{t} \left[\mathbb E_{x_0 \sim q_{\text{data}}, x_t \sim q_{t|0}(\cdot | x_0)}\left[
+
+\sum_{y: y\neq x_t}\left(w_{x_t, y}s_\theta(x_t , t)_y - w_{y, x_t}s_\theta(y , t)_{x_t}\right)
+
+\right]\right] which is equal to L_{SE}(\theta) + C , where C = \mathbb E[K]  is independent of \theta , and therefore optimization of L_{SE}  is equivalent to the optimization of L_{ISE} . However, the ISE loss requires evaluating the score network for |S|  times per sample of t, x_0, x_t . This does not scale.
+
+The denoising score entropy loss is L_{\text{DSE}} (\theta) := \mathbb E_{t} \left[\mathbb E_{x_0 \sim q_{\text{data}}, x_t \sim q_{t|0}(\cdot | x_0)}\left[
+
+\sum_{y: y\neq x_t}w_{x_t, y}\left(s_\theta(x_t , t)_y - \frac{q_{t|0}(y|x_0)}{q_{t|0}(x_t|x_0)} \ln s_\theta(x_t , t)_y\right)
+
+\right]\right] which is equal to L_{ISE} . This can be derived by using the identity \mathbb E_{x_0|x_t} \left[\frac{q_{t|0}(y|x_0)}{q_{t|0}(x_t|x_0)}\right] = \frac{q_t(y)}{q_t(x_t)}. Since it only evaluates the score network once per sample of t, x_0, x_t . This does scale.
+
+Variational inference
+
+The score entropy objectives can be cast into the variational inference form. Given a base distribution q_{\text{base}} on S and a backward CTMC defined by \bar Q_t^\theta and q_{\text{base}}, let q_0^\theta denote the resulting model distribution over x_0. For a fixed data point x_0, the diffusion weighted denoising score entropy (DWDSE) loss is defined as
+
+L_{\text{DWDSE}}(x_0)
+
+= \int_0^T
+
+\mathbb E_{x_t \sim q_{t|0}(\cdot | x_0)}
+
+\left[
+
+\sum_{y: y \neq x_t}
+
+Q_t(y, x_t)
+
+\left(
+
+s_\theta(x_t, t)_y
+
+- \frac{q_{t|0}(y | x_0)}{q_{t|0}(x_t | x_0)} \ln s_\theta(x_t, t)_y
+
++ K\left(\frac{q_{t|0}(y | x_0)}{q_{t|0}(x_t | x_0)}\right)
+
+\right)
+
+\right] dt,
+
+where q_{t|0}(\cdot | x_0) is the forward CTMC kernel defined by Q_t, and K is the function introduced above. It is minimized when
+
+\frac{q_{t}(y)}{q_{t}(x_t)} = s_\theta(x_t, t)_y
+
+for all
+
+y: y \neq x_t
+
+such that
+
+Q_t(y, x_t) > 0
+
+. If
+
+Q_t
+
+is a sparse matrix, then the expression for
+
+L_{\text{DWDSE}}
+
+accordingly can be simplified, since most state transitions are impossible.
+
+For the diffusion and forward probabilities defined above,
+
+-\ln q_0^\theta(x_0)
+
+\leq
+
+L_{\text{DWDSE}}(x_0)
+
++
+
+D_{\text{KL}}\left(
+
+q_{T|0}(\cdot | x_0) \| q_{\text{base}}
+
+\right),
+
+where D_{\text{KL}} is the Kullback–Leibler divergence. In particular, when q_{\text{base}} = q_{T|0}, minimizing the expectation of  L_{\text{DWDSE}} over x_0 \sim q_{\text{data}} minimizes an upper bound on the expected negative log-likelihood -\mathbb E_{x_0 \sim q_{\text{data}}}[\ln q_0^\theta(x_0)].
+
+Adaption to sequence modeling
+
+The most common application of discrete diffusion is for sequence modeling. For these, the discrete state space S  usually has a particular structure that can and must be exploited. For example, in language modeling, there are only finitely many different tokens allowed. The set of allowed tokens is called the vocabulary \Sigma , and its size is the vocabulary size |\Sigma| , which is always finite. For a given sequence length n , the state space is the space of all length-n  sequences of tokens, which is S = \Sigma^n  of size |S| = |\Sigma|^n .
+
+Forward process
+
+Since the size of the state space grows exponentially with sequence length, it is too large to be directly modeled. For example, if a sequence has 10 tokens, and each token can be chosen from a list of 100 valid tokens, then the full state space has size 100^{10}, which is intractable.
+
+Because of this, the standard method is to consider only tokenwise forward processes, i.e. those that factor into independent forward processes over each token. Tokenwise forward processes do not need each token to undergo the same forward process, though in practice, often all tokens undergo the same forward process.
+
+Let the sequence x_t have n tokens. Let i \in 1:n index over the tokens in the sequence, so that x_t = x_{t, 1}, x_{t, 2}, \dots, x_{t, n}. Let the forward process for token i be defined by the rate matrix Q_{t, i}(y_i, x_i), then the rate matrix for the full sequence Q_t(y, x) satisfiesQ_t(y, x) = \begin{cases}
+
+-\sum_{i\in 1:n} \sum_{y_i: y_i \neq x_i} Q_{t, i}(y_i, x_i)  & \text{if }y = x \\
+
+Q_{t, i}(y_i, x_i) & \text{if }y, x\text{ differ at index }i \\
+
+0 & \text{if }y, x\text{ differ by more than 1 token}
+
+\end{cases}Intuitively, the rate matrices are simply added together, since the probability that two jumps occur during the same infinitesimal slice of time [t, t+dt] is on the order of dt^2, which is infinitesimal compared to the probability that one jump occurs, which is on the order of dt.
+
+In language modeling, usually the vocabulary size is on the order of 100,000, which means that an arbitrary matrix is too large to fit into memory, so the only case in common use is where all tokens use the exact same rate matrix Q^{\text{tok}}, which is equal to one of the aforementioned cases Q^{\text{uniform}}, Q^{\text{absorb}}  . That is, there exists some function \sigma'(t) > 0  such that Q_{t, i} = \sigma'(t) Q^{\text{tok}}  for all token indices i \in 1:n  and all times t \in [0, T) .
+
+Given this set up, the forward process factors tokenwiseq_{t|0}(x_t | x_0) = \exp(\sigma(t)Q)_{x_t, x_0} = \prod_{i\in 1:n} \exp(\sigma(t)Q^{\text{tok}})_{x_{t,i}, x_{0,i}}  Note that the factorization is conditional on x_0  . Without the conditioning, it fails, because the initial distribution q_0(x)  does not factor tokenwise as q_0(x) = \prod_{i\in 1:n} q_{0, i}(x_i) . Thus, the following does not factorize: the backward process q_{0|t}(x_0|x_t)  , the marginalized distribution q_t(x_t)  , and the score s(x_t, t)_y  .
+
+Score function
+
+In general, the discrete score s(x_t, t)_y   is not tokenwise, i.e. in general, there does not exist some function f   such that\frac{q_{t|0}(y)}{q_{t|0}(x_t)} = f\left(\frac{q_{t|0}(y_{1})}{q_{t|0}(x_{t, 1})}, \dots, \frac{q_{t|0}(y_n)}{q_{t|0}(x_{t, n})}\right)  Nevertheless, in this case, variational inference allows a simplification. Specifically, since Q_t(y, x_t) = 0
+
+when y, x_t
+
+differ at more than 1 token, the summation \sum_{y:y\neq x_t}
+
+in the definition of L_{\text{DWDSE}}
+
+need only include the cases where y, x_t
+
+differ at exactly 1 token. That is, the training process need only minimize the following loss:L_{\text{DWDSE}}(\theta)
+
+= \int_0^T
+
+\mathbb E_{x_0 \sim q_{\text{data}}, x_t \sim q_{t|0}(\cdot | x_0)}
+
+\left[
+
+\sum_{i \in 1:n, \hat x_i \in \Sigma, \hat x_i \neq x_{t, i}}
+
+Q_{t, i}(\hat x_i, x_{t,i})
+
+\left(
+
+s_\theta(x_{t,i}, t, i)_{\hat x_i}
+
+- \frac{q_{t|0}( x_t \odot_i \hat x_i | x_0)}{q_{t|0}(x_t | x_0)} \ln s_\theta(x_{t,i}, t, i)_{\hat x_i}
+
+\right)
+
+\right] dtwhere in the notation,
+
+x_t \odot_i \hat x_i
+
+means the sequence obtained by replacing the
+
+i
+
+-th entry of
+
+x_t
+
+by
+
+\hat x_i
+
+. Consequently, the score-matching model
+
+s_\theta
+
+need to output only
+
+n(|\Sigma| - 1)
+
+scores for each 1-token modification, instead of
+
+\Sigma|^n - 1
+
+for each full-sequence modification. If
+
+Q_{t, i}
+
+is sparse, then the expression can be simplified further, such as when
+
+Q_{t, i} = \sigma'(t) Q^{\text{tok}}
+
+, since most single-token transitions are impossible.
+
+The theoretical minimum
+
+L_{\text{DWDSE}}
+
+is achieved when
+
+s_\theta(x_{t,i}, t, i)_{\hat x_i} = s(x_{t,i}, t, i)_{\hat x_i} = \frac{q_{t}( x_t \odot_i \hat x_i)}{q_{t}(x_t)}
+
+for all
+
+t \in [0, T), i \in 1:n, x_t, \hat x_i \neq x_{t, i}
+
+such that
+
+p(x_t) > 0
+
+and
+
+Q_{t, i}(\hat x_i, x_{t,i}) > 0
+
+.
+
+Backward process
+
+Ideally, if the model learns the score exactly, then it defines a backward diffusion process that exactly reverses the forward diffusion process. Its rate matrix is\bar Q_t(y, x) :=
+
+\begin{cases}
+
+-\sum_{y: y \neq x}\bar Q_t(y, x) &\text{if }y = x\\
+
+s(x_i, t)_{y_t} Q_t(x_i, y_i) &\text{if }y, x \text{ differ at index } i\\
+
+0 &\text{if }y, x \text{ differ by more than 1 token}\\
+
+\end{cases}  Intuitively, since the forward process only changes 0 or 1 tokens at any moment in time, so does the backward process.
+
+However, if the score is not exactly matched
+
+s_\theta(x_{t,i}, t, i)_{\hat x_i} \approx \frac{q_{t}( x_t \odot_i \hat x_i)}{q_{t}(x_t)}
+
+, then it produces a score-matching error.
+
+Furthermore, the backward process in practice cannot be performed in continuous time, but only in discrete time. This produces a time-discretization error. The Gillespie algorithm cannot in general perform the backward process exactly, since for fixed i, x, \hat x_i  , the score s(x, t, i)_{\hat x_i}   changes as t   changes. That is, the backward CTMC cannot be solved exactly as a backward discrete-time Markov chain. This contrasts with the forward process, where for Q^{\text{uniform}}, Q^{\text{absorb}}  , the forward CTMC is exactly solvable as a discrete-time Markov chain. This is similar to how in continuous diffusion, the forward diffusion is exactly computable at discrete time instances, but the backward process requires integration over continuous time.
+
+Using the Gillespie algorithm, or other discrete-time algorithms, produces a Euler method approximation error. It can be improved by using better stochastic integrators and using more integration steps in the backward process.
+
+Similar to how the Gillespie algorithm can be accelerated by tau-leaping, the backward process can be accelerated by changing more than 1 token per discretized time-step.
+
+Given the noising process Q_t = \sigma'(t) Q , we have q_{t|0}(x_t | x_0) = \exp(\sigma(t)Q)_{x_t, x_0}  . By Bayes's theorem, it is inverted by the discrete Tweedie's formula:\begin{aligned}
+
+q_{0|t}(x_0 | x_t)
+
+&=  \exp(\sigma(t) Q)_{x_t, x_0} \sum_{y \in S} \exp(-\sigma(t)Q)_{x_0, y} \frac{p_t(y)}{p_t(x_t)}
+
+\\
+
+&= \exp(\sigma(t)Q)_{x_t, x_0} \sum_{y \in S} \exp(-\sigma(t)Q)_{x_0, y} s(x_t, t)_y
+
+\end{aligned} This gives the Tweedie tau-leaping algorithm, which, for each backward time-interval [t, t - \Delta t]  , randomly and independently transition each token i \in 1:n  . That is, for each token i \in 1:n   individually, sample x_{t-\Delta t, i}   independently of the other tokens, with the probability of transitioning from x_t   to \hat x_{t - \Delta t}   equal to\exp(\sigma^\Delta_t Q)_{x_{t, i}, x_{t - \Delta t, i}} \sum_{y_t \in \Sigma}
+
+\exp(\sigma^\Delta_t Q)_{x_{t - \Delta t, i}, y} s_\theta(x_{t, i}, t, i)_{y_t}  where \sigma_t^{\Delta t}=(\sigma(t)-\sigma(t-\Delta t)).
+
+The lower accuracy of tau-leaping is due to the approximation by tokenwise independence. In general, given i \neq j, t, x, \hat x_i, \hat x_j  , the score s(x, t, j)_{\hat x_j} \neq s(x \odot_i \hat x_i, t, j)_{\hat x_j}. Concretely, suppose that in an exact backward simulation, exactly two tokens x_{t, i}, x_{t, j}   changes to \hat x_i, \hat x_j   during a backward time-interval [t, t - \Delta t]  , then it matters whether tokens i   or token j   changed first, since that affects the rate of change at the other token.
+
+Conditional backward process
+
+The above framework considers unconditional generation. That is, sampling a full sequence x_0 approximately from the sample distribution p_{\text{data}}. Certain tasks require generating part of a sequence while holding other parts of a sequence fixed. For example, in prompt engineering or few-shot learning, the first few sentences are fixed, and only the rest of the sequence can be changed.
+
+In general, let I \cup J be a partition of 1:n, then the problem is to generate x_{0, I} conditional on x_{0, J}, that is, sampling x_{0, I} \sim q_0(\cdot | x_{0, J}). By Bayes's theorem,\frac{q_{t}(y_{t, I} | y_{t, J})}{q_{t}(x_{t, I} | x_{t, J})} = \frac{q_{t}(y_{t})}{q_{t}(x_{t})}when x_{t, J} = y_{t, J}. Thus, a score-matching model for unconditional sequence generation is also a score-matching model for the conditional case:
+
+s_\theta(x_{t,i}, t, i)_{\hat x_i} \approx s(x_{t}, t, i)_{\hat x_i} = \frac{q_{t}( x_{t, I} \odot_i \hat x_i)}{q_{t}(x_{t})} = \frac{q_{t}( x_{t, I} \odot_i \hat x_i | x_{J})}{q_{t}(x_{t, I} | x_{J})}
+
+for any
+
+t, i, \hat x_i, x_t
+
+such that
+
+x_{t, J} = x_J
+
+. Thus, all previous conditional backward process sampling algorithms still work, simply by fixing
+
+x_{t, J} = x_J
+
+.
+
+Error analysis
+
+In general, the backward process of a discrete diffusion samples a probability distribution that differs from q_{\text{data}} . This creates the following sources of error:
+
+The mixing error, due to beginning the backward diffusion process at q_{\text{base}}  rather than q_T .
+
+The score-matching error, due to using s_\theta  rather than s  to define the rate matrix of the backward diffusion process.
+
+The time-discretization error, due to using discrete time, not continuous time, when integrating through the backward diffusion process. This is analogous to the error of the Euler algorithm.
+
+The independence error, due to using tau-leaping, which erroneously allows more than one token to change at a time in a probabilistically independent way.
+
+The early stopping error, due to ending the backward diffusion process at q^\theta_{\delta}  rather than at q^\theta_{0} .
+
+Each error can be decreased or eliminated, usually at the price of increased cost of compute.
+
+Mixing error can be decreased by running the diffusion time for longer, or eliminated by the analog of the "zero SNR" fix for diffusion in continuous space.
+
+Score-matching error can be decreased by better training of the score-matching model.
+
+Time-discretization error can be decreased by making smaller time-steps, or essentially eliminated by numerical integration plus the uniformization trick for CTMC.
+
+Independence error can be eliminated by only changing one token at a time during backward diffusion.
+
+Early stopping can be eliminated if the score does not diverge as t \to 0. If the score does diverge, then the stopping time \delta can be decreased, but the time-steps would need to decrease in tandem.
+
+See also
+
+Diffusion model
+
+Markov chain
+
+Variational inference
+
+Variational autoencoder
+
+Further reading
+
+References
+
+Category:Markov models
+
+Category:Machine learning algorithms

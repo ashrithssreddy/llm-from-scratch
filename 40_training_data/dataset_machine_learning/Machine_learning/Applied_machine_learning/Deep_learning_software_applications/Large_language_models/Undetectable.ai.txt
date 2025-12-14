@@ -1,0 +1,71 @@
+{{Infobox software
+
+name = Undetectable AI
+
+logo = Logo of Undetectable AI.png
+
+logo_size = 200
+
+logo_alt = The logo of Undetectable AI, which features black letters "U" and "D" encased in brackets
+
+developer = Bars JuhaszChristian PerryDevan Leos
+
+released =
+
+programming language = Python
+
+platform = Cloud computing
+
+website =
+
+}}
+
+Undetectable AI (or Undetectable.ai) is an artificial intelligence content detection and modification software designed to identify and alter artificially generated text, such as that produced by large language models.
+
+History
+
+Undetectable AI was developed by Bars Juhasz, a PhD student from Loughborough University, along with Christian Perry and Devan Leos. It was publicly released in May 2023.
+
+Reception and analysis
+
+Undetectable AI has been discussed in technology and news outlets such as TechTudo, the Philippine Daily Inquirer,
+
+In November 2023, Erik Piller of Nicholls State University published a paper examining the ethical implications of Undetectable AI in professional writing contexts.
+
+In August 2023, researchers led by Christoph Bartneck investigated how Undetectable AI might affect data quality in online questionnaires. They found that while AI detection systems could identify ChatGPT-generated text, they were less successful with text processed by Undetectable AI.
+
+In 2024, Kar et al. published a research paper testing the accuracy of various online AI detection models, including Undetectable AI.
+
+Usage and impact
+
+In November 2023, EarthWeb used Undetectable AI alongside GPTZero to analyze online apology statements. In February 2025, journalist David Gewirtz tested Undetectable AI's content detector to see if it could accurately identify AI-generated text.
+
+In March 2025, journalist Matthew Giannelis published a piece titled "Undetectable AI Becomes The New Challenge In Artificial Content Detection", which documents how prevalent Undetectable AI tools have become, their offshoots and copycat startups, as well as concerns about synthetic content becoming indistinguishable from human work.
+
+See also
+
+GPTZero
+
+Turnitin
+
+Copyleaks
+
+Content similarity detection
+
+References
+
+External links
+
+"The software says my student cheated using AI. They say they're innocent. Who do I believe?" at The Guardian
+
+"The Risk of Artificial Intelligence in Education and AI Detection Tools" (PDF) at ResearchGate
+
+Category:Internet properties established in 2023
+
+Category:Large language models
+
+Category:Artificial intelligence companies
+
+Category:ChatGPT
+
+Category:Plagiarism detectors

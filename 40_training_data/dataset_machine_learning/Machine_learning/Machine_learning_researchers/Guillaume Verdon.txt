@@ -1,0 +1,67 @@
+{{Infobox person
+
+name               = Guillaume Verdon
+
+image              =
+
+caption            =
+
+other_names        = BasedBeffJezos
+
+birth_name         = Guillaume Verdon-Akzam
+
+birth_date         =
+
+birth_place        = Montreal, Quebec, Canada
+
+education          = McGill University (BS)
+
+known_for          =
+
+}}
+
+Guillaume Verdon-Akzam, also known as Guillaume Verdon or Gill Verdon, is a Canadian mathematical physicist, quantum computing researcher, entrepreneur, and writer who is a key contributor of Google's quantum machine learning software, Tensorflow Quantum. He is also a co-founder of the effective accelerationism movement and the start-up company Extropic AI which operates at the intersection between physics-based computing and artificial intelligence.
+
+Education and career
+
+Verdon attended McGill University as an undergraduate and graduated with honors with a double major in Mathematics & Physics. He attended University of Waterloo for graduate studies where he completed Master's work in 2017 at the Institute for Quantum Computing and continued with Achim Kempf as his PhD supervisor.
+
+In 2017, Verdon co-founded Everettian Technologies and became its chief scientific officer. The company was named after Hugh Everett III, and was an early Canadian start-up focused on quantum machine learning solutions. He also had a side venture into NFTs related to quantum information which provided capital for his later startup Extropic AI. Verdon has worked at Alphabet & Google and had primary responsibility for theoretical work on the team that introduced the TensorFlow Quantum library for quantum machine learning. During his time at Google X Verdon pioneered and worked on quantum graph neural networks, and quantum Hamiltonian-based models. He has several patents with Google X covering quantum computing, quantum machine learning, and signal processing.
+
+In 2022, Verdon and Trevor Mccourt co-founded Extropic AI, which focuses on building a thermodynamic hardware platform for accelerating AI research. The company recently announced the completion of a $14.1 million seed round. On March 24, 2025, Wired reported that Verdon was continuing to work on a "new kind of chip to accelerate AI," through Extropic.
+
+Effective accelerationism
+
+Verdon wrote under the pseudonym BasedBeffJezos and was a co-founder of the effective accelerationism (e/acc) movement. The origin of the movement can be traced back to a May 2022 newsletter published by him and 3 other authors. In its coverage of the movement, Forbes outed Verdon as the author behind his pseudonymous account. and other issues of technological progress.
+
+References
+
+External links
+
+Lex Fridman Podcast #407 – Guillaume Verdon: Beff Jezos, E/acc Movement, Physics, Computation & AGI
+
+Extropic AI - Official Website
+
+Google Scholar Profile
+
+Category:Living people
+
+Category:Canadian businesspeople
+
+Category:Canadian technology company founders
+
+Category:McGill University alumni
+
+Category:Machine learning researchers
+
+Category:Quantum information scientists
+
+Category:University of Waterloo alumni
+
+Category:Google employees
+
+Category:Scientists from Montreal
+
+Category:Year of birth missing (living people)
+
+Category:Effective accelerationism

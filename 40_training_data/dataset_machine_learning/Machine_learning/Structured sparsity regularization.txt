@@ -1,0 +1,111 @@
+Structured sparsity regularization is a class of methods, and an area of research in statistical learning theory, that extend and generalize sparsity regularization learning methods. Both sparsity and structured sparsity regularization methods seek to exploit the assumption that the output variable  Y  (i.e., response, or dependent variable) to be learned can be described by a reduced number of variables in the input space  X  (i.e., the domain, space of features or explanatory variables). Sparsity regularization methods focus on selecting the input variables that best describe the output. Structured sparsity regularization methods generalize and extend sparsity regularization methods, by allowing for optimal selection over structures like groups or networks of input variables in  X . magnetic resonance image (MRI) processing, socio-linguistic analysis in natural language processing, and analysis of genetic expression in breast cancer.
+
+Definition and related concepts
+
+Sparsity regularization
+
+Consider the linear kernel regularized empirical risk minimization problem with a loss function  V(y_i, f(x))   and the \ell_0 "norm" as the regularization penalty:
+
+\min_{w\in\mathbb{R}^d} \frac{1}{n}\sum_{i=1}^n V(y_i, \langle w,x_i\rangle)  + \lambda \|w\|_0,
+
+where  x, w \in \mathbb{R^d} , and \|w\|_0 denotes the \ell_0 "norm", defined as the number of nonzero entries of the vector w. f(x) = \langle w,x_i\rangle  is said to be sparse if  \|w\|_0 = s . Which means that the output Y can be described by a small subset of input variables.
+
+More generally, assume a dictionary  \phi_j : X \rightarrow \mathbb{R}  with j = 1,...,p   is given, such that the target function f(x) of a learning problem can be written as:
+
+f(x) = \sum_{j=1}^p \phi_j(x) w_j,  \forall x \in X
+
+The \ell_0 norm \|f\|_0 = \|w\|_0  as the number of non-zero components of w is defined as
+
+\|w\|_0 = | \{ j | w_j \neq 0, j \in\{ 1,...,p \}\} |, where |A| is the cardinality of set A.
+
+f is said to be sparse if \|f\|_0 = \|w\|_0 = s .
+
+However, while using the \ell_0 norm for regularization favors sparser solutions, it is computationally difficult to use and additionally is not convex. A computationally more feasible norm that favors sparser solutions is the \ell_1 norm; this has been shown to still favor sparser solutions and is additionally convex.  Hierarchical models using Bayesian non-parametric methods have been used to learn topic models, which are statistical models for discovering the abstract "topics" that occur in a collection of documents. Hierarchies have also been considered in the context of kernel methods. Hierarchical norms have been applied to bioinformatics, computer vision and topic models.
+
+Norms defined on grids
+
+If the structure assumed over variables is in the form of a 1D, 2D or 3D grid, then submodular functions based on overlapping groups can be considered as norms, leading to stable sets equal to rectangular or convex shapes.
+
+Algorithms for computation
+
+Best subset selection problem
+
+The problem of choosing the best subset of input variables can be naturally formulated under a penalization framework as:
+
+\min_{w\in\mathbb{R}^d} \frac{1}{n}\sum_{i=1}^n V(y_i, w, x_i)  + \lambda \|w\|_0,
+
+Where \|w\|_0 denotes the \ell_0 "norm", defined as the number of nonzero entries of the vector w.
+
+Although this formulation makes sense from a modeling perspective, it is computationally unfeasible, as it is equivalent to an exhaustive search evaluating all possible subsets of variables. of the following form:
+
+\min_{w\in\mathbb{R}^d}  \frac{1}{n}\sum_{i=1}^n V(y_i, w, x_i) + R(w)
+
+Where V(y_i, w, x_i)  is a convex and differentiable loss function like the quadratic loss, and R(w)  is a convex potentially non-differentiable regularizer such as the \ell_1 norm.
+
+Connections to Other Areas of Machine Learning
+
+Connection to Multiple Kernel Learning
+
+Structured Sparsity regularization can be applied in the context of multiple kernel learning. Multiple kernel learning refers to a set of machine learning methods that use a predefined set of kernels and learn an optimal linear or non-linear combination of kernels as part of the algorithm.
+
+In the algorithms mentioned above, a whole space was taken into consideration at once and was partitioned into groups, i.e. subspaces. A complementary point of view is to consider the case in which distinct spaces are combined to obtain a new one. It is useful to discuss this idea considering finite dictionaries. Finite dictionaries with linearly independent elements - these elements are also known as atoms - refer to finite sets of linearly independent basis functions, the linear combinations of which define hypothesis spaces. Finite dictionaries can be used to define specific kernels, as will be shown. Assume for this example that rather than only one dictionary, several finite dictionaries are considered.
+
+For simplicity, the case in which there are only two dictionaries A = \{a_j: X \rightarrow \R, j=1,...,p\}  and B = \{b_t: X \rightarrow \R, t=1,...,q\}  where q and p are integers, will be considered. The atoms in A as well as the atoms in B are assumed to be linearly independent. Let D = \{d_k: X \rightarrow \R, k=1,...,p+q\} = A \cup B  be the union of the two dictionaries. Consider the linear space of functions H  given by linear combinations of the form
+
+f(x) = \sum_{i=1}^{p+q}{w^j d_j(x)} = \sum_{j=1}^{p}{w_A^j a_j(x)} + \sum_{t=1}^{q}{w_B^t b_t(x)}, x \in X
+
+for some coefficient vectors w_A \in \R^p, w_B \in \R^q , where w=(w_A,w_B) . Assume the atoms in D  to still be linearly independent, or equivalently, that the map w = (w_A, w_B) \mapsto f  is one to one. The functions in the space H  can be seen as the sums of two components, one in the space H_A , the linear combinations of atoms in  A and one in H_B , the linear combinations of the atoms in B.
+
+One choice of norm on this space is ||f|| = ||w_A|| + ||w_B|| . Note that we can now view H  as a function space in which  H_A ,  H_B  are subspaces. In view of the linear independence assumption, H  can be identified with \R^{p+q}  and H_A, H_B  with \R^p, \R^q  respectively. The norm mentioned above can be seen as the group norm in  H associated to the subspaces  H_A ,  H_B , providing a connection to structured sparsity regularization.
+
+Here, H_A ,  H_B  and H  can be seen to be the reproducing kernel Hilbert spaces with corresponding feature maps \Phi_A : X \rightarrow \R^p , given by \Phi_A(x) = (a_1(x),...,a_p(x)) , \Phi_B : X \rightarrow \R^q , given by \Phi_B(x) = (b_1(x),...,b_q(x)) , and \Phi: X \rightarrow \R^{p+q} , given by the concatenation of \Phi_A, \Phi_B , respectively.
+
+In the structured sparsity regularization approach to this scenario, the relevant groups of variables which the group norms consider correspond to the subspaces H_A  and H_B . This approach promotes setting the groups of coefficients corresponding to these subspaces to zero as opposed to only individual coefficients, promoting sparse multiple kernel learning.
+
+The above reasoning directly generalizes to any finite number of dictionaries, or feature maps. It can be extended to feature maps inducing infinite dimensional hypothesis
+
+spaces.
+
+When Sparse Multiple Kernel Learning is useful
+
+Considering sparse multiple kernel learning is useful in several situations including the following:
+
+Data fusion: When each kernel corresponds to a different kind of modality/feature.
+
+Nonlinear variable selection: Consider kernels K_g depending only one dimension of the input.
+
+Generally sparse multiple kernel learning is particularly useful when there are many kernels and model selection and interpretability are important.
+
+Additional uses and applications
+
+Structured sparsity regularization methods have been used in a number of settings where it is desired to impose an a priori input variable structure to the regularization process. Some such applications are:
+
+Compressive sensing in magnetic resonance imaging (MRI), reconstructing MR images from a small number of measurements, potentially yielding significant reductions in MR scanning time
+
+Robust face recognition in the presence of misalignment, occlusion and illumination variation
+
+Uncovering socio-linguistic associations between lexical frequencies used by Twitter authors, and the socio-demographic variables of their geographic communities
+
+Gene selection analysis of breast cancer data using priors of overlapping groups, e.g., biologically meaningful gene sets
+
+See also
+
+Statistical learning theory
+
+Regularization
+
+Sparse approximation
+
+Proximal gradient methods
+
+Convex analysis
+
+Feature selection
+
+References
+
+Category:Machine learning
+
+First order methods
+
+Category:Convex optimization

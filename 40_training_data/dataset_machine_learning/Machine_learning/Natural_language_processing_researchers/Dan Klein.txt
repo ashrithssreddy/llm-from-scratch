@@ -1,0 +1,63 @@
+{{ Infobox scientist
+
+name              = Daniel Klein
+
+image             =
+
+image_size        =
+
+caption           =
+
+birth_date        = 1976
+
+birth_place       =
+
+death_date        =
+
+death_place       =
+
+nationality       = American
+
+fields            = Computer science
+
+workplaces        = University of California, Berkeley
+
+alma_mater        =
+
+doctoral_advisor  = Christopher D. Manning
+
+doctoral_students =
+
+known_for     =
+
+awards            =
+
+}}
+
+Daniel Klein (born  1976) is an American computer scientist and professor of computer science at the University of California, Berkeley. His research focuses on natural language processing and artificial intelligence.
+
+He was educated at Mt. Lebanon High School in Mt. Lebanon Township, Pennsylvania and earned a B.A. in mathematics, computer science, and linguistics from Cornell University (1998), a MSt in linguistics by Oxford University (1999) and a Ph.D. from Stanford University (2004), under Christopher D. Manning. He attended Oxford on a Marshall Scholarship. In addition to the Marshall scholarship, he has been awarded the ACM's Grace Murray Hopper Award, the Sloan Research Fellowship, the NSF CAREER Award, and the Microsoft New Faculty Fellowship.
+
+References
+
+Category:American computer scientists
+
+Category:Grace Murray Hopper Award laureates
+
+Category:1976 births
+
+Category:Living people
+
+Category:UC Berkeley College of Engineering faculty
+
+Category:Alumni of the University of Oxford
+
+Category:Cornell University alumni
+
+Category:Computational linguistics researchers
+
+Category:Mt. Lebanon High School alumni
+
+Category:Natural language processing researchers
+
+Category:Marshall Scholars

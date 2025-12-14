@@ -1,0 +1,101 @@
+Mutation is a genetic operator used to maintain genetic diversity of the chromosomes of a population of an evolutionary algorithm (EA), including genetic algorithms in particular. It is analogous to biological mutation.
+
+The classic example of a mutation operator of a binary coded genetic algorithm (GA) involves a probability that an arbitrary bit in a genetic sequence will be flipped from its original state. A common method of implementing the mutation operator involves generating a random variable for each bit in a sequence. This random variable tells whether or not a particular bit will be flipped. This mutation procedure, based on the biological point mutation, is called single point mutation. Other types of mutation operators are commonly used for representations other than binary, such as floating-point encodings or representations for combinatorial problems.
+
+The purpose of mutation in EAs is to introduce diversity into the sampled population. Mutation operators are used in an attempt to avoid local minima by preventing the population of chromosomes from becoming too similar to each other, thus slowing or even stopping convergence to the global optimum. This reasoning also leads most EAs to avoid only taking the fittest of the population in generating the next generation, but rather selecting a random (or semi-random) set with a weighting toward those that are fitter.
+
+The following requirements apply to all mutation operators used in an EA:
+
+every point in the search space must be reachable by one or more mutations.
+
+there must be no preference for parts or directions in the search space (no drift).
+
+small mutations should be more probable than large ones.
+
+For different genome types, different mutation types are suitable. Some mutations are Gaussian, Uniform, Zigzag, Scramble, Insertion, Inversion, Swap, and so on. An overview and more operators than those presented below can be found in the introductory book by Eiben and Smith or in.
+
+Bit string mutation
+
+The mutation of bit strings ensue through bit flips at random positions.
+
+Example:
+
+The probability of a mutation of a bit is \frac{1}{l}, where l is the length of the binary vector. Thus, a mutation rate of 1 per mutation and individual selected for mutation is reached.
+
+Mutation of real numbers
+
+Many EAs, such as the evolution strategy or the real-coded genetic algorithms,
+
+The value of a real-valued gene can either be changed or redetermined. A mutation that implements the latter should only ever be used in conjunction with the value-changing mutations and then only with comparatively low probability, as it can lead to large changes.
+
+In practical applications, the respective value range of the decision variables to be changed of the optimisation problem to be solved is usually limited. Accordingly, the values of the associated genes are each restricted to an interval [x_{\min}, x_{\max}]. Mutations may or may not take these restrictions into account. In the latter case, suitable post-treatment is then required as described below.
+
+Mutation without consideration of restrictions
+
+A real number x can be mutated using normal distribution \mathcal{N}(0,\sigma) by adding the generated random value to the old value of the gene, resulting in the mutated value x':x' = x + \mathcal{N}(0, \sigma)In the case of genes with a restricted range of values, it is a good idea to choose the step size of the mutation \sigma so that it reasonably fits the range [x_{\min}, x_{\max}] of the gene to be changed, e.g.:\sigma = \frac{x_\text{max} - x_\text{min}}{6}The step size can also be adjusted to the smaller permissible change range depending on the current value. In any case, however, it is likely that the new value x' of the gene will be outside the permissible range of values. Such a case must be considered a lethal mutation, since the obvious repair by using the respective violated limit as the new value of the gene would lead to a drift. This is because the limit value would then be selected with the entire probability of the values beyond the limit of the value range.
+
+The evolution strategy works with real numbers and mutation based on normal distribution. The step sizes are part of the chromosome and are subject to evolution together with the actual decision variables.
+
+Mutation with consideration of restrictions
+
+One possible form of changing the value of a gene while taking its value range [x_{\min}, x_{\max}] into account is the mutation relative parameter change of the evolutionary algorithm GLEAM (General Learning Evolutionary Algorithm and Method), in which, as with the mutation presented earlier, small changes are more likely than large ones.
+
+First, an equally distributed decision is made as to whether the current value x should be increased or decreased and then the corresponding total change interval is determined. Without loss of generality, an increase is assumed for the explanation and the total change interval is then [x, x_\max]. It is divided into k sub-areas of equal size with the width \delta, from which k sub-change intervals of different size are formed:
+
+i-th sub-change interval: [x, x + \delta \cdot i] with
+
+\delta = \frac{(x_\text{max} - x)}{k} and i = 1, \dots, k
+
+Subsequently, one of the k sub-change intervals is selected in equal distribution and a random number, also equally distributed, is drawn from it as the new value x' of the gene. The resulting summed probabilities of the sub-change intervals result in the probability distribution of the k sub-areas shown in the adjacent figure for the exemplary case of k=10. This is not a normal distribution as before, but this distribution also clearly favours small changes over larger ones.
+
+This mutation for larger values of k, such as 10, is less well suited for tasks where the optimum lies on one of the value range boundaries. This can be remedied by significantly reducing k when a gene value approaches its limits very closely.
+
+Common properties
+
+For both mutation operators for real-valued numbers, the probability of an increase and decrease is independent of the current value and is 50% in each case. In addition, small changes are considerably more likely than large ones. For mixed-integer optimization problems, rounding is usually used.
+
+Mutation of permutations
+
+Mutations of permutations are specially designed for genomes that are themselves permutations of a set. These are often used to solve combinatorial tasks. In the two mutations presented, parts of the genome are rotated or inverted.
+
+Rotation to the right
+
+The presentation of the procedure is illustrated by an example on the right:
+
+Inversion
+
+The presentation of the procedure is illustrated by an example on the right:
+
+Variants with preference for smaller changes
+
+The requirement raised at the beginning for mutations, according to which small changes should be more probable than large ones, is only inadequately fulfilled by the two permutation mutations presented, since the lengths of the partial lists and the number of shift positions are determined in an equally distributed manner. However, the longer the partial list and the shift, the greater the change in gene order.
+
+This can be remedied by the following modifications. The end index j of the partial lists is determined as the distance d to the start index i:
+
+j = (i+ d) \bmod \left|P_0\right|
+
+where d is determined randomly according to one of the two procedures for the mutation of real numbers from the interval \left[0, \left|P_0\right| - 1\right] and rounded.
+
+For the rotation, k is determined similarly to the distance d, but the value 0 is forbidden.
+
+For the inversion, note that i \ne j must hold, so for d the value 0 must be excluded.
+
+See also
+
+Evolutionary algorithms
+
+Genetic algorithms
+
+Evolution strategy
+
+Genetic programming
+
+Evolutionary programming
+
+References
+
+Bibliography
+
+John Holland (1975). Adaptation in Natural and Artificial Systems, PhD thesis, University of Michigan Press, Ann Arbor, Michigan. .
+
++

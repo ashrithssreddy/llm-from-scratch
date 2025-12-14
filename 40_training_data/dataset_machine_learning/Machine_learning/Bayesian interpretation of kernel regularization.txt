@@ -1,0 +1,153 @@
+Bayesian interpretation of kernel regularization examines how kernel methods in machine learning can be understood through the lens of Bayesian statistics, a framework that uses probability to model uncertainty. Kernel methods are founded on the concept of similarity between inputs within a structured space. While techniques like support vector machines (SVMs) and their regularization (a technique to make a model more generalizable and transferable) were not originally formulated using Bayesian principles, analyzing them from a Bayesian perspective provides valuable insights.
+
+In the Bayesian framework, kernel methods serve as a fundamental component of Gaussian processes, where the kernel function operates as a covariance function that defines relationships between inputs. Traditionally, these methods have been applied to supervised learning problems where inputs are represented as vectors and outputs as scalars. Recent developments have extended kernel methods to handle multiple outputs, as seen in multi-task learning.
+
+The mathematical framework for kernel methods typically involves reproducing kernel Hilbert spaces (RKHS). Not all kernels form inner product spaces, as they may not always be positive semidefinite (a property ensuring non-negative similarity measures), but they still operate within these more general RKHS. A mathematical equivalence between regularization approaches and Bayesian methods can be established, particularly in cases where the reproducing kernel Hilbert space is finite-dimensional. This equivalence demonstrates how both perspectives converge to essentially the same estimators, revealing the underlying connection between these seemingly different approaches.
+
+The supervised learning problem
+
+The classical supervised learning problem requires estimating the output for some new input point \mathbf{x}' by learning a scalar-valued estimator \hat{f}(\mathbf{x}') on the basis of a training set S consisting of n input-output pairs, S = (\mathbf{X},\mathbf{Y}) = (\mathbf{x}_1,y_1),\ldots,(\mathbf{x}_n,y_n).  Given a symmetric and positive bivariate function k(\cdot,\cdot) called a kernel, one of the most popular estimators in machine learning is given by
+
+{{NumBlk|::|
+
+\hat{f}(\mathbf{x}') = \mathbf{k}^\top(\mathbf{K} + \lambda n \mathbf{I})^{-1} \mathbf{Y},
+
+}}
+
+where \mathbf{K} \equiv k(\mathbf{X},\mathbf{X}) is the kernel matrix with entries \mathbf{K}_{ij} = k(\mathbf{x}_i,\mathbf{x}_j),  \mathbf{k} = [k(\mathbf{x}_1,\mathbf{x}'),\ldots,k(\mathbf{x}_n,\mathbf{x}')]^\top, and \mathbf{Y} = [y_1,\ldots,y_n]^\top.  We will see how this estimator can be derived both from a regularization and a Bayesian perspective.
+
+A regularization perspective
+
+The main assumption in the regularization perspective is that the set of functions \mathcal{F} is assumed to belong to a reproducing kernel Hilbert space \mathcal{H}_k.
+
+Reproducing kernel Hilbert space
+
+A reproducing kernel Hilbert space (RKHS) \mathcal{H}_k is a Hilbert space of functions defined by a symmetric, positive-definite function k : \mathcal{X} \times \mathcal{X} \rightarrow \mathbb{R} called the reproducing kernel such that the function k(\mathbf{x},\cdot) belongs to \mathcal{H}_k for all \mathbf{x} \in \mathcal{X}. There are three main properties that make an RKHS appealing:
+
+1. The reproducing property, after which the RKHS is named,
+
+f(\mathbf{x}) = \langle f,k(\mathbf{x},\cdot) \rangle_k, \quad \forall \ f \in \mathcal{H}_k,
+
+where \langle \cdot,\cdot \rangle_k is the inner product in \mathcal{H}_k.
+
+2. Functions in an RKHS are in the closure of the linear combination of the kernel at given points,
+
+f(\mathbf{x}) = \sum_i k(\mathbf{x}_i,\mathbf{x})c_i
+
+.
+
+This allows the construction in a unified framework of both linear and generalized linear models.
+
+3. The squared norm in an RKHS can be written as
+
+\|f\|_k^2 = \sum_{i,j} k(\mathbf{x}_i,\mathbf{x}_j) c_i c_j
+
+and could be viewed as measuring the complexity of the function.
+
+The regularized functional
+
+The estimator is derived as the minimizer of the regularized functional
+
+{{NumBlk|::|
+
+\frac{1}{n} \sum_{i=1}^{n}(f(\mathbf{x}_i)-y_i)^2 + \lambda \|f\|_k^2,
+
+}}
+
+where f \in \mathcal{H}_k and \|\cdot\|_k is the norm in \mathcal{H}_k.  The first term in this functional, which measures the average of the squares of the errors between the f(\mathbf{x}_i) and the y_i, is called the empirical risk and represents the cost we pay by predicting f(\mathbf{x}_i) for the true value y_i.  The second term in the functional is the squared norm in a RKHS multiplied by a weight \lambda and serves the purpose of stabilizing the problem states that the minimizer of the functional () can always be written as a linear combination of the kernels centered at the training-set points,
+
+{{NumBlk|::|
+
+\hat{f}(\mathbf{x}') = \sum_{i=1}^n c_i k(\mathbf{x}_i,\mathbf{x}') = \mathbf{k}^\top \mathbf{c},
+
+}}
+
+for some \mathbf{c} \in \mathbb{R}^n.  The explicit form of the coefficients \mathbf{c} = [c_1,\ldots,c_n]^\top can be found by substituting for f(\cdot) in the functional ().  For a function of the form in equation (), we have that
+
+\begin{align}
+
+\|f\|_k^2 & = \langle f,f \rangle_k, \\
+
+& = \left\langle \sum_{i=1}^N c_i k(\mathbf{x}_i,\cdot), \sum_{j=1}^N c_j k(\mathbf{x}_j,\cdot) \right\rangle_k, \\
+
+& = \sum_{i=1}^N \sum_{j=1}^N c_i c_j \langle k(\mathbf{x}_i,\cdot), k(\mathbf{x}_j,\cdot) \rangle_k, \\
+
+& = \sum_{i=1}^N \sum_{j=1}^N c_i c_j k(\mathbf{x}_i,\mathbf{x}_j), \\
+
+& = \mathbf{c}^\top \mathbf{K} \mathbf{c}.
+
+\end{align}
+
+We can rewrite the functional () as
+
+\frac{1}{n} \| \mathbf{y} - \mathbf{K} \mathbf{c} \|^2 + \lambda \mathbf{c}^\top \mathbf{K} \mathbf{c}.
+
+This functional is convex in \mathbf{c} and therefore we can find its minimum by setting the gradient with respect to \mathbf{c} to zero,
+
+\begin{align}
+
+-\frac{1}{n} \mathbf{K} (\mathbf{Y} - \mathbf{K} \mathbf{c}) + \lambda \mathbf{K} \mathbf{c} & = 0, \\
+
+(\mathbf{K} + \lambda n \mathbf{I}) \mathbf{c} & = \mathbf{Y}, \\
+
+\mathbf{c} & = (\mathbf{K} + \lambda n \mathbf{I})^{-1} \mathbf{Y}.
+
+\end{align}
+
+Substituting this expression for the coefficients in equation (), we obtain the estimator stated previously in equation (),
+
+\hat{f}(\mathbf{x}') = \mathbf{k}^\top(\mathbf{K} + \lambda n \mathbf{I})^{-1} \mathbf{Y}.
+
+A Bayesian perspective
+
+The notion of a kernel plays a crucial role in Bayesian probability as the covariance function of a stochastic process called the Gaussian process.
+
+A review of Bayesian probability
+
+As part of the Bayesian framework, the Gaussian process specifies the prior distribution that describes the prior beliefs about the properties of the function being modeled.  These beliefs are updated after taking into account observational data by means of a likelihood function that relates the prior beliefs to the observations.  Taken together, the prior and likelihood lead to an updated distribution called the posterior distribution that is customarily used for predicting test cases.
+
+The Gaussian process
+
+A Gaussian process (GP) is a stochastic process in which any finite number of random variables that are sampled follow a joint Normal distribution.
+
+In the finite dimensional case, every RKHS can be described in terms of a feature map \Phi : \mathcal{X} \rightarrow \mathbb{R}^p such that
+
+k(\mathbf{x},\mathbf{x}') = \sum_{i=1}^p \Phi^i(\mathbf{x})\Phi^i(\mathbf{x}').
+
+Functions in the RKHS with kernel \mathbf{K} can then be written as
+
+f_{\mathbf{w}}(\mathbf{x}) = \sum_{i=1}^p \mathbf{w}^i \Phi^i(\mathbf{x}) = \langle \mathbf{w},\Phi(\mathbf{x}) \rangle,
+
+and we also have that
+
+\|f_{\mathbf{w}} \|_k = \|\mathbf{w}\|.
+
+We can now build a Gaussian process by assuming  \mathbf{w} = [w^1,\ldots,w^p]^\top  to be distributed according to a multivariate Gaussian distribution with zero mean and identity covariance matrix,
+
+\mathbf{w} \sim \mathcal{N}(0,\mathbf{I}) \propto \exp(-\|\mathbf{w}\|^2).
+
+If we assume a Gaussian likelihood we have
+
+P(\mathbf{Y}|\mathbf{X},f) = \mathcal{N}(f(\mathbf{X}),\sigma^2 \mathbf{I}) \propto \exp\left(-\frac{1}{\sigma^2} \| f_{\mathbf{w}}(\mathbf{X}) - \mathbf{Y} \|^2\right),
+
+where  f_{\mathbf{w}}(\mathbf{X}) = (\langle\mathbf{w},\Phi(\mathbf{x}_1)\rangle,\ldots,\langle\mathbf{w},\Phi(\mathbf{x}_n \rangle) . The resulting posterior distribution is then given by
+
+P(f|\mathbf{X},\mathbf{Y}) \propto \exp\left(-\frac{1}{\sigma^2} \|f_{\mathbf{w}}(\mathbf{X}) - \mathbf{Y}\|_n^2 + \|\mathbf{w}\|^2\right)
+
+We can see that a maximum posterior (MAP) estimate is equivalent to the minimization problem defining Tikhonov regularization, where in the Bayesian case the regularization parameter is related to the noise variance.
+
+From a philosophical perspective, the loss function in a regularization setting plays a different role than the likelihood function in the Bayesian setting. Whereas the loss function measures the error that is incurred when predicting f(\mathbf{x}) in place of y, the likelihood function measures how likely the observations are from the model that was assumed to be true in the generative process. From a mathematical perspective, however, the formulations of the regularization and Bayesian frameworks make the loss function and the likelihood function to have the same mathematical role of promoting the inference of functions f that approximate the labels y as much as possible.
+
+See also
+
+Regularized least squares
+
+Bayesian linear regression
+
+Bayesian interpretation of Tikhonov regularization
+
+References
+
+Category:Bayesian statistics
+
+Category:Machine learning

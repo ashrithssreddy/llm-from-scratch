@@ -1,0 +1,123 @@
+In data mining and machine learning,  -flats algorithm is an iterative method which aims to partition  observations into  clusters where each cluster is close to a -flat, where  is a given integer.
+
+It is a generalization of the -means algorithm. In -means algorithm, clusters are formed in the way that each cluster is close to one point, which is a -flat.
+
+-flats algorithm gives better clustering result than -means algorithm
+
+for some data set.
+
+Description
+
+Problem formulation
+
+Given a set  of  observations (a_1, a_2, \dots, a_m) where each observation a_i is an n-dimensional real vector,  -flats algorithm aims to partition  observation points by generating  -flats that minimize the sum of the squares of distances of each observation to a nearest -flat.
+
+A -flat is a subset of \Reals^n that is congruent to \Reals^q. For example, a
+
+-flat is a point; a -flat is a line; a -flat is a plane; a n-1-flat is a hyperplane. -flat can be characterized by the solution set of a linear system of equations: F = \left\{ x \mid x\in \Reals^n, W'x = \gamma \right\}, where W \in \Reals^{n\times (n-q)}, \gamma \in \Reals^{1\times (n-q)}.
+
+Denote a partition of \{1,2,\dots, n\} as S = (S_1,S_2,\dots,S_k). The problem can be formulated as
+
+{{NumBlk||
+
+\min_{F_l,l=1,\dots,k \text{ are q-flats}} \min_S \sum_{l=1}^k \sum_{a_j \in S_i} \|a_j - P_{F_i}(a_j) \|^2,
+
+}}
+
+where P_{F_i}(a_j) is the projection of a_j onto F_i. Note that \|a_j - P_{F_i}(a_j) \| = \operatorname{dist}(a_j,F_l) is the distance from a_j to F_l.
+
+Algorithm
+
+The algorithm is similar to the k-means algorithm (i.e. Lloyd's algorithm) in that it alternates between cluster assignment and cluster update. In specific, the algorithm starts with an initial set of -flats F_l^{(0)} = \left\{x\in R^n \mid \left(W_l^{(0)}\right)' x = \gamma_l^{(0)} \right\}, l=1,\dots, k , and proceeds by alternating between the following two steps:
+
+Cluster Assignment: (given -flats, assign each point to closest -flat): the -th cluster is updated as S_i^{(t)} = \left\{a_j \mid \left\|(W_i^{(t)})'a_j - \gamma_i^{(t)} \right\|_F = \min_{l=1,\dots,k} \left\|(W_l^{(t)})'a_j -\gamma_l^{(t)} \right\|_F \right \}.
+
+Cluster Update: (given cluster assignment, update the -flats): For l = 1,\dots, k, let A(l)\in R^{m(l)\times n} with rows corresponding to all a_i assigned to cluster . Set W_l^{(t+1)} to be the matrix whose columns are the orthonormal eigenvectors corresponding to the (n-q) least eigenvalues of A(l)' \left(I - \tfrac{ee'}{m}\right) A(l) and \gamma_l^{(t+1)} = \frac{e' A(l) W_l^{(t+1)}}{m}.
+
+Stop whenever the assignments no longer change.
+
+The cluster assignment step uses the following fact: given a -flat F_l = \{x \mid W'x=\gamma \} and a vector , where W' W = I, the distance from  to the -flat F_l is \operatorname{dist}(a,F_l) = \min_{x:W' x = \gamma} \left\|x-a \right\|_F^2 = \left\|W(W'W)^{-1}(W' x - \gamma) \right\|_F^2 = \left\|W' x-\gamma \right\|_F^2.
+
+The key part of this algorithm is how to update the cluster, i.e. given  points, how to find a -flat that minimizes the sum of squares of distances of each point to the -flat. Mathematically, this problem is: given A\in R^{m\times n}, solve the quadratic optimization problem
+
+{{NumBlk||
+
+\min_{W\in R^{n\times (n-q)},\gamma \in R^{1\times (n-q)}} \left\|AW - e\gamma \right\|_F^2,  subject to  W' W = I,|}}
+
+where A \in \R^{m \times n} is given, and e = (1, \dots, 1)' \in \R^{m \times 1}.
+
+The problem can be solved using Lagrangian multiplier method and the solution is as given in the cluster update step.
+
+It can be shown that the algorithm will terminate in a finite number of iterations (no more than the total number of possible assignments, which is bounded by k^m). In addition, the algorithm will terminate at a point that the overall objective cannot be decreased either by a different assignment or by defining new cluster planes for these clusters (such point is called "locally optimal" in the references).
+
+This convergence result is a consequence of the fact that  can be solved exactly.
+
+The same convergence result holds for -means algorithm because the cluster update problem can be solved exactly.
+
+Relation to other machine learning methods
+
+-means algorithm
+
+-flats algorithm is a generalization of -means algorithm. In fact, -means algorithm is  -flats algorithm since a point is a 0-flat. Despite their connection, they should be used in different scenarios.  -flats algorithm for the case that data lie in a few low-dimensional spaces. -means algorithm is desirable for the case the clusters are of the ambient dimension. For example, if all observations lie in two lines,  -flats algorithm with q = 1 may be used; if the observations are two Gaussian clouds, -means algorithm may be used.
+
+Sparse Dictionary Learning
+
+Natural signals lie in a high-dimensional space. For example, the dimension of a 1024-by-1024 image is about 106, which is far too high for most signal processing algorithms. One way to get rid of the high dimensionality is to find a set of basis functions, such that the high-dimensional signal can be represented by only a few basis functions. In other words, the coefficients of the signal representation lies in a low-dimensional space, which is easier to apply signal processing algorithms. In the literature, wavelet transform is usually used in image processing, and fourier transform is usually used in audio processing. The set of basis functions is usually called a dictionary.
+
+However, it is not clear what is the best dictionary to use once given a signal data set. One popular approach is to find a dictionary when given a data set using the idea of Sparse Dictionary Learning. It aims to find a dictionary, such that the signal can be sparsely represented by the dictionary. The optimization problem can be written as follows.
+
+{{block indent | em = 1.5 | text =
+
+\min_{B,R} \|X - BR\|_{F}^{2}
+
+subject to  \|R_i\|_0 \leq q }}
+
+where
+
+is a -by- matrix. Each columns of  represent a signal, and there are total  signals.
+
+is a -by- matrix. Each columns of  represent a basis function, and there are total  basis functions in the dictionary.
+
+is a -by- matrix.  R_i  (-th columns of ) represent the coefficients when we use the dictionary  to represent the -th columns of .
+
+\|v\|_0  denotes the zero-norm of the vector .
+
+\|V\|_{F}  denotes the Frobenius norm of matrix .
+
+The idea of  -flats algorithm is similar to sparse dictionary learning in nature. If we restrict the -flat to -dimensional subspace, then the  -flats algorithm is simply finding the closed -dimensional subspace to a given signal. Sparse dictionary learning is also doing the same thing, except for an additional constraints on the sparsity of the representation. Mathematically, it is possible to show that  -flats algorithm is of the form of sparse dictionary learning with an additional block structure on .
+
+Let  B_k  be a  d \times q  matrix, where columns of  B_k  are basis of the -th flat. Then the projection of the signal  to the -th flat is  B_k r_k , where  r_k is a -dimensional coefficient. Let  B = [B_1, \cdots, B_K]  denote concatenation of basis of  flats, it is easy to show that the  -flat algorithm is the same as the following.
+
+{{block indent | em = 1.5 | text =
+
+\min_{B,R} \|X - BR\|_{F}^{2}
+
+subject to  \|R_i\|_0 \leq q  and R has a block structure. }}
+
+The block structure of  refers the fact that each signal is labeled to only one flat. Comparing the two formulations,  -flat is the same as sparse dictionary modeling when  l = K \times q and with an additional block structure on R. Users may refer to Szlam's paper for more discussion about the relationship between the two concept.
+
+Applications and variations
+
+Classification
+
+Classification is a procedure that classifies an input signal into different classes. One example is to classify an email into spam or non-spam classes. Classification algorithms usually require a supervised learning stage. In the supervised learning stage, training data for each class is used for the algorithm to learn the characteristics of the class. In the classification stage, a new observation is classified into a class by using the characteristics that were already trained.
+
+-flat algorithm can be used for classification. Suppose there are total of m classes. For each class,  flats are trained a priori via training data set. When a new data comes, find the flat that is closest to the new data. Then the new data is associate to class of the closest flat.
+
+However, the classification performance can be further improved if we impose some structure on the flats. One possible choice is to require different flats from different class be sufficiently far apart. Some researchers use this idea and develop a discriminative k q-flat algorithm.
+
+K-metrics
+
+Source:
+
+In  -flats algorithm, \|x - P_{F} (x)\|^2  is used to measure the representation error.  P_{F} (x)  denotes the projection of x to the flat F. If data lies in a -dimension flat, then a single -flat can represent the data very well. On the contrary, if data lies in a very high dimension space but near a common center, then k-means algorithm is a better way than  -flat algorithm to represent the data. It is because -means algorithm use  \|x - x_c\|^2 to measure the error, where  x_c denotes the center. K-metrics is a generalization that use both the idea of flat and mean. In k-metrics, error is measured by the following Mahalanobis metric.
+
+\left\|x - y\right\|_{A}^2 = (x-y)^\mathsf{T} A (x-y)
+
+where  is a positive semi-definite matrix.
+
+If  is the identity matrix, then the Mahalanobis metric is exactly the same as the error measure used in -means. If  is not the identity matrix, then \|x-y\|_A^2  will favor certain directions as the  -flat error measure.
+
+References
+
+Category:Cluster analysis algorithms

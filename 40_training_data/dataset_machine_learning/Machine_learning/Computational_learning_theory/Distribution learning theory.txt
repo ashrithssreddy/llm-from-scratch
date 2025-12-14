@@ -1,0 +1,73 @@
+The distributional learning theory or learning of probability distribution is a framework in computational learning theory. It has been proposed from Michael Kearns, Yishay Mansour, Dana Ron, Ronitt Rubinfeld, Robert Schapire and Linda Sellie in 1994  and it was inspired from the PAC-framework introduced by Leslie Valiant.
+
+In this framework the input is a number of samples drawn from a distribution that belongs to a specific class of distributions. The goal is to find an efficient algorithm that, based on these samples, determines with high probability the distribution from which the samples have been drawn. Because of its generality, this framework has been used in a large variety of different fields like machine learning, approximation algorithms, applied probability and statistics.
+
+This article explains the basic definitions, tools and results in this framework from the theory of computation point of view.
+
+Definitions
+
+Let \textstyle X be the support of the distributions of interest. As in the original work of Kearns et al. In this framework of statistical learning theory a training set \textstyle S = \{(x_1, y_1), \dots, (x_n, y_n) \} and the goal is to find a target function \textstyle f : X \rightarrow Y that minimizes some loss function, e.g. the square loss function. More formally f = \arg \min_{g} \int V(y, g(x)) d\rho(x, y), where V(\cdot, \cdot) is the loss function, e.g. V(y, z) = (y - z)^2 and \rho(x, y) the probability distribution according to which the elements of the training set are sampled. If the conditional probability distribution \rho_x(y) is known then the target function has the closed form f(x) = \int_y y d\rho_x(y). So the set S is a set of samples from the probability distribution \rho(x, y). Now the goal of distributional learning theory if to find \rho given S which can be used to find the target function f.
+
+Definition of learnability
+
+A class of distributions \textstyle C is called efficiently learnable if for every \textstyle \epsilon > 0 and \textstyle 0  given access to \textstyle GEN(D) for an unknown distribution \textstyle D \in C, there exists a polynomial time algorithm \textstyle A, called learning algorithm of \textstyle C, that outputs a generator or an evaluator of a distribution \textstyle D' such that
+
+\Pr[ d(D, D') \le \epsilon ] \ge 1 - \delta
+
+If we know that \textstyle D' \in C then \textstyle A is called proper learning algorithm, otherwise is called improper learning algorithm.
+
+In some settings the class of distributions \textstyle C is a class with well known distributions which can be described by a set of parameters. For instance \textstyle C could be the class of all the Gaussian distributions \textstyle N(\mu, \sigma^2). In this case the algorithm \textstyle A should be able to estimate the parameters \textstyle \mu, \sigma. In this case \textstyle A is called parameter learning algorithm.
+
+Obviously the parameter learning for simple distributions is a very well studied field that is called statistical estimation and there is a very long bibliography on different estimators for different kinds of simple known distributions. But distributions learning theory deals with learning class of distributions that have more complicated description.
+
+First results
+
+In their seminal work, Kearns et al. deal with the case where \textstyle A is described in term of a finite polynomial sized circuit and they proved the following for some specific classes of distribution. This algorithm sets up a fast tournament between the elements of \textstyle C_{\epsilon} where the winner \textstyle D^* of this tournament is the element which is \textstyle \epsilon-close to \textstyle D (i.e. \textstyle d(D^*, D) \le \epsilon) with probability at least \textstyle 1 - \delta. In order to do so their algorithm uses \textstyle O(\log N / \epsilon^2) samples from \textstyle D and runs in \textstyle O(N \log N / \epsilon^2) time, where \textstyle N = |C_{\epsilon}|.
+
+Learning sums of random variables
+
+Learning of simple well known distributions is a well studied field and there are a lot of estimators that can be used. One more complicated class of distributions is the distribution of a sum of variables that follow simple distributions. These learning procedure have a close relation with limit theorems like the central limit theorem because they tend to examine the same object when the sum tends to an infinite sum. Recently there are two results that described here include the learning Poisson binomial distributions and learning sums of independent integer random variables. All the results below hold using the total variation distance as a distance measure.
+
+Learning Poisson binomial distributions
+
+Consider \textstyle n independent Bernoulli random variables \textstyle X_1, \dots, X_n with probabilities of success \textstyle p_1, \dots, p_n. A Poisson Binomial Distribution of order \textstyle n is the distribution of the sum \textstyle X = \sum_i X_i. For learning the class \textstyle PBD = \{ D : D ~ \text{ is a Poisson binomial distribution} \}. The first of the following results deals with the case of improper learning of \textstyle PBD and the second with the proper learning of \textstyle PBD.
+
+Theorem
+
+Let \textstyle D \in PBD then there is an algorithm which given \textstyle n, \textstyle \epsilon > 0, \textstyle 0  and access to \textstyle GEN(D) finds a \textstyle D' such that \textstyle \Pr[ d(D, D') \le \epsilon ] \ge 1 - \delta. The sample complexity of this algorithm is \textstyle \tilde{O}( ( 1 / \epsilon^3 ) \log (1 / \delta) ) and the running time is \textstyle \tilde{O}( (1 / \epsilon^3) \log n \log^2 (1 / \delta) ).
+
+Theorem
+
+Let \textstyle D \in PBD then there is an algorithm which given \textstyle n, \textstyle \epsilon > 0, \textstyle 0  and access to \textstyle GEN(D) finds a \textstyle D' \in PBD such that \textstyle \Pr[ d(D, D') \le \epsilon ] \ge 1 - \delta. The sample complexity of this algorithm is \textstyle \tilde{O}( ( 1 / \epsilon^2 ) ) \log (1 / \delta)  and the running time is \textstyle (1 / \epsilon)^{O(\log^2 (1 / \epsilon))} \tilde{O}( \log n \log (1 / \delta) ).
+
+One part of the above results is that the sample complexity of the learning algorithm doesn't depend on \textstyle n, although the description of \textstyle D is linear in \textstyle n. Also the second result is almost optimal with respect to the sample complexity because there is also a lower bound of \textstyle O(1 / \epsilon^2).
+
+The proof uses a small \textstyle \epsilon-cover of \textstyle PBD that has been produced by Daskalakis and Papadimitriou, in order to get this algorithm.
+
+Learning Sums of Independent Integer Random Variables
+
+Consider \textstyle n independent random variables \textstyle X_1, \dots, X_n each of which follows an arbitrary distribution with support \textstyle \{0, 1, \dots, k - 1\}. A \textstyle k-sum of independent integer random variable of order \textstyle n is the distribution of the sum \textstyle X = \sum_i X_i. For learning the class
+
+\textstyle k-SIIRV = \{ D : D \text{is a k-sum of independent integer random variable } \}
+
+there is the following result
+
+Theorem
+
+Let \textstyle D \in k-SIIRV then there is an algorithm which given \textstyle n, \textstyle \epsilon > 0 and access to \textstyle GEN(D) finds a \textstyle D' such that \textstyle \Pr[ d(D, D') \le \epsilon ] \ge 1 - \delta. The sample complexity of this algorithm is \textstyle \text{poly}(k / \epsilon) and the running time is also \textstyle \text{poly}(k / \epsilon).
+
+Another part is that the sample and the time complexity does not depend on \textstyle n. Its possible to conclude this independence for the previous section if we set \textstyle k = 2.
+
+Learning mixtures of Gaussians
+
+Let the random variables \textstyle X \sim N(\mu_1, \Sigma_1) and \textstyle Y \sim N(\mu_2, \Sigma_2). Define the random variable \textstyle Z which takes the same value as \textstyle X with probability \textstyle w_1 and the same value as \textstyle Y with probability \textstyle w_2 = 1 - w_1. Then if \textstyle F_1 is the density of \textstyle X and \textstyle F_2 is the density of \textstyle Y the density of \textstyle Z is \textstyle F = w_1 F_1 + w_2 F_2. In this case \textstyle Z is said to follow a mixture of Gaussians. Pearson  was the first who introduced the notion of the mixtures of Gaussians in his attempt to explain the probability distribution from which he got same data that he wanted to analyze. So after doing a lot of calculations by hand, he finally fitted his data to a mixture of Gaussians. The learning task in this case is to determine the parameters of the mixture \textstyle w_1, w_2, \mu_1, \mu_2, \Sigma_1, \Sigma_2.
+
+The first attempt to solve this problem was from Dasgupta. In this work Dasgupta assumes that the two means of the Gaussians are far enough from each other. This means that there is a lower bound on the distance \textstyle ||\mu_1 - \mu_2||. Using this assumption Dasgupta and a lot of scientists after him were able to learn the parameters of the mixture. The learning procedure starts with clustering the samples into two different clusters minimizing some metric. Using the assumption that the means of the Gaussians are far away from each other with high probability the samples in the first cluster correspond to samples from the first Gaussian and the samples in the second cluster to samples from the second one. Now that the samples are partitioned the \textstyle \mu_i, \Sigma_i can be computed from simple statistical estimators and \textstyle w_i by comparing the magnitude of the clusters.
+
+If \textstyle GM is the set of all the mixtures of two Gaussians, using the above procedure theorems like the following can be proved.
+
+'''Theorem
+
+References
+
+Category:Computational learning theory

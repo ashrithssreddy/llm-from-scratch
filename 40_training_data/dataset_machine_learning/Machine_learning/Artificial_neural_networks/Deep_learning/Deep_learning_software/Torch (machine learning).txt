@@ -1,0 +1,161 @@
+{{Infobox software
+
+name                   = Torch
+
+logo                   =
+
+screenshot             =
+
+caption                =
+
+collapsible            =
+
+author                 = Ronan Collobert, Samy Bengio, Johnny Mariéthoz
+
+developer              =
+
+released               =
+
+latest preview version =
+
+latest preview date    =
+
+programming language   = Lua, C, C++
+
+operating system       = Linux, Android, Mac OS X, iOS
+
+platform               =
+
+size                   =
+
+language               =
+
+discontinued           = yes
+
+genre                  = Library for machine learning and deep learning
+
+license                = BSD License
+
+website                =
+
+}}
+
+Torch is an open-source machine learning library,
+
+a scientific computing framework, and a scripting language based on Lua. It provides LuaJIT interfaces to deep learning algorithms implemented in C. It was created by the Idiap Research Institute at EPFL. Torch development moved in 2017 to PyTorch, a port of the library to Python.
+
+torch
+
+The core package of Torch is torch. It provides a flexible N-dimensional array or Tensor, which supports basic routines for indexing, slicing, transposing, type-casting, resizing, sharing storage and cloning. This object is used by most other packages and thus forms the core object of the library. The Tensor also supports mathematical operations like max, min, sum, statistical distributions like uniform, normal and multinomial, and basic linear algebra subprogram (BLAS) operations like dot product, matrix–vector multiplication, matrix–matrix multiplication  and matrix product.
+
+The following exemplifies using torch via its REPL interpreter:
+
+> a = torch.randn(3, 4)
+
+> =a
+
+-0.2381 -0.3401 -1.7844 -0.2615
+
+0.1411  1.6249  0.1708  0.8299
+
+-1.0434  2.2291  1.0525  0.8465
+
+[torch.DoubleTensor of dimension 3x4]
+
+> a
+
+-0.34010116549482
+
+> a:narrow(1,1,2)
+
+-0.2381 -0.3401 -1.7844 -0.2615
+
+0.1411  1.6249  0.1708  0.8299
+
+[torch.DoubleTensor of dimension 2x4]
+
+> a:index(1, torch.LongTensor{1,2})
+
+-0.2381 -0.3401 -1.7844 -0.2615
+
+0.1411  1.6249  0.1708  0.8299
+
+[torch.DoubleTensor of dimension 2x4]
+
+> a:min()
+
+-1.7844365427828
+
+The torch package also simplifies object-oriented programming and serialization by providing various convenience functions which are used throughout its packages. The torch.class(classname, parentclass) function can be used to create object factories (classes). When the constructor is called, torch initializes and sets a Lua table with the user-defined metatable, which makes the table an object.
+
+Objects created with the torch factory can also be serialized, as long as they do not contain references to objects that cannot be serialized, such as Lua coroutines, and Lua userdata. However, userdata can be serialized if it is wrapped by a table (or metatable) that provides  read() and write() methods.
+
+nn
+
+The nn package is used for building neural networks. It is divided into modular objects that share a common Module interface. Modules have a forward() and backward() method that allow them to feedforward and backpropagate, respectively. Modules can be joined using module composites, like Sequential, Parallel and Concat to create complex task-tailored graphs. Simpler modules like Linear, Tanh and Max make up the basic component modules. This modular interface provides first-order automatic gradient differentiation. What follows is an example use-case for building a multilayer perceptron using Modules:
+
+> mlp = nn.Sequential()
+
+> mlp:add(nn.Linear(10, 25)) -- 10 input, 25 hidden units
+
+> mlp:add(nn.Tanh()) -- some hyperbolic tangent transfer function
+
+> mlp:add(nn.Linear(25, 1)) -- 1 output
+
+> =mlp:forward(torch.randn(10))
+
+-0.1815
+
+[torch.Tensor of dimension 1]
+
+Loss functions are implemented as sub-classes of Criterion, which has a similar interface to Module. It also has forward() and backward() methods for computing the loss and backpropagating gradients, respectively. Criteria are helpful to train neural network on classical tasks. Common criteria are the mean squared error criterion implemented in MSECriterion and the cross-entropy criterion implemented in ClassNLLCriterion. What follows is an example of a Lua function that can be iteratively called to train
+
+an mlp Module on input Tensor x, target Tensor y with a scalar learningRate:
+
+function gradUpdate(mlp, x, y, learningRate)
+
+local criterion = nn.ClassNLLCriterion()
+
+local pred = mlp:forward(x)
+
+local err = criterion:forward(pred, y);
+
+mlp:zeroGradParameters();
+
+local t = criterion:backward(pred, y);
+
+mlp:backward(x, t);
+
+mlp:updateParameters(learningRate);
+
+end
+
+It also has StochasticGradient class for training a neural network using stochastic gradient descent, although the optim package provides much more options in this respect, like momentum and weight decay regularization.
+
+Other packages
+
+Many packages other than the above official packages are used with Torch. These are listed in the torch cheatsheet. These extra packages provide a wide range of utilities such as parallelism, asynchronous input/output, image processing, and so on. They can be installed with LuaRocks, the Lua package manager which is also included with the Torch distribution.
+
+Applications
+
+Torch is used by the Facebook AI Research Group, IBM, Yandex and the Idiap Research Institute. Torch has been extended for use on Android and iOS. It has been used to build hardware implementations for data flows like those found in neural networks.
+
+Facebook has released a set of extension modules as open source software.
+
+See also
+
+Comparison of deep learning software
+
+PyTorch
+
+References
+
+External links
+
+Category:Deep learning software
+
+Category:Free statistical software
+
+Category:Lua (programming language) software
+
+Category:Software using the BSD license

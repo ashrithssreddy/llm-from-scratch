@@ -1,0 +1,41 @@
+In machine learning and statistics, the learning rate is a tuning parameter in an optimization algorithm that determines the step size at each iteration while moving toward a minimum of a loss function. Since it influences to what extent newly acquired information overrides old information, it metaphorically represents the speed at which a machine learning model "learns". In the adaptive control literature, the learning rate is commonly referred to as gain.
+
+In setting a learning rate, there is a trade-off between the rate of convergence and overshooting. While the descent direction is usually determined from the gradient of the loss function, the learning rate determines how big a step is taken in that direction. A too high learning rate will make the learning jump over minima but a too low learning rate will either take too long to converge or get stuck in an undesirable local minimum.
+
+In order to achieve faster convergence, prevent oscillations and getting stuck in undesirable local minima the learning rate is often varied during training either in accordance to a learning rate schedule or by using an adaptive learning rate. The learning rate and its adjustments may also differ per parameter, in which case it is a diagonal matrix that can be interpreted as an approximation to the inverse of the Hessian matrix in Newton's method. The learning rate is related to the step length determined by inexact line search in quasi-Newton methods and related optimization algorithms.
+
+Learning rate schedule
+
+Initial rate can be left as system default or can be selected using a range of techniques. A learning rate schedule changes the learning rate during learning and is most often changed between epochs/iterations. This is mainly done with two parameters: decay and momentum. There are many different learning rate schedules but the most common are time-based, step-based and exponential. which are generally built into deep learning libraries such as Keras.
+
+See also
+
+Hyperparameter (machine learning)
+
+Hyperparameter optimization
+
+Stochastic gradient descent
+
+Variable metric methods
+
+Overfitting
+
+Backpropagation
+
+AutoML
+
+Model selection
+
+Self-tuning
+
+References
+
+Further reading
+
+External links
+
+Category:Machine learning
+
+Category:Model selection
+
+Category:Optimization algorithms and methods

@@ -1,0 +1,13 @@
+Unique negative dimension (UND) is a complexity measure for the model of learning from positive examples.
+
+The unique negative dimension of a class C of concepts is the size of the maximum subclass D\subseteq C such that for every concept c\in D, we have \cap (D\setminus \{c\})\setminus c  is nonempty.
+
+This concept was originally proposed by M. Gereb-Graus in "Complexity of learning from one-side examples", Technical Report TR-20-89, Harvard University Division of Engineering and Applied Science, 1989.
+
+See also
+
+Computational learning theory
+
+References
+
+Category:Computational learning theory

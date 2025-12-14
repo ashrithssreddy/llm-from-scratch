@@ -1,0 +1,149 @@
+Event correlation is a technique for making sense of a large number of events and pinpointing the few events that are really important in that mass of information. This is accomplished by looking for and analyzing relationships between events.
+
+History
+
+Event correlation has been used in various fields for many years:
+
+since the 1970s, telecommunications and industrial process control;
+
+since the 1980s, network management and systems management;
+
+since the 1990s, IT service management, publish-subscribe systems (pub/sub), Complex Event Processing (CEP) and Security Information and Event Management (SIEM);
+
+since the early 2000s, Distributed Event-Based Systems and Business Activity Monitoring (BAM).
+
+Examples and application domains
+
+Integrated management is traditionally subdivided into various fields:
+
+layer by layer: network management, system management, service management, etc.
+
+by management function: performance management, security management, etc.
+
+Event correlation takes place in different components depending on the field of study:
+
+Within the field of network management, event correlation is performed in a management platform typically known as a Network Management Station or Network Management System (NMS). For example, events may notify that a device has just rebooted or that a network link is currently down.
+
+Within the field of systems management, an event may for instance report that the CPU utilization of an e-business server has been at 100% for over 15 minutes.
+
+Within the field of service management, an event may notify that a Service-Level Objective is not met for a given customer, for example.
+
+Within the field of security management, the management platform is usually known as the Security Information and Event Management (SIEM), and event correlation is often performed in a separate correlation engine. That engine may directly receive events in real time, or it may read them from SIEM storage. In this case, examples of monitored events include activity such as authentication, access to services and data, and output from point security tools such as an Intrusion Detection System (IDS) or antivirus software.
+
+In this article, we focus on event correlation in integrated management and provide links to other fields.
+
+Event correlation in integrated management
+
+The goal of integrated management is to integrate the management of networks (data, telephone and multimedia), systems (servers, databases and applications) and IT services in a coherent manner. The scope of this discipline notably includes network management, systems management and Service-Level Management.
+
+Events and event correlator
+
+Event correlation usually takes place inside one or several management platforms. It is implemented by a piece of software known as the event correlator. This component is automatically fed with events originating from managed elements (applications, devices), monitoring tools, the Trouble Ticket System, etc. Each event captures something special (from the event source standpoint) that happened in the domain of interest to the event correlator, which will vary depending upon the type of analysis the correlator is attempting to perform.
+
+The event correlator plays a key role in integrated management, for only within it do events from many disparate sources come together and allow for comparison across sources. For instance, this is where the failure of a service can be ascribed to a specific failure in the underlying IT infrastructure, or where the root cause of a potential security attack can be identified.
+
+Most event correlators can receive events from trouble ticket systems. However, only some of them are able to notify trouble ticket systems when a problem is solved, which partly explains the difficulty for Service Desks to keep updated with the latest news. In theory, the integration of management in organizations requires the communication between the event correlator and the trouble ticket system to work both ways.
+
+An event may convey an alarm or report an incident (which explains why event correlation used to be called alarm correlation), but not necessarily. It may also report that a situation goes back to normal, or simply send some information that it deems relevant (e.g., policy P has been updated on device D). The severity of the event is an indication given by the event source to the event destination of the priority that this event should be given while being processed.
+
+Step-by-step decomposition
+
+Event correlation can be decomposed into four steps: event filtering, event aggregation, event masking and root cause analysis. A fifth step (action triggering) is often associated with event correlation and therefore briefly mentioned here.
+
+Event filtering
+
+Event filtering consists in discarding events that are deemed to be irrelevant by the event correlator. For instance, a number of bottom-of-the-range devices are difficult to configure and occasionally send events of no interest to the management platform (e.g., printer P needs A4 paper in tray 1). Another example is the filtering of informational or debugging events by an event correlator that is only interested in availability and faults.
+
+Event aggregation
+
+Event aggregation is a technique where multiple events that are very similar (but not necessarily identical) are combined into an aggregate that represents the underlying event data. Its main objective is to summarize a collection of input events into a smaller collection that can be processed using various analytics methods. For example, the aggregate may provide statistical summaries of the underlying events and the resources that are affected by those events. Another example is temporal aggregation, when the same problem is reported over and over again by the event source, until the problem is finally solved.
+
+Event de-duplication is a special type of event aggregation that consists in merging exact duplicates of the same event. Such duplicates may be caused by network instability (e.g., the same event is sent twice by the event source because the first instance was not acknowledged sufficiently quickly, but both instances eventually reach the event destination).
+
+Event masking
+
+Event masking (also known as topological masking in network management) consists of ignoring events pertaining to systems that are downstream of a failed system.  For example, servers that are downstream of a crashed router will fail availability polling.
+
+Root cause analysis
+
+Root cause analysis is the last and most complex step of event correlation. It consists of analyzing dependencies between events, based for instance on a model of the environment and dependency graphs, to detect whether some events can be explained by others. For example, if database D runs on server S and this server gets durably overloaded (CPU used at 100% for a long time), the event “the SLA for database D is no longer fulfilled” can be explained by the event “Server S is durably overloaded”.
+
+Action triggering
+
+At this stage, the event correlator is left with at most a handful of events that need to be acted upon. Strictly speaking, event correlation ends here. However, by language abuse, the event correlators found on the market (e.g., in network management) sometimes also include problem-solving capabilities. For instance, they may trigger corrective actions or further investigations automatically.
+
+Event correlation in other fields
+
+Event correlation in ITIL
+
+The scope of ITIL is larger than that of integrated management. However, event correlation in ITIL is quite similar to event correlation in integrated management.
+
+In the ITIL version 2 framework, event correlation spans three processes: Incident Management, Problem Management and Service Level Management.
+
+In the ITIL version 3 framework, event correlation takes place in the Event Management process. The event correlator is called a correlation engine.
+
+Event correlation in publish-subscribe systems
+
+Event correlation in complex event processing
+
+Event correlation in business activity monitoring
+
+Event correlation in industrial process control
+
+See also
+
+Business activity monitoring
+
+Causal reasoning
+
+Complex event processing
+
+ECA rules
+
+Event stream processing
+
+Event-driven architecture
+
+Event-driven programming
+
+Event-driven SOA
+
+Incident management
+
+Issue tracking system
+
+IT service management
+
+Network management
+
+Problem management
+
+Root cause analysis
+
+Supervisory control and data acquisition (SCADA)
+
+Systems management
+
+References
+
+M. Hasan, B. Sugla and R. Viswanathan, "A Conceptual Framework for Network Management Event Correlation and Filtering Systems", in Proc. 6th IFIP/IEEE International Symposium on Integrated Network Management (IM 1999), Boston, MA, USA, May 1999, pp. 233–246.
+
+H.G. Hegering, S. Abeck and B. Neumair, Integrated Management of Networked Systems, Morgan Kaufmann, 1998.
+
+G. Jakobson and M. Weissman, "Alarm Correlation", IEEE Network, Vol. 7, No. 6, pp. 52–59, November 1993.
+
+S. Kliger, S. Yemini, Y. Yemini, D. Ohsie and S. Stolfo, "A Coding Approach to Event Correlation", in Proc. 4th IEEE/IFIP International Symposium on Integrated Network Management (ISINM 1995), Santa Barbara, CA, USA, May 1995, pp. 266–277.
+
+J.P. Martin-Flatin, G. Jakobson and L. Lewis, "Event Correlation in Integrated Management: Lessons Learned and Outlook”, Journal of Network and Systems Management, Vol. 17, No. 4, December 2007.
+
+M. Sloman (Ed.), "Network and Distributed Systems Management", Addison-Wesley, 1994.
+
+External links
+
+Softpanorama event correlation technologies page
+
+Category:Events (computing)
+
+Category:Evaluation methods
+
+Category:Causal inference

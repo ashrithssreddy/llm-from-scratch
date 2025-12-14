@@ -1,0 +1,53 @@
+{{Infobox scientist
+
+name              = Jens Lehmann
+
+image             = File:Jens Lehmann (Computer Scientist).jpg
+
+birth_date        =
+
+birth_place       = Meissen, Saxony, West Germany
+
+nationality       = German
+
+work_institution  =
+
+website           =
+
+field             =
+
+thesis_url        = http://jens-lehmann.org/files/2010/phd_thesis.pdf
+
+}}
+
+Jens Lehmann (born 29 March 1982) is a German computer scientist, principal scientist at Amazon, honorary professor at TU Dresden, and European Laboratory for Learning and Intelligent Systems fellow.
+
+Research
+
+Lehmann coordinated the Fraunhofer IAIS Dresden lab at the Center for Explainable and Efficient AI Technologies.
+
+His projects include a 2019 Hannover Fair demonstration and the SPEAKER project, an AI platform for business-to-business speech assistants. He also works on symbolic artificial intelligence, description logic, and Web Ontology Language class expressions.
+
+Education and career
+
+Lehmann graduated with a master's degree in computer science from the Technical University of Dresden and the University of Bristol in 2006. He then obtained a doctoral degree summa cum laude from Leipzig University in 2010.
+
+Awards
+
+For his work in description logics, Lehmann received the Best Student Paper Award at the 2007 International Conference on Inductive Logic Programming. He also received the 10 Year SWSA Award for his work on DBpedia and has won the Semantic Web Journal outstanding paper award, ESWC 7-Year Most Influential Paper Award, 2011 ISWC Best Research Paper Award, 2006–2010 Journal of Web Semantics Most Cited Paper Award, and the Outstanding Paper Award Winner at the 2013 Literati Network Awards for Excellence.
+
+References
+
+Category:Academic staff of the University of Bonn
+
+Category:1982 births
+
+Category:Living people
+
+Category:German computer scientists
+
+Category:Semantic Web people
+
+Category:Artificial intelligence researchers
+
+Category:Machine learning researchers

@@ -1,0 +1,37 @@
+{{Infobox software
+
+logo =
+
+screenshot =
+
+screenshot size = 300
+
+caption = SearchGPT on desktop
+
+developer = OpenAI
+
+released = July 25, 2024
+
+genre =
+
+website =
+
+}}
+
+ChatGPT Search (originally SearchGPT) is a search engine developed by OpenAI. It combines traditional search engine features with generative pretrained transformers (GPT) to generate responses, including citations to external websites.
+
+History
+
+On July 25, 2024, SearchGPT was first introduced as a prototype in a limited release to 10,000 test users. This search feature positioned OpenAI as a direct competitor to major search engines, notably Google, Perplexity AI and Bing.
+
+OpenAI announced its partnership with publishers for SearchGPT, providing them with options on how their content appears in the search results and ensuring the promotion of trusted sources. OpenAI ultimately incorporated the search features into ChatGPT in December 2024.
+
+See also
+
+References
+
+Category:2024 in technology
+
+Category:ChatGPT
+
+Category:Internet properties established in 2024

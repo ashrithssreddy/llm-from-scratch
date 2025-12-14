@@ -1,0 +1,65 @@
+as it can be used in symbolic regression to represent a function.]]
+
+Symbolic regression (SR) is a type of regression analysis that searches the space of mathematical expressions to find the model that best fits a given dataset, both in terms of accuracy and simplicity.
+
+No particular model is provided as a starting point for symbolic regression. Instead, initial expressions are formed by randomly combining mathematical building blocks such as mathematical operators, analytic functions, constants, and state variables. Usually, a subset of these primitives will be specified by the person operating it, but that's not a requirement of the technique. The symbolic regression problem for mathematical functions has been tackled with a variety of methods, including recombining equations most commonly using genetic programming, Nevertheless, if the sought-for equation is not too complex it is possible to solve the symbolic regression problem exactly by generating every possible function (built from some predefined set of operators) and evaluating them on the dataset in question.
+
+Difference from classical regression
+
+While conventional regression techniques seek to optimize the parameters for a pre-specified model structure, symbolic regression avoids imposing prior assumptions, and instead infers the model from the data. In other words, it attempts to discover both model structures and model parameters.
+
+This approach has the disadvantage of having a much larger space to search, because not only the search space in symbolic regression is infinite, but there are an infinite number of models which will perfectly fit a finite data set (provided that the model complexity isn't artificially limited). This means that it will possibly take a symbolic regression algorithm longer to find an appropriate model and parametrization, than traditional regression techniques. This can be attenuated by limiting the set of building blocks provided to the algorithm, based on existing knowledge of the system that produced the data; but in the end, using symbolic regression is a decision that has to be balanced with how much is known about the underlying system.
+
+Nevertheless, this characteristic of symbolic regression also has advantages: because the evolutionary algorithm requires diversity in order to effectively explore the search space, the result is likely to be a selection of high-scoring models (and their corresponding set of parameters). Examining this collection could provide better insight into the underlying process, and allows the user to identify an approximation that better fits their needs in terms of accuracy and simplicity.
+
+Benchmarking
+
+SRBench
+
+In 2021, SRBench was proposed as a large benchmark for symbolic regression.
+
+In its inception, SRBench featured 14 symbolic regression methods, 7 other ML methods, and 252 datasets from PMLB.
+
+The benchmark intends to be a living project: it encourages the submission of improvements, new datasets, and new methods, to keep track of the state of the art in SR.
+
+SRBench Competition 2022
+
+In 2022, SRBench announced the competition Interpretable Symbolic Regression for Data Science, which was held at the GECCO conference in Boston, MA. The competition pitted nine leading symbolic regression algorithms against each other on a novel set of data problems and considered different evaluation criteria. The competition was organized in two tracks, a synthetic track and a real-world data track. which attempts symbolic regression by training a neural network to represent the mystery function, then runs tests against the neural network to attempt to break up the problem into smaller parts. For example, if f(x_1, ..., x_i, x_{i+1}, ..., x_n) = g(x_1,..., x_i) + h(x_{i+1},..., x_n), tests against the neural network can recognize the separation and proceed to solve for g and h separately and with different variables as inputs. This is an example of divide and conquer, which reduces the size of the problem to be more manageable. AI Feynman also transforms the inputs and outputs of the mystery function in order to produce a new function which can be solved with other techniques, and performs dimensional analysis to reduce the number of independent variables involved. The algorithm was able to "discover" 100 equations from The Feynman Lectures on Physics, while a leading software using evolutionary algorithms, Eureqa, solved only 71. AI Feynman, in contrast to classic symbolic regression methods, requires a very large dataset in order to first train the neural network and is naturally biased towards equations that are common in elementary physics.
+
+See also
+
+Closed-form expression § Conversion from numerical forms
+
+Genetic programming
+
+Gene expression programming
+
+Kolmogorov complexity
+
+Linear genetic programming
+
+Mathematical optimization
+
+Multi expression programming
+
+Regression analysis
+
+Reverse mathematics
+
+Discovery system (AI research)
+
+}}
+
+Further reading
+
+External links
+
+(Java applet) — approximates a function by evolving combinations of simple arithmetic operators, using algorithms developed by John Koza.
+
+Category:Regression analysis
+
+Category:Genetic programming
+
+Category:Computer algebra
+
+Category:Machine learning

@@ -1,0 +1,45 @@
+James R. Curran is an Australian computational linguist. He is the former CEO of Grok Academy and previously a senior lecturer at the University of Sydney. He holds a PhD in Informatics from the University of Edinburgh.
+
+Research
+
+Curran's research focuses on natural language processing (NLP), more specifically combinatory categorial grammar and question answering systems.
+
+In addition to his contributions to NLP, Curran has produced a paper on the development of search engines to assist in driving problem based learning.
+
+Works
+
+Curran has co-authored software packages such as C&C tools, a CCG parser (with Stephen Clark).
+
+Educational work
+
+In addition to his work as a University of Sydney lecturer, Curran directed the National Computer Science School, an annual summer school for technologically talented high school students. In 2013, based on their work with NCSS, he, Tara Murphy, Nicky Ringland and Tim Dawborn founded Grok Learning.
+
+In 2013 he was one of the authors of the Digital Technologies section of the Australian Curriculum - its first appearance in the national curriculum. Additionally, he acted as an advocate for digital literacy among Australian students.
+
+He was the academic director of the Australian Computing Academy, a not-for-profit within the University of Sydney until its merger with Grok Learning in 2021 to form Grok Academy.
+
+In 2022, Grok Academy under Curran secured a significant amount of funding from Richard White, founder of WiseTech, with the aim of developing new courses and encouraging other large technology companies to donate likewise.
+
+Harassment allegations
+
+In October 2024, he resigned from his position as CEO and board member of Grok Academy after multiple allegations of harassment were substantiated by an independent investigator. It was reported that over a 10-year span there were nine women, including six who were in high school at the time, that allege Curran sent them inappropriate messages.
+
+References
+
+External links
+
+Homepage at the University of Sydney
+
+Category:University of Sydney alumni
+
+Category:Living people
+
+Category:Year of birth missing (living people)
+
+Category:Natural language processing researchers
+
+Category:Computational linguistics researchers
+
+Category:Australian chief executives
+
+Category:Australian company founders

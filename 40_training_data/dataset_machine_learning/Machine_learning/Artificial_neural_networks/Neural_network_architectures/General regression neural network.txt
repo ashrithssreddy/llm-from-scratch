@@ -1,0 +1,53 @@
+Generalized regression neural network (GRNN) is a variation to radial basis neural networks. GRNN was suggested by D.F. Specht in 1991.
+
+GRNN can be used for regression, prediction, and classification. GRNN can also be a good solution for online dynamical systems.
+
+GRNN represents an improved technique in the neural networks based on the nonparametric regression. The idea is that every training sample will represent a mean to a radial basis neuron.
+
+Mathematical representation
+
+Y(x) = \frac{\sum_{k=1}^N y_k K(x, x_k)}{\sum_{k=1}^N K(x, x_k)}
+
+where:
+
+Y(x) is the prediction value of input x
+
+y_k is the activation weight for the pattern layer neuron at k
+
+K(x, x_k) is the Radial basis function kernel (Gaussian kernel) as formulated below.
+
+Gaussian Kernel
+
+K(x, x_k) = e^{-d_k/2\sigma^2}, \qquad d_k = (x-x_k)^T(x-x_k)
+
+where d_k is the squared euclidean distance between the training samples x_k and the input x.
+
+Implementation
+
+GRNN has been implemented in many computer languages including MATLAB, R- programming language, Python (programming language) and Node.js.
+
+Neural networks (specifically Multi-layer Perceptron) can delineate non-linear patterns in data by combining with generalized linear models by considering distribution of outcomes (sightly different from original GRNN). There have been several successful developments, including Poisson regression, ordinal logistic regression, quantile regression and multinomial logistic regression that described by Fallah in 2009.
+
+Advantages and disadvantages
+
+Similar to RBFNN, GRNN has the following advantages:
+
+Single-pass learning so no backpropagation is required.
+
+High accuracy in the estimation since it uses Gaussian functions.
+
+It can handle noises in the inputs.
+
+It requires relatively few data to train.
+
+The main disadvantages of GRNN are:
+
+Its size can be huge, which would make it computationally expensive.
+
+There is no optimal method to improve it.
+
+References
+
+Category:Neural network architectures
+
+Category:Regression analysis

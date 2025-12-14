@@ -1,0 +1,77 @@
+{{Infobox scientist
+
+honorific_prefix  =
+
+name              =
+
+honorific_suffix  =
+
+native_name       =
+
+native_name_lang  =
+
+image             =
+
+image_size        =
+
+image_upright     =
+
+alt               =
+
+caption           =
+
+birth_name        =
+
+birth_date        =
+
+birth_place       =
+
+other_names       =
+
+siglum            =
+
+pronounce         =
+
+citizenship       =
+
+nationality       =
+
+fields            = Artificial intelligenceMachine learningReinforcement learningPlanningComputer Games
+
+Education
+
+He studied at Christ's College, Cambridge, graduating in 1997 with the Addison-Wesley award, and having befriended Demis Hassabis whilst at Cambridge. Silver returned to academia in 2004 at the University of Alberta to study for a PhD on reinforcement learning, where he co-introduced the algorithms used in the first master-level 9×9 Go programs and graduated in 2009. His version of program MoGo (co-authored with Sylvain Gelly) was one of the strongest Go programs as of 2009.
+
+Career and research
+
+After graduating from university, Silver co-founded the video games company Elixir Studios, where he was CTO and lead programmer, receiving several awards for technology and innovation.
+
+Silver was awarded a Royal Society University Research Fellowship in 2011, and subsequently became a lecturer at University College London. His lectures on Reinforcement Learning are available on YouTube. Silver consulted for Google DeepMind from its inception, joining full-time in 2013.
+
+His recent work has focused on combining reinforcement learning with deep learning, including a program that learns to play Atari games directly from pixels.  Silver led the AlphaGo project, culminating in the first program to defeat a top professional player in the full-size game of Go. AlphaGo subsequently received an honorary 9 Dan Professional Certification; and won the Cannes Lion award for innovation. He then led development of AlphaZero, which used the same AI to learn to play Go from scratch (learning only by playing itself and not from human games) before learning to play chess and shogi in the same way, to higher levels than any other computer program.
+
+Silver is among the most published members of staff at Google DeepMind, with over 200,000 citations and has an h-index of 97 according to Google Scholar.
+
+In 2021, Silver was elected Fellow of the Royal Society (FRS) for his contributions to Deep Q-Networks and AlphaGo. He was elected a Fellow of the Association for the Advancement of Artificial Intelligence in 2022.
+
+References
+
+Category:1976 births
+
+Category:Living people
+
+Category:Alumni of Christ's College, Cambridge
+
+Category:Computer programmers
+
+Category:Go (game) researchers
+
+Category:University of Alberta alumni
+
+Category:Academics of University College London
+
+Category:Google DeepMind
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Fellows of the Royal Society

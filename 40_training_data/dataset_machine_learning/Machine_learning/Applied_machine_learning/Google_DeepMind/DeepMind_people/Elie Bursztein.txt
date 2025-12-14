@@ -1,0 +1,73 @@
+{{Infobox scientist
+
+name              = Elie Bursztein
+
+image             = Elie-200.Sic59Q5F.jpg|
+
+caption           =
+
+birth_date        =
+
+birth_place       = France
+
+website          =
+
+field             =
+
+work_institutions =
+
+education        =
+
+thesis_title     = Anticipation games: Game theory applied to network security
+
+thesis_year      = 2008
+
+doctoral_advisor  = Jean Goubault-Larrecq
+
+doctoral_students =
+
+known_for         =
+
+prizes            =
+
+footnotes         =
+
+}}
+
+Elie Bursztein,
+
+2013 Strengthening Google accounts protections against hijackers
+
+}}
+
+References
+
+{{Reflist|group='r'|refs=
+
+}}
+
+External links
+
+Elie Bursztein's personal site
+
+{{YouTube|u=ebursztein|}}
+
+Elie Bursztein on Google Scholar
+
+Category:Living people
+
+Category:1980 births
+
+Category:Hackers
+
+Category:Modern cryptographers
+
+Category:Computer security academics
+
+Category:French computer scientists
+
+Category:French cryptographers
+
+Category:Google employees
+
+Category:DeepMind people

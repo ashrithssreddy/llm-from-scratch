@@ -1,0 +1,29 @@
+Neural operators are a class of deep learning architectures designed to learn maps between infinite-dimensional function spaces. Neural operators represent an extension of traditional artificial neural networks, marking a departure from the typical focus on learning mappings between finite-dimensional Euclidean spaces or finite sets. Neural operators directly learn operators between function spaces; they can receive input functions, and the output function can be evaluated at any discretization.
+
+The primary application of neural operators is in learning surrogate maps for the solution operators of partial differential equations (PDEs), Standard PDE solvers can be time-consuming and computationally intensive, especially for complex systems. Neural operators have demonstrated improved performance in solving PDEs compared to existing machine learning methodologies while being significantly faster than numerical solvers. Neural operators have also been applied to various scientific and engineering disciplines such as turbulent flow modeling, computational mechanics, graph-structured data, and the geosciences. In particular, they have been applied to learning stress-strain fields in materials, classifying complex data like spatial transcriptomics, predicting multiphase flow in porous media, and carbon dioxide migration simulations. Finally, the operator learning paradigm allows learning maps between function spaces, and is different from parallel ideas of learning maps from finite-dimensional spaces to function spaces, and subsumes these settings as special cases when limited to a fixed input resolution.
+
+Operator learning
+
+Understanding and mapping relationships between function spaces has many applications in engineering and the sciences. In particular, one can cast the problem of solving partial differential equations as identifying a map between function spaces, such as from an initial condition to a time-evolved state. In other PDEs this map takes an input coefficient function and outputs a solution function. Operator learning is a machine learning paradigm to learn solution operators mapping the input function to the output function.
+
+Using traditional machine learning methods, addressing this problem would involve discretizing the infinite-dimensional input and output function spaces into finite-dimensional grids and applying standard learning models, such as neural networks. This approach reduces the operator learning to finite-dimensional function learning and has some limitations, such as generalizing to discretizations beyond the grid used in training.
+
+The primary properties of neural operators that differentiate them from traditional neural networks is discretization invariance and discretization convergence.
+
+There have been various parameterizations of neural operators for different applications. where loss functions can include full physics equations or partial physical laws. As opposed to standard PINNs, the PINO paradigm incorporates a data loss (as defined above) in addition to the physics loss \mathcal{L}_{PDE}(a, \mathcal{G}_\theta (a)). The physics loss \mathcal{L}_{PDE}(a, \mathcal{G}_\theta (a)) quantifies how much the predicted solution of \mathcal{G}_\theta (a) violates the PDEs equation for the input a.
+
+See also
+
+Neural network
+
+Physics-informed neural networks
+
+Neural field
+
+References
+
+External links
+
+neuralop – Python library of various neural operator architectures
+
+Category:Deep learning

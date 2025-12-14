@@ -1,0 +1,99 @@
+In machine learning, first-order inductive learner (FOIL) is a rule-based learning algorithm.
+
+Background
+
+Developed in 1990 by Ross Quinlan, FOIL learns function-free Horn clauses, a subset of first-order predicate calculus. Given positive and negative examples of some concept and a set of background-knowledge predicates, FOIL inductively generates a logical concept definition or rule for the concept. The induced rule must not involve any constants (color(X,red) becomes color(X,Y), red(Y)) or function symbols, but may allow negated predicates; recursive concepts are also learnable.
+
+Like the ID3 algorithm, FOIL hill climbs using a metric based on information theory to construct a rule that covers the data. Unlike ID3, however, FOIL uses a separate-and-conquer method rather than divide-and-conquer, focusing on creating one rule at a time and collecting uncovered examples for the next iteration of the algorithm.
+
+Algorithm
+
+The FOIL algorithm is as follows:
+
+Input List of examples and predicate to be learned
+
+Output  A set of first-order Horn clauses
+
+FOIL(Pred, Pos, Neg)
+
+Let Pos be the positive examples
+
+Let Pred be the predicate to be learned
+
+Until Pos is empty do:
+
+Let Neg be the negative examples
+
+Set Body to empty
+
+Call LearnClauseBody
+
+Add Pred ← Body to the rule
+
+Remove from Pos all examples which satisfy Body
+
+Procedure LearnClauseBody
+
+Until Neg is empty do:
+
+Choose a literal L
+
+Conjoin L to Body
+
+Remove from Neg examples that do not satisfy L
+
+Example
+
+Suppose FOIL's task is to learn the concept grandfather(X,Y) given the relations father(X,Y) and parent(X,Y). Furthermore, suppose our current Body consists of grandfather(X,Y) ← parent(X,Z). This can be extended by conjoining Body with any of the literals father(X,X), father(Y,Z), parent(U,Y), or many others – to create this literal, the algorithm must choose both a predicate name and a set of variables for the predicate (at least one of which is required to be present already in an unnegated literal of the clause). If FOIL extends a clause grandfather(X,Y) ← true by conjoining the literal parent(X,Z), it is introducing the new variable Z. Positive examples now consist of those values  such that grandfather(X,Y) is true and parent(X,Z) is true; negative examples are those where grandfather(X,Y) is true but parent(X,Z) is false.
+
+On the next iteration of FOIL after parent(X,Z) has been added, the algorithm will consider all combinations of predicate names and variables such that at least one variable in the new literal is present in the existing clause. This results in a very large search space. Several extensions of the FOIL theory have shown that additions to the basic algorithm may reduce this search space, sometimes drastically.
+
+First-order combined learner
+
+The FOCL algorithm (First Order Combined Learner) extends FOIL in a variety of ways, which affect how FOCL selects literals to test while extending a clause under construction. Constraints on the search space are allowed, as are predicates that are defined on a rule rather than on a set of examples (called intensional predicates); most importantly a potentially incorrect hypothesis is allowed as an initial approximation to the predicate to be learned. The main goal of FOCL is to incorporate the methods of explanation-based learning (EBL) into the empirical methods of FOIL.
+
+Even when no additional knowledge is provided to FOCL over FOIL, however, it utilizes an iterative widening search strategy similar to depth-first search: first FOCL attempts to learn a clause by introducing no free variables. If this fails (no positive gain), one additional free variable per failure is allowed until the number of free variables exceeds the maximum used for any predicate.
+
+Constraints
+
+Unlike FOIL, which does not put typing constraints on its variables, FOCL uses typing as an inexpensive way of incorporating a simple form of background knowledge. For example, a predicate livesAt(X,Y) may have types livesAt(person, location). Additional predicates may need to be introduced, though – without types, nextDoor(X,Y) could determine whether person X and person Y live next door to each other, or whether two locations are next door to each other. With types, two different predicates nextDoor(person, person) and nextDoor(location, location) would need to exist for this functionality to be maintained. However, this typing mechanism eliminates the need for predicates such as isPerson(X) or isLocation(Y), and need not consider livesAt(A,B) when A and B are defined to be person variables, reducing the search space. Additionally, typing can improve the accuracy of the resulting rule by eliminating from consideration impossible literals such as livesAt(A,B) which may nevertheless appear to have a high information gain.
+
+Rather than implementing trivial predicates such as equals(X,X) or between(X,X,Y), FOCL introduces implicit constraints on variables, further reducing search space. Some predicates must have all variables unique, others must have commutativity (adjacent(X,Y) is equivalent to adjacent(Y,X)), still others may require that a particular variable be present in the current clause, and many other potential constraints.
+
+Operational rules
+
+Operational rules are those rules which are defined extensionally, or as a list of tuples for which a predicate is true. FOIL allows only operational rules; FOCL extends its knowledge base to allow combinations of rules called non-operational rules as well as partially defined or incorrect rules for robustness. Allowing for partial definitions reduces the amount of work needed as the algorithm need not generate these partial definitions for itself, and the incorrect rules do not add significantly to the work needed since they are discarded if they are not judged to provide positive information gain. Non-operational rules are advantageous as the individual rules which they combine may not provide information gain on their own, but are useful when taken in conjunction. If a literal with the most information gain in an iteration of FOCL is non-operational, it is operationalized and its definition is added to the clause under construction.
+
+Inputs Literal to be operationalized, List of positive examples, List of negative examples
+
+Output Literal in operational form
+
+Operationalize(Literal, Positive examples, Negative examples)
+
+If Literal is operational
+
+Return Literal
+
+Initialize OperationalLiterals to the empty set
+
+For each clause in the definition of Literal
+
+Compute information gain of the clause over Positive examples and Negative examples
+
+For the clause with the maximum gain
+
+For each literal L in the clause
+
+Add Operationalize(L, Positive examples, Negative examples) to OperationalLiterals
+
+An operational rule might be the literal lessThan(X,Y); a non-operational rule might be between(X,Y,Z) ← lessThan(X,Y), lessThan(Y,Z).
+
+Initial rules
+
+The addition of non-operational rules to the knowledge base increases the size of the space which FOCL must search. Rather than simply providing the algorithm with a target concept (e.g. grandfather(X,Y)), the algorithm takes as input a set of non-operational rules which it tests for correctness and operationalizes for its learned concept. A correct target concept will clearly improve computational time and accuracy, but even an incorrect concept will give the algorithm a basis from which to work and improve accuracy and time.
+
+References
+
+http://www.csc.liv.ac.uk/~frans/KDD/Software/FOIL_PRM_CPAR/foil.html
+
+Category:Inductive logic programming

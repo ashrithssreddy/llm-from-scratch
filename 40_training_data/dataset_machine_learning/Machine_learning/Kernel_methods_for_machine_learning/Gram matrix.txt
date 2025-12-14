@@ -1,0 +1,145 @@
+In linear algebra, the Gram matrix (or Gramian matrix, Gramian) of vectors v_1,\dots, v_n in an inner product space is the Hermitian matrix of inner products, whose entries are given by the inner product G_{ij} = \left\langle v_i, v_j \right\rangle. If the vectors v_1,\dots, v_n are the columns of matrix X then the Gram matrix is X^\dagger X in the general case that the vector coordinates are complex numbers, which simplifies to X^\top X for the case that the vector coordinates are real numbers.
+
+An important application is to compute linear independence: a set of vectors are linearly independent if and only if the Gram determinant (the determinant of the Gram matrix) is non-zero.
+
+It is named after Jørgen Pedersen Gram.
+
+Examples
+
+For finite-dimensional real vectors in \mathbb{R}^n with the usual Euclidean dot product, the Gram matrix is G = V^\top V, where V is a matrix whose columns are the vectors v_k and V^\top is its transpose whose rows are the vectors v_k^\top. For complex vectors in \mathbb{C}^n, G = V^\dagger V, where V^\dagger is the conjugate transpose of V.
+
+Given square-integrable functions \{\ell_i(\cdot),\, i = 1,\dots,n\} on the interval \left[t_0, t_f\right], the Gram matrix G = \left[G_{ij}\right] is:
+
+G_{ij} = \int_{t_0}^{t_f} \ell_i^*(\tau)\ell_j(\tau)\, d\tau.
+
+where \ell_i^*(\tau) is the complex conjugate of \ell_i(\tau).
+
+For any bilinear form B on a finite-dimensional vector space over any field we can define a Gram matrix G attached to a set of vectors v_1, \dots, v_n by G_{ij} = B\left(v_i, v_j\right). The matrix will be symmetric if the bilinear form B is symmetric.
+
+Applications
+
+In Riemannian geometry, given an embedded k-dimensional Riemannian manifold M\subset \mathbb{R}^n and a parametrization \phi: U\to M for {{nowrap|(x_1, \ldots, x_k)\in U\subset\mathbb{R}^k,}} the volume form \omega on M induced by the embedding may be computed using the Gramian of the coordinate tangent vectors: \omega = \sqrt{\det G}\ dx_1 \cdots dx_k,\quad G = \left[\left\langle \frac{\partial\phi}{\partial x_i},\frac{\partial\phi}{\partial x_j}\right\rangle\right]. This generalizes the classical surface integral of a parametrized surface \phi:U\to S\subset \mathbb{R}^3 for (x, y)\in U\subset\mathbb{R}^2: \int_S f\ dA = \iint_U f(\phi(x, y))\, \left|\frac{\partial\phi}{\partial x}\,{\times}\,\frac{\partial\phi}{\partial y}\right|\, dx\, dy.
+
+If the vectors are centered random variables, the Gramian is approximately proportional to the covariance matrix, with the scaling determined by the number of elements in the vector.
+
+In quantum chemistry, the Gram matrix of a set of basis vectors is the overlap matrix.
+
+In control theory (or more generally systems theory), the controllability Gramian and observability Gramian determine properties of a linear system.
+
+Gramian matrices arise in covariance structure model fitting (see e.g., Jamshidian and Bentler, 1993, Applied Psychological Measurement, Volume 18, pp.&nbsp;79–94).
+
+In the finite element method, the Gram matrix arises from approximating a function from a finite dimensional space; the Gram matrix entries are then the inner products of the basis functions of the finite dimensional subspace.
+
+In machine learning, kernel functions are often represented as Gram matrices. (Also see kernel PCA)
+
+Since the Gram matrix over the reals is a symmetric matrix, it is diagonalizable and its eigenvalues are non-negative. The diagonalization of the Gram matrix is the singular value decomposition.
+
+Properties
+
+Positive-semidefiniteness
+
+The Gram matrix is symmetric in the case the inner product is real-valued; it is Hermitian in the general, complex case by definition of an inner product.
+
+The Gram matrix is positive semidefinite, and every positive semidefinite matrix is the Gramian matrix for some set of vectors. The fact that the Gramian matrix is positive-semidefinite can be seen from the following simple derivation:
+
+x^\dagger \mathbf{G} x =
+
+\sum_{i,j}x_i^* x_j\left\langle v_i, v_j \right\rangle =
+
+\sum_{i,j}\left\langle x_i v_i, x_j v_j \right\rangle =
+
+\biggl\langle \sum_i x_i v_i, \sum_j x_j v_j \biggr\rangle =
+
+\biggl\| \sum_i x_i v_i \biggr\|^2 \geq 0 .
+
+The first equality follows from the definition of matrix multiplication, the second and third from the bi-linearity of the inner-product, and the last from the positive definiteness of the inner product.
+
+Note that this also shows that the Gramian matrix is positive definite if and only if the vectors  v_i  are linearly independent (that is, \sum_i x_i v_i \neq 0 for all x).
+
+Other properties
+
+Because G = G^\dagger, it is necessarily the case that G and G^\dagger commute.  That is, a real or complex Gram matrix G is also a normal matrix.
+
+The Gram matrix of any orthonormal basis is the identity matrix.  Equivalently, the Gram matrix of the rows or the columns of a real rotation matrix is the identity matrix.  Likewise, the Gram matrix of the rows or columns of a unitary matrix is the identity matrix.
+
+The rank of the Gram matrix of vectors in \mathbb{R}^k or \mathbb{C}^k equals the dimension of the space spanned by these vectors.v=-\frac{1}{G\left(v_1, v_2, \ldots, v_n\right)} \det
+
+\begin{bmatrix}
+
+0 & c_1 & c_2 & \cdots & c_n \\
+
+v_1 & \left\langle v_1, v_1\right\rangle & \left\langle v_1, v_2\right\rangle & \cdots & \left\langle v_1, v_n\right\rangle \\
+
+v_2 & \left\langle v_2, v_1\right\rangle & \left\langle v_2, v_2\right\rangle & \cdots & \left\langle v_2, v_n\right\rangle \\
+
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+
+v_n & \left\langle v_n, v_1\right\rangle & \left\langle v_n, v_2\right\rangle & \cdots & \left\langle v_n, v_n\right\rangle
+
+\end{bmatrix}The Gram determinant can also be expressed in terms of the exterior product of vectors by
+
+\bigl|G(v_1, \dots, v_n)\bigr| = \| v_1 \wedge \cdots \wedge v_n\|^2.
+
+The Gram determinant therefore supplies an inner product for the space {{tmath|{\textstyle\bigwedge}^{\!n}(V)}}. If an orthonormal basis ei,  on  is given, the vectors
+
+e_{i_1} \wedge \cdots \wedge e_{i_n},\quad i_1
+
+will constitute an orthonormal basis of n-dimensional volumes on the space {{tmath|{\textstyle\bigwedge}^{\!n}(V)}}. Then the Gram determinant \bigl|G(v_1, \dots, v_n)\bigr| amounts to an n-dimensional Pythagorean Theorem for the volume of the parallelotope formed by the vectors v_1 \wedge \cdots \wedge v_n in terms of its projections onto the basis volumes e_{i_1} \wedge \cdots \wedge e_{i_n}.
+
+When the vectors v_1, \ldots, v_n \in \mathbb{R}^m are defined from the positions of points p_1, \ldots, p_n relative to some reference point p_{n+1},
+
+(v_1, v_2, \ldots, v_n) = (p_1 - p_{n+1}, p_2 - p_{n+1}, \ldots, p_n - p_{n+1})\,,
+
+then the Gram determinant can be written as the difference of two Gram determinants,
+
+\bigl|G(v_1, \dots, v_n)\bigr| = \bigl|G((p_1, 1), \dots, (p_{n+1}, 1))\bigr| - \bigl|G(p_1, \dots, p_{n+1})\bigr|\,,
+
+where each (p_j, 1) is the corresponding point p_j supplemented with the coordinate value of 1 for an (m+1)-st dimension. Note that in the common case that , the second term on the right-hand side will be zero.
+
+Constructing an orthonormal basis
+
+Given a set of linearly independent vectors \{v_i\} with Gram matrix G defined by G_{ij}:= \langle v_i,v_j\rangle, one can construct an orthonormal basis
+
+u_i := \sum_j \bigl(G^{-1/2}\bigr)_{ji} v_j.
+
+In matrix notation, U = V G^{-1/2} , where U has orthonormal basis vectors \{u_i\} and the matrix V is composed of the given column vectors \{v_i\}.
+
+The matrix G^{-1/2} is guaranteed to exist. Indeed, G is Hermitian, and so can be decomposed as G=UDU^\dagger with U a unitary matrix and D a real diagonal matrix. Additionally, the v_i are linearly independent if and only if G is positive definite, which implies that the diagonal entries of D are positive. G^{-1/2} is therefore uniquely defined by G^{-1/2}:=UD^{-1/2}U^\dagger. One can check that these new vectors are orthonormal:
+
+\begin{align}
+
+\langle u_i,u_j \rangle
+
+&= \sum_{i'} \sum_{j'} \Bigl\langle \bigl(G^{-1/2}\bigr)_{i'i} v_{i'},\bigl(G^{-1/2}\bigr)_{j'j} v_{j'} \Bigr\rangle \\[10mu]
+
+&= \sum_{i'} \sum_{j'} \bigl(G^{-1/2}\bigr)_{ii'} G_{i'j'} \bigl(G^{-1/2}\bigr)_{j'j} \\[8mu]
+
+&=  \bigl(G^{-1/2} G G^{-1/2}\bigr)_{ij} = \delta_{ij}
+
+\end{align}
+
+where we used \bigl(G^{-1/2}\bigr)^\dagger=G^{-1/2} .
+
+See also
+
+Controllability Gramian
+
+Observability Gramian
+
+References
+
+External links
+
+Volumes of parallelograms by Frank Jones
+
+Category:Systems theory
+
+Category:Matrices (mathematics)
+
+Category:Determinants
+
+Category:Analytic geometry
+
+Category:Kernel methods for machine learning
+
+fr:Matrice de Gram

@@ -1,0 +1,97 @@
+Extreme learning machines are feedforward neural networks for classification, regression, clustering, sparse approximation, compression and feature learning with a single layer or multiple layers of hidden nodes, where the parameters of hidden nodes (not just the weights connecting inputs to hidden nodes) need to be tuned. These hidden nodes can be randomly assigned and never updated (i.e. they are random projection but with nonlinear transforms), or can be inherited from their ancestors without being changed. In most cases, the output weights of hidden nodes are usually learned in a single step, which essentially amounts to learning a linear model.
+
+The name "extreme learning machine" (ELM) was given to such models by Guang-Bin Huang who originally proposed for the networks with any type of nonlinear piecewise continuous hidden nodes including biological neurons and different type of mathematical basis functions. The idea for artificial neural networks goes back to Frank Rosenblatt, who not only published a single layer Perceptron in 1958, but also introduced a multilayer perceptron with 3 layers: an input layer, a hidden layer with randomized weights that did not learn, and a learning output layer.
+
+According to some researchers, these models are able to produce good generalization performance and learn thousands of times faster than networks trained using backpropagation.  In literature, it also shows that  these models can outperform support vector machines in both classification and regression applications.
+
+History
+
+From 2001-2010, ELM research mainly focused on the unified learning framework for "generalized" single-hidden layer feedforward neural networks (SLFNs), including but not limited to sigmoid networks, RBF networks, threshold networks, trigonometric networks, fuzzy inference systems, Fourier series, Laplacian transform, wavelet networks, etc. One significant achievement made in those years is to successfully prove the universal approximation and classification capabilities of ELM in theory.
+
+From 2010 to 2015, ELM research extended to the unified learning framework for kernel learning, SVM and a few typical feature learning methods such as Principal Component Analysis (PCA) and Non-negative Matrix Factorization (NMF). It is shown that SVM actually provides suboptimal solutions compared to ELM, and ELM can provide the whitebox kernel mapping, which is implemented by ELM random feature mapping, instead of the blackbox kernel used in SVM. PCA and NMF can be considered as special cases where linear hidden nodes are used in ELM.
+
+From 2015 to 2017, an increased focus has been placed on hierarchical implementations of ELM. Additionally since 2011, significant biological studies have been made that support certain ELM theories.
+
+From 2017 onwards, to overcome low-convergence problem during training LU decomposition, Hessenberg decomposition and QR decomposition based approaches with regularization have begun to attract attention
+
+In 2017, Google Scholar Blog published a list of "Classic Papers: Articles That Have Stood The Test of Time". Among these are two papers written about ELM which are shown in studies 2 and 7 from the "List of 10 classic AI papers from 2006".
+
+Algorithms
+
+Given a single hidden layer of ELM, suppose that the output function of the i-th hidden node is h_i(\mathbf{x})=G(\mathbf{a}_i,b_i,\mathbf{x}), where \mathbf{a}_i and b_i are the parameters of the i-th hidden node. The output function of the ELM for single hidden layer feedforward networks (SLFN) with L hidden nodes is:
+
+f_L({\bf x})=\sum_{i=1}^L{\boldsymbol \beta}_ih_i({\bf x}), where {\boldsymbol \beta}_i is the output weight of the i-th hidden node.
+
+\mathbf{h}(\mathbf{x})=[h_i(\mathbf{x}),...,h_L(\mathbf{x})] is the hidden layer output mapping of ELM. Given N training samples, the hidden layer output matrix \mathbf{H} of ELM is given as: {\bf H}=\left[\begin{matrix}
+
+{\bf h}({\bf x}_1)\\
+
+\vdots\\
+
+{\bf h}({\bf x}_N)
+
+\end{matrix}\right]=\left[\begin{matrix}
+
+G({\bf a}_1, b_1, {\bf x}_1) &\cdots & G({\bf a}_L, b_L, {\bf x}_1)\\
+
+\vdots &\vdots&\vdots\\
+
+G({\bf a}_1, b_1, {\bf x}_N) &\cdots & G({\bf a}_L, b_L, {\bf x}_N)
+
+\end{matrix}\right]
+
+and \mathbf{T} is the training data target matrix: {\bf T}=\left[\begin{matrix}
+
+{\bf t}_1\\
+
+\vdots\\
+
+{\bf t}_N
+
+\end{matrix}\right]
+
+Generally speaking, ELM is a kind of regularization neural networks but with non-tuned hidden layer mappings (formed by either random hidden nodes, kernels or other implementations), its objective function is:
+
+\text{Minimize: } \|{\boldsymbol \beta}\|_p^{\sigma_1}+C\|{\bf H}{\boldsymbol \beta}-{\bf T}\|_q^{\sigma_2}
+
+where \sigma_1>0, \sigma_2>0, p,q=0, \frac{1}{2}, 1, 2, \cdots, +\infty.
+
+Different combinations of \sigma_1, \sigma_2, p and q can be used and result in different learning algorithms for regression, classification, sparse coding, compression, feature learning and clustering.
+
+As a special case, a simplest ELM training algorithm learns a model of the form (for single hidden layer sigmoid neural networks):
+
+\mathbf{\hat{Y}} = \mathbf{W}_2 \sigma(\mathbf{W}_1 x)
+
+where  is the matrix of input-to-hidden-layer weights, \sigma is an activation function, and  is the matrix of hidden-to-output-layer weights. The algorithm proceeds as follows:
+
+Fill  with random values (e.g., Gaussian random noise);
+
+estimate  by least-squares fit to a matrix of response variables , computed using the pseudoinverse , given a design matrix :
+
+\mathbf{W}_2 = \sigma(\mathbf{W}_1 \mathbf{X})^+ \mathbf{Y}
+
+Architectures
+
+In most cases, ELM is used as a single hidden layer feedforward network (SLFN) including but not limited to sigmoid networks, RBF networks, threshold networks, fuzzy inference networks, complex neural networks, wavelet networks, Fourier transform, Laplacian transform, etc. Due to its different learning algorithm implementations for regression, classification, sparse coding, compression, feature learning and clustering, multi ELMs have been used to form multi hidden layer networks, deep learning or hierarchical networks. Another approach focuses on the incorporation of continuous constraints into the learning process of ELMs which are derived from prior knowledge about the specific task. This is reasonable, because machine learning solutions have to guarantee a safe operation in many application domains. The mentioned studies revealed that the special form of ELMs, with its functional separation and the linear read-out weights, is particularly well suited for the efficient incorporation of continuous constraints in predefined regions of the input space.
+
+Controversy
+
+There are two main complaints from academic community concerning this work, the first one is about "reinventing and ignoring previous ideas", the second one is about "improper naming and popularizing", as shown in some debates in 2008 and 2015. In particular, it was pointed out in a letter to the editor of IEEE Transactions on Neural Networks that the idea of using a hidden layer connected to the inputs by random untrained weights was already suggested in the original papers on RBF networks in the late 1980s; Guang-Bin Huang replied by pointing out subtle differences. In a 2015 paper, including hierarchical structured ELM. In 2015, Huang also gave a formal rebuttal to what he considered as "malign and attack." Recent research replaces the random weights with constrained random weights.
+
+Open sources
+
+Matlab Library
+
+Python Library
+
+See also
+
+Reservoir computing
+
+Random projection
+
+Random matrix
+
+References
+
+Category:Artificial neural networks

@@ -1,0 +1,11 @@
+abess (Adaptive Best Subset Selection, also ABESS) is a machine learning method designed to address the problem of best subset selection. It aims to determine which features or variables are crucial for optimal model performance when provided with a dataset and a prediction task. abess was introduced by Zhu in 2020  applied abess to automatically identify parsimonious governing PDEs.
+
+References
+
+{{reflist|refs=
+
+}}
+
+Category:Regression analysis
+
+Category:Machine learning algorithms

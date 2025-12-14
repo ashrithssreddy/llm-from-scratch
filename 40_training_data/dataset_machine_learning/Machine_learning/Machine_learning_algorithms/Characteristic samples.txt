@@ -1,0 +1,223 @@
+{{Multiple issues|
+
+}}
+
+Characteristic samples is a concept in the field of grammatical inference, related to passive learning. In passive learning, an inference algorithm I is given a set of pairs of strings and labels S, and returns a representation R that is consistent with S. Characteristic samples consider the scenario when the goal is not only finding a representation consistent with S, but finding a representation that recognizes a specific target language.
+
+A characteristic sample of language L is a set of pairs of the form (s, l(s)) where:
+
+l(s) = 1 if and only if s\in L
+
+l(s) = -1 if and only if  s\notin L
+
+Given the characteristic sample S, I's output on it is a representation R, e.g. an automaton, that recognizes L.
+
+Formal Definition
+
+The Learning Paradigm associated with Characteristic Samples
+
+There are three entities in the learning paradigm connected to characteristic samples, the adversary, the teacher and the inference algorithm.
+
+Given a class of languages \mathbb{C} and a class of representations for the languages \mathbb{R}, the paradigm goes as follows:
+
+The adversary A selects a language L \in \mathbb{C} and reports it to the teacher
+
+The teacher T then computes a set of strings and label them correctly according to L, trying to make sure that the inference algorithm will compute L
+
+The adversary can add correctly labeled words to the set in order to confuse the inference algorithm
+
+The inference algorithm I gets the sample and computes a representation R \in \mathbb{R} consistent with the sample.
+
+The goal is that when the inference algorithm receives a characteristic sample for a language L, or a sample that subsumes a characteristic sample for L, it will return a representation that recognizes exactly the language L.
+
+Sample
+
+Sample S is a set of pairs of the form (s, l(s)) such that l(s)\in \{-1,1\}
+
+Sample consistent with a language
+
+We say that a sample S is consistent with language L if for every pair (s, l(s)) in S:
+
+l(s) = 1\text{ if and only if } s\in L
+
+l(s) = -1 \text{ if and only if } s\notin L
+
+Characteristic sample
+
+Given an inference algorithm I and a language L, a sample S that is consistent with L is called a characteristic sample of L for I if:
+
+I's output on S
+
+is a representation R that recognizes L.
+
+For every sample D that is consistent with L
+
+and also fulfils S \subseteq D, I's output on D is a representation R that recognizes L.
+
+A Class of languages \mathbb{C} is said to have charistaristic samples if every L \in \mathbb{C} has a characteristic sample.
+
+Related Theorems
+
+Theorem
+
+If equivalence is undecidable for a class \mathbb{C} over \Sigma of cardinality bigger than 1, then \mathbb{C} doesn't have characteristic samples.
+
+Proof
+
+Given a class of representations \mathbb{C} such that equivalence is undecidable, for every polynomial p(x) and every n \in \mathbb{N}, there exist two representations r_1 and r_2 of sizes bounded by n, that recognize different languages but are inseparable by any string of size bounded by p(n). Assuming this is not the case, we can decide if r_1 and r_2 are equivalent by simulating their run on all strings of size smaller than p(n), contradicting the assumption that equivalence is undecidable.
+
+Theorem
+
+If S_1 is a characteristic sample for L_1 and is also consistent with L_2, then every characteristic sample of L_2, is inconsistent with L_1.
+
+Polynomialy characterizable classes
+
+Regular languages
+
+The proof that DFA's are learnable using characteristic samples, relies on the fact that every regular language has a finite number of equivalence classes with respect to the right congruence relation, \sim_L (where x\sim_Ly for x,y \in \Sigma^*  if and only if \forall z\in \Sigma^*: xz\in L \leftrightarrow yz\in L). Note that if x, y are not congruent with respect to \sim_L, there exists a string z such that xz\in L but yz \notin L or vice versa, this string is called a separating suffix.
+
+Constructing a characteristic sample
+
+The construction of a characteristic sample for a language L by the teacher goes as follows. Firstly, by running a depth first search on a deterministic automaton A recognizing L, starting from its initial state, we get a suffix closed set of words, W, ordered in shortlex order. From the fact above, we know that for every two states in the automaton, there exists a separating suffix that separates between every two strings that the run of A on them ends in the respective states. We refer to the set of separating suffixes as S. The labeled set (sample) of words the teacher gives the adversary is \{(w,l(w)) | w\in W\cdot S \cup W\cdot \Sigma \cdot S\} where l(w) is the correct label of w (whether it is in L or not). We may assume that \epsilon \in S.
+
+Constructing a deterministic automata
+
+Given the sample from the adversary W, the construction of the automaton by the inference algorithm I starts with defining P = \text{prefix}(W) and S = \text{suffix}(W), which are the set of prefixes and suffixes of W respectively. Now the algorithm constructs a matrix M where the elements of P function as the rows, ordered by the shortlex order, and the elements of S function as the columns, ordered by the shortlex order. Next, the cells in the matrix are filled in the following manner for prefix p_i and suffix s_j:
+
+If p_is_j \in W \rightarrow M_{ij} = l(p_is_j)
+
+else, M_{ij} = 0
+
+Now, we say row i and t are distinguishable if there exists an index j such that M_{ij} = -1\times M_{tj}. The next stage of the inference algorithm is to construct the set Q of distinguishable rows in M, by initializing Q with \epsilon and iterating from the first row of M downwards and doing the following for row r_i:
+
+If r_i is distinguishable from all elements in Q, add it to Q
+
+else, pass on it to the next row
+
+From the way the teacher constructed the sample it passed to the adversary, we know that for every s \in Q and every \sigma \in \Sigma, the row s\sigma  exists in M, and from the construction of Q, there exists a row s' \in Q such that s' and s\sigma  are indistinguishable. The output automaton will be defined as follows:
+
+The set of states is Q.
+
+The initial state is the state corresponding to row \epsilon \in Q .
+
+The accepting states is the set \{s\in Q|\text{ } l(s)=1\}.
+
+The transitions function will be defined \delta(s,\sigma) = s', where s' is the element in Q that is indistinguishable from s\sigma .
+
+Other polynomially characterizable classes
+
+Class of languages recognizable by multiplicity automatons
+
+Class of languages recognizable by tree automata
+
+Class of languages recognizable by multiplicity tree automata
+
+Class of languages recognizable by Fully-Ordered Lattice Automata
+
+Class of languages recognizable by Visibly One-Counter Automata
+
+Class of fully informative omega regular languages
+
+Non polynomially characterizable classes
+
+There are some classes that do not have polynomially sized characteristic samples. For example, from the first theorem in the Related theorems segment, it has been shown that the following classes of languages do not have polynomial sized characteristic samples:
+
+\mathbb{CFG} - The class of context-free grammars Languages over \Sigma of cardinality larger than 1
+
+\mathbb{LING} - The class of linear grammar languages over \Sigma of cardinality larger than 1
+
+\mathbb{SDG} - The class of simple deterministic grammars Languages
+
+\mathbb{NFA} - The class of nondeterministic finite automata Languages
+
+Relations to other learning paradigms
+
+Classes of representations that has characteristic samples relates to the following learning paradigms:
+
+Class of semi-poly teachable languages
+
+A representation class \mathbb{C} is semi-poly T/L teachable if there exist 3 polynomials p, q, r, a teacher T and an inference algorithm I, such that for any adversary A the following holds:
+
+A Selects a representation R of size n from \mathbb{C}
+
+T computes a sample that is consistent with the language that R recognize, of size bounded by p(n) and the strings in the sample bounded by length q(n)
+
+A adds correctly labeled strings to the sample computed by T, making the new sample of size m
+
+I then computes a representation equivalent to R in time bounded by r(m)
+
+The class of languages that there exists a polynomial algorithm that given a sample, returns a representation consistent with the sample is called consistency easy.
+
+Polynomially characterizable languages
+
+Given a representation class \mathbb{R}, and \mathcal{I} a set of identification algorithms for \mathbb{R}, \mathbb{R} is polynomially characterizable for \mathcal{I} if any R \in \mathbb{R} has a characteristic sample of size polynomial of R's size, S, that for every I \in \mathcal{I}, I's output on S is R.
+
+Releations between the paradigms
+
+Theorem
+
+A consistency-easy class \mathbb{C} has characteristic samples if and only if it is semi-poly T/L
+
+teachable.
+
+Proof
+
+Assuming \mathbb{C} has characteristic samples, then for every representation  R \in \mathbb{C}
+
+, its characteristic sample S
+
+holds the conditions for the sample computaed by the teacher, and the output of I
+
+on every sample S'
+
+such that S \subseteq S'
+
+is equivalent to R
+
+from the definition of characteristic sample.
+
+Assuming that \mathbb{C} is semi-poly T/L
+
+teachable, then for every representation R \in \mathbb{C}
+
+, the computed sample by the teacher S
+
+is a characteristic sample for R
+
+.
+
+Theorem
+
+If \mathbb{C} has characteristic sample, then \mathbb{C} is polynomially characterizable.
+
+Proof
+
+Assuming falsely that \mathbb{C} is not polynomially characterizable, there are two non equivalent representations R_1, R_2 \in \mathbb{C}
+
+, with characteristic samples S_1
+
+and S_2
+
+respectively. From the definition of characteristic samples, any inference algorithm I
+
+need to infer from the sample S_1 \cup S_2
+
+a representation compatible with R_1
+
+and R_2
+
+, in contradiction.
+
+See also
+
+Grammar induction
+
+Passive learning
+
+Induction of regular languages
+
+Deterministic finite automaton
+
+References
+
+Category:Machine learning algorithms

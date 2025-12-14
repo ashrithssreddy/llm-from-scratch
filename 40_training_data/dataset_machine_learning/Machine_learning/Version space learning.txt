@@ -1,0 +1,7 @@
+Version space learning is a logical approach to machine learning, specifically binary classification. Version space learning algorithms search a predefined space of hypotheses, viewed as a set of logical sentences. Formally, the hypothesis space is a disjunction
+
+H_1 \lor H_2 \lor ... \lor H_n
+
+(i.e., one or more of hypotheses 1 through  are true). A version space learning algorithm is presented with examples, which it will use to restrict its hypothesis space; for each example , the hypotheses that are inconsistent with  are removed from the space.
+
+Category:Machine learning

@@ -1,0 +1,15 @@
+In statistical genetics, linkage disequilibrium score regression (LDSR) is a technique that aims to quantify the separate contributions of polygenic effects and various confounding factors, such as population stratification, based on summary statistics from genome-wide association studies (GWASs). The approach involves using regression analysis to examine the relationship between linkage disequilibrium scores and the test statistics of the single-nucleotide polymorphisms (SNPs) from the GWAS. Here, the "linkage disequilibrium score" for a SNP "is the sum of LD r2 measured with all other SNPs".
+
+LDSC can be used to produce SNP-based heritability estimates, to partition this heritability into separate categories, and to calculate genetic correlations between separate phenotypes. Because the LDSC approach relies only on summary statistics from an entire GWAS, it can be used efficiently even with very large sample sizes. In LDSC, genetic correlations are calculated based on the deviation between chi-square statistics and what would be expected assuming the null hypothesis.
+
+Extensions
+
+LDSC can also be applied across traits to estimate genetic correlations. This extension of LDSC, known as cross-trait LD score regression, has the advantage of not being biased if used on overlapping samples. Another extension of LDSC, known as stratified LD score regression (abbreviated SLDSR), aims to partition heritability by functional annotation by taking into account genetic linkage between markers.
+
+References
+
+Category:Regression analysis
+
+Category:Genetic algorithms
+
+Category:Statistical genetics

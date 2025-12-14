@@ -1,0 +1,137 @@
+{{Infobox film
+
+name           = AlphaGo
+
+image          = Alphago-movie-poster-md.jpg
+
+alt            =
+
+caption        = Poster
+
+director       =  Greg Kohs
+
+writer         =
+
+producer       =
+
+narrator       =
+
+cinematography =
+
+editing        =
+
+music          =
+
+production_companies = Moxie PicturesReel As Dirt
+
+distributor    = Netflix
+
+released       =
+
+runtime        = 90 minutes
+
+country        = United States
+
+language       =
+
+budget         =
+
+gross          =
+
+}}
+
+AlphaGo is a 2017 documentary directed by Greg Kohs about the Google DeepMind Challenge Match with top-ranked Go player Lee Sedol.
+
+Premise
+
+The film presents how AlphaGo, a computer program developed by DeepMind Technologies, mastered the game of Go through artificial intelligence. Its competence was tested by Lee Sedol, a South Korean world champion.
+
+Release
+
+AlphaGo was released in New York City on September 29, 2017, and Los Angeles the next month.
+
+Reception
+
+Critical response
+
+AlphaGo earned positive reviews. On Rotten Tomatoes, the film has an approval rating of 100%, with an average score of 8/10, based on 10 reviews. Charlotte O'Sullivan of Evening Standard gave the film 4 stars out of five, calling it a "gripping, emotional documentary, which gets us thinking, about thinking, in a whole new way".
+
+Accolades
+
+{{Awards table|3|caption=}}
+
+-
+
+! scope="row" | 2017
+
+Best Documentary Feature
+
+Anchorage International Film Festival
+
+-
+
+! scope="row" | 2017
+
+Best Sports Documentary
+
+Critics' Choice Documentary Awards
+
+-
+
+! scope="row" | 2017
+
+Maysles Brothers Award, Best Documentary
+
+Denver International Film Festival
+
+-
+
+! scope="row" | 2017
+
+Student Choice Award
+
+Philadelphia Film Festival
+
+-
+
+! scope="row" | 2017
+
+Knowledge is Power Science Prize
+
+Traverse City Film Festival
+
+-
+
+! scope="row" | 2017
+
+Audience Award, documentary feature
+
+Warsaw International Film Festival
+
+-
+
+! scope="row" | 2018
+
+Best Trailer
+
+New Media Film Festival
+
+References
+
+External links
+
+Category:2017 films
+
+Category:2017 documentary films
+
+Category:AlphaGo
+
+Category:American documentary films
+
+Category:Documentary films about Google
+
+Category:Films scored by Volker Bertelmann
+
+Category:Go films
+
+Category:2010s American films

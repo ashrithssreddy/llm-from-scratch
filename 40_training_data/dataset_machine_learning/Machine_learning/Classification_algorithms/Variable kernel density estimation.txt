@@ -1,0 +1,67 @@
+In statistics, adaptive or "variable-bandwidth" kernel density estimation is a form of kernel density estimation in which the size of the kernels used in the estimate are varied
+
+depending upon either the location of the samples or the location of the test point.
+
+It is a particularly effective technique when the sample space is multi-dimensional.
+
+Rationale
+
+Given a set of samples, \lbrace \vec x_i \rbrace, we wish to estimate the
+
+density, P(\vec x), at a test point, \vec x:
+
+P(\vec x) \approx \frac{W}{n h^D}
+
+W = \sum_{i=1}^n w_i
+
+w_i = K \left ( \frac{\vec x - \vec x_i}{h} \right )
+
+where n is the number of samples, K is the
+
+"kernel", h is its width and D is the number of dimensions in \vec x.
+
+The kernel can be thought of as a simple, linear filter.
+
+Using a fixed filter width may mean that in regions of low density, all samples
+
+will fall in the tails of the filter with very low weighting, while regions of high
+
+density will find an excessive number of samples in the central region with weighting
+
+close to unity.  To fix this problem, we vary the width of the kernel in different
+
+regions of the sample space.
+
+There are two methods of doing this: balloon and pointwise estimation.
+
+In a balloon estimator, the kernel width is varied depending on the location
+
+of the test point.  In a pointwise estimator, the kernel width is varied depending
+
+on the location of the sample.
+
+There are two components to the error: a variance term and a bias term.  The variance term is given as:
+
+Alternatively, we can divide up the sum based on the class of each sample:
+
+P(j, \vec{x}) \approx \frac{1}{n}\sum_{i=1, c_i=j}^n w_i
+
+where ci is the class of the ith sample.
+
+The class of the test point may be estimated through maximum likelihood.
+
+External links
+
+akde1d.m - Matlab m-file for one-dimensional adaptive kernel density estimation.
+
+libAGF - A C++ library for multivariate adaptive kernel density estimation.
+
+akde.m  - Matlab function for  multivariate (high-dimensional) variable kernel density estimation.
+
+References
+
+Category:Statistical classification
+
+Category:Estimation of densities
+
+Category:Nonparametric statistics

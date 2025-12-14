@@ -1,0 +1,9 @@
+Neural Network Quantum States (NQS or NNQS) is a general class of variational quantum states parameterized in terms of an artificial neural network. It was first introduced in 2017 by the physicists Giuseppe Carleo and Matthias Troyer
+
+}}
+
+Category:Quantum states
+
+Category:Quantum Monte Carlo
+
+Category:Machine learning

@@ -1,0 +1,67 @@
+Dispersive flies optimisation (DFO) is a bare-bones swarm intelligence algorithm which is inspired by the swarming behaviour of flies hovering over food sources. DFO is a simple optimiser which works by iteratively trying to improve a candidate solution with regard to a numerical measure that is calculated by a fitness function. Each member of the population, a fly or an agent, holds a candidate solution whose suitability can be evaluated by their fitness value. Optimisation problems are often formulated as either minimisation or maximisation problems.
+
+DFO  was introduced with the intention of analysing a simplified swarm intelligence algorithm with the fewest tunable parameters and components. In the first work on DFO, this algorithm was compared against a few other existing swarm intelligence techniques using error, efficiency and diversity measures. It is shown that despite the simplicity of the algorithm, which only uses agents’ position vectors at time t to generate the position vectors for time t&nbsp;+&nbsp;1, it exhibits a competitive performance. Since its inception, DFO has been used in a variety of applications including medical imaging and image analysis as well as data mining and machine learning.
+
+Algorithm
+
+DFO bears many similarities with other existing continuous, population-based optimisers (e.g. particle swarm optimization and differential evolution). In that, the swarming behaviour of the individuals consists of two tightly connected mechanisms, one is the formation of the swarm and the other is its breaking or weakening. DFO works by facilitating the information exchange between the members of the population (the swarming flies). Each fly \mathbf{x} represents a position in a d-dimensional search space:  \mathbf{x} = (x_1,x_2,\ldots,x_d), and the fitness of each fly is calculated by the fitness function f(\mathbf{x}), which takes into account the flies' d dimensions: f(\mathbf{x}) = f(x_1,x_2,\ldots,x_d) .
+
+The pseudocode below represents one iteration of the algorithm:
+
+for i = 1 : N flies
+
+\mathbf{x_i}.\text{fitness} = f(\mathbf{x}_i)
+
+end for i
+
+\mathbf{x}_s  = arg min  [f(\mathbf{x}_i)], \; i \in \{1,\ldots,N\}
+
+for i = 1 : N and  i \ne s
+
+for d = 1 : D dimensions
+
+x_{id}^{t+1} = U(x_{\min,d}, x_{\max,d})
+
+else
+
+x_{id}^{t+1} = x_{i_{nd}}^t + U(0,1)( x_{sd}^t - x_{id}^t )
+
+end if
+
+end for d
+
+end for i
+
+In the algorithm above,  x_{id}^{t+1}  represents fly  i  at dimension  d  and time  t+1 ;  x_{i_{nd}}^t  presents  x_i 's best neighbouring fly in ring topology (left or right, using flies indexes), at dimension  d  and time  t ; and  x_{sd}^t  is the swarm's best fly. Using this update equation, the swarm's population update depends on each fly's best neighbour (which is used as the focus  \mu , and the difference between the current fly and the best in swarm represents the spread of movement,  \sigma ).
+
+Other than the population size  N , the only tunable parameter is the disturbance threshold  \Delta , which controls the dimension-wise restart in each fly vector. This mechanism is proposed to control the diversity of the swarm.
+
+Other notable minimalist swarm algorithm is Bare bones particle swarms (BB-PSO), which is based on particle swarm optimisation, along with bare bones differential evolution (BBDE)  which is a hybrid of the bare bones particle swarm optimiser and differential evolution, aiming to reduce the number of parameters. Alhakbani in her PhD thesis covers many aspects of the algorithms including several DFO applications in feature selection as well as parameter tuning.
+
+Applications
+
+Some of the recent applications of DFO are listed below:
+
+Optimising support vector machine kernel to classify imbalanced data
+
+Quantifying symmetrical complexity in computational aesthetics
+
+Analysing computational autopoiesis and computational creativity
+
+Identifying calcifications in medical images
+
+Building non-identical organic structures for game's space development
+
+Deep Neuroevolution: Training Deep Neural Networks for False Alarm Detection in Intensive Care Units
+
+Identification of animation key points from 2D-medialness maps
+
+References
+
+Category:Articles with example pseudocode
+
+Category:Nature-inspired metaheuristics
+
+Category:Mathematical optimization
+
+Category:Evolutionary algorithms

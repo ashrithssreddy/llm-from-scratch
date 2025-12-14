@@ -1,0 +1,31 @@
+NETtalk is an artificial neural network that learns to pronounce written English text by supervised learning. It takes English text as input, and produces a matching phonetic transcriptions as output.
+
+The network was trained on a large amount of English words and their corresponding pronunciations, and is able to generate pronunciations for unseen words with a high level of accuracy. The success of the NETtalk network inspired further research in the field of pronunciation generation and speech synthesis and demonstrated the potential of neural networks for solving complex natural language processing problems. The output of the network was a stream of phonemes, which fed into DECtalk to produce audible speech. It achieved popular success, appearing on the Today show.
+
+From the point of view of modeling human cognition, NETtalk does not specifically model the image processing stages and letter recognition of the visual cortex. Rather, it assumes that the letters have been pre-classified and recognized. It is NETtalk's task to learn proper associations between the correct pronunciation with a given sequence of letters based on the context in which the letters appear.
+
+A similar architecture was subsequently used for the opposite task, that of converting continuous speech signal to a phoneme sequence.
+
+Training
+
+The training dataset was a 20,008-word subset of the Brown Corpus, with manually annotated phoneme and stress for each letter. The development process was described in a 1993 interview. It took three months -- 250 person-hours -- to create the training dataset, but only a few days to train the network.
+
+After it was run successfully on this, the authors tried it on a phonological transcription of an interview with a young Latino boy from a barrio in Los Angeles. This resulted in a network that reproduced his Spanish accent.
+
+The following table compiles the benchmark scores as of 1988. Speed is measured in "millions of connections per second" (MCPS). For example, the original NETtalk on Ridge 32 took 0.275 seconds per forward-backward pass, giving \frac{18629/10^6}{0.275} = 0.068   MCPS. Relative times are normalized to the MicroVax.
+
+Architecture
+
+The network had three layers and 18,629 adjustable weights, large by the standards of 1986. There were worries that it would overfit the dataset, but it was trained successfully.
+
+References
+
+External links
+
+Original NETtalk training set
+
+New York Times article about NETtalk
+
+Category:Artificial neural networks
+
+Category:Speech synthesis

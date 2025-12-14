@@ -1,0 +1,105 @@
+{{Infobox scientist
+
+name              = Bonnie Webber
+
+honorific_suffix  =
+
+native_name       =
+
+native_name_lang  =
+
+image             =
+
+image_size        =
+
+image_upright     =
+
+alt               =
+
+caption           =
+
+birth_name        = Bonnie Lynn Webber
+
+birth_date        =
+
+birth_place       =
+
+citizenship       =
+
+nationality       =
+
+fields            =
+
+workplaces        = University of EdinburghUniversity of PennsylvaniaBBN Technologies
+
+patrons           =
+
+education         =
+
+alma_mater        = Harvard University (PhD)
+
+thesis_title      = A Formal Approach to Discourse Anaphora
+
+thesis_url        = https://www.worldcat.org/oclc/695357998
+
+thesis_year       = 1978
+
+doctoral_advisor  = William Aaron Woods She is an honorary professor of intelligent systems in the Institute for Language, Cognition and Computation (ILCC) at the University of Edinburgh.
+
+Education and career
+
+Webber completed her PhD at Harvard University in 1978, advised by Bill Woods, while at the same time working with Woods at Bolt Beranek and Newman.
+
+Career and research
+
+Webber was appointed a professor at the University of Pennsylvania for 20 years before moving to Edinburgh in 1998. She has many academic descendants through her student at Pennsylvania, Martha E. Pollack. After retiring from the University of Edinburgh in 2016, she was listed by the university as an honorary professor.
+
+Publications
+
+Webber's doctoral dissertation, A Formal Approach to Discourse Anaphora, used formal logic to model the meanings of natural-language statements; it was published by Garland Publishers in 1979 in their Outstanding Dissertations in Linguistics Series. With Norman Badler and Cary Phillips, Webber is a co-author of the book Simulating Humans: Computer Graphics Animation and Control (Oxford University Press, 1993).
+
+With Aravind Joshi and Ivan Sag she is a co-editor of Elements of Discourse Understanding, with Nils Nilsson she is co-editor of Readings in Artificial Intelligence, and with Barbara Grosz and Karen Spärck Jones she is co-editor of Readings in Natural Language Processing.
+
+Awards and honours
+
+Webber was appointed a Founding Fellow of the Association for the Advancement of Artificial Intelligence (AAAI) in 1990, and was elected a Fellow of the Royal Society of Edinburgh (FRSE) in 2004. She served as president of the Association for Computational Linguistics (ACL) in 1980, and became a Fellow of the Association for Computational Linguistics in 2012, "for significant contributions to discourse structure and discourse-based interpretation". In 2020, she was awarded the Association for Computational Linguistics Lifetime Achievement Award.
+
+References
+
+{{reflist|refs=
+
+}}
+
+Category:1946 births
+
+Category:Living people
+
+Category:American computer scientists
+
+Category:Linguists from the United States
+
+Category:Women linguists
+
+Category:British computer scientists
+
+Category:Linguists from the United Kingdom
+
+Category:Harvard University alumni
+
+Category:University of Pennsylvania faculty
+
+Category:Academics of the University of Edinburgh
+
+Category:Fellows of the Royal Society of Edinburgh
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Fellows of the Association for Computational Linguistics
+
+Category:Computational linguistics researchers
+
+Category:Natural language processing researchers
+
+Category:Presidents of the Association for Computational Linguistics
+
+Category:University of Pennsylvania Department of Computer and Information Science faculty

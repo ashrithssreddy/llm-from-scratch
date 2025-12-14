@@ -1,0 +1,43 @@
+Principal stratification is a statistical technique used in causal inference when adjusting results for post-treatment covariates. The idea is to identify underlying strata and then compute causal effects only within strata. It is a generalization of the local average treatment effect (LATE) in the sense of presenting applications besides all-or-none compliance.  The LATE method, which was independently developed by Imbens and Angrist (1994) and Baker and Lindeman (1994) also included the key exclusion restriction and monotonicity assumptions for identifiability. For the history of early developments see Baker, Kramer, Lindeman.
+
+Example
+
+An example of principal stratification is where there is attrition in a randomized controlled trial. With a binary post-treatment covariate (e.g. attrition) and a binary treatment (e.g. "treatment" and "control") there are four possible strata in which subjects could be:
+
+those who always stay in the study regardless of which treatment they were assigned
+
+those who would always drop-out of the study regardless of which treatment they were assigned
+
+those who only drop-out if assigned to the treatment group
+
+those who only drop-out if assigned to the control group
+
+If the researcher knew the stratum for each subject then the researcher could compare outcomes only within the first stratum and estimate a valid causal effect for that population. The researcher does not know this information, however, so modelling assumptions are required to use this approach.
+
+Using the principal stratification framework also permits providing bounds for the estimated effect (under different bounding assumptions), which is common in situations with attrition.
+
+In applied evaluation research, principal strata are commonly referred to as "endogenous" strata or "subgroups" and involve specialized methods of analysis for examining the effects of interventions or treatments in the medical and social sciences.
+
+See also
+
+Instrumental variable
+
+Rubin causal model
+
+References
+
+Preprint
+
+Zhang, Junni L.; Rubin, Donald B. (2003) "Estimation of Causal Effects via Principal Stratification When Some Outcomes are Truncated by "Death"", Journal of Educational and Behavioral Statistics, 28: 353–368
+
+Barnard, John; Frangakis, Constantine E.; Hill, Jennifer L.; Rubin, Donald B. (2003) "Principal Stratification Approach to Broken Randomized Experiments", Journal of the American Statistical Association, 98, 299–323
+
+Roy, Jason; Hogan, Joseph W.;  Marcus, Bess H. (2008) "Principal stratification with predictors of compliance for randomized trials with 2 active treatments", Biostatistics, 9 (2), 277–289.
+
+Egleston, Brian L.; Cropsey, Karen L.; Lazev, Amy B.; Heckman, Carolyn J.; (2010) "A tutorial on principal stratification-based sensitivity analysis: application to smoking cessation studies", Clinical Trials, 7 (3), 286–298.
+
+Peck, L. R.; (2013) "On estimating experimental impacts on endogenous subgroups:  Part one of a methods note in three parts", American Journal of Evaluation, 34 (2), 225–236.
+
+Category:Causal inference
+
+Category:Statistical methods

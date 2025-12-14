@@ -1,0 +1,71 @@
+A circular reference (or reference cycle) is a series of references where the last object references the first, resulting in a closed loop.
+
+Simple example
+
+A newcomer asks a local where the town library is. "Just in front of the post office," says the local. The newcomer nods, and follows up: "But where is the post office?"
+
+"Why, that's simple," replies the local. "It's just behind the library!"
+
+In language
+
+A circular reference is not to be confused with the logical fallacy of a circular argument.  Although a circular reference will often be unhelpful and reveal no information, such as two entries in a book index referring to each other, it is not necessarily so that a circular reference is of no use.  Dictionaries, for instance, must always ultimately be a circular reference since all words in a dictionary are defined in terms of other words, but a dictionary nevertheless remains a useful reference.  Sentences containing circular references can still be meaningful:
+
+Her brother gave her a kitten; his sister thanked him for it.
+
+is circular, but not without meaning.  Indeed, it can be argued that self-reference is a necessary consequence of Aristotle's law of non-contradiction, a fundamental philosophical axiom.  In this view, without self-reference, logic and mathematics become impossible, or at least, lack usefulness.
+
+In computer programming
+
+Circular references can appear in computer programming when one piece of code requires the result from another, but that code needs the result from the first. For example, the two functions, posn and plus1 in the following Python program comprise a circular reference:
+
+def posn(k: int) -> int:
+
+if k  int:
+
+return posn(n + 1)
+
+Circular references like the above example may return valid results if they have a terminating condition. If there is no terminating condition, a circular reference leads to a condition known as livelock or infinite loop, meaning it theoretically could run forever.
+
+def posn(k: int) -> int:
+
+return plus1(k)
+
+def plus1(n: int) -> int:
+
+return posn(n + 1)
+
+In ISO Standard, SQL circular integrity constraints are implicitly supported within a single table. Between multiple tables circular constraints (e.g. foreign keys) are permitted by defining the constraints as deferrable (See CREATE TABLE for PostgreSQL and DEFERRABLE Constraint Examples for Oracle). In that case the constraint is checked at the end of the transaction not at the time the DML statement is executed. To update a circular reference, two statements can be issued in a single transaction that will satisfy both references once the transaction is committed.
+
+Circular references can also happen between instances of data of a mutable type, such as in this Python script:
+
+mydict: dict[str, str] = {
+
+"this": "that",
+
+"these": "those"
+
+}
+
+mydict["myself"] = mydict
+
+print(mydict)
+
+The  function will output , where {{code|lang=python|{...}}} indicates a circular reference, in this case, to the  dictionary.
+
+In spreadsheets
+
+Circular references also occur in spreadsheets when two cells require each other's result.  For example, if the value in Cell A1 is to be obtained by adding 5 to the value in Cell B1, and the value in Cell B1 is to be obtained by adding 3 to the value in Cell A1, no values can be computed.  (Even if the specifications are A1:=B1+5 and B1:=A1-5, there is still a circular reference.  It does not help that, for instance, A1=3 and B1=-2 would satisfy both formulae, as there are infinitely many other possible values of A1 and B1 that can satisfy both instances.)
+
+Circular reference in worksheets can be a very useful technique for solving implicit equations such as the Colebrook equation and many others, which might otherwise require tedious Newton-Raphson algorithms in VBA or use of macros.
+
+A distinction should be made with processes containing a circular reference between those that are incomputable and those that are an iterative calculation with a final output.  The latter may fail in spreadsheets not equipped to handle them but are nevertheless still logically valid.
+
+See also
+
+References
+
+Category:Causal fallacies
+
+Category:Philosophical logic
+
+Category:Self-reference

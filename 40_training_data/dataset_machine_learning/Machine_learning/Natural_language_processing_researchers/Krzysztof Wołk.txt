@@ -1,0 +1,53 @@
+{{Multiple issues|
+
+}}
+
+{{Infobox scientist
+
+name = Krzysztof Wołk
+
+image = Krzysztof Wolk.jpg
+
+caption =
+
+birth_name =
+
+birth_date =
+
+birth_place = Warsaw
+
+known_for = Researcher in machine translation
+
+}}
+
+Krzysztof Wołk (born 16 August 1986) is a Polish IT researcher who specializes in artificial intelligence, machine learning, mobile applications, linguistic engineering, multimedia, NLP and graphic applications. His research works have been cited in more than 70 international research journals, books and research papers.
+
+He is member of scientific committee at the Health and Social Care Information Systems and Technologies (HCist), an international conference which brings in new ideas, new technologies, academic scientists, healthcare IT professionals, managers and solution providers from all over the world.
+
+His research in statistical machine learning has been recognized as one of the most cited researches in the world.
+
+He is the member of Scientific Committee-Reviewers at Research Conference in Technical Disciplines (RCITD), based in Slovakia, which brings together the academic scientists and researchers from all around the world.
+
+Biography
+
+He obtained the doctorate degree in 2016 from the Polish-Japanese Academy of Information and Technology in Warsaw, Poland.
+
+He is currently working as researcher and assistant professor at the Polish-Japanese Computer Science Academy (PJATK) in Warsaw, Poland.
+
+Achievements
+
+He has published three books: Biblia Windows Server 2012, Administrator's Guide, Mac OS X Server 10.8, and MAC OS X Server 10.6 and 10.7 Practical Guide  has been cited by many researchers in the scholarly books, research journals and articles.
+
+His research work on the Polish-English statistical machine translation has been featured in the book New Research in Multimedia and Internet System. Similarly, his works regarding the machine translation system have been featured in the books New Perspective in Information System and Technologies Volume 1, Multimedia and Network Information System, and Recent Advances in Information Systems and Technologies, Volume 1.
+
+References
+
+Category:Living people
+
+Category:Engineers from Warsaw
+
+Category:1986 births
+
+Category:Natural language processing researchers
+
+Category:Artificial intelligence researchers

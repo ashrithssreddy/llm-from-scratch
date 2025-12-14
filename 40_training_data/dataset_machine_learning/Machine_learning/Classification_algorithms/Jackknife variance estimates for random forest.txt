@@ -1,0 +1,51 @@
+In statistics, jackknife variance estimates for random forest are a way to estimate the variance in random forest models, in order to eliminate the bootstrap effects.
+
+Jackknife variance estimates
+
+The sampling variance of bagged learners is:
+
+V(x) = Var[\hat{\theta}^{\infty}(x)]
+
+Jackknife estimates can be considered to eliminate the bootstrap effects. The jackknife variance estimator is defined as:
+
+\hat{V}_j = \frac{n-1}{n}\sum_{i=1}^{n}(\hat\theta_{(-i)} - \overline\theta)^2
+
+In some classification problems, when random forest is used to fit models, jackknife estimated variance
+
+is defined as:
+
+\hat{V}_j = \frac{n-1}{n}\sum_{i=1}^{n}(\overline t^{\star}_{(-i)}(x) - \overline t^{\star}(x))^2
+
+Here, t^{\star}denotes a decision tree after training, t^{\star}_{(-i)} denotes the result based on samples without ith observation.
+
+Examples
+
+E-mail spam problem is a common classification problem, in this problem, 57 features are used to classify spam e-mail and non-spam e-mail. Applying IJ-U variance formula to evaluate the accuracy of models with m=15,19 and 57. The results shows in paper( Confidence Intervals for Random Forests: The jackknife and the Infinitesimal Jackknife ) that m = 57 random forest appears to be quite unstable, while predictions made by m=5 random forest appear to be quite stable, this results is corresponding to the evaluation made by error percentage, in which the accuracy of model with m=5 is high and  m=57 is low.
+
+Here, accuracy is measured by error rate, which is defined as:
+
+Error Rate = \frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{M}y_{ij},
+
+Here N is also the number of samples, M is the number of classes, y_{ij} is the indicator function which equals 1 when ith observation is in class j, equals 0 when in other classes. No probability is considered here. There is another method which is similar to error rate to measure accuracy:
+
+logloss = \frac{1}{N}\sum_{i=1}^{N}\sum_{j=1}^{M}y_{ij}log(p_{ij})
+
+Here N is the number of samples, M is the number of classes, y_{ij} is the indicator function which equals 1 when ith observation is in class j, equals 0 when in other classes. p_{ij} is the predicted probability of ith observation in class j.This method is used in Kaggle
+
+These two methods are very similar.
+
+Modification for bias
+
+When using Monte Carlo MSEs for estimating V_{IJ}^{\infty} and V_{J}^{\infty}, a problem about the Monte Carlo bias should be considered, especially when n is large, the bias is getting large:
+
+E[\hat{V}_{IJ}^B]-\hat{V}_{IJ}^{\infty}\approx\frac{n\sum_{b=1}^{B}(t_b^{\star}-\bar{t}^{\star})^2}{B}
+
+To eliminate this influence, bias-corrected modifications are suggested:
+
+\hat{V}_{IJ-U}^B= \hat{V}_{IJ}^B - \frac{n\sum_{b=1}^{B}(t_b^{\star}-\bar{t}^{\star})^2}{B}
+
+\hat{V}_{J-U}^B= \hat{V}_{J}^B - (e-1)\frac{n\sum_{b=1}^{B}(t_b^{\star}-\bar{t}^{\star})^2}{B}
+
+References
+
+Category:Classification algorithms

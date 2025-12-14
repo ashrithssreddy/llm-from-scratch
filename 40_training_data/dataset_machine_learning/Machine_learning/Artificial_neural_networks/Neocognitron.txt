@@ -1,0 +1,39 @@
+__NOTOC__
+
+The neocognitron is a hierarchical, multilayered artificial neural network proposed by Kunihiko Fukushima in 1979. It has been used for Japanese handwritten character recognition and other pattern recognition tasks, and served as the inspiration for convolutional neural networks.
+
+Previously in 1969, he published a similar architecture, but with hand-designed kernels inspired by convolutions in mammalian vision. In 1975 he improved it to the Cognitron, and in 1979 he improved it to the neocognitron, which learns all convolutional kernels by unsupervised learning (in his terminology, "self-organized by 'learning without a teacher'").
+
+The neocognitron is a natural extension of these cascading models. The neocognitron consists of multiple types of cells, the most important of which are called S-cells and C-cells. The local features are extracted by S-cells, and these features' deformation, such as local shifts, are tolerated by C-cells. Local features in the input are integrated gradually and classified in the higher layers. The idea of local feature integration is found in several other models, such as the Convolutional Neural Network model, the SIFT method, and the HoG method.
+
+There are various kinds of neocognitron. For example, some types of neocognitron can detect multiple patterns in the same input by using backward signals to achieve selective attention.
+
+See also
+
+Artificial neural network
+
+Deep learning
+
+Pattern recognition
+
+Receptive field
+
+Self-organizing map
+
+Unsupervised learning
+
+Notes
+
+References
+
+External links
+
+Neocognitron on Scholarpedia
+
+NeoCognitron by Ing. Gabriel Minarik - application (C#) and video
+
+Neocognitron resources at Visiome Platform - includes MATLAB environment
+
+Beholder - a Neocognitron simulator
+
+Category:Artificial neural networks

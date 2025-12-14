@@ -1,0 +1,147 @@
+Sparse principal component analysis (SPCA or sparse PCA) is a technique used in statistical analysis and, in particular, in the analysis of multivariate data sets. It extends the classic method of principal component analysis (PCA) for the reduction of dimensionality of data by introducing sparsity structures to the input variables.
+
+A particular disadvantage of ordinary PCA is that the principal components are usually linear combinations of all input variables.  SPCA overcomes this disadvantage by finding components that are linear combinations of just a few input variables (SPCs). This means that some of the coefficients of the linear combinations defining the SPCs, called loadings,  are equal to zero. The number of nonzero loadings is called the cardinality of the SPC.
+
+Mathematical formulation
+
+Consider a data matrix, X, where each of the p columns represent an input variable, and each of the n rows represents an independent sample from data population. One assumes each column of X has mean zero, otherwise one can subtract column-wise mean from each element of X.
+
+Let \Sigma=\frac{1}{n-1} X^\top X be the empirical covariance matrix of X, which has dimension p \times p.
+
+Given an integer k with 1\le k \le p, the sparse PCA problem can be formulated as maximizing the variance along a direction represented by vector  v \in \mathbb{R}^p while constraining its cardinality:
+
+\begin{align}
+
+\max \quad & v^{T} \Sigma v\\
+
+\text{subject to} \quad & \left\Vert v\right\Vert _{2}=1\\
+
+& \left\Vert v \right\Vert_{0}\leq k.
+
+\end{align}
+
+The first constraint specifies that v is a unit vector. In the second constraint, \left\Vert v \right\Vert_{0} represents the \ell_0 pseudo-norm of v, which is defined as the number of its non-zero components. So the second constraint specifies that the number of non-zero components in v is less than or equal to k, which is typically an integer that is much smaller than dimension p. The optimal value of  is known as the k-sparse largest eigenvalue.
+
+If one takes k=p, the problem reduces to the ordinary PCA, and the optimal value becomes the largest eigenvalue of covariance matrix Σ.
+
+After finding the optimal solution v, one deflates Σ to obtain a new matrix
+
+\Sigma_1 = \Sigma - (v^T \Sigma v)v v^T,
+
+and iterate this process to obtain further principal components. However, unlike PCA, sparse PCA cannot guarantee that different principal components are orthogonal. In order to achieve orthogonality, additional constraints must be enforced.
+
+The following equivalent definition is in matrix form.
+
+Let V be a p×p symmetric matrix, one can rewrite the sparse PCA problem as
+
+\begin{align}
+
+\max \quad & Tr(\Sigma V)\\
+
+\text{subject to}\quad & Tr(V)=1\\
+
+& \Vert V \Vert_{0}\leq k^{2}\\
+
+& Rank(V)=1, V\succeq 0.
+
+\end{align}
+
+Tr is the matrix trace, and \Vert V \Vert_{0} represents the non-zero elements in matrix V.
+
+The last line specifies that V has matrix rank one and is positive semidefinite.
+
+The last line means that one has V=vv^T, so  is equivalent to .
+
+Moreover, the rank constraint in this formulation is actually redundant, and therefore sparse PCA can be cast as the following mixed-integer semidefinite program
+
+\begin{align}
+
+\max \quad & Tr(\Sigma V)\\
+
+\text{subject to}\quad & Tr(V)=1\\
+
+& \vert V_{i,i}\vert \leq z_i, \forall i \in \{1, ..., p\}, \vert V_{i,j}\vert \leq \frac{1}{2} z_i, \forall i,j \in \{1, ..., p\}: i \neq j,\\
+
+& V\succeq 0, z \in \{0, 1\}^p, \sum_i z_i \leq k
+
+\end{align}
+
+Because of the cardinality constraint, the maximization problem is hard to solve exactly, especially when dimension p is high. In fact, the sparse PCA problem in  is NP-hard in the strong sense.
+
+Computational considerations
+
+As most sparse problems, variable selection in SPCA is a computationally intractable non-convex  NP-hard problem, therefore greedy sub-optimal algorithms are often employed to find solutions.
+
+Note also that SPCA introduces hyperparameters quantifying in what capacity large parameter values are penalized. These might need tuning to achieve satisfactory performance, thereby adding to the total computational cost.
+
+Algorithms for SPCA
+
+Several alternative approaches (of ) have been proposed, including
+
+a regression framework,
+
+a penalized matrix decomposition framework,
+
+a convex relaxation/semidefinite programming framework,
+
+a generalized power method framework
+
+an alternating maximization framework
+
+forward-backward greedy search and exact methods using branch-and-bound techniques,
+
+a certifiably optimal branch-and-bound approach
+
+Bayesian formulation framework.
+
+A certifiably optimal mixed-integer semidefinite branch-and-cut approach
+
+Notes on Semidefinite Programming Relaxation
+
+It has been proposed that sparse PCA can be approximated by semidefinite programming (SDP).
+
+Applications
+
+Financial Data Analysis
+
+Suppose ordinary PCA is applied to a dataset where each input variable represents a different asset, it may generate principal components that are weighted combination of all the assets. In contrast, sparse PCA would produce principal components that are weighted combination of only a few input assets, so one can easily interpret its meaning. Furthermore, if one uses a trading strategy based on these principal components, fewer assets imply less transaction costs.
+
+Biology
+
+Consider a dataset where each input variable corresponds to a specific gene. Sparse PCA can produce a principal component that involves only a few genes, so researchers can focus on these specific genes for further analysis.
+
+High-dimensional Hypothesis Testing
+
+Contemporary datasets often have the number of input variables (p) comparable with or even much larger than the number of samples (n). It has been shown that if p/n does not converge to zero, the classical PCA is not consistent. In other words, if we let k=p in , then
+
+the optimal value does not converge to the largest eigenvalue of data population when the sample size n\rightarrow\infty, and the optimal solution does not converge to the direction of maximum variance.
+
+But sparse PCA can retain consistency even if p\gg n.
+
+The k-sparse largest eigenvalue (the optimal value of ) can be used to discriminate an isometric model, where every direction has the same variance, from a spiked covariance model in high-dimensional setting. Consider a hypothesis test where the null hypothesis specifies that data X are generated from a multivariate normal distribution with mean 0 and covariance equal to an identity matrix, and the alternative hypothesis specifies that data X is generated from a spiked model with signal strength \theta:
+
+H_0: X \sim N(0, I_p), \quad H_1: X \sim N(0, I_p + \theta v v^T),
+
+where v \in \mathbb{R}^p has only k non-zero coordinates. The largest k-sparse eigenvalue can discriminate the two hypotheses if and only if \theta > \Theta(\sqrt{k \log(p)/n}).
+
+Since computing k-sparse eigenvalue is NP-hard, one can approximate it by the optimal value of semidefinite programming relaxation (). If that case, we can discriminate the two hypotheses if \theta > \Theta(\sqrt{k^2 \log(p)/n}). The additional \sqrt{k} term cannot be improved by any other polynomial time algorithm if the planted clique conjecture holds.
+
+Software/source code
+
+amanpg - R package for Sparse PCA using the Alternating Manifold Proximal Gradient Method
+
+elasticnet – R package for Sparse Estimation and Sparse PCA using Elastic-Nets
+
+epca – R package for exploratory principal component analysis for large-scale dataset, including sparse principal component analysis and sparse matrix approximation.
+
+nsprcomp - R package for sparse and/or non-negative PCA based on thresholded power iterations
+
+scikit-learn – Python library for machine learning which contains Sparse PCA and other techniques in the decomposition module.
+
+Notes
+
+References
+
+Category:Dimension reduction
+
+Category:Machine learning algorithms

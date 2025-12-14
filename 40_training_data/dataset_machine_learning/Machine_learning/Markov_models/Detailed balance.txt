@@ -1,0 +1,225 @@
+The principle of detailed balance can be used in kinetic systems which are decomposed into elementary processes (collisions, or steps, or elementary reactions). It states that at equilibrium, each elementary process is in equilibrium with its reverse process.
+
+History
+
+The principle of detailed balance was explicitly introduced for collisions by Ludwig Boltzmann. In 1872, he proved his H-theorem using this principle. The arguments in favor of this property are founded upon microscopic reversibility.
+
+Five years before Boltzmann, James Clerk Maxwell used the principle of detailed balance for gas kinetics with the reference to the principle of sufficient reason. He compared the idea of detailed balance with other types of balancing (like cyclic balance) and found that "Now it is impossible to assign a reason" why detailed balance should be rejected (p.&nbsp;64).
+
+In 1901, Rudolf Wegscheider introduced the principle of detailed balance for chemical kinetics. In particular, he demonstrated that the irreversible cycles A1 -> A2 -> \cdots -> A_\mathit{n} -> A1 are impossible and found explicitly the relations between kinetic constants that follow from the principle of detailed balance. In 1931, Lars Onsager used these relations in his works, for which he was awarded the 1968 Nobel Prize in Chemistry.
+
+The principle of detailed balance has been used in Markov chain Monte Carlo methods since their invention in 1953. In particular, in the Metropolis–Hastings algorithm and in its important particular case, Gibbs sampling, it is used as a simple and reliable condition to provide the desirable equilibrium state.
+
+Now, the principle of detailed balance is a standard part of the university courses in statistical mechanics, physical chemistry, chemical and physical kinetics.
+
+Microscopic background
+
+The microscopic "reversing of time" turns at the kinetic level into the "reversing of arrows": the elementary processes transform into their reverse processes. For example, the reaction
+
+\sum_i \alpha_i \ce A_i \ce{->} \sum_j \beta_j \ce B_j transforms into \sum_j \beta_j \ce B_j \ce{->} \sum_i \alpha_i \ce A_i
+
+and conversely. (Here, \ce A_i, \ce B_j are symbols of components or states, \alpha_i, \beta_j \geq 0  are coefficients). The equilibrium ensemble should be invariant with respect to this transformation because of microreversibility and the uniqueness of thermodynamic equilibrium. This leads us immediately to the concept of detailed balance: each process is equilibrated by its reverse process.
+
+This reasoning is based on three assumptions:
+
+\ce A_i does not change under time reversal;
+
+Equilibrium is invariant under time reversal;
+
+The macroscopic elementary processes are microscopically distinguishable. That is, they represent disjoint sets of microscopic events.
+
+Any of these assumptions may be violated. For example, Boltzmann's collision can be represented as {{nowrap|A_\mathit{v}+A_\mathit{w} -> A_\mathit{v'}+A_\mathit{w'},}} where \ce A_v is a particle with velocity v. Under time reversal \ce A_v transforms into \ce A_{-v}. Therefore, the collision is transformed into the reverse collision by the PT transformation, where P is the space inversion and T is the time reversal. Detailed balance for Boltzmann's equation requires PT-invariance of collisions' dynamics, not just T-invariance. Indeed, after the time reversal the collision {{nowrap|A_\mathit{v}+A_\mathit{w} -> A_\mathit{v'}+A_\mathit{w'},}} transforms into {{nowrap|A_\mathit{-v'}+A_\mathit{-w'} -> A_\mathit{-v}+A_\mathit{-w}.}}  For the detailed balance we need transformation into
+
+{{nowrap|A_\mathit{v'}+A_\mathit{w'} -> A_\mathit{v}+A_\mathit{w}.}}  For this purpose, we need to apply additionally the space reversal P. Therefore, for the detailed balance in Boltzmann's equation not T-invariance but PT-invariance is needed.
+
+Equilibrium may be not T- or PT-invariant even if the laws of motion are invariant. This non-invariance may be caused by the spontaneous symmetry breaking. There exist nonreciprocal media (for example, some bi-isotropic materials) without T and PT invariance.
+
+Now, after almost 150 years of development, the scope of validity and the violations of detailed balance in kinetics seem to be clear.
+
+Detailed balance
+
+Reversibility
+
+A Markov process is called a reversible Markov process or reversible Markov chain if there exists a positive stationary distribution π that satisfies the detailed balance equations  When  for all i, this is equivalent to the joint probability matrix,  being symmetric in i and j; or symmetric in  and&nbsp;t.
+
+The definition carries over straightforwardly to continuous variables, where π becomes a probability density, and  a transition kernel probability density from state s′ to state&nbsp;s:\pi(s') P(s',s) = \pi(s) P(s,s')\,.The detailed balance condition is stronger than that required merely for a stationary distribution, because there are Markov processes with stationary distributions that do not have detailed balance.
+
+Transition matrices that are symmetric  or  always have detailed balance. In these cases, a uniform distribution over the states is an equilibrium distribution.
+
+Kolmogorov's criterion
+
+Reversibility is equivalent to Kolmogorov's criterion: the product of transition rates over any closed loop of states is the same in both directions.
+
+For example, it implies that, for all a, b and c,P(a,b) P(b,c) P(c,a) = P(a,c) P(c,b) P(b,a)\,.For example, if we have a Markov chain with three states such that only these transitions are possible: A \to B, B \to C, C \to A, B \to A, then they violate Kolmogorov's criterion.
+
+Closest reversible Markov chain
+
+For continuous systems with detailed balance, it may be possible to continuously transform the coordinates until the equilibrium distribution is uniform, with a transition kernel which then is symmetric.  In the case of discrete states, it may be possible to achieve something similar by breaking the Markov states into appropriately-sized degenerate sub-states.
+
+For a  Markov transition matrix and a stationary distribution, the detailed balance equations may not be valid. However, it can be shown that a unique Markov transition matrix exists which is closest according to the stationary distribution and a given norm. The closest Matrix can be computed by solving a quadratic-convex optimization problem.
+
+Detailed balance and entropy increase
+
+For many systems of physical and chemical kinetics, detailed balance provides sufficient conditions for the strict increase of entropy in isolated systems. For example, the famous Boltzmann H-theorem and generalized mass action kinetics with detailed balance.
+
+Nevertheless, the principle of detailed balance is not necessary for entropy growth. For example, in the linear irreversible cycle A1 -> A2 -> A3 -> A1, entropy production is positive but the principle of detailed balance does not hold.
+
+Thus, the principle of detailed balance is a sufficient but not necessary condition for entropy increase in Boltzmann kinetics. These relations between the principle of detailed balance and the second law of thermodynamics were clarified in 1887 when Hendrik Lorentz objected to the Boltzmann H-theorem for polyatomic gases. Lorentz stated that the principle of detailed balance is not applicable to collisions of polyatomic molecules.
+
+Boltzmann immediately invented a new, more general condition sufficient for entropy growth. Boltzmann's condition holds for all Markov processes, irrespective of time-reversibility. Later, entropy increase was proved for all Markov processes by a direct method. These theorems may be considered as simplifications of the Boltzmann result.  Later, this condition was referred to as the "cyclic balance" condition (because it holds for irreversible cycles) or the "semi-detailed balance" or the "complex balance". In 1981, Carlo Cercignani and Maria Lampis proved that the Lorentz arguments were wrong and the principle of detailed balance is valid for polyatomic molecules. Nevertheless, the extended semi-detailed balance conditions invented by Boltzmann in this discussion remain the remarkable generalization of the detailed balance.
+
+Wegscheider's conditions for the generalized mass action law
+
+In chemical kinetics, the elementary reactions are represented by the stoichiometric equations
+
+\sum_i \alpha_{ri} \ce A_i \ce{->} \sum_j \beta_{rj} \ce A_j \;\; (r=1, \ldots, m) \, ,
+
+where \ce A_i are the components and \alpha_{ri}, \beta_{rj}\geq 0 are the stoichiometric coefficients. Here, the reverse reactions with positive constants are included in the list separately. We need this separation of direct and reverse reactions to apply later the general formalism to the systems with some irreversible reactions. The system of stoichiometric equations of elementary reactions is the reaction mechanism.
+
+The stoichiometric matrix is \boldsymbol{\Gamma}=(\gamma_{ri}), \gamma_{ri}=\beta_{ri}-\alpha_{ri} (gain minus loss). This matrix need not be square. The stoichiometric vector \gamma_r is the rth row of \boldsymbol{\Gamma} with coordinates \gamma_{ri}=\beta_{ri}-\alpha_{ri}.
+
+According to the generalized mass action law, the reaction rate for an elementary reaction is
+
+w_r=k_r \prod_{i=1}^n a_i^{\alpha_{ri}} \, ,
+
+where a_i\geq 0 is the activity (the "effective concentration") of A_i.
+
+The reaction mechanism includes reactions with the reaction rate constants k_r>0. For each r the following notations are used: k_r^+=k_r; w_r^+=w_r; k_r^- is the reaction rate constant for the reverse reaction if it is in the reaction mechanism and 0 if it is not; w_r^- is the reaction rate for the reverse reaction if it is in the reaction mechanism and 0 if it is not. For a reversible reaction, K_r=k_r^+/k_r^- is the equilibrium constant.
+
+The principle of detailed balance for the generalized mass action law is: For given values k_r there exists a positive equilibrium a_i^{\rm eq}>0 that satisfies detailed balance, that is, w_r^+=w_r^-. This means that the system of linear detailed balance equations
+
+\sum_i \gamma_{ri} x_i = \ln k_r^+-\ln k_r^-=\ln K_r
+
+is solvable (x_i=\ln a_i^{\rm eq}). The following classical result gives the necessary and sufficient conditions for the existence of a positive equilibrium a_i^{\rm eq}>0 with  detailed balance (see, for example, the textbook holds:
+
+\prod_{r=1}^m     (k_r^+)^{\lambda_r}=\prod_{r=1}^m     (k_r^-)^{\lambda_r} \, .
+
+Remark. It is sufficient to use in the Wegscheider conditions a basis of solutions of the system \boldsymbol{\lambda \Gamma} =0 .
+
+In particular, for any cycle in the monomolecular (linear) reactions the product of the reaction rate constants in the clockwise direction is equal to the product of the reaction rate constants in the counterclockwise direction. The same condition is valid for the reversible Markov processes (it is equivalent to the "no net flow" condition).
+
+A simple nonlinear example gives us a linear cycle supplemented by one nonlinear step:
+
+The Wegscheider conditions demonstrate that whereas the principle of detailed balance states a local property of equilibrium, it implies the relations between the kinetic constants that are valid for all states far from equilibrium. This is possible because a kinetic law is known and relations between the rates of the elementary processes at equilibrium can be transformed into relations between kinetic constants which are used globally. For the Wegscheider conditions this kinetic law is the law of mass action (or the generalized law of mass action).
+
+Dissipation in systems with detailed balance
+
+To describe dynamics of the systems that obey the generalized mass action law, one has to represent the activities as functions of  the concentrations cj and temperature. For this purpose, use the representation of the activity through the chemical potential:
+
+a_i = \exp\left (\frac{\mu_i - \mu^{\ominus}_i}{RT}\right )
+
+where μi is the chemical potential of the species under the conditions of interest, {{tmath|\mu^{\ominus}_i}} is the chemical potential of that species in the chosen standard state, R is the gas constant and T is the thermodynamic temperature.
+
+The chemical potential can be represented as a function of c and T, where c is the vector of concentrations with components  cj. For the ideal systems,  \mu_i = RT\ln c_i + \mu^{\ominus}_i and a_j = c_j: the activity is the concentration and the generalized mass action law is the usual law of mass action.
+
+Consider a system in isothermal  (T=const) isochoric (the volume V=const) condition. For these conditions, the Helmholtz free energy  measures the "useful" work obtainable from a system. It is a functions of the temperature T, the volume V and the amounts of chemical components Nj (usually measured in moles), N is the vector with components Nj. For the ideal systems,
+
+F=RT \sum_i N_i \left(\ln\left(\frac{N_i}{V}\right)-1+\frac{\mu^{\ominus}_i(T)}{RT}\right) .
+
+The chemical potential is a partial derivative:  \mu_i=\partial F(T,V,N)/\partial N_i.
+
+The chemical kinetic equations are
+
+\frac{d N_i}{d t}=V \sum_r \gamma_{ri}(w^+_r-w^-_r) .
+
+If the principle of detailed balance is valid then for any value of T there exists a positive point of detailed balance ceq:
+
+w^+_r(c^{\rm eq},T)=w^-_r(c^{\rm eq},T)=w^{\rm eq}_r
+
+Elementary algebra gives
+
+w^+_r=w^{\rm eq}_r \exp \left(\sum_i \frac{\alpha_{ri}(\mu_i-\mu^{\rm eq}_i)}{RT}\right); \;\; w^-_r=w^{\rm eq}_r \exp \left(\sum_i \frac{\beta_{ri}(\mu_i-\mu^{\rm eq}_i)}{RT}\right);
+
+where \mu^{\rm eq}_i=\mu_i(c^{\rm eq},T)
+
+For the dissipation we obtain from these formulas:
+
+\frac{d F}{d t}=\sum_i \frac{\partial F(T,V,N)}{\partial N_i} \frac{d N_i}{d t}=\sum_i \mu_i \frac{d N_i}{d t} = -VRT \sum_r (\ln w_r^+-\ln w_r^-) (w_r^+-w_r^-) \leq 0
+
+The inequality holds because ln is a monotone function and, hence, the expressions \ln w_r^+-\ln w_r^- and w_r^+-w_r^- have always the same sign.
+
+Similar inequalities It gets discussed in The point is to get sensible ways for effectively taking into account the presence of reservoirs, where the change in the reservoir is a function of the system trajectories. It naturally leads to stochastic energetics and the developments in stochastic thermodynamics. In that sense, the condition of local detailed balance stands crucially at the beginning of nonequilibrium statistical mechanics (directly) for stationary open systems, driven by the coupling with different spacetime-well-separated equilibrium baths.
+
+Central to local detailed balance is the idea that each transition of the system state is accompanied by an exchange of energy or particles with a specific equilibrium reservoir, and that the corresponding updating follows the condition of detailed balance using the intensive variables of that reservoir. There need not be a (global) detailed balance as reservoirs can have different temperatures, chemical potentials, etc. In mathematical terms, the condition of local detailed balance assures that the logarithmic ratio of the probability of a trajectory to the probability of the time-reversed trajectory equals the entropy flux per kB to the system environment. It is important here that the environment consists of mutually separated thermodynamic equilibrium baths.
+
+In particular, local detailed balance allows identification of currents and entropy flows, and is directly related to the so-called fluctuation theorems for entropy fluxes. As shown in a series of publications, local detailed balance implies detailed, integrated, local, steady-state or transient fluctuation theorems for the entropy flux satisfying a Gallavotti–Cohen-like symmetry. Discussions and derivations of local detailed balance are found in. Not all models that are commonly used in nonequilibrium statistical mechanics satisfy local detailed balance, which makes it less evident how to associate heat and entropy fluxes to the proposed dynamics.
+
+Semi-detailed balance
+
+To formulate the principle of semi-detailed balance, it is convenient to count the direct and inverse elementary reactions separately. In this case, the kinetic equations have the form:
+
+\frac{d N_i}{d t}=V\sum_r \gamma_{ri} w_r=V\sum_r (\beta_{ri}-\alpha_{ri})w_r
+
+Let us use the notations \alpha_r=\alpha_{ri}, \beta_r=\beta_{ri} for the input and the output vectors of the stoichiometric coefficients of the rth elementary reaction. Let Y be the set of all these vectors \alpha_r, \beta_r.
+
+For each \nu \in Y, let us define two sets of numbers:
+
+R_{\nu}^+=\{r|\alpha_r=\nu  \}; \;\;\; R_{\nu}^-=\{r|\beta_r=\nu \}
+
+r \in R_{\nu}^+ if and only if \nu is the vector of the input stoichiometric coefficients \alpha_r for the rth elementary reaction;r \in R_{\nu}^- if and only if \nu is the vector of the output stoichiometric coefficients \beta_r for the rth elementary reaction.
+
+The principle of semi-detailed balance means that in equilibrium the semi-detailed balance condition holds: for every \nu \in Y
+
+\sum_{r\in R_{\nu}^-}w_r=\sum_{r\in R_{\nu}^+}w_r
+
+The semi-detailed balance condition is sufficient for the stationarity: it implies that
+
+\frac{d N}{dt}=V \sum_r \gamma_r w_r=0.
+
+For the Markov kinetics the semi-detailed balance condition is just the elementary balance equation and holds for any steady state. For the nonlinear mass action law it is, in general, sufficient but not necessary condition for stationarity.
+
+The semi-detailed balance condition is weaker than the detailed balance one: if the principle of detailed balance holds then the condition of semi-detailed balance also holds.
+
+For systems that obey the generalized mass action law the semi-detailed balance condition is sufficient for the dissipation inequality d F/ dt \geq 0 (for the Helmholtz free energy under isothermal isochoric conditions and for the dissipation inequalities under other classical conditions for the corresponding thermodynamic potentials).
+
+Boltzmann introduced the semi-detailed balance condition for collisions in 1887
+
+The microscopic backgrounds for the semi-detailed balance were found in the Markov microkinetics of the intermediate compounds that are present in small amounts and whose concentrations are in quasiequilibrium with the main components. Under these microscopic assumptions, the semi-detailed balance condition is just the balance equation for the Markov microkinetics according to the Michaelis–Menten–Stueckelberg theorem.
+
+Dissipation in systems with semi-detailed balance
+
+Let us represent the generalized mass action law in the equivalent form: the rate of the elementary process
+
+\sum_i \alpha_{ri} \ce A_i \ce{->} \sum_i \beta_{ri} \ce A_i
+
+is
+
+w_r=\varphi_r \exp\left(\sum_i\frac{\alpha_{ri} \mu_i}{RT}\right)
+
+where \mu_i=\partial F(T,V,N)/ \partial N_i is the chemical potential and F(T,V,N) is the  Helmholtz free energy. The exponential term is called the  Boltzmann factor and the multiplier \varphi_r \geq 0  is the kinetic factor.  According to cone theorem, for a given state N, the set of velocities of the semidetailed balance systems coincides with the set of velocities of the detailed balance systems if their reaction mechanisms and equilibria coincide. This means local equivalence of detailed and complex balance.
+
+Detailed balance for systems with irreversible reactions
+
+Detailed balance states that in equilibrium each elementary process is equilibrated by its reverse process and requires reversibility of all elementary processes. For many real physico-chemical complex systems (e.g. homogeneous combustion, heterogeneous catalytic oxidation, most enzyme reactions etc.), detailed mechanisms include both reversible and irreversible reactions. If one represents irreversible reactions as limits of reversible steps, then it becomes obvious that not all reaction mechanisms with irreversible reactions can be obtained as limits of systems or reversible reactions with detailed balance. For example, the irreversible cycle A1 -> A2 -> A3 -> A1 cannot be obtained as such a limit but the reaction mechanism A1 -> A2 -> A3  can.
+
+Gorban–Yablonsky theorem. A system of reactions with some irreversible reactions is a limit of systems with detailed balance when some constants tend to zero if and only if (i) the reversible part of this system satisfies the principle of detailed balance and (ii) the convex hull of the stoichiometric vectors of the irreversible reactions has empty intersection with the linear span of the stoichiometric vectors of the reversible reactions. Physically, the last condition means that the irreversible reactions cannot be included in oriented cyclic pathways.
+
+See also
+
+T-symmetry
+
+Frenesy
+
+Microscopic reversibility
+
+Master equation
+
+Balance equation
+
+Gibbs sampling
+
+Metropolis–Hastings algorithm
+
+Atomic spectral line (deduction of the Einstein coefficients)
+
+Random walks on graphs
+
+References
+
+Category:Non-equilibrium thermodynamics
+
+Category:Statistical mechanics
+
+Category:Markov models
+
+Category:Chemical kinetics

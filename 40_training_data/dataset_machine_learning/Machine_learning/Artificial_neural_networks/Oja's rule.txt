@@ -1,0 +1,87 @@
+Oja's learning rule, or simply Oja's rule, named after Finnish computer scientist Erkki Oja (, ), is a model of how neurons in the brain or in artificial neural networks change connection strength, or learn, over time. It is a modification of the standard Hebb's Rule that, through multiplicative normalization, solves all stability problems and generates an algorithm for principal components analysis. This is a computational form of an effect which is believed to happen in biological neurons.
+
+Theory
+
+Oja's rule requires a number of simplifications to derive, but in its final form it is demonstrably stable, unlike Hebb's rule. It is a single-neuron special case of the Generalized Hebbian Algorithm. However, Oja's rule can also be generalized in other ways to varying degrees of stability and success.
+
+Formula
+
+Consider a simplified model of a neuron y that returns a linear combination of its inputs  using presynaptic weights :
+
+\,y(\mathbf{x}) ~ = ~ \sum_{j=1}^m x_j w_j
+
+Oja's rule defines the change in presynaptic weights  given the output response y of a neuron to its inputs  to be
+
+\,\Delta \mathbf{w} ~ = ~ \mathbf{w}_{n+1}-\mathbf{w}_{n} ~ = ~ \eta \, y_{n} (\mathbf{x}_{n} - y_{n}\mathbf{w}_{n}),
+
+where  is the learning rate which can also change with time. Note that the bold symbols are vectors and  defines a discrete time iteration. The rule can also be made for continuous iterations as
+
+\,\frac{d\mathbf{w}}{d t} ~ = ~ \eta \, y(t) (\mathbf{x}(t) - y(t)\mathbf{w}(t)).
+
+Derivation
+
+The simplest learning rule known is Hebb's rule, which states in conceptual terms that neurons that fire together, wire together. In component form as a difference equation, it is written
+
+\,\Delta\mathbf{w} ~ = ~ \eta\, y(\mathbf{x}_n) \mathbf{x}_{n},
+
+or in scalar form with implicit  -dependence,
+
+\,w_{i}(n+1) ~ = ~ w_{i}(n) + \eta\, y(\mathbf{x}) x_{i},
+
+where  is again the output, this time explicitly dependent on its input vector .
+
+Hebb's rule has synaptic weights approaching infinity with a positive learning rate. We can stop this by normalizing the weights so that each weight's magnitude is restricted between 0, corresponding to no weight, and 1, corresponding to being the only input neuron with any weight. We do this by normalizing the weight vector to be of length one:
+
+\,w_i (n+1) ~ = ~ \frac{w_i(n) + \eta\, y(\mathbf{x}) x_i}{\left(\sum_{j=1}^m [w_j(n) + \eta\, y(\mathbf{x}) x_j]^p \right)^{1/p}}.
+
+Note that in Oja's original paper, {{math|p2}}, corresponding to quadrature (root sum of squares), which is the familiar Cartesian normalization rule. However, any type of normalization, even linear, will give the same result without loss of generality.
+
+For a small learning rate | \eta | \ll 1 the equation can be expanded as a Power series in \eta.
+
+Applications
+
+Oja's rule was originally described in Oja's 1982 paper,
+
+Biology and Oja's subspace rule
+
+There is clear evidence for both long-term potentiation and long-term depression in biological neural networks, along with a normalization effect in both input weights and neuron outputs. However, while there is no direct experimental evidence yet of Oja's rule active in a biological neural network, a biophysical derivation of a generalization of the rule is possible. Such a derivation requires retrograde signalling from the postsynaptic neuron, which is biologically plausible (see neural backpropagation), and takes the form of
+
+\Delta w_{ij} ~ \propto ~ \langle x_i y_j \rangle - \epsilon \left\langle \left(c_\mathrm{pre} * \sum_k w_{ik} y_k \right) \cdot \left(c_\mathrm{post} * y_j \right) \right\rangle,
+
+where as before  is the synaptic weight between the th input and th output neurons,  is the input,  is the postsynaptic output, and we define  to be a constant analogous the learning rate, and  and  are presynaptic and postsynaptic functions that model the weakening of signals over time. Note that the angle brackets denote the average and the ∗ operator is a convolution. By taking the pre- and post-synaptic functions into frequency space and combining integration terms with the convolution, we find that this gives an arbitrary-dimensional generalization of Oja's rule known as Oja's Subspace, namely
+
+\Delta w ~ = ~ C x\cdot w - w\cdot C y.
+
+See also
+
+BCM theory
+
+Contrastive Hebbian learning
+
+Generalized Hebbian algorithm
+
+Independent components analysis
+
+Principal component analysis
+
+Self-organizing map
+
+Synaptic plasticity
+
+References
+
+External links
+
+Oja, Erkki: Oja learning rule in Scholarpedia
+
+Oja, Erkki: Aalto University
+
+Category:Computational neuroscience
+
+Category:Artificial neural networks
+
+Category:Neural circuitry
+
+Category:Biophysics
+
+Category:Hebbian theory

@@ -1,0 +1,173 @@
+{{Infobox company
+
+name = Fair Isaac Corporation
+
+trade_name = FICO
+
+logo = File:Fair Isaac Corporation logo.svg
+
+logo_size = 190px
+
+image = Ficoheadquarters.jpg
+
+image_caption = Former headquarters in San Jose
+
+type = Public
+
+traded_as = {{ubl||S&P 500 component}}
+
+industry = Data analytics
+
+founded =  (as Fair, Isaac, and Company)
+
+founders =
+
+hq_location = Bozeman, Montana, U.S.
+
+area_served = Worldwide
+
+key_people = William Lansing (CEO)
+
+revenue =   (2025)
+
+operating_income = {{nowrap| US$925&nbsp;million (2025)}}
+
+profit =  US$652&nbsp;million (2025)
+
+assets =  US$1.87&nbsp;billion (2025)
+
+equity =  −US$1.7&nbsp;billion (2025)
+
+num_employees = 3,811(2025)
+
+caption =
+
+products = FICO score
+
+services = Computer software
+
+website =
+
+footnotes =
+
+}}
+
+FICO (legal name: Fair Isaac Corporation), originally Fair, Isaac and Company, is an American data analytics company based in Bozeman, Montana, focused on credit scoring services. It was founded by Bill Fair and Earl Isaac in 1956. Its FICO score, a measure of consumer credit risk, has become a fixture of consumer lending in the United States.
+
+In 2013, lenders purchased more than 10 billion FICO scores and about 30 million American consumers accessed their scores themselves. The company reported a revenue of $1.29 billion for the fiscal year of 2020.
+
+History
+
+FICO was founded in 1956 as Fair, Isaac and Company by engineer William R. "Bill" Fair and mathematician Earl Judson Isaac. The two met while working at the Stanford Research Institute in Menlo Park, California. Selling its first credit scoring system two years after the company's creation, FICO pitched its system to fifty American lenders.
+
+FICO went public in July 1987 and is traded on the New York Stock Exchange.
+
+Lenders use the scores to gauge a potential borrower's creditworthiness.
+
+Fannie Mae and Freddie Mac first began using FICO scores to help determine which American consumers qualified for mortgages bought and sold by the companies in 1995.
+
+Name changes
+
+Originally called Fair, Isaac and Company (hence the abbreviation FICO), this name was changed to Fair Isaac Corporation in 2003. In 2013, it moved its headquarters to San Jose, California, a year after CEO William Lansing joined. In 2016, it opened an office in Bozeman, Montana, which later became its headquarters.
+
+Acquisitions
+
+DynaMark 1992
+
+Risk Management Technologies 1997
+
+Prevision 1997
+
+Nykamp Consulting Group 2001
+
+HNC Software 2002
+
+NAREX 2003
+
+Diversified Healthcare Services 2003
+
+Seurat (2003)
+
+London Bridge Software 2004
+
+Braun Consulting 2004
+
+RulesPower 2005
+
+Dash Optimization 2008
+
+Entiera 2012
+
+Adeptra 2012
+
+CR Software 2012
+
+Infoglide 2013
+
+InfoCentricity 2014
+
+Karmasphere 2014
+
+TONBELLER AG 2015
+
+QuadMetrics 2016
+
+GoOn 2018
+
+EZMCOM 2019
+
+Antitrust issues
+
+In March 2020, the US Department of Justice (DOJ) opened an antitrust investigation into FICO, which was reported to be closed in December 2020. In March 2024, US Senator Josh Hawley sent a letter to the DOJ's Antitrust Division urging them to open an investigation into FICO for anti-competitive practices, stating that the company "appears to be using its monopolistic power over the credit scoring market to increase costs for mortgage lenders."
+
+Between 2020 and 2023, at least 10 antitrust class action lawsuits were filed against FICO involving "business to business" purchases of FICO scores, with the plaintiffs alleging that FICO maintains monopoly power through anticompetitive agreements and charges artificially inflated prices for FICO scores. In September 2023 US District Judge Edmond Chang ruled that the plaintiffs, which include credit unions, banks, mortgage lenders, real estate brokerages, auto dealers, and other companies, had presented enough evidence that FICO had violated antitrust law to allow the lawsuits to proceed.
+
+The company has international locations in Australia, Brazil, Canada, China, Germany, India, Italy, Japan, South Korea, Lithuania, Malaysia, the Philippines, Poland, Russia, Singapore, South Africa, Spain, Taiwan, Thailand, Turkey, and the United Kingdom. FICO scores are also offered in other markets, including Mexico and Canada, as well as through the fourth U.S. credit reporting bureau, PRBC.
+
+References
+
+External links
+
+How Does FICO Calculate a Score?
+
+Category:Business intelligence companies
+
+Category:Business software companies
+
+Category:Companies listed on the New York Stock Exchange
+
+Category:Data mining and machine learning software
+
+Category:Data and information visualization software
+
+Category:Companies based in San Jose, California
+
+Category:Financial technology companies
+
+Category:Multinational companies headquartered in the United States
+
+Category:Software companies based in the San Francisco Bay Area
+
+Category:Software companies based in Montana
+
+Category:American companies established in 1956
+
+Category:Business services companies established in 1956
+
+Category:Financial services companies established in 1956
+
+Category:Computer companies established in 1956
+
+Category:Credit scoring
+
+Category:1956 establishments in California
+
+Category:1980s initial public offerings
+
+Category:Software companies of the United States
+
+Category:Bozeman, Montana
+
+Category:Credit rating agencies
+
+Category:Financial technology companies based in California

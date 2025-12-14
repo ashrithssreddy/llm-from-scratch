@@ -1,0 +1,47 @@
+Verena Rieser (born 1979) is a German computer scientist specialising in natural-language generation, including conversational modelling as well as studies of how gender cues in synthetic language can trigger biases in the people who interact with them. She is a professor in the School of Mathematical and Computer Sciences at Heriot-Watt University in Edinburgh, where she directs the Natural Language Processing Laboratory.
+
+Education and career
+
+After beginning her university studies in literature, Rieser switched to linguistics, and earned a master's degree in applied linguistics and information science from the University of Regensburg in 2003. She earned a second master's degree in informatics from the University of Edinburgh in 2005, supervised by Johanna Moore, and completed a Ph.D. in computational linguistics at Saarland University in 2008.
+
+After returning to the University of Edinburgh as a postdoctoral researcher, she became an assistant professor at Heriot-Watt University in 2011, and was promoted to Professor of Artificial Intelligence there in 2017.
+
+In 2020 she became co-founder of a company, ALANA AI, for which she works part-time.
+
+Book
+
+With Oliver Lemon, Rieser is a coauthor of the book Reinforcement Learning for Adaptive Dialogue Systems: A Data-driven Methodology for Dialogue Management and Natural Language Generation (Springer, 2011)
+
+References
+
+{{reflist|refs=
+
+}}
+
+External links
+
+Home page
+
+Category:1979 births
+
+Category:Living people
+
+Category:German computer scientists
+
+Category:German women computer scientists
+
+Category:British computer scientists
+
+Category:British women computer scientists
+
+Category:Computational linguistics researchers
+
+Category:University of Regensburg alumni
+
+Category:Alumni of the University of Edinburgh
+
+Category:Saarland University alumni
+
+Category:Academics of Heriot-Watt University
+
+Category:Natural language processing researchers

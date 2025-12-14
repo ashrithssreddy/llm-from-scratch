@@ -1,0 +1,19 @@
+In computer science, a predictive state representation (PSR) is a way to model a state of controlled dynamical system from a history of actions taken and resulting observations. PSR captures the state of a system as a vector of predictions for future tests (experiments) that can be done on the system. A test is a sequence of action-observation pairs and its prediction is the probability of the test's observation-sequence happening if the test's action-sequence were to be executed on the system. One of the advantage of using PSR is that the predictions are directly related to observable quantities.  This is in contrast to other models of dynamical systems, such as partially observable Markov decision processes (POMDPs) where the state of the system is represented as a probability distribution over unobserved nominal states.
+
+Definition
+
+Consider a dynamic system based on a discrete set \mathcal A of actions and a discrete set \mathcal O of observations. A history h is a sequence a_1 o_1 \dots a_\ell o_\ell where a_1 , \dots, a_\ell are the actions taken by the agent in that order and o_1 , \dots, o_\ell are the observations made up by the agent. Let us write P(a_1 o_1 \dots a_\ell o_\ell) to be the conditional probability of observing o_1 , \dots, o_\ell given that the actions taken are a_1 , \dots, a_\ell.
+
+We now want to characterize a given hidden state reached after some history h. To do that, we introduce the notion of test. A test t is of the same type that a history: it is a sequence of action-observation pairs. The idea is now to consider a set of tests \{t_1, \dots, t_n\} to full characterize a hidden state. To do that, we first define the probability of a test t conditional on a history h: P(t \mid h) := \frac{P(ht)}{P(h)}.
+
+We now define the prediction vector p(h) = [P(t_1\mid h), \dots, P(t_n\mid h)]. We say that p(h) is a predictive state representation (PSR) if and only if it forms a sufficient statistic for the system. In other words,  p(h) is a predictive state representation (PSR) if and only if for all possible tests t, there exists a function f_t such that for all histories h, P(t\mid h) = f_t(p(h)).
+
+The functions f_t are called projection functions. We say that the PSR is linear when the function f_t is linear for all possible tests t. The main theorem proved in  is stated as follows.
+
+Theorem. Consider a finite POMDP with k states. Then there exists a linear PSR with a number of tests n smaller that k.
+
+References
+
+Category:Machine learning
+
+Category:Dynamical systems

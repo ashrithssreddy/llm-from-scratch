@@ -1,0 +1,75 @@
+{{Infobox scientist
+
+name              = David M. Blei
+
+nationality       = American
+
+field             = Artificial Intelligence
+
+work_institution  = Princeton University  Columbia University
+
+alma_mater        = Brown University B.S. (1997)  University of California, Berkeley Ph.D. (2004)
+
+thesis_title      = Probabilistic Models of Text and Images
+
+thesis_year       = 2004
+
+thesis_url        = http://oskicat.berkeley.edu/record=b15238730~S1
+
+doctoral_advisor  = Michael I. Jordan
+
+doctoral_students =
+
+known_for         = Topic models
+
+website           =
+
+prizes            = PECASE  ACM Fellow (2015)
+
+}}
+
+David Meir Blei is a professor in the Statistics and Computer Science departments at Columbia University. Prior to fall 2014 he was an associate professor in the Department of Computer Science at Princeton University. His work is primarily in machine learning.
+
+Research
+
+His research interests include topic models and he was one of the original developers of latent Dirichlet allocation, along with Andrew Ng and Michael I. Jordan. As of June 18, 2020, his publications have been cited 109,821 times, giving him an h-index of 97.
+
+Honors and awards
+
+Blei received the ACM Infosys Foundation Award in 2013. (This award is given to a computer scientist under the age of 45. It has since been renamed the ACM Prize in Computing.) He was named Fellow of ACM "For contributions to the theory and practice of probabilistic topic modeling and Bayesian machine learning" in 2015.
+
+References
+
+External links
+
+Homepage
+
+Latent Dirichlet Allocation (PDF)
+
+Publications
+
+ACM-Infosys Foundation Award, 2013
+
+Category:Living people
+
+Category:Artificial intelligence researchers
+
+Category:Brown University alumni
+
+Category:University of California, Berkeley alumni
+
+Category:Columbia University faculty
+
+Category:Columbia School of Engineering and Applied Science faculty
+
+Category:2015 fellows of the Association for Computing Machinery
+
+Category:Recipients of the ACM Prize in Computing
+
+Category:Year of birth missing (living people)
+
+Category:Machine learning researchers
+
+Category:Recipients of the Presidential Early Career Award for Scientists and Engineers
+
+Category:Bayesian statisticians

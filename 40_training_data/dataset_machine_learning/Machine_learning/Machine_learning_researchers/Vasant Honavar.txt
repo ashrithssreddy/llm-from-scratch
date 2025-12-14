@@ -1,0 +1,135 @@
+{{Infobox scientist
+
+name              = Vasant Honavar
+
+image             =
+
+image_caption     =
+
+nationality       =
+
+field             = Computer science, Artificial intelligence, Machine learning, Data Science, Bioinformatics, Big data, Causal Inference, Informatics, Knowledge Representation, Computational biology, Cognitive science, Health informatics, Neuroinformatics, Network Science, Biomedical Informatics
+
+work_institutions = Iowa State UniversityNational Science FoundationPennsylvania State University
+
+alma_mater        = B.M.S. Institute of Technology and Management, University of WisconsinDrexel University B.M.S. College of Engineering
+
+doctoral_advisor  = Leonard Uhr
+
+doctoral_students =
+
+notable_students  =
+
+awards            = AAAS Fellow
+
+footnotes         =
+
+signature         =
+
+}}
+
+Vasant G. Honavar is an Indian-American computer scientist, and artificial intelligence, machine learning, big data, data science, causal inference, knowledge representation, bioinformatics and health informatics researcher and professor.
+
+Early life and education
+
+Vasant Honavar was born at Pune, India to Marathi parents Bhavani G. and Gajanan N. Honavar. He received his early education at the Vidya Vardhaka Sangha High School and M.E.S. College in Bangalore, India. He received a B.E. in Electronics & Communications Engineering from the B.M.S. College of Engineering in Bangalore, India in 1982, when it was affiliated with Bangalore University, an M.S. in electrical and computer engineering in 1984 from Drexel University, and an M.S. in computer science in 1989, and a Ph.D. in 1990, respectively, from the University of Wisconsin–Madison, where he studied Artificial Intelligence and worked with Leonard Uhr.
+
+Career
+
+Honavar is on the faculty of Penn State College of Information Sciences and Technology at Pennsylvania State University where he currently holds the Dorothy Foehr Huck and J. Lloyd Huck Chair in Biomedical Data Sciences and Artificial Intelligence and previously held the Edward Frymoyer Endowed Chair in Information Sciences and Technology. He serves on the faculties of the graduate programs in Computer Science, Informatics, Bioinformatics and Genomics,   Neuroscience, Operations Research, Public Health Sciences, and of an undergraduate program in Data Science. Honavar serves as the director of the Artificial Intelligence Research Laboratory, Associate Director of the Institute for Computational and Data Sciences and the director of the Center for Artificial Intelligence Foundations and Scientific Applications at Pennsylvania State University. Honavar serves on the Leadership Team of the Northeast Big Data Innovation Hub. Honavar served on the Computing Research Association's Computing Community Consortium Council during 2014-2017, where he chaired the task force on Convergence of Data and Computing, and was a member of the task force on Artificial Intelligence.
+
+Honavar was the first Sudha Murty Distinguished Visiting Chair of Neurocomputing and Data Science by the Indian Institute of Science, Bangalore, India. Honavar was named a Distinguished Member of the Association for Computing Machinery for "outstanding scientific contributions to computing"; and elected a Fellow of the American Association for the Advancement of Science for his "distinguished research contributions and leadership in data science".
+
+As a Program Director in the Information Integration and Informatics program in the Information and Intelligent Systems Division of the Computer and Information Science and Engineering Directorate of the US National Science Foundation during 2010-13, Honavar led the Big Data Program.
+
+Honavar was a professor of computer science at Iowa State University where he led the Artificial Intelligence Research Laboratory which he founded in 1990 and was instrumental in establishing an interdepartmental graduate program in Bioinformatics and Computational Biology (and served as its Chair during 2003–2005).
+
+Honavar has held visiting professorships at Carnegie Mellon University, the University of Wisconsin–Madison, and at the Indian Institute of Science.
+
+Research
+
+Honavar's research has contributed to advances in artificial intelligence, machine learning, causal inference, knowledge representation, neural networks, semantic web, big data analytics, and bioinformatics and computational biology. He was a program chair of the Association for the Advancement of Artificial Intelligence(AAAI)'s 36th Conference on Artificial Intelligence. He has published over 300 research articles, including many highly cited ones, as well as several books on these topics. His recent work has focused on federated machine learning algorithms for constructing predictive models from distributed data and linked open data, learning predictive models from high dimensional longitudinal data, estimating causal effects from complex data, reasoning with federated knowledge bases, detecting algorithmic bias, big data analytics, analysis and prediction of protein-protein, protein-RNA, and protein-DNA interfaces and interactions, social network analytics, health informatics, secrecy-preserving query answering, representing and reasoning about preferences, and causal inference and meta analysis.
+
+Honavar has been active in fostering national and international scientific collaborations in Artificial Intelligence, Data Sciences, and their applications in addressing national, international, and societal priorities in accelerating science, improving health, transforming agriculture through partnerships that bring together academia, non-profits, and industry. He is also active in making the science policy case for major national research initiatives such as AI for accelerating science and AI for combating the epidemic of diseases of despair.
+
+Honors
+
+National Science Foundation Director's Award for Superior Accomplishment, 2013
+
+National Science Foundation Director's Award for Collaborative Integration, 2012
+
+Margaret Ellen White Graduate Faculty Award, Iowa State University, 2011
+
+Outstanding Career Achievement in Research Award, College of Liberal Arts and Sciences, Iowa State University, 2008
+
+Regents Award for Faculty Excellence, Iowa Board of Regents, 2007
+
+Edward Frymoyer Endowed Chair in Information Sciences and Technology, Penn State College of Information Sciences and Technology, Pennsylvania State University, 2013
+
+Senior Faculty Research Excellence Award, Penn State College of Information Sciences and Technology, Pennsylvania State University, 2016
+
+125 People of Impact, Department of Electrical and Computer Engineering, University of Wisconsin-Madison, 2016
+
+Sudha Murty Distinguished (Visiting) Chair of Neurocomputing and Data Science, Indian Institute of Science, 2016-2021
+
+AAAS Fellow American Association for the Advancement of Science, 2018
+
+EAI Fellow European Alliance for Innovation, 2019
+
+Dorothy Foehr Huck and J. Lloyd Huck Chair in Biomedical Data Sciences and Artificial Intelligence, Pennsylvania State University, 2021
+
+References
+
+External links
+
+Personal home page
+
+List of publications from Penn State's profile
+
+List of publications on Google Scholar
+
+Category:Artificial intelligence researchers
+
+Category:Machine learning researchers
+
+Category:American bioinformaticians
+
+Category:American non-fiction writers
+
+Category:Systems biologists
+
+Category:American cognitive scientists
+
+Category:Complex systems scientists
+
+Category:Indian computer scientists
+
+Category:Pennsylvania State University faculty
+
+Category:Iowa State University faculty
+
+Category:University of Wisconsin–Madison College of Letters and Science alumni
+
+Category:Drexel University alumni
+
+Category:Bangalore University alumni
+
+Category:Senior members of the IEEE
+
+Category:Fellows of the American Association for the Advancement of Science
+
+Category:Living people
+
+Category:American male writers of Indian descent
+
+Category:1960 births
+
+Category:People from Pune
+
+Category:People from Bengaluru
+
+Category:Indian male non-fiction writers
+
+Category:American people of Marathi descent
+
+Category:Indian emigrants to the United States

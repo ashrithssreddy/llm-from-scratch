@@ -1,0 +1,41 @@
+James Pustejovsky (born 1956) is an American computer scientist. He is the TJX Feldberg professor of computer science at Brandeis University in Waltham, Massachusetts, United States. His expertise includes theoretical and computational modeling of language, specifically: Computational linguistics, Lexical semantics, Knowledge representation, temporal and spatial reasoning and Extraction. His main topics of research are Natural language processing generally, and in particular, the computational analysis of linguistic meaning. He holds a B.S. from MIT as well as a PhD from the University of Massachusetts, Amherst.
+
+Pustejovsky first proposed generative lexicon theory in lexical semantics in an article published in 1991, which was further developed in his 1995 book of the same name.
+
+His other interests include temporal reasoning, event semantics, spatial language, language annotation, computational linguistics, and machine learning.
+
+Current research
+
+Pustejovsky's research group's current projects include the TimeML and ISO-Space projects. The TimeML project is a standard markup language for temporal events in a document, and has recently been adopted as ISO-TImeML by the ISO. ISO-Space is an ISO-directed effort to create an expressive specification for the representation of spatial information in language. His previous work included the Medstract project, an effort to extract information from medical documents using current natural language processing technology.
+
+References
+
+External links
+
+Professor Pustejovsky's website
+
+Brandeis University Faculty Guide
+
+Pustejovsky's book on the Generative Lexicon
+
+The TimeML project
+
+The Medstract project
+
+Category:1956 births
+
+Category:Living people
+
+Category:Brandeis University faculty
+
+Category:American computer scientists
+
+Category:Linguists from the United States
+
+Category:Computational linguistics researchers
+
+Category:Generative linguistics
+
+Category:Natural language processing researchers
+
+Category:Fellows of the Association for Computational Linguistics

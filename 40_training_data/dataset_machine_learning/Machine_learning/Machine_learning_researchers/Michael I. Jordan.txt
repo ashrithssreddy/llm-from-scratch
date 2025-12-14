@@ -1,0 +1,175 @@
+{{Infobox scientist
+
+name              = Michael Jordan
+
+birth_name        = Michael Irwin Jordan
+
+honorific_suffix  =
+
+image             =
+
+image_size        =
+
+alt               =
+
+caption           =
+
+birth_date        =
+
+birth_place       = Aberdeen, Maryland
+
+death_date        =
+
+death_place       =
+
+resting_place     =
+
+resting_place_coordinates =
+
+citizenship       =
+
+nationality       =
+
+fields            =
+
+workplaces        =
+
+alma_mater        =
+
+thesis_title      = The learning of representations for sequential performance (connectionism, parallel models, serial order)
+
+thesis_url        = https://www.proquest.com/docview/303340092/
+
+thesis_year       = 1985
+
+doctoral_advisor  = David RumelhartDonald Norman
+
+academic_advisors =
+
+known_for         = Latent Dirichlet allocation
+
+doctoral_students = {{Plainlist|
+
+David Blei
+
+Tamara Broderick
+
+Barbara Engelhardt
+
+Zoubin Ghahramani
+
+Andrew Ng
+
+Emanuel Todorov
+
+Daniel Wolpert
+
+Eric Xing
+
+}}
+
+notable_students  =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+awards            = {{plainlist|
+
+Member of the National Academy of Sciences (2010)  IJCAI Award for Research Excellence (2016)  IEEE John von Neumann Medal (2020)  WLA Prize (2022) BBVA Foundation Frontiers of Knowledge Award (2024)}}
+
+signature         =
+
+signature_alt     =
+
+website           =
+
+footnotes         =
+
+spouse            =
+
+}}
+
+Michael Irwin Jordan  (born February 25, 1956) is an American scientist, professor at the University of California, Berkeley, research scientist at the Inria Paris, and researcher in machine learning, statistics, and artificial intelligence.
+
+Jordan was elected a member of the National Academy of Engineering in 2010 for contributions to the foundations and applications of machine learning.
+
+He is one of the leading figures in machine learning, and in 2016 Science reported him as the world's most influential computer scientist.
+
+In 2022, Jordan won the inaugural World Laureates Association Prize in Computer Science or Mathematics, "for fundamental contributions to the foundations of machine learning and its application."
+
+Education
+
+Jordan received a Bachelor of Science magna cum laude in psychology from the Louisiana State University in 1978, a Master of Science in mathematics from Arizona State University in 1980, and a Doctor of Philosophy in cognitive science from the University of California, San Diego in 1985.
+
+At UC San Diego, Jordan was a student of David Rumelhart and a member of the Parallel Distributed Processing (PDP) Group in the 1980s.
+
+Career and research
+
+Jordan is the Pehong Chen Distinguished Professor at the University of California, Berkeley, where his appointment is split across EECS and Statistics. He was a professor at the Department of Brain and Cognitive Sciences at MIT from 1988 to 1998. and the popularisation of the expectation–maximization algorithm in machine learning.
+
+Resignation from Machine Learning
+
+In 2001, Jordan and others resigned from the editorial board of the journal Machine Learning. In a public letter, they argued for less restrictive access and pledged support for a new open access journal, the Journal of Machine Learning Research, which was created by Leslie Kaelbling to support the evolution of the field of machine learning.
+
+Honors and awards
+
+Jordan has received numerous awards, including a best student paper award (with X. Nguyen and M. Wainwright) at the International Conference on Machine Learning (ICML 2004), a best paper award (with R. Jacobs) at the American Control Conference (ACC 1991), the ACM-AAAI Allen Newell Award, the IEEE Neural Networks Pioneer Award, and an NSF Presidential Young Investigator Award. In 2002 he was named an AAAI Fellow "for significant contributions to reasoning under uncertainty, machine learning, and human motor control." In 2004 he was named an IMS Fellow "for contributions to graphical models and machine learning." In 2005 he was named an IEEE Fellow "for contributions to probabilistic graphical models and neural information processing systems." In 2007 he was named an ASA Fellow. In 2010 he was named a Cognitive Science Society Fellow and named an ACM Fellow "for contributions to the theory and application of machine learning." In 2012 he was named a SIAM Fellow "for contributions to machine learning, in particular variational approaches to statistical inference." In 2014 he was named an International Society for Bayesian Analysis Fellow "for his outstanding research contributions at the interface of statistics, computer sciences and probability, for his leading role in promoting Bayesian methods in machine learning, engineering and other fields, and for his extensive service to ISBA in many roles."
+
+Jordan is a member of the National Academy of Sciences, a member of the National Academy of Engineering and a member of the American Academy of Arts and Sciences.
+
+He has been named a Neyman Lecturer and a Medallion Lecturer by the Institute of Mathematical Statistics. He received the David E. Rumelhart Prize in 2015 and the ACM/AAAI Allen Newell Award in 2009. He also won the 2020 IEEE John von Neumann Medal.
+
+In 2016, Jordan was identified as the "most influential computer scientist", based on an analysis of the published literature by the Semantic Scholar project.
+
+In 2019, Jordan argued that the artificial intelligence revolution hasn't happened yet and that the AI revolution required a blending of computer science with statistics.
+
+In 2022, Jordan was awarded the inaugural World Laureates Association Prize by non-governmental and non-profit international organization World Laureates Association, for fundamental contributions to the foundations of machine learning and its application.
+
+For 2024 he received the BBVA Foundation Frontiers of Knowledge Award in the category of "Information and Communication Technologies".
+
+References
+
+Category:1956 births
+
+Category:Living people
+
+Category:American artificial intelligence researchers
+
+Category:Machine learning researchers
+
+Category:University of California, San Diego alumni
+
+Category:Fellows of the American Statistical Association
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:UC Berkeley College of Engineering faculty
+
+Category:Place of birth missing (living people)
+
+Category:2010 fellows of the Association for Computing Machinery
+
+Category:Members of the United States National Academy of Sciences
+
+Category:Fellows of the American Academy of Arts and Sciences
+
+Category:Members of the United States National Academy of Engineering
+
+Category:Rumelhart Prize laureates
+
+Category:Fellows of the Society for Industrial and Applied Mathematics
+
+Category:Fellows of the Cognitive Science Society
+
+Category:Fellows of the International Society for Bayesian Analysis
+
+Category:Louisiana State University alumni
+
+Category:Arizona State University alumni
+
+Category:Bayesian statisticians

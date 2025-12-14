@@ -1,0 +1,107 @@
+In machine learning, the term tensor informally refers to two different concepts (i) a way of organizing data and (ii) a multilinear (tensor) transformation. Data may be organized in a multidimensional array (M-way array), informally referred to as a "data tensor"; however, in the strict mathematical sense, a tensor is a multilinear mapping over a set of domain vector spaces to a range vector space. Observations, such as images, movies, volumes, sounds, and relationships among words and concepts, stored in an M-way array ("data tensor"), may be analyzed either by artificial neural networks or tensor methods. Operations on data tensors can be expressed in terms of matrix multiplication and the Kronecker product.  The computation of gradients, a crucial aspect of backpropagation, can be performed using software libraries such as PyTorch and TensorFlow.
+
+Computations are often performed on graphics processing units (GPUs) using CUDA, and on dedicated hardware such as Google's Tensor Processing Unit or Nvidia's Tensor core. These developments have greatly accelerated neural network architectures, and increased the size and complexity of models that can be trained.
+
+History
+
+A tensor is by definition a multilinear map. In mathematics, this may express a multilinear relationship between sets of algebraic objects. In physics, tensor fields, considered as tensors at each point in space, are useful in expressing mechanics such as stress or elasticity. In machine learning, the exact use of tensors depends on the statistical approach being used.
+
+In 2001, the field of signal processing and statistics were making use of tensor methods. Pierre Comon surveys the early adoption of tensor methods in the fields of telecommunications, radio surveillance, chemometrics and sensor processing. Linear tensor rank methods (such as, Parafac/CANDECOMP) analyzed M-way arrays ("data tensors") composed of higher order statistics that were employed in blind source separation problems to compute a linear model of the data. He noted several early limitations in determining the tensor rank and efficient tensor rank decomposition.
+
+In the early 2000s, multilinear tensor methods crossed over into computer vision, computer graphics and machine learning with papers by Vasilescu  or in collaboration with Terzopoulos, such as Human Motion Signatures, TensorFaces and Multilinear Projection.  Multilinear algebra, the algebra of higher-order tensors, is a suitable and transparent framework for analyzing the multifactor structure of an ensemble of observations and for addressing the difficult problem of disentangling the causal factors based on second order or higher order statistics associated with each causal factor.
+
+Tensor (multilinear) factor analysis disentangles and reduces the influence of different causal factors with multilinear subspace learning.
+
+When treating an image or a video as a 2- or 3-way array, i.e., "data matrix/tensor",  tensor methods reduce spatial or time redundancies as demonstrated by Wang and Ahuja.
+
+Yoshua Bengio,
+
+Geoff Hinton
+
+and their collaborators briefly discuss the relationship between deep neural networks and tensor factor analysis From 2014 to 2015, tensor methods become more common in convolutional neural networks (CNNs). Tensor methods organize neural network weights in a "data tensor", analyze and reduce the number of neural network weights.  Lebedev et al. accelerated CNN networks for character classification (the recognition of letters and digits in images) by using 4D kernel tensors.
+
+Definition
+
+Let \mathbb F be a field such as the real numbers \mathbb R or the complex numbers \mathbb C. A tensor {\mathcal T} \in {\mathbb F}^{I_0 \times I_2 \times \ldots \times I_C}  is a multilinear transformation from a set of domain vector spaces to a range vector space:
+
+{\mathcal T}:\{{\mathbb F}^{I_1} \times {\mathbb F}^{I_2} \times \ldots {\mathbb F}^{I_C}\}\mapsto{\mathbb F}^{I_0}
+
+Here, C and I_0, I_1, \ldots, I_C are positive integers, and (C+1) is the number of modes of a tensor (also known as the number of ways of a multi-way array). The dimensionality of mode c is I_c, for 0\le c\le C .
+
+In statistics and machine learning, an image is vectorized when viewed as a single observation, and a collection of vectorized images is organized as a "data tensor".  For example, a set of facial images \{{\mathbb d}_{i_p,i_e,i_l,i_v}\in {\mathbb R}^{I_X}\} with I_X pixels that are the consequences of multiple causal factors, such as a facial geometry i_p (1\le i_p\le I_P), an expression i_e (1\le i_e\le I_E), an illumination condition i_l (1\le i_l\le I_L), and a viewing condition i_v (1\le i_v\le I_V) may be organized into a data tensor (ie. multiway array) {\mathcal D}\in {\mathbb R}^{I_X\times I_P \times I_E\times I_L \times V} where I_P  are the total number of facial geometries,  I_E  are the total number of expressions,   I_L  are the total number of illumination conditions, and  I_V  are the total number of viewing conditions.  Tensor factorizations methods such as TensorFaces and multilinear (tensor) independent component analysis factorizes the data tensor into a set of  vector spaces that span the causal factor representations, where an image is the result of tensor transformation {\mathcal T} that maps a set of causal factor representations to the pixel space.
+
+[[File:M mode svd image as matrix.png|thumb|An image, which is a 2-way array, is represented in terms of the image column space,image row space, and the normalized PCA coefficients.  These spaces are computed be factorizing a data tensor composed of a collection of images that are treated as a 2-way or 3-way array
+
+\mathcal{Y} = \mathcal{A}[(Cg) \odot (Bd)],
+
+where \mathcal{A}, \mathcal{B} and \mathcal{C} are the inverse transform, data and kernel. The derivation is more complex when the filtering kernel also includes a non-linear activation function such as sigmoid or ReLU.
+
+The hidden weights of the convolution layer are the parameters to the filter. These can be reduced with a pooling layer which reduces the resolution (size) of the data, and can also be expressed as a tensor operation.
+
+Tensor factorization
+
+An important contribution of tensors in machine learning is the ability to factorize tensors to decompose data into constituent factors or reduce the learned parameters. Data tensor modeling techniques stem from the linear tensor decomposition (CANDECOMP/Parafac decomposition) and the multilinear tensor decompositions (Tucker).
+
+Tucker decomposition
+
+Tucker decomposition, for example, takes a 3-way array \mathcal{X} \in \mathbb{R}^{I \times J \times K}
+
+and decomposes the tensor into three matrices \mathcal{A,B,C} and a smaller tensor \mathcal{G}. The shape of the matrices and new tensor are such that the total number of elements is reduced. The new tensors have shapes
+
+\mathcal{A} \in \mathbb{R}^{I \times P},
+
+\mathcal{B} \in \mathbb{R}^{J \times Q},
+
+\mathcal{C} \in \mathbb{R}^{K \times R},
+
+\mathcal{G} \in \mathbb{R}^{P \times Q \times R}.
+
+Then the original tensor can be expressed as the tensor product of these four tensors:
+
+\mathcal{X} = \mathcal{G} \times \mathcal{A} \times \mathcal{B} \times \mathcal{C}.
+
+In the example shown in the figure, the dimensions of the tensors are
+
+\mathcal{X}: I=8, J=6, K=3, \mathcal{A}: I=8, P=5, \mathcal{B}: J=6, Q=4, \mathcal{C}: K=3, R=2, \mathcal{G}: P=5, Q=4, R=2.
+
+The total number of elements in the Tucker factorization is
+
+|\mathcal{A}|+|\mathcal{B}|+|\mathcal{C}|+|\mathcal{G}| =
+
+(I \times P) + (J \times Q) + (K \times R) + (P \times Q \times R) = 8\times5 + 6\times4 + 3\times2 + 5\times4\times2 = 110.
+
+The number of elements in the original \mathcal{X} is 144, resulting in a data reduction from 144 down to 110 elements, a reduction of 23% in parameters or data size. For much larger initial tensors, and depending on the rank (redundancy) of the tensor, the gains can be more significant.
+
+The work of Rabanser et al. provides an introduction to tensors with more details on the extension of Tucker decomposition to N-dimensions beyond the mode-3 example given here.
+
+Tensor trains
+
+Another technique for decomposing tensors rewrites the initial tensor as a sequence (train) of smaller sized tensors. A tensor-train (TT) is a sequence of tensors of reduced rank, called canonical factors. The original tensor can be expressed as the sum-product of the sequence.
+
+\mathcal{X} = \mathcal{G_1} \mathcal{G_2} \mathcal{G_3} .. \mathcal{G_d}
+
+Developed in 2011 by Ivan Oseledts, the author observes that Tucker decomposition is "suitable for small dimensions, especially for the three-dimensional case. For large d it is not suitable." Thus tensor-trains can be used to factorize larger tensors in higher dimensions.
+
+Tensor graphs
+
+The unified data architecture and automatic differentiation of tensors has enabled higher-level designs of machine learning in the form of tensor graphs. This leads to new architectures, such as tensor-graph convolutional networks (TGCN), which identify highly non-linear associations in data, combine multiple relations, and scale gracefully, while remaining robust and performant.
+
+These developments are impacting all areas of machine learning, such as text mining and clustering, time varying data, and neural networks wherein the input data is a social graph and the data changes dynamically.
+
+Hardware
+
+Tensors provide a unified way to train neural networks for more complex data sets. However, training is expensive to compute on classical CPU hardware.
+
+In 2014, Nvidia developed cuDNN, CUDA Deep Neural Network, a library for a set of optimized primitives written in the parallel CUDA language. CUDA and thus cuDNN run on dedicated GPUs that implement unified massive parallelism in hardware. These GPUs were not yet dedicated chips for tensors, but rather existing hardware adapted for parallel computation in machine learning.
+
+In the period 2015–2017 Google invented the Tensor Processing Unit (TPU). TPUs are dedicated, fixed function hardware units that specialize in the matrix multiplications needed for tensor products. Specifically, they implement an array of 65,536 multiply units that can perform a 256x256 matrix sum-product in just one global instruction cycle.
+
+Later in 2017, Nvidia released its own Tensor Core with the Volta GPU architecture. Each Tensor Core is a microunit that can perform a 4x4 matrix sum-product. There are eight tensor cores for each shared memory (SM) block. The first GV100 GPU card has 108 SMs resulting in 672 tensor cores. This device accelerated machine learning by 12x over the previous Tesla GPUs. The number of tensor cores scales as the number of cores and SM units continue to grow in each new generation of cards.
+
+The development of GPU hardware, combined with the unified architecture of tensor cores, has enabled the training of much larger neural networks. In 2022, the largest neural network was Google's PaLM with 540 billion learned parameters (network weights) (the older GPT-3 language model has over 175 billion learned parameters that produces human-like text; size isn't everything, Stanford's much smaller 2023 Alpaca model claims to be better, having learned from Meta/Facebook's 2023 model LLaMA, the smaller 7 billion parameter variant). The widely popular chatbot ChatGPT is built on top of GPT-3.5 (and after an update GPT-4) using supervised and reinforcement learning.
+
+References
+
+Category:Machine learning
+
+Category:Tensors

@@ -1,0 +1,117 @@
+{{For|similar uses|Hidden variable (disambiguation)Hidden variable}}
+
+In statistics, latent variables (from Latin: present participle of  ) are variables that can only be inferred indirectly through a mathematical model from other observable variables that can be directly observed or measured. Such latent variable models are used in many disciplines, including engineering, medicine, ecology, physics, machine learning/artificial intelligence, natural language processing, bioinformatics, chemometrics, demography, economics, management, political science, psychology and the social sciences.
+
+Latent variables may correspond to aspects of physical reality. These could in principle be measured, but may not be for practical reasons. Among the earliest expressions of this idea is Francis Bacon's polemic the Novum Organum, itself a challenge to the more traditional logic expressed in Aristotle's Organon:
+
+{{quote|But the latent process of which we speak, is far from being obvious to men’s minds, beset as they now are. For we mean not the measures, symptoms, or degrees of any process which can be exhibited in the bodies themselves, but simply a continued process, which, for the most part, escapes the observation of the senses.|Francis Bacon, Novum Organum
+
+}}
+
+In this situation, the term hidden variables is commonly used, reflecting the fact that the variables are meaningful, but not observable. Other latent variables correspond to abstract concepts, like categories, behavioral or mental states, or data structures. The terms hypothetical variables or hypothetical constructs may be used in these situations.
+
+The use of latent variables can serve to reduce the dimensionality of data. Many observable variables can be aggregated in a model to represent an underlying concept, making it easier to understand the data. In this sense, they serve a function similar to that of scientific theories. At the same time, latent variables link observable "sub-symbolic" data in the real world to symbolic data in the modeled world.
+
+Examples
+
+.]]
+
+Psychology
+
+Latent variables, as created by factor analytic methods, generally represent "shared" variance, or the degree to which variables "move" together. Variables that have no correlation cannot result in a latent construct based on the common factor model.
+
+The "Big Five personality traits" have been inferred using factor analysis.
+
+extraversion
+
+spatial ability
+
+Spearman's g, or the general intelligence factor in psychometrics
+
+Economics
+
+Examples of latent variables from the field of economics include quality of life, business confidence, morale, happiness and conservatism: these are all variables which cannot be measured directly. However, by linking these latent variables to other, observable variables, the values of the latent variables can be inferred from measurements of the observable variables. Quality of life is a latent variable which cannot be measured directly, so observable variables are used to infer quality of life. Observable variables to measure quality of life include wealth, employment, environment, physical and mental health, education, recreation and leisure time, and social belonging.
+
+Medicine
+
+Latent-variable methodology is used in many branches of medicine. A class of problems that naturally lend themselves to latent variables approaches are longitudinal studies where the time scale (e.g. age of participant or time since study baseline) is not synchronized with the trait being studied. For such studies, an unobserved time scale that is synchronized with the trait being studied can be modeled as a transformation of the observed time scale using latent variables. Examples of this include disease progression modeling and modeling of growth (see box).
+
+Inferring latent variables
+
+There exists a range of different model classes and methodology that make use of latent variables and allow inference in the presence of latent variables.  Models include:
+
+linear mixed-effects models and nonlinear mixed-effects models
+
+Hidden Markov models
+
+Factor analysis
+
+Item response theory
+
+Analysis and inference methods include:
+
+Principal component analysis
+
+Instrumented principal component analysis
+
+Partial least squares regression
+
+Latent semantic analysis and probabilistic latent semantic analysis
+
+EM algorithms
+
+Metropolis–Hastings algorithm
+
+Bayesian algorithms and methods
+
+Bayesian statistics is often used for inferring latent variables.
+
+Latent Dirichlet allocation
+
+The Chinese restaurant process is often used to provide a prior distribution over assignments of objects to latent categories.
+
+The Indian buffet process is often used to provide  a prior distribution over assignments of latent binary features to objects.
+
+See also
+
+Confounding
+
+Dependent and independent variables
+
+Errors-in-variables models
+
+Evidence lower bound
+
+Factor analysis
+
+Intervening variable
+
+Latent variable model
+
+Item response theory
+
+Partial least squares path modeling
+
+Partial least squares regression
+
+Proxy (statistics)
+
+Rasch model
+
+Structural equation modeling
+
+References
+
+Further reading
+
+Category:Social research
+
+Category:Bayesian networks
+
+Category:Econometric modeling
+
+Latent variable
+
+Category:Psychometrics
+
+de:Latente Variable

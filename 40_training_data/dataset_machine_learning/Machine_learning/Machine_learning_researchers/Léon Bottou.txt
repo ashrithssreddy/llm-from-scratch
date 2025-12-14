@@ -1,0 +1,91 @@
+{{Infobox scientist
+
+name              = Léon Bottou
+
+image             = SD 2025 - Léon Bottou 02.jpg
+
+image_size        =
+
+image_upright     =
+
+alt               =
+
+caption           = Bottou in 2025
+
+birth_date        =
+
+birth_place       = Saint-Germain-du-Teil, Lozère
+
+death_date        =
+
+death_place       =
+
+nationality       = French
+
+fields            = Machine learning
+
+workplaces        = Facebook Research
+
+alma_mater        = École PolytechniqueÉcole Normale SupérieureUniversité Paris-Sud
+
+thesis_title      = Une Approche théorique de l'Apprentissage Connexionniste: Applications à la Reconnaissance de la Parole
+
+thesis_url        = https://leon.bottou.org/papers/bottou-91a
+
+thesis_year       = 1991
+
+doctoral_advisor  =
+
+doctoral_students =
+
+known_for         = DjVu
+
+awards            = Blavatnik Award for Young Scientists
+
+spouse            =
+
+}}
+
+Léon-Yves Bottou (; born 1965) is a researcher best known for his work in machine learning and data compression. His work presents stochastic gradient descent as a fundamental learning algorithm. He is also one of the main creators of the DjVu image compression technology (together with Yann LeCun and Patrick Haffner), and the maintainer of DjVuLibre, the open source implementation of DjVu. He is the original developer of the Lush programming language.
+
+Life
+
+Léon Bottou was born in France in 1965. He obtained the Diplôme d'Ingénieur from École Polytechnique in 1987, a Magistère de Mathématiques Fondamentales et Appliquées et d’Informatique from École Normale Supérieure in 1988, a Diplôme d'Études Approndies in Computer Science in 1988, in 1988, and a PhD from Université Paris-Sud in 1991.
+
+In 1988, in collaboration with Yann LeCun, he published SN, a software package for simulating artificial neural networks. His master's thesis concerned using Time Delay Neural Networks for speech recognition. He then joined the Adaptive Systems Research Department at AT&T Bell Laboratories in Holmdel, New Jersey, where he collaborated with Vladimir Vapnik on local learning algorithms.
+
+in 1992, he returned to France and founded Neuristique S.A., a company that produced machine learning tools and one of the first data mining software packages, including Lush, an object-oriented programming language based on C and Lispdesigned for training and using large-scale neural networks. In 1995, he returned to Bell Laboratories, where he developed a number of new machine learning methods, such as Graph Transformer Networks (similar to conditional random field), and applied them to handwriting recognition and OCR. The bank check recognition system that he helped develop was widely deployed by NCR and other companies, reading over 10% of all the checks in the US in the late 1990s and early 2000s.
+
+In 1996, he joined AT&T Labs and worked primarily on the DjVu image compression technology, that is used by some websites, notably the Internet Archive, to distribute scanned documents. Between 2002 and 2010, he was a research scientist at NEC Laboratories in Princeton, New Jersey, where he focused on the theory and practice of machine learning with large-scale datasets, on-line learning, and stochastic optimization methods. He developed the open source software LaSVM for fast large-scale support vector machine, and stochastic gradient descent software for training linear SVM and Conditional Random Fields. In 2010 he joined the Microsoft adCenter in Redmond, Washington, and in 2012 became a Principal Researcher at Microsoft Research in New York City. In March 2015 he joined Facebook Artificial Intelligence Research, also in New York City, as a research lead.
+
+His work in gradient descent argued that both stochastic gradient descent and batch gradient descent reach similar levels of loss with the same number of training samples, but SGD is faster when running on large datasets. He also argued that second-order gradient descent methods, such as quasi-Newton methods, can be beneficial compared to plain SGD. See (Bottou et al 2018) for a review.
+
+He was program chair of the 2013 Conference on Neural Information Processing Systems and the 2009 International Conference on Machine Learning. In 2007, he was received one of the first Blavatnik Awards for Young Scientists from the Blavatnik Family Foundation and the New York Academy of Sciences.
+
+References
+
+External links
+
+Léon Bottou's personal website
+
+Category:1965 births
+
+Category:Living people
+
+Category:Machine learning researchers
+
+Category:French computer scientists
+
+Category:20th-century French mathematicians
+
+Category:21st-century French mathematicians
+
+Category:French statisticians
+
+Category:Free software programmers
+
+Category:Scientists at Bell Labs
+
+Category:École Polytechnique alumni
+
+Category:École Normale Supérieure alumni

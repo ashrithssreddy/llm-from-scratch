@@ -1,0 +1,119 @@
+{{Infobox scientist
+
+name        =
+
+native_name =
+
+native_name_lang =
+
+image       =
+
+alt         =
+
+caption     =
+
+birth_date  =
+
+birth_place =
+
+death_date  =
+
+death_place =
+
+death_cause =
+
+resting_place =
+
+resting_place_coordinates =
+
+other_names =
+
+residence   =
+
+citizenship =
+
+nationality =
+
+fields      =
+
+workplaces  = University of North Carolina at Chapel Hill
+
+patrons     =
+
+alma_mater  = University of California, Berkeley (PhD)
+
+thesis_title = Exploiting Words and Pictures
+
+thesis_url  =  http://www.tamaraberg.com/papers/thesis.pdf
+
+thesis_year =  2007
+
+doctoral_advisor = David A. Forsyth
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students =
+
+known_for   =
+
+influences  =
+
+influenced  =
+
+awards      =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+spouse      =
+
+partner     =
+
+children    =
+
+signature   =
+
+signature_alt =
+
+website     =
+
+footnotes   =
+
+}}
+
+Tamara Lee Berg is a tenured associate professor at the University of North Carolina at Chapel Hill and a research scientist manager at Facebook AML/FAIR.
+
+Education
+
+Berg obtained her PhD in computer science from the University of California, Berkeley in 2007 as a member of the Berkeley Computer Vision Group. She was an assistant professor at Stony Brook University from 2008 to 2013 before joining University of North Carolina Chapel Hill in 2013.
+
+Selected awards and honours
+
+2019 Mark Everingham Prize
+
+2013 Marr Prize at the International Conference on Computer Vision
+
+2011 National Science Foundation Career Award
+
+Personal life
+
+Berg is married to fellow computer vision researcher Alexander Berg.
+
+References
+
+Category:American women academics
+
+Category:Computer vision researchers
+
+Category:University of North Carolina at Chapel Hill faculty
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:Natural language processing researchers
+
+Category:21st-century American women

@@ -1,0 +1,185 @@
+In machine learning, a neural scaling law is an empirical scaling law that describes how neural network performance changes as key factors are scaled up or down. These factors typically include the number of parameters, training dataset size, and training cost. Some models also exhibit performance gains by scaling inference through increased test-time compute (TTC), extending neural scaling laws beyond training to the deployment phase. With sparse models, during inference, only a fraction of their parameters are used. In comparison, most other kinds of neural networks, such as transformer models, always use all their parameters during inference.
+
+Size of the training dataset
+
+The size of the training dataset is usually quantified by the number of data points within it. Larger training datasets are typically preferred, as they provide a richer and more diverse source of information from which the model can learn. This can lead to improved generalization performance when the model is applied to new, unseen data. However, increasing the size of the training dataset also increases the computational resources and time required for model training.
+
+With the "pretrain, then finetune" method used for most large language models, there are two kinds of training dataset: the pretraining dataset and the finetuning dataset. Their sizes have different effects on model performance. Generally, the finetuning dataset is less than 1% the size of pretraining dataset.
+
+In some cases, a small amount of high quality data suffices for finetuning, and more data does not necessarily improve performance. performance vs AI scale as a sigmoid]]
+
+.
+
+Performance can be improved by using more data, larger models, different training algorithms, regularizing the model to prevent overfitting, and early stopping using a validation set.
+
+When the performance is a number bounded within the range of [0, 1], such as accuracy, precision, etc., it often scales as a sigmoid function of cost, as seen in the figures.
+
+Examples
+
+(Hestness, Narang, et al, 2017)
+
+The 2017 paper studied statistical relations between C, N, D, L over a wide range of values and found similar scaling laws, over the range of N \in [10^3, 10^9], C\in [10^{12}, 10^{21}], and over multiple modalities (text, video, image, text to image, etc.).).
+
+Chinchilla scaling (Hoffmann, et al, 2022)
+
+One particular scaling law ("Chinchilla scaling") states that, for a large language model (LLM) autoregressively trained for one epoch, with a cosine learning rate schedule, we have:\begin{cases}
+
+C = C_0 ND\\
+
+L = \frac{A}{N^\alpha} + \frac{B}{D^{\beta}} + L_0
+
+\end{cases}where the variables are
+
+C is the cost of training the model, in FLOPS.
+
+N is the number of parameters in the model.
+
+D is the number of tokens in the training set.
+
+L is the average negative log-likelihood loss per token (nats/token), achieved by the trained LLM on the test dataset.
+
+L_0 represents the loss of an ideal generative process on the test data
+
+\frac{A}{N^\alpha} captures the fact that a Transformer language model with N parameters underperforms the ideal generative process
+
+\frac{B}{D^\beta} captures the fact that the model trained on D tokens underperforms the ideal generative process
+
+and the statistical parameters are
+
+C_0 = 6, meaning that it costs 6 FLOPs per parameter to train on one token. This is estimated by Kaplan et al. Note that training cost is much higher than inference cost, as training entails both forward and backward passes, whereas inference costs 1 to 2 FLOPs per parameter to infer on one token.
+
+\alpha = 0.34, \beta = 0.28, A = 406.4, B = 410.7, L_0 = 1.69.
+
+Although Besiroglu et al. claims that the statistical estimation is slightly off, and should be \alpha = 0.35, \beta = 0.37, A = 482.01, B = 2085.43, L_0 = 1.82.
+
+The statistical laws were fitted over experimental data with N\in [7\times 10^7, 1.6 \times 10^{10}], D \in [5\times 10^9, 5\times 10^{11}], C \in [10^{18}, 10^{24}].
+
+Since there are 4 variables related by 2 equations, imposing 1 additional constraint and 1 additional optimization objective allows us to solve for all four variables. In particular, for any fixed C, we can uniquely solve for all 4 variables that minimizes L. This provides us with the optimal D_{opt}(C), N_{opt}(C) for any fixed C:N_{o p t}(C)=G\left(\frac{C}{6}\right)^a, \quad D_{o p t}(C)=G^{-1}\left(\frac{C}{6}\right)^b, \quad \text { where } \quad G=\left(\frac{\alpha A}{\beta B}\right)^{\frac{1}{\alpha+\beta}}, \quad a=\frac{\beta}{\alpha+\beta} \text {, and } b=\frac{\alpha}{\alpha+\beta} \text {. }Plugging in the numerical values, we obtain the "Chinchilla efficient" model size and training dataset size, as well as the test loss achievable:\begin{cases}
+
+N_{opt}(C) = 0.6 \; C^{0.45} \\
+
+D_{opt}(C) = 0.3 \; C^{0.55} \\
+
+L_{opt}(C) = 1070 \; C^{-0.154} + 1.7
+
+\end{cases}Similarly, we may find the optimal training dataset size and training compute budget for any fixed model parameter size, and so on.
+
+There are other estimates for "Chinchilla efficient" model size and training dataset size. The above is based on a statistical model of L = \frac{A}{N^\alpha} + \frac{B}{D^{\beta}} + L_0. One can also directly fit a statistical law for D_{opt}(C), N_{opt}(C) without going through the detour, for which one obtains:\begin{cases}
+
+N_{opt}(C) = 0.1 \; C^{0.5}\\
+
+D_{opt}(C) = 1.7 \; C^{0.5}
+
+\end{cases}or as tabulated:
+
+Discrepancy
+
+The Chinchilla scaling law analysis for training transformer language models suggests that for a given training compute budget (C), to achieve the minimal pretraining loss for that budget, the number of model parameters (N) and the number of training tokens (D) should be scaled in equal proportions, N_{opt}(C) \propto C^{0.5}, D_{opt}(C) \propto C^{0.5}.
+
+This conclusion differs from analysis conducted by Kaplan et al.,
+
+did not count the parameters in the token embedding layer, which when analyzed at smaller model sizes leads to biased coefficients;
+
+studied smaller models than the Chinchilla group, magnifying the effect;
+
+assumed that L_\infty = 0.
+
+Secondary effects also arise due to differences in hyperparameter tuning and learning rate schedules. Kaplan et al.:
+
+used a warmup schedule that was too long for smaller models, making them appear less efficient;
+
+did not fully tuning optimization hyperparameters.
+
+Beyond Chinchilla scaling
+
+As Chinchilla scaling has been the reference point for many large-scaling training runs, there had been a concurrent effort to go "beyond Chinchilla scaling", meaning to modify some of the training pipeline in order to obtain the same loss with less effort, or deliberately train for longer than what is "Chinchilla optimal".
+
+Usually, the goal is to make the scaling law exponent larger, which means the same loss can be trained for much less compute. For instance, filtering data can make the scaling law exponent larger.
+
+Another strand of research studies how to deal with limited data, as according to Chinchilla scaling laws, the training dataset size for the largest language models already approaches what is available on the internet. found that augmenting the dataset with a mix of "denoising objectives" constructed from the dataset improves performance. studies optimal scaling when all available data is already exhausted (such as in rare languages), so one must train multiple epoches over the same dataset (whereas Chinchilla scaling requires only one epoch). The Phi series of small language models were trained on textbook-like data generated by large language models, for which data is only limited by amount of compute available.
+
+Chinchilla optimality was defined as "optimal for training compute", whereas in actual production-quality models, there will be a lot of inference after training is complete. "Overtraining" during training means better performance during inference. LLaMA models were overtrained for this reason. Subsequent studies discovered scaling laws in the overtraining regime, for dataset sizes up to 32x more than Chinchilla-optimal.
+
+Broken neural scaling laws (BNSL)
+
+A 2022 analysis found that many scaling behaviors of artificial neural networks follow a smoothly broken power law functional form:
+
+y =  a + \bigg(bx^{-c_0}\bigg) \prod_{i=1}^n \left(1 + \left(\frac{x}{d_i}\right)^{1/f_i}\right)^{-c_i * f_i}
+
+in which x refers to the quantity being scaled (i.e. C, N, D, number of training steps, number of inference steps, or model input size) and y refers to the downstream (or upstream) performance evaluation metric of interest (e.g. prediction error, cross entropy, calibration error, AUROC, BLEU score percentage, F1 score, reward, Elo rating, solve rate, or FID score) in zero-shot, prompted, or fine-tuned settings. The parameters a, b, c_0, c_1 ... c_n, d_1 ...  d_n, f_1 ... f_n are found by statistical fitting.
+
+On a log–log plot, when f_i is not too large and a is subtracted out from the y-axis, this functional form looks like a series of linear segments connected by arcs; the n transitions between the segments are called "breaks", hence the name broken neural scaling laws (BNSL).
+
+The scenarios in which the scaling behaviors of artificial neural networks were found to follow this functional form include large-scale vision, language, audio, video, diffusion, generative modeling, multimodal learning, contrastive learning, AI alignment, AI capabilities, robotics, out-of-distribution (OOD) generalization, continual learning, transfer learning, uncertainty estimation / calibration, out-of-distribution detection, adversarial robustness, distillation, sparsity, retrieval, quantization, pruning, fairness, molecules, computer programming/coding, math word problems, arithmetic, emergent abilities, double descent, supervised learning, unsupervised/self-supervised learning, and reinforcement learning (single agent and multi-agent).
+
+The architectures for which the scaling behaviors of artificial neural networks were found to follow this functional form include residual neural networks, transformers, MLPs, MLP-mixers, recurrent neural networks, convolutional neural networks, graph neural networks, U-nets, encoder-decoder (and encoder-only) (and decoder-only) models, ensembles (and non-ensembles), MoE (mixture of experts) (and non-MoE) models, and sparse pruned (and non-sparse unpruned) models.
+
+Inference scaling
+
+Other than scaling up training compute, one can also scale up inference compute (or "test-time compute"). As an example, the Elo rating of AlphaGo improves steadily as it is allowed to spend more time on its Monte Carlo Tree Search per play. For AlphaGo Zero, increasing Elo by 120 requires either 2x model size and training, or 2x test-time search. Similarly, a language model for solving competition-level coding challenges, AlphaCode, consistently improved (log-linearly) in performance with more search time.
+
+For Hex, 10x training-time compute trades for 15x test-time compute.
+
+One method for scaling up test-time compute is process-based supervision, where a model generates a step-by-step reasoning chain to answer a question, and another model (either human or AI) provides a reward score on some of the intermediate steps, not just the final answer. Process-based supervision can be scaled arbitrarily by using synthetic reward score without another model, for example, by running Monte Carlo rollouts and scoring each step in the reasoning according to how likely it leads to the right answer. Another method is by revision models, which are models trained to solve a problem multiple times, each time revising the previous attempt.
+
+Other examples
+
+Vision transformers
+
+Vision transformers, similar to language transformers, exhibit scaling laws. A 2022 research trained vision transformers, with parameter counts N\in [5\times 10^6, 2\times 10^9], on image sets of sizes D \in [3\times 10^{7}, 3\times 10^{9}], for computing C\in [0.2, 10^4]  (in units of TPUv3-core-days).
+
+After training the model, it is finetuned on ImageNet training set. Let L be the error probability of the finetuned model classifying ImageNet test set. They found \min_{N, D} L = 0.09 + \frac {0.26}{(C + 0.01)^{0.35}}.
+
+Neural machine translation
+
+Ghorbani, Behrooz et al. studied scaling laws for neural machine translation (specifically, English as source, and German as target) in encoder-decoder Transformer models, trained until convergence on the same datasets (thus they did not fit scaling laws for computing cost C or dataset size D). They varied N \in [10^8, 3.5 \times 10^9] They found three results:
+
+L is a scaling law function of N_E, N_D, where N_E, N_D are encoder and decoder parameter count. It is not simply a function of total parameter count N = N_E + N_D. The function has form L\left(N_e, N_d\right)=\alpha\left(\frac{\bar{N}_e}{N_e}\right)^{p_e}\left(\frac{\bar{N}_d}{N_d}\right)^{p_d}+L_{\infty}, where \alpha, p_e, p_d, L_{\infty}, \bar N_e, \bar N_d are fitted parameters. They found that N_d/N \approx 0.55 minimizes loss if N is held fixed.
+
+L "saturates" (that is, it reaches L_\infty) for smaller models when the training and testing datasets are "source-natural" than "target-natural". A "source-natural" data point means a pair of English-German sentences, and the model is asked to translate the English sentence into German, and the English sentence is written by a natural English writer, while the German sentence is translated from the English sentence by a machine translator. To construct the two kinds of datasets, the authors collected natural English and German sentences online, then used machine translation to generate their translations.
+
+As models grow larger, models trained on source-original datasets can achieve low loss but bad BLEU score. In contrast, models trained on target-original datasets achieve low loss and good BLEU score in tandem (Figure 10, 11  trained Transformers for machine translations with sizes N \in [4 \times 10^5 , 5.6 \times 10^7] on dataset sizes D \in [6\times 10^5, 6 \times 10^9]. They found the Kaplan et al. (2020) studied scaling laws for transfer learning in language models. They trained a family of Transformers in three ways:
+
+pretraining on English, finetuning on Python
+
+pretraining on an equal mix of English and Python, finetuning on Python
+
+training on Python
+
+The idea is that pretraining on English should help the model achieve low loss on a test set of Python text. Suppose the model has parameter count N, and after being finetuned on D_F Python tokens, it achieves some loss L. We say that its "transferred token count" is D_T, if another model with the same N achieves the same L after training on D_F + D_T Python tokens.
+
+They found D_T=1.9 e 4\left(D_F\right)^{.18}(N)^{.38} for pretraining on English text, and D_T=2.1 e 5\left(D_F\right)^{.096}(N)^{.38} for pretraining on English and non-Python code.
+
+Precision
+
+Kumar et al. study scaling laws for numerical precision in the training of language models. They train a family of language models with weights, activations, and KV cache in varying numerical precision in both integer and floating-point type to measure the effects on loss as a function of precision. For training, their scaling law accounts for lower precision by wrapping the effects of precision into an overall "effective parameter count" that governs loss scaling, using the parameterization N \mapsto N_\text{eff}(P) = N(1-e^{-P/\gamma}). This illustrates how training in lower precision degrades performance by reducing the true capacity of the model in a manner that varies exponentially with bits.
+
+For inference, they find that extreme overtraining of language models past Chinchilla-optimality can lead to models being more sensitive to quantization, a standard technique for efficient deep learning. This is demonstrated by observing that the degradation in loss due to weight quantization increases as an approximate power law in the token/parameter ratio D/N seen during pretraining, so that models pretrained on extreme token budgets can perform worse in terms of validation loss than those trained on more modest token budgets if post-training quantization is applied. Other work examining the effects of overtraining include Sardana et al. and Gadre et al.
+
+Densing laws
+
+Xiao et al. considered the parameter efficiency ("density") of models over time. The idea is that over time, researchers would discover models that use their parameters more efficiently, in that models with the same performance can have fewer parameters.
+
+A model can have an actual parameter count N, defined as the actual number of parameters in the model, and an "effective" parameter count \hat N, defined as how many parameters it would have taken a previous well-known model to reach he same performance on some benchmarks, such as MMLU. \hat N is not measured directly, but rather by measuring the actual model performance S, then plugging it back to a previously fitted scaling law, such as the Chinchilla scaling law, to obtain what \hat N would be required to reach that performance S, according to that previously fitted scaling laws.
+
+A densing law states that \ln \left(\frac{\hat N}{N}\right)_{max} = At + B, where t is real-world time, measured in days.
+
+See also
+
+Large language model
+
+Foundation model
+
+Artificial general intelligence
+
+References
+
+Category:Artificial neural networks
+
+Category:Artificial intelligence
+
+Category:Deep learning
+
+Category:Power laws
+
+Category:Statistical laws

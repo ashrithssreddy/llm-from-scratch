@@ -1,0 +1,173 @@
+{{multiple issues|
+
+}}
+
+{{Infobox programming language
+
+name                   = bdrp
+
+logo                   =
+
+paradigm               = SPMD and MPMD
+
+released               =
+
+designer               = Wei-Chen Chen, George Ostrouchov, Pragneshkumar Patel, and Drew Schmidt
+
+developer              = pbdR Core Team
+
+latest_test_version    = Through GitHub at RBigData
+
+typing                 = Dynamic
+
+influenced_by          = R, C, Fortran, MPI, and ØMQ
+
+operating_system       = Cross-platform
+
+license                = General Public License and Mozilla Public License
+
+website                =
+
+}}
+
+Programming with Big Data in R (pbdR) is a series of R packages and an environment for statistical computing with big data by using high-performance statistical computation. The pbdR uses the same programming language as R with S3/S4 classes and methods which is used among statisticians and data miners for developing statistical software. The significant difference between pbdR and R code is that pbdR mainly focuses on distributed memory systems, where data are distributed across several processors and analyzed in a batch mode, while communications between processors are based on MPI that is easily used in large high-performance computing (HPC) systems. R system mainly focuses on single multi-core machines for data analysis via an interactive mode such as GUI interface.
+
+Two main implementations in R using MPI are Rmpi and pbdMPI of pbdR.
+
+The pbdR built on pbdMPI uses SPMD parallelism where every processor is considered as worker and owns parts of data. The SPMD parallelism introduced in mid 1980 is particularly efficient in homogeneous computing environments for large data, for example, performing singular value decomposition on a large matrix, or performing clustering analysis on high-dimensional large data. On the other hand, there is no restriction to use manager/workers parallelism in SPMD parallelism environment.
+
+The Rmpi
+
+Package design
+
+Programming with pbdR requires usage of various packages developed by pbdR core team. Packages developed are the following.
+
+Among these packages, pbdMPI provides wrapper functions to MPI library, and it also produces a shared library and a configuration file for MPI environments. All other packages rely on this configuration for installation and library loading that avoids difficulty of library linking and compiling. All other packages can directly use MPI functions easily.
+
+pbdMPI --- an efficient interface to MPI either OpenMPI or MPICH2 with a focus on Single Program/Multiple Data (SPMD) parallel programming style
+
+pbdSLAP --- bundles scalable dense linear algebra libraries in double precision for R, based on ScaLAPACK version 2.0.2 which includes several scalable linear algebra packages (namely BLACS, PBLAS, and ScaLAPACK).
+
+pbdNCDF4 --- interface to Parallel Unidata NetCDF4 format data files
+
+pbdBASE --- low-level ScaLAPACK codes and wrappers
+
+pbdDMAT --- distributed matrix classes and computational methods, with a focus on linear algebra and statistics
+
+pbdDEMO --- set of package demonstrations and examples, and this unifying vignette
+
+pmclust --- parallel model-based clustering using pbdR
+
+pbdPROF --- profiling package for MPI codes and visualization of parsed stats
+
+pbdZMQ --- interface to ØMQ
+
+remoter --- R client with remote R servers
+
+pbdCS --- pbdR client with remote pbdR servers
+
+pbdRPC --- remote procedure call
+
+kazaam --- very tall and skinny distributed matrices
+
+pbdML --- machine learning toolbox
+
+Among those packages, the pbdDEMO package is a collection of 20+ package demos which offer example uses of the various pbdR packages, and contains a vignette that offers detailed explanations for the demos and provides some mathematical or statistical insight.
+
+Examples
+
+Example 1
+
+Hello World! Save the following code in a file called "demo.r"
+
+Initial MPI
+
+library(pbdMPI, quiet = TRUE)
+
+init()
+
+comm.cat("Hello World!\n")
+
+Finish
+
+finalize()
+
+and use the command
+
+mpiexec -np 2 Rscript demo.r
+
+to execute the code where Rscript is one of command line executable program.
+
+Example 2
+
+The following example modified from pbdMPI illustrates the basic syntax of the language of pbdR.
+
+Since pbdR is designed in SPMD, all the R scripts are stored in files and executed from the command line via mpiexec, mpirun, etc. Save the following code in a file called "demo.r"
+
+Initial MPI
+
+library(pbdMPI, quiet = TRUE)
+
+init()
+
+.comm.size
+
+and use the command
+
+mpiexec -np 4 Rscript demo.r
+
+to execute the code where Rscript is one of command line executable program.
+
+Example 3
+
+The following example modified from pbdDEMO illustrates the basic ddmatrix computation of pbdR which performs singular value decomposition on a given matrix.
+
+Save the following code in a file called "demo.r"
+
+Initialize process grid
+
+library(pbdDMAT, quiet=T)
+
+if(comm.size() != 2)
+
+comm.stop("Exactly 2 processors are required for this demo.")
+
+init.grid()
+
+Setup for the remainder
+
+comm.set.seed(diff=TRUE)
+
+M
+
+and use the command
+
+mpiexec -np 2 Rscript demo.r
+
+to execute the code where Rscript is one of command line executable program.
+
+Further reading
+
+This article was read 22,584 times in 2012 since it posted on October 16, 2012, and ranked number 3
+
+References
+
+External links
+
+Category:Cross-platform free software
+
+Category:Data mining and machine learning software
+
+Category:Data-centric programming languages
+
+Category:Free statistical software
+
+Category:Functional languages
+
+Category:Numerical analysis software for Linux
+
+Category:Numerical analysis software for macOS
+
+Category:Numerical analysis software for Windows
+
+Category:Parallel computing

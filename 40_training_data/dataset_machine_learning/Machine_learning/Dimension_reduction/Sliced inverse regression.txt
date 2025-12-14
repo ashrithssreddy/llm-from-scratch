@@ -1,0 +1,95 @@
+Sliced inverse regression (SIR) is a tool for dimensionality reduction in the field of multivariate statistics.
+
+In statistics, regression analysis is a method of studying the relationship between a response variable y and its input variable \underline{x}, which is a p-dimensional vector. There are several approaches in the category of regression. For example, parametric methods include multiple linear regression, and non-parametric methods include local smoothing.
+
+As the number of observations needed to use local smoothing methods scales exponentially with high-dimensional data (as p grows), reducing the number of dimensions can make the operation computable. Dimensionality reduction aims to achieve this by showing only the most important dimension of the data. SIR uses the inverse regression curve, E(\underline{x}\,|\,y), to perform a weighted principal component analysis.
+
+Model
+
+Given a response variable \,Y and a (random) vector X \in \R^p of explanatory variables, SIR is based on the modelY=f(\beta_1^\top X,\ldots,\beta_k^\top X,\varepsilon)\quad\quad\quad\quad\quad(1)where \beta_1,\ldots,\beta_k are unknown projection vectors, \,k is an unknown number smaller than \,p, \;f is an unknown function on \R^{k+1}as it only depends on\,k arguments, and \varepsilon is a random variable representing error with E[\varepsilon|X]=0 and a finite variance of  \sigma^2 . The model describes an ideal solution, where \,Y depends on X \in \R^p only through a\,k dimensional subspace; i.e., one can reduce the dimension of the explanatory variables from\,p to a smaller number\,k without losing any information.
+
+An equivalent version of \,(1) is: the conditional distribution of  \,Y  given \, X  depends on \, X  only through the \,k dimensional random vector (\beta_1^\top X,\ldots,\beta_k^\top X). It is assumed that this reduced vector is as informative as the original  \,X  in explaining \, Y .
+
+The unknown \,\beta_i's are called the effective dimension reducing directions (EDR-directions). The space that is spanned by these vectors is denoted by the effective dimension reducing space (EDR-space).
+
+Relevant linear algebra background
+
+Given \underline{a}_1,\ldots,\underline{a}_r \in \R^n, then V:=L(\underline{a}_1,\ldots,\underline{a}_r), the set of all linear combinations of these vectors is called a linear subspace and is therefore a vector space.  The equation says that vectors \underline{a}_1,\ldots,\underline{a}_r span \,V, but the vectors that span space \,V are not unique.
+
+The dimension of \,V (\in \R^n) is equal to the maximum number of linearly independent vectors in \,V. A set of \,n linear independent vectors of \R^n makes up a basis of \R^n. The dimension of a vector space is unique, but the basis itself is not. Several bases can span the same space. Dependent vectors can still span a space, but the linear combinations of the latter are only suitable to a set of vectors lying on a straight line.
+
+Inverse regression
+
+Computing the inverse regression curve (IR) means instead of looking for
+
+\,E[Y|X=x], which is a curve in \R^p
+
+it is actually
+
+\,E[X|Y=y], which is also a curve in \R^p, but consisting of \,p one-dimensional regressions.
+
+The center of the inverse regression curve is located at \,E[E[X|Y]]=E[X]. Therefore, the centered inverse regression curve is
+
+\,E[X|Y=y]-E[X]
+
+which is a \,p dimensional curve in \R^p.
+
+Inverse regression versus dimension reduction
+
+The centered inverse regression curve lies on a \,k-dimensional subspace spanned by \,\Sigma_{xx}\beta_i\,'s. This is a connection between the model and inverse regression.
+
+Given this condition and \,(1), the centered inverse regression curve \,E[X|Y=y]-E[X] is contained in the linear subspace spanned by \,\Sigma_{xx}\beta_k(k=1,\ldots,K), where \,\Sigma_{xx}=Cov(X).
+
+Estimation of the EDR-directions
+
+After having had a look at all the theoretical properties, the aim now is to estimate the EDR-directions. For that purpose, weighted principal component analyses are needed. If the sample means \,\hat{m}_h\,'s, \,X would have been standardized to \,Z=\Sigma_{xx}^{-1/2}\{X-E(X)\}. Corresponding to the theorem above, the IR-curve \,m_1(y)=E[Z|Y=y] lies in the space spanned by \,(\eta_1,\ldots,\eta_k), where \,\eta_i=\Sigma^{1/2}_{xx} \beta_i. As a consequence, the covariance matrix \,cov[E[Z|Y]] is degenerate in any direction orthogonal to the \,\eta_i\,'s. Therefore, the eigenvectors \,\eta_k (k=1,\ldots,K) associated with the largest\,K eigenvalues are the standardized EDR-directions.
+
+Algorithm
+
+SIR algorithm
+
+The algorithm from Li, K-C. (1991) to estimate the EDR-directions via SIR is as follows.
+
+1. Let \,\Sigma_{xx} be the covariance matrix of \,X. Standardize \,X to
+
+\,Z=\Sigma_{xx}^{-1/2}\{X-E(X)\}
+
+\,(1) can also be rewritten as
+
+Y=f(\eta_1^\top Z,\ldots,\eta_k^\top Z,\varepsilon)
+
+where \,\eta_k=\beta_k\Sigma_{xx}^{1/2}\quad\forall\; k.)
+
+2. Divide the range of \,y_i into \,S non-overlapping slices \,H_s(s=1,\ldots,S).\; n_s is the number of observations within each slice and \,I_{H_s} is the indicator function for the slice:
+
+n_s=\sum_{i=1}^n I_{H_s}(y_i)
+
+3. Compute the mean of \,z_i over all slices, which is a crude estimate \,\hat{m}_1 of the inverse regression curve \,m_1:
+
+\,\bar{z}_s=n_s^{-1}\sum_{i=1}^n z_i I_{H_s}(y_i)
+
+4. Calculate the estimate for \,Cov\{m_1(y)\}:
+
+\,\hat{V}=n^{-1}\sum_{i=1}^S n_s \bar{z}_s \bar{z}_s^\top
+
+5. Identify the eigenvalues \,\hat{\lambda}_i and the eigenvectors \,\hat{\eta}_i of \,\hat{V}, which are the standardized EDR-directions.
+
+6. Transform the standardized EDR-directions back to the original scale. The estimates for the EDR-directions are given by:
+
+\,\hat{\beta}_i=\hat{\Sigma}_{xx}^{-1/2}\hat{\eta}_i
+
+(which are not necessarily orthogonal.)
+
+References
+
+Li, K-C. (1991) "Sliced Inverse Regression for Dimension Reduction", Journal of the American Statistical Association, 86, 316&ndash;327 Jstor
+
+Cook, R.D. and Sanford Weisberg, S. (1991) "Sliced Inverse Regression for Dimension Reduction: Comment", Journal of the American Statistical Association, 86, 328&ndash;332 Jstor
+
+Härdle, W. and Simar, L. (2003) Applied Multivariate Statistical Analysis,  Springer Verlag.
+
+Kurzfassung zur Vorlesung Mathematik II im Sommersemester 2005, A. Brandt
+
+Category:Regression analysis
+
+Category:Dimension reduction

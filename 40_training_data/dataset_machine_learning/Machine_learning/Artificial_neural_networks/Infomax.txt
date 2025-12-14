@@ -1,0 +1,19 @@
+Infomax, or the principle of maximum information preservation', is an optimization principle for artificial neural networks and other information processing systems. It prescribes that a function that maps a set of input values x to a set of output values z(x) should be chosen or learned so as to maximize the average Shannon mutual information between x and z(x), subject to a set of specified constraints and/or noise processes. Infomax algorithms are learning algorithms that perform this optimization process. The principle was described by Linsker in 1988. The objective function is called the InfoMax objective.
+
+As the InfoMax objective is difficult to compute exactly, a related notion uses two models giving two outputs z_1(x), z_2(x), and maximizes the mutual information between these. This contrastive InfoMax objective is a lower bound to the InfoMax objective.
+
+Infomax, in its zero-noise limit, is related to the principle of redundancy reduction proposed for biological sensory processing by Horace Barlow in 1961, and applied quantitatively to retinal processing by Atick and Redlich.
+
+Applications
+
+(Becker and Hinton, 1992) and (Nadal and Parga, 1995).
+
+See also
+
+FastICA
+
+References
+
+Category:Artificial neural networks
+
+Category:Computational neuroscience

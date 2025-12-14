@@ -1,0 +1,79 @@
+.]]
+
+The weasel program or Dawkins' weasel is a thought experiment and a variety of computer simulations illustrating it.  Their aim is to demonstrate that the process that drives evolutionary systems—random variation combined with non-random cumulative selection—is different from pure chance.
+
+The thought experiment was formulated by Richard Dawkins, and the first simulation written by him; various other implementations of the program have been written by others.
+
+Origin and structure
+
+In chapter 3 of his book The Blind Watchmaker, Dawkins gave the following introduction to the program, referencing the well-known infinite monkey theorem:
+
+The scenario is staged to produce a string of gibberish letters, assuming that the selection of each letter in a sequence of 28 characters will be random. The number of possible combinations in this random sequence is 2728, or about 1040, so the probability that the monkey will produce a given sequence is extremely low. Any particular sequence of 28 characters could be selected as a "target" phrase, all equally as improbable as Dawkins's chosen target, "METHINKS IT IS LIKE A WEASEL".
+
+A computer program could be written to carry out the actions of Dawkins's hypothetical monkey, continuously generating combinations of 26 letters and spaces at high speed. Even at the rate of millions of combinations per second, it is unlikely, even given the entire lifetime of the universe to run, that the program would ever produce the phrase "METHINKS IT IS LIKE A WEASEL". For a string of 28 characters, with 27 possible characters (A-Z plus space), any randomly generated string has the probability one in 27^28 of being correct; that is approximately one in 10^40. If a program generating 10 million strings per second had been running since the start of the universe (around 14 billion years, or 10^17 seconds), it would have only generated around 10^24 strings by now.
+
+Dawkins intends this example to illustrate a common misunderstanding of evolutionary change, i.e. that DNA sequences or organic compounds such as proteins are the result of atoms randomly combining to form more complex structures. In these types of computations, any sequence of amino acids in a protein will be extraordinarily improbable (this is known as Hoyle's fallacy). Rather, evolution proceeds by hill climbing, as in adaptive landscapes.
+
+Dawkins then goes on to show that a process of cumulative selection can take far fewer steps to reach any given target. In Dawkins's words:
+
+By repeating the procedure, a randomly generated sequence of 28 letters and spaces will be gradually changed each generation. The sequences progress through each generation:
+
+Generation&nbsp;01:
+
+Generation&nbsp;02:
+
+Generation&nbsp;10:
+
+Generation&nbsp;20:
+
+Generation&nbsp;30:
+
+Generation&nbsp;40:
+
+Generation&nbsp;43:
+
+Dawkins continues:
+
+Implications for biology
+
+The program aims to demonstrate that the preservation of small changes in an evolving string of characters (or genes) can produce meaningful combinations in a relatively short time as long as there is some mechanism to select cumulative changes, whether it is a person identifying which traits are desirable (in the case of artificial selection) or a criterion of survival ("fitness") imposed by the environment (in the case of natural selection). Reproducing systems tend to preserve traits across generations, because the offspring inherit a copy of the parent's traits. It is the differences between offspring, the variations in copying, which become the basis for selection, allowing phrases closer to the target to survive, and the remaining variants to "die."
+
+Dawkins discusses the issue of the mechanism of selection with respect to his "biomorphs" program:
+
+Regarding the example's applicability to biological evolution, he is careful to point out that it has its limitations:
+
+More complex models
+
+In The Blind Watchmaker, Dawkins goes on to provide a graphical model of gene selection involving  entities he calls biomorphs. These are two-dimensional sets of line segments which bear relationships to each other, drawn under the control of "genes" that determine the appearance of the biomorph. By selecting entities from sequential generations of biomorphs, an experimenter can guide the evolution of the figures toward given shapes, such as "airplane" or "octopus" biomorphs.
+
+As a simulation, the biomorphs are not much closer to the actual genetic behavior of biological organisms. Like the Weasel program, their development is shaped by an external factor, in this case the decisions of the experimenter who chooses which of many possible shapes will go forward into the following generation. They do however serve to illustrate the concept of "genetic space," where each possible gene is treated as a dimension, and the actual genomes of living organisms make up a tiny fraction of all possible gene combinations, most of which will not produce a viable organism. As Dawkins puts it, "however many ways there may be of being alive, it is certain that there are vastly more ways of being dead".
+
+In Climbing Mount Improbable, Dawkins responded to the limitations of the Weasel program by describing programs, written by other parties, that modeled the evolution of the spider web.  He suggested that these programs were more realistic models of the evolutionary process, since they had no predetermined goal other than coming up with a web that caught more flies through a "trial and error" process.  Spiderwebs were seen as good topics for evolutionary modeling because they were simple examples of biosystems that were easily visualized; the modeling programs successfully generated a range of spider webs similar to those found in nature.
+
+See also
+
+Genetic algorithm
+
+Objections to evolution
+
+Watchmaker analogy
+
+Notes
+
+References
+
+External links
+
+Talk.origins claim CF011_1 Dawkins' WEASEL simulation
+
+Evolutionary algorithm - Rosetta Code page with implementations of the program in multiple programming languages
+
+Category:Artificial life
+
+Category:Genetic algorithms
+
+Category:Richard Dawkins
+
+Category:Simulation software
+
+Category:Thought experiments

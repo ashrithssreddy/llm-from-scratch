@@ -1,0 +1,83 @@
+{{Infobox scientist
+
+name              = Christopher K. I. Williams
+
+birth_date        =
+
+nationality       = British
+
+fields            = Machine learning, Computer vision
+
+workplaces        =
+
+Aston University
+
+University of Edinburgh
+
+alma_mater        =
+
+University of Cambridge (BA)
+
+University of Newcastle upon Tyne (MSc)
+
+University of Toronto (MSc, PhD)
+
+thesis_title      = Combining deformable models and neural networks for handprinted digit recognition
+
+thesis_year       = 1994
+
+doctoral_advisor  = Geoffrey Hinton
+
+known_for         = Gaussian processes
+
+awards            = FRSE (2021)
+
+website           =
+
+}}
+
+Christopher Kenneth Ingle Williams (born 1960) is a professor at the School of Informatics, University of Edinburgh, working in Artificial intelligence, and particularly the areas of Machine learning and Computer vision.
+
+Education
+
+Williams received a BA in Physics and Theoretical Physics from the University of Cambridge in 1982, followed by Part III Mathematics (1983). He did a MSc in Water Resources at the University of Newcastle-Upon-Tyne, then worked in Lesotho on low-cost sanitation. In 1988, he studied at the Department of Computer Science of the University of Toronto under the supervision of Geoffrey Hinton. He obtained his MSc and PhD both in computer science, in 1990 and 1994, respectively.
+
+Career and research
+
+In 1994, Williams moved to Aston University as a Research Fellow. He became a Lecturer in August 1995. He moved to the University of Edinburgh in July 1998 and became Reader in 2000. He obtained a Personal Chair in Machine Learning in 2005 in the School of Informatics.
+
+Williams has been a Fellow of the European Laboratory for Learning and Intelligent Systems (ELLIS) since 2019.
+
+Williams' research interests are in machine learning and computer vision. He has worked on new models for understanding time-series and images, and for finding structure in data. He is best known for his work on Gaussian processes and for the book Gaussian Processes for Machine Learning, co-authored with Carl Rasmussen. The book received the 2009 DeGroot Prize of the International Society for Bayesian Analysis.
+
+Williams was an organizer of the PASCAL Visual Object Classes (VOC) project (2005–2012) along with Mark Everingham, Luc van Gool, John Winn, and Andrew Zisserman.
+
+Awards and honours
+
+In 2021 Williams was elected a Fellow of the Royal Society of Edinburgh (FRSE).
+
+References
+
+External links
+
+Category:Machine learning researchers
+
+Category:1960 births
+
+Category:Living people
+
+Category:British computer scientists
+
+Category:20th-century British educators
+
+Category:Alumni of the University of Cambridge
+
+Category:Alumni of Newcastle University
+
+Category:University of Toronto alumni
+
+Category:Academics of Aston University
+
+Category:Academics of the University of Edinburgh
+
+Category:Fellows of the Royal Society of Edinburgh

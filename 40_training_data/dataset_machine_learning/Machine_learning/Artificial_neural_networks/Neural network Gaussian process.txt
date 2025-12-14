@@ -1,0 +1,35 @@
+A Neural Network Gaussian Process (NNGP) is a Gaussian process (GP) obtained as the limit of a certain type of sequence of neural networks. Specifically, a wide variety of network architectures converges to a GP in the infinitely wide limit, in the sense of distribution.
+
+The concept constitutes an intensional definition, i.e., a NNGP is just a GP, but distinguished by how it is obtained.
+
+Motivation
+
+Bayesian networks are a modeling tool for assigning probabilities to events, and thereby characterizing the uncertainty in a model's predictions. Deep learning and artificial neural networks are approaches used in machine learning to build computational models which learn from training examples. Bayesian neural networks merge these fields. They are a type of neural network whose parameters and predictions are both probabilistic. While standard neural networks often assign high confidence even to incorrect predictions, Bayesian neural networks can more accurately evaluate how likely their predictions are to be correct.
+
+with two hidden layers, transforming a 3-dimensional input (bottom) into a two-dimensional output (y_1, y_2) (top). Right: output probability density function p(y_1, y_2) induced by the random weights of the network. Video: as the width of the network increases, the output distribution simplifies, ultimately converging to a multivariate normal in the infinite width limit.]]
+
+Computation in artificial neural networks is usually organized into sequential layers of artificial neurons. The number of neurons in a layer is called the layer width. When we consider a sequence of Bayesian neural networks with increasingly wide layers (see figure), they converge in distribution to a NNGP. This large width limit is of practical interest, since the networks often improve as layers get wider. And the process may give a closed form way to evaluate networks.
+
+NNGPs also appears in several other contexts: It describes the distribution over predictions made by wide non-Bayesian artificial neural networks after random initialization of their parameters, but before training; it appears as a term in neural tangent kernel prediction equations; it is used in deep information propagation to characterize whether hyperparameters and architectures will be trainable.
+
+It is related to other large width limits of neural networks.
+
+Scope
+
+The first correspondence result had been established in the 1995 PhD thesis of Radford M. Neal, then supervised by Geoffrey Hinton at University of Toronto. Neal cites David J. C. MacKay as inspiration, who worked in Bayesian learning.
+
+Today the correspondence is proven for: Single hidden layer Bayesian neural networks; recurrent networks as the number of units is taken to infinity.
+
+ELU, GELU, or error function
+
+References
+
+Category:Bayesian networks
+
+Category:Deep learning
+
+Category:Bayesian statistics
+
+Category:Artificial neural networks
+
+Category:Kernel methods for machine learning

@@ -1,0 +1,69 @@
+{{Infobox scientist
+
+name              = Pedro Domingos
+
+native_name       =
+
+native_name_lang  =
+
+image             = Pedro_domingos_2023.png
+
+image_size        =
+
+alt               =
+
+caption           = Domingos in 2023
+
+birth_date        =
+
+birth_place       = Lisbon, Portugal of computer science and engineering at the University of Washington. He is a researcher in machine learning known for Markov logic network enabling uncertain inference.
+
+Education
+
+Domingos received an undergraduate degree and Master of Science degree from Instituto Superior Técnico (IST). He moved to the University of California, Irvine, where he received a Master of Science degree followed by his PhD. He started a machine learning research group at the hedge fund D. E. Shaw & Co. in 2018, but left in 2019.
+
+He co-founded the International Machine Learning Society. As of 2018, he was on the editorial board of Machine Learning journal.
+
+Publications
+
+Pedro Domingos, The Master Algorithm: How the Quest for the Ultimate Learning Machine Will Remake Our World, New York, Basic Books, 2015, .
+
+Pedro Domingos, "Our Digital Doubles: AI will serve our species, not control it", Scientific American, vol. 319, no. 3 (September 2018), pp.&nbsp;88–93. "AIs are like autistic savants and will remain so for the foreseeable future.... AIs lack common sense and can easily make errors that a human never would... They are also liable to take our instructions too literally, giving us precisely what we asked for instead of what we actually wanted." (p.&nbsp;93.)
+
+Pedro Domingos, 2040: A Silicon Valley Satire, BookBaby, 2024, .
+
+Awards and honors
+
+2014: ACM SIGKDD Innovation Award. for his foundational research in data stream analysis, cost-sensitive classification, adversarial learning, and Markov logic networks, as well as applications in viral marketing and information integration.
+
+2010: Elected an Association for the Advancement of Artificial Intelligence (AAAI) Fellow. For significant contributions to the field of machine learning and to the unification of first-order logic and probability.
+
+2003: Sloan Fellowship
+
+1992–1997: Fulbright Scholarship
+
+References
+
+Category:University of Washington faculty
+
+Category:University of California, Irvine alumni
+
+Category:Instituto Superior Técnico alumni
+
+Category:Technical University of Lisbon alumni
+
+Category:Sloan Research Fellows
+
+Category:Artificial intelligence researchers
+
+Category:Computer scientists
+
+Category:Machine learning researchers
+
+Category:D. E. Shaw & Co. people
+
+Category:Living people
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:1965 births

@@ -1,0 +1,41 @@
+Chainer is an open source deep learning framework written purely in Python on top of NumPy and CuPy Python libraries. The development is led by Japanese venture company Preferred Networks in partnership with IBM, Intel, Microsoft, and Nvidia.
+
+Chainer is notable for its early adoption of "define-by-run" scheme, as well as its performance on large scale systems.
+
+In December 2019, Preferred Networks announced the transition of its development effort from Chainer to PyTorch and it will only provide maintenance patches after releasing v7.
+
+Define-by-run
+
+Chainer was the first deep learning framework to introduce the define-by-run approach. The traditional procedure to train a network was in two phases: define the fixed connections between mathematical operations (such as matrix multiplication and nonlinear activations) in the network, and then run the actual training calculation. This is called the define-and-run or static-graph approach. Theano and TensorFlow are among the notable frameworks that took this approach. In contrast, in the define-by-run or dynamic-graph approach, the connection in a network is not determined when the training is started. The network is determined during the training as the actual calculation is performed.
+
+One of the advantages of this approach is that it is intuitive and flexible. If the network has complicated control flows such as conditionals and loops, in the define-and-run approach, specially designed operations for such constructs are needed. On the other hand, in the define-by-run approach, programming language's native constructs such as if statements and for loops can be used to describe such flow. This flexibility is especially useful to implement recurrent neural networks.
+
+Another advantage is ease of debugging. and TensorFlow. ChainerRL adds state of art deep reinforcement learning algorithms, and ChainerUI is a management and visualization tool.
+
+Applications
+
+Chainer is used as the framework for PaintsChainer, a service which does automatic colorization of black and white, line only, draft drawings with minimal user input.
+
+See also
+
+Comparison of deep learning software
+
+Machine learning
+
+Artificial neural network
+
+References
+
+External links
+
+Category:Deep learning software
+
+Category:Free statistical software
+
+Category:Python (programming language) scientific libraries
+
+Category:Open-source artificial intelligence
+
+Category:Free software programmed in Python
+
+Category:Software using the MIT license

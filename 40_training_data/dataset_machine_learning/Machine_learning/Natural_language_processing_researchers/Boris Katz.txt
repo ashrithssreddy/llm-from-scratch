@@ -1,0 +1,117 @@
+{{Infobox scientist
+
+name                    = Boris Katz
+
+image                   =Boris_Katz.png
+
+image_size             = 200px
+
+caption                 = Katz in 2006
+
+birth_date              =
+
+birth_place             = Chișinău, Moldavian SSR, Soviet Union (present day Moldova)
+
+death_date              =
+
+death_place             =
+
+residence               =
+
+citizenship             =
+
+nationality             =
+
+ethnicity               =
+
+field                   = Computer Science
+
+work_institution        = MIT
+
+alma_mater              = Moscow State University
+
+doctoral_advisor        =
+
+doctoral_students       =
+
+known_for               = START
+
+author_abbreviation_bot =
+
+author_abbreviation_zoo =
+
+prizes                  =
+
+religion                =
+
+footnotes               =
+
+}}
+
+Boris Katz (born October 5, 1947) is a principal American research scientist (computer scientist) at the MIT Computer Science and Artificial Intelligence Laboratory at the Massachusetts Institute of Technology in Cambridge  and head of the Laboratory's InfoLab Group.  His research interests include natural language processing and understanding, machine learning and intelligent information access.  His brother Victor Kac is a mathematician at MIT.
+
+He was able to get out of the USSR with the help of U.S. Senator Ted Kennedy, before the end of the Cold War.
+
+Over the last several decades, Boris Katz has been developing the START natural language system that allows the user to access various types of information using English.
+
+Biography
+
+Boris Katz was born on October 5, 1947, in Chișinău in the family of Hersh Katz (died 1976) and Hayki (Klara) Landman (born 1921, Lipcani, Briceni District - died 2006, Cambridge, Middlesex County), who moved from Lipcani, a town located in the northern Bessarabian, to Chișinău before the war. He graduated from Moscow State University and in November 1978, he left for the United States thanks to the personal intervention of Senator Edward M. Kennedy. He defended his thesis as a candidate of physical and mathematical sciences in 1975 under the supervision of Evgenii M. Landis.
+
+He currently lives in Boston and heads the InfoLabresearch team at the Laboratory of Informatics and Artificial Intelligence at the Massachusetts Institute of Technology.
+
+Boris Katz is the creator of the START information processing system (since 1993 - on the Internet), the author of several works in the field of processing, generation and perception of natural languages, machine learning, and accelerated access to multimedia information.
+
+Family
+
+Brothers - Victor Gershevich Katz, American mathematician, professor at the Massachusetts Institute of Technology; Mikhail Gershevich Katz, Israeli mathematician, graduate of Harvard and Columbia (Ph.D., 1984) universities, professor at Bar-Ilan University, author of the monograph "Systolic Geometry and Topology" (Mathematical Surveys and Monographs, vol. 137. American Mathematical Society: Providence, 2007).
+
+Daughter - Luba Katz, a bioinformatics scientist (her husband is Alan Jasanoff, a neuroimaging scientist, a professor at MIT, the son of Harvard University professors Jay Jasanoff and Sheila Jasanoff).
+
+Past works
+
+A Knowledge Entry System for Subject Matter Experts: The goal of SHAKEN project is to enable subject matter experts, without any assistance from AI technologists, to assemble the models of processes and mechanisms so that questions about them can be answered by declarative inference and simulation.
+
+Exploiting lexical regularities in designing natural language systems
+
+Word sense disambiguation for information retrieval
+
+HIKE (HPKB integrated knowledge environment)- a query interface and integrated knowledge environment for HPKB
+
+Quantitative evaluation of passage retrieval algorithms for question answering
+
+Sticky notes for the semantic web
+
+Question answering from the web using knowledge annotation and knowledge mining techniques
+
+The role of context in question answering systems
+
+References
+
+External links
+
+Boris Katz Web Page
+
+Computer Science and Artificial Intelligence Laboratory
+
+Massachusetts Institute of Technology
+
+Category:1947 births
+
+Category:Living people
+
+Category:Scientists from Chișinău
+
+Category:Moldovan Jews
+
+Category:Bessarabian Jews
+
+Category:Soviet emigrants to the United States
+
+Category:Computational linguistics researchers
+
+Category:Artificial intelligence researchers
+
+Category:Moscow State University alumni
+
+Category:Natural language processing researchers

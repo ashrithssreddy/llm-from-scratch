@@ -1,0 +1,81 @@
+{{Infobox software
+
+title = GPTZero
+
+logo = Header gptzero logo.svg
+
+logo caption =
+
+logo alt =
+
+logo size = 200px
+
+author =
+
+developer = Edward TianAlex Cui Yazan Mimi
+
+released =
+
+programming language = Python
+
+engine =
+
+operating system =
+
+platform = Cloud computing
+
+license =
+
+website =
+
+While GPTZero was praised for its efforts to prevent academic dishonesty, many news outlets criticized the tool's false positive rate, which can be especially harmful in academic settings. GPTZero said in May 2023 it raised over 3.5 million dollars in seed funding.
+
+In the first week of its release, the GPTZero experienced 30,000 uses, which led to a crash. It was supported by the web app company Streamlit, who allocated more server resources in response. In July 2024, it had 4 million users, compared to 1 million one year earlier.
+
+In summer 2024, GPTZero raised $10 million in Series A round funding.
+
+In September 2024, GPTZero announced an authorship tracking software that enables "to compile and share data about their writing process such as their copy/paste history, the number of editors they had, and how long editing took", in an effort "to move away from an all-or-nothing paradigm around AI writing towards a more nuanced one."
+
+Use cases
+
+The academic community has attempted using GPTZero to tackle concerns about AI-generated content for plagiarism. Educational institutions, including Princeton University, have discussed the use of GPTZero to combat AI-generated content in academic settings, with mixed opinions. In October 2023, GPTZero had partnered with the American Federation of Teachers.
+
+By 2024, Tian reported that GPTZero also "received a lot of adoption with hiring managers, with recruiting [and] cover letter analysis." computer scientists Vinu Sankar Sadasivan, Aounon Kumar, Sriram Balasubramanian, Wenxiao Wang, and Soheil Feizi from the University of Maryland demonstrate empirically and theoretically that several AI-text detectors are not reliable in practical scenarios.
+
+Tech website Futurism tested the tool, and said that while the "results are impressive", based on its error rate, teachers relying on the tool would end up "falsely accusing nearly 20 percent of [innocent students] of academic misconduct".
+
+The Washington Post noted in August 2023 that GPTZero suffers from false positives, emphasizing that "even a small 'false positive' error rate means that some students could be wrongly accused [of academic misconduct]".
+
+News website Ars Technica commented that humans can still write sentences in a highly regular way, leading to false positives. The writer, Benj Edwards, went on to state that the perplexity score only concerns itself with what is "surprising" for the AI, leading to instances where highly common texts, such as the US Constitution, are labeled as likely AI-generated.
+
+In September 2025, Business Insider compared the tool to seven other AI detection tools, and called GPTZero the "best free AI detector."
+
+See also
+
+Artificial intelligence content detection
+
+Ethics of artificial intelligence
+
+Natural language processing
+
+ChatGPT
+
+Text generation
+
+Turing test
+
+References
+
+External links
+
+Category:Internet properties established in 2023
+
+Category:Large language models
+
+Category:Applications of artificial intelligence
+
+Category:ChatGPT
+
+Category:Plagiarism detectors
+
+Category:Artificial intelligence companies

@@ -1,0 +1,47 @@
+In the mathematical theory of probability, a Brownian meander is a stochastic process that is derived from a standard Brownian motion by conditioning it to be non-negative. It describes the behavior of a random path that is forced to stay "above water".
+
+Informally, a Brownian meander is constructed from a standard Brownian motion path over the time interval [0, 1]. The path is observed up to its last visit to zero before time t=1. The portion of the path before this last zero-crossing is discarded, and the remaining positive segment is scaled to fit into a new time interval of length 1. As the name suggests, it is a piece of a Brownian path that "meanders" away from its starting point without crossing back below it.
+
+The Brownian meander is closely related to other stochastic processes derived from Brownian motion, including the Brownian bridge and the Brownian excursion.
+
+Formal definition
+
+Let W = \{ W_t, t \geq 0 \} be a standard one-dimensional Brownian motion, and \tau := \sup \{ t \in [0,1] : W_t = 0 \}, i.e. the last time before t&nbsp;=&nbsp;1 when W visits \{ 0 \}. Then the Brownian meander W^+ = \{ W_t^+, t \in [0,1] \} is a continuous non-homogeneous Markov process defined as:
+
+W^+_t := \frac 1 {\sqrt{1 - \tau}} | W_{\tau + t (1-\tau)} |, \quad t \in [0,1].
+
+In words, let  \tau  be the last time before 1 that a standard Brownian motion visits \{ 0 \}. (\tau  almost surely.) We snip off and discard the trajectory of Brownian motion before  \tau , and scale the remaining part so that it spans a time interval of length 1. The scaling factor for the spatial axis must be the square root of the scaling factor for the time axis. The process resulting from this snip-and-scale procedure is a Brownian meander.
+
+Transition density
+
+The transition density p(s,x,t,y) \, dy := P(W^+_t \in dy \mid W^+_s = x) of a Brownian meander is described as follows:
+
+For 0  and x, y > 0, and writing
+
+\varphi_t(x):= \frac{\exp \{ -x^2/(2t) \}}{\sqrt{2 \pi t}} \quad \text{and} \quad \Phi_t(x,y):= \int^y_x\varphi_t(w) \, dw,
+
+we have
+
+\begin{align}
+
+p(s,x,t,y) \, dy := {} & P(W^+_t \in dy  \mid W^+_s = x) \\
+
+= {} & \bigl(  \varphi_{t-s}(y-x) - \varphi_{t-s}(y+x) \bigl)  \frac{\Phi_{1-t}(0,y)}{\Phi_{1-s}(0,x)} \, dy
+
+\end{align}
+
+and
+
+p(0,0,t,y) \, dy := P(W^+_t \in dy ) = 2\sqrt{2 \pi} \frac y t \varphi_t(y)\Phi_{1-t}(0,y) \, dy.
+
+In particular,
+
+P(W^+_1 \in dy ) = y \exp \{ -y^2/2 \} \, dy, \quad y > 0,
+
+i.e.  W^+_1  has the Rayleigh distribution with parameter 1, the same distribution as \sqrt{2 \mathbf{e}}, where \mathbf{e} is an exponential random variable with parameter 1.
+
+References
+
+Category:Wiener process
+
+Category:Markov processes

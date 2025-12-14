@@ -1,0 +1,95 @@
+Bob Coecke (born 23 July 1968) is a Belgian theoretical physicist and logician who is Chief Scientist at quantum computing company Quantinuum.  He was Professor of Quantum foundations, Logics, and Structures at Oxford University until 2020.  He is also Distinguished Visiting Research Chair at the Perimeter Institute for Theoretical Physics.
+
+He pioneered categorical quantum mechanics (entry 18M40 in Mathematics Subject Classification 2020), Quantum Picturalism, ZX-calculus, DisCoCat model for natural language, and quantum natural language processing (QNLP).  He is a founder of the Quantum Physics and Logic community and conference series, and of the journal Compositionality.
+
+Coecke is also a composer and musician, who has been called a pioneer of industrial music, and is also one of the pioneers of employing quantum computers in music.
+
+Education and career
+
+Coecke obtained his doctorate in sciences at the Vrije Universiteit Brussel in 1996, and performed postdoctoral work in the Theoretical Physics Group of Imperial College, London in the Category Theory Group of the Mathematics and Statistics Department at McGill University in Montreal, in the Department of Pure Mathematics and Mathematical Statistics of Cambridge University, and in the Department of Computer Science, University of Oxford.
+
+He was an EPSRC Advanced Research Fellow at the Department of Computer Science, University of Oxford, where he became Lecturer in Quantum Computer Science in 2007, and jointly with Samson Abramsky built and headed the Quantum Group. In July 2011, he was nominated professor of Quantum Foundations, Logics and Structures at Oxford University, with retroactive effect as of October 2010. He was a Governing Body Fellow of Wolfson College, Oxford since 2007, where he now is an Emeritus Fellow.
+
+In January 2019, Coecke became Senior Scientific Advisor of Cambridge Quantum Computing, and in January 2021 he resigned from his Professorship at Oxford, to become Chief Scientist of Cambridge Quantum Computing.  After the merger of Cambridge Quantum Computing with Honeywell Quantum Systems, he stayed on as Chief Scientist of the joint entity Quantinuum.
+
+In January 2023 he also became Distinguished Visiting Research Chair at the Perimeter Institute for Theoretical Physics.
+
+Work
+
+Coecke's research focuses on the foundations of physics, more particularly category theory, logic, and diagrammatic reasoning, with application to quantum informatics, quantum gravity, and NLP. He has pioneered categorical quantum mechanics together with Samson Abramsky, and spearheaded the development of a diagrammatic quantum formalism based on Penrose graphical notation, on which he wrote a textbook entitled Picturing Quantum Processes with Aleks Kissinger. With Ross Duncan he pioneered ZX-calculus. He pioneered the DisCoCat model for natural language, with Stephen Clark and Mehrnoosh Sadrzadeh. He also pioneered quantum natural language processing (QNLP), with Will Zeng, and colleagues at Cambridge Quantum Computing.
+
+The work of Coecke and his co-workers on the application of categorical quantum mechanics to natural language processing in computational linguistics was featured in New Scientist in December 2010. The work on quantum natural language processing was featured in the Quantum Daily in December 2020 and in PhysicsWorld in January 2021.
+
+Music
+
+Coecke is also a musician, performing and recording since the eighties.  He retrospectively has been named a pioneer of industrial music.  His band, Black Tish, "used cutting edge sampling techniques for the time, a host of synth and sound loops and metal-style guitars to create a heavy rock/electronica fusion unlike anything heard before", and "bridge the gap between the pure experimental nature of bands like Throbbing Gristle and Einstürzende Neubauten and the (comparatively) more radio accessible Ministry or Nine Inch Nails".
+
+Coecke is also one of the pioneers of employing quantum computers in music.
+
+Selected publications
+
+Textbooks:
+
+Bob Coecke, Aleks Kissinger:Picturing Quantum Processes. A First Course in Quantum Theory and Diagrammatic Reasoning, Cambridge University Press, 2017,
+
+Bob Coecke, Stefano Gogioso:Quantum in Pictures, Quantinuum, 2022,
+
+Books (as editor):
+
+Bob Coecke, David Moore, Alexander Wilce (eds.): Current Research in Operational Quantum Logic: Algebras, Categories, Languages, Fundamental Theories of Physics, Kluwer Academic, 2010,
+
+Bob Coecke (ed.): New Structures for Physics, Lecture Notes in Physics 813, Springer, 2011,
+
+Articles:
+
+Bob Coecke: Kindergarten quantum mechanics, arXiv:quant-ph/0510032
+
+Samson Abramsky, Bob Coecke: A categorical semantics of quantum protocols, Proceedings of the 19th Annual IEEE Symposium on Logic in Computer Science, 2004, pp.&nbsp;415–425
+
+Bob Coecke, Ross Duncan: Interacting quantum observables, Automata, Languages and Programming, pp.&nbsp;298–310, 2008
+
+Konstantinos Meichanetzidis, Alexis Toumi, Giovanni de Felice, Bob Coecke: Grammar-Aware Question-Answering on Quantum Computers, arXiv:2012.03756
+
+Bob Coecke: The Mathematics of Text Structure, arXiv:1904.03478
+
+Will Zeng, Bob Coecke: Quantum Algorithms for Compositional Natural Language Processing, arXiv:1608.01406
+
+Bob Coecke, Tobias Fritz, Robert Spekkens: A mathematical theory of resources, arXiv:1409.5531
+
+Bob Coecke: An Alternative Gospel of structure: order, composition, processes, arxiv:1307.4038
+
+Bob Coecke, Mehrnoosh Sadrzadeh, Steven Clark: Mathematical Foundations for a Compositional Distributional Model of Meaning, arXiv:1003.4394
+
+Bob Coecke: Quantum Picturalism, arXiv:0908.1787
+
+Software articles:
+
+Eduardo Reck Miranda, Richie Yeung, Anna Pearson, Konstantinos Meichanetzidis, Bob Coecke: A quantum natural language processing approach to musical intelligence, arXiv:2111.06741
+
+Dimitri Kartsaklis, Ian Fan, Richie Yeung, Anna Pearson, Robin Lorenz, Alexis Toumi, Giovanni de Felice, Konstantinos Meichanetzidis, Stephen Clark, Bob Coecke: lambeq: An efficient high-level python library for quantum NLP, arXiv:2110.04236
+
+Giovanni de Felice, Alexis Toumi, Bob Coecke: Discopy: monoidal categories in Python, arXiv:2111.06741
+
+References
+
+External links
+
+Publications at Google Scholar
+
+Publications at DBLP Computer Science Bibliography
+
+Category:British physicists
+
+Category:Living people
+
+Category:Members of the Department of Computer Science, University of Oxford
+
+Category:Fellows of Wolfson College, Oxford
+
+Category:Vrije Universiteit Brussel alumni
+
+Category:1968 births
+
+Category:Natural language processing researchers
+
+Category:Computational linguistics researchers

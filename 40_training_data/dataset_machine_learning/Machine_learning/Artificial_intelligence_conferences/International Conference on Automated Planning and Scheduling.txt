@@ -1,0 +1,375 @@
+{{Infobox academic conference
+
+title = International Conference on Automated Planning and Scheduling
+
+logo =
+
+abbreviation = ICAPS
+
+discipline = automated planning and scheduling, artificial intelligence
+
+publisher =
+
+history = 1990–present
+
+frequency = Annual
+
+website = https://www.icaps-conference.org/
+
+openaccess = yes (https://dblp.org/db/conf/icaps/index.html and https://ojs.aaai.org/index.php/ICAPS/issue/archive)
+
+}}
+
+The International Conference on Automated Planning and Scheduling (ICAPS) is a leading international academic conference in automated planning and scheduling held annually for researchers and practitioners in planning and scheduling. ICAPS is supported by the National Science Foundation, the journal Artificial Intelligence, and other supporters.
+
+The IPC and PDDL
+
+ICAPS conducts the International Planning Competition (IPC), a competition scheduled every few years that empirically evaluates state-of-the-art planning systems on a collection of benchmark problems. The Planning Domain Definition Language (PDDL) was developed mainly to make the 1998/2000 International Planning Competition possible, and then evolved with each competition. PDDL is an attempt to standardize Artificial Intelligence (AI) planning languages. PDDL was first developed by Drew McDermott and his colleagues in 1998, inspired by STRIPS, ADL, and other sources.
+
+History
+
+The ICAPS conferences began in 2003 as a merge of two bi-annual conferences, the International Conference on Artificial Intelligence Planning and Scheduling (AIPS) and the European Conference on Planning (ECP).
+
+-
+
+1991
+
+EWSP
+
+Sankt Augustin, Germany
+
+-
+
+1992
+
+AIPS
+
+College Park, MD, United States
+
+-
+
+1993
+
+EWSP
+
+Vadstena, Sweden
+
+-
+
+1994
+
+AIPS
+
+Chicago, IL, USA
+
+-
+
+1995
+
+EWSP
+
+Assisi, Italy
+
+-
+
+1996
+
+AIPS
+
+Edinburgh, United Kingdom
+
+-
+
+1997
+
+ECP
+
+Toulouse, France
+
+-
+
+1998
+
+AIPS
+
+Pittsburgh, PA, United States
+
+-
+
+1999
+
+ECP
+
+Durham, United Kingdom
+
+-
+
+2000
+
+AIPS
+
+Breckenridge, CO, United States
+
+-
+
+2001
+
+12–14 September
+
+ECP
+
+Toledo, Spain
+
+-
+
+2002
+
+23–27 April
+
+AIPS
+
+Toulouse, France
+
+-
+
+2003
+
+9–13 June
+
+ICAPS
+
+Trento, Italy
+
+-
+
+2004
+
+3–7 June
+
+ICAPS
+
+Whistler, Canada
+
+-
+
+2005
+
+5–10 June
+
+ICAPS
+
+Monterey, CA, United States
+
+-
+
+2006
+
+6–10 June
+
+ICAPS
+
+Lake District, United Kingdom
+
+-
+
+2007
+
+22–26 September
+
+ICAPS
+
+Providence, RI, United States
+
+-
+
+2008
+
+14–18 September
+
+ICAPS
+
+Sydney, Australia
+
+-
+
+2009
+
+19–23 September
+
+ICAPS
+
+Thessaloniki, Greece
+
+-
+
+2010
+
+12–16 May
+
+ICAPS
+
+Toronto, Canada
+
+-
+
+2011
+
+11–16 June
+
+ICAPS
+
+Freiburg, Germany
+
+-
+
+2012
+
+25–29 June
+
+ICAPS
+
+Atibaia, São Paulo, Brazil
+
+-
+
+2013
+
+10–14 June
+
+ICAPS
+
+Rome, Italy
+
+-
+
+2014
+
+21–26 June
+
+ICAPS
+
+Portsmouth, VA, United States
+
+-
+
+2015
+
+7–11 June
+
+ICAPS
+
+Jerusalem, Israel
+
+-
+
+2016
+
+12–17 June
+
+ICAPS
+
+London, United Kingdom
+
+-
+
+2017
+
+18–23 June
+
+ICAPS
+
+Pittsburgh, PA, United States
+
+-
+
+2018
+
+24–29 October
+
+ICAPS
+
+Delft, The Netherlands
+
+-
+
+2019
+
+11–15 July
+
+ICAPS
+
+Berkeley, CA, USA
+
+-
+
+2020
+
+26–30 October
+
+ICAPS
+
+Nancy, France – Virtual Conference
+
+-
+
+2021
+
+2–13 August
+
+ICAPS
+
+Guangzhou, China – Virtual Conference
+
+-
+
+2022
+
+13–24 June
+
+ICAPS
+
+Singapore – Virtual Conference
+
+-
+
+2023
+
+8–13 July
+
+ICAPS
+
+Prague, Czech Republic
+
+-
+
+2024
+
+1–6 June
+
+ICAPS
+
+Banff, Canada
+
+}
+
+References
+
+External links
+
+International Planning Competition (IPC)
+
+Conference locations (ICAPS)
+
+Conference locations (DBLP)
+
+Category:Recurring events established in 1990
+
+Category:Recurring events established in 2003
+
+Category:Artificial intelligence conferences
+
+Category:Computer science conferences
+
+Category:Automated planning and scheduling
+
+Category:Long stubs with short prose

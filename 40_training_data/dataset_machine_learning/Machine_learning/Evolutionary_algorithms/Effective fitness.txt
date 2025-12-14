@@ -1,0 +1,21 @@
+In natural evolution and artificial evolution (e.g. artificial life and evolutionary computation) the  fitness (or performance or objective measure) of a schema is rescaled to give its effective fitness which takes into account crossover and mutation.
+
+Effective fitness is used in Evolutionary Computation to understand population dynamics. While a biological fitness function only looks at reproductive success, an effective fitness function tries to encompass things that are needed to be fulfilled for survival on population level. In homogeneous populations, reproductive fitness and effective fitness are equal.
+
+Problem solving with evolutionary computation is realized with a cost function. If cost functions are applied to swarm optimization they are called a fitness function. Strategies like reinforcement learning and NEAT neuroevolution are creating a fitness landscape which describes the reproductive success of cellular automata.
+
+The effective fitness function models the number of fit offspring
+
+The effective fitness model is superior to its predecessor, the standard reproductive fitness model. It advances in the qualitatively and quantitatively understanding of evolutionary concepts like bloat, self-adaptation, and evolutionary robustness. while an effective fitness function is an assumption if the objective was reached. The difference is important for designing fitness functions with algorithms like novelty search in which the objective of the agents is unknown. In the case of bacteria effective fitness could include production of toxins and rate of mutation of different plasmids, which are mostly stochastically determined
+
+Applications
+
+When evolutionary equations of the studied population dynamics are available, one can algorithmically compute the effective fitness of a given population. Though the perfect effective fitness model is yet to be found, it is already known to be a good framework to the better understanding of the moving of the genotype-phenotype map, population dynamics, and the flow on fitness landscapes. Other models could determine effective protein engineering and works towards finding novel or heightened biochemistry.
+
+References
+
+External links
+
+Foundations of Genetic Programming
+
+Category:Evolutionary algorithms

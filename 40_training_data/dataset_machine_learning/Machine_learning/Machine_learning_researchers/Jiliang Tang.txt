@@ -1,0 +1,73 @@
+{{Infobox scientist
+
+name             = Jiliang Tang
+
+image            =
+
+caption          = Tang in 2017
+
+workplaces       = Michigan State University
+
+alma_mater       = Arizona State University (PhD)
+
+thesis_title     = Computing Distrust in Social Media
+
+thesis_year      = 2015
+
+doctoral_advisor = Huan Liu
+
+awards           = NSF Career Award (2019)  ACM SIGKDD Rising Star Award (2020)
+
+website          =
+
+}}
+
+Jiliang Tang is a Chinese-born computer scientist and associate professor at Michigan State University in the Computer Science and Engineering Department, where he is the director of the Data Science and Engineering (DSE) Lab. His research expertise is in data mining and machine learning.
+
+Education and career
+
+He received his BEng in software engineering (2008) and MSc in computer science (2010) from the Beijing Institute of Technology, Beijing, China. His PhD is from Arizona State University (2015), under the direction of Huan Liu. After gaining his PhD, he worked as a research scientist at Yahoo Labs (2015–16) before joining Michigan State University as an assistant professor (2016). His research has mostly been published jointly with Huan Liu. It has received over thirteen thousand citations documented by Google Scholar, and has received coverage in the media.
+
+Awards
+
+He has received the 2020 ACM SIGKDD Rising Star Award that "aims to celebrate the early accomplishments of the SIGKDD communities' brightest new minds", NSF Career Award, and Michigan State University's Distinguished Withrow Research Award.
+
+Selected publications
+
+Books
+
+Jiliang Tang, Huan Liu.  Trust in Social Media, (Synthesis digital library of engineering and computer science; Synthesis lectures on information security, privacy, and trust, # 13) Morgan & Claypool, 2015
+
+Peer reviewed journal articles
+
+Shu K, Sliva A, Wang S, Tang J, Liu H. Fake news detection on social media: A data mining perspective. ACM SIGKDD explorations newsletter. 2017 Sep 1;19(1):22-36. *Tang J, Alelyani S, Liu H. Feature selection for classification: A review. Data classification: Algorithms and applications. 2014:37. [http://www.cvs.edu.in/upload/feature_selection_for_classification.pdf
+
+Li J, Cheng K, Wang S, Morstatter F, Trevino RP, Tang J, Liu H. Feature selection: A data perspective. ACM Computing Surveys (CSUR). 2017 Dec 6;50(6):1-45. * Chang S, Han W, Tang J, Qi GJ, Aggarwal CC, Huang TS. Heterogeneous network embedding via deep architectures. InProceedings of the 21th ACM SIGKDD international conference on knowledge discovery and data mining 2015 Aug 10 (pp.&nbsp;119–128)
+
+Gao H, Tang J, Hu X, Liu H. Exploring temporal effects for location recommendation on location-based social networks. InProceedings of the 7th ACM conference on Recommender systems 2013 Oct 12 (pp.&nbsp;93–100).
+
+Hu X, Tang J, Gao H, Liu H. Unsupervised sentiment analysis with emotional signals. InProceedings of the 22nd international conference on World Wide Web 2013 May 13 (pp.&nbsp;607–618).
+
+References
+
+External links
+
+[http://www.cse.msu.edu/~tangjili/ Webpage at Michigan State
+
+Category:Chinese expatriates in the United States
+
+Category:Machine learning researchers
+
+Category:21st-century Chinese scientists
+
+Category:Arizona State University alumni
+
+Category:Beijing Institute of Technology alumni
+
+Category:Michigan State University faculty
+
+Category:Chinese computer scientists
+
+Category:Living people
+
+Category:Year of birth missing (living people)

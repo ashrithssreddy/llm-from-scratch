@@ -1,0 +1,67 @@
+{{Infobox company
+
+name                =
+
+logo                = HeyGen_Logo.svg
+
+logo_caption        =
+
+logo_upright        = 1.1
+
+logo_alt            =
+
+type                =
+
+industry            = Artificial intelligence
+
+predecessor         =
+
+founded             =
+
+founders            =
+
+defunct             =
+
+fate                =
+
+successor           =
+
+hq_location_city    = Los Angeles, California
+
+hq_location_country = U.S.
+
+area_served         =
+
+key_people          =
+
+products            = HeyGen Avatar
+
+owner               =
+
+num_employees       =
+
+num_employees_year  =
+
+parent              =
+
+website             =
+
+}}
+
+HeyGen is a generative artificial intelligence company that creates photo-realistic avatars via user-submitted photos and videos as well as a library of pre-made avatars and voices. The digital avatar can recite prompts in multiple languages.
+
+When submitting content to be used in the generation of a video, users are required to give verbal consent, along with a spoken password to verify their identity. Human moderators are used to remove and block any content used for the purpose of bullying, harassment, and the spread of disinformation, in addition to the use of an automated content filter.
+
+History
+
+HeyGen (originally named Surreal, later rebranded from Movio) was founded by Joshua Xu and Wayne Liang in 2020. HeyGen established its headquarters in Los Angeles in 2022. The company initially raised capital from investors including Sequoia China (now HongShan) and ZhenFund.
+
+In June 2024, HeyGen raised $60 million in a funding round that valued the company at $500 million. The funding was led by Benchmark, with participation from Conviction, Bond Capital, and Thrive Capital. As of that date, the company reported having more than 40,000 customers and an annualized recurring revenue of $35 million. The company was also recognized by Inc. as part of their 2024 "Best in Business" list.
+
+References
+
+External links
+
+Category:Text-to-image generation
+
+Category:Deep learning software applications

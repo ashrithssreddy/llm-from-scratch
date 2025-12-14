@@ -1,0 +1,35 @@
+Lorien Pratt is an American computer scientist known for inventing two disciplines: machine learning transfer   and decision intelligence. She is chief scientist and founder of Quantellia. Since 1988, she has conducted research on the use of machine learning as an academic, professor, industry analyst, and practicing data scientist. Pratt received her AB degree in computer science from Dartmouth College and her master's and doctorate degrees in computer science from Rutgers University.
+
+Learning to Learn
+
+She is best known for her book "Learning to Learn," co-edited with Sebastian Thrun, which provided an overview on how to use machine learning to better understand bias and generalization of discrete subjects. This approach, still largely theoretical when the book was published in 1998, is also called metalearning and is now a foundational underpinning of machine learning algorithms such as GPT-3 and DALL-E.
+
+Research
+
+Transfer learning
+
+Pratt's research includes early work in transfer learning where she developed the discriminability-based transfer (DBT) algorithm in 1993 during her tenure as a professor of computer science at Colorado School of Mines. This paper is considered one of the earliest academic works referring to the use of transfer in machine learning and has been cited over 400 times as foundational research for deep neural networks.
+
+Decision intelligence
+
+Since then, Pratt's research has continued to explore the relationships between machine learning and human cognition with the concept of decision intelligence, an emerging field of machine learning guided analytics designed to support human decision. Pratt introduced this concept in 2008, and this term has since been used by a number of vendors providing machine learning-guided analytics including Diwo, Peak AI, Sisu, and Tellius as the technologies used to support machine learning at scale have become easier to deploy, manage, and embed into software platforms. Pratt's work is cited as a core starting point for defining modern aspects of decision intelligence.
+
+Pratt's work at Quantellia since 2020 has focused on the use of decision intelligence to improve COVID-19-based outcomes.
+
+References
+
+External links
+
+Category:American women computer scientists
+
+Category:American computer scientists
+
+Category:Year of birth missing (living people)
+
+Category:Dartmouth College
+
+Category:Rutgers University alumni
+
+Category:Machine learning researchers
+
+Category:Living people

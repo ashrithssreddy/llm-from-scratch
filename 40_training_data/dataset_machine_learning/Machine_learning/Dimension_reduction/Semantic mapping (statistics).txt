@@ -1,0 +1,27 @@
+Semantic mapping (SM) is a statistical method for dimensionality reduction (the transformation of data from a high-dimensional space into a low-dimensional space). SM can be used in a set of multidimensional vectors of features to extract a few new features that preserves the main data characteristics.
+
+SM performs dimensionality reduction by clustering the original features in semantic clusters and combining features mapped in the same cluster to generate an extracted feature. Given a data set, this method constructs a projection matrix that can be used to map a data element from a high-dimensional space into a reduced dimensional space.
+
+SM can be applied in construction of text mining and information retrieval systems, as well as systems managing vectors of high dimensionality. SM is an alternative to random mapping, principal components analysis and latent semantic indexing methods.
+
+See also
+
+Dimensionality reduction
+
+Principal components analysis
+
+Latent semantic indexing
+
+Unification (logic reduction)
+
+References
+
+CORRÊA, R. F.; LUDERMIR, T. B. Improving Self Organization of Document Collections by Semantic Mapping. Neurocomputing(Amsterdam), v. 70, p.&nbsp;62-69, 2006. doi:10.1016/j.neucom.2006.07.007
+
+CORRÊA, R. F. and LUDERMIR, T. B. (2007) "Dimensionality Reduction of very large document collections by Semantic Mapping". Proceedings of 6th Int. Workshop on Self-Organizing Maps (WSOM). .
+
+External links
+
+Full list of publications about Semantic Mapping method
+
+Category:Dimension reduction

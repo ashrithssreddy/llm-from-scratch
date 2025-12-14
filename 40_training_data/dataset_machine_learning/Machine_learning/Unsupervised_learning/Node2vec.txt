@@ -1,0 +1,13 @@
+node2vec is an algorithm to generate vector representations of nodes on a graph. The node2vec framework learns low-dimensional representations for nodes in a graph through the use of random walks through a graph starting at a target node. It is useful for a variety of machine learning applications. node2vec follows the intuition that random walks through a graph can be treated like sentences in a corpus. Each node in a graph is treated like an individual word, and a random walk is treated as a sentence. By feeding these "sentences" into a skip-gram, or by using the continuous bag of words model, paths found by random walks can be treated as sentences, and traditional data-mining techniques for documents can be used. The algorithm generalizes prior work which is based on rigid notions of network neighborhoods, and argues that the added flexibility in exploring neighborhoods is the key to learning richer representations of nodes in graphs.
+
+The algorithm is considered one of the best graph classifiers.
+
+See also
+
+Struc2vec
+
+Graph Neural Network
+
+References
+
+Category:Unsupervised learning

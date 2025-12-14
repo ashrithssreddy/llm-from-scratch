@@ -1,0 +1,15 @@
+Gesture Description Language (GDL or GDL Technology) is a method of describing and automatic (computer) syntactic classification of gestures and movements created
+
+by doctor Tomasz Hachaj (PhD) and professor Marek R. Ogiela(PhD, DSc).
+
+GDL uses context-free formal grammar named GDLs (Gesture Description Language script). With GDLs it is possible to define rules that describe set of gestures. Those rules play similar role as rules in classic expert systems. With rules it is possible to define static body positions (so called key frames) and sequences of key frames that create together definitions of gestures or movements. The recognition is done by forward chaining inference engine.
+
+The latest GDL implementations utilize Microsoft Kinect controller and enable real time classification. The license for GDL-based software allows using those programs for educational and scientific purposes for free.
+
+References
+
+Category:Classification algorithms
+
+Category:Formal languages
+
+Category:Gesture recognition

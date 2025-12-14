@@ -1,0 +1,31 @@
+{{Multiple issues|
+
+}}
+
+Tony Robinson is a researcher in the application of recurrent neural networks to speech recognition, being one of the first to discover the practical capabilities of deep neural networks and its application to speech recognition.
+
+Education and Early Career
+
+Robinson studied natural sciences at Cambridge University between 1981 and 1984, where he specialized in physics. He went on to complete an MPhil in computer speech and language processing in 1985 and continued with a PhD in the same area in 1989, both at Cambridge. He first published on the topic of speech recognition during his PhD and has published over a hundred widely cited research papers on automatic speech recognition (ASR) in the years since.
+
+Entrepreneurial Career
+
+In 1995, Robinson formed SoftSound Ltd, a speech technology company which was acquired by Autonomy with a view to using the technology to make unstructured video and voice data easily searchable. Robinson helped build the fastest large vocabulary speech recognition system available at the time, and operating in more languages than any other model, based on recurrent neural networks.
+
+From 2008 to 2010, Robinson was the Director of the Advanced Speech Group at SpinVox, a provider of speech-to-text conversion services for carrier markets, including wireless, VoIP and cable. Their Automatic Speech Recognition (ASR) system was, for a time, being used more than one million times per day and SpinVox was subsequently acquired by global speech technology company Nuance.
+
+Robinson was also founder of Speechmatics, which launched its cloud-based speech recognition services in 2012. Speechmatics subsequently announced a new technology in accelerated new language modeling late in 2017. Robinson continues to publish papers in speech recognition technology, especially in the area of statistical language modelling.
+
+References
+
+Category:Living people
+
+Category:Year of birth missing (living people)
+
+Category:British computer scientists
+
+Category:Alumni of the University of Cambridge
+
+Category:British businesspeople
+
+Category:Natural language processing researchers

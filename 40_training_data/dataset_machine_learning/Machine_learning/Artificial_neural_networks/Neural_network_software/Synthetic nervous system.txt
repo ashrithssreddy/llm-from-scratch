@@ -1,0 +1,101 @@
+{{Multiple issues|
+
+}}
+
+Synthetic nervous system (SNS) is a computational neuroscience model that may be developed with the Functional Subnetwork Approach (FSA) to create biologically plausible models of circuits in a nervous system. The FSA enables the direct analytical tuning of dynamical networks that perform specific operations within the nervous system without the need for global optimization methods like genetic algorithms and reinforcement learning. The primary use case for a SNS is system control, where the system is most often a simulated biomechanical model or a physical robotic platform. An SNS is a form of a neural network much like artificial neural networks (ANNs), convolutional neural networks (CNN), and recurrent neural networks (RNN). The building blocks for each of these neural networks is a series of nodes and connections denoted as neurons and synapses. More conventional artificial neural networks rely on training phases where they use large data sets to form correlations and thus "learn" to identify a given object or pattern. When done properly this training results in systems that can produce a desired result, sometimes with impressive accuracy. However, the systems themselves are typically "black boxes" meaning there is no readily distinguishable mapping between structure and function of the network. This makes it difficult to alter the function, without simply starting over, or extract biological meaning except in specialized cases. The SNS method differentiates itself by using details of both structure and function of biological nervous systems. The neurons and synapse connections are intentionally designed rather than iteratively changed as part of a learning algorithm.
+
+. The SNS method uses data from neuroscience in control systems for neuromechanical simulations and robots. Designing both a robot's mechanics and controller to capture key aspects of a particular animal may lead to more flexible functionality while suggesting new hypotheses for how the animal's nervous system works.
+
+Keeping neural models simple facilitates analysis, real time operation, and tuning. To this end, SNSs primarily model neurons as leaky integrators, which are reasonable approximations of sub-threshold passive membrane dynamics. The leaky integrator also models non-spiking interneurons which contribute to motor control in some invertebrates (locust, stick insect, C. elegans ). If spiking needs to be incorporated into the model, nodes may be represented using the leaky integrate-and-fire models. In addition, other conductances like those of the Hodgkin-Huxley model can be incorporated into the model. She used the term SNS to refer to her biologically-inspired hierarchical model of cognition, which included systems for low-level sensory feature extraction, attention, perception, motivation, behavior, and motor output. Using this framework, Kismet could respond to people by abstracting its sensory information into motivation for responsive behaviors and the corresponding motor output.
+
+In 2005, Inman Harvey used the term in a review article on his field, Evolutionary Robotics. In his article, Harvey uses the term SNS to refer to the evolved neural controller for a simulated agent. He does not explicitly define the term SNS; instead, he uses the term to differentiate the evolved neural controller from one created via alternative approaches, e.g., multi-layer perceptron (MLP) networks.
+
+In 2008, Thomas R. Insel, the director of the National Institute of Mental Health, was quoted in an American Academy of Neurology interview calling for a "clear moon shot…[to motivate] a decade of new discovery [and] basic research on brain anatomy". As part of that interview, Insel suggested building a "synthetic nervous system" as one such motivational moon shot to drive ongoing and future research. The technical details of what such a SNS would entail were not described.
+
+An article published as part of the International Work-Conference on Artificial Neural Networks (IWANN) proposes a "synthetic nervous system" as an alternative to artificial neural networks (ANNs) based in machine learning. In particular, SNS should be able to include or learn new information without forgetting what it has already learned. However, the authors do not propose a computational neuroscience framework for constructing such networks. Instead, they propose a homeostatic network of the robot's "needs", in which the robot takes actions to satisfy its needs and return to homeostasis. Over time, the robot learns which actions to take in response to its needs.
+
+A dissertation from Joseph Ayer's lab at Northeastern University uses a similar term in its title but never explicitly defines it. The topic of the dissertation is "RoboLobster, a biomimetic robot controlled by an electronic nervous system simulation". Other publications from Ayers use the term "electronic nervous system" (ENS) to describe similar work. In each of these studies, Ayers uses a robot that is controlled by a network of simplified dynamical neural models whose structure mimic specific networks from the model organism. The choice of neural model reflects a balance between simulating the dynamics of the nervous system, which motivates mathematical complexity, while ensuring the simulation runs in real time, which motivates mathematical simplicity.
+
+A 2017 research article from Alexander Hunt, Nicholas Szczecinski, and Roger Quinn use the term SNS and implicitly define it as "neural [or] neuro-mechanical models…composed of non-spiking leaky integrator neuron models".
+
+Comparing the diversity of works that use the term SNS produces an implicit definition of SNS:
+
+Their Network's structure and behavioral goals are grounded in biology
+
+Their priority is to learn more about nervous system function, with the secondary goal of creating a more effective robot control system
+
+They are typically posed as an alternative to more abstracted neural networks with simplified (e.g., all-to-all) network structure (e.g., multi-layer perceptron networks, deep neural networks)
+
+They are computational models of the nervous system meant for closed-loop control of the behavior of simulated or robotic agent within an environment.
+
+Comparison to other neural networks
+
+SNSs share some features with machine learning networks like Artificial neural network (ANN), Convolutional neural network (CNN), and Recurrent neural network (RNN). All of these networks are composed of neurons and synapses inspired in some way by biological nervous systems. These components are used to build neural circuits with the express purpose of accomplishing a specific task. ANN simply refers to a collection of nodes (neurons) connected such that they loosely model a biological brain. This is a rather broad definition and as a consequence there are many subcategories of ANN, two of which are CNN and RNN. CNNs are primarily used for image recognition and classification. Their layer-to-layer connections implement convolutional kernels across small areas of the image, which map the input to the system (typically an image) onto a collection of features. ANNs and CNNs are only loosely associated with SNS in that they share the same general building blocks of neurons and synapses, though the methods used to model each component varies between the networks. Of the three, RNNs are the most closely related to SNS. SNSs use the same leaky-integrator neuron models utilized in RNNs. This is advantageous as neurons inherently act as low pass filters, which is useful for robotic applications where such filtering is often applied to reduce noise for both sensing and control purposes. Both models also exhibit dynamic responses to inputs. While predicting the responses of a complicated network can be difficult, the dynamics of each node are relatively simple in that each is a system of first order differential equations (as opposed to fractional derivatives). The key difference that distinguishes SNS from these neural networks are the synaptic connections and the general architecture of the neural circuit.
+
+RNN structures generally present as large, highly connected or even all-to- all connected layers of neurons. Instead of these layers, SNS relies on functional subnetworks which are tuned to perform specific operations and then assembled into larger networks with explainable functions. These are significantly more tractable than a typical machine learning network. The tradeoff of SNS is that it typically takes more time to design and tune the network but it does not require a training phase involving large amounts of computing power and training data. The other key difference is that SNS synapses are conductance based rather than current based which makes the dynamics non-linear, unlike an RNN. This allows for the modelling of modulatory neural pathways since the synapses can alter the net membrane conductance of a postsynaptic neuron without injecting current. It also enables the functional subnetwork approach to encompass addition, subtraction, multiplication, division, differentiation, and integration operations using the same family of functions.
+
+Neuron and synapse models
+
+Non-spiking neuron
+
+SNS networks are composed mainly of non-spiking leaky integrator nodes to which complexity may be added if needed. Such dynamics model non-spiking neurons like those studied extensively in invertebrates (e.g., nematode, locust,) or may represent the mean activity of a population of spiking neurons. The dynamics of the membrane voltage V of a non-spiking neuron are governed by the differential equation
+
+C_m\dfrac{dV}{dt}=I_\text{leak}+I_\text{syn}+I_\text{app}
+
+where C_m is the membrane capacitance, I_\text{app} is an arbitrary current injected into the cell e.g., via a current clamp, and I_\text{leak} and I_\text{syn} are the leak and synaptic currents, respectively. The leak current
+
+I_\text{leak}=G_m*(E_r-V)
+
+where G_m is the conductance of the cell membrane and E_r is the rest potential across the cell membrane. The synaptic current
+
+I_\text{syn}=\sum\limits_{i=1}^n G_{s,i}*(E_{s,i}-V)
+
+where n is the number of synapses that impinge on the cell, G_{s,i} is the instantaneous synaptic conductance of the i^{th} incoming synapse, and E_{s,i} is the reversal potential of the i^{th} incoming synapse.
+
+Graded chemical synapse
+
+s via bifurcation methods. These can be seen here:
+
+v'=0.04v^2+5v+140-u+I
+
+u'=a*(bv-u)
+
+Where the membrane potential resets after spiking as described by:
+
+\text{if } v\geq30mV, \text{then } \begin{cases} v\longleftarrow c \\
+
+u\longleftarrow u+d\\
+
+\end{cases}
+
+v is a dimensionless variable representing the membrane potential. u is a dimensionless variable representing membrane recovery which accounts for the ion current behaviors, specifically those of Na^+ and K^+. a, b, c, and d are dimensionless parameters that can be altered to shape the signal into different neuronal response patterns. This enables chattering, bursting, and continuous spiking with frequency adaptation which constitute a richer array of behaviors than the basic integrate-and-fire method can produce.
+
+The coefficients in the v' equation were acquired via data fitting to a particular neuron's spiking patterns (a cortical neuron in this case) to get the potentials in the mV range and time on the scale of ms. It is possible to use other neurons to fit the spike initiation dynamics, they will simply produce different coefficients.
+
+For more information on the Izhikevich model and the bifurcation methods used to develop it please read the following. This work stands out as an early example of quintessential SNS robot control because of its depth of neural circuitry detail (e.g., command networks, coordination networks, and pattern generation networks) and breadth of bioinspiration (e.g., nervous system-like controller organization, animal-like body plan, neuromorphic sensors and encoding strategies, and myomorphic actuators).
+
+Subsequent work from the Ayers lab has increased the biological detail of the neural and synaptic models used in their SNS controllers.) or should not induce PIR (e.g., load feedback from one leg inhibiting the swing networks of the anterior leg
+
+Locomotion control of a simulated cockroach
+
+This study presented the largest SNS to be tuned by the FSA, an SNS with over 3,500 neurons and over 6,500 synapses whose structure was based on thoracic circuitry that controls insect locomotion. The SNS controlled the walking of a forward-dynamics simulation of a cockroach, named SimRoach2. SimRoach2 walked in a straight path with minimal body pitch and roll at 20&nbsp;cm/s, a commonly observed walking speed for the model organism, Blaberus discoidalis. As in study,
+
+Brain networks
+
+Synthetic Nervous Systems have also been used to model higher functions in the nervous system than the peripheral networks responsible for locomotion. Some examples of these kinds of SNS are listed here:
+
+Visual neural network model of a lobster for optical flow reflexes
+
+This study produced an SNS that calculated the optic flow of a lobster's visual scene, and formulated direction-specific descending commands to the locomotion networks to drive behavior. This is an early SNS model of a brain network.
+
+Visual neural network model of a fruit fly for motion recognition
+
+The FSA was used to construct an SNS model of networks that process wide-field vision in insects, i.e., 12 columns of the insect optic lobe, including the retina, lamina, medulla, and lobula plate tangential cells (LPTC). This study is the first to apply the FSA to design exteroceptive networks, i.e., visual elementary motion detector (EMD) networks.
+
+Optomotor response model for a praying mantis inspired robot visual system
+
+The authors extend the model from  Analysis from the FSA suggested a mechanism that may underlie the memory-like behavior of the CX.
+
+References
+
+Category:Neural network software

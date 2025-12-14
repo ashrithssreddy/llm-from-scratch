@@ -1,0 +1,29 @@
+Artificial development,  also known as artificial embryogeny or machine intelligence or computational development, is an area of computer science and engineering concerned with computational models motivated by genotype–phenotype mappings in biological systems. Artificial development is often considered a sub-field of evolutionary computation, although the principles of artificial development have also been used within stand-alone computational models.
+
+Within evolutionary computation, the need for artificial development techniques was motivated by the perceived lack of scalability and evolvability of direct solution encodings (Tufte, 2008). Artificial development entails indirect solution encoding. Rather than describing a solution directly, an indirect encoding describes (either explicitly or implicitly) the process by which a solution is constructed. Often, but not always, these indirect encodings are based upon biological principles of development such as morphogen gradients, cell division and cellular differentiation (e.g. Doursat 2008), gene regulatory networks (e.g. Guo et al., 2009),  degeneracy (Whitacre et al., 2010), grammatical evolution (de Salabert et al., 2006), or analogous computational processes such as re-writing, iteration, and time. The influences of interaction with the environment, spatiality and physical constraints on differentiated multi-cellular development have been investigated more recently (e.g. Knabe et al. 2008).
+
+Artificial development approaches have been applied to a number of computational and design problems, including electronic circuit design (Miller and Banzhaf 2003), robotic controllers (e.g. Taylor 2004), and the design of physical structures (e.g. Hornby 2004).
+
+Notes
+
+Rene Doursat, "Organically grown architectures: Creating decentralized, autonomous systems by embryomorphic engineering", Organic Computing, R. P. Würtz, (ed.), Springer-Verlag, Ch. 8, pp. 167-200, 2008.
+
+Guo, H., Y. Meng and Y. Jin (2009). "A cellular mechanism for multi-robot construction via evolutionary multi-objective optimization of a gene regulatory network." BioSystems 98(3): 193-203. (https://web.archive.org/web/20110719123923/http://www.ece.stevens-tech.edu/~ymeng/publications/BioSystems09_Meng.pdf)
+
+Whitacre, J. M., P. Rohlfshagen, X. Yao and A. Bender (2010). The role of degenerate robustness in the evolvability of multi-agent systems in dynamic environments. Parallel Problem Solving from Nature (PPSN) XI, Kraków, Poland. (https://www.researchgate.net/profile/James_Whitacre/publication/220701596_The_Role_of_Degenerate_Robustness_in_the_Evolvability_of_Multi-agent_Systems_in_Dynamic_Environments/links/0d2b2c6889b5121d730dd3be.pdf)
+
+Gregory S. Hornby, "Functional Scalability through Generative Representations: the Evolution of Table Designs", Environment and Planning B: Planning and Design, 31(4), 569-587, July 2004. (abstract)
+
+Julian F. Miller and Wolfgang Banzhaf (2003): "Evolving the Program for a Cell: From French Flags to Boolean Circuits", On Growth, Form and Computers, S. Kumar and P. Bentley, (eds.), Elsevier Academic Press, 2003.
+
+Arturo de Salabert, Alfonso Ortega and Manuel Alfonseca, (2006) “Optimizing Ecology-friendly Drawing of Plans of Buildings by means of Grammatical Evolution,” Proc. ISC’2006, Eurosis, pp. 493-497.
+
+Kenneth Stanley and Risto Miikkulainen (2003): "A Taxonomy for artificial embryogeny", Artificial Life 9(2):93-130, 2003.
+
+Tim Taylor (2004): "A Genetic Regulatory Network-Inspired Real-Time Controller for a Group of Underwater Robots" ,  Intelligent Autonomous Systems 8 (Proceedings of IAS8), F. Groen, N. Amato, A. Bonarini, E. Yoshida and B. Kröse (eds.), IOS Press, Amsterdam, 2004.
+
+Gunnar Tufte (2008): "Phenotypic, Developmental and Computational Resources: Scaling in Artificial Development", Proc. Genetic and Evolutionary Computation Conf. (GECCO) 2008, ACM, 2008.
+
+Knabe, J. F., Nehaniv, C. L. and Schilstra, M. J. "Evolution and Morphogenesis of Differentiated Multicellular Organisms: Autonomously Generated Diffusion Gradients for Positional Information". In Artificial Life XI: Proceedings of the Eleventh International Conference on the Simulation and Synthesis of Living Systems, pages 321-328, MIT Press, 2008. corr. web page
+
+Category:Evolutionary algorithms

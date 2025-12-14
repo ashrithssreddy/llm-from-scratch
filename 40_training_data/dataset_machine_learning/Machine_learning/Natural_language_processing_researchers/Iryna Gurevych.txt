@@ -1,0 +1,67 @@
+Iryna Gurevych, member Leopoldina, (born March 16, 1976, in Vinnytsia, Ukraine) is a Ukrainian computer scientist. She is Professor at the Department of Computer Science of the Technical University of Darmstadt and Director of Ubiquitous Knowledge Processing Lab.
+
+Life
+
+Gurevych received her diploma in English and German Linguistics from the Vinnytsia State Pedagogical University in 1998. In 2001, she received her Ph.D. in Computational Linguistics from University of Duisburg-Essen.
+
+From 2001 to 2005, she worked as a postdoctoral researcher at the European Media Lab and EML Research. From 2005 to 2007, she was a senior researcher in the research area of E-learning at the Technical University of Darmstadt. As head of an Emmy Noether Research Group funded by the German Research Foundation, Gurevych founded the research group "Ubiquitous Knowledge Processing" (UKP Lab) and was awarded a Lichtenberg Professorship of the Volkswagen Foundation in 2008. Since 2009 she holds the W3 professorship "Ubiquitous Knowledge Processing".
+
+Since 2014, she is co-director of the Centre for the Digital Foundation of Research in the Humanities, Social, and Educational Sciences (CEDIFOR), which is funded by the Federal Ministry of Education and Research. The following year, she founded the research training group AIPHES (Adaptive Information Preparation from Heterogeneous Sources) funded by the German Research Foundation. Since 2020, Gurevych is the director of CA-SG, a research initiative "Content Analytics for the Social Good" of the Rhine-Main Universities and co-director of the Natural Language Processing (NLP) program of ELLIS, a European Network of Excellence in Machine Learning.
+
+In 2020, Gurevych was awarded as a Fellow of the international scientific Association for Computational Linguistics (ACL) for her outstanding contributions in the field of Natural Language Processing and Machine Learning. On January 1, 2021, Gurevych has taken over the office of Vice-president-elect and becomes president of the most important international organization in computational linguistics in 2023: the Association for Computational Linguistics (ACL).
+
+Gurevych receives the first LOEWE-professorship of the LOEWE programme, a Hessian research funding programme in Germany, in March 2021.
+
+Gurevych's research interests include Natural Language Processing, Machine Learning, Multimodal Data Analysis, Digital Humanities, and Computational Social Science.
+
+Awards
+
+First LOEWE-professorship in Hesse, Germany, 2021
+
+Association for Computational Linguistics (ACL) Fellowship, 2020
+
+Unstructured Information Analytics 2008 Innovation Award from IBM "UIMA-based Fundamental Course for Teaching Emerging NLP Trends to Computer Science Students", 2008
+
+Lichtenberg-Professorship Award from the Volkswagen Foundation, 2007
+
+Emmy-Noether Researcher's Excellence Career Award. 2007
+
+Publications
+
+L. F. R. Ribeiro, Y. Zhang, C. Gardent, and I. Gurevych, Modeling global and local node contexts for text generation from knowledge graphs, Transactions of the Association for Computational Linguistics, pp.&nbsp;589–604, 2020.
+
+E. Simpson, Y. Gao, and I. Gurevych, Interactive text ranking with bayesian optimisation: A case study on community qa and summarisation, Transactions of the Association for Computational     Linguistics, pp.&nbsp;759–775, 2020.
+
+E. Simpson and I. Gurevych, Scalable bayesian preference learning for crowds, Machine Learning, vol. 109, pp.&nbsp;689–718, 2020.
+
+Y. Gao, C. M. Meyer, and I. Gurevych, Preference-based interactive multi-document summarisation, Information Retrieval Journal: Special Issue on Learning from User Interaction, pp.&nbsp;1–31,     2019.
+
+I. Gurevych, J. Eckle-Kohler, and M. Matuschek, Linked Lexical Knowledge Bases: Foundations and Applications. Ser. Synthesis Lectures on Human Language Technologies. Morgan & Claypool Publishers, 2016.
+
+References
+
+External links
+
+Academia.net
+
+Category:1976 births
+
+Category:Ukrainian computer scientists
+
+Category:Living people
+
+Category:Natural language processing researchers
+
+Category:Academic staff of Technische Universität Darmstadt
+
+Category:Ukrainian women computer scientists
+
+Category:Ukrainian computer programmers
+
+Category:21st-century Ukrainian women scientists
+
+Category:Ukrainian emigrants to Germany
+
+Category:People from Vinnytsia
+
+Category:University of Duisburg-Essen alumni

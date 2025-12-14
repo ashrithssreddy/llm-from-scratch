@@ -1,0 +1,239 @@
+Non-negative matrix factorization (NMF or NNMF), also non-negative matrix approximation is a group of algorithms in multivariate analysis and linear algebra where a matrix  is factorized into (usually) two matrices  and , with the property that all three matrices have no negative elements. This non-negativity makes the resulting matrices easier to inspect. Also, in applications such as processing of audio spectrograms or muscular activity, non-negativity is inherent to the data being considered. Since the problem is not exactly solvable in general, it is commonly approximated numerically.
+
+NMF finds applications in such fields as astronomy, chemometrics, audio signal processing, recommender systems, and bioinformatics.
+
+History
+
+In chemometrics non-negative matrix factorization has a long history under the name "self modeling curve resolution".
+
+In this framework the vectors in the right matrix are continuous curves rather than discrete vectors.
+
+Also early work on non-negative matrix factorizations was performed by a Finnish group of researchers in the 1990s under the name positive matrix factorization.
+
+It became more widely known as non-negative matrix factorization after Lee and Seung investigated the properties of the algorithm and published some simple and useful
+
+algorithms for two types of factorizations.
+
+Background
+
+Let matrix  be the product of the matrices  and ,
+
+\mathbf{V} = \mathbf{W} \mathbf{H} \,.
+
+Matrix multiplication can be implemented as computing the column vectors of  as linear combinations of the column vectors in  using coefficients supplied by columns of .  That is, each column of  can be computed as follows:
+
+\mathbf{v}_i = \mathbf{W} \mathbf{h}_{i} \,,
+
+where  is the -th column vector of the product matrix  and  is the -th column vector of the matrix .
+
+When multiplying matrices, the dimensions of the factor matrices may be significantly lower than those of the product matrix and it is this property that forms the basis of NMF. NMF generates factors with significantly reduced dimensions compared to the original matrix. For example, if  is an  matrix,  is an  matrix, and  is a  matrix then  can be significantly less than both  and .
+
+Here is an example based on a text-mining application:
+
+Let the input matrix (the matrix to be factored) be  with 10000 rows and 500 columns where words are in rows and documents are in columns. That is, we have 500 documents indexed by 10000 words. It follows that a column vector  in  represents a document.
+
+Assume we ask the algorithm to find 10 features in order to generate a features matrix  with 10000 rows and 10 columns and a coefficients matrix  with 10 rows and 500 columns.
+
+The product of  and  is a matrix with 10000 rows and 500 columns, the same shape as the input matrix  and, if the factorization worked, it is a reasonable approximation to the input matrix .
+
+From the treatment of matrix multiplication above it follows that each column in the product matrix  is a linear combination of the 10 column vectors in the features matrix  with coefficients supplied by the coefficients matrix .
+
+This last point is the basis of NMF because we can consider each original document in our example as being built from a small set of hidden features. NMF generates these features.
+
+It is useful to think of each feature (column vector) in the features matrix  as a document archetype comprising a set of words where each word's cell value defines the word's rank in the feature: The higher a word's cell value the higher the word's rank in the feature. A column in the coefficients matrix  represents an original document with a cell value defining the document's rank for a feature. We can now reconstruct a document (column vector) from our input matrix by a linear combination of our features (column vectors in ) where each feature is weighted by the feature's cell value from the document's column in .
+
+Clustering property
+
+NMF has an inherent clustering property,
+
+Types
+
+Approximate non-negative matrix factorization
+
+Usually the number of columns of  and the number of rows of  in NMF are selected so the product  will become an approximation to .  The full decomposition of  then amounts to the two non-negative matrices  and  as well as a residual , such that: . The elements of the residual matrix can either be negative or positive.
+
+When  and  are smaller than  they become easier to store and manipulate. Another reason for factorizing  into smaller matrices  and , is that if one's goal is to approximately represent the elements of  by significantly less data, then one has to infer some latent structure in the data.
+
+Convex non-negative matrix factorization
+
+In standard NMF, matrix factor ， i.e.,  can be anything in that space.  Convex NMF restricts the columns of  to convex combinations of the input data vectors  (v_1, \dots, v_n) . This greatly improves the quality of data representation of . Furthermore, the resulting matrix factor  becomes more sparse and orthogonal.
+
+Nonnegative rank factorization
+
+In case the nonnegative rank of  is equal to its actual rank,  is called a nonnegative rank factorization (NRF). The problem of finding the NRF of , if it exists, is known to be NP-hard.
+
+Different cost functions and regularizations
+
+There are different types of non-negative matrix factorizations.
+
+The different types arise from using different cost functions for measuring the divergence between  and  and possibly by regularization of the  and/or  matrices.
+
+Two simple divergence functions studied by Lee and Seung are the squared error (or Frobenius norm) and an extension of the Kullback–Leibler divergence to positive matrices (the original Kullback–Leibler divergence is defined on probability distributions).
+
+Each divergence leads to a different NMF algorithm, usually minimizing the divergence using iterative update rules.
+
+The factorization problem in the squared error version of NMF may be stated as:
+
+Given a matrix \mathbf{V} find nonnegative matrices W and H that minimize the function
+
+F(\mathbf{W},\mathbf{H}) = \left\|\mathbf{V} - \mathbf{WH} \right\|^2_F
+
+Another type of NMF for images is based on the total variation norm.
+
+When L1 regularization (akin to Lasso) is added to NMF with the mean squared error cost function, the resulting problem may be called non-negative sparse coding due to the similarity to the sparse coding problem,
+
+although it may also still be referred to as NMF.
+
+Online NMF
+
+Many standard NMF algorithms analyze all the data together; i.e., the whole matrix is available from the start. This may be unsatisfactory in applications where there are too many data to fit into memory or where the data are provided in streaming fashion. One such use is for collaborative filtering in recommendation systems, where there may be many users and many items to recommend, and it would be inefficient to recalculate everything when one user or one item is added to the system. The cost function for optimization in these cases may or may not be the same as for standard NMF, but the algorithms need to be rather different.
+
+Convolutional NMF
+
+If the columns of  represent data sampled over spatial or temporal dimensions, e.g. time signals, images, or video, features that are equivariant w.r.t. shifts along these dimensions can be learned by Convolutional NMF. In this case,  is sparse with columns having local non-zero weight windows that are shared across shifts along the spatio-temporal dimensions of , representing convolution kernels. By spatio-temporal pooling of  and repeatedly using the resulting representation as input to convolutional NMF, deep feature hierarchies can be learned.
+
+Algorithms
+
+There are several ways in which the  and  may be found: Lee and Seung's multiplicative update rule the active set method, the optimal gradient method, and the block principal pivoting method among several others.
+
+Current algorithms are sub-optimal in that they only guarantee finding a local minimum, rather than a global minimum of the cost function. A provably optimal algorithm is unlikely in the near future as the problem has been shown to generalize the k-means clustering problem which is known to be NP-complete. However, as in many other data mining applications, a local minimum may still prove to be useful.
+
+In addition to the optimization step, initialization has a significant effect on NMF. The initial values chosen for  and  may affect not only the rate of convergence, but also the overall error at convergence. Some options for initialization include complete randomization, SVD, k-means clustering, and more advanced strategies based on these and other paradigms.
+
+and principal component analysis, and shows that although the three techniques may be written as factorizations, they implement different constraints and therefore produce different results.
+
+from a probability distribution with mean \sum_a W_{ia}h_a.
+
+When NMF is obtained by minimizing the Kullback–Leibler divergence, it is in fact equivalent to another instance of multinomial PCA, probabilistic latent semantic analysis,
+
+trained by maximum likelihood estimation.
+
+That method is commonly used for analyzing and clustering textual data and is also related to the latent class model.
+
+NMF with the least-squares objective is equivalent to a relaxed form of K-means clustering: the matrix factor  contains cluster centroids and  contains cluster membership indicators.  This provides a theoretical foundation for using NMF for data clustering. However, k-means does not enforce non-negativity on its centroids, so the closest analogy is in fact with "semi-NMF".
+
+NMF can be seen as a two-layer directed graphical model with one layer of observed random variables and one layer of hidden random variables.
+
+NMF extends beyond matrices to tensors of arbitrary order. This extension may be viewed as a non-negative counterpart to, e.g., the PARAFAC model.
+
+Other extensions of NMF include joint factorization of several data matrices and tensors where some factors are shared. Such models are useful for sensor fusion and relational learning.
+
+NMF is an instance of nonnegative quadratic programming, just like the support vector machine (SVM). However, SVM and NMF are related at a more intimate level than that of NQP, which allows direct application of the solution algorithms developed for either of the two methods to problems in both domains.
+
+Uniqueness
+
+The factorization is not unique: A matrix and its inverse can be used to transform the two factorization matrices by, e.g.,
+
+\mathbf{WH} = \mathbf{WBB}^{-1}\mathbf{H}
+
+If the two new matrices \mathbf{\tilde{W} = WB} and \mathbf{\tilde{H}}=\mathbf{B}^{-1}\mathbf{H} are non-negative they form another parametrization of the factorization.
+
+The non-negativity of \mathbf{\tilde{W}} and \mathbf{\tilde{H}} applies at least if  is a non-negative monomial matrix.
+
+In this simple case it will just correspond to a scaling and a permutation.
+
+More control over the non-uniqueness of NMF is obtained with sparsity constraints.
+
+Applications
+
+Astronomy
+
+In astronomy, NMF is a promising method for dimension reduction in the sense that astrophysical signals are non-negative. NMF has been applied to the spectroscopic observations and the direct imaging observations as a method to study the common properties of astronomical objects and post-process the astronomical observations. The advances in the spectroscopic observations by Blanton & Roweis (2007) where missing data are also considered and parallel computing is enabled. Their method is then adopted by Ren et al. (2018) however the light from the exoplanets or circumstellar disks are usually over-fitted, where forward modeling have to be adopted to recover the true flux. Forward modeling is currently optimized for point sources,
+
+Another research group clustered parts of the Enron email dataset
+
+with 65,033 messages and 91,133 terms into 50 clusters.
+
+NMF has also been applied to citations data, with one example clustering English Wikipedia articles and scientific journals based on the outbound scientific citations in English Wikipedia.
+
+Arora, Ge, Halpern, Mimno, Moitra, Sontag, Wu, & Zhu (2013) have given polynomial-time algorithms to learn topic models using NMF. The algorithm assumes that the topic matrix satisfies a separability condition that is often found to hold in these settings.
+
+Spectral data analysis
+
+NMF is also used to analyze spectral data; one such use is in the classification of space objects and debris.
+
+Scalable Internet distance prediction
+
+NMF is applied in scalable Internet distance (round-trip time) prediction. For a network with N hosts, with the help of NMF, the distances of all the N^2 end-to-end links can be predicted after conducting only O(N) measurements. This kind of method was firstly introduced in Internet
+
+Distance Estimation Service (IDES). Afterwards, as a fully decentralized approach, Phoenix network coordinate system
+
+is proposed. It achieves better overall prediction accuracy by introducing the concept of weight.
+
+Non-stationary speech denoising
+
+Speech denoising has been a long lasting problem in audio signal processing. There are many algorithms for denoising if the noise is stationary. For example, the Wiener filter is suitable for additive Gaussian noise. However, if the noise is non-stationary, the classical denoising algorithms usually have poor performance because the statistical information of the non-stationary noise is difficult to estimate. Schmidt et al. use NMF to do speech denoising under non-stationary noise, which is completely different from classical statistical approaches. The key idea is that clean speech signal can be sparsely represented by a speech dictionary, but non-stationary noise cannot. Similarly, non-stationary noise can also be sparsely represented by a noise dictionary, but speech cannot.
+
+The algorithm for NMF denoising goes as follows. Two dictionaries, one for speech and one for noise, need to be trained offline. Once a noisy speech is given, we first calculate the magnitude of the Short-Time-Fourier-Transform. Second, separate it into two parts via NMF, one can be sparsely represented by the speech dictionary, and the other part can be sparsely represented by the noise dictionary. Third, the part that is represented by the speech dictionary will be the estimated clean speech.
+
+Population genetics
+
+Sparse NMF is used in Population genetics for estimating individual admixture coefficients, detecting genetic clusters of individuals in a population sample or evaluating genetic admixture in sampled genomes. In human genetic clustering, NMF algorithms provide estimates similar to those of the computer program STRUCTURE, but the algorithms are more efficient computationally and allow analysis of large population genomic data sets.
+
+Bioinformatics
+
+NMF has been successfully applied in bioinformatics for clustering gene expression and DNA methylation data and finding the genes most representative of the clusters. In the analysis of cancer mutations it has been used to identify common patterns of mutations that occur in many cancers and that probably have distinct causes. NMF techniques can identify sources of variation such as cell types, disease subtypes, population stratification, tissue composition, and tumor clonality.
+
+A particular variant of NMF, namely Non-Negative Matrix Tri-Factorization (NMTF), has been use for drug repurposing tasks in order to predict novel protein targets and therapeutic indications for approved drugs and to infer pair of synergic anticancer drugs.
+
+Nuclear imaging
+
+NMF, also referred in this field as factor analysis, has been used since the 1980s to analyze sequences of images in SPECT and PET dynamic medical imaging. Non-uniqueness of NMF was addressed using sparsity constraints.
+
+Current research
+
+Current research (since 2010) in nonnegative matrix factorization includes, but is not limited to,
+
+Algorithmic: searching for global minima of the factors and factor initialization.
+
+Scalability: how to factorize million-by-billion matrices, which are commonplace in Web-scale data mining, e.g., see Distributed Nonnegative Matrix Factorization (DNMF), Scalable Nonnegative Matrix Factorization (ScalableNMF), Distributed Stochastic Singular Value Decomposition.
+
+Online: how to update the factorization when new data comes in without recomputing from scratch, e.g., see online CNSC
+
+Collective (joint) factorization: factorizing multiple interrelated matrices for multiple-view learning, e.g. multi-view clustering, see CoNMF and MultiNMF
+
+Cohen and Rothblum 1993 problem: whether a rational matrix always has an NMF of minimal inner dimension whose factors are also rational. Recently, this problem has been answered negatively.
+
+See also
+
+Multilinear algebra
+
+Multilinear subspace learning
+
+Tensor
+
+Tensor decomposition
+
+Tensor software
+
+Sources and external links
+
+Notes
+
+Others
+
+Andrzej Cichocki, Morten Mrup, et al.: "Advances in Nonnegative Matrix and Tensor Factorization", Hindawi Publishing Corporation,  (2008).
+
+Andrzej Cichocki, Rafal Zdunek, Anh Huy Phan and Shun-ichi Amari: "Nonnegative Matrix and Tensor Factorizations: Applications to Exploratory Multi-way Data Analysis and Blind Source Separation", Wiley,  (2009).
+
+Andri Mirzal: "Nonnegative Matrix Factorizations for Clustering and LSI: Theory and Programming",  LAP LAMBERT Academic Publishing,  (2011).
+
+Yong Xiang: "Blind Source Separation: Dependent Component Analysis", Springer,  (2014).
+
+Ganesh R. Naik(Ed.): "Non-negative Matrix Factorization Techniques: Advances in Theory and Applications", Springer,  (2016).
+
+Julian Becker: "Nonnegative Matrix Factorization with Adaptive Elements for Monaural Audio Source Separation: 1 ", Shaker Verlag GmbH, Germany,  (2016).
+
+Jen-Tzung Chien: "Source Separation and Machine Learning", Academic Press,  (2018).
+
+Shoji Makino(Ed.): "Audio Source Separation", Springer,  (2019).
+
+Nicolas Gillis: "Nonnegative Matrix Factorization", SIAM,  (2020).
+
+Category:Linear algebra
+
+Category:Matrix theory
+
+Category:Machine learning algorithms
+
+Category:factorization

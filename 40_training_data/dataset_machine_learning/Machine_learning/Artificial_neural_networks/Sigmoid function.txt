@@ -1,0 +1,29 @@
+]]
+
+]]
+
+A sigmoid function is any mathematical function whose graph has a characteristic S-shaped or sigmoid curve.
+
+A common example of a sigmoid function is the logistic function, which is defined by the formula normalized to (−1,1):
+
+\begin{align}f(x) &= \begin{cases}
+
+{\displaystyle
+
+\frac{2}{1+e^{-2m\frac{x}{1-x^2}}} - 1}, & |x|  using the hyperbolic tangent mentioned above.  Here, m is a free parameter encoding the slope at x=0, which must be greater than or equal to \sqrt{3} because any smaller value will result in a function with multiple inflection points, which is therefore not a true sigmoid.  This function is unusual because it actually attains the limiting values of −1 and 1 within a finite range, meaning that its value is constant at −1 for all x \leq -1 and at 1 for all x \geq 1.  Nonetheless, it is smooth (infinitely differentiable, C^\infty) everywhere, including at x = \pm 1.
+
+Applications
+
+Many natural processes, such as those of complex system learning curves, exhibit a progression from small beginnings that accelerates and approaches a climax over time. When a specific mathematical model is lacking, a sigmoid function is often used. with the primary goal to re-analyze kinetic data, the so called N-t curves, from heterogeneous nucleation experiments, in electrochemistry. The hierarchy includes at present three models, with 1, 2 and 3 parameters, if not counting the maximal number of nuclei Nmax, respectively—a tanh2 based model called α21 originally devised to describe diffusion-limited crystal growth (not aggregation!) in 2D, the Johnson–Mehl–Avrami–Kolmogorov (JMAK) model, and the Richards model. It was shown that for the concrete purpose even the simplest model works and thus it was implied that the experiments revisited are an example of two-step nucleation with the first step being the growth of the metastable phase in which the nuclei of the stable phase form.
+
+}}
+
+Further reading
+
+. (NB. In particular see "Chapter 4: Artificial Neural Networks" (in particular pp.&nbsp;96–97) where Mitchell uses the word "logistic function" and the "sigmoid function" synonymously – this function he also calls the "squashing function" – and the sigmoid (aka logistic) function is used to compress the outputs of the "neurons" in multi-layer neural nets.)
+
+(NB. Properties of the sigmoid, including how it can shift along axes and how its domain may be transformed.)
+
+Category:Sigmoid functions
+
+Category:Artificial neural networks

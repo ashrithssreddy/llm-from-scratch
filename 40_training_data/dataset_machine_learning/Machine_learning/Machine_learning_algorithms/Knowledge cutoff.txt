@@ -1,0 +1,37 @@
+In machine learning, a knowledge cutoff (or data cutoff) is the point in time beyond which a model has not been trained on new data. The term is mostly used in reference to a large language model (LLM). It cannot access information about later events without a system for real-time data access like retrieval-augmented generation (RAG). While useful for training and tuning LLMs, knowledge cutoffs introduce new limitations like hallucinations, information gaps, and temporal bias.
+
+Notable AI model cutoff dates include:
+
+The GPT-4 model has a knowledge cutoff of September 2021.
+
+The GPT-4 Turbo model has an updated knowledge cutoff of December 2023.
+
+Effects of knowledge cutoffs
+
+Knowledge gaps
+
+Knowledge cutoffs create information gaps. The model lacks any knowledge of events or discoveries that are not included in its training data.
+
+Effective vs. reported cutoffs
+
+A research paper on arXiv indicates that a model's functional knowledge may not be uniformly limited by its stated cutoff date. This effective cutoff often differs for various subjects and is influenced by the distribution of information within the training data itself. Due to the high cost of retraining large language models, these models are rarely completely retrained to increase their knowledge cutoff. Some models can also use integrated search tools to access more recent information, which blurs the line of their inherent knowledge base. For example, GPT-4, can access its search tool and give real-time info. For example, Google AI Overviews have created false claims and the results are sometimes unreliable, since it either fail at understanding the source, or at generating the actual response properly. These fine-tuning techniques permit efficient, incremental updates to a model without the high cost of a full retraining cycle. However, this does not give real-time awareness, since adding modules to the system may result in algorithmic bias and catastrophic forgetting, as the weights in the model become biased towards the new set of data.
+
+See also
+
+Continual learning
+
+Language model
+
+Large language model
+
+Hallucination (artificial intelligence)
+
+Algorithmic bias
+
+References
+
+Category:Artificial intelligence
+
+Category:Natural language processing
+
+Category:Machine learning algorithms

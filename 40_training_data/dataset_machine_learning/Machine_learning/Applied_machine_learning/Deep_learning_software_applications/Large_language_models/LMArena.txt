@@ -1,0 +1,55 @@
+{{Infobox website
+
+logo =
+
+logo_size = 160px
+
+screenshot = Chatbot Arena main UI.png
+
+screenshot_size = 270px
+
+caption = Screenshot as of February 20, 2025, using the Gradio library
+
+name = LMArena
+
+url =
+
+type = Artificial intelligence
+
+registration = Optional
+
+country_of_origin = United States
+
+owner = LMSYS Org
+
+founder =
+
+launch_date =
+
+}}
+
+LMArena (formerly Chatbot Arena) is a public, web-based platform that evaluates large language models (LLMs) through anonymous, crowd-sourced pairwise comparisons. Users enter prompts for two anonymous models to respond to and vote on the model that gave the better response, in which the model's identities are then revealed. Users can also choose models to test themselves.
+
+LMArena is popular within the artificial intelligence industry, with major companies supplying their large language models, such as OpenAI's GPT-4o and o1, Google DeepMind's Gemini, and Anthropic's Claude, and using their subsequent rankings to promote them.
+
+The website has even been used for preview releases of upcoming models. Notably, Chinese company DeepSeek tested its prototype models in the LMArena months before its R1 model gained attention in Western media. Other notable pre-release models include OpenAI's GPT-5 under the codename "summit" and Google DeepMind's Gemini 2.5 Flash Image, an image generation and editing model, under the codename "Nano Banana".
+
+LMArena’s evaluation methodology for large language models has been examined in academic analyses, which have identified specific limitations and suggested areas for improvement. The platform is an active contributor of the AI research ecosystem and has since implemented methodological updates in coordination with ongoing research through its policy updates.
+
+References
+
+External links
+
+Category:2023 in artificial intelligence
+
+Category:Chatbots
+
+Category:Internet properties established in 2023
+
+Category:Large language models
+
+Category:University of California, Berkeley
+
+Category:2024 in artificial intelligence
+
+Category:2025 in artificial intelligence

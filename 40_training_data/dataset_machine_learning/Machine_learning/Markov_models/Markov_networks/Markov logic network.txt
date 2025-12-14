@@ -1,0 +1,45 @@
+A Markov logic network (MLN) is a probabilistic logic which applies the ideas of a Markov network to first-order logic, defining probability distributions on possible worlds on any given domain.
+
+History
+
+In 2002, Ben Taskar, Pieter Abbeel and Daphne Koller introduced relational Markov networks as templates to specify Markov networks abstractly and without reference to a specific domain. Work on Markov logic networks began in 2003 by Pedro Domingos and Matt Richardson. Markov logic networks is a popular formalism for statistical relational learning.
+
+Syntax
+
+A Markov logic network consists of a collection of formulas from first-order logic, to each of which is assigned a real number, the weight. The underlying idea is that an interpretation is more likely if it satisfies formulas with positive weights and less likely if it satisfies formulas with negative weights.\begin{array}{lcl} 2.0 & :: & \mathrm{smokes}(X) \leftarrow \mathrm{smokes}(Y) \land \mathrm{influences}(X,Y)
+
+\\ 0.5 & :: & \mathrm{smokes}(X) \leftarrow \mathrm{stress}(X)
+
+\end{array}
+
+Semantics
+
+to a two-element domain.]]
+
+Together with a given domain, a Markov logic network defines a probability distribution on the set of all interpretations of its predicates on the given domain. The underlying idea is that an interpretation is more likely if it satisfies formulas with positive weights and less likely if it satisfies formulas with negative weights.
+
+For any n-ary predicate symbol R that occurs in the Markov logic network and every n-tuple a_1, \dots, a_n of domain elements, R(a_1, \dots, a_n) is a grounding of R. An interpretation is given by allocating a  Boolean truth value (true or false) to each grounding of an element. A true grounding of a formula \varphi in an interpretation with free variables x_1, \dots, x_n is a  variable assignment of x_1, \dots, x_n that makes \varphi true in that interpretation.
+
+Then the probability of any given interpretation is directly proportional to \exp (\sum_{j} w_j n_j), where w_j is the weight of the j-th sentence of the Markov logic network and n_j is the number of its true groundings.
+
+Marginal inference can be performed using standard Markov network inference techniques over the minimal subset of the relevant Markov network required for answering the query.  Exact inference is known to be #P-complete in the size of the domain.  Techniques for approximate inference include Gibbs sampling, belief propagation, or approximation via pseudolikelihood.
+
+The class of Markov logic networks which use only two variables in any formula allows for polynomial time exact inference by reduction to weighted model counting.
+
+See also
+
+Markov random field
+
+Statistical relational learning
+
+Probabilistic logic network
+
+Probabilistic soft logic
+
+ProbLog
+
+References
+
+Category:Bayesian statistics
+
+Category:Markov networks

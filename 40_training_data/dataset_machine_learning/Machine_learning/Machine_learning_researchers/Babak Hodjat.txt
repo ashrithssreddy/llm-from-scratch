@@ -1,0 +1,127 @@
+{{Infobox person
+
+honorific_prefix   = Dr.
+
+name               = Babak Hodjat
+
+image              = Babak Hodjat.png
+
+alt                =
+
+caption            = Hodjat at the Collision Conference (April 2017)
+
+native_name        =
+
+native_name_lang   =
+
+pronunciation      =
+
+birth_date         =
+
+birth_place        = London, England
+
+other_names        =
+
+citizenship        = Iran  United Kingdom   United States
+
+education          = Sharif University of Technology  Kyushu University
+
+occupation         = Computer scientist
+
+years_active       = 1984 – Present
+
+known_for          = Co-inventor of natural language technology that contributed to the development of  Siri
+
+notable_works      =
+
+term               =
+
+predecessor        =
+
+successor          =
+
+party              =
+
+movement           =
+
+opponents          =
+
+boards             =
+
+children           = 1
+
+relatives          =
+
+family             =
+
+awards             =
+
+website            =
+
+}}
+
+Babak Hodjat (; born November 1, 1967) is a British computer scientist, entrepreneur, and writer. He was the co-founder and CEO of Sentient Technologies and now holds the position of Chief Technology Officer AI at Cognizant. He is a specialist in the field of artificial intelligence and machine learning. In 1998 Hodjat co-founded Dejima Inc and served as CEO and CTO, his patented work on artificial intelligence led to the technology used by Apple for their digital assistant Siri.
+
+Biography
+
+Early life
+
+Babak Hodjat was born on November 1, 1967 in Wimbledon. His father was a retired university professor in entomology who worked at the British Museum. As a child, he did not like insects and would wander off  the nearby science museum, where he would spend long hours in-front of a computer they had on display. He attended middle school in the United States. He studied at the Sharif University of Technology from 1986 to 1995, and received his Master of Science degree in software engineering. In 1994, together with another computer department student Hormoz Shahrzad  presented their research titled Introducing a dynamic problem solving scheme based on a learning algorithm in artificial life environments at the first IEEE Conference on Computational Intelligence held at Orlando.
+
+Hodjat received a PhD in machine intelligence from Kyushu University in 2003  During his time there, he published several works on adaptive agent oriented software architecture and natural language user interfaces. Hodjat served as the CTO and as the CEO for 9 months from October 2000. By 2000 the company had offices in San Jose, London and  Tokyo. During these years Hodjat continued his research on agent oriented software architecture and natural language user interfaces.  Hodjat was the primary inventor of the firm's  agent-oriented technology applied to intelligent interfaces for mobile and enterprise computing – a technology that eventually led to Siri.  Hodjat served as senior director of engineering at Sybase iAnywhere In 2006, he co-founded MobileVerbs Inc.,
+
+In 2007, he teamed with Antoine Blondeau (former CEO of Dejima) and Adam Cheyer (Dejima's vice president and Chief Architect of the CALO project) to establish Genetic Finance Holding Ltd. (where he began as CTO). In 2014 the firm became Sentient Technologies. Hodjat was joined by his long-time research fellow Hormoz Shahrzad who became principal scientist,
+
+In the following years Hodjat has worked on developing massively distributed computing technology and improving machine-learning technique known as evolutionary algorithms.
+
+Following the management change within Sentient Technologies, Hodjat became the company's CEO in February 2017. He continues his business and educational projects (he was on the jury of IBM Watson AI XPRIZE and the Merit Awards committee for the ISAL Award).
+
+Writing
+
+Hodjat is the author of The Konar and the Apple: Fun, Beauty, and Dread--From Ahwaz to California (January 2022; ). An eight-year-old boy assigned the task of throwing flowers during the Shah's visit. A teenager in boot camp eager to catch episodes of a popular Japanese TV show. An adult coming to the United States, ready to make his mark in the tech world.
+
+These are just some of the personal experiences shaping Hodjat's intimate narrative of a boy growing up in post-revolutionary Iran. The stories paint a picture of a middle-class, westernized boy experiencing all the common—and uncommon—adventures of childhood and self-discovery.
+
+Blending both humor and insight, The Konar and the Apple transcends culture to celebrate the fun, innocence, and anticipation of growing up that unite us all.
+
+Hodjat has also written a science-fiction novella, "The Narrator" (March 2023; ). Set in the near future, "The Narrator" is about an app that creates a story based on one’s life, complete with genres and characters to choose from. Fraught with suspense, The Narrator is a foreboding of the power of technology, and asks the urgent question: How much of our lives is guided by free will and can we get back control before it’s too late?
+
+Selected publications
+
+Patents
+
+Babak Hodjat holds 21 patents in the fields of agent-oriented programming, natural language decision engines, distributed evolutionary algorithms for asset management and trading and data mining.
+
+References
+
+External links
+
+Babak Hodjat profile at Sentient Technology website
+
+Babak Hodjat Twitter profile
+
+Category:Living people
+
+Category:Artificial intelligence researchers
+
+Category:American chief executives in technology
+
+Category:Businesspeople in the software industry
+
+Category:21st-century American businesspeople
+
+Category:Sharif University of Technology alumni
+
+Category:1967 births
+
+Category:American computer scientists
+
+Category:Iranian computer scientists
+
+Category:American technology company founders
+
+Category:Kyushu University alumni
+
+Category:Machine learning researchers
+
+Category:People from Wimbledon, London

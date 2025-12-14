@@ -1,0 +1,121 @@
+{{Infobox scientist
+
+name                    = Makoto Nagao
+
+image                   = Makoto Nagao cropped Makoto Nagao 20141212.jpg
+
+image_size              = 250px
+
+caption                 = Makoto Nagao
+
+birth_date              =
+
+birth_place             = Mie Prefecture, Japan
+
+death_date              =
+
+death_place             = Kyoto, Japan
+
+residence               =
+
+nationality             = Japanese
+
+ethnicity               =
+
+field                   = Computer Science
+
+work_institution        = Kyoto University, National Diet Library
+
+alma_mater              = Kyoto University
+
+doctoral_advisor        =
+
+doctoral_students       =
+
+notable_students        = Takeo Kanade, Jun'ichi Tsujii, Yuji Matsumoto, Sadao Kurohashi
+
+known_for               = example-based machine translation, natural language processing for Japanese, various image processing approaches, researches for digital library
+
+author_abbreviation_bot =
+
+author_abbreviation_zoo =
+
+prizes                  = IEEE Emanuel R. Piore Award, ACL Lifetime Achievement Award, Japan Prize
+
+religion                =
+
+footnotes               =
+
+}}
+
+was a Japanese computer scientist. He contributed to various fields: machine translation, natural language processing, pattern recognition, image processing and library science. He was the 23rd president of Kyoto University (1997–2003) and the 14th director of National Diet Library in Japan (2007–2012).
+
+Early life and career
+
+Born and raised in Mie Prefecture, Japan, Makoto Nagao graduated from Kyoto University in 1959, and received a master's degree in engineering in 1961 and a Ph.D. in engineering in 1966 from the university.
+
+In Kyoto University, he became an assistant professor in 1967, an associate professor in 1968, and a professor in 1973. Each year since 2005, IPSJ Nagao Special Researcher Award has been awarded to young Japanese computer scientists who accomplished notable research.
+
+He was the first president of the Asia-Pacific Association for Machine Translation (AAMT), and in each year from 2006, AAMT Nagao Award is awarded to individuals or groups who made contribution to machine translation.
+
+Work
+
+Nagao was one of the first scientists who developed practical machine translation (MT) systems. Between 1982 and 1986, he led the Mu project which aimed at translations for technical papers and became the first successful MT system between English and Japanese.
+
+He was also a pioneer of natural language processing (NLP) for the Japanese language. In 1994, he created KNP, a dependency analyzer for Japanese, with Sadao Kurohashi.
+
+In the 1990s, he directed a project to make a Japanese parsed corpus, which is now called Kyoto University Text Corpus.
+
+Another NLP resource developed under his laboratory is Juman, a Japanese morphological parser and the first system which merged word segmentation and morphological analysis for languages which do not have explicit word boundaries (such as Japanese or Chinese). He gave a keynote lecture in the Wikimedia Conference Japan 2009.
+
+Death
+
+Nagao died from a stroke on 23 May 2021 at the age of 84.
+
+Honors and awards
+
+1993: IEEE Emanuel R. Piore Award
+
+1999: C&C Prize
+
+2003: ACL Lifetime Achievement Award
+
+2005: Japan Prize
+
+2008: Person of Cultural Merit
+
+2018: Order of Culture
+
+2019: Okawa Prize
+
+2020: Asian Scientist 100, Asian Scientist
+
+References
+
+Category:1936 births
+
+Category:2021 deaths
+
+Category:Japanese computer scientists
+
+Category:Japanese librarians
+
+Category:Kyoto University alumni
+
+Category:Presidents of Kyoto University
+
+Category:Academic staff of Kyoto University
+
+Category:Knights of the Legion of Honour
+
+Category:Recipients of the Medal of Honor (Japan)
+
+Category:People from Mie Prefecture
+
+Category:Recipients of the Order of Culture
+
+Category:Natural language processing researchers
+
+Category:Computational linguistics researchers
+
+Category:Presidents of The Japan Association of National Universities

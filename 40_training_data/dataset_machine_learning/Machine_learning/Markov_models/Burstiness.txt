@@ -1,0 +1,29 @@
+In statistics, burstiness is the intermittent increases and decreases in activity or frequency of an event.
+
+One measure of burstiness is the Fano factor—a ratio between the variance and mean of counts.
+
+Burstiness is observable in natural phenomena, such as natural disasters, or other phenomena, such as network/data/email network traffic or vehicular traffic. Burstiness is, in part, due to changes in the probability distribution of inter-event times. Distributions of bursty processes or events are characterised by heavy, or fat, tails.
+
+Burstiness score
+
+One relatively simple measure of burstiness is burstiness score. The burstiness score of a subset t of time period T relative to an event e is a measure of how often e appears in t compared to its occurrences in T. It is defined by
+
+\mathrm{Burst}(e, t) = \left (\frac{E_t}{E} - \frac{1}{T}\right )
+
+Where E_t is the total number of occurrences of event e in subset   t and E is the total number of occurrences of e in T.
+
+Burstiness score can be used to determine if t is a "bursty period" relative to e. A positive score says that e occurs more often during subset t than over total time T, making t a bursty period. A negative score implies otherwise.
+
+See also
+
+Burst transmission
+
+Poisson clumping
+
+Time-varying network
+
+References
+
+Category:Markov models
+
+Category:Applied statistics

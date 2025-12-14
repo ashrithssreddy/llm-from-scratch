@@ -1,0 +1,135 @@
+{{Infobox scientist
+
+name                    = Michael L. Littman
+
+image                   = Michael L. Littman 2023 (cropped).png
+
+caption                 = Littman in 2023
+
+birth_date              =
+
+birth_place             = Philadelphia, Pennsylvania
+
+death_date              =
+
+death_place             =
+
+residence               =
+
+nationality             = American
+
+field                   = Computer Science
+
+work_institution        = Brown University  Rutgers University  Georgia Institute of Technology  AT&T  Duke University  National Science Foundation
+
+alma_mater              = Brown University  Yale University
+
+doctoral_advisor        = Leslie P. Kaelbling
+
+thesis_url = https://www.proquest.com/docview/304239223/
+
+thesis_title = Algorithms for sequential decision-making
+
+thesis_year = 1996
+
+awards                  = AAAI Fellow  ACM Fellow
+
+website =
+
+}}
+
+Michael Lederman Littman (born August 30, 1966) is a computer scientist, researcher, educator, and author. His research interests focus on reinforcement learning. He is currently a University Professor of Computer Science at Brown University, where he has taught since 2012. As of July 2025, he is also the university’s inaugural Associate Provost for Artificial Intelligence.
+
+Career
+
+Before graduate school, Littman worked with Thomas Landauer at Bellcore and was granted a patent for one of the earliest systems for cross-language information retrieval. Littman received his Ph.D. in computer science from Brown University in 1996. From 1996 to 1999, he was a professor at Duke University. During his time at Duke, he worked on an automated crossword solver PROVERB, which won an Outstanding Paper Award in 1999 from AAAI and competed in the American Crossword Puzzle Tournament. From 2000 to 2002, he worked at AT&T. From 2002 to 2012, he was a professor at Rutgers University; he chaired the department from 2009-12. In Summer 2012 he returned to Brown University as a full professor. He has also taught at Georgia Institute of Technology, where he was listed as an adjunct professor. Littman served as the Division Director for Information and Intelligent Systems (the AI division) at the National Science Foundation from 2022-2025. After serving a term, he returned to Brown University as their first Associate Provost for Artificial Intelligence where he coordinates the intersection of AI with research, teaching, operations, policy, and communication at the university level.
+
+Research
+
+Littman's research interests are varied but have focused mostly on reinforcement learning and related fields, particularly, in machine learning more generally, game theory, computer networking, partially observable Markov decision process solving, computer solving of analogy problems and other areas. He is also interested in computing education more broadly and has authored a book on programming for everyone.
+
+Leadership and Service
+
+Littman has chaired the panel for The One Hundred‑Year Study on Artificial Intelligence (AI100) 2021 Report and will chair the standing committee for the 2026 report. During his time at the National Science Foundation, he co-led the development of the 2023 National Strategic Artificial Intelligence Research and Development Strategic Plan.
+
+Personal Notes
+
+Littman is also known for his playful approach to communication. He has produced multiple education and parody videos (for example a machine-learning version of Michael Jackson’s Thriller with his oft-collaborator Charles Lee Isbell, Jr.) as part of his teaching outreach.
+
+Among his hobbies, he has been noted riding an electric unicycle to his office at the NSF.
+
+Awards
+
+Elected as an ACM Fellow in 2018 for "contributions to the design and analysis of sequential decision-making algorithms in artificial intelligence".
+
+Winner of the IFAAMAS Influential Paper Award (2014)
+
+Winner of the AAAI “Shakey” Award for Overfitting: Machine Learning Music Video (2014)
+
+Elected as a AAAI Fellow in 2010 for "significant contributions to the fields of reinforcement learning, decision making under uncertainty, and statistical language applications".
+
+Winner of the AAAI “Shakey” Award for Short Video for Aibo Ingenuity (2007)
+
+Winner of the Warren I. Susman Award for Excellence in Teaching at Rutgers (2011)
+
+Winner of the Robert B. Cox Award at Duke (1999)
+
+Winner of the AAAI Outstanding Paper Award (1999)
+
+References
+
+Bibliography
+
+External links
+
+Michael Littman's Homepage
+
+YouTube page
+
+Music Videos
+
+Press references
+
+Smart Home Programming: If-Then Statements Make A Comeback- Science 2.0
+
+Computer Science for the Rest of Us- New York Times
+
+Many Scientists Dismiss the Fear of Robots- Fortune
+
+Celebrating the 20th Anniversary of MIME Email Attachments- NJ Tech Weekly
+
+Humans Beat Poker Bot… Barely - NBC News
+
+Duke Researchers Pit Computer Against Human Crossword Puzzle Players
+
+Going Cruciverbalistic- American Scientist
+
+Udacity Courses
+
+Intro to Algorithms
+
+Machine Learning
+
+Reinforcement Learning and Decision Making
+
+Category:Living people
+
+Category:American computer scientists
+
+Category:Machine learning researchers
+
+Category:Brown University alumni
+
+Category:Duke University faculty
+
+Category:Rutgers University faculty
+
+Category:Brown University faculty
+
+Category:1966 births
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:2018 fellows of the Association for Computing Machinery
+
+Category:Yale University alumni

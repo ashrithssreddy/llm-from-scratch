@@ -1,0 +1,51 @@
+{{Infobox software
+
+name = EfficientNet
+
+developer = Google AI
+
+released = May 2019
+
+repo =
+
+programming language = Python
+
+license = Apache License 2.0
+
+website = Google AI Blog
+
+}}
+
+EfficientNet is a family of convolutional neural networks (CNNs) for computer vision published by researchers at Google AI in 2019. Its key innovation is compound scaling, which uniformly scales all dimensions of depth, width, and resolution using a single parameter.
+
+EfficientNet models have been adopted in various computer vision tasks, including image classification, object detection, and segmentation.
+
+Compound scaling
+
+EfficientNet introduces compound scaling, which, instead of scaling one dimension of the network at a time, such as depth (number of layers), width (number of channels), or resolution (input image size), uses a compound coefficient \phi to scale all three dimensions simultaneously. Specifically, given a baseline network, the depth, width, and resolution are scaled according to the following equations: and centralized TPU or GPU clusters by NAS.
+
+EfficientNet V2 was published in June 2021. The architecture was improved by further NAS search with more types of convolutional layers. It also introduced a training method, which progressively increases image size during training, and uses regularization techniques like dropout, RandAugment, and Mixup. The authors claim this approach mitigates accuracy drops often associated with progressive resizing.
+
+See also
+
+Convolutional neural network
+
+SqueezeNet
+
+MobileNet
+
+You Only Look Once
+
+References
+
+External links
+
+EfficientNet: Improving Accuracy and Efficiency through AutoML and Model Scaling (Google AI Blog)
+
+Category:Machine learning
+
+Category:Computer vision
+
+Category:Artificial neural networks
+
+Category:Google software

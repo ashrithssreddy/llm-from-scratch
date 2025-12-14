@@ -1,0 +1,179 @@
+The information bottleneck method is a technique in information theory introduced by Naftali Tishby, Fernando C. Pereira, and William Bialek. It is designed for finding the best tradeoff between accuracy and complexity (compression) when summarizing (e.g. clustering) a random variable X, given a joint probability distribution p(X,Y) between X and an observed relevant variable Y - and self-described as providing "a surprisingly rich framework for discussing a variety of problems in signal processing and learning". Namely, the generalization error is proven to scale as \tilde O\left(\sqrt{\frac{I(X,T)+1}{n}}\right) where n is the number of training samples, X is the input to a deep neural network, and T is the output of a hidden layer. This generalization bound scale with the degree of information bottleneck, unlike the other generalization bounds that scale with the number of parameters, VC dimension, Rademacher complexity, stability or robustness.
+
+Phase transitions
+
+Information theory of deep learning
+
+Theory of Information Bottleneck is recently used to study Deep Neural Networks (DNN).
+
+Consider X  and Y  respectively as the input and output layers of a DNN, and let T  be any hidden layer of the network.
+
+Shwartz-Ziv and Tishby proposed the information bottleneck that expresses the tradeoff between the mutual information measures I(X,T) and I(T,Y). In this case, I(X,T) and I(T,Y)  respectively quantify the amount of information that the hidden layer contains about the input and the output.
+
+They conjectured that the training process of a DNN consists of two separate phases; 1) an initial fitting phase in which I(T,Y) increases, and 2) a subsequent compression phase in which I(X,T) decreases. Saxe et al. in  countered the claim of Shwartz-Ziv and Tishby, a view that has been shared also in.
+
+Variational bottleneck
+
+Gaussian bottleneck
+
+The Gaussian bottleneck, namely, applying the information bottleneck approach to Gaussian variables, leads to solutions related to canonical correlation analysis. Assume X, Y \, are jointly multivariate zero mean normal vectors with covariances \Sigma_{XX}, \,\, \Sigma_{YY} and T\, is a compressed version of X\, that must maintain a given value of mutual information with Y\,. It can be shown that the optimum T\, is a normal vector consisting of linear combinations of the elements of X , \,\, T=AX \, where matrix A \, has orthogonal rows.
+
+The projection matrix A\, in fact contains M\, rows selected from the weighted left eigenvectors of the singular value decomposition of the  matrix (generally asymmetric)
+
+\Omega = \Sigma_{X|Y} \Sigma_{XX}^{-1} = I - \Sigma_{XY} \Sigma_{YY}^{-1} \Sigma_{XY}^T \Sigma_{XX}^{-1}.\,
+
+Define the singular value decomposition
+
+\Omega = U\Lambda V^T\text{ with }\Lambda = \operatorname{Diag} \big ( \lambda_1 \le \lambda_2 \cdots \lambda_N \big ) \,
+
+and the critical values
+
+\beta_i^C \underset {\lambda_i
+
+then the number M \, of active eigenvectors in the projection, or order of approximation, is given by
+
+\beta_{M-1}^C
+
+And we finally get
+
+A=[ w_1 U_1 , \dots , w_M U_M ]^T
+
+In which the weights are given by
+
+w_i = \sqrt{\left(\beta (1- \lambda_i )-1\right)/\lambda_i r_i}
+
+where r_i = U_i^T \Sigma_{XX} U_i.\,
+
+Applying the Gaussian information bottleneck to time series (processes), yields solutions related to optimal predictive coding. This procedure is formally equivalent to linear Slow Feature Analysis.
+
+Optimal temporal structures in linear dynamic systems can be revealed in the so-called past-future information bottleneck, an application of the bottleneck method to non-Gaussian sampled data. The concept, as treated by Creutzig, Tishby et al., is not without complication as two independent phases make up in the exercise: firstly estimation of the unknown parent probability densities from which the data samples are drawn and secondly the use of these densities within the information theoretic framework of the bottleneck.
+
+Density estimation
+
+Since the bottleneck method is framed in probabilistic rather than statistical terms, the underlying probability density at the sample points X = {x_i} \,must be estimated. This is a well known problem with multiple solutions described by Silverman.
+
+Clusters
+
+In the following soft clustering example, the reference vector Y \, contains sample categories and the joint probability p(X,Y) \, is assumed known. A soft cluster c_k \, is defined by its probability distribution over the data samples x_i: \,\,\, p( c_k |x_i). Tishby et al. presented
+
+\begin{cases}
+
+p(c|x)=Kp(c) \exp \Big( -\beta\,D^{KL} \Big[ p(y|x) \,|| \, p(y| c)\Big ] \Big)\\
+
+p(y| c)=\textstyle \sum_x p(y|x)p( c | x) p(x) \big / p(c) \\
+
+p(c) = \textstyle \sum_x p(c | x) p(x) \\
+
+\end{cases}
+
+The function of each line of the iteration expands as
+
+Line 1: This is a matrix valued set of conditional probabilities
+
+A_{i,j} = p(c_i | x_j )=Kp(c_i) \exp \Big( -\beta\,D^{KL} \Big[ p(y|x_j) \,|| \, p(y| c_i)\Big ] \Big)
+
+The Kullback–Leibler divergence D^{KL} \, between the Y \, vectors generated by the sample data x \, and those generated by its reduced information proxy c \, is applied to assess the fidelity of the compressed vector with respect to the reference (or categorical) data Y \, in accordance with the fundamental bottleneck equation. D^{KL}(a||b)\, is the Kullback–Leibler divergence between distributions a, b \,
+
+D^{KL} (a||b)= \sum_i p(a_i) \log \Big ( \frac{p(a_i)}{p(b_i)} \Big )
+
+and K \, is a scalar normalization. The weighting by the negative exponent of the distance means that prior cluster probabilities are downweighted in line 1 when the Kullback–Leibler divergence is large, thus successful clusters grow in probability while unsuccessful ones decay.
+
+Line 2:	 Second matrix-valued set of conditional probabilities. By definition
+
+\begin{align}
+
+p(y_i|c_k) & = \sum_j p(y_i|x_j)p(x_j|c_k) \\
+
+& =\sum_j p(y_i|x_j)p(x_j, c_k ) \big / p(c_k)  \\
+
+&  =\sum_j p(y_i|x_j)p(c_k | x_j) p(x_j) \big / p(c_k) \\
+
+\end{align}
+
+where the Bayes identities p(a,b)=p(a|b)p(b)=p(b|a)p(a) \, are used.
+
+Line 3: this line finds the marginal distribution of the clusters c \,
+
+\begin{align}
+
+p(c_i)& =\sum_j p(c_i , x_j)
+
+& = \sum_j p(c_i | x_j) p(x_j)
+
+\end{align}
+
+This is a standard result.
+
+Further inputs to the algorithm are the marginal sample distribution p(x) \, which has already been determined by the dominant eigenvector of P \, and the matrix valued Kullback–Leibler divergence function
+
+D_{i,j}^{KL}=D^{KL} \Big[ p(y|x_j) \,|| \, p(y| c_i)\Big ] \Big)
+
+derived from the sample spacings and transition probabilities.
+
+The matrix p(y_i | c_j) \, can be initialized randomly or with a reasonable guess, while matrix p(c_i | x_j) \, needs no prior values. Although the algorithm converges, multiple minima may exist that would need to be resolved.
+
+Defining decision contours
+
+To categorize a new sample  x' \, external to the training set X \,, the previous distance metric finds the transition probabilities between  x' \, and all samples in X: \,\,,  \tilde p(x_i )= p(x_i | x')= \Kappa \exp \Big (-\lambda f \big ( \Big| x_i - x' \Big | \big ) \Big ) with \Kappa \, a normalization. Secondly apply the last two lines of the 3-line algorithm to get cluster and conditional category probabilities.
+
+\begin{align}
+
+& \tilde p(c_i )  = p(c_i | x' ) = \sum_j p(c_i |  x_j)p(x_j | x') =\sum_j p(c_i |  x_j) \tilde p(x_j)\\
+
+& p(y_i | c_j)  = \sum_k p(y_i | x_k) p(c_j | x_k)p(x_k | x') / p(c_j | x' )
+
+= \sum_k p(y_i | x_k) p(c_j | x_k) \tilde p(x_k) / \tilde p(c_j) \\
+
+\end{align}
+
+Finally
+
+p(y_i | x')= \sum_j p(y_i | c_j) p(c_j | x') )= \sum_j p(y_i | c_j) \tilde p(c_j) \,
+
+Parameter \beta \, must be kept under close supervision since, as it is increased from zero, increasing numbers of features, in the category probability space, snap into focus at certain critical thresholds.
+
+An example
+
+The following case examines clustering in a four quadrant multiplier with random inputs u, v \, and two categories of output, \pm 1 \,, generated by y=\operatorname{sign}(uv) \,. This function has two spatially separated clusters for each category and so demonstrates that the method can handle such distributions.
+
+20 samples are taken, uniformly distributed on the square [-1,1]^2 \, . The number of clusters used beyond the number of categories, two in this case, has little effect on performance and the results are shown for two clusters using parameters \lambda = 3,\, \beta = 2.5.
+
+The distance function is d_{i,j} =  \Big| x_i - x_j \Big |^2 where x_i = (u_i,v_i)^T \,  while the conditional distribution p(y|x)\,  is a 2&nbsp;×&nbsp;20 matrix
+
+\begin{align} & Pr(y_i=1) = 1\text{ if }\operatorname{sign}(u_iv_i)=1\, \\
+
+& Pr(y_i= -1) = 1\text{ if }\operatorname{sign}(u_iv_i)= -1\,
+
+\end{align}
+
+and zero elsewhere.
+
+The summation in line 2 incorporates only two values representing the training values of +1 or &minus;1, but nevertheless works well. The figure shows the locations of the twenty samples with '0' representing Y = 1 and 'x' representing Y = &minus;1. The contour at the unity likelihood ratio level is shown,
+
+L= \frac{\Pr(1)}{\Pr(-1)} = 1
+
+as a new sample x' \,is scanned over the square. Theoretically the contour should align with the u=0 \, and v=0 \, coordinates but for such small sample numbers they have instead followed the spurious clusterings of the sample points.
+
+Neural network/fuzzy logic analogies
+
+This algorithm is somewhat analogous to a neural network with a single hidden layer. The internal nodes are represented by the clusters c_j \, and the first and second layers of network weights are the conditional probabilities p(c_j | x_i) \, and p(y_k | c_j) \, respectively. However, unlike a standard neural network, the algorithm relies entirely on probabilities as inputs rather than the sample values themselves, while internal and output values are all conditional probability density distributions. Nonlinear functions are encapsulated in distance metric f(.) \, (or influence functions/radial basis functions) and transition probabilities instead of sigmoid functions.
+
+The Blahut-Arimoto three-line algorithm converges rapidly, often in tens of iterations, and by varying \beta \,, \lambda \, and f \, and the cardinality of the clusters, various levels of focus on features can be achieved.
+
+The statistical soft clustering definition p(c_i | x_j) \, has some overlap with the verbal fuzzy membership concept of fuzzy logic.
+
+Extensions
+
+An interesting extension is the case of information bottleneck with side information. Here information is maximized about one target variable and minimized about another, learning a representation that is informative about selected aspects of data. Formally
+
+\min_{p(t|x)} \,\, I(X;T) - \beta^+ I(T;Y^+) + \beta^- I(T;Y^-)
+
+Bibliography
+
+P. Harremoës and N. Tishby "The Information Bottleneck Revisited or How to Choose a Good Distortion Measure". In proceedings of the International Symposium on Information Theory (ISIT) 2007
+
+References
+
+Category:Cluster analysis algorithms
+
+Category:Multivariate statistics

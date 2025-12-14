@@ -1,0 +1,127 @@
+{{Infobox scientist
+
+name              = Brendan Frey
+
+image             = Brendan Frey 2016.jpg
+
+image_size        =
+
+alt               = Half-length shot of Frey in a blue shirt and looking towards the viewer, pointing with a finger
+
+caption           = Frey in 2016
+
+birth_name        = Brendan John Frey
+
+birth_date        =
+
+birth_place       = Calgary, Alberta, Canada
+
+death_date        =
+
+death_place       =
+
+citizenship       =
+
+nationality       =
+
+fields            =
+
+workplaces        =
+
+education         = {{Plainlist|
+
+University of Calgary
+
+University of Manitoba
+
+University of Toronto (PhD)}}
+
+thesis_title      = Graphical Models for Machine Learning and Digital Communication
+
+thesis_url        = http://dl.acm.org/citation.cfm?id=289988
+
+thesis_year       = 1997
+
+doctoral_advisor  = Geoffrey Hinton
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students  =
+
+known_for         =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+awards            = {{Plainlist|
+
+FRSC
+
+John C. Polanyi }}
+
+signature         =
+
+website           =
+
+footnotes         =
+
+ethnicity         =
+
+religion          =
+
+}}
+
+Brendan John Frey FRSC Cofounder of the Vector Institute for Artificial Intelligence Frey is a pioneer in the development of machine learning and artificial intelligence methods, their use in accurately determining the consequences of genetic mutations, and in designing medications that can slow, stop or reverse the progression of disease. After completing his postdoctoral studies at the University of Illinois at Urbana-Champaign, Frey was an assistant professor in the Department of Computer Science at the University of Waterloo, from 1999 to 2001.
+
+The company has received 240 million dollars in funding to date from leading Bay Area investors, including the backers of SpaceX and Tesla.
+
+References
+
+External links
+
+Brendan J. Frey's profile at the Canadian Institute for Advanced Research
+
+Google Scholar report for Brendan Frey.
+
+Category:1968 births
+
+Category:Living people
+
+Category:Academic staff of the University of Toronto
+
+Category:Fellows of the Royal Society of Canada
+
+Category:University of Toronto alumni
+
+Category:University of Manitoba alumni
+
+Category:University of Calgary alumni
+
+Category:Academic staff of the University of Waterloo
+
+Category:Canadian businesspeople
+
+Category:Canadian computer scientists
+
+Category:Machine learning researchers
+
+Category:Canadian electrical engineers
+
+Category:Academics from Calgary
+
+Category:Computational biologists
+
+Category:Canadian biomedical engineers
+
+Category:University of Illinois Urbana-Champaign people
+
+Category:Canadian artificial intelligence researchers
+
+Category:Scientists from Calgary

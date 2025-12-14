@@ -1,0 +1,19 @@
+Teacher forcing is an algorithm for training the weights of recurrent neural networks (RNNs). It involves feeding observed sequence values (i.e. ground-truth samples) back into the RNN after each step, thus forcing the RNN to stay close to the ground-truth sequence.
+
+The term "teacher forcing" can be motivated by comparing the RNN to a human student taking a multi-part exam where the answer to each part (for example a mathematical calculation) depends on the answer to the preceding part. In this analogy, rather than grading every answer in the end, with the risk that the student fails every single part even though they only made a mistake in the first one, a teacher records the score for each individual part and then tells the student the correct answer, to be used in the next part.
+
+The use of an external teacher signal is in contrast to real-time recurrent learning (RTRL). Teacher signals are known from oscillator networks. The promise is, that teacher forcing helps to reduce the training time.
+
+The term "teacher forcing" was introduced in 1989 by Ronald J. Williams and David Zipser, who reported that the technique was already being "frequently used in dynamical supervised learning tasks" around that time.
+
+A NeurIPS 2016 paper introduced the related method of "professor forcing".
+
+See also
+
+Online machine learning
+
+Reinforcement learning
+
+References
+
+Category:Artificial neural networks

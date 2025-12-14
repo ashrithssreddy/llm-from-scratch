@@ -1,0 +1,51 @@
+{{Infobox scientist
+
+name         = Yuji Matsumoto
+
+birth_date   =
+
+birth_place  =
+
+death_place  =
+
+field        = Information science
+
+known_for     =
+
+workplaces   = Imperial College of Science and TechnologyNara Institute of Science and Technology
+
+alma_mater   = Kyoto University
+
+website      =
+
+doctoral_advisor = Makoto Nagao
+
+awards = Takahashi Incentive AwardMotooka Commemorative AwardASTEM Software Award
+
+}}
+
+is a Japanese and American professor of information science who works at the Nara Institute of Science and Technology and also specializes in artificial intelligence and computational linguistics. He has almost 450 peer-reviewed articles with the highest ranked one being Applying conditional random fields to Japanese morphological analysis, which was cited over 1100 times.
+
+Biography
+
+In 1979 he got bachelor's degree in information science at Kyoto University and received master's at the same place two year later which ended with Ph.D. by 1990. From 1984 to 1985 he became a visiting professor at the Imperial College of Science and Technology department of the University of London. From 1985 to 1987 he was Deputy Chief at the Institute of New Generation Computer Technology and from 1988 to 1989 he served as an associated professor at the Data Processing Center, a division of Kyoto University. Next year, he, under the same position and at the same place, worked at the Department of Electrical Engineering and when it was over by 1993, he became professor at the Nara Institute of Science and Technology.
+
+Awards
+
+In 1988 he became Takahashi Incentive Award recipient and in 1989 was awarded with Motooka Commemorative Award. In 1994 he received ASTEM Software Award and three years later became a recipient of Best Paper Award from the Information Processing Society of Japan, following by the Best Author Award from the same place in 2000 and an acceptance of fellowship in 2006. From 2002 to 2004 he was annually awarded for the best presentation by the Association for Natural Language Processing and in 2005 was awarded Best Paper Award from the Japanese Society of Artificial Intelligence and received the same one next year from the DEWS while two year later JSAI awarded him with the Achievement Award.
+
+References
+
+Category:Information scientists
+
+Category:Kyoto University alumni
+
+Category:Living people
+
+Category:Fellows of the Association for Computational Linguistics
+
+Category:Year of birth missing (living people)
+
+Category:Computational linguistics researchers
+
+Category:Natural language processing researchers

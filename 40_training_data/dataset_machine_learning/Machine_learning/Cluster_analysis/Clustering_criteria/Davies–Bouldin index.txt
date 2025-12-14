@@ -1,0 +1,109 @@
+The Davies&ndash;Bouldin index (DBI), introduced by David L. Davies and Donald W. Bouldin in 1979, is a metric for evaluating clustering algorithms. This is an internal evaluation scheme, where the validation of how well the clustering has been done is made using quantities and features inherent to the dataset. This has a drawback that a good value reported by this method does not imply the best information retrieval.
+
+According to a scientific article published in PeerJ Computer Science in 2025, the Davies–Bouldin index (along with the Silhouette coefficient) can be more informative than other common clustering internal metrics such as Dunn index, Calinski-Harabasz index, Shannon entropy, and Gap statistic when employed to assess convex-shaped clusters.
+
+Preliminaries
+
+Given a finite collection of points in \mathbb{R}^n, let A_i be the centroid of cluster i. Define
+
+S_i =  \left(\frac{1}{T_i} \sum_{j=1}^{T_i} {\left| X_j-A_i \right|^q}\right)^{1/q},
+
+where A_i is the centroid of cluster i and T_i is the number of vectors in cluster i. Statistically speaking,  S_i is the qth root of the qth moment of the points in cluster i about the mean.
+
+The Minkowski metric of the centroids, which characterizes clusters i and j, is defined as
+
+M_{ij} = \left( \sum_{k=1}^N \left| A_{ki} - A_{kj} \right|^p \right)^{1/p},
+
+where  a_{ki}  is the kth component of n-dimensional vector A_i, which is the centroid of cluster i.
+
+Note that q is used for S and p is used for M.
+
+When  p=1 , M_{ij} is the Mahattan distance.
+
+When p=2, M_{ij} is the Euclidean distance between centroids. Many other distance metrics can be used, in the case of manifolds and high-dimensional data, where the Euclidean distance may not be the best measure for determining the clusters. It is important to note that this distance metric has to match with the metric used in the clustering scheme itself for meaningful results.
+
+If  q=1,  S_i becomes the average Euclidean distance between the feature vectors in cluster i and the centroid of the cluster i.
+
+If  q=2 ,  S_i  is the standard deviation of the distance of samples in a cluster to the respective cluster center.
+
+Define  R_{ij}  as the cluster similarity measure between cluster i and cluster j as
+
+R_{ij} = \frac{S_i + S_j}{M_{ij}} ,
+
+where  S_i, S_j, M_{ij}  are defined as above, and
+
+\begin{array}{lll}
+
+\overline{R} &=& \frac{1}{N} \sum_{i=1}^N \max_{j: j \neq i} R_{ij}
+
+&=& \frac{1}{N} \sum_{i=1}^N R_i
+
+\end{array}
+
+If  p=q=2 ,  R_{ij}  is the reciprocal of the classic Fisher similarity measure calculated for clusters i and cluster j.
+
+Definition
+
+Let R'i,j be a measure of how good the clustering scheme is. This measure, by definition has to account for M'i,j the separation between the i'th and the j'th cluster, which ideally has to be as large as possible, and S'i, the within cluster scatter for cluster i, which has to be as low as possible. Hence the Davies–Bouldin index is defined as the ratio of S'i and Mi,j such that these properties are conserved:
+
+R_{i,j} \geqslant 0 .
+
+R_{i,j} = R_{j,i} .
+
+When  S_j \geqslant S_k  and  M_{i,j} = M_{i,k}  then  R_{i,j} > R_{i,k} .
+
+When  S_j = S_k  and  M_{i,j} \leqslant M_{i,k}  then  R_{i,j} > R_{i,k} .
+
+With this formulation, the lower the value, the better the separation of the clusters and the 'tightness' inside the clusters.
+
+A solution that satisfies these properties is:
+
+R_{i,j} = \frac{S_i + S_j}{M_{i,j}}
+
+This is used to define Di:
+
+R_i \equiv \max_{j \neq i} R_{i,j}
+
+If N is the number of clusters:
+
+\overline{R} \equiv \frac{1}{N}\displaystyle\sum_{i=1}^N R_i
+
+\overline{R}  is called the Davies–Bouldin index. This is dependent both on the data as well as the algorithm. R_i chooses the worst-case scenario, and this value is equal to Ri,j for the most similar cluster to cluster i. There could be many variations to this formulation, like choosing the average of the cluster similarity, weighted average and so on.
+
+Explanation
+
+Lower index values indicate a better clustering result. The index is improved (lowered) by increased separation between clusters and decreased variation within clusters.
+
+These conditions constrain the index so defined to be symmetric and non-negative. Due to the way it is defined, as a function of the ratio of the within cluster scatter, to the between cluster separation, a lower value will mean that the clustering is better. It happens to be the average similarity between each cluster and its most similar one, averaged over all the clusters, where the similarity is defined as Si above. This affirms the idea that no cluster has to be similar to another, and hence the best clustering scheme essentially minimizes the Davies–Bouldin index. This index thus defined is an average over all the i clusters, and hence a good measure of deciding how many clusters actually exists in the data is to plot it against the number of clusters it is calculated over. The number i for which this value is the lowest is a good measure of the number of clusters the data could be ideally classified into. This has applications in deciding the value of k in the kmeans algorithm, where the value of k is not known apriori.
+
+Soft version of Davies-Bouldin index
+
+Recently, the Davies–Bouldin index has been extended to the domain of soft clustering categories. This extension is based on the category clustering approach according to the framework of fuzzy logic. The starting point for this new version of the validation index is the result of a given soft clustering algorithm (e.g. fuzzy c-means), shaped with the computed clustering partitions and membership values associating the elements with the clusters. In the soft domain, each element of the system belongs to every classes, given the membership values. Therefore, this soft version of the Davies–Bouldin index is able to take into account, in addition to standard validation measures such as compactness and separation of clusters, the degree to which elements belong to classes.
+
+Implementations
+
+The scikit-learn Python open source library provides an implementation of this metric in the sklearn.metrics module.
+
+R provides a similar implementation in its clusterSim package.
+
+A Java implementation is found in ELKI, and can be compared to many other clustering quality indexes.
+
+See also
+
+Silhouette score
+
+Dunn index
+
+Cluster analysis
+
+Calinski-Harabasz index
+
+Determining the number of clusters in a data set
+
+DBCV index
+
+Further reading
+
+Notes and references
+
+Category:Clustering criteria

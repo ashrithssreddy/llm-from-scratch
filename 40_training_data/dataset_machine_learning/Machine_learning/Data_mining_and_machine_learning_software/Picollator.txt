@@ -1,0 +1,93 @@
+{{Multiple issues|
+
+}}
+
+Picollator is an Internet search engine that performs searches for web sites and multimedia by visual query (image) or text, or a combination of visual query and text. Picollator recognizes objects in the image, obtains their relevance to the text and vice versa, and searches in accordance with all information provided.
+
+Description
+
+Picollator identifies human faces in the images and creates a database of people's faces. This allows the user to search for other images of the submitted person, lookalikes and/or similar images in images found on websites. Picollator can be used in any language.
+
+History
+
+2006  Recogmission LLC developed a desktop application for photo collections management. The system automatically classifies, manages and retrieves photographs stored locally or in corporate databases.
+
+2007  Recogmission started Picollator multimedia search engine project, now in Beta stage.
+
+2008  Picollator.mobi  is launched—a new universal search engine for mobile phones.
+
+2009  Recogmission opens the web based content filter service piFilter.com, which inherited some pattern recognition technologies from Picollator.
+
+Features
+
+Most image search engines match user textual query and picture tags. Picollator is based on a different approach. Patterns and objects found in the image are stored in its database, therefore it is able to recognise the contents of the image and compare it to other images to find similarities.
+
+To search for multimedia information, the user may submit
+
+Sample image to find images with relevant people
+
+Image to find web resources
+
+Text to find images
+
+Text to find web resources
+
+Text and Image to find images and/or web resources.
+
+Company
+
+ru:Recogmission LLC has developed an indexing engine for multimedia information search based on the visual query.
+
+Recogmission develops solutions for multimedia information (image, text and video) indexing and searching on the web and in corporate environments.
+
+References
+
+Picollator Loves My Girlish Smile, Inside the Marketers Studio - David Berkowitz's Marketing Blog . March 20, 2008
+
+Picollator - Image search engine, Phil Bradley's weblog. March 31, 2008
+
+Image-Based Queries, Techpin. March 16, 2008
+
+Picollator: Buscador de rostros, Neoteo
+
+Picollator Online Search, buscador de caras dentro de las imágenes online, Genbeta . March 26, 2008
+
+Picollator:基于脸部特征的图片搜索引擎, 天涯海阁
+
+Picollator - Gesichter suchen mit Bildvorlagen, @-web Suchmaschinen Weblog. July 21, 2008
+
+Picollator Launches New Web Search System, TMCnet.com . July 15, 2008
+
+Picollator sucht Menschen mithilfe von Gesichtserkennung, Internet World Business . July 22, 2008
+
+Sketch based query for image retrieval, Kmvirtual . May 30, 2008
+
+Picollator - текстовый или визуальный поиск?, Стартаперы.ru
+
+Picollator ищет похожих людей, Новости Медиа Атлас . March 3, 2008
+
+Picollator - Οπτική αναζήτηση… περίπου :), Internetakias.gr . April 7, 2008
+
+Доступны мультимедийные запросы в новой поисковой системе Picollator, ITua.info. March 14, 2008
+
+Как найти человека по рисунку лица?, Newsland
+
+Всевидящее око онлайна, Игромания. July, 2008
+
+Microsoft поднимет долю программ в ВВП, OSP.ru July 1, 2008
+
+Система поиска по мультимедийным запросам, Мониторинг Интернета. April 7, 2008
+
+В Рунете запущена система мультимедийного поиска Picollator.ru, Elvisti.com. April 13, 2008
+
+Мультимедийный поиск становится интеллектуальным, Rocit.ru . July 2, 2008
+
+В Рунете появилась система поиска похожих картинок, Eplus.com.ua . March 11, 2008
+
+Ресурсы в сети можно искать с помощью изображений, Commcenter.ru. March 29, 2008
+
+Category:Facial recognition software
+
+Category:Data mining and machine learning software
+
+Category:Internet search engines

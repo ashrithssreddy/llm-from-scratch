@@ -1,0 +1,23 @@
+In probability theory, a Fleming–Viot process (F–V process) is a member of a particular subset of probability measure-valued Markov processes on compact metric spaces, as defined in the 1979 paper by Wendell Helms Fleming and Michel Viot. Such processes are martingales and diffusions.
+
+The Fleming–Viot processes have proved to be important to the development of a mathematical basis for the theories behind allele drift.
+
+They are generalisations of the Wright–Fisher process and arise as infinite population limits of suitably rescaled variants of Moran processes.
+
+See also
+
+Coalescent theory
+
+Voter model
+
+References
+
+Fleming, W. H., Michel Viot, M. (1979) "Some measure-valued Markov processes in population genetics theory" (PDF format) Indiana University Mathematics Journal, 28 (5), 817&ndash;843.
+
+Ferrari, Pablo A.; Mari, Nevena  "Quasi stationary distributions and Fleming Viot processes" , Lecture presentation
+
+Category:Markov processes
+
+Category:Statistical genetics
+
+Category:Martingale theory

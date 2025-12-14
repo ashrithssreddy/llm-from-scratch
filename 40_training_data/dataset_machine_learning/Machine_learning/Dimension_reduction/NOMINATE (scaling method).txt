@@ -1,0 +1,71 @@
+NOMINATE (an acronym for nominal three-step estimation) is a multidimensional scaling application developed by US political scientists Keith T. Poole and Howard Rosenthal in the early 1980s to analyze preferential and choice data, such as legislative roll-call voting behavior. In its most well-known application, members of the US Congress are placed on a two-dimensional map, with politicians who are ideologically similar (i.e. who often vote the same) being close together. One of these two dimensions corresponds to the familiar left–right political spectrum (liberal–conservative in the United States).
+
+As computing capabilities grew, Poole and Rosenthal developed multiple iterations of their NOMINATE procedure: the original D-NOMINATE method, W-NOMINATE, and most recently DW-NOMINATE (for dynamic, weighted NOMINATE). In 2009, Poole and Rosenthal were the first recipients of the Society for Political Methodology's Best Statistical Software Award for their development of NOMINATE. In 2016, the society awarded Poole its Career Achievement Award, stating that "the modern study of the U.S. Congress would be simply unthinkable without NOMINATE legislative roll call voting scores."
+
+Procedure
+
+The main procedure is an application of multidimensional scaling techniques to political choice data. Though there are important technical differences between these types of NOMINATE scaling procedures, all operate under the same fundamental assumptions. First, that alternative choices can be projected on a basic, low-dimensional (often two-dimensional) Euclidean space. Second, within that space, individuals have utility functions which are bell-shaped (normally distributed), and maximized at their ideal point. Because individuals also have symmetric, single-peaked utility functions which center on their ideal point, ideal points represent individuals' most preferred outcomes. That is, individuals most desire outcomes closest their ideal point, and will choose/vote probabilistically for the closest outcome.
+
+Ideal points can be recovered from observing choices, with individuals exhibiting similar preferences placed more closely than those behaving dissimilarly. It is helpful to compare this procedure to producing maps based on driving distances between cities. For example, Los Angeles is about 1,800 miles from St. Louis; St. Louis is about 1,200 miles from Miami; and Miami is about 2,700 miles from Los Angeles. From this (dis)similarities data, any map of these three cities should place Miami far from Los Angeles, with St. Louis somewhere in between (though a bit closer to Miami than Los Angeles).  Just as cities like Los Angeles and San Francisco would be clustered on a map, NOMINATE places ideologically similar legislators (e.g., liberal Senators Barbara Boxer (D-Calif.) and Al Franken (D-Minn.)) closer to each other, and farther from dissimilar legislators (e.g., conservative Senator Tom Coburn (R-Okla.)) based on the degree of agreement between their roll call voting records. At the heart of the NOMINATE procedures (and other multidimensional scaling methods, such as Poole's Optimal Classification method) are algorithms they utilize to arrange individuals and choices in low dimensional (usually two-dimensional) space. Thus, NOMINATE scores provide "maps" of legislatures.
+
+Using NOMINATE procedures to study congressional roll call voting behavior from the First Congress to the
+
+present-day, Poole and Rosenthal published Congress: A Political-Economic History of Roll Call Voting in 1997 and the revised edition Ideology and Congress in 2007.
+
+In 2009, Poole and Rosenthal were named the first recipients of the Society for Political Methodology's Best Statistical Software Award for their development of NOMINATE, a recognition conferred to "individual(s) for developing statistical software that makes a significant research contribution". However, the often confusing and residual nature of the second dimension has led to the second dimension being largely ignored by other researchers.
+
+For the most part, congressional voting is uni-dimensional, with most of the variation in voting patterns explained by placement along the liberal-conservative first dimension. While the first dimension of the DW-NOMINATE score is able to predict results at 83% accuracy, the addition of the second dimension only increases accuracy to 85%.
+
+Interpretation of nominate scores
+
+For illustrative purposes, consider the following plots which use W-NOMINATE scores to scale members of Congress and uses the probabilistic voting model (in which legislators farther from the "cutting line" between "yea" and "nay" outcomes become more likely to vote in the predicted manner) to illustrate some major Congressional votes in the 1990s. Some of these votes, like the House's vote on President Clinton's welfare reform package (the Personal Responsibility and Work Opportunity Act of 1996) are best modeled through the use of the first (economic liberal-conservative) dimension. On the welfare reform vote, nearly all Republicans joined the moderate-conservative bloc of House Democrats in voting for the bill, while opposition was virtually confined to the most liberal Democrats in the House. The errors (those representatives on the "wrong" side of the cutting line which separates predicted "yeas" and predicted "nays") are generally close to the cutting line, which is what we would expect. A legislator directly on the cutting line is indifferent between voting "yea" and "nay" on the measure. All members are shown on the left panel of the plot, while only errors are shown on the right panel:
+
+Economic ideology also dominates the Senate vote on the Balanced Budget Amendment of 1995:
+
+On other votes, however, a second dimension (which has recently come to represent attitudes on cultural and lifestyle issues) is important. For example, roll call votes on gun control routinely split party coalitions, with socially conservative "blue dog" Democrats joining most Republicans in opposing additional regulation and socially liberal Republicans joining most Democrats in supporting gun control. The addition of the second dimension accounts for these inter-party differences, and the cutting line is more horizontal than vertical (meaning the cleavage is found on the second dimension rather than the first dimension on these votes) This pattern was evident in the 1991 House vote to require waiting periods on handguns:
+
+Political ideology
+
+DW-NOMINATE scores have been used widely to describe the political ideology of political actors, political parties and political institutions. For instance, a score in the first dimension that is close to either pole means that such score is located at one of the extremes in the liberal-conservative scale. So, a score closer to 1 is described as conservative whereas a score closer to −1 can be described as liberal. Finally, a score at zero or close to zero is described as moderate.
+
+Political polarization
+
+Poole and Rosenthal (beginning with their 1984 article "The Polarization of American Politics") have also used NOMINATE data to show that, since the 1970s, party delegations in Congress have become ideologically homogeneous and distant from one another (a phenomenon known as "polarization"). Using DW-NOMINATE scores (which permit direct comparisons between members of different Congresses across time), political scientists have demonstrated the expansion of ideological divides in Congress, which has spurred intense partisanship between Republicans and Democrats in recent decades. Contemporary political polarization has had important political consequences on American public policy, as Poole and Rosenthal (with fellow political scientist Nolan McCarty) show in their 2006 book Polarized America: The Dance of Ideology and Unequal Riches.
+
+Applications
+
+NOMINATE has been used to test, refine, and/or develop wide-ranging theories and models of the United States Congress. In Ideology and Congress (pp.&nbsp;270–271), Poole and Rosenthal agree that their findings are consistent with the "party cartel" model that Cox and McCubbins present in their 1993 book Legislative Leviathan. Keith Krehbiel utilizes NOMINATE scores to determine the ideological rank order of both chambers of Congress in developing his "pivotal politics" theory, as do Gary Cox and Matthew McCubbins in their tests of whether parties in Congress meet the conditions of responsible party government (RPG).
+
+NOMINATE scores have been used by popular media outlets like The New York Times and The Washington Post as a measure of the political ideology of political institutions and elected officials or candidates. Political blogger Nate Silver and his team at FiveThirtyEight have repeatedly used DW-NOMINATE scores to gauge the ideological location of major political figures and institutions.
+
+NOMINATE procedures and related roll call scaling techniques have also been applied to a number of other legislative bodies besides the United States Congress. These include the United Nations General Assembly, the European Parliament National Assemblies in Latin America, and the French Fourth Republic. Poole and Rosenthal note in Chapter 11 of Ideology and Congress (2007) that most of these analyses find that roll call voting is organized by only few dimensions (usually two): "These findings suggest that the need to form parliamentary majorities limits dimensionality."
+
+See also
+
+Multidimensional scaling (MDS)
+
+Scale analysis (statistics)
+
+Further reading
+
+Special issue of Studies in American Political Development on NOMINATE, 2016.
+
+References
+
+External links
+
+Archive of K7MOA.com ("Permanent Archive of the Research of Poole and Rosenthal and Colleagues"). Includes
+
+"NOMINATE and American Political History: A Primer." A more extensive introduction to NOMINATE
+
+"NOMINATE: A Short Intellectual History" (by Keith T. Poole)
+
+W-NOMINATE in R: Software and Examples
+
+Jordan Ellenberg,"Growing Apart: The Mathematical Evidence for Congress' Growing Polarization," Slate Magazine, 26 December 2001
+
+Category:Political science
+
+Category:Legislative branch of the United States government
+
+Category:Dimension reduction

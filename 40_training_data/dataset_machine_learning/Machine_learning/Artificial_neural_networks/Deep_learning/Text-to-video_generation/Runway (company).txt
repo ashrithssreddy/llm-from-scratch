@@ -1,0 +1,123 @@
+{{Infobox company
+
+name = Runway AI, Inc.
+
+logo =
+
+type = Private
+
+industry = Artificial intelligencemachine learningsoftware development
+
+founded =
+
+hq_location_city = Manhattan, New York City, U.S.
+
+area_served = Worldwide
+
+key_people =
+
+products =
+
+num_employees = 86
+
+website =
+
+}}
+
+Runway AI, Inc. (also known as Runway and RunwayML) is an American company headquartered in New York City that specializes in generative artificial intelligence research and technologies. The company is primarily focused on creating products for generating videos, images, and various multimedia content through developing commercial text-to-video and video generative AI models.
+
+Runway's tools and AI models have been utilized in films such as Everything Everywhere All at Once, and in editing television shows like The Late Show with Stephen Colbert.
+
+Background and technologies
+
+The company was founded in 2018 by the Chileans Cristóbal Valenzuela, Alejandro Matamala and the Greek Anastasis Germanidis after they met at New York University Tisch School of the Arts ITP. Runway is focused on generative AI for video, media, and art. The company focuses on developing proprietary foundational model technology that professionals in filmmaking, post-production, advertising, editing, and visual effects can utilize. Additionally, Runway offers an iOS app aimed at consumers.
+
+The company raised US$2 million in 2018 to build a platform to deploy machine learning models at scale inside multimedia applications.
+
+In December 2020, Runway raised US$8.5 million in a Series A funding round.
+
+In December 2021, the company raised US$35 million in a Series B funding round.
+
+On December 21, 2022, Runway raised US$50 million in a Series C round. Followed by a $141 million Series C extension round in June 2023 at a $1.5 billion valuation from Google, Nvidia, and Salesforce to build foundational multimodal AI models for content generation to be used in films and video production.
+
+On 3 April 2025, Runway raised $308 million in a funding round led by General Atlantic, valuing it at over $3 billion.
+
+Stable Diffusion
+
+In August 2022, the company co-released an improved version of their Latent Diffusion Model called Stable Diffusion, an open-source deep learning, text-to-image model based on the original paper High-Resolution Image Synthesis with Latent Diffusion Models, together with the CompVis Group at Ludwig Maximilian University of Munich and a compute donation by Stability AI.
+
+Gen-1 and Gen-2
+
+In February 2023 Runway released Gen-1 and Gen-2, commercially and publicly available foundational video-to-video and text-to-video generation models.
+
+Gen-3 Alpha
+
+Gen-3 Alpha is a model trained by Runway on a new infrastructure built for large-scale multimodal training, improving fidelity, consistency, and motion over Gen-2, and a step towards building General World Modelссвs.
+
+Gen-4
+
+In March 2025, Runway released Gen-4, a video-generating AI model that the company described as its most advanced to date. According to the company, the model can generate consistent characters, objects, and environments across scenes, using reference images and text prompts.
+
+Gen-4 Turbo
+
+Gen-4 Turbo, released in April 2025, is a faster, more cost-effective version of Gen-4. The Turbo model uses fewer credits per second of video.
+
+Act-One and Act-Two
+
+Act-One, released in October 2024, enables users to upload a driving video and then transform that performance into realistic or animated characters. With Act-One, creators can animate characters in various styles without motion-capture equipment or character rigging, but still maintain important elements of the original performance including eye-lines, micro-expressions, and nuanced pacing onto generated characters. Act-Two, an expanded version, allows users to animate characters using driving performance videos, providing control over gestures and body movement when using character images, and automatically adding environmental motion.
+
+Game Worlds
+
+In 2025, Runway launched Game Worlds, a tool allowing users to play or create text-based adventures accompanied by pictures.
+
+Partnerships
+
+Entertainment industry
+
+IMAX
+
+In August 2025, Runway partnered with IMAX to screen AI Film Festival winners in 10 major cities across the United States. IMAX Chief Content Officer, Jonathan Fischer, said of the partnership, “The IMAX Experience has typically been reserved for the world’s most accomplished and visionary filmmakers. We’re excited to open our aperture and use our platform to experiment with a new kind of creator, as storytelling and technology converge in an entirely new way.”
+
+AMC Networks
+
+In June 2025, AMC Networks became the first cable company to formally partner with Runway for AI-powered content creation. The partnership focuses on using Runway's technology to generate marketing images and help pre-visualize shows before production begins. According to AMC Networks executive Stephanie Mitchko, the partnership aims to "enhance both how we market and how we create" while providing creative partners with tools to "fully realize the stories they want to tell." The custom model is designed exclusively for Lionsgate's use and cannot be accessed by other Runway users.
+
+The partnership allows Lionsgate filmmakers, directors, and creative talent to use AI-generated cinematic video for pre-production and post-production processes.
+
+Tribeca Film Festival
+
+Runway has partnered with the Tribeca Film Festival since 2024 to showcase AI-generated films and explore the integration of artificial intelligence in filmmaking. The collaboration includes a programming partnership called "Human Powered," which features short films and music videos created using AI tools, followed by Q&A sessions with filmmakers.
+
+The Tribeca Film Festival is also a recurring partner at Runway’s AI Film Festival. The partnership has grown significantly, with Runway's AI Film Festival receiving around 3,000 submissions in 2024, a ten-fold increase from the previous year. Tribeca CEO Jane Rosenthal has emphasized the importance of working directly with AI companies to foster dialogue about the technology's role in filmmaking rather than avoiding or fighting it.
+
+AI film initiatives
+
+AI Film Festival
+
+Runway has hosted an annual AI Film Festival (AIFF) since 2023 to showcase films created using artificial intelligence tools. The festival has experienced dramatic growth, expanding from 300 submissions and screenings in small New York City theaters in its inaugural year to over 6,000 submissions by 2025. The 2025 festival culminated in a sold-out screening at Lincoln Center’s Alice Tully Hall, drawing filmmakers and audiences from around the world.
+
+The festival serves as a platform for emerging filmmakers to explore the creative possibilities of AI-assisted storytelling and is considered by many to have become a significant event in the intersection of technology and cinema.
+
+Gen:48
+
+Runway organizes the Gen:48 short film competition, a filmmaking challenge that gives participants 48 hours and AI generation credits to create short films between 1–4 minutes in length. The competition format is designed to encourage experimentation with AI tools under time constraints, fostering innovation in AI-assisted filmmaking. Participants receive Runway credits and temporary unlimited access to Runway's tools during the 48-hour period, and winners receiving prizes including cash prizes, Runway credits, and the opportunity to screen their films at the AI Film Festival.
+
+References
+
+External links
+
+Runway AI Film Festival
+
+Runway for Educators
+
+Category:Artificial intelligence companies
+
+Category:Companies based in New York City
+
+Category:Software companies of the United States
+
+Category:Text-to-video generation
+
+Category:American companies established in 2018
+
+Category:Technology companies of the United States

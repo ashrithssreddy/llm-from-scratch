@@ -1,0 +1,23 @@
+Frequent pattern discovery (or FP discovery, FP mining, or Frequent itemset mining) is part of knowledge discovery in databases, Massive Online Analysis, and data mining; it describes the task of finding the most frequent and relevant patterns in large datasets.
+
+Techniques
+
+Techniques for FP mining include:
+
+market basket analysis
+
+cross-marketing
+
+catalog design
+
+clustering
+
+classification
+
+recommendation systems
+
+References
+
+Category:Data mining
+
+Category:Cluster analysis

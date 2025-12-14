@@ -1,0 +1,11 @@
+The NVIDIA Deep Learning Accelerator (NVDLA) is an open-source hardware neural network AI accelerator created by Nvidia. The accelerator is written in Verilog and is configurable and scalable to meet many different architecture needs. NVDLA is merely an accelerator and any process must be scheduled and arbitered by an outside entity such as a CPU.
+
+NVDLA is available for product development as part of Nvidia's Jetson Xavier NX, a small circuit board in a form factor about the size of a credit card which includes a 6-core ARMv8.2 64-bit CPU, an integrated 384-core Volta GPU with 48 Tensor Cores, and dual NVDLA "engines", as described in their own press release. Nvidia claims the product will deliver 14 TOPS (tera operations per second) of compute under 10 W.
+
+References
+
+External links
+
+Category:Artificial neural networks
+
+Category:Nvidia

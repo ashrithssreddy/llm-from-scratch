@@ -1,0 +1,103 @@
+Correspondence analysis (CA) is a multivariate statistical technique proposed by Herman Otto Hartley (Hirschfeld) and later developed by Jean-Paul Benzécri. It is conceptually similar to principal component analysis, but applies to categorical rather than continuous data. In a manner similar to principal component analysis, it provides a means of displaying or summarising a set of data in two-dimensional graphical form. Its aim is to display in a biplot any structure hidden in the multivariate setting of the data table. As such it is a technique from the field of multivariate ordination. Since the variant of CA described here can be applied either with a focus on the rows or on the columns it should in fact be called simple (symmetric) correspondence analysis.
+
+It is traditionally applied to the contingency table of a pair of nominal variables where each cell contains either a count or a zero value. If more than two categorical variables are to be summarized, a variant called multiple correspondence analysis should be chosen instead. CA may also be applied to binary data given the presence/absence coding represents simplified count data i.e. a 1 describes a positive count and 0 stands for a count of zero. Depending on the scores used CA preserves the chi-square distance between either the rows or the columns of the table. Because CA is a descriptive technique, it can be applied to tables regardless of a significant chi-squared test. Although the \chi^2 statistic used in inferential statistics and the chi-square distance are computationally related they should not be confused since the latter works as a multivariate statistical distance measure in CA while the \chi^2 statistic is in fact a scalar not a metric.
+
+Details
+
+Like principal components analysis, correspondence analysis creates orthogonal components (or axes) and, for each item in a table i.e. for each row, a set of scores (sometimes called factor scores, see Factor analysis). Correspondence analysis is performed on the data table, conceived as matrix C of size m&nbsp;×&nbsp;n where m is the number of rows and n is the number of columns. In the following mathematical description of the method capital letters in italics refer to a matrix while letters in italics refer to vectors. Understanding the following computations requires knowledge of matrix algebra.
+
+Preprocessing
+
+Before proceeding to the central computational step of the algorithm, the values in matrix C have to be transformed. First compute a set of weights for the columns and the rows (sometimes called masses), where row and column weights are given by the row and column vectors, respectively:
+
+w_m =  \frac{1}{n_C} C \mathbf{1}, \quad w_n = \frac{1}{n_C}\mathbf{1}^T C.
+
+Here n_C = \sum_{i=1}^n \sum_{j=1}^m C_{ij}  is the sum of all cell values in matrix C, or short the sum of C, and \mathbf{1} is a column vector of ones with the appropriate dimension.
+
+Put in simple words, w_m is just a vector whose elements are the row sums of C divided by the sum of C, and w_n is a vector whose elements are the column sums of C divided by the sum of C.
+
+The weights are transformed into diagonal matrices
+
+W_m = \operatorname{diag}(1/\sqrt{w_m})
+
+and
+
+W_n = \operatorname{diag}(1/\sqrt{w_n})
+
+where the diagonal elements of W_n are 1/\sqrt{w_n} and those of W_m are 1/\sqrt{w_m} respectively i.e. the vector elements are the inverses of the square roots of the masses. The off-diagonal elements are all 0.
+
+Next, compute matrix P by dividing C by its sum
+
+P = \frac{1}{n_C} C.
+
+In simple words, Matrix P is just the data matrix (contingency table or binary table) transformed into portions i.e. each cell value is just the cell portion of the sum of the whole table.
+
+Finally, compute matrix S, sometimes called the matrix of standardized residuals,.
+
+Interpretation of preprocessing
+
+The vectors w_m and w_n are the row and column masses or the marginal probabilities for the rows and columns, respectively. Subtracting matrix \operatorname{outer}(w_m, w_n) from matrix P is the matrix algebra version of double centering the data. Multiplying this difference by the diagonal weighting matrices results in a matrix containing weighted deviations from the origin of a vector space. This origin is defined by matrix \operatorname{outer}(w_m, w_n).
+
+In fact matrix \operatorname{outer}(w_m, w_n) is identical with the matrix of expected frequencies in the chi-squared test.  Therefore S is computationally related to the independence model used in that test. But since CA is not an inferential method the term independence model is inappropriate here.
+
+Orthogonal components
+
+The table S is then decomposed The sum of the squared singular values is the total inertia \Iota of the data table, computed as
+
+\Iota = \sum_{i=1}^p \sigma_i^2.
+
+The total inertia \Iota of the data table can also computed directly from S as
+
+\Iota = \sum_{i=1}^n \sum_{j=1}^m s_{ij}^2.
+
+The amount of inertia covered by the i-th set of singular vectors is \iota_i, the principal inertia. The higher the portion of inertia covered by the first few singular vectors i.e. the larger the sum of the principal inertiae in comparison to the total inertia, the more successful a CA is. scaling in econometrics and scaling 1 in ecology. Since the weighting includes the singular values \Sigma of the matrix of standardized residuals S these coordinates are sometimes referred to as singular value scaled singular vectors, or, a little bit misleading, as eigenvalue scaled eigenvectors. In fact the non-trivial eigenvectors of S  S^* are the left singular vectors U of  S and those of  S^* S    are the right singular vectors V of S while the eigenvalues of either of these matrices are the squares of the singular values \Sigma. But since all modern algorithms for CA are based on a singular value decomposition this terminology should be avoided. In the French tradition of CA the coordinates are sometimes called (factor) scores.
+
+Factor scores or principal coordinates for the rows of matrix C are computed by
+
+F_m = W_m U \Sigma
+
+i.e. the left singular vectors are scaled by the inverse of the square roots of the row masses and by the singular values. Because principal coordinates are computed using singular values they contain the information about the spread between the rows (or columns) in the original table. Computing the euclidean distances between the entities in principal coordinates results in values that equal their chi-square distances which is the reason why CA is said to "preserve chi-square distances".
+
+Compute principal coordinates for the columns by
+
+F_n = W_n V \Sigma.
+
+To represent the result of CA in a proper biplot, those categories which are not plotted in principal coordinates, i.e. in chi-square distance preserving coordinates, should be plotted in so called standard coordinates. When computing standard coordinates the singular values are omitted which is a direct result of applying the biplot rule by which one of the two sets of singular vector matrices must be scaled by singular values raised to the power of zero i.e. multiplied by one i.e. be computed by omitting the singular values if the other set of singular vectors have been scaled by the singular values. This reassures the existence of an inner product between the two sets of coordinates i.e. it leads to meaningful interpretations of their spatial relations in a biplot.
+
+In practical terms one can think of the standard coordinates as the vertices of the vector space in which the set of principal coordinates (i.e. the respective points) "exists".  The standard coordinates for the rows are
+
+G_m = W_m U
+
+and those for the columns are
+
+G_n = W_n V
+
+Note that a scaling 1 early CA biplots mapped both entities in the same coordinate version, usually principal coordinates, but this kind of display is misleading insofar as: "Although this is called a biplot, it does not'' have any useful inner product relationship between the row and column scores" as Brian Ripley, maintainer of R package MASS points out correctly. Today that kind of display should be avoided since laymen usually are not aware of the lacking relation between the two point sets.
+
+A ''scaling 1
+
+The distances between row points approximate their chi-square distance. Points close to each other represent rows with very similar values in the original data table. I.e they may exhibit rather similar frequencies in case of count data or closely related binary values in case of presence/absence data.
+
+(Column) points in standard coordinates represent the vertices of the vector space i.e. the outer corner of something that in multidimensional space has the shape of an irregular polyhedron. Project row points onto the line connecting the origin and the standard coordinate of a column; if the projected position along that connection line is close to the position of the standard coordinate, that row point is strongly associated with this column i.e. in case of count data the row has a high frequency of that category and in case of presence/absence data the row is likely to exhibit a 1 in that column. Row points whose projection would require to elongate the connection line beyond the origin have a lower than average value in that column.
+
+Extensions and applications
+
+Several variants of CA are available, including detrended correspondence analysis (DCA) and canonical correspondence analysis (CCA). The latter (CCA) is used when there is information about possible causes for the similarities between the investigated entities. The extension of correspondence analysis to many categorical variables is called multiple correspondence analysis. An adaptation of correspondence analysis to the problem of discrimination based upon qualitative variables (i.e., the equivalent of discriminant analysis for qualitative data) is called discriminant correspondence analysis or barycentric discriminant analysis.
+
+In the social sciences, correspondence analysis, and particularly its extension multiple correspondence analysis, was made known outside France through French sociologist Pierre Bourdieu's application of it.
+
+Implementations
+
+The data visualization system Orange include the module: orngCA.
+
+The statistical programming language R includes several packages, which offer a function for (simple symmetric) correspondence analysis. Using the R notation [package_name::function_name] the packages and respective functions are: ade4::dudi.coa(), ca::ca() , ExPosition::epCA(), FactoMineR::CA(), MASS::corresp(), vegan::cca(). The easiest approach for beginners is ca::ca() as there is an extensive text book accompanying that package.
+
+The Freeware PAST (PAleontological STatistics) offers (simple symmetric) correspondence analysis via the menu "Multivariate/Ordination/Correspondence (CA)".
+
+See also
+
+Formal concept analysis
+
+References
+
+Category:Dimension reduction

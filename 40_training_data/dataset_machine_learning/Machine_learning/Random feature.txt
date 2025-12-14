@@ -1,0 +1,95 @@
+Random features (RF) are a technique used in machine learning to approximate kernel methods, introduced by Ali Rahimi and Ben Recht in their 2007 paper "Random Features for Large-Scale Kernel Machines", and extended by. RF uses a Monte Carlo approximation to kernel functions by randomly sampled feature maps. It is used for datasets that are too large for traditional kernel methods like support vector machine, kernel ridge regression, and gaussian process.
+
+Mathematics
+
+Kernel method
+
+Given a feature map \phi: \R^d \to V, where V is a Hilbert space (more specifically, a reproducing kernel Hilbert space), the kernel trick replaces inner products in feature space \langle \phi(x_i), \phi(x_j)\rangle_V by a kernel functionk(x_i, x_j): \R^d \times \R^d \to \RKernel methods replaces linear operations in high-dimensional space by operations on the kernel matrix:
+
+K_X := [k(x_i, x_j)]_{i, j \in 1:N}
+
+where N is the number of data points.
+
+Random kernel method
+
+The problem with kernel methods is that the kernel matrix K_X has size N \times N. This becomes computationally infeasible when N reaches the order of a million. The random kernel method replaces the kernel function k by an inner product in low-dimensional feature space \R^D:
+
+k(x,y) \approx \langle z(x), z(y)\rangle
+
+where z is a randomly sampled feature map z : \R^d \to \R^D.
+
+This converts kernel linear regression into linear regression in feature space, kernel SVM into SVM in feature space, etc. Since we have K_X \approx Z_X^T Z_X where Z_X = [z(x_1), \dots, z(x_N)], these methods no longer involve matrices of size O(N^2), but only random feature matrices of size O(DN).
+
+Random Fourier feature
+
+Radial basis function kernel
+
+The radial basis function (RBF) kernel on two samples x_i, x_j \in \mathbb{R}^{d} is defined as
+
+k(x_i, x_j) = \exp\left(-\frac{\|x_i - x_j \|^2}{2\sigma^2}\right)
+
+where \|x_i - x_j \|^2 is the squared Euclidean distance and \sigma is a free parameter defining the shape of the kernel. It can be approximated by a random Fourier feature map z: \R^d \to \R^{2D}:z(x) := \frac{1}{\sqrt D}[\cos\langle \omega_1, x\rangle, \sin\langle \omega_1, x\rangle, \ldots, \cos\langle \omega_D, x\rangle, \sin\langle \omega_D, x\rangle]^Twhere \omega_1, ..., \omega_D are IID samples from the multidimensional normal distribution N(0, \sigma^{-2} I).
+
+{{Math theorem
+
+name =
+
+math_statement = -
+
+(Unbiased estimation)  \operatorname E[\langle z(x), z(y)\rangle] = e^{\|x-y\|^2/(2\sigma^2)}.
+
+(Variance bound) \operatorname{Var}[\langle z(x), z(y)\rangle] = O(D^{-1})
+
+(Convergence) As D \to \infty, the approximation converges in probability to the true kernel.
+
+}}
+
+{{Math proof
+
+proof=
+
+(Unbiased estimation) By independence of \omega_1, ..., \omega_D, it suffices to prove the case of D=1. By the trigonometric identity \cos(a-b) = \cos(a)\cos(b) + \sin(a)\sin(b),\langle z(x), z(y)\rangle = \frac 1D \sum_{i=1}^D \cos \langle \omega_i, x-y\rangleApply the spherical symmetry of normal distribution, then evaluate the integral: \int_{-\infty}^\infty \frac{\cos (k x) e^{-x^2 / 2}}{\sqrt{2 \pi}} d x=e^{-k^2 / 2}.
+
+(Variance bound) Since \omega_1, ..., \omega_D are IID, it suffices to prove that the variance of \cos \langle \omega_1, x-y\rangle is finite, which is true since it is bounded within [-1, +1].
+
+(Convergence) By Chebyshev's inequality.
+
+}}Since \cos, \sin are bounded, there is a stronger convergence guarantee by Hoeffding's inequality.
+
+Other examples
+
+Random binning features
+
+A random binning features map partitions the input space using randomly shifted grids at randomly chosen resolutions and assigns to an input point a binary bit string that corresponds to the bins in which it falls. The grids are constructed so that the probability that two points  x_i, x_j \in \Reals^d are assigned to the same bin is proportional to  K(x_i, x_j). The inner product between a pair of transformed points is proportional to the number of times the two points are binned together, and is therefore an unbiased estimate of  K(x_i, x_j). Since this mapping is not smooth and uses the proximity between input points, Random Binning Features works well for approximating kernels that depend only on the L_1 distance between datapoints.
+
+Orthogonal random features
+
+Orthogonal random features uses a random orthogonal matrix instead of a random Fourier matrix.
+
+Historical context
+
+In NIPS 2006, deep learning had just become competitive with linear models like PCA and linear SVMs for large datasets, and people speculated about whether it could compete with kernel SVMs. However, there was no way to train kernel SVM on large datasets. The two authors developed the random feature method to train those.
+
+It was then found that the O(1/D) variance bound did not match practice: the variance bound predicts that approximation to within 0.01 requires D \sim 10^4, but in practice required only \sim 10^2. Attempting to discover what caused this led to the subsequent two papers.
+
+See also
+
+Kernel method
+
+Support vector machine
+
+Fourier transform
+
+Monte Carlo method
+
+References
+
+External links
+
+Random Walks - Random Fourier features
+
+Category:Machine learning
+
+Category:Monte Carlo methods
+
+Category:Kernel methods for machine learning

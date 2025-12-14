@@ -1,0 +1,25 @@
+In the mathematical theory of Markov chains, the Markov chain tree theorem is an expression for the stationary distribution of a Markov chain with finitely many states. It sums up terms for the rooted spanning trees of the Markov chain, with a positive combination for each tree. The Markov chain tree theorem is closely related to Kirchhoff's theorem on counting the spanning trees of a graph, from which it can be derived. It was first stated by , for certain Markov chains arising in thermodynamics, and proved in full generality by , motivated by an application in limited-memory estimation of the probability of a biased coin.
+
+A finite Markov chain consists of a finite set of states, and a transition probability p_{i,j} for changing from state i to state j, such that for each state the outgoing transition probabilities sum to one. From an initial choice of state (which turns out to be irrelevant to this problem), each successive state is chosen at random according to the transition probabilities from the previous state. A Markov chain is said to be irreducible when every state can reach every other state through some sequence of transitions, and aperiodic if, for every state, the possible numbers of steps in sequences that start and end in that state have greatest common divisor one. An irreducible and aperiodic Markov chain necessarily has a stationary distribution, a probability distribution on its states that describes the probability of being on a given state after many steps, regardless of the initial choice of state.
+
+The Markov chain tree theorem considers spanning trees for the states of the Markov chain, defined to be trees, directed toward a designated root, in which all directed edges are valid transitions of the given Markov chain. If a transition from state i to state j has transition probability p_{i,j}, then a tree T with edge set E(T) is defined to have weight equal to the product of its transition probabilities:
+
+w(T)=\prod_{(i,j)\in E(T)} p_{i,j}.
+
+Let \mathcal{T}_i denote the set of all spanning trees having state i at their root. Then, according to the Markov chain tree theorem, the stationary probability \pi_i for state i is proportional to the sum of the weights of the trees rooted at i. That is,
+
+\pi_i=\frac{1}{Z}\sum_{T\in\mathcal{T}_i} w(T),
+
+where the normalizing constant Z is the sum of w(T) over all spanning trees.
+
+References
+
+{{reflist|refs=
+
+}}
+
+Category:Markov processes
+
+Category:Spanning tree
+
+Category:Theorems about stochastic processes

@@ -1,0 +1,29 @@
+Co-training is a machine learning algorithm used when there are only small amounts of labeled data and large amounts of unlabeled data. One of its uses is in text mining for search engines. It was introduced by Avrim Blum and Tom Mitchell in 1998.
+
+Algorithm design
+
+Co-training is a semi-supervised learning technique that requires two views of the data. It assumes that each example is described using two different sets of features that provide complementary information about the instance. Ideally, the two views are conditionally independent (i.e., the two feature sets of each instance are conditionally independent given the class) and each view is sufficient (i.e., the class of an instance can be accurately predicted from each view alone). Co-training first learns a separate classifier for each view using any labeled examples. The most confident predictions of each classifier on the unlabeled data are then used to iteratively construct additional labeled training data.
+
+The original co-training paper described experiments using co-training to classify web pages into "academic course home page" or not; the classifier correctly categorized 95% of 788 web pages with only 12 labeled web pages as examples.
+
+Krogel and Scheffer showed in 2004 that co-training is only beneficial if the data sets are independent; that is, if one of the classifiers correctly labels a data point that the other classifier previously misclassified. If the classifiers agree on all unlabeled data, i.e. they are dependent, labeling the data does not create new information. In an experiment where dependence of the classifiers was greater than 60%, results worsened.
+
+Uses
+
+Co-training has been used to classify web pages using the text on the page as one view and the anchor text of hyperlinks on other pages that point to the page as the other view. Simply put, the text in a hyperlink on one page can give information about the page it links to. Co-training can work on "unlabeled" text that has not already been classified or tagged, which is typical for the text appearing on web pages and in emails. According to Tom Mitchell, "The features that describe a page are the words on the page and the links that point to that page. The co-training models utilize both classifiers to determine the likelihood that a page will contain data relevant to the search criteria." Text on websites can judge the relevance of link classifiers, hence the term "co-training". Mitchell claims that other search algorithms are 86% accurate, whereas co-training is 96% accurate.
+
+Co-training was used on FlipDog.com, a job search site, and by the U.S. Department of Labor, for a directory of continuing and distance education.
+
+References
+
+Notes
+
+External links
+
+Lecture by Tom Mitchell introducing co-training and other semi-supervised machine learning for use on unlabeled data
+
+Lecture by Avrim Blum on semi-supervised learning, including co-training
+
+Co-Training group at Pittsburgh Science of Learning Center
+
+Category:Classification algorithms

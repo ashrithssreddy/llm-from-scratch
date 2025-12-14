@@ -1,0 +1,135 @@
+In probability theory, a Markov kernel (also known as a stochastic kernel or probability kernel) is a map that in the general theory of Markov processes plays the role that the transition matrix does in the theory of Markov processes with a finite state space.
+
+Formal definition
+
+Let (X,\mathcal A) and (Y,\mathcal B) be measurable spaces. A Markov kernel with source (X,\mathcal A) and target (Y,\mathcal B), sometimes written as \kappa:(X,\mathcal{A})\to(Y,\mathcal{B}), is a function \kappa : \mathcal B \times X  \to [0,1] with the following properties:
+
+For every (fixed) B_0 \in \mathcal B, the map  x \mapsto \kappa(B_0, x) is \mathcal A-measurable
+
+For every (fixed)  x_0 \in X, the map  B \mapsto \kappa(B, x_0) is a probability measure on (Y, \mathcal B)
+
+In other words it associates to each point x \in X a probability measure \kappa(dy|x): B \mapsto \kappa(B, x) on (Y,\mathcal B) such that, for every measurable set B\in\mathcal B, the map x\mapsto \kappa(B, x) is measurable with respect to the \sigma-algebra \mathcal A.
+
+Examples
+
+Simple random walk on the integers ===
+
+Take X=Y=\Z, and  \mathcal A = \mathcal B = \mathcal P(\Z) (the power set of \Z). Then a Markov kernel is fully determined by the probability it assigns to singletons \{m\},\, m \in Y = \Z for each n \in X = \Z:
+
+\kappa(B|n )=\sum_{m \in B}\kappa(\{m\}|n), \qquad \forall n \in \mathbb{Z}, \, \forall B \in \mathcal B.
+
+Now the random walk  \kappa  that goes to the right with probability p  and to the left with probability 1 - p is defined by
+
+\kappa(\{m\}|n)= p \delta_{m, n + 1}+ (1-p) \delta_{m, n - 1}, \quad \forall n,m \in \Z
+
+where \delta is the Kronecker delta. The transition probabilities P(m|n) = \kappa(\{m\}|n) for the random walk are equivalent to the Markov kernel.
+
+General Markov processes with countable state space===
+
+More generally take X and Y both countable and \mathcal A =  \mathcal P(X),\ \mathcal B = \mathcal P(Y).
+
+Again a Markov kernel is defined by the probability it assigns to singleton sets for each i \in X
+
+\kappa(B|i)=\sum_{j \in B}\kappa(\{j\}|i), \qquad \forall i \in X, \, \forall B \in \mathcal B,
+
+We define a Markov process by defining a transition probability P(j|i) = K_{ji} where the numbers K_{ji} define a (countable) stochastic matrix (K_{ji}) i.e.
+
+\begin{align}
+
+K_{ji} &\ge 0, \qquad &\forall (j,i) \in Y\times X, \\
+
+\sum_{j \in Y}K_{ji}&=1, \qquad &\forall i \in X.\\
+
+\end{align}
+
+We then define
+
+\kappa(\{j\} | i)  = K_{ji} = P(j|i), \qquad \forall i \in X, \quad \forall B \in \mathcal B.
+
+Again the transition probability, the stochastic matrix and the Markov kernel are equivalent reformulations.
+
+Markov kernel defined by a kernel function and a measure ===
+
+Let \nu be a measure on (Y, \mathcal B), and k: Y \times X\to [0, \infty] a measurable function with respect to the product \sigma-algebra \mathcal A \otimes \mathcal B such that
+
+\int_Y k(y, x)\nu(\mathrm{d} y) = 1, \qquad \forall x \in X ,
+
+then  \kappa(dy |x) = k(y, x)\nu(dy)  i.e. the mapping
+
+\begin{cases} \kappa:\mathcal B \times X \to [0,1] \\ \kappa(B|x)=\int_{B}k(y, x)\nu(\mathrm{d} y) \end{cases}
+
+defines a Markov kernel. This example generalises the countable Markov process example where \nu was the counting measure. Moreover it encompasses other important examples such as the convolution kernels, in particular the Markov kernels defined by the heat equation. The latter example includes the Gaussian kernel on X = Y = \mathbb R with \nu(dx) = dx  standard Lebesgue measure and
+
+k_t(y, x) = \frac{1}{\sqrt{2\pi}t}e^{-(y - x)^2/(2t^2)}.
+
+Measurable functions
+
+Take (X, \mathcal{A}) and (Y, \mathcal{B}) arbitrary measurable spaces, and let f:X \to Y be a measurable function. Now define \kappa(dy|x) = \delta_{f(x)}(dy) i.e.
+
+\kappa(B|x) = \mathbf{1}_B(f(x)) = \mathbf{1}_{f^{-1}(B)}(x) = \begin{cases}1 & \text{if } f(x) \in B\\ 0 & \text{otherwise}\end{cases} for all B \in \mathcal{B}.
+
+Note that the indicator function \mathbf{1}_{f^{-1}(B)} is \mathcal{A}-measurable for all B \in \mathcal{B} iff f is measurable.
+
+This example allows us to think of a Markov kernel as a generalised function with a (in general) random rather than certain value. That is, it is a multivalued function where the values are not equally weighted.
+
+Galton–Watson process===
+
+As a less obvious example, take X = \N, \mathcal A = \mathcal P(\N), and (Y, \mathcal B) the real numbers \R with the standard sigma algebra of Borel sets.  Then
+
+\kappa(B|n)=\begin{cases} \mathbf{1}_B(0)  & n=0\\ \Pr(\xi_1 + \cdots + \xi_x \in B) & n \neq 0 \\ \end{cases}
+
+where  x  is the number of element at the state  n , \xi_i  are i.i.d. random variables (usually with mean 0) and where \mathbf{1}_B is the indicator function. For the simple case of coin flips this models the different levels of a Galton board.
+
+Composition of Markov Kernels
+
+Given measurable spaces (X, \mathcal A),  (Y, \mathcal B)  we consider a Markov kernel \kappa: \mathcal B \times X \to [0,1] as a morphism \kappa: X \to Y. Intuitively, rather than assigning to each x \in X a sharply defined point  y \in Y the kernel assigns a "fuzzy" point in Y which is only known  with some level of uncertainty, much like actual physical measurements. If we have a third measurable space (Z, \mathcal C), and probability kernels \kappa: X \to Y and \lambda: Y \to Z, we can define a composition \lambda \circ \kappa : X \to Z by the Chapman-Kolmogorov equation
+
+(\lambda \circ \kappa) (dz|x) = \int_Y \lambda(dz | y)\kappa(dy|x).
+
+The composition is associative by the Monotone Convergence Theorem and the identity function considered as a Markov kernel (i.e. the delta measure   \kappa_{1}(dx'|x) = \delta_x(dx')) is the unit for this composition.
+
+This composition defines the structure of a category on the measurable spaces with Markov kernels as morphisms, first defined by Lawvere, the category of Markov kernels.
+
+== Probability Space defined by Probability Distribution and a Markov Kernel==
+
+A composition of a probability space (X, \mathcal A, P_X) and a probability kernel \kappa: (X, \mathcal A) \to (Y, \mathcal B)  defines a probability space (Y, \mathcal B, P_Y = \kappa \circ P_X), where the probability measure is given by
+
+P_Y(B) = \int_X \int_B \kappa(dy|x) P_X(dx) = \int_X \kappa(B|x)P_X(dx) = \mathbb{E}_{P_X}\kappa(B|\cdot).
+
+Properties
+
+Semidirect product
+
+Let (X, \mathcal A, P) be a probability space and  \kappa a Markov kernel from  (X, \mathcal A) to some (Y, \mathcal B). Then there exists a unique measure  Q on  (X \times Y, \mathcal A \otimes \mathcal B), such that:
+
+Q(A \times B) = \int_A \kappa(B|x)\,P(dx), \quad \forall A \in \mathcal A, \quad \forall B \in\mathcal B.
+
+Regular conditional distribution
+
+Let (S,Y) be a Borel space, X a (S,Y)-valued random variable on the measure space (\Omega, \mathcal{F}, P) and \mathcal G \subseteq \mathcal F a sub-\sigma-algebra. Then there exists a Markov kernel \kappa from (\Omega, \mathcal G) to (S,Y),  such that \kappa(\cdot,B) is a version of the conditional expectation \mathbb{E}[\mathbf 1_{\{X \in B\}} \mid \mathcal G] for every B \in Y, i.e.
+
+P(X \in B\mid\mathcal G)=\mathbb{E} \left [\mathbf 1_{\{X \in B\}}\mid\mathcal G \right ] = \kappa(\cdot,B), \qquad P\text{-a.s.}\,\, \forall B \in \mathcal G.
+
+It is called regular conditional distribution of X given \mathcal G and is not uniquely defined.
+
+Generalizations
+
+Transition kernels generalize Markov kernels in the sense that for all x \in X, the map
+
+B \mapsto \kappa(B| x)
+
+can be any type of (non negative) measure,  not necessarily a probability measure.
+
+External links
+
+Markov kernel in nLab.
+
+References
+
+§36. Kernels and semigroups of kernels
+
+See also
+
+Category of Markov kernels
+
+Category:Markov processes

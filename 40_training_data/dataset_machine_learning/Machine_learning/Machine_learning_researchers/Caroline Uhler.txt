@@ -1,0 +1,47 @@
+Caroline Uhler (born 1983) is a Swiss statistician working in the field of machine learning and applications in genomics. Her research focuses on developing methods for causal inference to infer regulatory relationships from different data modalities (transcriptomic, proteomic, structural, etc.). She is a Full Professor in the Department of Electrical Engineering and Computer Science and the Institute for Data, Systems and Society at the Massachusetts Institute of Technology. In addition, she is a Core Institute Member at the Broad Institute, where she directs the Eric and Wendy Schmidt Center.
+
+Education and career
+
+Uhler was born in Switzerland. She studied mathematics and biology at the University of Zurich, earning a bachelor's degree in mathematics in 2004, and a second bachelor's degree in biology and master's degree in mathematics in 2006. She stayed at the university for a credential as a high school mathematics teacher in 2007, but instead of becoming a teacher she traveled to the US for graduate education at the University of California, Berkeley. There, she earned both a Ph.D. in statistics and a degree in management of technology from the Haas School of Business in 2011. Her doctoral dissertation, Geometry of maximum likelihood estimation in Gaussian graphical models, was supervised by Bernd Sturmfels, an algebraic geometer and algebraic statistician.
+
+She became an assistant professor at the Institute of Science and Technology Austria in 2012, after a short postdoc at the Institute for Mathematics and its Applications at the University of Minnesota as well as at ETH Zurich. She moved to the Massachusetts Institute of Technology in 2015 as Henry L. and Grace Doherty Assistant Professor in 2015, and was promoted to associate professor in 2018 and to full professor in 2022. Since 2022, Uhler has also been a Core Institute Member at the Broad Institute, where she directs the Eric and Wendy Schmidt Center.
+
+Recognition
+
+Uhler has received multiple prestigious career prizes: In 2014, Uhler became an elected member of the International Statistical Institute. In 2015, she was a winner of the Start-Preis of the Austrian Science Fund, and of the Sofja Kovalevskaja Award of the Alexander von Humboldt Foundation, but declined the funding to move to MIT. In 2017, Uhler received the NSF Career Award and the Sloan Research Fellowship. In 2019, Uhler became a Simons Investigator in Mathematical Modeling of Living Systems, and in 2022, she received the NIH Director's New Innovator Award. She was elected as SIAM Fellow in 2023.
+
+References
+
+{{reflist|refs=
+
+}}
+
+External links
+
+Home page
+
+Category:Living people
+
+Category:American women statisticians
+
+Category:Swiss statisticians
+
+Category:University of Zurich alumni
+
+Category:Haas School of Business alumni
+
+Category:MIT School of Engineering faculty
+
+Category:Academic staff of ETH Zurich
+
+Category:Elected Members of the International Statistical Institute
+
+Category:1983 births
+
+Category:21st-century American women
+
+Category:Mathematical statisticians
+
+Category:Machine learning researchers
+
+Category:Women statisticians

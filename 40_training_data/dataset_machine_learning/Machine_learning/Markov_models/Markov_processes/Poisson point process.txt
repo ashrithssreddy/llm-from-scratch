@@ -1,0 +1,365 @@
+{{Infobox probability distribution
+
+name=Poisson Process
+
+pdf_image=
+
+mean=a_{0, t} = \int_{0}^{t} \lambda(\alpha) d\alpha
+
+variance=a_{0, t}   + (a_{0, t})^2 - (a_{0, t})^2 = a_{0, t}
+
+since R_x(t_1,t_2) = a_{0, min(t_1,t_2)}  + a_{0, t_1} a_{0, t_2}
+
+where for  E\{X^2\} = R_x(t,t) = a_{0, t}   + (a_{0, t})^2
+
+type=multivariate
+
+}}
+
+In probability theory, statistics and related fields, a Poisson point process (also known as: Poisson random measure, Poisson random point field and Poisson point field) is a type of mathematical object that consists of points randomly located on a mathematical space with the essential feature that the points occur independently of one another.  The process's name derives from the fact that the number of points in any given finite region follows a Poisson distribution. The process and the distribution are named after French mathematician Siméon Denis Poisson. The process itself was discovered independently and repeatedly in several settings, including experiments on radioactive decay, telephone call arrivals and actuarial science.
+
+This point process is used as a mathematical model for seemingly random processes in numerous disciplines including  astronomy, biology, ecology, geology, seismology, physics, economics, image processing, and telecommunications.
+
+The Poisson point process is often defined on the real number line, where it can be considered a stochastic process. It is used, for example, in queueing theory to model random events distributed in time, such as the arrival of customers at a store, phone calls at an exchange or occurrence of earthquakes.  In the plane, the point process, also known as a spatial Poisson process, can represent the locations of scattered objects such as transmitters in a wireless network, particles colliding into a detector or trees in a forest. stochastic geometry, and continuum percolation theory.
+
+The point process depends on a single mathematical object, which, depending on the context, may be a constant, a locally integrable function or, in more general settings, a Radon measure. In the first case, the constant, known as the rate or intensity, is the average density of the points in the Poisson process located in some region of space. The resulting point process is called a homogeneous  or stationary Poisson point process. In the second case, the point process is called an inhomogeneous or nonhomogeneous Poisson point process, and the average density of points depend on the location of the underlying space of the Poisson point process. The word point is often omitted, but there are other Poisson processes of objects, which, instead of points, consist of more complicated mathematical objects such as lines and polygons, and such processes can be based on the Poisson point process. Both the homogeneous and nonhomogeneous Poisson point processes are particular cases of the generalized renewal process.
+
+Overview of definitions
+
+Depending on the setting, the process has several equivalent definitions as well as definitions of varying generality owing to its many applications and characterizations. The Poisson point process can be defined, studied and used in one dimension, for example, on the real line, where it can be interpreted as a counting process or part of a queueing model; in higher dimensions such as the plane where it plays a role in stochastic geometry or on more general mathematical spaces. Consequently, the notation, terminology and level of mathematical rigour used to define and study the Poisson point process and points processes in general vary according to the context.
+
+Despite all this, the Poisson point process has two key properties—the Poisson property and the independence property— that play an essential role in all settings where the Poisson point process is used. or independent scattering and is common to all Poisson point processes. In other words, there is a lack of interaction between different regions and the points in general, which motivates the Poisson process being sometimes called a purely or completely random process. where rate is usually used when the underlying space has one dimension. The parameter  \lambda can be interpreted as the average number of points per some unit of extent such as length, area, volume, or time, depending on the underlying mathematical space, and it is also called the mean density or mean rate; see Terminology.
+
+Interpreted as a counting process
+
+The homogeneous Poisson point process, when considered on the positive half-line, can be defined as a counting process, a type of stochastic process, which can be denoted as  \{N(t), t\geq 0\}. or interoccurrence times.
+
+\Pr \{N(a,b]=n\}=\frac{[\lambda(b-a)]^n}{n!} e^{-\lambda (b-a)},
+
+For some positive integer  k, the homogeneous Poisson point process has the finite-dimensional distribution given by: but this property has no natural equivalence when the Poisson process is defined on a space with higher dimensions.
+
+Orderliness and simplicity
+
+A point process with stationary increments is sometimes said to be orderly or regular if:
+
+\Pr \{ N(t,t+\delta]>1 \} = o(\delta),
+
+where little-o notation is being used. A point process is called a simple point process when the probability of any of its two points coinciding in the same position, on the underlying space, is zero.  For point processes in general on the real line, the property of orderliness implies that the process is simple, which is the case for the homogeneous Poisson point process.
+
+Martingale characterization
+
+On the real line, the homogeneous Poisson point process has a connection to the theory of martingales via the following characterization:  a point process is the homogeneous Poisson point process if and only if
+
+N(-\infty,t]-\lambda t,
+
+is a martingale.
+
+Relationship to other processes
+
+On the real line, the Poisson process is a type of continuous-time Markov process known as a birth process, a special case of the birth–death process (with just births and zero deaths). More complicated processes with the Markov property, such as Markov arrival processes, have been defined where the Poisson process is a special case.
+
+Restricted to the half-line
+
+If the homogeneous Poisson process is considered just on the half-line  [0,\infty), which can be the case when  t represents time This process can be generalized in a number of ways. One possible generalization is to extend the distribution of interarrival times from the exponential distribution to other distributions, which introduces the stochastic process known as a renewal process. Another generalization is to define the Poisson point process on higher dimensional spaces such as the plane.
+
+Spatial Poisson point process
+
+A  spatial Poisson process is a Poisson point process defined in the plane \textstyle \mathbb{R}^2. For its mathematical definition, one first considers a bounded, open or closed (or more precisely, Borel measurable) region  B of the plane. The number of points of a point process \textstyle N existing in this region \textstyle B\subset \mathbb{R}^2 is a random variable, denoted by \textstyle N(B). If the points belong to a homogeneous Poisson process with parameter \textstyle \lambda>0, then the probability of \textstyle n points existing in \textstyle B is given by:
+
+\Pr \{N(B)=n\}=\frac{(\lambda|B|)^n}{n!} e^{-\lambda|B|}
+
+where \textstyle |B| denotes the area of \textstyle B.
+
+For some finite integer \textstyle k\geq 1, we can give the finite-dimensional distribution of the homogeneous Poisson point process by first considering a collection of disjoint, bounded Borel (measurable) sets \textstyle B_1,\dots,B_k. The number of points of the point process  \textstyle N  existing in \textstyle B_i can be written as \textstyle N(B_i). Then the homogeneous Poisson point process with parameter \textstyle \lambda>0 has the finite-dimensional distribution:
+
+\Pr \{N(B_i)=n_i, i=1, \dots, k\}=\prod_{i=1}^k\frac{(\lambda|B_i|)^{n_i}}{n_i!}e^{-\lambda|B_i|}.
+
+Applications
+
+, pictured above, resemble a realization of a homogeneous Poisson point process, while in many other cities around the world they do not and other point processes are required.]]
+
+The spatial Poisson point process features prominently in spatial statistics,
+
+\Pr \{N(B_i)=n_i, i=1, \dots, k\}=\prod_{i=1}^k\frac{(\lambda|B_i|)^{n_i}}{n_i!} e^{-\lambda|B_i|}.
+
+Homogeneous Poisson point processes do not depend on the position of the underlying space through its parameter \textstyle \lambda, which implies it is both a stationary process (invariant to translation) and an isotropic (invariant to rotation) stochastic process.
+
+Inhomogeneous Poisson point process
+
+The inhomogeneous or nonhomogeneous Poisson point process (see Terminology) is a Poisson point process with a Poisson parameter set as some location-dependent function in the underlying space on which the Poisson process is defined. For Euclidean space \textstyle \mathbb{R}^d, this is achieved by introducing a locally integrable positive function \lambda\colon\mathbb{R}^d\to[0,\infty), such that for every bounded region \textstyle B the (\textstyle d-dimensional) volume integral of  \textstyle \lambda (x) over region \textstyle B is finite. In other words, if this integral, denoted by \textstyle \Lambda (B), is:
+
+Counting process interpretation
+
+The inhomogeneous Poisson point process, when considered on the positive half-line, is also sometimes defined as a counting process. With this interpretation, the process, which is sometimes written as \textstyle \{N(t), t\geq 0\}, represents the total number of occurrences or events that have happened up to and including time \textstyle t. A counting process is said to be an inhomogeneous Poisson counting process if it has the four properties:
+
+\textstyle N(0)=0;
+
+has independent increments;
+
+\textstyle \Pr\{ N(t+h) - N(t)=1 \} =\lambda(t)h + o(h); and
+
+\textstyle \Pr \{ N(t+h) - N(t)\ge 2 \} = o(h),
+
+where \textstyle o(h) is asymptotic or little-o notation for \textstyle o(h)/h\rightarrow 0 as \textstyle h\rightarrow 0.
+
+In the case of point processes with refractoriness (e.g., neural spike trains) a stronger version of property 4 applies: \Pr \{N(t+h)-N(t) \ge 2\} = o(h^2).
+
+The above properties imply that \textstyle N(t+h) - N(t) is a Poisson random variable with the parameter (or mean)
+
+\operatorname E[N(t+h) - N(t)] = \int_t^{t+h}\lambda (s) \, ds,
+
+which implies
+
+\operatorname E[N(h)]=\int_0^h \lambda (s) \, ds.
+
+Spatial Poisson process
+
+An inhomogeneous Poisson process defined in the plane  \textstyle \mathbb{R}^2 is called a spatial Poisson process For example, its intensity function (as a function of Cartesian coordinates  x and \textstyle y) can be
+
+\lambda(x,y)= e^{-(x^2+y^2)},
+
+so the corresponding intensity measure is given by the surface integral
+
+\Lambda(B)= \int_B e^{-(x^2+y^2)}\,\mathrm dx\,\mathrm dy,
+
+where  B is some bounded region in the plane  \mathbb{R}^2.
+
+In higher dimensions
+
+In the plane,  \Lambda(B) corresponds to a surface integral while in  \mathbb{R}^d the integral becomes a ( d-dimensional) volume integral.
+
+Applications
+
+When the real line is interpreted as time, the inhomogeneous process is used in the fields of counting processes and in queueing theory. Examples of phenomena which have been represented by or appear as an inhomogeneous Poisson point process include:
+
+Goals being scored in a soccer game.
+
+Defects in a circuit board
+
+In the plane, the Poisson point process is important in the related disciplines of stochastic geometry  forestry,
+
+Interpretation of the intensity function
+
+The Poisson intensity function  \lambda(x) has an interpretation, considered intuitive,
+
+Simulation
+
+Simulating a Poisson point process on a computer is usually done in a bounded region of space, known as a simulation window, and requires two steps: appropriately creating a random number of points and then suitably placing the points in a random manner. Both these two steps  depend on the specific Poisson point process that is being simulated.
+
+Step 1: Number of points
+
+The number of points  N in the window, denoted here by  W, needs to be simulated, which is done by using a (pseudo)-random number generating function capable of simulating Poisson random variables.
+
+Homogeneous case
+
+For the homogeneous case with the constant  \lambda, the mean of the Poisson random variable  N is set to  \lambda |W| where  |W| is the length, area or ( d-dimensional) volume of  W.
+
+Inhomogeneous case
+
+For the inhomogeneous case,  \lambda |W| is replaced with the ( d-dimensional) volume integral
+
+\Lambda(W)=\int_W\lambda(x)\,\mathrm dx
+
+Step 2: Positioning of points
+
+The second stage requires randomly placing the \textstyle N points in the window \textstyle W.
+
+Homogeneous case
+
+For the homogeneous case in one dimension, all points are uniformly and independently placed in the window or interval \textstyle W. For higher dimensions in a Cartesian coordinate system, each coordinate is uniformly and independently placed in the window \textstyle W. If the window is not a subspace of Cartesian space (for example, inside a unit sphere or on the surface of a unit sphere), then the points will not be uniformly placed in \textstyle W, and suitable change of coordinates (from Cartesian) are needed.
+
+\frac{\lambda(x_i)}{\Lambda(W)}=\frac{\lambda(x_i)}{\int_W\lambda(x)\,\mathrm dx. }
+
+where \textstyle x_i is the point under consideration for acceptance or rejection.
+
+That is, a location is uniformly randomly selected for consideration, then to determine whether to place a sample at that location a uniformly randomly drawn number in  [0,1]  is compared to the probability density function  \frac{\lambda(x)}{\Lambda(W)}  , accepting if it is smaller than the probability density function, and repeating until the previously chosen number of samples have been drawn.
+
+General Poisson point process
+
+In measure theory, the Poisson point process can be further generalized to what is sometimes known as the general Poisson point process or general Poisson process It describes the probability of the sum of \textstyle n Bernoulli trials with probability \textstyle p, often likened to the number of heads (or tails) after \textstyle n biased coin flips with the probability of a head (or tail) occurring being \textstyle p.  For some positive constant \textstyle \Lambda>0, as \textstyle n increases towards infinity and \textstyle p decreases towards zero such that the product \textstyle np=\Lambda is fixed, the Poisson distribution more closely approximates that of the binomial.
+
+Poisson derived the Poisson distribution, published in 1841, by examining the binomial distribution in the limit of \textstyle p (to zero) and \textstyle n (to infinity). It only appears once in all of Poisson's work, and the result was not well known during his time. Over the following years others used the distribution without citing Poisson, including Philipp Ludwig von Seidel and Ernst Abbe.
+
+Discovery
+
+There are a number of claims for early uses or discoveries of the Poisson point process.
+
+In Denmark A.K. Erlang derived the Poisson distribution in 1909 when developing a mathematical model for the number of incoming phone calls in a finite time interval. Erlang unaware of Poisson's earlier work and assumed that the number phone calls arriving in each interval of time were independent of each other. He then found the limiting case, which is effectively recasting the Poisson distribution as a limit of the binomial distribution. A number of mathematicians started studying the process in the early 1930s, and important contributions were made by Andrey Kolmogorov, William Feller and Aleksandr Khinchin, In the field of teletraffic engineering, mathematicians and statisticians studied and used Poisson and other point processes.
+
+History of terms
+
+The Swede Conny Palm in his 1943 dissertation studied the Poisson and other point processes in the one-dimensional setting by examining them in terms of the statistical or stochastic dependence between the points in time. it has been claimed that Feller coined the term before 1940. resulting in the terms Poisson random point field  or Poisson point field being also used. A point process is considered, and sometimes called, a random counting measure, hence the Poisson point process is also referred to as a Poisson random measure, a term used in the study of Lévy processes, but some choose to use the two terms for Poisson points processes defined on two different underlying spaces.
+
+The underlying mathematical space of the Poisson point process is called a  carrier space, or  state space, though the latter term has a different meaning  in the context of stochastic processes. In the context of point processes, the term "state space" can mean the space on which the point process is defined such as the real line, which corresponds to the index set or parameter set in stochastic process terminology.
+
+The measure \textstyle \Lambda is called the intensity measure,  mean measure, or parameter measure, or rate .
+
+The extent of the Poisson point process is sometimes called the exposure.
+
+Notation
+
+The notation of the Poisson point process depends on its setting and the field it is being applied in. For example, on the real line, the Poisson process, both homogeneous or inhomogeneous, is sometimes interpreted as a counting process, and the notation  \textstyle \{N(t), t\geq 0\} is used to represent the Poisson process. In the theory of point processes there exist analogous mathematical tools which usually exist in the forms of measures and functionals instead of moments and functions respectively.
+
+Laplace functionals
+
+For a Poisson point process \textstyle N with intensity measure \textstyle \Lambda on some space X, the Laplace functional is given by:
+
+G(v)=\operatorname E \left[\prod_{x\in N} v(x) \right]
+
+where the product is performed for all the points in  N . If the intensity measure \textstyle \Lambda of \textstyle {N} is locally finite, then the  G is well-defined for any measurable function \textstyle u on \textstyle \mathbb{R}^d. For a Poisson point process with intensity measure \textstyle \Lambda the generating functional is given by:
+
+G(v)=e^{-\int_{\mathbb{R}^d} [1-v(x)]\,\Lambda(\mathrm dx)},
+
+which in the homogeneous case reduces to
+
+G(v)=e^{-\lambda\int_{\mathbb{R}^d} [1-v(x)]\,\mathrm dx}.
+
+Moment measure
+
+For a general Poisson point process with intensity measure \textstyle \Lambda the first moment measure is its intensity measure:
+
+Factorial moment measure
+
+For a general Poisson point process with intensity measure \textstyle \Lambda the \textstyle n-th factorial moment measure is given by the expression:
+
+M^{(n)}(B_1\times\cdots\times B_n)=\prod_{i=1}^n[\Lambda(B_i)],
+
+where \textstyle \Lambda is the intensity measure or first moment measure of \textstyle {N}, which for some Borel set \textstyle B is given by
+
+\Lambda(B)=M^1(B)=\operatorname E[N(B)].
+
+For a homogeneous Poisson point process the \textstyle n-th factorial moment measure is simply: \textstyle v of a point process \textstyle {N} is defined in relation to some set \textstyle B, which is a subset of the underlying space \textstyle \mathbb{R}^d, as the probability of no points of \textstyle {N} existing in \textstyle B. More precisely, for a test set \textstyle B, the avoidance function is given by:
+
+v(B)=\Pr \{N(B)=0\}.
+
+For a general Poisson point process \textstyle {N} with intensity measure \textstyle \Lambda, its avoidance function is given by:
+
+v(B)=e^{-\Lambda(B)}
+
+Rényi's theorem
+
+Simple point processes are completely characterized by their void probabilities. In other words, complete information of a simple point process is captured entirely in its void probabilities, and two simple point processes have the same void probabilities if and if only if they are the same point processes. The case for Poisson process is sometimes known as Rényi's theorem, which is named after Alfréd Rényi who discovered the result for the case of a homogeneous point process in one-dimension.
+
+In one form, the Rényi's theorem says for a diffuse (or non-atomic) Radon measure \textstyle \Lambda on \textstyle \mathbb{R}^d and a set \textstyle A is a finite union of rectangles (so not Borel{{efn|This set \textstyle A is formed by a finite number of unions, whereas a Borel set is formed by a countable number of set operations.
+
+}}) that if \textstyle N is a countable subset of \textstyle \mathbb{R}^d such that:
+
+\Pr \{N(A)=0\} = v(A) = e^{-\Lambda(A)}
+
+then \textstyle {N} is a Poisson point process with intensity measure \textstyle \Lambda.
+
+Point process operations
+
+Mathematical operations can be performed on point processes to get new point processes and develop new mathematical models for the locations of certain objects. One example of an operation is known as thinning which entails deleting or removing the points of some point process according to a rule, creating a new process with the remaining points (the deleted points also form a point process).
+
+Thinning
+
+For the Poisson process, the independent \textstyle p(x)-thinning operations results in another Poisson point process.  More specifically, a \textstyle p(x)-thinning operation applied to a Poisson point process with intensity measure \textstyle \Lambda gives a point process of removed points that is also Poisson point process \textstyle {N}_p with intensity measure \textstyle \Lambda_p, which for a bounded Borel set \textstyle B is given by:
+
+\Lambda_p(B)= \int_B p(x)\,\Lambda(\mathrm dx)
+
+This thinning result of the Poisson point process is sometimes known as Prekopa's theorem. Furthermore, after randomly thinning a Poisson point process, the kept or remaining points also form a Poisson point process, which has the intensity measure
+
+\Lambda_p(B)= \int_B (1-p(x))\,\Lambda(\mathrm dx).
+
+The two separate Poisson point processes formed respectively from the removed and kept points are stochastically independent of each other. the Poisson point process.
+
+Superposition
+
+If there is a countable collection of point processes \textstyle N_1,N_2,\dots, then their superposition, or, in set theory language, their union, which is
+
+N=\bigcup_{i=1}^\infty N_i,
+
+also forms a point process. In other words, any points located in any of the point processes \textstyle N_1,N_2\dots will also be located in the superposition of these point processes \textstyle {N}.
+
+Superposition theorem
+
+The superposition theorem of the Poisson point process says that the superposition of independent Poisson point processes \textstyle N_1,N_2\dots with mean measures \textstyle \Lambda_1,\Lambda_2,\dots will also be a Poisson point process with mean measure The Poisson point process has been used to model, for example, the movement of plants between generations, owing to the displacement theorem, which loosely says that the random independent displacement of points of a Poisson point process (on the same underlying space) forms another Poisson point process.
+
+Displacement theorem
+
+One version of the displacement theorem involves a Poisson point process \textstyle {N} on \textstyle \mathbb{R}^d with intensity function \textstyle \lambda(x). It is then assumed the points of \textstyle {N} are randomly displaced somewhere else in \textstyle \mathbb{R}^d so that each point's displacement is independent and that the displacement of a point formerly at \textstyle x is a random vector with a probability density \textstyle \rho(x,\cdot).{{efn|Kingman calls this a probability density, but in other resources this is called a probability kernel. The theorem involves some Poisson point process with mean measure \textstyle \Lambda on some underlying space. If the locations of the points are mapped (that is, the point process is transformed) according to some function to another underlying space, then the resulting point process is also a Poisson point process but with a different mean measure \textstyle \Lambda'.
+
+More specifically, one can consider a (Borel measurable) function \textstyle f that maps a point process \textstyle {N} with intensity measure \textstyle \Lambda from one space \textstyle S, to another space \textstyle T in such a manner so that the new point process \textstyle {N}' has the intensity measure:
+
+\Lambda(B)'=\Lambda(f^{-1}(B))
+
+with no atoms, where \textstyle B is a Borel set and \textstyle f^{-1}  denotes the inverse of the function \textstyle f. If  \textstyle {N} is a Poisson point process, then the new process \textstyle {N}' is also a Poisson point process with the  intensity measure \textstyle \Lambda'.
+
+Approximations with Poisson point processes
+
+The tractability of the Poisson process means that sometimes it is convenient to approximate a non-Poisson point process with a Poisson one. The overall aim is to approximate both the number of points of some point process and the location of each point by a Poisson point process. There a number of methods that can be used to justify, informally or rigorously, approximating the occurrence of random events or phenomena with suitable Poisson point processes. The more rigorous methods involve deriving upper bounds on the probability metrics between the Poisson and non-Poisson point processes, while other methods can be justified by less formal heuristics.
+
+Clumping heuristic
+
+One method for approximating random events or phenomena with Poisson processes is called the clumping heuristic.  The general  heuristic or principle involves using the Poisson point process (or Poisson distribution) to approximate events, which are considered rare or unlikely, of some stochastic process. In some cases these rare events are close to being independent, hence a Poisson point process can be used. When the events are not independent, but tend to occur in clusters or clumps, then if these clumps are suitably defined such that they are approximately independent of each other, then the number of  clumps occurring will be close to a Poisson random variable  Upperbounds on probability metrics such as total variation and Wasserstein distance have been derived. Stein's method has also been used to derive upper bounds on metrics of Poisson and other processes such as the Cox point process, which is a Poisson process with a random intensity measure.
+
+Similar convergence results have been developed for thinning and superposition operations and help explains why the Poisson process can often be used as a mathematical model of various random phenomena. and include the Poisson random measure, negative binomial random measure, and binomial random measure.
+
+Poisson point processes on more general spaces
+
+For mathematical models the Poisson point process is often defined in Euclidean space, which requires an understanding of mathematical fields such as probability theory, measure theory and topology.
+
+In general, the concept of distance is of practical interest for applications, while topological structure is needed for Palm distributions, meaning that point processes are usually defined on mathematical spaces with metrics. Furthermore, a realization of a point process can be considered as a counting measure, so points processes are types of random measures known as random counting measures.
+
+Cox point process
+
+A Cox point process, Cox process or doubly stochastic Poisson process is a generalization of the Poisson point process by letting its intensity measure \textstyle \Lambda to be also random and independent of the underlying Poisson process. The process is named after David Cox who introduced it in 1955, though other Poisson processes with random intensities had been independently introduced earlier by Lucien Le Cam and Maurice Quenouille. More generally, the intensity measures is a realization of a non-negative locally finite random measure.  Cox point processes exhibit a clustering of points, which can be shown mathematically to be larger than those of Poisson point processes. The generality and tractability of Cox processes has resulted in them being used as models in fields such as spatial statistics and wireless networks. The pair consisting of a point of the point process and its corresponding mark is called a marked point, and all the marked points form a marked point process. It is often assumed that the random marks are independent of each other and identically distributed, yet the mark of a point can still depend on the location of its corresponding point in the underlying (state) space. If the underlying point process is a Poisson point process, then the resulting point process is a marked Poisson point process.
+
+Marking theorem
+
+If a general point process is defined on some mathematical space and the random marks are defined on another mathematical space, then the marked point process is defined on the Cartesian product of these two spaces. For a marked Poisson point process with independent and identically distributed marks, the marking theorem states that this marked point process is also a (non-marked) Poisson point process defined on the aforementioned Cartesian product of the two mathematical spaces, which is not true for general point processes.
+
+Compound Poisson point process
+
+The compound Poisson point process or compound Poisson process is formed by adding random values or weights to each point of Poisson point process defined on some underlying space, so the process is constructed from a marked Poisson point process, where the marks form a collection of independent and identically distributed non-negative random variables. In other words, for each point of the original Poisson process, there is an independent and identically distributed non-negative random variable, and then the compound Poisson process is formed from the sum of all the random variables corresponding to points of the Poisson process located in some region of the underlying mathematical space.
+
+If there is a marked Poisson point process formed from a Poisson point process \textstyle N (defined on, for example, \textstyle \mathbb{R}^d) and a collection of independent and identically distributed non-negative marks \textstyle \{M_i\} such that for each point \textstyle x_i of the Poisson process \textstyle N there is a non-negative random variable \textstyle M_i, the resulting compound Poisson process is then:
+
+C(B)=\sum_{i=1}^{N(B)} M_i ,
+
+where \textstyle B\subset \mathbb{R}^d is a Borel measurable set.
+
+If general random variables \textstyle \{M_i\} take values in, for example, \textstyle d-dimensional Euclidean space \textstyle \mathbb{R}^d, the resulting compound Poisson process is an example of a Lévy process provided that it is formed from a homogeneous Point process \textstyle N defined on the non-negative numbers \textstyle [0, \infty) .
+
+Failure process with the exponential smoothing of intensity functions
+
+The failure process with the exponential smoothing of intensity functions (FP-ESI) is an extension of the nonhomogeneous Poisson process. The intensity function of an FP-ESI is an exponential smoothing function of the intensity functions at the last time points of event occurrences and outperforms other nine stochastic processes on 8 real-world failure datasets when the models are used to fit the datasets, where the model performance is measured in terms of AIC (Akaike information criterion) and BIC (Bayesian information criterion).
+
+See also
+
+Boolean model (probability theory)
+
+Continuum percolation theory
+
+Compound Poisson process
+
+Cox process
+
+Point process
+
+Stochastic geometry
+
+Stochastic geometry models of wireless networks
+
+Markovian arrival processes
+
+Notes
+
+References
+
+Specific
+
+General
+
+Books
+
+Articles
+
+Category:Point processes
+
+Category:Markov processes
+
+Category:Spatial processes
+
+Category:Lévy processes

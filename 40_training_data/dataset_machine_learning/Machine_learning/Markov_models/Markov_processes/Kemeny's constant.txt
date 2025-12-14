@@ -1,0 +1,29 @@
+In probability theory, Kemeny’s constant is the expected number of time steps required for a Markov chain to transition from a starting state i to a random destination state sampled from the Markov chain's stationary distribution.  Surprisingly, this quantity does not depend on which starting state i is chosen. It is in that sense a constant, although it is different for different Markov chains. When first published by John Kemeny in 1960 a prize was offered for an intuitive explanation as to why the quantity was constant.
+
+Beyond its theoretical importance, Kemeny’s constant is also applied in practice to evaluate the efficiency of robotic surveillance strategies. More precisely, Kemeny's constant measures how quickly a robot can navigate its environment using Markov chain-based methods.
+
+Definition
+
+For a finite ergodic Markov chain with transition matrix P and invariant distribution π, write mij for the mean first passage time from state i to state j (denoting the mean recurrence time for the case i&nbsp;=&nbsp;j). Then
+
+K = \sum_{j} \pi_j m_{ij}
+
+is a constant and not dependent on i.
+
+Prize
+
+Kemeny wrote, (for i the starting state of the Markov chain) “A prize is offered for the first person to give an intuitively plausible reason for the above sum to be independent of&nbsp;i.”
+
+In the course of a walk with Snell along Minnehaha Avenue in Minneapolis in the fall of 1983, Peter Doyle suggested the following explanation for the constancy of Kemeny's constant. Choose a target state according to the fixed vector w. Start from state i and wait until the time T that the target state occurs for the first time. Let Ki be the expected value of T. Observe that
+
+K_i+w_i \cdot 1/w_i = \sum_j P_{ij}K_j + 1
+
+and hence
+
+K_i = \sum_j P_{ij}K_j.
+
+By the maximum principle, Ki is a constant. Should Peter have been given the prize?
+
+References
+
+Category:Markov processes

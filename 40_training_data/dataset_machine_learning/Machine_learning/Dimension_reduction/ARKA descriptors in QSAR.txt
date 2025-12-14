@@ -1,0 +1,19 @@
+In computational chemistry and cheminformatics, ARKA descriptors in QSAR are a class of molecular descriptors used in quantitative structure–activity relationship (QSAR) modeling (or related approaches such as QSPR and QSTR), a computational method for predicting the biological activity or toxicity of chemical compounds based on their molecular structure.
+
+Molecular descriptors are numerical values that summarize information about a molecule's structure, topology, geometry, or physicochemical properties in a form suitable for machine learning or statistical modeling. ARKA (Arithmetic Residuals in K-Groups Analysis) descriptors differ from traditional descriptors by encoding atomic-level information through recursive autoregression techniques, which aim to capture subtle structural patterns and improve predictive accuracy. They are designed to be both interpretable and well-suited to modeling nonlinear relationships in QSAR studies.
+
+Comparisons
+
+While QSAR is essentially a similarity-based approach, the occurrence of activity/property cliffs may greatly reduce the predictive accuracy of the developed models. The novel Arithmetic Residuals in K-groups Analysis (ARKA) approach is a supervised dimensionality reduction technique developed by the DTC Laboratory, Jadavpur University that can easily identify activity cliffs in a data set. Activity cliffs are similar in their structures but differ considerably in their activity. The basic idea of the ARKA descriptors is to group the conventional QSAR descriptors based on a predefined criterion and then assign weightage to each descriptor in each group. ARKA descriptors have also been used to develop classification-based and regression-based QSAR models with acceptable quality statistics.
+
+The ARKA descriptors have been used for the identification of activity cliffs in QSAR studies and/or model development by multiple researchers.
+
+A tutorial presentation on the ARKA descriptors is available. Recently a multi-class ARKA framework has been proposed for improved q-RASAR model generation.
+
+References
+
+Category:Cheminformatics
+
+Category:Dimension reduction
+
+Category:Long stubs with short prose

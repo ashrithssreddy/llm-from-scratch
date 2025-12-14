@@ -1,0 +1,27 @@
+Vlado Keselj (Vlado Kešelj) is a Serbian-Canadian computer scientist known for his research in natural language processing and authorship attribution. He is a professor at Dalhousie University.
+
+Education
+
+As a high school student in Yugoslavia, Keselj competed in the 1987 International Mathematical Olympiad, earning a bronze medal. He earned his Ph.D. in 2002 at the University of Waterloo, with the dissertation Modular Stochastic HPSGs for Question Answering supervised by Nick Cercone.
+
+Awards
+
+Vlado Keselj is a recipient of the 2019 CAIAC Distinguished Service Award, awarded by the Canadian Artificial Intelligence Association (CAIAC).
+
+Selected publications
+
+Kešelj, V., Peng, F., Cercone, N., & Thomas, C. (2003, August). N-gram-based author profiles for authorship attribution. In Proceedings of the Conference of the Pacific Association for Computational Linguistics, PACLING 2003 (Vol. 3, pp.&nbsp;255–264).
+
+References
+
+External links
+
+Category:Canadian computer scientists
+
+Category:Living people
+
+Category:Year of birth missing (living people)
+
+Category:Natural language processing researchers
+
+Category:Serbian computer scientists

@@ -1,0 +1,67 @@
+{{Infobox software
+
+logo = ChatGPT Atlas icon.webp
+
+logo size = 100px
+
+logo title = MacOS Icon
+
+logo_caption = Icon
+
+screenshot = ChatGPT Atlas screenshot.png
+
+developer = OpenAI
+
+released = macOS:
+
+engine = Blink
+
+license = Proprietary software, based on an open source project
+
+website =
+
+}}
+
+ChatGPT Atlas is an AI browser developed by OpenAI. It is based on Chromium and is currently only available on macOS.
+
+History
+
+On October 21, 2025, OpenAI announced ChatGPT Atlas and released it for macOS. The announcement stated that versions for Windows, iOS, and Android were coming soon.
+
+The initial macOS rollout places the browser in a position to compete with established browsers like Google Chrome. The browser was introduced shortly after the release of Comet by Perplexity AI.
+
+Built on the Chromium engine, ChatGPT Atlas is integrated with the assistant platform of ChatGPT within the browser, providing features such as webpage summarization, inline text editing, and agentic functions.
+
+The browser operates on a freemium model, providing a free version alongside paid subscriptions, with certain advanced features, such as the agent mode, available only to Plus and Pro subscribers.
+
+Agent mode
+
+The browser includes an optional agent mode for premium subscribers.
+
+Criticism
+
+Anil Dash has called it an "anti-web browser", stating that it "actively fights against the web". He noted that it "substitutes its own AI-generated content for the web, but it looks like it's showing you the web", and described how, when he typed "Taylor Swift" into the search box, "the results had literally zero links to Taylor Swift's actual website". He emphasized that "all of these shortcomings are not because the browser is new and has bugs; this is the app working as designed." He further assessed Atlas's command-line interface as "worse in every conceivable way" than standard web browsers, and castigated its effect on online privacy.
+
+In October 2025, cybersecurity firm LayerX Security reported the discovery of a vulnerability in OpenAI's ChatGPT Atlas browser, which the firm named "ChatGPT Tainted Memories." The exploit reportedly utilizes a Cross-Site Request Forgery (CSRF) flaw to inject persistent, malicious instructions into the AI model's memory. According to the researchers, these hidden instructions could survive across user sessions and devices, potentially allowing an attacker to execute unauthorized commands or code when a user subsequently issues a legitimate prompt. LayerX also noted that the browser, at the time of the report, lacked robust anti-phishing protections, which they claimed heightened the potential risk of the vulnerability. The firm stated it had responsibly disclosed its findings to OpenAI.
+
+See also
+
+History of web browsers
+
+List of web browsers
+
+References
+
+External links
+
+Introducing ChatGPT Atlas
+
+Category:2025 software
+
+Category:Cross-platform web browsers
+
+Category:MacOS web browsers
+
+Category:Web browsers
+
+Category:ChatGPT

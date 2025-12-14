@@ -1,0 +1,113 @@
+Automated decision-making (ADM) is the use of data, machines and algorithms to make decisions in a range of contexts, including public administration, business, health, education, law, employment, transport, media and entertainment, with varying degrees of human oversight or intervention. ADM may involve large-scale data from a range of sources, such as databases, text, social media, sensors, images or speech, that is processed using various technologies including computer software, algorithms, machine learning, natural language processing, artificial intelligence, augmented intelligence and robotics. The increasing use of automated decision-making systems (ADMS) across a range of contexts presents many benefits and challenges to human society requiring consideration of the technical, legal, ethical, societal, educational, economic and health consequences.
+
+Overview
+
+There are different definitions of ADM based on the level of automation involved. Some definitions suggests ADM involves decisions made through purely technological means without human input, such as the EU's General Data Protection Regulation (Article 22). However, ADM technologies and applications can take many forms ranging from decision-support systems that make recommendations for human decision-makers to act on, sometimes known as augmented intelligence or 'shared decision-making', ADM systems may use and connect a wide range of data types and sources depending on the goals and contexts of the system, for example, sensor data for self-driving cars and robotics, identity data for security systems, demographic and financial data for public administration, medical records in health, criminal records in law. This can sometimes involve vast amounts of data and computing power.
+
+Data quality
+
+The quality of the available data and its ability to be used in ADM systems is fundamental to the outcomes. It is often highly problematic for many reasons. Datasets are often highly variable; corporations or governments may control large-scale data, restricted for privacy or security reasons, incomplete, biased, limited in terms of time or coverage, measuring and describing terms in different ways, and many other issues.
+
+For machines to learn from data, large corpora are often required, which can be challenging to obtain or compute; however, where available, they have provided significant breakthroughs, for example, in diagnosing chest X-rays.
+
+ADM technologies
+
+Automated decision-making technologies (ADMT) are software-coded digital tools that automate the translation of input data to output data, contributing to the function of automated decision-making systems. Examples of these technologies include Open AI's DALL-E (an image creation program) and their various GPT language models, and Google's PaLM language model program.
+
+Applications
+
+ADM is being used to replace or augment human decision-making by both public and private-sector organisations for a range of reasons including to help increase consistency, improve efficiency, reduce costs and enable new solutions to complex problems.
+
+Debate
+
+Research and development are underway into uses of technology to assess argument quality, assess argumentative essays and judge debates. Potential applications of these argument technologies span education and society. Scenarios to consider, in these regards, include those involving the assessment and evaluation of conversational, mathematical, scientific, interpretive, legal, and political argumentation and debate.
+
+Law
+
+In legal systems around the world, algorithmic tools such as risk assessment instruments (RAI), are being used to supplement or replace the human judgment of judges, civil servants and police officers in many contexts. In the United States RAI are being used to generate scores to predict the risk of recidivism in pre-trial detention and sentencing decisions, evaluate parole for prisoners and to predict "hot spots" for future crime. These scores may result in automatic effects or may be used to inform decisions made by officials within the justice system.
+
+Economics
+
+Automated decision-making systems are used in certain computer programs to create buy and sell orders related to specific financial transactions and automatically submit the orders in the international markets. Computer programs can automatically generate orders based on predefined set of rules using trading strategies which are based on technical analyses, advanced statistical and mathematical computations, or inputs from other electronic sources.
+
+Business
+
+Continuous auditing
+
+Continuous auditing uses advanced analytical tools to automate auditing processes. It can be utilized in the private sector by business enterprises and in the public sector by governmental organizations and municipalities. As artificial intelligence and machine learning continue to advance, accountants and auditors may make use of increasingly sophisticated algorithms which make decisions such as those involving determining what is anomalous, whether to notify personnel, and how to prioritize those tasks assigned to personnel.
+
+Media and entertainment
+
+Digital media, entertainment platforms, and information services increasingly provide content to audiences via automated recommender systems based on demographic information, previous selections, collaborative filtering or content-based filtering. This includes music and video platforms, publishing, health information, product databases and search engines. Many recommender systems also provide some agency to users in accepting recommendations and incorporate data-driven algorithmic feedback loops based on the actions of the system user.
+
+Large-scale machine learning language models and image creation programs being developed by companies such as OpenAI and Google in the 2020s have restricted access however they are likely to have widespread application in fields such as advertising, copywriting, stock imagery and graphic design as well as other fields such as journalism and law.
+
+Health
+
+Deep learning AI image models are being used for reviewing x-rays and detecting the eye condition macular degeneration.
+
+Social services
+
+Governments have been implementing digital technologies to provide more efficient administration and social services since the early 2000s, often referred to as e-government. Many governments around the world are now using automated, algorithmic systems for profiling and targeting policies and services including algorithmic policing based on risks, surveillance sorting of people such as airport screening, providing services based on risk profiles in child protection, providing employment services and governing the unemployed. A significant application of ADM in social services relates to the use of predictive analytics – eg predictions of risks to children from abuse/neglect in child protection, predictions of recidivism or crime in policing and criminal justice, predictions of welfare/tax fraud in compliance systems, predictions of long term unemployment in employment services. Historically these systems were based on standard statistical analyses, however from the early 2000s machine learning has increasingly been developed and deployed. Key issues with the use of ADM in social services include bias, fairness, accountability and explainability which refers to transparency around the reasons for a decision and the ability to explain the basis on which a machine made a decision.
+
+Transport and mobility
+
+Connected and automated mobility (CAM) involves autonomous vehicles such as self-driving cars and other forms of transport which use automated decision-making systems to replace various aspects of human control of the vehicle. This can range from level 0 (complete human driving) to level 5 (completely autonomous). In 2020 the European Commission strategy on CAMs recommended that they be adopted in Europe to reduce road fatalities and lower emissions however self-driving cars also raise many policy, security and legal issues in terms of liability and ethical decision-making in the case of accidents, as well as privacy issues.
+
+Surveillance
+
+Automated digital data collections via sensors, cameras, online transactions and social media have significantly expanded the scope, scale, and goals of surveillance practices and institutions in government and commercial sectors. As a result there has been a major shift from targeted monitoring of suspects to the ability to monitor entire populations. The level of surveillance now possible as a result of automated data collection has been described as surveillance capitalism or surveillance economy to indicate the way digital media involves large-scale tracking and accumulation of data on every interaction.
+
+Ethical and legal issues
+
+There are many social, ethical and legal implications of automated decision-making systems. Concerns raised include lack of transparency and contestability of decisions, incursions on privacy and surveillance, exacerbating systemic bias and inequality due to data and algorithmic bias, intellectual property rights, the spread of misinformation via media platforms, administrative discrimination, risk and responsibility, unemployment and many others. As ADM becomes more ubiquitous there is greater need to address the ethical challenges to ensure good governance in information societies.
+
+ADM systems are often based on machine learning and algorithms which are not easily able to be viewed or analysed, leading to concerns that they are 'black box' systems which are not transparent or accountable. GDPR also includes some rules on the right to explanation however the exact scope and nature of these is currently subject to pending review by the Court of Justice of the European Union. These provisions were not first introduced in the GDPR, but have been present in a similar form across Europe since the Data Protection Directive in 1995, and the 1978 French law, the . Similarly scoped and worded provisions with varying attached rights and obligations are present in the data protection laws of many other jurisdictions across the world, including Uganda, Morocco and the US state of Virginia.
+
+Rights for the explanation of public sector automated decisions forming 'algorithmic treatment' under the French loi pour une République numérique.
+
+Emergent bias, where the application of ADM in unanticipated circumstances creates a biased outcome A research validated Daniel Kahneman's theory on noisy decisions by human experts in finance. It demonstrates the inherent inconsistencies in human judgments, which consequently affect the outcomes of automated decisions made by AI decision-support systems.
+
+Research fields
+
+Many academic disciplines and fields are increasingly turning their attention to the development, application and implications of ADM including business, computer sciences, human computer interaction (HCI), law, public administration, and media and communications. The automation of media content and algorithmically driven news, video and other content via search systems and platforms is a major focus of academic research in media studies.
+
+The ACM Conference on Fairness, Accountability, and Transparency (ACM FAccT) was established in 2018 to study transparency and explainability in the context of socio-technical systems, many of which include ADM and AI.
+
+Key research centres investigating ADM include:
+
+Algorithm Watch, Germany
+
+ARC Centre of Excellence for Automated Decision-Making and Society, Australia
+
+Citizen Lab, Canada
+
+Informatics Europe
+
+See also
+
+Automated decision support
+
+Algorithmic bias
+
+Decision-making software
+
+Decision Management
+
+Ethics of artificial intelligence
+
+Government by algorithm
+
+Machine learning
+
+Recommender systems
+
+References
+
+Category:Science and technology studies
+
+&
+
+Category:Digital technology
+
+Category:Machine learning

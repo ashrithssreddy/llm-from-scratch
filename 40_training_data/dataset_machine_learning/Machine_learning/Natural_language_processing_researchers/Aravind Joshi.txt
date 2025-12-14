@@ -1,0 +1,149 @@
+{{Infobox scientist
+
+name              = Aravind Krishna Joshi
+
+image             =
+
+image_size        =
+
+caption           =
+
+birth_date        =
+
+birth_place       = Poona, Bombay Presidency, British India (present-day Pune, Maharashtra, India)
+
+death_date        =
+
+nationality       =
+
+fields            = Computational linguistics
+
+workplaces        = University of Pennsylvania
+
+alma_mater        =
+
+doctoral_advisor  =
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students  = S. Rao Kosaraju, Jerry Kaplan, Kathleen McKeown
+
+known_for         = Defining the tree-adjoining grammar formalism
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+awards            =
+
+relatives         = Meera Joshi (daughter)
+
+signature         =
+
+footnotes         =
+
+}}
+
+Aravind Krishna Joshi (August 5, 1929 – December 31, 2017) was the Henry Salvatori Professor of Computer and Cognitive Science in the computer science department of the University of Pennsylvania. Joshi defined the tree-adjoining grammar formalism which is often used in computational linguistics and natural language processing.
+
+Joshi studied at Pune University and the Indian Institute of Science, where he was awarded a BE in electrical engineering and a DIISc in communication engineering respectively. Joshi's graduate work was done in the electrical engineering department at the University of Pennsylvania, and he was awarded his PhD in 1960. He became a professor at Penn and was the co-founder and co-director of the Institute for Research in Cognitive Science.
+
+Awards and recognitions
+
+Guggenheim fellow, 1971–72
+
+Fellow of the Institute of Electrical and Electronics Engineers (IEEE), 1976
+
+Best Paper Award at the National Conference on Artificial Intelligence, 1987
+
+Founding Fellow of the American Association for Artificial Intelligence (AAAI), 1990
+
+IJCAI Award for Research Excellence, 1997
+
+Fellow of the Association for Computing Machinery, 1998
+
+Elected to the National Academy of Engineering, 1999
+
+First to be awarded the Association for Computational Linguistics Lifetime Achievement Award at the 40th anniversary meeting of the ACL, 2002
+
+Awarded the Rumelhart Prize, 2003
+
+Benjamin Franklin Medal in Computer and Cognitive Science, 2005
+
+Doctor honoris causa of mathematical and physical sciences, Charles University in Prague, October 30, 2013
+
+S.-Y. Kuroda Prize of the SIG Mathematics of Language of the ACL, 2013
+
+Awarded history
+
+On April 21, 2005, Joshi was awarded the Franklin Institute's Benjamin Franklin Medal in Computer and Cognitive Science.  The Franklin Institute citation states that he was awarded the medal "for his fundamental contributions to our understanding of how language is represented in the mind, and for developing techniques that enable computers to process efficiently the wide range of human languages.  These advances have led to new methods for computer translation."
+
+References
+
+External links
+
+Aravind Joshi's home page
+
+ACL Lifetime Achievement Award
+
+Benjamin Franklin Award
+
+Category:1929 births
+
+Category:2017 deaths
+
+Category:Linguists from the United States
+
+Category:American people of Marathi descent
+
+Category:1998 fellows of the Association for Computing Machinery
+
+Category:Fellows of the IEEE
+
+Category:University of Pennsylvania faculty
+
+Category:Indian emigrants to the United States
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:American artificial intelligence researchers
+
+Category:Computational linguistics researchers
+
+Category:American computer scientists
+
+Category:Indian computer scientists
+
+Category:American Hindus
+
+Category:The Benjamin Franklin Medal in Computer and Cognitive Science laureates
+
+Category:Indian Institute of Science alumni
+
+Category:Members of the United States National Academy of Engineering
+
+Category:Rumelhart Prize laureates
+
+Category:Scientists from Pune
+
+Category:American academics of Indian descent
+
+Category:20th-century Indian mathematicians
+
+Category:Fellows of the Cognitive Science Society
+
+Category:Fellows of the Association for Computational Linguistics
+
+Category:Natural language processing researchers
+
+Category:Presidents of the Association for Computational Linguistics
+
+Category:University of Pennsylvania Department of Computer and Information Science faculty
+
+Category:People from Pune

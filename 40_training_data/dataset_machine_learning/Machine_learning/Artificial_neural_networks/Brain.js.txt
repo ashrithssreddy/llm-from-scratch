@@ -1,0 +1,159 @@
+{{Infobox software
+
+name = Brain.js
+
+logo = Brain.js_Logo.svg
+
+developer = Open-source contributors
+
+released =
+
+repo =
+
+programming language = JavaScript, TypeScript
+
+operating system =
+
+platform = Node.js, Web browser
+
+genre = Neural Networking
+
+license = MIT License
+
+website =
+
+}}
+
+Brain.js is a JavaScript library used for neural networking, which is released as free and open-source software under the MIT License. It can be used in both the browser and Node.js backends.
+
+Brain.js is most commonly used as a simple introduction to neural networking, as it hides complex mathematics and has a familiar modern JavaScript syntax. It is maintained by members of the Brain.js organization and open-source contributors.
+
+Examples
+
+Creating a feedforward neural network with backpropagation:
+
+const net = new brain.NeuralNetwork();
+
+net.train([
+
+{ input: [0, 0], output:  },
+
+{ input: [0, 1], output:  },
+
+{ input: [1, 0], output:  },
+
+{ input: [1, 1], output:  },
+
+]);
+
+console.log(net.run([1, 0]));
+
+Creating a recurrent neural network:
+
+const net = new brain.recurrent.RNN();
+
+net.train([
+
+{ input: [0, 0], output:  },
+
+{ input: [0, 1], output:  },
+
+{ input: [1, 0], output:  },
+
+{ input: [1, 1], output:  },
+
+]);
+
+let output = net.run([0, 0]); //
+
+output = net.run([0, 1]); //
+
+output = net.run([1, 0]); //
+
+output = net.run([1, 1]); //
+
+Train the neural network on RGB color contrast:
+
+const net = new brain.NeuralNetwork();
+
+net.train([{
+
+input: {
+
+r: 0.03,
+
+g: 0.7,
+
+b: 0.5
+
+},
+
+output: {
+
+black: 1
+
+}
+
+},
+
+{
+
+input: {
+
+r: 0.16,
+
+g: 0.09,
+
+b: 0.2
+
+},
+
+output: {
+
+white: 1
+
+}
+
+},
+
+{
+
+input: {
+
+r: 0.5,
+
+g: 0.5,
+
+b: 1.0
+
+},
+
+output: {
+
+white: 1
+
+}
+
+}
+
+]);
+
+const output = net.run({
+
+r: 1,
+
+g: 0.4,
+
+b: 0
+
+}); // { white: 0.99, black: 0.002 }
+
+console.log(output)
+
+External links
+
+References
+
+Category:Artificial neural networks
+
+Category:JavaScript libraries

@@ -1,0 +1,149 @@
+The multiplicative weights update method is an algorithmic technique most commonly used for decision making and prediction, and also widely deployed in game theory and algorithm design. The simplest use case is the problem of prediction from expert advice, in which a decision maker needs to iteratively decide on an expert whose advice to follow. The method assigns initial weights to the experts (usually identical initial weights), and updates these weights multiplicatively and iteratively according to the feedback of how well an expert performed: reducing it in case of poor performance, and increasing it otherwise. It was discovered repeatedly in very diverse fields such as machine learning (AdaBoost, Winnow, Hedge), optimization (solving linear programs), theoretical computer science (devising fast algorithm for LPs and SDPs), and game theory.
+
+Name
+
+"Multiplicative weights" implies the iterative rule used in algorithms derived from the multiplicative weight update method. It is given with different names in the different fields where it was discovered or rediscovered.
+
+History and background
+
+The earliest known version of this technique was in an algorithm named "fictitious play" which was proposed in game theory in the early 1950s. Grigoriadis and Khachiyan applied a randomized variant of "fictitious play" to solve two-player zero-sum games efficiently using the multiplicative weights algorithm. In this case, player allocates higher weight to the actions that had a better outcome and choose his strategy relying on these weights. In machine learning, Littlestone applied the earliest form of the multiplicative weights update rule in his famous winnow algorithm, which is similar to Minsky and Papert's earlier perceptron learning algorithm. Later, he generalized the winnow algorithm to weighted majority algorithm. Freund and Schapire followed his steps and generalized the winnow algorithm in the form of hedge algorithm.
+
+The multiplicative weights algorithm is also widely applied in computational geometry such as Kenneth Clarkson's algorithm for linear programming (LP) with a bounded number of variables in linear time. Later, Bronnimann and Goodrich employed analogous methods to find set covers for hypergraphs with small VC dimension.
+
+In operations research and on-line statistical decision making problem field, the weighted majority algorithm and its more complicated versions have been found independently.
+
+In computer science field, some researchers have previously observed the close relationships between multiplicative update algorithms used in different contexts. Young discovered the similarities between fast LP algorithms and Raghavan's method of pessimistic estimators for derandomization of randomized rounding algorithms; Klivans and Servedio linked boosting algorithms in learning theory to proofs of Yao's XOR Lemma; Garg and Khandekar defined a common framework for convex optimization problems that contains Garg-Konemann and Plotkin-Shmoys-Tardos as subcases.
+
+Weighted majority algorithm
+
+Source:
+
+Unlike halving algorithm which dismisses experts who have made mistakes, weighted majority algorithm discounts their advice. Given the same "expert advice" setup, suppose we have n decisions, and we need to select one decision for each loop. In each loop, every decision incurs a cost. All costs will be revealed after making the choice. The cost is 0 if the expert is correct, and 1 otherwise. this algorithm's goal is to limit its cumulative losses to roughly the same as the best of experts.
+
+The very first algorithm that makes choice based on majority vote every iteration does not work since the majority of the experts can be wrong consistently every time. The weighted majority algorithm corrects above trivial algorithm by keeping a weight of experts instead of fixing the cost at either 1 or 0.
+
+Given the same setup with N experts. Consider the special situation where the proportions of experts predicting positive and negative, counting the weights, are both close to 50%. Then, there might be a tie. Following the weight update rule in weighted majority algorithm, the predictions made by the algorithm would be randomized. The algorithm calculates the probabilities of experts predicting positive or negatives, and then makes a random decision based on the computed fraction:
+
+predict
+
+f(x) = \begin{cases}1 & \text{with probability} \frac{q_1}{W}\\0 & \text{otherwise}\end{cases}
+
+where
+
+W= \sum_{i} { w_i} = q_0 + q_1.
+
+The number of mistakes made by the randomized weighted majority algorithm is bounded as:
+
+E\left [ \# \text{mistakes of the learner} \right ] \leq \alpha_\beta \left ( \# \text{ mistakes of the best expert} \right ) + c_\beta \ln(N)
+
+where     \alpha_\beta= \frac{\ln(\frac{1}{\beta})}{1-\beta} and          c_\beta=\frac{1}{1-\beta}.
+
+Note that only the learning algorithm is randomized. The underlying assumption is that the examples and experts' predictions are not random. The only randomness is the randomness where the learner makes his own prediction.
+
+In this randomized algorithm, \alpha_\beta \rightarrow 1 if \beta \rightarrow 1. Compared to weighted algorithm, this randomness halved the number of mistakes the algorithm is going to make.
+
+Suppose we were given the distribution P on experts. Let A = payoff matrix of a finite two-player zero-sum game, with n rows.
+
+When the row player p_r uses plan i and the column player p_c uses plan j, the payoff of player p_c is A \left ( i, j \right)≔A_{ij}, assuming A \left( i, j\right ) \in \left [ 0, 1 \right ].
+
+If player p_r chooses action i from a distribution P over the rows, then the expected result for player p_c selecting action j is A \left (P, j \right )=E_{i \in P} \left [A \left(i,j \right) \right].
+
+To maximize A \left (P, j \right), player p_c should choose plan j. Similarly, the expected payoff for player p_l is A \left (i,P\right )=E_{j\in P} \left [A \left(i,j \right) \right ]. Choosing plan i would minimize this payoff. By John Von Neumann's Min-Max Theorem, we obtain:
+
+\min_P \max_j A\left( P, j \right) = \max_Q \min_i A\left( i, Q \right)
+
+where P and i changes over the distributions over rows, Q and j changes over the columns.
+
+Then, let \lambda^* denote the common value of above quantities, also named as the "value of the game". Let \delta>0 be an error parameter. To solve the zero-sum game bounded by additive error of \delta,
+
+\lambda^* - \delta \leq \min_i  A \left (i,q \right )
+
+\max_j A \left(p, j \right) \leq \lambda^* +\delta
+
+So there is an algorithm solving zero-sum game up to an additive factor of δ using O(/\delta^2) calls to ORACLE, with an additional processing time of O(n) per call
+
+Machine learning
+
+In machine learning, Littlestone and Warmuth generalized the winnow algorithm to the weighted majority algorithm. Later, Freund and Schapire generalized it in the form of hedge algorithm.
+
+Analysis
+
+Assume the learning rate \eta > 0 and for t \in [T], p^t is picked by Hedge. Then for all experts i,
+
+\sum_{t \leq T} p^t m^t \leq \sum_{t \leq T} m_i^t +\frac{\ln(N)}{\eta}+\eta T
+
+Initialization: Fix an \eta > 0. For each expert, associate the weight w_i^1 ≔1
+
+For t=1,2,...,T:
+
+1. Pick the distribution p_i^t= \frac{w_i^t}{\Phi t} where \Phi t=\sum_i w_i^t.
+
+2. Observe the cost of the decision m^t.
+
+3. Set
+
+w_i^{t + 1} = w_i^t \exp(-\eta m_i^t).
+
+AdaBoost algorithm
+
+This algorithm maintains a set of weights w^t over the training examples. On every iteration t, a distribution p^t is computed by normalizing these weights. This distribution is fed to the weak learner WeakLearn which generates a hypothesis h_t that (hopefully) has small error with respect to the distribution. Using the new hypothesis h_t, AdaBoost generates the next weight vector w^{t+1}. The process repeats. After T such iterations, the final hypothesis h_f is the output. The hypothesis h_f combines the outputs of the T weak hypotheses using a weighted majority vote.
+
+Problem
+
+Given a m \times n matrix A and b \in \mathbb{R}^n, is there a x such that A x \geq b?
+
+\exists ? x: A x \geq b               (1)
+
+Assumption
+
+Using the oracle algorithm in solving zero-sum problem, with an error parameter  \epsilon > 0, the output would either be a point x such that A x \geq b-\epsilon or a proof that x does not exist, i.e., there is no solution to this linear system of inequalities.
+
+Solution
+
+Given vector p \in \Delta_n, solves the following relaxed problem
+
+\exists ? x: p^{\textsf T}\!\!A x\geq p^\textsf{T}\!b             (2)
+
+If there exists a x satisfying (1), then x satisfies (2) for all  p\in \Delta_n. The contrapositive of this statement is also true.
+
+Suppose if oracle returns a feasible solution for a p, the solution x it returns has bounded width \max_i |{(A x)}_i - b_i | \leq 1.
+
+So if there is a solution to (1), then there is an algorithm that its output x satisfies the system (2) up to an additive error of 2\epsilon. The algorithm makes at most \frac{\ln(m)}{\epsilon^2} calls to a width-bounded oracle for the problem (2). The contrapositive stands true as well. The multiplicative updates is applied in the algorithm in this case.
+
+Other applications
+
+Evolutionary game theory: Multiplicative weights update is the discrete-time variant of the replicator equation (replicator dynamics), which is a commonly used model in evolutionary game theory. It converges to Nash equilibrium when applied to a congestion game.
+
+Operations research and online statistical decision-making: In operations research and on-line statistical decision making problem field, the weighted majority algorithm and its more complicated versions have been found independently.
+
+Computational geometry: The multiplicative weights algorithm is also widely applied in computational geometry, such as Clarkson's algorithm for linear programming (LP) with a bounded number of variables in linear time. Later, Bronnimann and Goodrich employed analogous methods to find Set Covers for hypergraphs with small VC dimension.
+
+Gradient descent method
+
+Matrix multiplicative weights update
+
+Plotkin, Shmoys, Tardos framework for packing/covering LPs
+
+Approximating multi-commodity flow problems
+
+O (logn)- approximation for many NP-hard problems
+
+Learning theory and boosting
+
+Hard-core sets and the XOR lemma
+
+Hannan's algorithm and multiplicative weights
+
+Online convex optimization
+
+References
+
+External links
+
+The Game Theory of Life a Quanta Magazine article describing the use of the method to evolutionary biology in a paper by Erick Chastain, Adi Livnat, Christos Papadimitriou, and Umesh Vazirani
+
+Category:Algorithms
+
+Category:Machine learning
+
+Category:Randomized algorithms

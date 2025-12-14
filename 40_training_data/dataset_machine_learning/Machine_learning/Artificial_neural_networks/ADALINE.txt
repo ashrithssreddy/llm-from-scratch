@@ -1,0 +1,73 @@
+ADALINE (Adaptive Linear Neuron or later Adaptive Linear Element) is an early single-layer artificial neural network and the name of the physical device that implemented it. It was developed by professor Bernard Widrow and his doctoral student Marcian Hoff at Stanford University in 1960. It is based on the perceptron and consists of weights, a bias, and a summation function. The weights and biases were implemented by rheostats (as seen in the "knobby ADALINE"), and later, memistors. It found extensive use in adaptive signal processing, especially of adaptive noise filtering.
+
+The difference between Adaline and the standard (Rosenblatt) perceptron is in how they learn. Adaline unit weights are adjusted to match a teacher signal, before applying the Heaviside function (see figure), but the standard perceptron unit weights are adjusted to match the correct output, after applying the Heaviside function.
+
+A multilayer network of ADALINE units is known as a MADALINE.
+
+Definition
+
+Adaline is a single-layer neural network with multiple nodes, where each node accepts multiple inputs and generates one output. Given the following variables:
+
+\boldsymbol{x}, the input vector
+
+\boldsymbol{w}, the weight vector
+
+N, the number of inputs
+
+b, some bias
+
+o, the output of the model,
+
+the output is:
+
+o=\sum_{n=1}^{N} x_n w_n + b
+
+If we further assume that x_0=1 and w_0=b, then the output further reduces to:
+
+o=\sum_{n=0}^{N} x_n w_n
+
+Learning rule
+
+The learning rule used by ADALINE is the LMS ("least mean squares") algorithm, a special case of gradient descent.
+
+Given the following:
+
+\eta, the learning rate
+
+o, the model output
+
+y, the desired target
+
+E=(y - o)^2, the square of the error,
+
+the LMS algorithm updates the weights as follows:
+
+\boldsymbol{w} \leftarrow \boldsymbol{w} + \eta(y - o)\boldsymbol{x}
+
+This update rule minimizes E, the square of the error, and is in fact the stochastic gradient descent update for linear regression.
+
+MADALINE
+
+MADALINE (Many ADALINE) is a three-layer (input, hidden, output), fully connected, feedforward neural network architecture for classification that uses ADALINE units in its hidden and output layers. I.e., its activation function is the sign function. The three-layer network uses memistors. As the sign function is non-differentiable, backpropagation cannot be used to train MADALINE networks. Hence, three different training algorithms have been suggested, called Rule I, Rule II and Rule III.
+
+Despite many attempts, they never succeeded in training more than a single layer of weights in a MADALINE model. This was until Widrow saw the backpropagation algorithm in a 1985 conference in Snowbird, Utah.
+
+MADALINE Rule 1 (MRI) - The first of these dates back to 1962. It consists of two layers: the first is made of ADALINE units (let the output of the ith ADALINE unit be o_i); the second layer has two units. One is a majority-voting unit that takes in all o_i, and if there are more positives than negatives, outputs +1, and vice versa. Another is a "job assigner": suppose the desired output is -1, and different from the majority-voted output, then the job assigner calculates the minimal number of ADALINE units that must change their outputs from positive to negative, and picks those ADALINE units that are closest to being negative, and makes them update their weights according to the ADALINE learning rule. It was thought of as a form of "minimal disturbance principle".
+
+Some MADALINE machines were demonstrated to perform tasks including inverted pendulum balancing, weather forecasting, and speech recognition.
+
+Additionally, when flipping single units' signs does not drive the error to zero for a particular example, the training algorithm starts flipping pairs of units' signs, then triples of units, etc.
+
+See also
+
+Multilayer perceptron
+
+References
+
+External links
+
+Widrow demonstrating both a working knobby ADALINE machine and a memistor ADALINE machine.
+
+"Memristor-Based Multilayer Neural Networks With Online Gradient Descent Training". Implementation of the ADALINE algorithm with memristors in analog computing.
+
+Category:Artificial neural networks

@@ -1,0 +1,93 @@
+In machine learning, the radial basis function kernel, or RBF kernel, is a popular kernel function used in various kernelized learning algorithms. In particular, it is commonly used in support vector machine classification.
+
+The RBF kernel on two samples \mathbf{x},\mathbf{x'}\in \mathbb{R}^{k}, represented as feature vectors in some input space, is defined as
+
+K(\mathbf{x}, \mathbf{x'}) = \exp\left(-\frac{\|\mathbf{x} - \mathbf{x'}\|^2}{2\sigma^2}\right)
+
+\textstyle\|\mathbf{x} - \mathbf{x'}\|^2 may be recognized as the squared Euclidean distance between the two feature vectors. \sigma is a free parameter. An equivalent definition involves a parameter \textstyle\gamma = \tfrac{1}{2\sigma^2}:
+
+K(\mathbf{x}, \mathbf{x'}) = \exp(-\gamma\|\mathbf{x} - \mathbf{x'}\|^2)
+
+Since the value of the RBF kernel decreases with distance and ranges between zero (in the infinite-distance limit) and one (when {{math|x  x'}}), it has a ready interpretation as a similarity measure.
+
+\begin{alignat}{2}
+
+\exp\left(-\frac{1}{2}\|\mathbf{x} - \mathbf{x'}\|^2\right)
+
+&= \exp(\frac{2}{2}\mathbf{x}^\top \mathbf{x'} - \frac{1}{2}\|\mathbf{x}\|^2  - \frac{1}{2}\|\mathbf{x'}\|^2)\\[5pt]
+
+&= \exp(\mathbf{x}^\top \mathbf{x'}) \exp( - \frac{1}{2}\|\mathbf{x}\|^2) \exp( - \frac{1}{2}\|\mathbf{x'}\|^2) \\[5pt]
+
+&= \sum_{j=0}^\infty \frac{(\mathbf{x}^\top \mathbf{x'})^j}{j!} \exp\left(-\frac{1}{2}\|\mathbf{x}\|^2\right) \exp\left(-\frac{1}{2}\|\mathbf{x'}\|^2\right)\\[5pt]
+
+&= \sum_{j=0}^\infty \quad \sum_{n_1+n_2+\dots +n_k=j}
+
+\exp\left(-\frac{1}{2}\|\mathbf{x}\|^2\right)
+
+\frac{x_1^{n_1}\cdots x_k^{n_k} }{\sqrt{n_1! \cdots n_k! }}
+
+\exp\left(-\frac{1}{2}\|\mathbf{x'}\|^2\right)
+
+\frac{{x'}_1^{n_1}\cdots {x'}_k^{n_k} }{\sqrt{n_1! \cdots n_k! }} \\[5pt]
+
+&=\langle \varphi(\mathbf{x}), \varphi(\mathbf{x'}) \rangle
+
+\end{alignat}
+
+\varphi(\mathbf{x})
+
+=
+
+\exp\left(-\frac{1}{2}\|\mathbf{x}\|^2\right)
+
+\left(a^{(0)}_{\ell_0},a^{(1)}_1,\dots,a^{(1)}_{\ell_1},\dots,a^{(j)}_1,\dots,a^{(j)}_{\ell_j},\dots \right )
+
+where \ell_j=\tbinom {k+j-1}{j},
+
+a^{(j)}_{\ell}=\frac{x_1^{n_1}\cdots x_k^{n_k} }{\sqrt{n_1! \cdots n_k! }} \quad|\quad n_1+n_2+\dots+n_k = j \wedge 1\leq \ell\leq \ell_j
+
+Approximations
+
+Because support vector machines and other models employing the kernel trick do not scale well to large numbers of training samples or large numbers of features in the input space, several approximations to the RBF kernel (and similar kernels) have been introduced.
+
+Typically, these take the form of a function z that maps a single vector to a vector of higher dimensionality, approximating the kernel:
+
+\langle z(\mathbf{x}), z(\mathbf{x'}) \rangle \approx \langle \varphi(\mathbf{x}), \varphi(\mathbf{x'}) \rangle = K(\mathbf{x}, \mathbf{x'})
+
+where \textstyle\varphi is the implicit mapping embedded in the RBF kernel.
+
+Fourier random features
+
+One way to construct such a z is to randomly sample from the Fourier transformation of the kernel\varphi(x) = \frac{1}{\sqrt D}[\cos\langle w_1, x\rangle, \sin\langle w_1, x\rangle, \ldots, \cos\langle w_D, x\rangle, \sin\langle w_D, x\rangle]^Twhere w_1, ..., w_D are independent samples from the normal distribution N(0, \sigma^{-2} I).
+
+Theorem:  \operatorname E[\langle \varphi(x), \varphi(y)\rangle] = e^{\|x-y\|^2/(2\sigma^2)}.
+
+Proof: It suffices to prove the case of D=1. Use the trigonometric identity \cos(a-b) = \cos(a)\cos(b) + \sin(a)\sin(b), the spherical symmetry of Gaussian distribution, then evaluate the integral
+
+\int_{-\infty}^\infty \frac{\cos (k x) e^{-x^2 / 2}}{\sqrt{2 \pi}} d x=e^{-k^2 / 2}.
+
+Theorem: \operatorname{Var}[\langle \varphi(x), \varphi(y)\rangle] = O(D^{-1}). (Appendix A.2).
+
+Nyström method
+
+Another approach uses the Nyström method to approximate the eigendecomposition of the Gram matrix K, using only a random sample of the training set.
+
+See also
+
+Gaussian function
+
+Kernel (statistics)
+
+Polynomial kernel
+
+Radial basis function
+
+Radial basis function network
+
+Obst kernel network
+
+References
+
+Category:Kernel methods for machine learning
+
+Category:Support vector machines

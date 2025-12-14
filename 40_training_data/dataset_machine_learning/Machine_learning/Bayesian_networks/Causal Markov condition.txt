@@ -1,0 +1,37 @@
+The Causal Markov (CM) condition states that, conditional on the set of all its direct causes, a node is independent of all variables which are not effects or direct causes of that node. In the event that the structure of a Bayesian network accurately depicts causality, the two conditions are equivalent.
+
+This is related to the Markov condition, an assumption made in Bayesian probability theory, that every node in a Bayesian network is conditionally independent of its nondescendants, given its parents. Stated loosely, it is assumed that a node has no bearing on nodes which do not descend from it. In a DAG, this local Markov condition is equivalent to the global Markov condition, which states that d-separations in the graph also correspond to conditional independence relations. This also means that a node is conditionally independent of the entire network, given its Markov blanket. A network may accurately embody the Markov condition without depicting causality, in which case it should not be assumed to embody the causal Markov condition.
+
+Motivation
+
+Statisticians are enormously interested in the ways in which certain events and variables are connected. The precise notion of what constitutes a cause and effect is necessary to understand the connections between them. The central idea behind the philosophical study of probabilistic causation is that causes raise the probabilities of their effects, all else being equal.
+
+A deterministic interpretation of causation means that if A causes B, then A must always be followed by B. In this sense, smoking does not cause cancer because some smokers never develop cancer.
+
+On the other hand, a probabilistic interpretation simply means that causes raise the probability of their effects. In this sense, changes in meteorological readings associated with a storm do cause that storm, since they raise its probability. (However, simply looking at a barometer does not change the probability of the storm, for a more detailed analysis, see:).
+
+Examples
+
+In a simple view, releasing one's hand from a hammer causes the hammer to fall. However, doing so in outer space does not produce the same outcome, calling into question if releasing one's fingers from a hammer always causes it to fall.
+
+A causal graph could be created to acknowledge that both the presence of gravity and the release of the hammer contribute to its falling. However, it would be very surprising if the surface underneath the hammer affected its falling. This essentially states the Causal Markov Condition, that given the existence of gravity the release of the hammer, it will fall regardless of what is beneath it.
+
+Implications
+
+Dependence and Causation
+
+It follows from the definition that if X and Y are in V and are probabilistically dependent, then either X causes Y, Y causes X, or X and Y are both effects of some common cause Z in V.
+
+Screening
+
+It once again follows from the definition that the parents of X screen X from other "indirect causes" of X (parents of Parents(X)) and other effects of Parents(X) which are not also effects of X.
+
+See also
+
+Causal model
+
+Notes
+
+Category:Bayesian networks
+
+Category:Causality

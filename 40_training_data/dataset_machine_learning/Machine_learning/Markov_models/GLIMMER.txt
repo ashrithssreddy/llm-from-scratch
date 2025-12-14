@@ -1,0 +1,41 @@
+{{Infobox software
+
+name                   = GLIMMER
+
+developer              = Steven Salzberg & Arthur Delcher
+
+latest_release_version = 3.02
+
+latest_release_date    =
+
+programming language   =
+
+language               = C++
+
+genre                  = Bioinformatics tool
+
+license                = OSI Certified Open Source Software under the Artistic License
+
+website                =
+
+}}
+
+In bioinformatics, GLIMMER (Gene Locator and Interpolated Markov ModelER) is used to find genes in prokaryotic DNA. "It is effective at finding genes in bacteria, archea, viruses, typically finding 98-99% of all relatively long protein coding genes". to identify coding regions. The GLIMMER software is open source and is maintained by Steven Salzberg, Art Delcher, and their colleagues at the Center for Computational Biology at Johns Hopkins University. The original GLIMMER algorithms and software were designed by Art Delcher, Simon Kasif and Steven Salzberg and applied to bacterial genome annotation in collaboration with Owen White.
+
+Versions
+
+GLIMMER 1.0
+
+First Version of GLIMMER "i.e., GLIMMER 1.0" was released in 1998 and it was published in the paper Microbial gene identification using interpolated Markov model. This paper This paper describes several major changes made to the GLIMMER system including improved methods to identify coding regions and start codon. Scoring of ORF in GLIMMER 3.0 is done in reverse order i.e., starting from stop codon and moves back towards the start codon. Reverse scanning helps in identifying the coding portion of the gene more accurately which is contained in the context window of IMM. GLIMMER 3.0 also improves the generated training set data by comparing the long-ORF with universal amino acid distribution of widely disparate bacterial genomes."GLIMMER 3.0 has an average long-ORF output of 57% for various organisms where as GLIMMER 2.0 has an average long-ORF output of 39%." examined the gene finding methods used for 183 genomes.  They reported that of these projects, Glimmer was the gene finder for 49%, followed by GeneMark with 12%, with other algorithms used in 3% or fewer of the projects.  (They also reported that 33% of genomes used "other" programs, which in many cases meant that they could not identify the method.  Excluding those cases, Glimmer was used for 73% of the genomes for which the methods could be unambiguously identified.)   Glimmer was used by the DDBJ to re-annotate all bacterial genomes in the International Nucleotide Sequence Databases.  It is also being used by this group to annotate viruses.  Glimmer is part of the bacterial annotation pipeline at the National Center for Biotechnology Information (NCBI), which also maintains a web server for Glimmer, as do sites in Germany, Canada.
+
+According to Google Scholar, as of early 2011 the original Glimmer article (Salzberg et al., 1998) has been cited 581 times, and the Glimmer 2.0 article (Delcher et al., 1999) has been cited 950 times.
+
+References
+
+External links
+
+The Glimmer home page at CCB, Johns Hopkins University, from which the software can be downloaded.
+
+Category:Bioinformatics software
+
+Category:Markov models

@@ -1,0 +1,57 @@
+In probability theory, Kolmogorov equations characterize continuous-time Markov processes. In particular, they describe how the probability of a continuous-time Markov process in a certain state changes over time.  There are four distinct equations: the Kolmogorov forward equation for continuous processes, now understood to be identical to the Fokker–Planck equation, the Kolmogorov forward equation for jump processes, and two Kolmogorov backward equations for processes with and without discontinuous jumps.
+
+Diffusion processes vs. jump processes
+
+Writing in 1931, Andrey Kolmogorov started from the theory of discrete time Markov processes, which are described by the Chapman–Kolmogorov equation, and sought to derive a theory of continuous time Markov processes by extending this equation.  He found that there are two kinds of continuous time Markov processes, depending on the assumed behavior over small intervals of time:
+
+If you assume that "in a small time interval there is an overwhelming probability that the state will remain unchanged; however, if it changes, the change may be radical",
+
+William Feller, in 1949, used the names "forward equation" and "backward equation" for his more general version of the Kolmogorov's pair,
+
+in both jump and diffusion processes. Much later, in 1956, he referred to the equations for the jump process as "Kolmogorov forward equations" and "Kolmogorov backward equations".
+
+Other authors, such as Motoo Kimura, referred to the diffusion (Fokker–Planck) equation as Kolmogorov forward equation, a name that has persisted.
+
+The modern view
+
+In the context of a continuous-time Markov process with jumps, see Kolmogorov equations (Markov jump process). In particular, in natural sciences the forward equation is also known as master equation.
+
+In the context of a diffusion process, for the backward Kolmogorov equations see Kolmogorov backward equations (diffusion). The forward Kolmogorov equation is also known as Fokker–Planck equation.
+
+Continuous-time Markov chains
+
+The original derivation of the equations by Kolmogorov starts with the Chapman–Kolmogorov equation (Kolmogorov called it fundamental equation) for time-continuous and differentiable Markov processes on a finite, discrete state space. Feller proves the existence  of solutions of probabilistic character to the Kolmogorov forward equations and Kolmogorov backward equations under natural conditions.
+
+\frac{\partial \Psi}{\partial t}(x,t) = \mu (1-x)\frac{\partial{\Psi}}{\partial x}(x,t);\qquad \Psi(x,0)=x^i, \quad \Psi(1,t)=1.
+
+An example from biology
+
+One example from biology is given below:
+
+p_n' (t)= (n-1)\beta p_{n-1}(t) - n\beta p_{n}(t)
+
+This equation is applied to model population growth with birth. Where  n  is the population index, with reference the initial population,  \beta  is the birth rate, and finally p_n(t)=\Pr(N(t)=n), i.e. the probability of achieving a certain population size.
+
+The analytical solution is:
+
+p_n(t)= (n-1)\beta e^{-n\beta t} \int_0^t \! p_{n-1}(s)\,e^{n\beta s}\mathrm{d}s
+
+This is a formula for the probability p_n(t) in terms of the preceding ones, i.e. p_{n-1}(t).
+
+See also
+
+Feynman–Kac formula
+
+Fokker–Planck equation
+
+Kolmogorov backward equation
+
+References
+
+Category:Markov processes
+
+Category:Stochastic models
+
+Category:Mathematical and theoretical biology
+
+Category:Population models

@@ -1,0 +1,213 @@
+{{Infobox scientist
+
+name             = Yorick Wilks
+
+birth_date       =
+
+birth_place      = Buckinghamshire, England
+
+death_date       =
+
+death_place      =
+
+field            = Artificial IntelligenceNatural language processing
+
+image            = Yorick Wilks.jpg
+
+title            = Director of AI at WiredVibe (acquired by AKY X)
+
+work_institution = University of SheffieldUniversity of Oxford
+
+alma_mater       = University of Cambridge
+
+doctoral_advisor = R. B. Braithwaite
+
+thesis_title     = Argument and proof in metaphysics from an empirical point of view
+
+thesis_url       = https://books.google.com/books?id=t9AotwAACAAJ
+
+thesis_year      = 1968
+
+known_for        = General Architecture for Text Engineering (GATE)
+
+prizes           = Loebner Prize (1997); The biennial Antonio Zampolli Prize by the European Language Development Association at LREC (2008); The Lifetime Achievement Award at the ACL (2008); The British Computer Society's Lovelace Medal (2009)
+
+website          =
+
+}}
+
+Yorick Alexander Wilks FBCS (27 October 1939 – 14 April 2023) was a British computer scientist. He was an emeritus professor of artificial intelligence at the University of Sheffield, visiting professor of artificial intelligence at Gresham College (a post created especially for him), senior research fellow at the Oxford Internet Institute, senior scientist at the Florida Institute for Human and Machine Cognition, and  a member of the Epiphany Philosophers.
+
+In February 2023, Wilks joined WiredVibe as Director of AI and a Board Member, with the goal of commercializing his previous research and ideas. He remained in this role until his death, which occurred shortly before WiredVibe was acquired by AKY X, a company that continues to build on his legacy and contributions.
+
+Biography
+
+Wilks was educated at Torquay Boys' Grammar School, followed by Pembroke College, Cambridge, where he read Philosophy, joined the Epiphany Philosophers and obtained his Doctor of Philosophy degree (1968) under Professor R. B. Braithwaite for the thesis 'Argument and Proof'; he was an early pioneer in meaning-based approaches to the understanding of natural language content by computers. His main early contribution in the 1970s was called "Preference Semantics" (Wilks, 1973; Wilks and Fass, 1992), an algorithmic method for assigning the "most coherent" interpretation to a sentence in terms of having the maximum number of internal preferences of its parts (normally verbs or adjectives) satisfied. That early work was hand-coded with semantic entries (of the order of some hundreds) as was normal at the time, but since then has led to the empirical determinations of preferences (chiefly of English verbs) in the 1980s and 1990s.
+
+A key component of the notion of preference in semantics was that the interpretation of an utterance is not a well- or ill-formed notion, as was argued in Chomskyan approaches, such as those of Jerry Fodor and Jerrold Katz. It was rather that a semantic interpretation was the best available, even though some preferences might not be satisfied. So, in "The machine answered the question with a low whine" the agent of "answer" does not satisfy that verb's preference for a human answerer—which would cause it to be deemed ill-formed by Fodor and Katz—but is accepted as sub-optimal or metaphorical, and, now, conventional. The function of the algorithm is not to determine well-formedness at all but to make the optimal selection of word-senses to participate in the overall interpretation. Thus, in "The Pole answered..." the system will always select the human sense of the agent and not the inanimate one if it gives a more coherent interpretation overall.
+
+Preference Semantics is thus some of the earliest computational work—with programs run at Systems Development Corporation in Santa Monica in 1967 in LISP on an IBM360—in the now established field of word sense disambiguation. This approach was used in the first operational machine translation system based principally on meaning structures and built by Wilks at Stanford Artificial Intelligence Laboratory in the early 1970s (Wilks, 1973) at the same time and place as Roger Schank was applying his "Conceptual Dependency" approach to machine translation. The LISP code of Wilks' system was in The Computer Museum, Boston.
+
+Wilks was elected a fellow of the American and European Associations for Artificial Intelligence, of the British Computer Society, a member of the UK Computing Research Committee, and a permanent member of ICCL, the International Committee on Computational Linguistics. He was professor of artificial intelligence at the University of Sheffield and a senior research fellow at the Oxford Internet Institute. In 1991 he received a Defense Advanced Projects Agency grant on interlingual pragmatics-based machine translation and in 1994 he received a grant by the Engineering and Physical Sciences Research Council to investigate in the field of large-scale information extraction (LaSIE); in the following years he would obtain more grants to carry on exploring the field of information extraction (AVENTINUS, ECRAN, PASTA...). In the 1990s Wilks also became interested in modelling human-computer dialogue and the team led by David Levy and him as chief researcher won the Loebner Prize in 1997. He was the founding director of the EU funded Companions Project on creating long-term computer companions for people. At his Festschrift in 2007 at the British Computer Society in London a volume of his own papers was presented along with a volume of essays in his honour.  He was awarded the Antonio Zampolli prize in honour of his lifetime work at the LREC 2008 conference on 28 May 2008, and the Lifetime Achievement Award at the ACL 2008 conference on 18 June 2008.
+
+In 2009, he was awarded the British Computer Society's Lovelace Medal, its annual award for research achievement, and was awarded the Fellowship of the Association for Computing Machinery.
+
+In 1998, Wilks became head of the Department of Computer Science of the University of Sheffield, where he had started working in the year 1993 as professor of artificial intelligence, a post he still held. In 1993 he became the founding director of the Institute of Language, Speech and Hearing (ILASH). Wilks also set up the Natural Language Processing Group of the University of Sheffield. In 1994 he (along with Rob Gaizauskas and Hamish Cunningham) designed GATE, an advanced NLP architecture that has been widely distributed.
+
+National Life Stories conducted an oral history interview (C1672/24) with Yorick Wilks in 2016 for its Science and Religion collection held by the British Library.
+
+Wilks died on 14 April 2023, at the age of 83.
+
+Awards
+
+Wilks received many awards:
+
+(2009) Elected Fellow of the Association for Computing Machinery
+
+(2009) Lovelace Medal by the British Computer Society
+
+(2008) Zampolli Prize (ELRA, awarded at LREC in Marrakech, Morocco)
+
+(2008) Lifetime Achievement Award (Association for Computational Linguistics, in Columbus)
+
+(2006) Visiting Professor, University of Oxford
+
+(2004) Elected to UK Computing Research Committee
+
+(2004) Elected Fellow, British Computer Society
+
+(2003) Visiting Fellow, Oxford Internet Institute
+
+(1998) Elected Fellow of European Association for Artificial Intelligence
+
+(1997) Elected Fellow, EPSRC College of Computing
+
+(1991) Visiting Fellow, Trinity Hall, Cambridge
+
+(1991) Elected Fellow of the American Association for Artificial Intelligence
+
+(1983) Royal Society Travel Fellowship
+
+(1983) Commonwealth of Australia Visiting Professor
+
+(1981) Visiting Sloan Fellow, University of California, Berkeley
+
+(1980) Invited Participant in the Nobel Symposium on Language, Stockholm
+
+(1979) NATO Senior Scientist Fellowship
+
+(1979) Visiting Sloan Fellow, Yale University
+
+(1975) SRC Senior Visiting Fellowship, University of Edinburgh
+
+Membership
+
+Wilks was an active member of the following associations:
+
+Association for Computational Linguistics
+
+Society for the Study of AI and Simulation of Behaviour
+
+Association for Computing Machinery
+
+Cognitive Science Society
+
+British Society for the Philosophy of Science
+
+American Association for Artificial Intelligence
+
+Aristotelean Society
+
+Selected works
+
+Books
+
+Wilks, Y. (2019) Artificial Intelligence: Modern Magic or Dangerous Future?.Icon Books. New illustrated edition, 2023, MIT Press.
+
+Wilks, Y. (2015) Machine Translation: its scope and limits. Springer
+
+Wilks, Y (ed.) (2010) Close Engagements with Artificial Companions: Key Social, Psychological and Design issues. John Benjamins; Amsterdam
+
+Wilks, Y., Brewster, C. (2009) Natural Language Processing as a Foundation of the Semantic Web. Now Press: London.
+
+Wilks, Y. (2007) Words and Intelligence I, Selected papers by Yorick Wilks. In K. Ahmad, C. Brewster & M. Stevenson (eds.), Springer: Dordrecht.
+
+Wilks, Y. (ed. and with introduction and commentaries). (2006) Language, cohesion and form: selected papers of Margaret Masterman. Cambridge: Cambridge University Press.
+
+Wilks, Y., Nirenburg, S., Somers, H. (eds.) (2003) Readings in Machine Translation. Cambridge, MA: MIT Press.
+
+Wilks, Y.(ed.). (1999) Machine Conversations. Kluwer: New York.
+
+Wilks, Y., Slator, B., Guthrie, L. (1996) Electric Words: dictionaries, computers and meanings. Cambridge, MA: MIT Press.
+
+Ballim, A., Wilks, Y. (1991) Artificial Believers. Norwood, NJ: Erlbaum.
+
+Wilks, Y.(ed.). (1990) Theoretical Issues in Natural Language Processing. Norwood, NJ: Erlbaum.
+
+Wilks, Y., Partridge, D. (eds. plus three YW chapters and an introduction). (1990) The Foundations of Artificial Intelligence: a sourcebook. Cambridge: Cambridge University Press.
+
+Wilks, Y., Sparck-Jones, K.(eds.). (1984) Automatic Natural Language Processing, paperback edition. New York: Wiley. Originally published by Ellis Horwood.
+
+Wilks, Y., Charniak, E. (eds and principal authors). (1976) Computational Semantics—an Introduction to Artificial Intelligence and Natural Language Understanding. Amsterdam: North-Holland. Reprinted in Russian, in the series Progress in Linguistics, Moscow, 1981.
+
+Wilks, Y. (1972) Grammar, Meaning and the Machine Analysis of Language. London and Boston: Routledge.
+
+See also
+
+Artificial intelligence
+
+Computational linguistics
+
+Natural language processing
+
+References
+
+External links
+
+Yorick Wilks' profile at the University of Sheffield DCS
+
+Yorick Wilks' title at WiredVibe
+
+Yorick Wilks' Profile at Gresham College
+
+Yorick Wilks' subsite at the Oxford Internet Institute, University of Oxford
+
+Yorick Wilks video on Voices from Oxford (VOA)
+
+Second VOA video
+
+{https://www.youtube.com/watch?v=-Xx5hgjD-Mw Yorick Wilks demonstrating a computer companion on YouTube}]
+
+{https://www.gresham.ac.uk/lectures-and-events/ai-religion Yorick Wilks lecture at Gresham College, London on Artificial Intelligence and Religion}
+
+A seminar by Yorick Wilks at the Brandeis University (Department of Computer Science)]
+
+Lecture by Professor Yorick Wilks
+
+Category:1939 births
+
+Category:2023 deaths
+
+Category:Alumni of Pembroke College, Cambridge
+
+Category:British artificial intelligence researchers
+
+Category:British computer scientists
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Fellows of the British Computer Society
+
+Category:2009 fellows of the Association for Computing Machinery
+
+Category:People educated at Torquay Boys' Grammar School
+
+Category:Florida Institute for Human and Machine Cognition people
+
+Category:Fellows of the European Association for Artificial Intelligence
+
+Category:Natural language processing researchers
+
+Category:People from Buckinghamshire
+
+Category:Academics of the University of Sheffield

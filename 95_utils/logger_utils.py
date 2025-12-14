@@ -22,6 +22,8 @@ def setup_logging(prefix="training"):
         logs_dir = Path("97_logs") / "analyze_model"
     elif prefix == "inference":
         logs_dir = Path("97_logs") / "inference"
+    elif prefix == "prepare_dataset":
+        logs_dir = Path("97_logs") / "prepare_dataset"
     else:
         logs_dir = Path("97_logs") / "training"
     logs_dir.mkdir(parents=True, exist_ok=True)
@@ -47,6 +49,8 @@ def setup_logging(prefix="training"):
         logger.info("INFERENCE SESSION STARTED")
     elif prefix == "analyze":
         logger.info("ANALYSIS SESSION STARTED")
+    elif prefix == "prepare_dataset":
+        logger.info("DATASET PREPARATION SESSION STARTED")
     else:
         logger.info("TRAINING SESSION STARTED")
     logger.info("=" * 80)

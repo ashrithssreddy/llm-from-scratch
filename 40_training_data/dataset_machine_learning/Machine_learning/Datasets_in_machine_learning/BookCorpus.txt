@@ -1,0 +1,9 @@
+BookCorpus (also sometimes referred to as the Toronto Book Corpus) is a dataset consisting of the text of around 7,000 self-published books scraped from the indie ebook distribution website Smashwords. It was the main corpus used to train the initial GPT model by OpenAI, and has been used as training data for other early large language models including Google's BERT. The dataset consists of around 985 million words, and the books that comprise it span a range of genres, including romance, science fiction, and fantasy.
+
+The authors described it as consisting of "free books written by yet unpublished authors," yet this is factually incorrect.  These books were published by self-published ("indie") authors who priced them at free; the books were downloaded without the consent or permission of Smashwords or Smashwords authors and in violation of the Smashwords Terms of Service. The dataset was initially hosted on a University of Toronto webpage. An official version of the original dataset is no longer publicly available, though at least one substitute, BookCorpusOpen, has been created. Though not documented in the original 2015 paper, the site from which the corpus's books were scraped is now known to be Smashwords.
+
+References
+
+Category:Datasets in machine learning
+
+Category:English corpora

@@ -1,0 +1,59 @@
+In pattern recognition, iDistance is an indexing and query processing technique for k-nearest neighbor queries on point data in multi-dimensional metric spaces. The kNN query is one of the hardest problems on multi-dimensional data, especially when the dimensionality of the data is high. iDistance is designed to process kNN queries in high-dimensional spaces efficiently and performs extremely well for skewed data distributions, which usually occur in real-life data sets.
+
+iDistance employs a two-phase search strategy involving an initial filtering of candidate regions and a subsequent refinement of results, an approach aligned with the  Filter and Refine Principle (FRP). This means that the index first prunes the search space to eliminate unlikely candidates, then verifies the true nearest neighbors in a refinement step, following the general FRP paradigm used in database search algorithms. The iDistance index can also be augmented with machine learning models to learn data distributions for improved searching and storage of multi-dimensional data.
+
+Indexing
+
+Building the iDistance index has two steps:
+
+A number of reference points in the data space are chosen. There are various ways of choosing reference points. Using cluster centers as reference points is the most efficient way. The data points are partitioned into Voronoi cells based on well-chosen reference points.
+
+The distance between a data point and its closest reference point is calculated. This distance plus a scaling value is called the point's iDistance. By this means, points in a multi-dimensional space are mapped to one-dimensional values, and then a B+-tree can be adopted to index the points using the iDistance as the key.
+
+The figure on the right shows an example where three reference points (O1, O2, O3) are chosen. The data points are then mapped to a one-dimensional space and indexed in a B+-tree. Various extensions have been proposed to make the selection of reference points for effective query performance, including employing machine learning to learn the identification of reference points.
+
+Query processing
+
+To process a kNN query, the query is mapped to a number of one-dimensional range queries, which can be processed efficiently on a B+-tree. In the above figure, the query Q is mapped to a value in the B+-tree while the kNN search ``sphere" is mapped to a range in the B+-tree. The search sphere expands gradually until the k NNs are found. This corresponds to gradually expanding range searches in the B+-tree.
+
+The iDistance technique can be viewed as a way of accelerating the sequential scan. Instead of scanning records from the beginning to the end of the data file, the iDistance starts the scan from spots where the nearest neighbors can be obtained early with a very high probability.
+
+Applications
+
+The iDistance has been used in many applications including
+
+Image retrieval
+
+Video indexing
+
+Similarity search in P2P systems
+
+Mobile computing
+
+Recommender system
+
+Historical background
+
+The iDistance was first proposed by Cui Yu, Beng Chin Ooi, Kian-Lee Tan and H. V. Jagadish in 2001. Later, together with Rui Zhang, they improved the technique and performed a more comprehensive study on it in 2005.
+
+See also
+
+Filter and refine
+
+Learnable function
+
+References
+
+External links
+
+iDistance implementation in C by Rui Zhang
+
+Google's iDistance implementation in C++
+
+Early Separation of Filter and Refinement Steps in Spatial Query Optimization
+
+Filter and Refine Principle (FRP)
+
+Category:Classification algorithms
+
+Category:Machine learning algorithms

@@ -1,0 +1,7 @@
+The Ni1000 is an artificial neural network chip developed by Nestor Corporation and Intel, developed in the 1990s. It is Intel's second-generation neural network chip, but the first all-digital chip. The chip is aimed at image analysis applications– containing more than 3 million transistors – and can analyze 40,000 patterns per second. Prototypes running Nestor's OCR software in 1994 were capable of recognizing around 100 handwritten characters per second. The development was funded with money from DARPA and Office of Naval Research.
+
+References
+
+Intel/Nestor Ni1000 Recognition Accelerator Technical Specification
+
+Category:Artificial neural networks

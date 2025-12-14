@@ -1,0 +1,75 @@
+Variable elimination (VE) is a simple and general exact inference algorithm in probabilistic graphical models, such as Bayesian networks and Markov random fields. It can be used for inference of maximum a posteriori (MAP) state or estimation of conditional or marginal distributions over a subset of variables. The algorithm has exponential time complexity, but could be efficient in practice for low-treewidth graphs, if the proper elimination order is used.
+
+Factors
+
+Enabling a key reduction in algorithmic complexity, a factor f, also known as a potential, of variables V is a relation between each instantiation of v of variables f to a non-negative number, commonly denoted as f(x). A factor does not necessarily have a set interpretation. One may perform operations on factors of different representations such as a probability distribution or conditional distribution. and returns the resulting set of factors. The algorithm collect-relevant simply returns those factors in \phi involving variable v.
+
+Algorithm 1 sum-out(v,\phi)
+
+\Phi = collect factors relevant to v
+
+\Psi = the product of all factors in \Phi
+
+\tau = \sum_{v} \Psi
+
+return (\phi - \Phi)   \cup \{\tau\}
+
+Example
+
+Here we have a joint probability distribution. A variable, v  can be summed out between a set of instantiations where the set V-v at minimum must agree over the remaining variables. The value of v is irrelevant when it is the variable to be summed out.
+
+After eliminating V_1, its reference is excluded and we are left with a distribution only over the remaining variables and the sum of each instantiation.
+
+The resulting distribution which follows the sum-out operation only helps to answer queries that do not mention V_1. Also worthy to note, the summing-out operation is commutative.
+
+Factor Multiplication
+
+Computing a product between multiple factors results in a factor compatible with a single instantiation in each factor.
+
+Algorithm 2 mult-factors(v,\phi)
+
+Z = Union of all variables between product of factors f_1(X_1),...,f_m(X_m)
+
+f = a factor over  f where  f for all  f
+
+For each instantiation z
+
+For 1 to m
+
+x_1= instantiation of variables X_1 consistent with z
+
+f(z) = f(z)f_i(x_i)
+
+return f
+
+Factor multiplication is not only commutative but also associative.
+
+Inference
+
+The most common query type is in the form p(X|E = e) where X and E are disjoint subsets of U, and E is observed taking value e. A basic algorithm to computing p(X|E = e) is called variable elimination (VE), first put forth in.
+
+Taken from, this algorithm computes p(X|E = e) from a discrete Bayesian network B. VE calls SO to eliminate variables one by one. More specifically, in Algorithm 2, \phi is the set C of conditional probability tables (henceforth "CPTs") for B, X is a list of query variables, E is a list of observed variables, e is the corresponding list of observed values, and \sigma is an elimination ordering for variables U - XE, where XE denotes X \cup E.
+
+Variable Elimination Algorithm  VE(\phi, X, E, e, \sigma)
+
+Multiply factors with appropriate CPTs while σ is not empty
+
+Remove the first variable v from \sigma
+
+\phi = sum-out(v,\phi)
+
+p(X, E = e) = the product of all factors \Psi \in \phi
+
+return p(X,E = e)/ \sum_{X} p(X,E = e)
+
+Ordering
+
+Finding the optimal order in which to eliminate variables is an NP-hard problem. As such there are heuristics one may follow to better optimize performance by order:
+
+Minimum Degree: Eliminate the variable which results in constructing the smallest factor possible.
+
+Minimum Fill: By constructing an undirected graph showing variable relations expressed by all CPTs, eliminate the variable which would result in the least edges to be added post elimination.
+
+References
+
+Category:Graphical models

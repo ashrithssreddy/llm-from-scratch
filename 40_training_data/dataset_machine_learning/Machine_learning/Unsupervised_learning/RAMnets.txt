@@ -1,0 +1,67 @@
+RAMnets is one of the oldest practical neurally inspired classification algorithms. The RAMnets  is also known as a type of "n-tuple recognition method" or "weightless neural network".
+
+Algorithm
+
+Consider (let us say N) sets of n distinct bit locations are selected randomly. These are the n-tuples. The restriction of a pattern to an n-tuple can be regarded as an n-bit number which, together with the identity of the n-tuple, constitutes a `feature' of the pattern. The standard n-tuple recognizer operates simply as follows:
+
+A pattern is classified as belonging to the class for which it has the most features in common with at least one training pattern of that class.
+
+This is the \Theta= 0 case of a more general rule whereby the class assigned to unclassified pattern u is
+
+\begin{align} \underset{c}argmax(\sum_{i=1}^N\Theta(\sum_{v\in D_{c}}\delta(\alpha_{i}(u),\alpha_{i}(v))))\end{align}
+
+where Dc is the set of training patterns in class c, \Theta(x)= x for 0\leq x\leq \theta ,\Theta(x)=\theta for x\geq\theta,\delta_{i,j} is the Kronecker delta(\delta_{i,j}=1 if i=j and 0 otherwise.)and (\alpha_{i}(u))is the ith feature of the pattern u:
+
+\sum_{j=0}^{n-1}u_\eta i(j)2^{j}
+
+Here uk is the kth bit of u and u_\eta i (j)is the jth bit location of the ith n-tuple.
+
+With C classes to distinguish, the system can be implemented as a network of NC nodes, each of which is a random access memory (RAM); hence the term RAMnet. The memory content m_{ci\alpha} at address \alpha  of the ith node allocated to class c is set to
+
+m_{ci\alpha} = \Theta(\sum_{v\in D_{c}}\delta(\alpha,\alpha_{i}(v)))
+
+In the usual \theta = 1 case, the 1-bit content of m_{ci\alpha} is set if any pattern of Dc has feature \alpha  and unset otherwise. Recognition is  accomplished by summing the contents of the nodes of each class at the addresses given by the features of the unclassified pattern. That is, pattern u is assigned to class
+
+\begin{align} \underset{c}argmax(\sum_{i=1}^N m_{ci\alpha}(u)) \end{align}
+
+RAM-discriminators and WiSARD
+
+The RAMnets formed the basis of a commercial product known as WiSARD (Wilkie, Stonham and Aleksander Recognition Device) was the first artificial neural network machine to be patented.
+
+A RAM-discriminator consists of a set of  one-bit word RAMs with  inputs and a summing device (Σ). Any such RAM-discriminator can receive a binary pattern of X⋅n bits as input. The RAM input lines are connected to the input pattern by means of a biunivocal pseudo-random mapping. The summing device enables this network of RAMs to exhibit – just like other ANN models based on synaptic weights – generalization and noise tolerance.
+
+In order to train the discriminator one has to set all RAM memory locations to 0 and choose a training set formed by binary patterns of X⋅n bits. For each training pattern, a 1 is stored in the memory location of each RAM addressed by this input pattern. Once the training of patterns is completed, RAM memory contents will be set to a certain number of 0's and 1's.
+
+The information stored by the RAM during the training phase is used to deal with previous unseen patterns. When one of these is given as input, the RAM memory contents addressed by the input pattern are read and summed by Σ. The number  thus obtained, which is called the discriminator response, is equal to the number of RAMs that output 1. r reaches the maximum  if the input belongs to the training set.  is equal to 0 if no n-bit component of the input pattern appears in the training set (not a single RAM outputs 1). Intermediate values of r express a kind of “similarity measure” of the input pattern with respect to the patterns in the training set.
+
+A system formed by various RAM-discriminators is called WiSARD. Each RAM-discriminator is trained on a particular class of patterns, and classification by the multi-discriminator system is performed in the following way. When a pattern is given as input, each RAM-discriminator gives a response to that input. The various responses are evaluated by an algorithm which compares them and computes the relative confidence  of the highest response (e.g., the difference d between the highest response and the second highest response, divided by the highest response). A schematic representation of a RAM-discriminator and a 10 RAM-discriminator WiSARD is shown in Figure 1.
+
+See also
+
+Artificial Neural Network
+
+Kronecker delta
+
+Pattern Recognition
+
+Unsupervised learning
+
+Erlang distribution
+
+Machine learning
+
+Erlang (unit)
+
+References
+
+Michal Morciniec and Richard Rohwer(1995) "The n-tuple Classifier: Too Good to Ignore"
+
+(This book focuses on unsupervised learning  in neural networks)
+
+A brief introduction to Weightless NeuralSystems (2009)
+
+Further reading
+
+An introductory tutorial to classifiers (introducing the basic terms, with numeric example)
+
+Category:Unsupervised learning

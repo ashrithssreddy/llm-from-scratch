@@ -1,0 +1,105 @@
+{{Infobox scientist
+
+name              = Tom Michael Mitchell
+
+image             = AEA 2025 - Tom Mitchell 01.jpg
+
+caption           =
+
+birth_date        =
+
+birth_place       = Blossburg, Pennsylvania
+
+death_date        =
+
+death_place       =
+
+residence         =
+
+nationality       = American
+
+alma_mater        = Stanford University Massachusetts Institute of Technology
+
+doctoral_advisor  = Bruce G. Buchanan
+
+doctoral_students = Sebastian Thrun Oren EtzioniGeoffrey J. Gordon
+
+Derry Tanti Wijaya
+
+known_for         = The 'mind-reading' computer  Never-Ending Language Learning
+
+awards            = IJCAI Computers and Thought Award, Presidential Young Investigator Award
+
+footnotes         =
+
+field             = Machine learning, Artificial intelligence, Cognitive neuroscience
+
+work_institution  = Carnegie Mellon University Rutgers University
+
+religion          =
+
+}}
+
+Tom Michael Mitchell (born August 9, 1951) is an American computer scientist and the Founders University Professor at Carnegie Mellon University (CMU). He is a founder and former chair of the Machine Learning Department at CMU. Mitchell is known for his contributions to the advancement of machine learning, artificial intelligence, and cognitive neuroscience and is the author of the textbook Machine Learning. He is a member of the United States National Academy of Engineering since 2010. He is also a Fellow of the American Academy of Arts and Sciences, the American Association for the Advancement of Science and a Fellow and past president of the Association for the Advancement of Artificial Intelligence. In October 2018, Mitchell was appointed as the Interim Dean of the School of Computer Science at Carnegie Mellon.
+
+Early life and education
+
+Mitchell was born in Blossburg, Pennsylvania and grew up in Upstate New York, in the town of Vestal. He received his bachelor of Science degree in electrical engineering from the Massachusetts Institute of Technology in 1973 and a Ph.D. from Stanford University under the direction of Bruce G. Buchanan in 1979.
+
+Career
+
+Mitchell began his teaching career at Rutgers University in 1978. During his tenure at Rutgers, he held the positions of assistant and associate professor in the Department of Computer Science. In 1986, he left Rutgers and joined Carnegie Mellon University, Pittsburgh as a professor. In 1999, he became the E. Fredkin Professor in the School of Computer Science. In 2006 Mitchell was appointed as the first chair of the Machine Learning Department within the School of Computer Science. He became university professor in 2009, and served as Interim Dean of the Carnegie Mellon School of Computer Science during 2018–2019.  Mitchell currently serves on the Scientific Advisory Board of the Allen Institute for AI and on the Science Board of the Santa Fe Institute.
+
+Honors and awards
+
+He was elected into the United States National Academy of Engineering in 2010 "for pioneering contributions and leadership in the methods and applications of machine learning." He is also a Fellow of the American Association for the Advancement of Science (AAAS) since 2008 and a Fellow the Association for the Advancement of Artificial Intelligence (AAAI) since 1990. In 2016 he became a Fellow of the American Academy of Arts and Sciences. Mitchell was awarded an Honorary Doctor of Laws degree from Dalhousie University in 2015 for his contributions to machine learning and to cognitive neuroscience, and the President's Medal from Stevens Institute of Technology in 2018.  He is a recipient of the NSF Presidential Young Investigator Award in 1984.
+
+Publications
+
+Mitchell is a prolific author of scientific works on various topics in computer science, including machine learning, artificial intelligence, robotics, and cognitive neuroscience. He has authored hundreds of scientific articles. Mitchell published one of the first textbooks in machine learning, entitled Machine Learning, in 1997 (publisher: McGraw Hill Education). He is also a coauthor of the following books:
+
+J. Franklin, T. Mitchell, and S. Thrun (eds.), Recent Advances in Robot Learning, Kluwer Academic Publishers, 1996.
+
+T. Mitchell, J. Carbonell, and R. Michalski (eds.), Machine Learning: A Guide to Current Research,  Kluwer Academic Publishers, 1986.
+
+R. Michalski, J. Carbonell, and T. Mitchell (eds.), Machine Learning: An Artificial Intelligence Approach, Volume 2, Morgan Kaufmann, 1986.
+
+R. Michalski, J. Carbonell, and T. Mitchell (eds.), Machine Learning: An Artificial Intelligence Approach, Tioga Press, 1983.
+
+References
+
+External links
+
+List of PhDs and Postdocs supervised by Professor Tom Mitchell
+
+Category:Living people
+
+Category:1951 births
+
+Category:American computer scientists
+
+Category:MIT School of Engineering alumni
+
+Category:Stanford University alumni
+
+Category:Carnegie Mellon University faculty
+
+Category:Rutgers University faculty
+
+Category:American artificial intelligence researchers
+
+Category:Machine learning researchers
+
+Category:Fellows of the American Academy of Arts and Sciences
+
+Category:Fellows of the American Association for the Advancement of Science
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Members of the United States National Academy of Engineering
+
+Category:People from Vestal, New York
+
+Category:Presidents of the Association for the Advancement of Artificial Intelligence
+
+Category:Scientists from New York (state)

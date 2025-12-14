@@ -1,0 +1,119 @@
+{{Infobox scientist
+
+name              = Professor Jun'ichi Tsujii
+
+image             =
+
+image_size        =
+
+alt               =
+
+caption           =
+
+birth_date        =
+
+birth_place       =
+
+death_date        =
+
+death_place       =
+
+residence         =
+
+citizenship       =
+
+nationality       = Japanese
+
+fields            = Natural language processing
+
+workplaces        = University of TokyoUniversity of ManchesterNational Centre for Text MiningMicrosoft Research AsiaNational Institute of Advanced Industrial Science and Technology
+
+alma_mater        = Kyoto University
+
+doctoral_advisor  = Makoto Nagao
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students  =
+
+known_for         =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+influences        =
+
+influenced        =
+
+awards            = Purple Ribbon Medals of Honor (Japan) FUNAI Achievement Award  ACL fellow
+
+signature         =
+
+website =
+
+signature_alt     =
+
+footnotes         =
+
+}}
+
+is a Japanese computer scientist specializing in natural language processing and text mining, particularly in the field of biology and bioinformatics.
+
+Education
+
+Tsujii received his Bachelor of Engineering, Master of Engineering and PhD degrees in electrical engineering from Kyoto University in 1971, 1973, and 1978 respectively. He was Assistant Professor and Associate Professor at Kyoto University, before accepting a position as Professor of Computational Linguistics at the University of Manchester Institute of Science and Technology (UMIST) in 1988. He was President of the Association for Computational Linguistics (ACL) in 2006, and has been a permanent member of the International Committee on Computational Linguistics (ICCL) since 1992, and the chair of the committee since 2014.
+
+Research
+
+Since May 2015, Tsujii has been the director of the Artificial Intelligence Research Center at the National Institute of Advanced Industrial Science and Technology, Japan. Tsujii was previously a Principal Researcher at Microsoft Research Asia (MSRA). Before joining MSRA, he was a professor at the University of Tokyo, where he belonged to both the School of Inter-faculty Initiative on Informatics and the Graduate School of Information Science and Technology. Tsujii is also a Visiting Professor and Scientific Advisor at the National Centre for Text Mining (NaCTeM) at the University of Manchester in the United Kingdom.
+
+Awards
+
+On 14 May 2010, Tsujii was awarded the Medals of Honor with Purple Ribbon, one of Japan's highest awards, presented to influential contributors in the fields of art, academics or sports.
+
+In September 2014, Tsujii was awarded the FUNAI Achievement Award at the Forum on Information Technology (FIT), which took place at the University of Tsukuba.  The award is presented to distinguished individuals engaged in research or related business activities in the field of Information Technology who have produced excellent achievements in the field, are still active in leading positions and have strong impact on young students and researchers.
+
+In December 2014, Tsujii was named as an ACL Fellow, in recognition of his significant contributions to MT, parsing by unification-based grammar and text mining for biology.
+
+In March 2016, Tsujii was awarded Okawa Prize for his contribution to the field of Natural Language Processing, Machine Translation and Text Mining, together with Professor Jaime Carbonnel of CMU.
+
+In August 2021, Tsujii received ACL Lifetime Achievement Award, which is considered the most prestigious award in the field of Computational Linguistics and Natural Language Processing.
+
+In May 2022, Tsujii received the Order of the Sacred Treasure, Gold Rays and Neck Ribbon, from the Japanese government.
+
+In October 2024, Tsujii was designated a Person of Cultural Merit.
+
+Selected publications
+
+References
+
+Category:1949 births
+
+Category:Living people
+
+Category:Japanese computer scientists
+
+Category:Researchers in distributed computing
+
+Category:Academic staff of the University of Tokyo
+
+Category:Academic staff of Kyoto University
+
+Category:Kyoto University alumni
+
+Category:Computational linguistics researchers
+
+Category:People associated with the Department of Computer Science, University of Manchester
+
+Category:Fellows of the Association for Computational Linguistics
+
+Category:Natural language processing researchers
+
+Category:Data miners
+
+Category:Presidents of the Association for Computational Linguistics
+
+Category:Persons of Cultural Merit

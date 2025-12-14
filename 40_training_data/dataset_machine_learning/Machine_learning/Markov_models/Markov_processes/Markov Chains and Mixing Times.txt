@@ -1,0 +1,45 @@
+Markov Chains and Mixing Times is a book on Markov chain mixing times. The second edition was written by David A. Levin, and Yuval Peres. Elizabeth Wilmer was a co-author on the first edition and is credited as a contributor to the second edition. The first edition was published in 2009 by the American Mathematical Society, with an expanded second edition in 2017.
+
+Background
+
+A Markov chain is a stochastic process defined by a set of states and, for each state, a probability distribution on the states. Starting from an initial state, it follows a sequence of states where each state in the sequence is chosen randomly from the distribution associated with the previous state.
+
+In that sense, it is "memoryless": each random choice depends only on the current state, and not on the past history of states. Under mild restrictions, a Markov chain with a finite set of states will have a stationary distribution that it converges to, meaning that, after a sufficiently large number of steps, the probability of being in each state will close to that of the stationary distribution, regardless of the initial state or of the exact number of steps. The mixing time of a Markov chain is the number of steps needed for this convergence to happen, to a suitable degree of accuracy. A family of Markov chains is said to be rapidly mixing if the mixing time is a polynomial function of some size parameter of the Markov chain, and slowly mixing otherwise. This book is about finite Markov chains, their stationary distributions and mixing times, and methods for determining whether Markov chains are rapidly or slowly mixing.
+
+A classical and familiar example of this phenomenon involves shuffling decks of cards: starting from a non-random initial deck of cards, how many shuffles does it take to reach a nearly-random permutation? This can be modeled as a Markov chain whose states are orderings of the card deck and whose state-to-state transition probabilities are given by some mathematical model of random shuffling such as the Gilbert–Shannon–Reeds model. In this situation, rapid mixing of the Markov chain means that one does not have to perform a huge number of shuffles to reach a sufficiently randomized state. Beyond card games, similar considerations arise in the behavior of the physical systems studied in statistical mechanics, and of certain randomized algorithms.
+
+Topics
+
+The book is divided into two parts, the first more introductory and the second more advanced. After three chapters of introductory material on Markov chains, chapter four defines the ways of measuring the distance of a Markov chain to its stationary distribution and the time it takes to reach that distance. Chapter five describes coupling, one of the standard techniques of bounding mixing times. In this technique, one sets up two Markov chains, one starting from the given initial state and the other from the stationary distribution, with transitions that have the correct probabilities within each chain but are not independent from chain-to-chain, in such a way that the two chains become likely to move to the same states as each other. In this way, the mixing time can be bounded by the time for the two coupled chains to synchronize. Chapter six discusses a technique called "strong stationary times" with which, for some Markov chains, one can prove that choosing a stopping time randomly from a certain distribution will result in a state drawn from the stationary distribution.
+
+After a chapter on lower bounds on mixing time based on the "bottleneck ratio" and isoperimetric number, the next two chapters of the first part cover two important examples: card shuffling and random walks on graphs. Chapters 10 and 11 consider two more parameters closely related to the mixing time, the hitting time at which the Markov chain first reaches a specified state, and the cover time at which it has first reached all states. They also discuss time-reversible Markov chains and their connection to electrical networks. The final chapter of this part discusses the connection between the spectral gap of a Markov chain and its mixing time.
+
+The second part of the book includes many more examples in which this theory has been applied, including the Glauber dynamics on the Ising model, Markov models of chromosomal rearrangement, the asymmetric simple exclusion process in which particles randomly jump to unoccupied adjacent spaces, and random walks in the lamplighter group. Topics covered in the second part of the book include more on spectral graphs and expander graphs, path coupling (in which a sequence of more than two Markov chains is coupled in pairs), connections between coupling and the earth mover's distance, martingales, critical temperatures, the "cutoff effect" in which the probability distribution of the chain transitions rapidly between unmixed and mixed, the evolving set process (a derived Markov chain on sets of states of the given chain), Markov chains with infinitely many states, and Markov chains that operate in continuous time rather than by a discrete sequence of steps. A guest chapter by Jim Propp and David B. Wilson describes coupling from the past, a method for obtaining samples drawn exactly from the stationary distribution rather than (as one obtains from Markov chain Monte Carlo methods) approximations to this distribution. The final chapter collects open problems in this area.
+
+Audience and reception
+
+This book can be used either as a reference by researchers in areas using these methods, or as the basis for a graduate-level course, particularly one limited to the more introductory material in the first part of the book where only an undergraduate-level knowledge of probability theory and linear algebra is required. However, reviewer Rick Durrett suggests that the book's contents would be too advanced for undergraduate courses, even at research-level universities, and reviewer Takis Konstantopoulos suggests that the book's contents would be better appreciated by a reader who has already had some exposure to the material that it covers.
+
+Reviewer Olle Häggström calls the book "authoritative and highly readable". Reviewer H. M. Mai writes that its explanations are careful and "well motivated", and that the writing is "lucid and clear". Reviewer László Lakatos calls it "a brilliant guide to the modern theory of Markov chains". And reviewer David Aldous predicts that it "will long remain the definitive required reading" in this area.
+
+References
+
+{{reflist|refs=
+
+}}
+
+External links
+
+Author web site with errata and a downloadable copy of the book
+
+Category:Markov processes
+
+Category:Markov chain Monte Carlo
+
+Category:Mathematics textbooks
+
+Category:2008 non-fiction books
+
+Category:2017 non-fiction books
+
+Category:Publications of the American Mathematical Society

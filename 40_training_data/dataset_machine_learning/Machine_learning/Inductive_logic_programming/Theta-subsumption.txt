@@ -1,0 +1,35 @@
+Theta-subsumption (θ-subsumption, or just subsumption) is a decidable relation between two first-order clauses that guarantees that one clause logically entails the other. It was first introduced by John Alan Robinson in 1965 and has become a fundamental notion in inductive logic programming.  Deciding whether a given clause θ-subsumes another is an NP-complete problem.
+
+Definition
+
+A clause, that is, a disjunction of first-order literals, can be considered as a set containing all its disjuncts.
+
+With this convention, a clause c_1 θ-subsumes a clause c_2 if there is a substitution \theta such that the clause obtained by applying \theta to c_1 is a subset of c_2.
+
+Properties
+
+θ-subsumption is a weaker relation than logical entailment, that is, whenever a clause c_1 θ-subsumes a clause  c_2, then c_1 logically entails c_2
+
+. However, the converse is not true: A clause can logically entail another clause, but not θ-subsume it.
+
+θ-subsumption is decidable; more precisely, the problem of whether one clause θ-subsumes another is NP-complete in the length of the clauses. This is still true when restricting the setting to pairs of Horn clauses.
+
+As a binary relation among Horn clauses, θ-subsumption is reflexive and transitive. It therefore defines a preorder. It is not antisymmetric, since different clauses can be syntactic variants of each other. However, in every equivalence class of clauses that mutually θ-subsume each other, there is a unique shortest clause up to variable renaming, which can be effectively computed. The class of quotients with respect to this equivalence relation is a complete lattice, which has both infinite ascending and infinite descending chains. A subset of this lattice is known as a .
+
+History
+
+θ-subsumption was first introduced by J. Alan Robinson in 1965 in the context of resolution, and was first applied to inductive logic programming by Gordon Plotkin in 1970 for finding and reducing least general generalisations of sets of clauses. In 1977, Lewis D. Baxter proves that θ-subsumption is NP-complete, and the 1979 seminal work on NP-complete problems, Computers and Intractability, includes it among its list of NP-complete problems.
+
+Applications
+
+Theorem provers based on the resolution or superposition calculus use θ-subsumption to prune redundant clauses. In addition, θ-subsumption is the most prominent notion of entailment used in inductive logic programming, where it is the fundamental tool to determine whether one clause is a specialisation or a generalisation of another.  It is further used to test whether a clause covers an example, and to determine whether a given pair of clauses is redundant.
+
+Notes
+
+References
+
+Category:Inductive logic programming
+
+Category:Logical consequence
+
+Category:NP-complete problems

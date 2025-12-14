@@ -1,0 +1,91 @@
+{{Infobox academic
+
+birth_date =
+
+occupation = Professor of Computer Science and Computational Linguistics
+
+title = Professor
+
+alma_mater = University of Edinburgh
+
+thesis_title = Broad-Coverage Model of Prediction in Human Sentence Processing
+
+thesis_url = https://era.ed.ac.uk/handle/1842/4785
+
+thesis_year = 2010
+
+discipline = Computational Linguist
+
+workplaces = Saarland University
+
+website = https://www.uni-saarland.de/lehrstuhl/demberg.html
+
+image = Vera Demberg.jpg
+
+alt = Portrait photo of Prof. Dr. Vera Demberg
+
+caption = Portrait photo of Prof. Dr. Vera Demberg
+
+}}
+
+Vera Demberg (born 1981) is a German computational linguist and professor of computer science and computational linguistics at Saarland University.
+
+Her research interests include cognitive models of human language comprehension, natural language generation, experimental psycholinguistics, multimodal language processing in a dual-task setting, and experimental and computational discourse research and pragmatics.
+
+Career and research
+
+Vera Demberg studied computational linguistics at the Institute for Machine Language Processing at the University of Stuttgart from 2001 to 2006. She then completed a Master's degree in Artificial Intelligence at the University of Edinburgh from 2004 to 2005. was awarded the Cognitive Science Society's “Glushko Dissertation Prize in Cognitive Science” in 2011. In her work, she designed a model of human sentence processing that can be used to predict difficulties in processing at the syntactic level.
+
+From 2010 to 2016, Vera Demberg led an independent research group on cognitive models of human language processing and their application to speech dialog systems in the Cluster of Excellence “Multimodal Computing and Interaction” at the University of Saarland.
+
+In 2016, she was appointed there to a professorship in computer science and computational linguistics. Demberg's professorship is in the Department of Computer Science (Faculty of Mathematics and Computer Science). She is also a co-opted professor in the Department of Linguistics and Language Technology (Faculty of Philosophy).
+
+Since 2020, she has led the ERC Starting Grant “Individualized Interaction in Discourse”. The project conducts research on how to make linguistic interaction with computer systems more natural.
+
+She has authored and co-authored numerous papers on the study of computational linguistics and natural language processing. According to Google Scholar, Vera Demberg has an H-index of 30.
+
+Publications
+
+Information Presentation in Spoken Dialogue Systems - Building More Effective Dialogue Systems by Structuring Information and Tailoring Presentation to the User (2008, VDM Verlag Dr. Mueller e.K.;  )
+
+Letter-to-Phoneme Conversion - Morphological Preprocessing, Syllabification, Word Stress Assignment and Letter-to-Phoneme Conversion with a Focus on German (2008, VDM Verlag Dr. Mueller e.K.;  )
+
+Awards
+
+2011: Cognitive Science Society Glushko Dissertation Prize in Cognitive Science
+
+2024: Member of the Academy of Sciences and Literature
+
+References
+
+External links
+
+Website of the chair of Prof. Demberg
+
+Category:Living people
+
+Category:1981 births
+
+Category:German women computer scientists
+
+Category:German women academics
+
+Category:21st-century German linguists
+
+Category:21st-century German women scientists
+
+Category:German computer scientists
+
+Category:Psycholinguists
+
+Category:Natural language processing researchers
+
+Category:Computational linguistics researchers
+
+Category:University of Stuttgart alumni
+
+Category:Alumni of the University of Edinburgh
+
+Category:European Research Council grantees
+
+Category:Academic staff of Saarland University

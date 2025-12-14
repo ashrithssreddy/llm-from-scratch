@@ -1,0 +1,27 @@
+In statistics, a maximum-entropy Markov model (MEMM), or conditional Markov model (CMM), is a graphical model for sequence labeling that combines features of hidden Markov models (HMMs) and maximum entropy (MaxEnt) models. An MEMM is a discriminative model that extends a standard maximum entropy classifier by assuming that the unknown values to be learnt are connected in a Markov chain rather than being conditionally independent of each other. MEMMs find applications in natural language processing, specifically in part-of-speech tagging and information extraction.
+
+Model
+
+Suppose we have a sequence of observations O_1, \dots, O_n that  we seek to tag with the labels S_1, \dots, S_nthat maximize the conditional probability P(S_1, \dots, S_n \mid O_1, \dots, O_n). In a MEMM, this probability is factored into  Markov transition probabilities, where the probability of transitioning to a particular label depends only on the observation at that position and the previous position's label:
+
+P(S_1, \dots, S_n \mid O_1, \dots, O_n) = \prod_{t = 1}^nP(S_t \mid S_{t-1},O_t).
+
+Each of these transition probabilities comes from the same general distribution P(s\mid s',o). For each possible label value of the previous label s', the probability of a certain label  s  is modeled in the same way as a maximum entropy classifier:
+
+P(s\mid s',o) = P_{s'}(s\mid o) = \frac{1}{Z(o,s')} \exp \left( \sum_a \lambda_a f_a(o,s)\right).
+
+Here, the f_a(o,s) are real-valued or categorical feature-functions, and  Z(o,s')  is a normalization term ensuring that the distribution sums to one. This form for the distribution corresponds to the maximum entropy probability distribution satisfying the constraint that the empirical expectation for the feature is equal to the expectation given the model:
+
+\operatorname{E}_e\left[f_a(o,s)\right] = \operatorname{E}_p\left[f_a(o,s)\right] \quad \text{ for all } a .
+
+The parameters \lambda_a can be estimated using generalized iterative scaling. Furthermore, a variant of the Baum–Welch algorithm, which is used for training HMMs, can be used to estimate parameters when training data has incomplete or missing labels.
+
+which had already been recognised in the context of neural network-based Markov models in the early 1990s.
+
+Another source of label bias is that training is always done with respect to known previous tags, so the model struggles at test time when there is uncertainty in the previous tag.
+
+References
+
+Category:Markov models
+
+Category:Statistical natural language processing

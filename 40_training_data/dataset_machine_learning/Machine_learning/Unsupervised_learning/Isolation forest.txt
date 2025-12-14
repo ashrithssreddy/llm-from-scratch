@@ -1,0 +1,147 @@
+Isolation Forest is an algorithm for data anomaly detection using binary trees. It was developed by Fei Tony Liu in 2008.  It has a linear time complexity and a low memory use, which works well for high-volume data. It is based on the assumption that because anomalies are few and different from other data, they can be isolated using few partitions. Like decision tree algorithms, it does not perform density estimation. Unlike decision tree algorithms, it uses only path length to output an anomaly score, and does not use leaf node statistics of class distribution or target value.
+
+Isolation Forest is fast because it splits the data space, randomly selecting an attribute and split point.  The anomaly score is inversely associated with the path-length because anomalies need fewer splits to be isolated, because they are few and different.
+
+History
+
+The Isolation Forest (iForest) algorithm was initially proposed by Fei Tony Liu, Kai Ming Ting and Zhi-Hua Zhou in 2008.
+
+Isolation trees
+
+The premise of the Isolation Forest algorithm is that anomalous data points are easier to separate from the rest of the sample. In order to isolate a data point, the algorithm recursively generates partitions on the sample by randomly selecting an attribute and then randomly selecting a split value between the minimum and maximum values allowed for that attribute.
+
+An example of random partitioning in a 2D dataset of normally distributed points is shown in the first figure for a non-anomalous point and in the second one for a point that is more likely to be an anomaly. It is apparent from the pictures how anomalies require fewer random partitions to be isolated, compared to normal points.
+
+Recursive partitioning can be represented by a tree structure named Isolation Tree, while the number of partitions required to isolate a point can be interpreted as the length of the path, within the tree, to reach a terminating node starting from the root. For example, the path length of point x_i in the first figure is greater than the path length of x_j in the second figure.
+
+Let X = \{x_1, \dots, x_n\} be a set of d-dimensional points and X' \subset X. An Isolation Tree (iTree) is defined as a data structure with the following properties:
+
+for each node T in the Tree, T is either an external-node with no child, or an internal-node with one “test” and exactly two child nodes (T_l and  T_r)
+
+a test at node T consists of an attribute q and a split value p such that the test q  determines the traversal of a data point to either T_l or T_r.
+
+In order to build an iTree, the algorithm recursively divides X' by randomly selecting an attribute q and a split value p, until either
+
+the node has only one instance, or
+
+all data at the node have the same values.
+
+When the iTree is fully grown, each point in X is isolated at one of the external nodes. Intuitively, the anomalous points are those (easier to isolate, hence) with the smaller path length in the tree, where the path length h(x_i) of point x_i \in X is defined as the number of edges x_i traverses from the root node to get to an external node.
+
+A probabilistic explanation of iTree is provided in the original iForest paper.
+
+c(m) = \begin{cases} 2H(m-1)-\frac{2(m-1)}{n} & \text{for }m>2 \\ 1 & \text{for }m=2 \\ 0 & \text{otherwise} \end{cases}
+
+where n is the test set size, m is the sample set size and H is the harmonic number, which can be estimated by H(i)=ln(i)+\gamma, where \gamma=0.5772156649  is the Euler-Mascheroni constant.
+
+Above, c(m) is the average h(x) given m, so we can use it to normalize h(x) to get an estimate of the anomaly score for a given instance x:
+
+s(x,m)=2^\frac{-E(h(x))}{c(m)}
+
+where E(h(x)) is the average value of h(x) from a collection of iTrees. For any data point x:
+
+if s is close to 1 then x is very likely an anomaly
+
+if s is smaller than 0.5 then x is likely normal
+
+if all points in the sample score around 0.5, then likely they are all normal
+
+Application of isolation forest for credit card fraud detection (anomaly)
+
+The Isolation Forest algorithm has shown its effectiveness in spotting anomalies in data sets like uncovering credit card fraud instances among transactions, by European cardholders with an unbalanced dataset where it can distinguish fraudulent activities from legitimate ones by identifying rare patterns that show notable differences.
+
+Dataset and preprocessing
+
+In this research projects dataset, there are 284807 transactions recorded in total out of which only 492 are identified as fraudulent (0.172%). Due to this imbalance between authentic and fraudulent transactions detection of fraud becomes quite demanding; hence specialized metrics such as the Area Under the Precision Recall Curve (AUPRC) are essential for accurate evaluation rather, than relying solely on traditional accuracy measures.
+
+Imputation:  Missing data in the dataset were filled in by using the average of the corresponding columns, with SimpleImputer.
+
+Model training and hyperparameter tuning
+
+The Isolation Forest model was specifically trained on transactions (Class=0) focusing on recognizing common behavioral patterns in data analysis tasks. The algorithm separates out instances by measuring the distance needed to isolate them within a collection of randomly divided trees.
+
+Masking: When there are many anomalies, some of them can aggregate in a dense, large cluster, making it more difficult to separate the single anomalies and so to identify them. This phenomenon is called “masking”, and as with swamping, is more likely when the sample is big and can be alleviated through sub-sampling. The main reason is that in a high-dimensional space, every point is equally sparse, so using a distance-based measure of separation is ineffective. Unfortunately, high-dimensional data also affects the detection performance of iForest, but the performance can be vastly improved by using feature selection, like Kurtosis, to reduce the dimensionality of the sample.
+
+The Isolation Forest algorithm involves several key parameters that influence its behavior and effectiveness. These parameters control various aspects of the tree construction process, the size of the sub-samples, and the thresholds for identifying anomalies.|| More trees improve performance, but are costly.|| Requires more trees to capture complexity.|| Adjust based on dataset size.
+
+library.|alt=]]
+
+The figure depicts a score map of a regular Isolation Forest in comparison to an Extended Isolation Forest for a sinusoidal-shaped data-set. This image allows us to clearly observe the improvement made by the Extended Isolation Forest in evaluating the scores much more accurately when compared to the shape of the data. While the regular isolation forest fails in capturing the sinusoid shape of the data and properly evaluating the anomaly scores. The regular Isolation Forest shapes the anomaly scores into a rectangular shape and simply assumes that any region nearby the sinusoid data point is not to be anomalous. In comparison, the EIF is more accurate in evaluating anomaly scores with more detail and unlike its predecessor, the EIF is able to detect anomalies that are close to the sinusoid shape of the data but are still anomalous. The original EIF publication includes also this comparison with a single-blob-shaped data-set and a two-blob-shaped data-set, also comparing the EIF results to isolation forest using rotation trees.
+
+Improvements in extended isolation forest
+
+The Extended Isolation Forest enhances the traditional Isolation Forest algorithm by addressing some of its limitations, particularly in handling high-dimensional data and improving anomaly detection accuracy. Key improvements in EIF include:
+
+Enhanced Splitting Mechanism: Unlike traditional Isolation Forest, which uses random axis-aligned splits, EIF uses hyperplanes for splitting data. This approach allows for more flexible and accurate partitioning of the data space, which is especially useful in high-dimensional datasets.
+
+Improved Anomaly Scoring: EIF refines the anomaly scoring process by considering the distance of data points from the hyperplane used in splitting. This provides a more granular and precise anomaly score, leading to better differentiation between normal and anomalous points.
+
+Handling of High-Dimensional Data: The use of hyperplanes also improves EIF's performance in high-dimensional spaces. Traditional Isolation Forest can suffer from the curse of dimensionality in such scenarios, but EIF mitigates this issue by creating more meaningful and informative partitions in the data space.
+
+Open source implementations
+
+Original implementation by Fei Tony Liu is Isolation Forest in R.
+
+Other implementations (in alphabetical order):
+
+ELKI contains a Java implementation.
+
+Isolation Forest - A distributed Spark/Scala implementation with Open Neural Network Exchange (ONNX) export for easy cross-platform inference.
+
+Isolation Forest by H2O-3 - A Python implementation.
+
+Package solitude implementation in R.
+
+Python implementation with examples in scikit-learn.
+
+Spark iForest - A distributed Apache Spark implementation in Scala/Python.
+
+PyOD IForest - Another Python implementation in the popular Python Outlier Detection (PyOD) library.
+
+Other variations of Isolation Forest algorithm implementations:
+
+Extended Isolation Forest – An implementation of Extended Isolation Forest.
+
+Extended Isolation Forest by H2O-3 - An implementation of Extended Isolation Forest.
+
+(Python, R, C/C++) Isolation Forest and variations - An implementation of Isolation Forest and its variations.
+
+Python implementation with Scikit-learn
+
+The isolation forest algorithm is commonly used by data scientists through the version made available in the scikit-learn library. The snippet below depicts a brief implementation of an isolation forest, with direct explanations with comments.
+
+import pandas as pd
+
+from sklearn.ensemble import IsolationForest
+
+Consider 'data.csv' is a file containing samples as rows and features as column, and a column labeled 'Class' with a binary classification of your samples.
+
+df = pd.read_csv("data.csv")
+
+X = df.drop(columns=["Class"])
+
+y = df["Class"]
+
+Determine how many samples will be outliers based on the classification
+
+outlier_fraction = len(df[df["Class"] == 1]) / float(len(df[df["Class"] == 0]))
+
+Create and fit model, parameters can be optimized
+
+model =  IsolationForest(n_estimators=100, contamination=outlier_fraction, random_state=42)
+
+model.fit(df)
+
+In this snippet we can observe the simplicity of a standard implementation of the algorithm. The only requirement data that the user needs to adjust is the outlier fraction in which the user determines a percentage of the samples to be classifier as outliers. This can be commonly done by selection a group among the positive and negative samples according to a giving classification. Most of the other steps are pretty standard to any decision tree based technique made available  through scikit-learn, in which the user simply needs to split the target variable from the features and fit the model after it is defined with a giving number of estimators (or trees).
+
+This snippet is a shortened adapted version of an implementation explored by GeeksforGeeks, which can be accessed for further explorations.
+
+See also
+
+Anomaly detection
+
+References
+
+Category:Unsupervised learning
+
+Category:Statistical outliers

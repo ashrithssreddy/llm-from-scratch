@@ -1,0 +1,63 @@
+In multivariate statistics, exploratory factor analysis (EFA) is a statistical method used to uncover the underlying structure of a relatively large set of variables. EFA is a technique within factor analysis whose overarching goal is to identify the underlying relationships between measured variables. It is commonly used by researchers when developing a scale (a scale is a collection of questions used to measure a particular research topic) and serves to identify a set of latent constructs underlying a battery of measured variables. It should be used when the researcher has no a priori hypothesis about factors or patterns of measured variables.  Measured variables are any one of several attributes of people that may be observed and measured. Examples of measured variables could be the physical height, weight, and pulse rate of a human being. Usually, researchers would have a large number of measured variables, which are assumed to be related to a smaller number of "unobserved" factors. Researchers must carefully consider the number of measured variables to include in the analysis. EFA is essential to determine underlying factors/constructs for a set of measured variables; while confirmatory factor analysis allows the researcher to test the hypothesis that a relationship between the observed variables and their underlying latent  exists.
+
+EFA requires the researcher to make a number of important decisions about how to conduct the analysis because there is no one set method.
+
+Fitting procedures
+
+Fitting procedures are used to estimate the factor loadings and unique variances of the model (Factor loadings are the regression coefficients between items and factors and measure the influence of a common factor on a measured variable). There are several factor analysis fitting methods to choose from, however there is little information on all of their strengths and weaknesses and many don't even have an exact name that is used consistently. Principal axis factoring (PAF) and maximum likelihood (ML) are two extraction methods that are generally recommended. In general, ML or PAF give the best results, depending on whether data are normally-distributed or if the assumption of normality has been violated. ML is the best choice when data are normally distributed because “it allows for the computation of a wide range of indexes of the goodness of fit of the model [and] permits statistical significance testing of factor loadings and correlations among factors and the computation of confidence intervals”.
+
+Overfactoring occurs when too many factors are included in a model and may lead researchers to put forward constructs with little theoretical value.
+
+Underfactoring occurs when too few factors are included in a model. If not enough factors are included in a model, there is likely to be substantial error. Measured variables that load onto a factor not included in the model can falsely load on factors that are included, altering true factor loadings. This can result in rotated solutions in which two factors are combined into a single factor, obscuring the true factor structure.
+
+There are a number of procedures designed to determine the optimal number of factors to retain in EFA. Broadly speaking, most of the existing procedures approach the determination of the appropriate number of factors (1) by inspecting patterns of eigenvalues of the covariance matrix, or (2) treating it as a model selection problem. Existing approaches include: Kaiser's (1960) eigenvalue-greater-than-one rule (or K1 rule), Cattell's (1966) scree plot, Revelle and Rocklin's (1979) very simple structure criterion, model comparison techniques, Raiche, Roipel, and Blais's (2006) acceleration factor and optimal coordinates, Velicer's (1976) minimum average partial, Horn's (1965) parallel analysis, and Ruscio and Roche's (2012) comparison data. Recent simulation studies assessing the robustness of such techniques suggest that the latter five can better assist practitioners to judiciously model data. for guidance on how to carry out these procedures for continuous, ordinal, and heterogenous (continuous and ordinal) data.
+
+With the exception of Revelle and Rocklin's (1979) very simple structure criterion, model comparison techniques, and Velicer's (1976) minimum average partial, all other procedures rely on the analysis of eigenvalues. The eigenvalue of a factor represents the amount of variance of the variables accounted for by that factor. The lower the eigenvalue, the less that factor contributes to explaining the variance of the variables.
+
+Cattell's (1966) scree plot
+
+Compute the eigenvalues for the correlation matrix and plot the values from largest to smallest. Examine the graph to determine the last substantial drop in the magnitude of eigenvalues. The number of plotted points before the last drop is the number of factors to include in the model. As this procedure is subjective, Courtney (2013) does not recommend it.  Used to test the null hypothesis that a model has perfect model fit. It should be applied to models with an increasing number of factors until the result is nonsignificant, indicating that the model is not rejected as good model fit of the population. This statistic should be used with a large sample size and normally distributed data. There are some drawbacks to the likelihood ratio test. First, when there is a large sample size, even small discrepancies between the model and the data result in model rejection.  When there is a small sample size, even large discrepancies between the model and data may not be significant, which leads to underfactoring.
+
+Root mean square error of approximation (RMSEA) fit index: RMSEA is an estimate of the discrepancy between the model and the data per degree of freedom for the model. According to common rules of thumb, values less than .05 constitute good fit, values between 0.05 and 0.08  constitute acceptable fit, a values between 0.08 and 0.10 constitute marginal fit and values greater than 0.10 indicate poor fit . An advantage of the RMSEA fit index is that it provides confidence intervals which allow researchers to compare a series of models with varying numbers of factors.
+
+Information Criteria: Information criteria such as Akaike Information Criterion (AIC) or the Bayesian Information Criterion (BIC)  can be used to trade-off model fit with model complexity and select an optimal number of factors.
+
+Out-of-sample Prediction Errors (PE): Using the connection between model-implied covariance matrices and standardized regression weights, the number of factors can be selected using out-of-sample prediction errors. presented two families of non-graphical solutions. The first method, coined the optimal coordinate (OC), attempts to determine the location of the scree by measuring the gradients associated with eigenvalues and their preceding coordinates. The second method, coined the acceleration factor (AF), pertains to a numerical solution for determining the coordinate where the slope of the curve changes most abruptly. Both of these methods have out-performed the K1 method in simulation. However, in a very small minority of cases MAP may grossly overestimate the number of factors in a dataset for unknown reasons. This procedure is made available through SPSS's user interface. See Courtney (2013)  This procedure can be somewhat arbitrary (i.e. a factor just meeting the cutoff will be included and one just below will not). Despite its shortcomings, this procedure performs very well in simulation studies and is one of Courtney's recommended procedures.
+
+Convergence of multiple tests
+
+A review of 60 journal articles by Henson and Roberts (2006) found that none used multiple modern techniques in an attempt to find convergence, such as PA and Velicer's (1976) minimum average partial (MAP) procedures. Ruscio and Roche (2012) simulation study demonstrated the empirical advantage of seeking convergence. When the CD and PA procedures agreed, the accuracy of the estimated number of factors was correct 92.2% of the time. Ruscio and Roche (2012) demonstrated that when further tests were in agreement, the accuracy of the estimation could be increased even further. For any solution with two or more factors there are an infinite number of orientations of the factors that will explain the data equally well. Because there is no unique solution, a researcher must select a single solution from the infinite possibilities. The goal of factor rotation is to rotate factors in multidimensional space to arrive at a solution with best simple structure, where simple structure refers to a factor matrix with m columns in which:
+
+Equimax rotation is a compromise between varimax and quartimax criteria.
+
+Oblique rotation
+
+Oblique rotations permit correlations among factors. An advantage of oblique rotation is that it produces solutions with better simple structure when factors are expected to correlate, and it produces estimates of correlations among factors.
+
+Factor interpretation
+
+Factor loadings are numerical values that indicate the strength and direction of a factor on a measured variable. Factor loadings indicate how strongly the factor influences the measured variable. In order to label the factors in the model, researchers should examine the factor pattern to see which items load highly on which factors and then determine what those items have in common.
+
+However, while exploratory factor analysis is a powerful tool for uncovering underlying structures among variables, it is crucial to avoid reliance on it without adequate theorizing. Armstrong's critique highlights that EFA, when conducted without a theoretical framework, can lead to misleading interpretations. For instance, in a hypothetical case study involving the analysis of various physical properties of metals, the results of EFA failed to identify the true underlying factors, instead producing an "over-factored" model that obscured the simplicity of the relationships amongst the observed variables. Similarly, poorly designed survey items can lead to spurious factor structures.
+
+See also
+
+Confirmatory factor analysis
+
+Exploratory factor analysis vs. Principal component analysis
+
+Exploratory factor analysis (Wikiversity)
+
+Factor analysis
+
+References
+
+External links
+
+Best Practices in Exploratory Factor Analysis: Four Recommendations for Getting the Most From Your Analysis. http://pareonline.net/pdf/v10n7.pdf
+
+Wikiversity: Exploratory Factor Analysis. http://en.wikiversity.org/wiki/Exploratory_factor_analysis
+
+Tucker and MacCallum: Exploratory Factor Analysis. pdf
+
+Category:Factor analysis

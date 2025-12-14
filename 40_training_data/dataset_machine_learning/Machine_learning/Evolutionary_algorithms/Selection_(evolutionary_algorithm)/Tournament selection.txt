@@ -1,0 +1,37 @@
+Tournament selection is a method of selecting an individual from a population of individuals in a evolutionary algorithm. Tournament selection involves running several "tournaments" among a few individuals (or "chromosomes") chosen at random from the population.  The winner of each tournament (the one with the best fitness) is selected for crossover.
+
+Selection pressure is then a probabilistic measure of a chromosome's likelihood of participation in the tournament based on the participant selection pool size, is easily adjusted by changing the tournament size. The reason is that if the tournament size is larger, weak individuals have a smaller chance to be selected, because, if a weak individual is selected to be in a tournament, there is a higher probability that a stronger individual is also in that tournament.
+
+Pseudo Code
+
+The tournament selection method may be described in pseudo code:
+
+choose k (the tournament size) individuals from the population at random
+
+choose the best individual from the tournament with probability p
+
+choose the second best individual with probability p*(1-p)
+
+choose the third best individual with probability p*((1-p)^2)
+
+and so on
+
+Variants
+
+Deterministic tournament selection selects the best individual (when p = 1) in any tournament.
+
+A 1-way tournament (k = 1) selection is equivalent to random selection.
+
+There are two variants of the selection: with and without replacement. The variant without replacement guarantees that when selecting N individuals from a population of N elements, each individual participates in exactly k tournaments.
+
+An algorithm is proposed in. Note that depending on the number of elements selected, selection without replacement does not guarantee that no individual is selected more than once. It just guarantees that each individual has an equal chance of participating in the same number of tournaments.
+
+Advantages
+
+In comparison with the (stochastic) fitness proportionate selection method, tournament selection is often implemented in practice due to its lack of stochastic noise.
+
+Tournament selection has several benefits over alternative selection methods for genetic algorithms (for example, fitness proportionate selection and reward-based selection): it is efficient to code, works on parallel architectures and allows the selection pressure to be easily adjusted.
+
+References
+
+Category:Selection (evolutionary algorithm)

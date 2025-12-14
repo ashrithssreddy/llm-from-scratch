@@ -1,0 +1,135 @@
+Low-rank matrix approximations are essential tools in the application of kernel methods to large-scale learning problems.
+
+Kernel methods (for instance, support vector machines or Gaussian processes) project data points into a high-dimensional or infinite-dimensional feature space and find the optimal splitting hyperplane. In the kernel method the data is represented in a kernel matrix (or, Gram matrix). Many algorithms can solve machine learning problems using the kernel matrix. The main problem of kernel method is its high computational cost associated with kernel matrices. The cost is at least quadratic in the number of training data points, but most kernel methods include computation of matrix inversion or eigenvalue decomposition and the cost becomes cubic in the number of training data. Large training sets cause large storage and computational costs. While low rank decomposition methods (Cholesky decomposition) reduce this cost, they still require computing the kernel matrix.  One of the approaches to deal with this problem is low-rank matrix approximations. The most popular examples of them are the Nyström approximation and randomized feature maps approximation methods. Both of them have been successfully applied to efficient kernel learning.
+
+Nyström approximation
+
+Kernel methods become computationally unfeasible when the number of points D is so large such that the kernel matrix K cannot be stored in memory.
+
+If D is the number of training examples, the storage and computational cost required to find the solution of the problem using general kernel method is O(D^2) and O(D^3) respectively. The Nyström approximation can allow a significant speed-up of the computations. This speed-up is achieved by using, instead of the kernel matrix, its approximation \tilde{K} of rank d. An advantage of the method is that it is not necessary to compute or store the whole kernel matrix, but only a submatrix of size d \times D.
+
+It reduces the storage and complexity requirements to  O(Dd) and  O(Dd^2) respectively.
+
+The method is named "Nyström approximation" because it can be interpreted as a case of the Nyström method from integral equation theory.
+
+Consider a positive-definite kernel function k: X \times X \to \R . Given some data points x_1, x_2, \dots, x_D, we can form the kernel matrix K \in \R^{D \times D} such that K_{ij} := k(x_i, x_j).
+
+Now, let d \in 1:D be an integer, then we can divide the kernel matrix as K = \begin{bmatrix} K_{11} & K_{12} \\ K_{21} & K_{22} \end{bmatrix} \in \R^{D\times D}, where K_{11} \in \R^{d \times d} is the top-left corner of it. Also, set C = \begin{bmatrix} K_{11} \\ K_{21} \end{bmatrix} to be its first d columns.
+
+The Nyström approximation of K in this case is\tilde K = CK_{11}^+ C^T =
+
+\begin{bmatrix} K_{11} \\ K_{21} \end{bmatrix}K_{11}^+\begin{bmatrix} K_{11} & K_{12} \end{bmatrix} where K_{11}^+ is the Moore–Penrose pseudoinverse of K_{11}.
+
+Properties
+
+By Mercer's theorem, we can decompose the kernel matrix as a Gram matrix: K = X^T X, where X \in \R^{N \times D}. Let X' be the left d columns of X.
+
+{{Math theorem
+
+math_statement = We have
+
+\tilde K = \begin{bmatrix} K_{11} & K_{12} \\ K_{21} & K_{21}K_{11}^+ K_{12} \end{bmatrix}
+
+The Nyström approximation \tilde K is the unique matrix that is symmetric, has the same first d columns as K, and has column space spanned by the first d columns of K.
+
+\tilde K = (PX)^T(PX), where P is the projection matrix that orthogonally projects to the space spanned by the first d columns of X.
+
+\tilde K is positive semidefinite.
+
+If \operatorname{rank}(K_{11}) = \operatorname{rank}(K), then \tilde K = K .
+
+}}
+
+{{Math proof|title=Proof|proof=
+
+1. The top-left is by the proposition about pseudoinverse: K_{11}K_{11}^+ K_{11} = K_{11}.
+
+Take the SVD X' = U\Sigma V, where U, V are full-squares, and \Sigma has shape \R^{N \times d}. Now evaluate by brute force the top-right corner, which gives
+
+(U \Sigma (\Sigma^T \Sigma )^+ (\Sigma^T \Sigma ) V)^TX''
+
+Count the diagonal entries, and see that the sigma-cluster evaluates to \Sigma.
+
+2. From the first two requirements, we know that \tilde K = \begin{bmatrix} K_{11} & K_{12} \\ K_{21} & ? \end{bmatrix}. From the previous calculation, we know that K_{11}K_{11}^+ K_{12} = K_{12}, so we can write \tilde K = \begin{bmatrix} K_{11} & K_{11}(K_{11}^+ K_{12}) \\ K_{21} & ? \end{bmatrix}. The third requirement then implies \tilde K = \begin{bmatrix} K_{11} & K_{11}(K_{11}^+ K_{12}) \\ K_{21} & K_{21}(K_{11}^+ K_{12}) \end{bmatrix}.
+
+3. Evaluate directly in matrix blocks, and get
+
+\tilde K = X^T (X'(X'^T X')^+ X'^T) X
+
+Take the SVD X' = U\Sigma V, where U, V are full-squares, and \Sigma has shape \R^{N \times d}. Now evaluate X'(X'^T X')^+ X'^T = U M U^T where M = \Sigma (\Sigma^T \Sigma)^+ \Sigma^T is a matrix of shape \R^{N \times N}. It is diagonal. Its first \operatorname{rank}(X') entries are 1, and the rest are 0.
+
+Thus, UMU^T is the orthogonal projection to the first \operatorname{rank}(X') columns of U.
+
+(4) is a corollary of (3). (5) is a corollary of (2)
+
+}}
+
+Regularized least squares
+
+In a vector and kernel notation, the problem of regularized least squares can be rewritten as:
+
+\min_{c \in \Reals^{n}}\frac{1}{n}\|Y-Kc\|^{2}_{\Reals^{n}} + \lambda\langle c,Kc\rangle_{\Reals^{n}} .
+
+Computing the gradient and setting in to 0, the minimum can be obtained:
+
+\begin{align}
+
+& -\frac{1}{n}K(Y-Kc) + \lambda Kc = 0 \\
+
+\Rightarrow {} & K(K+\lambda n I)c = K Y \\
+
+\Rightarrow {} & c = (K+\lambda n I)^{-1}Y, \text{ where } c \in \Reals^{n}
+
+\end{align}
+
+The inverse matrix (K+\lambda n I)^{-1} can be computed using Woodbury matrix identity:
+
+\begin{align}
+
+(K+\lambda n I)^{-1} &= \frac{1}{\lambda n}\left(\frac{1}{\lambda n}K + I\right)^{-1} \\
+
+&= \frac{1}{\lambda n}\left(I + K_{n,q}({\lambda n}K_{q})^{-1}K_{n,q}^\text{T}\right)^{-1} \\
+
+&= \frac{1}{\lambda n}\left(I-K_{n,q}(\lambda nK_{q}+K_{n,q}^\text{T} K_{n,q})^{-1}K_{n,q}^\text{T}\right)
+
+\end{align} It has the desired storage and complexity requirements.
+
+Randomized feature maps approximation
+
+Let  \mathbf{x}, \mathbf{x'} \in \Reals^d – samples of data,  z: \Reals^d \to \Reals^D – a randomized feature map (maps a single vector to a vector of higher dimensionality) so that the inner product between a pair of transformed points approximates their kernel evaluation:
+
+K(\mathbf{x}, \mathbf{x'}) = \langle\Phi(\mathbf{x}),\Phi(\mathbf{x'})\rangle \approx z(\mathbf{x})^\text{T}z(\mathbf{x'}),
+
+where  \Phi is the mapping embedded in the RBF kernel.
+
+Since  z is low-dimensional, the input can be easily transformed with  z, after that different linear learning methods to approximate the answer of the corresponding nonlinear kernel can be applied. There are different randomized feature maps to compute the approximations to the RBF kernels. For instance, random Fourier features and random binning features.
+
+Random Fourier features
+
+The random Fourier features map produces a Monte Carlo approximation to the feature map. The Monte Carlo method is considered to be randomized. These random features consists of sinusoids \cos(w^\text{T}\mathbf{x}+b) randomly drawn from Fourier transform of the kernel to be approximated, where w \in \Reals^d and b \in \Reals are random variables. The line is randomly chosen, then the data points are projected on it by the mappings. The resulting scalar is passed through a sinusoid.  The product of the transformed points will approximate a shift-invariant kernel. Since the map is smooth, random Fourier features work well on interpolation tasks.
+
+Random binning features
+
+A random binning features map partitions the input space using randomly shifted grids at randomly chosen resolutions and assigns to an input point a binary bit string that corresponds to the bins in which it falls. The grids are constructed so that the probability that two points  \mathbf{x}, \mathbf{x'} \in \Reals^d are assigned to the same bin is proportional to  K(\mathbf{x}, \mathbf{x'}). The inner product between a pair of transformed points is proportional to the number of times the two points are binned together, and is therefore an unbiased estimate of  K(\mathbf{x}, \mathbf{x'}). Since this mapping is not smooth and uses the proximity between input points, Random binning features works well for approximating kernels that depend only on the L_1 distance between datapoints.
+
+Comparison of approximation methods
+
+The approaches for large-scale kernel learning (Nyström method and random features) differs in the fact that the Nyström method uses data dependent basis functions while in random features approach the basis functions are sampled from a distribution independent from the training data. This difference leads to an improved analysis for kernel learning approaches based on the Nyström method. When there is a large gap in the eigen-spectrum of the kernel matrix, approaches based on the Nyström method can achieve better results than the random features based approach.
+
+See also
+
+Nyström method
+
+Support vector machine
+
+Radial basis function kernel
+
+Regularized least squares
+
+External links
+
+Andreas Müller (2012). Kernel Approximations for Efficient SVMs (and other feature extraction methods).
+
+References
+
+Category:Kernel methods for machine learning

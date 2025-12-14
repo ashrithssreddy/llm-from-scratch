@@ -1,0 +1,65 @@
+{{multiple issues|
+
+}}
+
+{{Infobox scientist
+
+birth_name = Tamara Ann Broderick
+
+workplaces = Massachusetts Institute of Technology
+
+alma_mater =   Princeton University (BS)University of Cambridge (MAS) University of California, Berkeley (PhD)
+
+thesis_title = Clusters and features from combinatorial stochastic processes
+
+awards = National Science Foundation CAREER Award
+
+thesis_url = https://escholarship.org/uc/item/9s76h6kh
+
+thesis_year = 2014
+
+fields = Machine LearningStatisticsBayesian Inference
+
+website =
+
+}}
+
+Tamara Ann Broderick is an American computer scientist at the Massachusetts Institute of Technology. She works on machine learning and Bayesian inference.
+
+Education and early career
+
+Broderick is from Parma Heights, Ohio. She attended Laurel School and graduated in 2003. Whilst at high school she took part in the inaugural Massachusetts Institute of Technology Women's Technology Program. She studied mathematics at Princeton University, earning a bachelor's degree in 2007. She was co-president of the Princeton Math Club and organised a competition for high school maths teams. During her undergraduate degree, Broderick worked on dark matter haloes with Rachel Mandelbaum. Broderick moved to the United Kingdom for her graduate studies, earning a Master of Advanced Studies for completing Part III of the Mathematical Tripos at the University of Cambridge in 2009. Her Master's thesis looked at the Nomon selection method, improving the efficiency of communications. She returned to America in 2009, joining University of California, Berkeley for her Master's and PhD.
+
+Research and career
+
+Broderick joined Massachusetts Institute of Technology as an assistant professor in 2015. She was the recipient of a Google Faculty Research Grant and International Society for Bayesian Analysis Lifetime Members Junior Researcher Award. She was awarded an Army Research Office young investigator program award to investigate machine-learning to quantify uncertainty in data analysis.  Broderick is also Alfred P. Sloan Foundation scholar.
+
+Academic service
+
+In 2018, Broderick spoke at the Harvard University Institute for Applied Computational Science Women in Data Science conference. She spoke about Bayesian inference at the 2018 International Conference on Machine Learning. She led a three-day Masterclass on machine learning at University College London in June 2018. Broderick is a scientific advisor for AI.Reverie and WiML (Women in Machine Learning). She has developed a high-school level introduction to machine learning with the Women's Technology Program (WTP).
+
+Awards and honors
+
+Broderick was awarded the Evelyn Fix Memorial Medal and Citation and the International Society for Bayesian Analysis Savage Award for her doctoral thesis. She was awarded a National Science Foundation CAREER Award to scale her machine learning techniques. She was a 2021 Leadership Academy winner of the Committee of Presidents of Statistical Societies.
+
+References
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:American women computer scientists
+
+Category:American computer scientists
+
+Category:Machine learning researchers
+
+Category:Alumni of the University of Cambridge
+
+Category:University of California, Berkeley alumni
+
+Category:Princeton University alumni
+
+Category:Massachusetts Institute of Technology faculty
+
+Category:21st-century American women

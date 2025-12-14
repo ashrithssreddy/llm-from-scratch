@@ -1,0 +1,21 @@
+{{Infobox software
+
+name = PSL
+
+logo = PSL_Logo.png
+
+developer = LINQS Lab
+
+released =
+
+latest release version = 2.2.2
+
+}}
+
+External links
+
+Video lectures about PSL on Youtube
+
+Category:Bayesian statistics
+
+Category:Markov networks

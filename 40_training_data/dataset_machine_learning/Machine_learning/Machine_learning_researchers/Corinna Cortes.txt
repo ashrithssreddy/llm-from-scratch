@@ -1,0 +1,65 @@
+{{Infobox scientist
+
+name              = Corinna Cortes
+
+birth_date        =
+
+birth_place       = Denmark
+
+alma_mater        = University of Copenhagen (MS)University of Rochester (PhD)
+
+known_for        =  Support vector machinesMNIST database
+
+fields            = Machine learningData mining
+
+thesis_title      = Prediction of generalization ability in learning machines
+
+thesis_url        = http://hdl.handle.net/1802/811
+
+thesis_year       = 1994
+
+doctoral_advisor  = Randal C. Nelson
+
+Early life and education
+
+Corinna Cortes was born in 1961 in Denmark. Cortes received her Master of Science degree in physics from University of Copenhagen in 1989.
+
+Career and research
+
+Cortes joined AT&T Bell Labs as a researcher in 1993. Since 2003, she has served as Vice President of Google Research, New York City, She is serves as an editorial board member of the journal Machine Learning.
+
+Cortes' research covers a wide range of topics in machine learning, including support vector machines (SVM) and data mining. SVM is one of the most frequently used algorithms in machine learning, which is used in many practical applications, including medical diagnosis and weather forecasting.
+
+Awards and honours
+
+In 2008, she jointly with Vladimir Vapnik received the Paris Kanellakis Award for the development of a highly effective algorithm for supervised learning known as support vector machines (SVM). She was named an ACM Fellow in 2023 for theoretical and practical contributions to machine learning, industrial leadership and service to the field.
+
+Personal life
+
+Corinna has two children and is also a competitive runner.
+
+References
+
+Category:Living people
+
+Category:University of Copenhagen alumni
+
+Category:University of Rochester alumni
+
+Category:American computer scientists
+
+Category:Artificial intelligence researchers
+
+Category:Machine learning researchers
+
+Category:American women computer scientists
+
+Category:Google employees
+
+Category:Scientists at Bell Labs
+
+Category:21st-century American women
+
+Category:2022 fellows of the Association for Computing Machinery
+
+Category:1961 births

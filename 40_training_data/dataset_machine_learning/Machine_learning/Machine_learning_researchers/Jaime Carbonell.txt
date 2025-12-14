@@ -1,0 +1,165 @@
+{{Infobox scientist
+
+name              = Jaime Carbonell
+
+image             =
+
+birth_date        =
+
+birth_place       = Montevideo, Uruguay
+
+death_date        =
+
+death_place       =
+
+nationality       = American
+
+fields            = Language Technologies, Computer Science, Machine Learning, Computational Biology
+
+work_institutions = Carnegie Mellon University
+
+alma_mater        = MIT, Yale
+
+doctoral_advisor  = Roger Schank
+
+doctoral_students = Yolanda GilMichael Loren MauldinManuela M. Veloso
+
+thesis_title      = Subjective Understanding: Computer Models of Belief Systems
+
+thesis_year       = 1979
+
+thesis_url        = https://www.proquest.com/docview/302951387
+
+website           = www.cs.cmu.edu/~jgc/
+
+}}
+
+Jaime Guillermo Carbonell (July 29, 1953 – February 28, 2020) was a computer scientist who made seminal contributions to the development of natural language processing tools and technologies. His extensive research in machine translation resulted in the development of several state-of-the-art language translation and artificial intelligence systems. He earned his B.S. degrees in Physics and in Mathematics from MIT in 1975 and did his Ph.D. under Dr. Roger Schank at Yale University in 1979. He joined Carnegie Mellon University as an assistant professor of computer science in 1979 and lived in Pittsburgh from then. He was affiliated with the Language Technologies Institute, Computer Science Department, Machine Learning Department, and Computational Biology Department at Carnegie Mellon.
+
+His interests spanned several areas of artificial intelligence, language technologies and machine learning. In particular, his research focused on areas such as text mining (extraction, categorization, novelty detection) and in new theoretical frameworks such as a unified utility-based theory bridging information retrieval, summarization, free-text question-answering and related tasks.  He also worked on machine translation, both high-accuracy knowledge-based MT and machine learning for corpus-based MT (such as generalized example-based MT).
+
+Career
+
+Carbonell was the Allen Newell Professor of Computer Science and head of the Language Technologies Institute at Carnegie Mellon University. He joined Carnegie Mellon in 1979 and became a key faculty member in the artificial intelligence area. He was appointed full professor in 1987, Newell Chair in 1995, and University Professor in 2012.
+
+He did his undergraduate studies at MIT, getting dual degrees in Mathematics and Physics. He received his Ph.D. in computer science from Yale University in 1979.
+
+At the time of his appointment, Carbonell was the youngest chaired professor in the School of Computer Science at CMU. He was considered creative, insightful, and highly productive as a researcher. His research spanned several areas of computer science, mostly in artificial intelligence, including: machine learning, data and text mining, natural language processing, very-large-scale knowledge bases, translingual information retrieval and automated summarization. He wrote more than 300 technical papers and gave over 500 invited or refereed-paper presentations (colloquia, seminars, panels, conferences, keynotes, etc.). He died following a long illness on February 28, 2020. Mona Talat Diab became the director of CMU's Language Technologies Institute in the Fall 2023.
+
+Research
+
+Some of Carbonell's major scientific accomplishments included the creation of MMR (maximal marginal relevance) technology for text summarization and informational novelty detection in search engines, invention of transformational analogy, a generalized method for case-based reasoning (CBR) to re-use, modify and compose past successful plans for increasingly complex problems and Knowledge-based interlingual machine translation. He was instrumental in setting up the Computational Biolinguistics Program, a joint venture between Carnegie Mellon and the University of Pittsburgh, which combines Language Technologies and Machine Learning to model and predict genomic, proteomic and glycomic 3D structures.
+
+Carbonell was particularly well known in machine learning. He organized the first four machine learning conferences, starting with CMU in 1981. The Language Technologies Institute (LTI), founded and directed by Carbonell, achieved top honors in multiple areas. These areas include machine translation, search engines (including founding of Lycos by Michael Mauldin, one of Carbonell’s PhD students), speech synthesis, and  education. LTI remains the original, largest and best-known institute for language technologies, with over $12M in annual funding and 200 researchers (faculty, staff, PhD students, MS students, visiting scholars etc.).
+
+Carbonell made major technical contributions in several fields, including (1) Creation of MMR
+
+(maximal marginal relevance) technology for text summarization and informational novelty detection in
+
+search engines,(2) Proactive machine learning for multi-source cost-sensitive active learning, (3) Linked
+
+conditional random fields for predicting tertiary and quaternary protein folds, (4) Symmetric optimal
+
+phrasal alignment method for trainable example-based and statistical machine translation, (5) Series-
+
+anomaly modeling for financial fraud detection and syndromic surveillance, (6) Knowledge-based
+
+interlingual machine translation, (7) Robust case-frame parsing, (8) Seeded version-space learning and
+
+(9) Invention of transformational and derivational analogy, generalized methods for case-based reasoning
+
+(CBR) to re-use, modify and compose past successful plans for increasingly complex problems.
+
+The teams led by Carbonell achieved top honors in many areas such as first scalable high-accuracy
+
+interlingual machine translation (1991), first speech-to-speech machine translation (1992), first large-scale
+
+spider and search engine (1994), and first trainable, large-scale protein-structure topology predictor
+
+(2005). Modern machine learning, co-founded by Carbonell, Michalski and Mitchell, is a fundamental
+
+enabling technology in search engines, data mining and social networking. Starting in 1980, he co-edited
+
+the first three books on ML, launched the ML conferences and was a co-founder and editor-in-chief of ML
+
+Journal. Carbonell’s innovations have led to several successful start-ups: Carnegie Group (AI expertsystems),
+
+Lycos (web search), Wisdom (financial optimization & ML), Carnegie Speech (spoken-language
+
+tutoring), Dynamix (data mining and pattern discovery), and Meaningful Machines (context-based machine
+
+translation). Carbonell was the founding director of The Language Technology Institute, the preeminent
+
+global institution in language studies, unparalleled in size and scope and has since been
+
+adopted/imitated in Germany (DFKI), Japan (Tokyo Univ.), and the US (Johns Hopkins).
+
+Awards and honors
+
+Okawa Prize, 2015
+
+Best paper award, “Translingual Search” w/Yang, International Joint Conference on AI, 1997
+
+Allen Newell endowed chair, Carnegie Mellon University, 1995
+
+Elected fellow of AAAI, 1991
+
+Computer Science teaching award, Carnegie Mellon University, 1987
+
+Sperry Fellowship for excellence in AI research, 1986
+
+Herbert Simon teaching award, 1986
+
+"Recognition of Service" award from the ACM for the SIGART presidency, 1983–1985
+
+Provided congressional testimony on machine translation, 1990
+
+Selected works
+
+Books
+
+1983. (with Ryszard S. Michalski & Tom M. Mitchell, Eds.)  Machine learning: An artificial intelligence approach. Los Altos, CA: Morgan Kaufmann.
+
+1986. (with Ryszard S. Michalski & Tom Mitchell, Eds.) Machine learning: An artificial intelligence approach. Vol. II. Los Altos, CA: Morgan-Kaufmann.
+
+1986. (with Ryszard S. Michalski & Tom Mitchell, Eds.) Machine Learning: A Guide to Current Research. Kluwer Academic Publishers.
+
+Contributions
+
+“Protein Quaternary Fold Recognition Using Conditional Graphical Models” IJCAI 2007 (w/Liu et al.)
+
+“Context-Based Machine Translation” AMTA 2006 (w/Klein et al.)
+
+“SCRFs: A New Approach for Protein Fold Recognition,’’ Journal of Computational Biology, 13,2, 2006 (w/Liu et al)
+
+“MT for Resource-Poor Languages Using Elicitation-Based Learning” Machine Translation, 2004
+
+‘‘Learning Approaches for Detecting and Tracking News Events,’’ IEEE Trans I.S., 14, 4, 2000 (w/Yang)
+
+References
+
+External links
+
+Home Page
+
+List of publications
+
+Category:Carnegie Mellon University faculty
+
+Category:American computer scientists
+
+Category:Machine learning researchers
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:1953 births
+
+Category:2020 deaths
+
+Category:Uruguayan emigrants to the United States
+
+Category:Natural language processing researchers
+
+Category:Machine translation researchers
+
+Category:American translation scholars

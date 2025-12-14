@@ -1,0 +1,71 @@
+{{Infobox scientist
+
+name = Carol Friedman
+
+image =
+
+image_size =
+
+birth_date =
+
+birth_place =
+
+nationality = American
+
+field = Medical language processingBiomedical InformaticsPharmacovigilanceElectronic medical recordEAV model in EMR
+
+workplaces = Columbia UniversityQueens College, CUNY
+
+academic_advisors = Ralph Grishman
+
+alma_mater = New York University City College of New York
+
+doctoral_students =
+
+notable_students = Yves A. LussierEneida A. Mendonça
+
+known_for = MedLEEMedical language processingGENIES Medical language processing
+
+prizes = AMIA Donald A. B. Lindberg Award for Innovation in Biomedical Informatics, 2010Fellow of the New York Academy of Medicine, 2006Fellow, ACMINational Academy of Medicine (IOM 2016)
+
+}}
+
+Carol Friedman is a scientist and biomedical informatician. She is among the pioneers the use of expert systems in  medical language processing and the explicit medical concept representation underpinning the use of entity–attribute–value modeling underpinning electronic medical records.
+
+Life
+
+Before her doctoral degree, working under the direction of Naomi Sager at New York University, she also contributed to the development of second generation medical language processing systems. After her doctoral degree in computer science (natural language processing) under Dr. Ralph Grishman at the Courant Institute of Mathematics at New York University, she has developed annotative clinical information systems that have been integrated in the New York–Presbyterian Hospital, and the Columbia University Medical Center.
+
+She is recognized for her development, translation to clinical practice and evaluation of the MedLEE respectively). MedLEE and GENIES exemplify the translation to practice of the sub-language theory proposed by Zellig Harris that Friedman pursued. In summary, she has been demonstrating the value of natural language processing for a broad range of clinical and biomedical applications that include decision support, automated encoding, vocabulary development, sub-language grammar applied to biomedicine, clinical research, outcomes analysis, error detection, and genomics research.
+
+Friedman is Professor of Biomedical Informatics at Columbia University. Friedman was a member of the Board of Regents of the National Library of Medicine from 2007 to 2011, and has published over 150 articles.
+
+Publications
+
+References
+
+External links
+
+Category:Living people
+
+Category:United States National Library of Medicine
+
+Category:Health informaticians
+
+Category:New York University alumni
+
+Category:Columbia University faculty
+
+Category:Columbia Medical School faculty
+
+Category:Year of birth missing (living people)
+
+Category:Place of birth missing (living people)
+
+Category:City College of New York alumni
+
+Category:Members of the National Academy of Medicine
+
+Category:Natural language processing researchers
+
+Category:Data miners

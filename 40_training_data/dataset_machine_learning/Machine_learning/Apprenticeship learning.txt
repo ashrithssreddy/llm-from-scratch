@@ -1,0 +1,13 @@
+In artificial intelligence, apprenticeship learning (or learning from demonstration or imitation learning) is the process of learning by observing an expert. It can be viewed as a form of supervised learning, where the training dataset consists of task executions by a demonstration teacher. The IRL problem can be defined as: The scenario can be modeled as a "cooperative inverse reinforcement learning game", where a "person" player and a "robot" player cooperate to secure the person's implicit goals, despite these goals not being explicitly known by either the person nor the robot.
+
+In 2017, OpenAI and DeepMind applied deep learning to the cooperative inverse reinforcement learning in simple domains such as Atari games and straightforward robot tasks such as backflips. The human role was limited to answering queries from the robot as to which of two different actions were preferred. The researchers found evidence that the techniques may be economically scalable to modern systems.
+
+Apprenticeship via inverse reinforcement learning (AIRP) was developed by in 2004 Pieter Abbeel, Professor in Berkeley's EECS department, and Andrew Ng, Associate Professor in Stanford University's Computer Science Department. AIRP deals with "Markov decision process where we are not explicitly given a reward function, but where instead we can observe an expert demonstrating the task that we want to learn to perform".
+
+System model approach
+
+System models try to mimic the expert by modeling world dynamics.
+
+In 1997, robotics expert Stefan Schaal was working on the Sarcos robot-arm. The goal was simple: solve the pendulum swingup task. The robot itself can execute a movement, and as a result, the pendulum is moving. The problem is, that it is unclear what actions will result into which movement. It is an Optimal control-problem which can be described with mathematical formulas but is hard to solve. The idea from Schaal was, not to use a Brute-force solver but record the movements of a human-demonstration. The angle of the pendulum is logged over three seconds at the y-axis. This results into a diagram which produces a pattern.
+
+Category:Machine learning

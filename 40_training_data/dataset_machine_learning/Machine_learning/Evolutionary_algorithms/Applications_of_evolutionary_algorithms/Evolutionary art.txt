@@ -1,0 +1,93 @@
+]]
+
+Evolutionary art is a branch of generative art, in which the artist does not do the work of constructing the artwork, but rather lets a system do the construction.  In evolutionary art, initially generated art is put through an iterated process of selection and modification to arrive at a final product, where it is the artist who is the selective agent.
+
+Evolutionary art is to be distinguished from BioArt, which uses living organisms as the material medium instead of paint, stone, metal, etc.
+
+Overview
+
+In common with biological evolution through natural selection or animal husbandry, the members of a population undergoing artificial evolution modify their form or behavior over many reproductive generations in response to a selective regime.
+
+In interactive evolution the selective regime may be applied by the viewer explicitly by selecting individuals which are aesthetically pleasing. Alternatively a selection pressure can be generated implicitly, for example according to the length of time a viewer spends near a piece of evolving art.
+
+Equally, evolution may be employed as a mechanism for generating a dynamic world of adaptive individuals, in which the selection pressure is imposed by the program, and the viewer plays no role in selection, as in the Black Shoals project.
+
+See also
+
+Digital morphogenesis
+
+Electric Sheep
+
+Evolutionary music
+
+NEAT Particles
+
+Universal Darwinism
+
+Further reading
+
+Bentley, Peter, and David Corne. Creative Evolutionary Systems. Morgan Kaufmann, 2002.
+
+Metacreations: Art and Artificial Life, M Whitelaw, 2004, MIT Press
+
+The Art of Artificial Evolution: A Handbook on Evolutionary Art and Music, Juan Romero and Penousal Machado (eds.), 2007, Springer
+
+Evolutionary Art and Computers, W Latham, S Todd, 1992, Academic Press
+
+Genetic Algorithms in Visual Art and Music Special Edition: Leonardo. VOL. 35, ISSUE 2 - 2002 (Part I), C Johnson, J Romero Cardalda (eds), 2002, MIT Press
+
+Evolved Art: Turtles - Volume One, , Tim Endres, 2009, EvolvedArt.biz
+
+External links
+
+Abstract Genomic Art: An Introduction by Avi L. Friedlich
+
+[http://iasl.uni-muenchen.de/links/GCA-IV.3e.html Thomas Dreher: History of Computer Art, Chap. IV.3: Evolutionary Art
+
+"Evolutionary Art Gallery", by Thomas Fernandez
+
+"Biomorphs", by Richard Dawkins
+
+Genetic Art, a site that evolves images
+
+EndlessForms.com , Collaborative interactive evolution allowing you to evolve 3D objects and have them 3D printed.
+
+"MusiGenesis" , a program that evolves music on a PC
+
+"Evolve", a program by Josh Lee that evolves art through a voting process.
+
+"Living Image Project", a site where images are evolved based on votes of visitors.
+
+"An evolutionary art program using Cartesian Genetic Programming"
+
+Evolutionary Art on the Web  Interactively generate Mondriaan, Theo van Doesburg, Mandala and Fractal art.
+
+"Darwinian Poetry"
+
+"One mans eyes?", Aesthetically evolved images by Ashley Mills.
+
+"E-volver", interactive breeding units.
+
+"Breed", evolved sculptures produced by rapid manufacturing techniques.
+
+"Picbreeder" , Collaborative breeder allowing branching from other users' creations that produces pictures like faces and spaceships.
+
+"CFDG Mutate", a tool for image evolution based on Chris Coyne's Context Free Design Grammar.
+
+"xTNZ", a three-dimensional ecosystem, where creatures evolve shapes and sounds.
+
+The Art of Artificial Evolution: A Handbook on Evolutionary Art and Music
+
+Evolved Turtle Website  Evolved Turtle Website - Evolve art based on Turtle Logo using the Windows app BioLogo.
+
+Evolvotron  - Evolutionary art software (example output ).
+
+Artificial Evolution of the Cyprus Problem (2005) is an evolutionary artwork created by Genco Gulan
+
+Evo Art bibliography largest online bibliography to evolutionary art and related fields like evolutionary architecture and design, evolutionary image processing, generative art, computational aesthetics and computational creativity as part of the MediaWiki based Encyclopedia Evolutionary Art
+
+"Evomusart. 1st International Conference and 10th European Event on Evolutionary and Biologically Inspired Music, Sound, Art and Design"
+
+Category:Computer art
+
+Category:Applications of evolutionary algorithms

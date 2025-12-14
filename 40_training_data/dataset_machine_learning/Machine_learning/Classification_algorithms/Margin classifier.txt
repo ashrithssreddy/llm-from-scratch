@@ -1,0 +1,33 @@
+In machine learning (ML), a margin classifier is a type of classification model which is able to give an associated distance from the decision boundary for each data sample. For instance, if a linear classifier is used, the distance (typically Euclidean, though others may be used) of a sample from the separating hyperplane is the margin of that sample.
+
+The notion of margins is important in several ML classification algorithms, as it can be used to bound the generalization error of these classifiers. These bounds are frequently shown using the VC dimension. The generalization error bound in boosting algorithms and support vector machines is particularly prominent.
+
+Margin for boosting algorithms
+
+The margin for an iterative boosting algorithm given a dataset with two classes can be defined as follows: the classifier is given a sample pair (x,y), where x \in X is a domain space and y \in Y = \{-1, +1\} is the sample's label. The algorithm then selects a classifier h_j \in C at each iteration j where C is a space of possible classifiers that predict real values. This hypothesis is then weighted by \alpha_j \in R as selected by the boosting algorithm. At iteration t, the margin of a sample x can thus be defined as
+
+\frac{y \sum_j^t \alpha_j h_j (x)}{\sum |\alpha_j|}.
+
+By this definition, the margin is positive if the sample is labeled correctly, or negative if the sample is labeled incorrectly.
+
+This definition may be modified and is not the only way to define the margin for boosting algorithms. However, there are reasons why this definition may be appealing.
+
+Examples of margin-based algorithms
+
+Many classifiers can give an associated margin for each sample. However, only some classifiers utilize information of the margin while learning from a dataset.
+
+Many boosting algorithms rely on the notion of a margin to assign weight to samples. If a convex loss is utilized (as in AdaBoost or LogitBoost, for instance) then a sample with a higher margin will receive less (or equal) weight than a sample with a lower margin. This leads the boosting algorithm to focus weight on low-margin samples. In non-convex algorithms (e.g., BrownBoost), the margin still dictates the weighting of a sample, though the weighting is non-monotone with respect to the margin.
+
+Generalization error bounds
+
+One theoretical motivation behind margin classifiers is that their generalization error may be bound by the algorithm parameters and a margin term. An example of such a bound is for the AdaBoost algorithm. Let S be a set of m data points, sampled independently at random from a distribution D. Assume the VC-dimension of the underlying base classifier is d and m \geq d \geq 1. Then, with probability 1-\delta, we have the bound:
+
+P_D\left( \frac{y \sum_j^t \alpha_j h_j (x)}{\sum |\alpha_j|} \leq 0\right)          \leq         P_S\left(\frac{y \sum_j^t \alpha_j h_j (x)}{\sum |\alpha_j|} \leq \theta\right)  + O\left(\frac{1}{\sqrt{m}} \sqrt{d\log^2(m/d)/ \theta^2  + \log(1/\delta)}\right)
+
+for all \theta > 0.
+
+References
+
+Category:Classification algorithms
+
+Category:Statistical classification

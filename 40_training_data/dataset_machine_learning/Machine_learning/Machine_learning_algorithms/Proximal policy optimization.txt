@@ -1,0 +1,137 @@
+Proximal policy optimization (PPO) is a reinforcement learning (RL) algorithm for training an intelligent agent. Specifically, it is a policy gradient method, often used for deep RL when the policy network is very large.
+
+History
+
+The predecessor to PPO, Trust Region Policy Optimization (TRPO), was published in 2015. It addressed the instability issue of another algorithm, the Deep Q-Network (DQN), by using the trust region method to limit the KL divergence between the old and new policies. However, TRPO uses the Hessian matrix (a matrix of second derivatives) to enforce the trust region, but the Hessian is inefficient for large-scale problems.
+
+PPO was published in 2017. It was essentially an approximation of TRPO that does not require computing the Hessian. The KL divergence constraint was approximated by simply clipping the policy gradient.
+
+Since 2018, PPO was the default RL algorithm at OpenAI. PPO has been applied to many areas, such as controlling a robotic arm, beating professional players at Dota 2 (OpenAI Five), and playing Atari games.
+
+TRPO
+
+TRPO, the predecessor of PPO, is an on-policy algorithm. It can be used for environments with either discrete or continuous action spaces.
+
+The pseudocode is as follows:
+
+Input: initial policy parameters \theta_0, initial value function parameters \phi_0
+
+Hyperparameters: KL-divergence limit \delta, backtracking coefficient \alpha, maximum number of backtracking steps K
+
+for k=0,1,2, \ldots do
+
+Collect set of trajectories \mathcal{D}_k=\left\{\tau_i\right\} by running policy \pi_k=\pi\left(\theta_k\right) in the environment.
+
+Compute rewards-to-go \hat{R}_t.
+
+Compute advantage estimates, \hat{A}_t (using any method of advantage estimation) based on the current value function V_{\phi_k}.
+
+Estimate policy gradient as
+
+\hat{g}_k=\left.\frac{1}{\left|\mathcal{D}_k\right|} \sum_{\tau \in \mathcal{D}_k} \sum_{t=0}^T \nabla_\theta \log \pi_\theta\left(a_t \mid s_t\right)\right|_{\theta_k} \hat{A}_t
+
+Use the conjugate gradient algorithm to compute
+
+\hat{x}_k \approx \hat{H}_k^{-1} \hat{g}_k
+
+where \hat{H}_k is the Hessian of the sample average KL-divergence.
+
+Update the policy by backtracking line search with
+
+\theta_{k+1}=\theta_k+\alpha^j \sqrt{\frac{2 \delta}{\hat{x}_k^T \hat{H}_k \hat{x}_k}} \hat{x}_k
+
+where j \in\{0,1,2, \ldots K\} is the smallest value which improves the sample loss and satisfies the sample KL-divergence constraint.
+
+Fit value function by regression on mean-squared error:
+
+\phi_{k+1}=\arg \min _\phi \frac{1}{\left|\mathcal{D}_k\right| T} \sum_{\tau \in \mathcal{D}_k} \sum_{t=0}^T\left(V_\phi\left(s_t\right)-\hat{R}_t\right)^2
+
+typically via some gradient descent algorithm.
+
+PPO
+
+The pseudocode is as follows:
+
+Input: initial policy parameters \theta_0, initial value function parameters \phi_0
+
+for k=0,1,2, \ldots do
+
+Collect set of trajectories \mathcal{D}_k=\left\{\tau_i\right\} by running policy \pi_k=\pi\left(\theta_k\right) in the environment.
+
+Compute rewards-to-go \hat{R}_t.
+
+Compute advantage estimates, \hat{A}_t (using any method of advantage estimation) based on the current value function V_{\phi_k}.
+
+Update the policy by maximizing the PPO-Clip objective:
+
+\theta_{k+1}=\arg \max _\theta \frac{1}{\left|\mathcal{D}_k\right| T} \sum_{\tau \in \mathcal{D}_k} \sum_{t=0}^T \min \left(\frac{\pi_\theta\left(a_t \mid s_t\right)}{\pi_{\theta_k}\left(a_t \mid s_t\right)} A^{\pi_{\theta_k}}\left(s_t, a_t\right), \quad g\left(\epsilon, A^{\pi_{\theta_k}}\left(s_t, a_t\right)\right)\right)
+
+typically via stochastic gradient ascent with Adam.
+
+Fit value function by regression on mean-squared error:
+
+\phi_{k+1}=\arg \min _\phi \frac{1}{\left|\mathcal{D}_k\right| T} \sum_{\tau \in \mathcal{D}_k} \sum_{t=0}^T\left(V_\phi\left(s_t\right)-\hat{R}_t\right)^2
+
+typically via some gradient descent algorithm.
+
+Like all policy gradient methods, PPO is used for training an RL agent whose actions are determined by a differentiable policy function by gradient ascent.
+
+Intuitively, a policy gradient method takes small policy update steps, so the agent can reach higher and higher rewards in expectation.
+
+Policy gradient methods may be unstable: A step size that is too big may direct the policy in a suboptimal direction, thus having little possibility of recovery; a step size that is too small lowers the overall efficiency.
+
+To solve the instability, PPO implements a clip function that constrains the policy update of an agent from being too large, so that larger step sizes may be used without negatively affecting the gradient ascent process.
+
+Basic concepts
+
+To begin the PPO training process, the agent is set in an environment to perform actions based on its current input. In the early phase of training, the agent can freely explore solutions and keep track of the result. Later, with a certain amount of transition samples and policy updates, the agent will select an action to take by randomly sampling from the probability distribution P(A|S) generated by the policy network. The actions that are most likely to be beneficial will have the highest probability of being selected from the random sample. After an agent arrives at a different scenario (a new state) by acting, it is rewarded with a positive reward or a negative reward. The objective of an agent is to maximize the cumulative reward signal across sequences of states, known as episodes.
+
+Policy gradient laws: the advantage function
+
+The advantage function (denoted as A) is central to PPO, as it tries to answer the question of whether a specific action of the agent is better or worse than some other possible action in a given state. By definition, the advantage function is an estimate of the relative value for a selected action. If the output of this function is positive, it means that the action in question is better than the average return, so the possibilities of selecting that specific action will increase. The opposite is true for a negative advantage output. If A>0, the actual return of the action is better than the expected return from experience; if A, the actual return is worse.
+
+Ratio function
+
+In PPO, the ratio function (r_t) calculates the probability of selecting action a in state s given the current policy network, divided by the previous probability under the old policy. In other words:
+
+If r_t(\theta) > 1, where \theta are the policy network parameters, then selecting action a in state s is more likely based on the current policy than the previous policy.
+
+If 0 \le r_t(\theta) , then selecting action a in state s is less likely based on the current policy than the old policy.
+
+Hence, this ratio function can easily estimate the divergence between old and current policies.
+
+\operatorname{clip}(r_t(\theta)) \cdot A: the policy ratio is first clipped to the range [1 - \epsilon, 1 + \epsilon]; generally, \epsilon is defined to be 0.2. Then, as before, it is multiplied by the advantage.
+
+The fundamental intuition behind PPO is the same as that of TRPO: conservatism. Clipping results in a conservative advantage estimate of the new policy. The reasoning is that if an agent makes significant changes due to high advantage estimates, its policy update will be large and unstable, and may diverge from the optimal policy with little possibility of recovery. There are two common applications of the clipping function: when an action under a new policy happens to be a good choice based on the advantage function, the clipping function limits how much credit can be given to a new policy for up-weighted good actions. On the other hand, when an action under the old policy is judged to be bad, the clipping function constrains how much the agent can accept the down-weighted bad actions of the new policy. Consequently, the clipping mechanism is designed to discourage the incentive of moving beyond the defined range by clipping both directions. The advantage of this method is that it can be optimized directly with gradient descent, as opposed to the strict KL divergence constraint of TRPO, making the implementation faster and more intuitive.
+
+After computing the clipped surrogate objective function, the agent has two probability ratios: one non-clipped and one clipped. Then, by taking the minimum of the two objectives, the final objective becomes a lower bound (a pessimistic bound) of what the agent knows is possible.
+
+Stability
+
+While other RL algorithms require hyperparameter tuning, PPO comparatively does not require as much (0.2 for epsilon can be used in most cases). Also, PPO does not require sophisticated optimization techniques. It can be easily practiced with standard deep learning frameworks and generalized to a broad range of tasks.
+
+Sample efficiency
+
+Sample efficiency indicates whether the algorithms need more or less data to train a good policy. PPO achieved sample efficiency because of its use of surrogate objectives. The surrogate objective allows PPO to avoid the new policy moving too far from the old policy; the clip function regularizes the policy update and reuses training data. Sample efficiency is especially useful for complicated and high-dimensional tasks, where data collection and computation can be costly.
+
+See also
+
+Reinforcement learning
+
+Temporal difference learning
+
+Game theory
+
+References
+
+External links
+
+Announcement of Proximal Policy Optimization by OpenAI
+
+GitHub repo
+
+Category:Machine learning algorithms
+
+Category:Reinforcement learning
+
+Category:2017 in artificial intelligence

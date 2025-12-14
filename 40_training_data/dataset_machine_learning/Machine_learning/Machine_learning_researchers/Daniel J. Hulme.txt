@@ -1,0 +1,149 @@
+{{Infobox scientist
+
+name              = Daniel J. Hulme
+
+honorific_suffix  =
+
+image             = Daniel Hulme.jpg
+
+image_size        =
+
+image_upright     =
+
+alt               =
+
+caption           = Hulme in 2019
+
+birth_name        = Daniel James Hulme
+
+birth_date        =
+
+birth_place       = Morecambe, England
+
+death_date        =
+
+death_place       =
+
+death_cause       =
+
+resting_place     =
+
+resting_place_coordinates =
+
+other_names       =
+
+siglum            =
+
+pronounce         =
+
+fields            =
+
+workplaces        = WPP plc  University College London  London School of Economics   Singularity University
+
+patrons           =
+
+education         =
+
+alma_mater        = University College London
+
+thesis_title      = The Path to Satisfaction: Polynomial Algorithms for SAT
+
+thesis_url        = http://www0.cs.ucl.ac.uk/staff/d.hulme/docs/Daniel_J_Hulme_EngD_Thesis.pdf
+
+thesis_year       = 2008
+
+doctoral_advisor  =
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students  =
+
+known_for         = Artificial intelligence Satalia Public engagement
+
+influences        =
+
+influenced        =
+
+awards            =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+spouse            =
+
+partner           =
+
+children          =
+
+signature         =
+
+signature_alt     =
+
+website           =
+
+footnotes         =
+
+}}
+
+Daniel Hulme (born 21 February 1980) is a British businessman, investor, academic and commentator, working in the field of Artificial Intelligence (AI), applied technology and ethics. He is the CEO and founder of Satalia that exited to WPP plc in 2021 for a rumoured $100,000,000 where he is also Chief AI Officer. Hulme is also an angel investor in emerging technology companies. In 2024 Daniel co-founded Conscium, an AI Safety company which tests AI Agents and verifies that they do what they are supposed to do. It is also investigating whether AIs will soon become conscious, and how to test for that, and developing more efficient approaches to AI development using neuromorphic computing.
+
+Hulme founded Satalia in 2008, a company that provides AI products and consultancy for governments and companies such as Tesco, PwC and the BBC. He received a doctorate in AI from University College London (UCL), and is now their  Computer Science Entrepreneur in residence, where he teaches how AI can be applied to solve business and social problems. After exiting Satalia to WPP plc Hulme took the dual role of Chief AI Officer at WPP where he is responsible for informing and coordinating AI across the group. Hulme is an angel investor and also a frequent public speaker and writer on the topics of AI, ethics, technology, innovation, decentralization and organisational design. Daniel was recognized by AI Magazine in 2023 as one of the Top 10 Chief AI Officer's globally.
+
+Early life and education
+
+Hulme was born in 1980. He grew up in the seaside town of Morecambe in north west England.  After completing secondary school, Hulme moved to London to study at University College London. On completing his under graduate degree, Hulme stayed at UCL to complete a master's degree and then a EngD. All three degrees were in subjects related to AI. In 2009 Hulme was awarded a Kauffman Global Entrepreneur Scholarship, which saw him visit institutes in the United States to better understand their culture of innovation, and what UK business people could learn from it. This included a tour of Stanford, MIT, Berkeley and  Harvard, along with a placement at Cisco Systems HQ in Silicon Valley.
+
+Career
+
+Satalia
+
+Hulme founded NPComplete Limited in 2007, and incorporated it in 2008, a few months before completing his PhD. NPComplete Limited trades as Satalia.  In 2016, Satalia was the only UK company to appear in the  Gartner Cool Vendors list for  data science.
+
+In November 2019, City A.M. reported that Satalia was the 39th fastest growing tech firm in the UK, with three year growth at 886%. Satalia was acquired by WPP plc in August 2021 for a rumored $100,000,000, where Hulme was the majority shareholder.
+
+WPP plc
+
+After exiting Satalia to WPP plc Hulme took the dual role of Chief AI Officer at WPP where he is responsible for informing and coordinating AI across the group. Whilst Hulme still continues his roles as CEO of Satalia, as part of the acquisition he was appointed as WPP's Chief AI Officer and was recognized by AI Magazine in 2023 as one of the Top 10 Chief AI Officer's globally.
+
+Conscium
+
+Conscium is the World's first commercial organisation dedicated to the understanding, verification and validation of conscious AI and its implications for developing safe, efficient neuromorphic models. Conscium is an AI safety company with three workstreams:
+
+AI agent verification. Verification of AI agents developed by third parties to ensure they are beneficial and not harmful.
+
+Development of neuromorphic systems. Neuromorphic computing refers to technologies that can process information more like a biological brain compared to existing approaches, making them far more adaptive, scalable and efficient than current AI.
+
+Research into artificial consciousness. This workstream is led by Mark Solms, Chair of Neuropsychology at the University of Cape Town. This research aims to better understand what consciousness in AI systems and machines would look like, and, if and when machines do reach consciousness, what the moral and ethical implications would be.
+
+Conscium was founded in 2024 in London by a team including Hulme, Ed Charvet, Calum Chace, Ted Lappas, and Panagiotis Repoussis. Conscium has recruited some of the world’s leading neuroscientists and computer scientists to its advisory board, including Anil Seth, Mark Solms, Karl J. Friston, Anthony Finkelstein, Benjamin Rosman, David Wood, Jonathan Shock, Megan Peters, Moran Cerf, Nicholas Humphrey, Nicky Clayton, Nikola Kasabov, Steve Furber, and Suzanne Livingston. Supported by these world-leading experts, Conscium is creating a neuromorphic computing lab to research and validate the capacity of machines to acquire consciousness, making them safer for humanity.
+
+Conscium has published an open letter warning of the risks of AI suffering if care is not taken to mitigate against that possibility when and if AI becomes conscious. Signatories of the letter included Stephen Fry, Karl Friston and Anthony Finkelstein.
+
+The Partnership for Research Into Sentient Machines (PRISM)
+
+Hulme is one of the founding partners of PRISM - The Partnership for Research Into Sentient Machines, a non-profit set up to help prepare society for a future with conscious, or seemingly conscious, artificial intelligence.
+
+Academia
+
+Hulme's master's degree topic was on simulating artificial life with Artificial Neural Networks. His PhD spanned modelling bumblebee brains and mathematical optimization. Hulme maintained his connection with UCL after completing his doctorate, staying on in various teaching positions. From 2014 to Oct 2019 he was the Director of UCL's Business analytics MSc, which dealt with the application of AI to government, social, and business problems. As of 2020, Hulme is UCL's (University College London) Entrepreneur In Residence.  He is also a faculty member and lecturer at Singularity University, and a visiting lecturer at London School of Economics's Marshall Institute.
+
+References
+
+External links
+
+Satalia home page
+
+Category:1980 births
+
+Category:Living people
+
+Category:Machine learning researchers
+
+Category:Artificial intelligence ethicists
+
+Category:British artificial intelligence researchers
+
+Category:Alumni of University College London

@@ -1,0 +1,77 @@
+LLM-as-a-Judge (also known as LLM-based evaluation, LLM judges or LLMs-as-judges) is a family of techniques in natural language processing in which large language models (LLMs) are used as automated evaluators of texts or other model outputs. Instead of relying only on human annotators, an LLM judge is prompted or fine tuned to assign scores, labels or preferences according to specified criteria such as usefulness, factuality, safety or style.
+
+LLM-based evaluation is used to assess conversational assistants and other generative models, build automatic leaderboards and benchmarks, select models for deployment, and create preference data that can be reused for model training. The same idea extends to multimodal settings, where vision-language models (VLMs) act as judges of images or videos (sometimes called "VLM-as-a-Judge") by ranking, describing or checking outputs produced by other systems.
+
+Empirical studies report that strong LLM judges can correlate closely with human judgments on many tasks, and sometimes reach agreement levels similar to inter annotator agreement between humans. Later work, however, has documented systematic biases and failure modes, including position bias, length preferences, self enhancement bias when a judge evaluates outputs from its own model family, and vulnerability to prompt hacking. These concerns have motivated work on meta evaluation of judges, guidelines for responsible use, and ensemble methods such as "LLM juries" that combine multiple evaluators.
+
+Automatic evaluation of natural language generation (NLG) has historically relied on string based similarity metrics such as BLEU, ROUGE and METEOR, which compare system outputs to one or more reference texts.
+
+With the rise of general purpose LLMs, researchers began to explore using them directly as evaluators. Early examples include GPT-judge, a GPT-3 model fine tuned to classify TruthfulQA answers as true or false,
+
+In 2023, Liu and co authors proposed G-Eval, a prompting framework that instructs GPT-4 to answer evaluation questionnaires and then derive numeric scores, showing improved correspondence with human ratings for summarization and dialogue over earlier automatic metrics.
+
+Common evaluation modes include:
+
+binary pass or fail decisions (for example "hallucination present" versus "no hallucination");
+
+Likert style scores on one or more dimensions such as relevance, coherence, fluency or safety;
+
+pairwise preferences between two candidate answers;
+
+ranked lists of multiple outputs.
+
+The quality of an LLM judge is usually assessed by its agreement with human annotators or by its ability to reproduce existing leaderboards. Studies evaluate judges via correlation with human scores, win rate prediction accuracy, calibration curves and robustness tests such as prompt variation or adversarial examples. Follow up studies have compared RLAIF to standard reinforcement learning from human feedback and investigated when AI feedback helps or hurts alignment. Other applications integrate AI feedback judges into tasks such as recommendation systems and radiology report summarization. Studies in software engineering and information retrieval report that LLM judges can reach agreement rates close to human reviewers on some tasks, though performance varies across domains and evaluation setups.
+
+In the vision-language domain, VLMs can act as judges of images and videos. Hendriksen et al. adapt a general VLM into UNIVERSE, a unified evaluator for rollouts from video world models, and show that it can match human judgments on action and character recognition tasks across diverse simulated environments. Other work uses GPT-4V or similar multimodal models to rank or score outputs of self driving perception models and other large vision-language models, reporting strong alignment with human ratings on complex visual scenarios.
+
+LLM-as-a-Judge offers several practical advantages over traditional evaluation. Strong LLM judges can approximate human preferences at relatively low marginal cost and without recruiting annotators for each new task. Unlike surface form metrics, judges can take instructions, reference texts and domain constraints into account and can be quickly repurposed to new criteria by editing the prompt, for example by checking safety constraints, style guidelines or domain specific requirements.
+
+Judge models can also produce natural language rationales, error labels or highlight spans that contribute to the final score. These structured outputs can help developers debug systems and design targeted tests.
+
+Because judges are themselves neural models, they can be deployed in automated pipelines to run continuous evaluation over large datasets, making them attractive for regression testing of LLM applications and for tracking performance changes over time.
+
+Despite their practical benefits, LLM judges have important limitations. Agreement with humans can drop in specialized domains where the judge lacks expertise, such as medicine, law or low resource languages. In some cases, LLM judges have been observed to miss subtle but critical errors while over emphasizing surface level fluency, leading to overly optimistic scores.
+
+Multiple studies document systematic biases. Zheng et al. show that GPT-4 judges exhibit position bias, favoring the answer that appears in a particular slot, and verbosity bias, preferring longer answers, as well as self enhancement bias when a judge rates outputs produced by its own model family. Liu et al. coin the term "narcissistic evaluators" to describe how judges can inflate scores for responses from models that are architecturally similar to themselves, especially when the judge and candidate share training data or alignment procedures. Chen et al. find that both human and LLM judges show systematic judgment biases and that LLM judges can be manipulated by carefully crafted prompts.
+
+Other work investigates fairness and robustness. Stureborg and co authors analyze LLM-based evaluators across several tasks and highlight sensitivity to prompt wording and domain shift, while Justice or Prejudice? quantifies group level biases and shows that LLM-as-a-Judge can inherit and amplify societal stereotypes. Faggioli et al. argue that fully automated LLM based relevance judgments should be used cautiously in information retrieval benchmarks and recommend hybrid human–machine workflows.
+
+Optimization against a fixed LLM judge can also lead to Goodhart effects: if model developers explicitly tune systems to maximize a particular judge's score, the learned behavior may diverge from underlying human preferences. The TruthfulQA authors, for example, advise against training directly on GPT-judge labels because overfitting to the metric may reduce its reliability as a proxy for truthfulness.
+
+LLM judges can be costly to run at scale, especially when using large proprietary models, and their internal decision process is difficult to interpret or audit compared with transparent rule based metrics.
+
+Research on meta evaluation seeks to understand when LLM judges can safely replace or augment human evaluation. Surveys by Gao et al. and Li et al. categorize existing methods by functionality, methodology, application areas, meta evaluation techniques and known limitations, and highlight open problems such as robustness, fairness and the risk of over reliance on closed source judges.
+
+Dietz and co authors propose a set of principles and guidelines for using LLM judges in information retrieval, including separating evaluation design from judge implementation, publishing prompts and configurations, using multiple judges where possible, and regularly calibrating judges against fresh human annotations.
+
+Other work studies combinations of human and AI feedback. Sharma et al. find that in some alignment pipelines, much of the apparent benefit of reinforcement learning from AI feedback comes from using a strong teacher model for supervised fine tuning rather than from the reinforcement learning step itself.
+
+In response to concerns about single judge bias, several authors propose ensemble methods that use multiple LLM evaluators. Koc et al. describe a framework where multiple independent LLM judges score the same outputs and their scores are aggregated to improve fairness and reduce variance. Badshah et al. compare GPT based judges with Mistral and Llama judges on free form question answering and observe complementary strengths across models.
+
+Industrial tools popularize the term "LLM jury" for evaluation setups that run several smaller judges in parallel and aggregate their votes through majority or weighted voting schemes. Empirical reports suggest that such juries can be more robust to prompt or model specific quirks, at the cost of additional computation.
+
+LLM-as-a-Judge is closely related to reinforcement learning from human feedback (RLHF) and reinforcement learning from AI feedback (RLAIF). In RLHF, human annotators compare pairs of model outputs and a reward model is trained to predict their preferences. In RLAIF and related "learning from AI feedback" methods, an LLM judge replaces the human annotator when providing preference labels.
+
+Constitutional AI uses a written constitution of rules and a critic model to assess candidate responses according to those rules; the resulting AI preference data is used to train reward models for harmlessness and other objectives. Later work examines when AI feedback truly adds value over strong supervised teachers and how to balance human and AI preferences for safe and useful behavior.
+
+Large language model
+
+Vision-language model
+
+Reinforcement learning from human feedback
+
+Reinforcement learning from AI feedback
+
+Automatic summarization#Evaluation
+
+BLEU
+
+ROUGE (metric)
+
+Generative artificial intelligence
+
+Category:Large language models
+
+Category:Natural language processing
+
+Category:Machine learning

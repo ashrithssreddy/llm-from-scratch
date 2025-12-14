@@ -1,0 +1,79 @@
+{{multiple issues|
+
+}}
+
+{{Infobox scientist
+
+name                    = Eduard Hovy
+
+image                   =
+
+caption                 =
+
+birth_date              =
+
+birth_place             = Johannesburg
+
+death_date              =
+
+death_place             =
+
+residence               =
+
+citizenship             =
+
+nationality             =
+
+ethnicity               =
+
+field                   =
+
+workplaces              = Carnegie Mellon University
+
+alma_mater              = Yale University
+
+doctoral_advisor        =
+
+known_for     =
+
+doctoral_students       =
+
+author_abbreviation_bot =
+
+author_abbreviation_zoo =
+
+awards                  =
+
+religion                =
+
+website           =
+
+footnotes               =
+
+}}
+
+Eduard Hovy is a Research Professor in the Language Technologies Institute at Carnegie Mellon University. He is one of the original 17 Fellows of the Association for Computational Linguistics.
+
+Biography
+
+Eduard Hovy received M.S. (December 1982) and Ph.D. (May 1987) degrees in Computer Science from Yale University.  He was awarded honorary doctorates from the National University of Distance Education (UNED) in Madrid in 2013 and the University of Antwerp in 2015.
+
+References
+
+Category:Living people
+
+Category:Computational linguistics researchers
+
+Category:Carnegie Mellon University faculty
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Fellows of the Association for Computational Linguistics
+
+Category:Year of birth missing (living people)
+
+Category:Natural language processing researchers
+
+Category:Presidents of the Association for Computational Linguistics
+
+Category:Yale University alumni

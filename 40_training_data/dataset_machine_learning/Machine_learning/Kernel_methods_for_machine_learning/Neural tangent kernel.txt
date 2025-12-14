@@ -1,0 +1,117 @@
+In the study of artificial neural networks (ANNs), the neural tangent kernel (NTK) is a kernel that describes the evolution of deep artificial neural networks during their training by gradient descent. It allows ANNs to be studied using theoretical tools from kernel methods.
+
+In general, a kernel is a positive-semidefinite symmetric function of two inputs which represents some notion of similarity between the two inputs. The NTK is a specific kernel derived from a given neural network; in general, when the neural network parameters change during training, the NTK evolves as well. However, in the limit of large layer width the NTK becomes constant, revealing a duality between training the wide neural network and kernel methods: gradient descent in the infinite-width limit is fully equivalent to kernel gradient descent with the NTK. As a result, using gradient descent to minimize least-square loss for neural networks yields the same mean estimator as ridgeless kernel regression with the NTK. This duality enables simple closed form equations describing the training dynamics, generalization, and predictions of wide neural networks.
+
+The NTK was introduced in 2018 by Arthur Jacot, Franck Gabriel and Clément Hongler, who used it to study the convergence and generalization properties of fully connected neural networks. Later works extended the NTK results to other neural network architectures. In fact, the phenomenon behind NTK is not specific to neural networks and can be observed in generic nonlinear models, usually by a suitable scaling.
+
+Main results (informal)
+
+Let f(x;\theta ) denote the scalar function computed by a given neural network with parameters \theta on input x. Then the neural tangent kernel is defined In other words, the NTK is independent of the random parameter initialization.
+
+The NTK does not change during training.
+
+Applications
+
+Ridgeless kernel regression and kernel gradient descent
+
+Kernel methods are machine learning algorithms which use only pairwise relations between input points. Kernel methods do not depend on the concrete values of the inputs; they only depend on the relations between the inputs and other inputs (such as the training set). These pairwise relations are fully captured by the kernel function: a symmetric, positive-semidefinite function of two inputs which represents some notion of similarity between the two inputs. A fully equivalent condition is that there exists some feature map {\mathbf {x}}\mapsto \psi ({\mathbf {x}}) such that the kernel function can be written as a dot product of the mapped inputsK({\mathbf {x}},{\mathbf {x}}')=\psi ({\mathbf {x}})\cdot \psi ({\mathbf {x}}').The properties of a kernel method depend on the choice of kernel function. (Note that \psi ({\mathbf {x}}) may have higher dimension than \mathbf{x}.) As a relevant example, consider linear regression. This is the task of estimating {\mathbf {w}}^{*} given N samples ({\mathbf {x}}_{i},y_{i}) generated from y^{*}({\mathbf {x}})={\mathbf {w}}^{*}\cdot {\mathbf {x}}, where each \mathbf {x}_{i} is drawn according to some input data distribution. In this setup, {\mathbf {w}}^{*} is the weight vector which defines the true function y^{*}; we wish to use the training samples to develop a model \mathbf {\hat {w}} which approximates {\mathbf {w}}^{*}. We do this by minimizing the mean-square error between our model and the training samples:{\mathbf {\hat {w}}}=\arg \min _{\mathbf {w}}{\frac {1}{N}}\sum_{i=0}^{N}||y^{*}({\mathbf {x}}_{i})-{\mathbf {w}}\cdot {\mathbf {x}}_{i}||^{2}There exists an explicit solution for \mathbf {\hat {w}} which minimizes the squared error: {\mathbf {\hat {w}}}=({\mathbf {X}}{\mathbf {X}}^{T})^{-1}{\mathbf {X}}{\mathbf {y}}, where {\mathbf {X}} is the matrix whose columns are the training inputs, and {\mathbf {y}} is the vector of training outputs. Then, the model can make predictions on new inputs: {\hat {y}}({\mathbf {x}})={\mathbf {\hat {w}}}\cdot {\mathbf {x}}.
+
+However, this result can be rewritten as: {\hat {y}}({\mathbf {x}})=({\mathbf {x}}^{T}{\mathbf {X}})({\mathbf {X}}^{T}{\mathbf {X}})^{-1}{\mathbf {y}}. Note that this dual solution is expressed solely in terms of the inner products between inputs. This motivates extending linear regression to settings in which, instead of directly taking inner products between inputs, we first transform the inputs according to a chosen feature map and then evaluate the inner products between the transformed inputs. As discussed above, this can be captured by a kernel function K({\mathbf {x}},{\mathbf {x}}'), since all kernel functions are inner products of feature-mapped inputs. This yields the ridgeless kernel regression estimator:{\hat {y}}({\mathbf {x}})=K({\mathbf {x}},{\mathbf {X}})\;K({\mathbf {X}},{\mathbf {X}})^{-1}\;{\mathbf {y}}.If the kernel matrix K({\mathbf {X}},{\mathbf {X}}) is singular, one uses the Moore-Penrose pseudoinverse. The regression equations are called "ridgeless" because they lack a ridge regularization term.
+
+In this view, linear regression is a special case of kernel regression with the identity feature map: \psi ({\mathbf {x}})={\mathbf {x}}. Equivalently, kernel regression is simply linear regression in the feature space (i.e. the range of the feature map defined by the chosen kernel). Note that kernel regression is typically a nonlinear regression in the input space, which is a major strength of the algorithm.
+
+Just as it’s possible to perform linear regression using iterative optimization algorithms such as gradient descent, one can perform kernel regression using kernel gradient descent. This is equivalent to performing gradient descent in the feature space. It’s known that if the weight vector is initialized close to zero, least-squares gradient descent converges to the minimum-norm solution, i.e., the final weight vector has the minimum Euclidean norm of all the interpolating solutions. In the same way, kernel gradient descent yields the minimum-norm solution with respect to the RKHS norm. This is an example of the implicit regularization of gradient descent.
+
+The NTK gives a rigorous connection between the inference performed by infinite-width ANNs and that performed by kernel methods: when the loss function is the least-squares loss, the inference performed by an ANN is in expectation equal to ridgeless kernel regression with respect to the NTK. This suggests that the performance of large ANNs in the NTK parametrization can be replicated by kernel methods for suitably chosen kernels.
+
+of high-dimensional kernel regression; these results immediately explain the generalization of sufficiently wide neural networks trained to convergence on least-squares.
+
+Convergence to a global minimum
+
+For a convex loss functional {\mathcal {C}} with a global minimum, if the NTK remains positive-definite during training, the loss of the ANN {\mathcal {C}}\left(f\left(\cdot;\theta \left(t\right)\right)\right) converges to that minimum as t\to \infty. This positive-definiteness property has been shown in a number of cases, yielding the first proofs that large-width ANNs converge to global minima during training.
+
+Extensions and limitations
+
+The NTK can be studied for various ANN architectures, recurrent neural networks (RNNs) and transformers. In such settings, the large-width limit corresponds to letting the number of parameters grow, while keeping the number of layers fixed: for CNNs, this involves letting the number of channels grow.
+
+Individual parameters of a wide neural network in the kernel regime change negligibly during training. However, this implies that infinite-width neural networks cannot exhibit feature learning, which is widely considered to be an important property of realistic deep neural networks. This is not a generic feature of infinite-width neural networks and is largely due to a specific choice of the scaling by which the width is taken to the infinite limit; indeed several works have found alternate infinite-width scaling limits of neural networks in which there is no duality with kernel regression and feature learning occurs during training. Others introduce a "neural tangent hierarchy" to describe finite-width effects, which may drive feature learning.
+
+Neural Tangents is a free and open-source Python library used for computing and doing inference with the infinite width NTK and neural network Gaussian process (NNGP) corresponding to various common ANN architectures. In addition, there exists a scikit-learn compatible implementation of the infinite width NTK for Gaussian processes called scikit-ntk.
+
+Details
+
+When optimizing the parameters \theta\in\mathbb{R}^{P} of an ANN to minimize an empirical loss through gradient descent, the NTK governs the dynamics of the ANN output function f_{\theta} throughout the training.
+
+Case 1: Scalar output
+
+An ANN with scalar output consists of a family of functions f\left(\cdot,\theta\right):\mathbb{R}^{n_{\mathrm{in}}}\to\mathbb{R} parametrized by a vector of parameters \theta\in\mathbb{R}^{P}.
+
+The NTK is a kernel \Theta:\mathbb{R}^{n_{\mathrm{in}}}\times\mathbb{R}^{n_{\mathrm{in}}}\to\mathbb{R} defined by\Theta\left(x,y;\theta\right)=\sum_{p=1}^{P}\partial_{\theta_{p}}f\left(x;\theta\right)\partial_{\theta_{p}}f\left(y;\theta\right).In the language of kernel methods, the NTK \Theta is the kernel associated with the feature map \left(x\mapsto\partial_{\theta_{p}}f\left(x;\theta\right)\right)_{p=1,\ldots,P}. To see how this kernel drives the training dynamics of the ANN, consider a dataset \left(x_{i}\right)_{i=1,\ldots,n}\subset\mathbb{R}^{n_{\mathrm{in}}} with scalar labels \left(z_{i}\right)_{i=1,\ldots,n}\subset\mathbb{R} and a loss function c:\mathbb{R}\times\mathbb{R}\to\mathbb{R}. Then the associated empirical loss, defined on functions f:\mathbb{R}^{n_{\mathrm{in}}}\to\mathbb{R}, is given by\mathcal{C}\left(f\right)=\sum_{i=1}^{n}c\left(f\left(x_{i}\right),z_{i}\right).When the ANN f\left(\cdot;\theta\right):\mathbb{R}^{n_{\mathrm{in}}}\to\mathbb{R} is trained to fit the dataset (i.e. minimize \mathcal{C}) via continuous-time gradient descent, the parameters \left(\theta\left(t\right)\right)_{t\geq0} evolve through the ordinary differential equation:
+
+\partial_{t}\theta\left(t\right)=-\nabla\mathcal{C}\left(f\left(\cdot;\theta\right)\right).
+
+During training the ANN output function follows an evolution differential equation given in terms of the NTK:
+
+\partial_{t}f\left(x;\theta\left(t\right)\right)=-\sum_{i=1}^{n}\Theta\left(x,x_{i};\theta\right)\partial_{w}c\left(w,z_{i}\right)\Big|_{w=f\left(x_{i};\theta\left(t\right)\right)}.
+
+This equation shows how the NTK drives the dynamics of f\left(\cdot;\theta\left(t\right)\right) in the space of functions \mathbb{R}^{n_{\mathrm{in}}}\to\mathbb{R} during training.
+
+Case 2: Vector output
+
+An ANN with vector output of size n_{\mathrm{out}} consists in a family of functions f\left(\cdot;\theta\right):\mathbb{R}^{n_{\mathrm{in}}}\to\mathbb{R}^{n_{\mathrm{out}}} parametrized by a vector of parameters \theta\in\mathbb{R}^{P}.
+
+In this case, the NTK \Theta:\mathbb{R}^{n_{\mathrm{in}}}\times\mathbb{R}^{n_{\mathrm{in}}}\to\mathcal{M}_{n_{\mathrm{out}}}\left(\mathbb{R}\right) is a matrix-valued kernel, with values in the space of n_{\mathrm{out}}\times n_{\mathrm{out}} matrices, defined by\Theta_{k,l}\left(x,y;\theta\right)=\sum_{p=1}^{P}\partial_{\theta_{p}}f_{k}\left(x;\theta\right)\partial_{\theta_{p}}f_{l}\left(y;\theta\right).Empirical risk minimization proceeds as in the scalar case, with the difference being that the loss function takes vector inputs c:\mathbb{R}^{n_{\mathrm{out}}}\times\mathbb{R}^{n_{\mathrm{out}}}\to\mathbb{R}. The training of f_{\theta\left(t\right)} through continuous-time gradient descent yields the following evolution in function space driven by the NTK:\partial_{t}f_{k}\left(x;\theta\left(t\right)\right)=-\sum_{i=1}^{n}\sum_{l=1}^{n_{\mathrm{out}}}\Theta_{k,l}\left(x,x_{i};\theta\right)\partial_{w_{l}}c\left(\left(w_{1},\ldots,w_{n_{\mathrm{out}}}\right),z_{i}\right)\Big|_{w=f\left(x_{i};\theta\left(t\right)\right)}.This generalizes the equation shown in case 1 for scalar outputs.
+
+Interpretation
+
+Each data point x_{i} influences the evolution, of the output f\left(x;\theta\right) for each input x, throughout the training. More concretely, with respect to example i, the NTK value \Theta\left(x,x_{i};\theta\right) determines the influence of the loss gradient \partial_{w}c\left(w,z_{i}\right)\big|_{w=f\left(x_{i};\theta\right)} on the evolution of ANN output f\left(x;\theta\right) through a gradient descent step. In the scalar case, this readsf\left(x;\theta\left(t+\epsilon\right)\right)-f\left(x;\theta\left(t\right)\right)\approx\epsilon\sum_{i=1}^{n}\Theta\left(x,x_{i};\theta\left(t\right)\right)\partial_{w}c\left(w,z_{i}\right)\big|_{w=f\left(x_{i};\theta\right)}.
+
+Wide fully-connected ANNs have a deterministic NTK, which remains constant throughout training
+
+Consider an ANN with fully-connected layers \ell=0,\ldots,L of widths n_{0}=n_{\mathrm{in}},n_{1},\ldots,n_{L}=n_{\mathrm{out}}, so that f\left(\cdot;\theta\right)=R_{L-1}\circ\cdots\circ R_{0}, where R_{\ell}=\sigma\circ A_{\ell} is the composition of an affine transformation A_{i} with the pointwise application of a nonlinearity \sigma:\mathbb{R}\to\mathbb{R}, where \theta parametrizes the maps A_{0},\ldots,A_{L-1}. The parameters \theta\in\mathbb{R}^{P} are initialized randomly, in an independent, identically distributed way.
+
+As the widths grow, the NTK's scale is affected by the exact parametrization of the A_{i}'s and by the parameter initialization. This motivates the so-called NTK parametrization A_{\ell}\left(x\right)=\frac{1}{\sqrt{n_{\ell}}}W^{\left(\ell\right)}x+b^{\left(\ell\right)}. This parametrization ensures that if the parameters \theta\in\mathbb{R}^{P} are initialized as standard normal variables, the NTK has a finite nontrivial limit. In the large-width limit, the NTK converges to a deterministic (non-random) limit \Theta_{\infty}, which stays constant in time.
+
+The NTK \Theta_{\infty} is explicitly given by \Theta_{\infty}=\Theta^{\left(L\right)}, where \Theta^{\left(L\right)} is determined by the set of recursive equations:
+
+\begin{align}
+
+\Theta^{\left(1\right)}\left(x,y\right) &= \Sigma^{\left(1\right)}\left(x,y\right),\\
+
+\Sigma^{\left(1\right)}\left(x,y\right) &= \frac{1}{n_{\mathrm{in}}}x^{T}y+1,\\
+
+\Theta^{\left(\ell+1\right)}\left(x,y\right) &=\Theta^{\left(\ell\right)}\left(x,y\right)\dot{\Sigma}^{\left(\ell+1\right)}\left(x,y\right)+\Sigma^{\left(\ell+1\right)}\left(x,y\right),\\
+
+\Sigma^{\left(\ell+1\right)}\left(x,y\right) &= L_{\Sigma^{\left(\ell\right)}}^{\sigma}\left(x,y\right),\\
+
+\dot{\Sigma}^{\left(\ell+1\right)}\left(x,y\right) &= L_{\Sigma^{\left(\ell\right)}}^{\dot{\sigma}},
+
+\end{align}
+
+where L_{K}^{f} denotes the kernel defined in terms of the Gaussian expectation:
+
+L_{K}^{f}\left(x,y\right)=\mathbb{E}_{\left(X,Y\right)\sim\mathcal{N}\left(0,\begin{pmatrix}K\left(x,x\right) & K\left(x,y\right)\\
+
+K\left(y,x\right) & K\left(y,y\right)
+
+\end{pmatrix}\right)}\left[f\left(X\right)f\left(Y\right)\right].
+
+In this formula the kernels \Sigma^{\left(\ell\right)} are the ANN's so-called activation kernels.
+
+Wide fully connected networks are linear in their parameters throughout training
+
+The NTK describes the evolution of neural networks under gradient descent in function space. Dual to this perspective is an understanding of how neural networks evolve in parameter space, since the NTK is defined in terms of the gradient of the ANN's outputs with respect to its parameters. In the infinite width limit, the connection between these two perspectives becomes especially interesting. The NTK remaining constant throughout training at large widths co-occurs with the ANN being well described throughout training by its first order Taylor expansion around its parameters at initialization:
+
+f\left(x;\theta(t)\right) = f\left(x;\theta(0)\right) + \nabla_{\theta}f\left(x;\theta(0)\right) \left(\theta(t) - \theta(0)\right) + \mathcal{O}\left(\min\left(n_1 \dots n_{L-1}\right)^{-\frac{1}{2}}\right)
+
+.
+
+See also
+
+Large width limits of neural networks
+
+References
+
+Category:Kernel methods for machine learning
+
+External links

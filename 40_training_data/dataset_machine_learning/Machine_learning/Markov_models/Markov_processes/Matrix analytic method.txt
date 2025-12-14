@@ -1,0 +1,27 @@
+In probability theory, the matrix analytic method is a technique to compute the stationary probability distribution of a Markov chain which has a repeating structure (after some point) and a state space which grows unboundedly in no more than one dimension. Such models are often described as M/G/1 type Markov chains because they can describe transitions in an M/G/1 queue. The method is a more complicated version of the matrix geometric method and is the classical solution method for M/G/1 chains.
+
+Method description
+
+An M/G/1-type stochastic matrix is one of the form If P is irreducible and positive recurrent then the stationary distribution is given by the solution to the equations Matrices are defined
+
+\pi_i = (I-\overline{A}_1)^{-1} \left[ \overline{B}_{i+1} \pi_0 + \sum_{j=1}^{i-1} \overline{A}_{i+1-j}\pi_j \right], i \geq 1.
+
+Computation of G
+
+There are two popular iterative methods for computing G,
+
+functional iterations
+
+cyclic reduction.
+
+Tools
+
+MAMSolver
+
+References
+
+Category:Markov processes
+
+Category:Single queueing nodes
+
+Category:Probability theory

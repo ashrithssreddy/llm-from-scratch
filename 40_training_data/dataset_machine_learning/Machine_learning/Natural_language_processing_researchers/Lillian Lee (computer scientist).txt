@@ -1,0 +1,57 @@
+{{Infobox scientist
+
+name = Lillian Lee
+
+workplaces = Cornell
+
+awards =
+
+alma_mater = Harvard University
+
+doctoral_advisor = Stuart M. Shieber
+
+thesis_title = Similarity-Based Approaches to Natural Language Processing
+
+thesis_url = https://www.cs.cornell.edu/home/llee/papers/thesis.pdf
+
+thesis_year = 1997
+
+}}
+
+Lillian Lee is a computer scientist whose research involves natural language processing, sentiment analysis, and computational social science. She is a professor of computer science and information science at Cornell University, and co-editor-in-chief of the journal Transactions of the Association for Computational Linguistics.
+
+Education
+
+Lee graduated from Cornell University in 1993 with an undergraduate degree in math and science. She completed her Ph.D. at Harvard University in 1997.
+
+References
+
+{{reflist|refs=
+
+}}
+
+External links
+
+Home page
+
+Category:Year of birth missing (living people)
+
+Category:Living people
+
+Category:American computer scientists
+
+Category:American women computer scientists
+
+Category:Cornell University alumni
+
+Category:Harvard University alumni
+
+Category:Cornell University faculty
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence
+
+Category:Natural language processing researchers
+
+Category:American women academics
+
+Category:21st-century American women

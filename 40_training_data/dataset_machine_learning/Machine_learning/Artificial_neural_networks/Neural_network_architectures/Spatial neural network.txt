@@ -1,0 +1,31 @@
+(1993) and Hewitson et al. (1994) started investigating the applications of the a-spatial/classic NNs to geographic phenomena. They observed that a-spatial/classic NNs outperform the other extensively applied a-spatial/classic statistical models (e.g. regression models, clustering algorithms, maximum likelihood classifications) in geography, especially when there exist non-linear relations between the geo-spatial datasets' variables. Thereafter scientists developed several categories of SNNs &ndash; see below.
+
+Spatial models
+
+Spatial statistical models (aka geographically weighted models, or merely spatial models) like the geographically weighted regressions (GWRs), SNNs, etc., are spatially tailored (a-spatial/classic) statistical models, so to learn and model the deterministic components of the spatial variability (i.e. spatial dependence/autocorrelation, spatial heterogeneity, spatial association/cross-correlation) from the geo-locations of the geo-spatial datasets' (statistical) individuals/units.
+
+Geographically Weighted Neural Networks (GWNNs) are similar to the SVANNs but they use the so-called Geographically Weighted Model (GWM) method/approach by Lu et al. (2023), so to locally recompute the spatial weights and redesign the spatial structure of the originally a-spatial/classic neural networks. Like the SVANNs, they do not consistently handle spatial heterogeneity at multiple scales.
+
+agriculture for classifying the vegetation;
+
+real estate for appraising the premises.
+
+See also
+
+Statistics
+
+Neural networks' supercategories
+
+Statistical software
+
+Quantitative geography
+
+Spatial analysis
+
+Geographic information system software (GIS software)
+
+References
+
+Category:Neural network architectures
+
+Category:Spatial analysis

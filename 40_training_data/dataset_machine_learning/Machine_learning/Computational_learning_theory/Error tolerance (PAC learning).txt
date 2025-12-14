@@ -1,0 +1,61 @@
+In PAC learning, error tolerance refers to the ability of an algorithm to learn when the examples received have been corrupted in some way. In fact, this is a very common and important issue since in many applications it is not possible to access noise-free data. Noise can interfere with the learning process at different levels: the algorithm may receive data that have been occasionally mislabeled, or the inputs may have some false information, or the classification of the examples may have been maliciously adulterated.
+
+Notation and the Valiant learning model
+
+In the following, let X be our n-dimensional input space. Let \mathcal{H} be a class of functions that we wish to use in order to learn a \{0,1\}-valued target function f defined over X. Let \mathcal{D} be the distribution of the inputs over X. The goal of a learning algorithm \mathcal{A} is to choose the best function h \in \mathcal{H} such that it minimizes error(h) = P_{x \sim \mathcal{D} }( h(x) \neq f(x)). Let us suppose we have a function size(f) that can measure the complexity of f. Let  \text{Oracle}(x) be an oracle that, whenever called, returns an example x and its correct label f(x).
+
+When no noise corrupts the data, we can define learning in the Valiant setting:
+
+Definition:
+
+We say that f is efficiently learnable using \mathcal{H} in the Valiant setting if there exists a learning algorithm \mathcal{A} that has access to  \text{Oracle}(x) and a polynomial p(\cdot,\cdot,\cdot,\cdot) such that for any 0  and 0  it outputs, in a number of calls to the oracle bounded by p\left(\frac{1}{\varepsilon},\frac{1}{\delta},n,\text{size}(f)\right) , a function h \in \mathcal{H} that satisfies with probability at least 1-\delta the condition \text{error}(h) \leq \varepsilon.
+
+In the following we will define learnability of f when data have suffered some modification.
+
+Classification noise
+
+In the classification noise model a noise rate 0 \leq \eta  is introduced. Then, instead of \text{Oracle}(x) that returns always the correct label of example x, algorithm  \mathcal{A} can only call a faulty oracle \text{Oracle}(x,\eta) that will flip the label of x with probability \eta. As in the Valiant case, the goal of a learning algorithm \mathcal{A} is to choose the best function h \in \mathcal{H} such that it minimizes error(h) = P_{x \sim \mathcal{D} }( h(x) \neq f(x)). In applications it is difficult to have access to the real value of \eta, but we assume we have access to its upperbound \eta_B. Note that if we allow the noise rate to be 1/2, then learning becomes impossible in any amount of computation time, because every label conveys no information about the target function.
+
+Definition:
+
+We say that f is efficiently learnable using \mathcal{H} in the classification noise model if there exists a learning algorithm \mathcal{A} that has access to \text{Oracle}(x,\eta) and a polynomial p(\cdot,\cdot,\cdot,\cdot) such that for any 0 \leq \eta \leq \frac{1}{2},  0\leq \varepsilon \leq 1 and 0\leq \delta \leq 1 it outputs, in a number of calls to the oracle bounded by p\left(\frac{1}{1-2\eta_B}, \frac{1}{\varepsilon},\frac{1}{\delta},n,size(f)\right) , a function h \in \mathcal{H}  that satisfies with probability at least 1-\delta the condition error(h) \leq \varepsilon.
+
+Statistical query learning
+
+Statistical Query Learning is a kind of active learning problem in which the learning algorithm \mathcal{A} can decide if to request information about the likelihood P_{f(x)} that a function f correctly labels example x, and receives an answer accurate within a tolerance \alpha. Formally, whenever the learning algorithm \mathcal{A} calls the oracle \text{Oracle}(x,\alpha), it receives as feedback probability Q_{f(x)}, such that Q_{f(x)} - \alpha \leq P_{f(x)} \leq Q_{f(x)} + \alpha.
+
+Definition:
+
+We say that f is efficiently learnable using \mathcal{H} in the statistical query learning model if there exists a learning algorithm \mathcal{A} that has access to \text{Oracle}(x,\alpha) and polynomials p(\cdot,\cdot,\cdot), q(\cdot,\cdot,\cdot), and r(\cdot,\cdot,\cdot) such that for any  0  the following hold:
+
+\text{Oracle}(x,\alpha) can evaluate P_{f(x)} in time q\left(\frac{1}{\varepsilon},n,size(f)\right);
+
+\frac{1}{\alpha} is bounded by r\left(\frac{1}{\varepsilon},n,size(f)\right)
+
+\mathcal{A} outputs a model h such that err(h), in a number of calls to the oracle bounded by p\left(\frac{1}{\varepsilon},n,size(f)\right).
+
+Note that the confidence parameter \delta does not appear in the definition of learning. This is because the main purpose of \delta is to allow the learning algorithm a small probability of failure due to an unrepresentative sample. Since now \text{Oracle}(x,\alpha) always guarantees to meet the approximation criterion Q_{f(x)} - \alpha \leq P_{f(x)} \leq Q_{f(x)} + \alpha, the failure probability is no longer needed.
+
+The statistical query model is strictly weaker than the PAC model: any efficiently SQ-learnable class is efficiently PAC learnable in the presence of classification noise, but there exist efficient PAC-learnable problems such as parity that are not efficiently SQ-learnable. an adversary generates errors to foil the learning algorithm. This setting describes situations of error burst, which may occur when for a limited time transmission equipment malfunctions repeatedly. Formally, algorithm \mathcal{A} calls an oracle \text{Oracle}(x,\beta) that returns a correctly labeled example x drawn, as usual, from distribution \mathcal{D} over the input space with probability 1- \beta, but it returns with probability \beta an example drawn from a distribution that is not related to \mathcal{D}.
+
+Moreover, this maliciously chosen example may strategically selected by an adversary who has knowledge of f, \beta, \mathcal{D}, or the current progress of the learning algorithm.
+
+Definition:
+
+Given a bound \beta_B for 0 \leq \beta , we say that f is efficiently learnable using \mathcal{H} in the malicious classification model, if there exist a learning algorithm \mathcal{A} that has access to \text{Oracle}(x,\beta) and a polynomial p(\cdot,\cdot,\cdot,\cdot,\cdot) such that for any  0 , 0  it outputs, in a number of calls to the oracle bounded by p\left(\frac{1}{1/2 - \beta_B},\frac{1}{\varepsilon},\frac{1}{\delta},n,size(f)\right) , a function h \in \mathcal{H}  that satisfies with probability at least 1-\delta the condition error(h) \leq \varepsilon.
+
+Errors in the inputs: nonuniform random attribute noise
+
+In the nonuniform random attribute noise model the algorithm is learning a Boolean function, a malicious oracle \text{Oracle}(x,\nu) may flip each i-th bit of example x=(x_1,x_2,\ldots,x_n) independently with probability \nu_i \leq \nu.
+
+This type of error can irreparably foil the algorithm, in fact the following theorem holds:
+
+In the nonuniform random attribute noise setting, an algorithm \mathcal{A} can output a function h \in \mathcal{H} such that error(h) only if \nu .
+
+See also
+
+References
+
+Category:Theoretical computer science
+
+Category:Computational learning theory

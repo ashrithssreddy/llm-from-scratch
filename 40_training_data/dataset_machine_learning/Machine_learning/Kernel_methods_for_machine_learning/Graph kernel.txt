@@ -1,0 +1,31 @@
+In structure mining, a graph kernel is a kernel function that computes an inner product on graphs.
+
+Graph kernels can be intuitively understood as functions measuring the similarity of pairs of graphs. They allow kernelized learning algorithms such as support vector machines to work directly on graphs, without having to do feature extraction to transform them to fixed-length, real-valued feature vectors. They find applications in bioinformatics, in chemoinformatics (as a type of molecule kernels), and in social network analysis. introduced convolutional kernels on discrete structures. The term graph kernels was more officially coined in 2002 by R. I. Kondor and J. Lafferty
+
+as kernels on graphs, i.e. similarity functions between the nodes of a single graph, with the World Wide Web hyperlink graph as a suggested application. In 2003, Gärtner et al.
+
+and Kashima et al.
+
+defined kernels between graphs. In 2010, Vishwanathan et al. gave their unified framework. described the history of graph kernels and their evolution over two decades.
+
+Applications
+
+The marginalized graph kernel has been shown to allow accurate predictions of the atomization energy of small organic molecules.
+
+Example Kernels
+
+An example of a kernel between graphs is the random walk kernel, which computes multiple rounds of the Weisfeiler-Leman algorithm and then computes the similarity of two graphs as the inner product of the histogram vectors of both graphs. In those histogram vectors the kernel collects the number of times a color occurs in the graph in every iteration.
+
+Note that the Weisfeiler-Leman kernel in theory has an infinite dimension as the number of possible colors assigned by the Weisfeiler-Leman algorithm is infinite. By restricting to the colors that occur in both graphs, the computation is still feasible.
+
+See also
+
+Tree kernel, as special case of non-cyclic graphs
+
+Molecule mining, as special case of small multi-label graphs
+
+References
+
+Category:Graph algorithms
+
+Category:Kernel methods for machine learning

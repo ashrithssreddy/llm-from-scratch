@@ -1,0 +1,45 @@
+{{Infobox software
+
+title = GPT-4.1
+
+logo = GPT-4.1 icon.png
+
+developer = OpenAI
+
+released =
+
+replaces =
+
+replaced_by = GPT-5
+
+genre =
+
+license = Proprietary
+
+website =
+
+}}
+
+GPT-4.1 is a large language model within OpenAI's GPT series. It was released on April 14, 2025. GPT-4.1 can be accessed through the OpenAI API or the OpenAI Developer Playground. Three different models were simultaneously released: GPT-4.1, GPT-4.1 mini, and GPT-4.1 nano. Since May 14, GPT-4.1 has been available for users subscribed to the ChatGPT Plus and Pro plans, and GPT-4.1 mini that replaces GPT-4o mini is available for all ChatGPT users.
+
+Overview
+
+All three models have a context window of 1 million tokens and a knowledge cutoff of June 2024. and "Graphwalks" (forcing the model to simulate breadth-first search). The models are also trained to follow instructions more literally, making the model more steerable. Zvi Mowshowitz described GPT-4.1-mini as an "excellent practical model". However, he criticized OpenAI for not doing enough safety testing, saying that he "hate[s] the precedent this sets".
+
+See also
+
+List of large language models
+
+References
+
+External links
+
+Category:Large language models
+
+Category:2025 software
+
+Category:Generative pre-trained transformers
+
+Category:OpenAI
+
+Category:2025 in artificial intelligence

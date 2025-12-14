@@ -1,0 +1,49 @@
+Brown clustering is a hard hierarchical agglomerative clustering problem based on distributional information proposed by Peter Brown, William A. Brown, Vincent Della Pietra, Peter V. de Souza, Jennifer Lai, and Robert Mercer. is typically applied to text, grouping words into clusters that are assumed to be semantically related by virtue of their having been embedded in similar contexts.
+
+Introduction
+
+In natural language processing, Brown clustering The intuition behind the method is that a class-based language model (also called cluster -gram model
+
+Jurafsky and Martin give the example of a flight reservation system that needs to estimate the likelihood of the bigram "to Shanghai", without having seen this in a training set. The system can obtain a good estimate if it can cluster "Shanghai" with other city names, then make its estimate based on the likelihood of phrases such as "to London", "to Beijing" and "to Denver".
+
+Technical definition
+
+Brown  groups items (i.e., types) into classes, using a binary merging criterion based on the log-probability of a text under a class-based language model, i.e. a probability model that takes the clustering into account. Thus, average mutual information (AMI) is the optimization function, and merges are chosen such that they incur the least loss in global mutual information.
+
+As a result, the output can be thought of not only as a binary tree but perhaps more helpfully as a sequence of merges, terminating with one big class of all words. This model has the same general form as a hidden Markov model, reduced to bigram probabilities in Brown's solution to the problem.
+
+MI is defined as:
+
+\operatorname{MI}(c_i, c_j) = \Pr(\langle c_i, c_j\rangle) \log_2 \frac{\Pr(\langle c_i, c_j\rangle)}{\Pr(\langle c_i, *\rangle) \Pr(\langle *, c_j\rangle)}
+
+Finding the clustering that maximizes the likelihood of the data is computationally expensive.
+
+The approach proposed by Brown et al. is a greedy heuristic.
+
+The work also suggests use of Brown clusterings as a simplistic bigram class-based language model. Given cluster membership indicators  for the tokens  in a text, the probability of the word instance  given preceding word  is given by: The prefixes to these paths are used as new features for the tagger.
+
+Brown clustering as proposed generates a fixed number of output classes. It is important to choose the correct number of classes, which is task-dependent. The cluster memberships of words resulting from Brown clustering can be used as features in a variety of machine-learned natural language processing tasks.
+
+A generalization of the algorithm was published in the AAAI conference in 2016, including a succinct formal definition of the 1992 version and then also the general form. Core to this is the concept that the classes considered for merging do not necessarily represent the final number of classes output, and that altering the number of classes considered for merging directly affects the speed and quality of the final result.
+
+There are no known theoretical guarantees on the greedy heuristic proposed by Brown et al. (as of February 2018). However, the clustering problem can be framed as estimating the parameters of the underlying class-based language model: it is possible to develop a consistent estimator for this model under mild assumptions.
+
+See also
+
+Feature learning
+
+References
+
+External links
+
+How to tune Brown clustering
+
+Category:Cluster analysis
+
+Category:Hidden Markov models
+
+Category:Language modeling
+
+Category:Computational linguistics
+
+Category:Statistical natural language processing

@@ -1,0 +1,43 @@
+The Jenks optimization method, also called the Jenks natural breaks classification method, is a data clustering method designed to determine the best arrangement of values into different classes. This is done by seeking to minimize each class's average square deviation from the class mean, while maximizing each class's deviation from the means of the other classes. In other words, the method seeks to reduce the variance within classes and maximize the variance between classes.
+
+The Jenks optimization method is directly related to Otsu's Method and Fisher's Discriminant Analysis.
+
+History
+
+George F. Jenks was a 20th-century American cartographer. Graduating with his Ph.D. in agricultural geography from Syracuse University in 1947, Jenks began his career under the tutelage of Richard Harrison, cartographer for Time and Fortune magazine. He joined the faculty of the University of Kansas in 1949 and began to build the cartography program. During his 37-year tenure at KU, Jenks developed the Cartography program into one of three programs renowned for their graduate education in the field; the others being the University of Wisconsin and the University of Washington. Much of his time was spent developing and promoting improved cartographic training techniques and programs. He also spent significant time investigating three-dimensional maps, eye-movement research, thematic map communication, and geostatistics.
+
+Jenks was a cartographer by profession. His work with statistics grew out of a desire to make choropleth maps more visually accurate for the viewer. In his paper, The Data Model Concept in Statistical Mapping, he claims that by visualizing data in a three dimensional model cartographers could devise a “systematic and rational method for preparing choroplethic maps”.
+
+Alternatively, all break combinations may be examined, SDCM calculated for each combination, and the combination with the lowest SDCM selected. Since all break combinations are examined, this guarantees that the one with the lowest SDCM is found.
+
+Finally the sum of squared deviations from the mean of the complete data set(SDAM), and the goodness of variance fit (GVF) may be calculated.
+
+GVF is defined as (SDAM - SDCM) / SDAM. GVF ranges from 0 (worst fit) to 1 (perfect fit).
+
+Use in cartography
+
+Jenks’ goal in developing this method was to create a map that was absolutely accurate, in terms of the representation of data's spatial attributes. By following this process, Jenks claims, the “blanket of error” can be uniformly distributed across the mapped surface. He developed this with the intention of using relatively few data classes, less than seven, because that was the limit when using monochromatic shading on a choroplethic map.).
+
+References
+
+Further reading
+
+J. A. Hartigan:  Clustering Algorithms, John Wiley & Sons, Inc., 1975
+
+External links
+
+Volunteered Geographic Information, Daniel Lewis, Jenks Natural Breaks Algorithm with an implementation in python
+
+CMU lib.stat FORTRAN source code
+
+Object Vision wiki, Fisher's Natural Breaks Classification, a O(k*n*log(n)) algorithm
+
+What is Jenks Natural Breaks?
+
+Literate Jenks Natural Breaks and How The Idea Of Code is Lost
+
+Category:Data management
+
+Category:Cartography
+
+Category:Cluster analysis algorithms

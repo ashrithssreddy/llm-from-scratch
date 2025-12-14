@@ -1,0 +1,45 @@
+Do-calculus is a set of mathematical rules devised by Judea Pearl in 1995 to determine whether causal effects can be identified from observational data under specific assumptions encoded in a causal graph. It provides a systematic method for transforming expressions involving the do-operator (representing interventions) into expressions involving only observable probabilities, enabling the identification of causal relationships.
+
+Definition and purpose
+
+Causal queries involving interventions (e.g.,  P(y \mid \mathrm{do}(x)) ) are considered identifiable if they can be expressed using observational data alone, independent of unmeasured parameters. The do-calculus achieves this by leveraging graphical criteria from directed acyclic graphs (DAGs) to remove do-operators through algebraic manipulations.
+
+The three rules of Do-calculus
+
+The rules apply to a causal graph \mathcal{G} and assume the Markov condition holds:
+
+Rule 1: Insertion/deletion of observations
+
+P(y \mid \mathrm{do}(x), z, w) = P(y \mid \mathrm{do}(x), w) \quad \text{if } Y \perp\!\!\!\perp Z \mid X, W \text{ in } \mathcal{G}_{\overline{X}}
+
+This rule allows the removal of irrelevant observations (Z) if they are d-separated from Y given X and W in the graph where incoming edges to X are removed.
+
+Rule 2: Action/observation exchange
+
+P(y \mid \mathrm{do}(x), \mathrm{do}(z), w) = P(y \mid \mathrm{do}(x), z, w) \quad \text{if } Y \perp\!\!\!\perp Z \mid X, W \text{ in } \mathcal{G}_{\overline{X}\, \underline{Z}}
+
+This rule permits replacing an intervention (\mathrm{do}(z)) with an observation (z) if Y and Z are *d*-separated in the graph where outgoing edges from Z are removed.
+
+Rule 3: Insertion/deletion of interventions
+
+P(y \mid \mathrm{do}(x), \mathrm{do}(z), w) = P(y \mid \mathrm{do}(x), w) \quad \text{if } Y \perp\!\!\!\perp Z \mid X, W \text{ in } \mathcal{G}_{\overline{X}\, \overline{Z(W)}}
+
+This rule removes irrelevant interventions (\mathrm{do}(z)) if Y and Z are d-separated in a graph modified to block paths through Z.
+
+Applications
+
+Do-calculus can be applied to various domains within causal inference such as mediation analysis in decomposing direct and indirect effects. It can be used for meta-synthesis to combine the results from heterogeneous studies.
+
+Completeness
+
+The do-calculus is considered complete: if repeated application of the rules cannot eliminate the do-operator, the causal effect is not identifiable. This result was formalized in 2006 by Huang, Valtorta, Shpitser, and Pearl.
+
+Criticism
+
+Critics have pointed out that other frameworks, such as structural equation modeling (SEM) or Bayesian networks, may offer more intuitive approaches to causal inference for certain applications. These methods often emphasize parameter estimation rather than identifiability, which can be more relevant for applied research.
+
+References
+
+Category:Probability theory
+
+Category:Causal inference

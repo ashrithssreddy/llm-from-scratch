@@ -1,0 +1,49 @@
+{{Infobox company
+
+name               = Frrole.ai
+
+founder            =
+
+area_served        = Worldwide
+
+num_employees      = 15
+
+homepage           =
+
+location           =
+
+location_city      = Bangalore
+
+location_country   = India
+
+}}
+
+Frrole, Inc. is a Palo Alto, California–based social intelligence company, although the bulk of its operations is performed from its office in Bangalore, India. Founded in January 2014, it provides contextual topical and people insights to brands, media and technology companies by analyzing social data in real-time. In addition to its standard API provision, Frrole also provides custom-built command centers for its clients.
+
+Frrole spent four months at Microsoft Ventures Accelerator. as part of its third batch in Bangalore, at the end of which it raised its seed round from a group of angel investors, led by Sharad Sharma, Manav Garg and Rajan Anandan. Frrole was among the "16 coolest startups in India" in 2014, an annual ranking published by Business Today.
+
+Product
+
+Frrole’s Topical Intelligence product provides real-time contextual insights about topics and categories. It does this by analysing universal data sets like Facebook, Twitter and Instagram using standard and custom-built algorithms around Machine Learning and Natural Language Processing. In August 2015, Frrole launched its People Intelligence product, which analyses users behind social conversations and provides insights like their psychometric profile, purchase behavior, interests graph, and brand affinity. Scout, the first dashboard product built using Frrole APIs, provides real-time and historical analysis of topics, individuals and a group of users.
+
+Customers
+
+Frrole works with media companies, brands and agencies. Its social TV tracker tool developed for Maxus was awarded the best media research tool award under analytics/technology category. Frrole's APIs powered real-time interview of India’s prime minister Narendra Modi in Times Now Newshour, India’s first on-air real-time Twitter debate show on Headlines Today, and India’s first real-time on-demand music show ‘Tweet Meri Beat’ on Disney UTV. Frrole has customers in the US, Australia, Singapore and India.
+
+Partnerships
+
+Frrole signed partnership with Twitter for elevated data access in April 2014, gaining access to larger amount of data than is freely available. In August 2015, it signed a media solutions partnership with Facebook.
+
+Controversy
+
+An article published by TechCrunch in December 2013 hinted that Twitter  was in acquisition talks with Frrole. Frrole instantly denied the rumor, but it was carried by many major publications regardless.
+
+References
+
+Further reading
+
+{{cite web | title=Frrole: Amarpreet Kalkat's Bengaluru-based company analyses social media data for organizations | website=The Economic Times | date=November 10, 2014 | url=http://articles.economictimes.indiatimes.com/2014-11-10/news/55955698_1_social-media-data-enterprise-social-web | archive-url= https://web.archive.org/web/20141113134208/http://articles.economictimes.indiatimes.com/2014-11-10/news/55955698_1_social-media-data-enterprise-social-web | url-status=dead | archive-date=November 13, 2014 | ref= | access-date=January 13, 2016}}
+
+Category:Companies based in Palo Alto, California
+
+Category:Social network analysis software

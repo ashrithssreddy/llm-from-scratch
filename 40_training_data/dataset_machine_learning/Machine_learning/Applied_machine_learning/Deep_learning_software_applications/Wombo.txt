@@ -1,0 +1,97 @@
+{{Infobox software
+
+name = WOMBO
+
+logo = WomboLogo.svg
+
+logo caption =
+
+logo alt =
+
+logo size = 250px
+
+collapsible =
+
+screenshot =
+
+screenshot size =
+
+screenshot alt =
+
+caption =
+
+other_names = WOMBO.aiW.aiWOMBO.I
+
+developer = Akshat Jagga, Angad Arneja, Ben-Zion Benkhin, Paul Pavel, Parshant Loungani, Vivek Bhakta
+
+released =
+
+discontinued = early 2023
+
+repo =
+
+qid =
+
+programming language =
+
+middleware =
+
+engine =
+
+operating system = Android, iOS
+
+service_name =
+
+size =
+
+standard =
+
+language =
+
+language count =
+
+language footnote =
+
+genre = Deepfake
+
+license =
+
+website =
+
+}}
+
+Wombo (stylized as WOMBO) is a Canadian tech startup centered around AI. Their flagship product is an app titled Dream, released in 2021, that has features such as using a provided selfie to create a deepfake of a person, text to image generation, and more.
+
+Company
+
+Wombo was founded by Ben-Zion Benkhin. Based in Toronto, the company produces generative artificial intelligence entertainment apps which have surpassed more than 200 million downloads as of 2024.
+
+In March 2021, Wombo launched its first app, also called Wombo, which generated lip-sync videos from user selfies. The company also launched a text-to-image generator app called Wombo Dream in October 2021. In 2023, the company shut down its original app due to copyright issues, and they launched Wombo Meme, a tool for creating memes from selfies.
+
+Wombo processes images in the cloud. CEO Ben-Zion Benkhin says that all user data is deleted after 24 hours.
+
+Development
+
+Dream was developed in Canada and launched in February 2021 Wombo CEO Ben-Zion Benkhin says he got the idea for the app in August 2020.
+
+Reception
+
+Within its first three weeks of release, the app was downloaded over 20 million times, The sudden boom in deepfake technology has been described as "a cultural tipping point we aren't ready for",
+
+References
+
+External links
+
+Category:Android (operating system) software
+
+Category:Internet properties established in 2021
+
+Category:Photo software
+
+Category:Social media
+
+Category:Deep learning software applications
+
+Category:Deepfakes
+
+Category:Internet memes introduced in 2021

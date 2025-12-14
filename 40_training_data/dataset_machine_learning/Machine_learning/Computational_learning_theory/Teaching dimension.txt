@@ -1,0 +1,17 @@
+In computational learning theory, the teaching dimension of a concept class C is defined to be \max_{c\in C}\{w_C(c)\}, where {w_C(c)} is the minimum size of a witness set for c in C. Intuitively, this measures the number of instances that are needed to identify a concept in the class, using supervised learning with examples provided by a helpful teacher who is trying to convey the concept as succinctly as possible. This definition was formulated in 1995 by Sally Goldman and Michael Kearns, based on earlier work by Goldman, Ron Rivest, and Robert Schapire.
+
+The teaching dimension of a finite concept class can be used to give a lower and an upper bound on the membership query cost of the concept class.
+
+In Stasys Jukna's book "Extremal Combinatorics", a lower bound is given for the teaching dimension in general:
+
+Let C be a concept class over a finite domain X. If the size of C is greater than
+
+2^k{|X|\choose k},
+
+then the teaching dimension of C is greater than k.
+
+However, there are more specific teaching models that make assumptions about teacher or learner, and can get lower values for the teaching dimension. For instance, several models are the classical teaching (CT) model, recursive teaching (RT), preference-based teaching (PBT), and non-clashing teaching (NCT).
+
+References
+
+Category:Computational learning theory

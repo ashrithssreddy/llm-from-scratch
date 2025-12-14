@@ -1,0 +1,251 @@
+Theano is a Python library and optimizing compiler for manipulating and evaluating mathematical expressions, especially matrix-valued ones.
+
+In Theano, computations are expressed using a NumPy-esque syntax and compiled to run efficiently on either CPU or GPU architectures.
+
+History
+
+Theano is an open source project primarily developed by the Montreal Institute for Learning Algorithms (MILA) at the Université de Montréal.
+
+The name of the software references the ancient philosopher Theano, long associated with the development of the golden mean.
+
+On 28 September 2017, Pascal Lamblin posted a message from Yoshua Bengio, Head of MILA:  major development would cease after the 1.0 release due to competing offerings by strong industrial players. Theano 1.0.0 was then released on 15 November 2017.
+
+On 17 May 2018, Chris Fonnesbeck wrote on behalf of the PyMC development team that the PyMC developers will officially assume control of Theano maintenance once the MILA development team steps down. On 29 January 2021, they started using the name Aesara for their fork of Theano.
+
+On 29 Nov 2022, the PyMC development team announced that the PyMC developers will fork the Aesara project under the name PyTensor.
+
+Sample code
+
+The following code is the original Theano's example. It defines a computational graph with 2 scalars  and  of type double and an operation between them (addition) and then creates a Python function f that does the actual computation.
+
+import theano
+
+from theano import tensor
+
+Declare two symbolic floating-point scalars
+
+a = tensor.dscalar()
+
+b = tensor.dscalar()
+
+Create a simple expression
+
+c = a + b
+
+Convert the expression into a callable object that takes (a, b)
+
+values as input and computes a value for c
+
+f = theano.function([a, b], c)
+
+Bind 1.5 to 'a', 2.5 to 'b', and evaluate 'c'
+
+assert 4.0 == f(1.5, 2.5)
+
+Examples
+
+Matrix Multiplication (Dot Product)
+
+The following code demonstrates how to perform matrix multiplication using Theano, which is essential for linear algebra operations in many machine learning tasks.
+
+import theano
+
+from theano import tensor
+
+Declare two symbolic 2D arrays (matrices)
+
+A = tensor.dmatrix("A")
+
+B = tensor.dmatrix("B")
+
+Define a matrix multiplication (dot product) operation
+
+C = tensor.dot(A, B)
+
+Create a function that computes the result of the matrix multiplication
+
+f = theano.function([A, B], C)
+
+Sample matrices
+
+A_val = [[1, 2], [3, 4]]
+
+B_val = [[5, 6], [7, 8]]
+
+Evaluate the matrix multiplication
+
+result = f(A_val, B_val)
+
+print(result)
+
+Gradient Calculation
+
+The following code uses Theano to compute the gradient of a simple operation (like a neuron) with respect to its input. This is useful in training machine learning models (backpropagation).
+
+import theano
+
+from theano import tensor
+
+Define symbolic variables
+
+x = tensor.dscalar("x")  # Input scalar
+
+y = tensor.dscalar("y")  # Weight scalar
+
+Define a simple function (y * x, a simple linear function)
+
+z = y * x
+
+Compute the gradient of z with respect to x (partial derivative of z with respect to x)
+
+dz_dx = tensor.grad(z, x)
+
+Create a function to compute the value of z and dz/dx
+
+f = theano.function([x, y], [z, dz_dx])
+
+Sample values
+
+x_val = 2.0
+
+y_val = 3.0
+
+Compute z and its gradient
+
+result = f(x_val, y_val)
+
+print("z:", result)  # z = y * x = 3 * 2 = 6
+
+print("dz/dx:", result)  # dz/dx = y = 3
+
+Building a Simple Neural Network
+
+The following code shows how to start building a simple neural network. This is a very basic neural network with one hidden layer.
+
+import theano
+
+from theano import tensor as T
+
+import numpy as np
+
+Define symbolic variables for input and output
+
+X = T.matrix("X")  # Input features
+
+y = T.ivector("y")  # Target labels (integer vector)
+
+Define the size of the layers
+
+input_size = 2  # Number of input features
+
+hidden_size = 3  # Number of neurons in the hidden layer
+
+output_size = 2  # Number of output classes
+
+Initialize weights for input to hidden layer (2x3 matrix) and hidden to output (3x2 matrix)
+
+W1 = theano.shared(np.random.randn(input_size, hidden_size), name="W1")
+
+b1 = theano.shared(np.zeros(hidden_size), name="b1")
+
+W2 = theano.shared(np.random.randn(hidden_size, output_size), name="W2")
+
+b2 = theano.shared(np.zeros(output_size), name="b2")
+
+Define the forward pass (hidden layer and output layer)
+
+hidden_output = T.nnet.sigmoid(T.dot(X, W1) + b1)  # Sigmoid activation
+
+output = T.nnet.softmax(T.dot(hidden_output, W2) + b2)  # Softmax output
+
+Define the cost function (cross-entropy)
+
+cost = T.nnet.categorical_crossentropy(output, y).mean()
+
+Compute gradients
+
+grad_W1, grad_b1, grad_W2, grad_b2 = T.grad(cost, [W1, b1, W2, b2])
+
+Create a function to compute the cost and gradients
+
+train = theano.function(inputs=[X, y], outputs=[cost, grad_W1, grad_b1, grad_W2, grad_b2])
+
+Sample input data and labels (2 features, 2 samples)
+
+X_val = np.array([[0.1, 0.2], [0.3, 0.4]])
+
+y_val = np.array([0, 1])
+
+Train the network for a single step (you would iterate in practice)
+
+cost_val, grad_W1_val, grad_b1_val, grad_W2_val, grad_b2_val = train(X_val, y_val)
+
+print("Cost:", cost_val)
+
+print("Gradients for W1:", grad_W1_val)
+
+Broadcasting in Theano
+
+The following code demonstrates how broadcasting works in Theano. Broadcasting allows operations between arrays of different shapes without needing to explicitly reshape them.
+
+import theano
+
+from theano import tensor as T
+
+import numpy as np
+
+Declare symbolic arrays
+
+A = T.dmatrix("A")
+
+B = T.dvector("B")
+
+Broadcast B to the shape of A, then add them
+
+C = A + B  # Broadcasting B to match the shape of A
+
+Create a function to evaluate the operation
+
+f = theano.function([A, B], C)
+
+Sample data (A is a 3x2 matrix, B is a 2-element vector)
+
+A_val = np.array([[1, 2], [3, 4], [5, 6]])
+
+B_val = np.array([10, 20])
+
+Evaluate the addition with broadcasting
+
+result = f(A_val, B_val)
+
+print(result)
+
+See also
+
+Comparison of deep learning software
+
+Differentiable programming
+
+References
+
+External links
+
+(GitHub)
+
+Theano at Deep Learning, Université de Montréal
+
+Category:Array programming languages
+
+Category:Deep learning software
+
+Category:Free science software
+
+Category:Numerical programming languages
+
+Category:Python (programming language) scientific libraries
+
+Category:Software using the BSD license
+
+Category:Articles with example Python (programming language) code
+
+Category:2007 software

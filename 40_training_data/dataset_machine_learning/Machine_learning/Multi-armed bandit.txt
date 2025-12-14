@@ -1,0 +1,207 @@
+In probability theory and machine learning, the multi-armed bandit problem (sometimes called the K- or N-armed bandit problem) is named from imagining a gambler at a row of slot machines (sometimes known as "one-armed bandits"), who has to decide which machines to play, how many times to play each machine and in which order to play them, and whether to continue with the current machine or try a different machine.
+
+More generally, it is a problem in which a decision maker iteratively selects one of multiple fixed choices (i.e., arms or actions) when the properties of each choice are only partially known at the time of allocation, and may become better understood as time passes. A fundamental aspect of bandit problems is that choosing an arm does not affect the properties of the arm or other arms.
+
+Instances of the multi-armed bandit problem include the task of iteratively allocating a fixed, limited set of resources between competing (alternative) choices in a way that minimizes the regret.
+
+The multi-armed bandit problem is a classic reinforcement learning problem that exemplifies the exploration&ndash;exploitation tradeoff dilemma. In contrast to general reinforcement learning, the selected actions in bandit problems do not affect the reward distribution of the arms.
+
+The multi-armed bandit problem also falls into the broad category of stochastic scheduling.
+
+In the problem, each machine provides a random reward from a probability distribution specific to that machine, that is not known  a priori. The objective of the gambler is to maximize the sum of rewards earned through a sequence of lever pulls. A theorem, the Gittins index, first published by John C. Gittins, gives an optimal policy for maximizing the expected discounted reward.
+
+Empirical motivation
+
+The multi-armed bandit problem models an agent that simultaneously attempts to acquire new knowledge (called "exploration") and optimize their decisions based on existing knowledge (called "exploitation"). The agent attempts to balance these competing tasks in order to maximize their total value over the period of time considered. There are many practical applications of the bandit model, for example:
+
+clinical trials investigating the effects of different experimental treatments while minimizing patient losses,
+
+adaptive routing efforts for minimizing delays in a network,
+
+financial portfolio design arm payoffs.
+
+Best arm identification
+
+An important variation of the classical regret minimization problem in multi-armed bandits is best arm identification (BAI), (following papers of Robbins and his co-workers going back to Robbins in the year 1952) constructed convergent population selection policies that possess the fastest rate of convergence (to the population with highest mean) for the case that the population reward distributions are the one-parameter exponential family. Then, in Katehakis and Robbins simplifications of the policy and the main proof were given for the case of normal populations with known variances. The next notable progress was obtained by Burnetas and Katehakis  in the paper "Optimal adaptive policies for sequential allocation problems", where index based policies with uniformly maximum convergence rate were constructed, under more general conditions that include the case in which the distributions of outcomes from each population depend on a vector of unknown parameters. Burnetas and Katehakis (1996) also provided an explicit solution for the important case in which the distributions of outcomes follow arbitrary (i.e., non-parametric) discrete, univariate distributions.
+
+Later in "Optimal adaptive policies for Markov decision processes" Burnetas and Katehakis studied the much larger model of Markov Decision Processes under partial information, where the transition law and/or the expected one period rewards may depend on unknown parameters. In this work, the authors constructed an explicit form for a class of adaptive policies with uniformly maximum convergence rate properties for the total expected finite horizon reward under sufficient assumptions of finite state-action spaces and irreducibility of the transition law. A main feature of these policies is that the choice of actions, at each state and time period, is based on indices that are inflations of the right-hand side of the estimated average reward optimality equations. These inflations have recently been called the optimistic approach in the work of Tewari and Bartlett, Ortner Filippi, Cappé, and Garivier, and Honda and Takemura.
+
+For Bernoulli multi-armed bandits, Pilarski et al. Via indexing schemes, lookup tables, and other techniques, this work provided practically applicable optimal solutions for Bernoulli bandits provided that time horizons and numbers of arms did not become excessively large. Pilarski et al. to create a method of determining the optimal policy for Bernoulli bandits when rewards may not be immediately revealed following a decision and may be delayed. This method relies upon calculating expected values of reward outcomes which have not yet been revealed and updating posterior probabilities when rewards are revealed.
+
+When optimal solutions to multi-arm bandit tasks are used to derive the value of animals' choices, the activity of neurons in the amygdala and ventral striatum encodes the values derived from these policies, and can be used to decode when the animals make exploratory versus exploitative choices. Moreover, optimal policies better predict animals' choice behavior than alternative strategies (described below). This suggests that the optimal solutions to multi-arm bandit problems are biologically plausible, despite being computationally demanding.
+
+Approximate solutions
+
+Many strategies exist which provide an approximate solution to the bandit problem, and can be put into the four broad categories detailed below.
+
+Semi-uniform strategies
+
+Semi-uniform strategies were the earliest (and simplest) strategies discovered to approximately solve the bandit problem. All those strategies have in common a greedy behavior where the best lever (based on previous observations) is always pulled except when a (uniformly) random action is taken.
+
+Epsilon-greedy strategy: The best lever is selected for a proportion 1 - \epsilon of the trials, and a lever is selected at random (with uniform probability) for a proportion \epsilon. A typical parameter value might be \epsilon = 0.1, but this can vary widely depending on circumstances and predilections.
+
+Epsilon-first strategy: A pure exploration phase is followed by a pure exploitation phase. For N trials in total, the exploration phase occupies \epsilon N trials and the exploitation phase (1 - \epsilon) N trials. During the exploration phase, a lever is randomly selected (with uniform probability); during the exploitation phase, the best lever is always selected.
+
+Epsilon-decreasing strategy: Similar to the epsilon-greedy strategy, except that the value of \epsilon decreases as the experiment progresses, resulting in highly explorative behaviour at the start and highly exploitative behaviour at the finish.
+
+Adaptive epsilon-greedy strategy based on value differences (VDBE): Similar to the epsilon-decreasing strategy, except that  epsilon is reduced on basis of the learning progress instead of manual tuning (Tokic, 2010).
+
+Online non-linear bandits
+
+UCBogram algorithm: The nonlinear reward functions are estimated using a piecewise constant estimator called a regressogram in nonparametric regression. Then, UCB is employed on each constant piece. Successive refinements of the partition of the context space are scheduled or chosen adaptively.
+
+Oracle-based algorithm: The algorithm reduces the contextual bandit problem into a series of supervised learning problem, and does not rely on typical realizability assumption on the reward function. as it removes all assumptions of the distribution and a solution to the adversarial bandit problem is a generalized solution to the more specific bandit problems.
+
+Example: Iterated prisoner's dilemma
+
+An example often considered for adversarial bandits is the iterated prisoner's dilemma. In this example, each adversary has two arms to pull. They can either Deny or Confess. Standard stochastic bandit algorithms don't work very well with these iterations. For example, if the opponent cooperates in the first 100 rounds, defects for the next 200, then cooperates in the following 300, etc. then algorithms such as UCB won't be able to react very quickly to these changes. This is because after a certain point sub-optimal arms are rarely pulled to limit exploration and focus on exploitation. When the environment changes the algorithm is unable to adapt or may not even detect the change.
+
+Approximate solutions
+
+Exp3
+
+Source:
+
+EXP3 is a popular algorithm for adversarial multiarmed bandits, suggested and analyzed in this setting by Auer et al. [2002b].
+
+Recently there was an increased interest in the performance of this algorithm in the stochastic setting, due to its new applications to stochastic multi-armed bandits with side information [Seldin et al., 2011] and to multi-armed bandits in the mixed stochastic-adversarial setting [Bubeck and Slivkins, 2012].
+
+The paper presented an empirical evaluation and improved analysis of the performance of the EXP3 algorithm in the stochastic setting, as well as a modification of the EXP3 algorithm capable of achieving "logarithmic" regret in stochastic environment.
+
+Algorithm
+
+Parameters: Real \gamma \in (0,1]
+
+Initialisation: \omega_i(1) = 1 for i = 1,...,K
+
+For each t = 1, 2, ..., T
+
+1. Set p_i(t) = (1 - \gamma)\frac{\omega_i(t)}{\sum_{j=1}^{K}\omega_j(t)} + \frac{\gamma}{K}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i = 1,...,K
+
+2. Draw i_t randomly according to the probabilities p_1(t),...,p_K(t)
+
+3. Receive reward x_{i_t}(t) \in [0,1]
+
+4. For j = 1,...,K set:
+
+&nbsp;&nbsp;&nbsp;&nbsp;\hat{x}_j(t) = \begin{cases}x_j(t)/p_j(t) & \text{if }j = i_t \\0, & \text{otherwise}\end{cases}
+
+&nbsp;&nbsp;&nbsp;&nbsp;\omega_j(t+1) = \omega_j(t) \exp(\gamma\hat{x}_j(t)/K)
+
+Explanation
+
+Exp3 chooses an arm at random with probability (1 - \gamma) it prefers arms with higher weights (exploit), it chooses with probability \gamma to uniformly randomly explore. After receiving the rewards the weights are updated. The exponential growth significantly increases the weight of good arms.
+
+Regret analysis
+
+The (external) regret of the Exp3 algorithm is at most
+
+O(\sqrt{KTlog(K)})
+
+Follow the perturbed leader (FPL) algorithm
+
+Algorithm
+
+Parameters: Real \eta
+
+Initialisation: \forall i: R_i(1) = 0
+
+For each t = 1,2,...,T
+
+1. For each arm generate a random noise from an exponential distribution \forall i : Z_i(t) \sim Exp(\eta)
+
+2. Pull arm I(t): I(t)=arg\max_i\{R_i(t) + Z_i(t)\}
+
+Add noise to each arm and pull the one with the highest value
+
+3. Update value: R_{I(t)}(t+1) = R_{I(t)}(t) + x_{I(t)}(t)
+
+The rest remains the same
+
+Explanation
+
+We follow the arm that we think has the best performance so far adding exponential noise to it to provide exploration.
+
+Exp3 vs FPL
+
+Infinite-armed bandit
+
+In the original specification and in the above variants, the bandit problem is specified with a discrete and finite number of arms, often indicated by the variable K. In the infinite armed case, introduced by Agrawal (1995), the "arms" are a continuous variable in K dimensions.
+
+Non-stationary bandit
+
+This framework refers to the multi-armed bandit problem in a non-stationary setting (i.e., in presence of concept drift). In the non-stationary setting, it is assumed that the expected reward for an arm k can change at every time step t \in \mathcal{T}: \mu_{t-1}^k \neq \mu_t^k. Thus, \mu_t^k no longer represents the whole sequence of expected (stationary) rewards for arm k. Instead, \mu^k denotes the sequence of expected rewards for arm k, defined as \mu^k = \{\mu_t^k\}_{t=1}^T.
+
+A dynamic oracle represents the optimal policy to be compared with other policies in the non-stationary setting. The dynamic oracle optimises the expected reward at each step t \in \mathcal{T} by always selecting the best arm, with expected reward of \mu_t^*. Thus, the cumulative expected reward \mathcal{D}(T) for the dynamic oracle at final time step T is defined as:
+
+\mathcal{D}(T) = \sum_{t=1}^T{\mu_t^*}.
+
+Hence, the regret \rho^\pi(T) for policy \pi is computed as the difference between \mathcal{D}(T) and the cumulative expected reward at step T for policy \pi:
+
+\rho^\pi(T) =
+
+\sum_{t=1}^T{\mu_t^*} - \mathbb{E}_\pi^\mu \left[ \sum_{t=1}^T{r_t} \right] = \mathcal{D}(T) - \mathbb{E}_\pi^\mu \left[ \sum_{t=1}^T{r_t} \right].
+
+Garivier and Moulines derive some of the first results with respect to bandit problems where the underlying model can change during play. A number of algorithms were presented to deal with this case, including Discounted UCB and Sliding-Window UCB. A similar approach based on Thompson Sampling algorithm is the f-Discounted-Sliding-Window Thompson Sampling (f-dsw TS) proposed by Cavenaghi et al. The f-dsw TS algorithm exploits a discount factor on the reward history and an arm-related sliding window to contrast concept drift in non-stationary environments. Another work by Burtini et al. introduces a weighted least squares Thompson sampling approach (WLS-TS), which proves beneficial in both the known and unknown non-stationary cases.
+
+Other variants
+
+Many variants of the problem have been proposed in recent years.
+
+Dueling bandit
+
+The dueling bandit variant was introduced by Yue et al. (2012)
+
+Further reading
+
+.
+
+.
+
+.
+
+.
+
+.
+
+.
+
+External links
+
+MABWiser, open-source Python implementation of bandit strategies that supports context-free, parametric and non-parametric contextual policies with built-in parallelization and simulation capability.
+
+PyMaBandits, open-source implementation of bandit strategies in Python and Matlab.
+
+Contextual, open-source R package facilitating the simulation and evaluation of both context-free and contextual Multi-Armed Bandit policies.
+
+bandit.sourceforge.net Bandit project, open-source implementation of bandit strategies.
+
+Banditlib, open-source implementation of bandit strategies in C++.
+
+Leslie Pack Kaelbling and Michael L. Littman (1996). Exploitation versus Exploration: The Single-State Case.
+
+Tutorial: Introduction to Bandits: Algorithms and Theory. Part1. Part2.
+
+Feynman's restaurant problem, a classic example (with known answer) of the exploitation vs. exploration tradeoff.
+
+Bandit algorithms vs. A-B testing.
+
+S. Bubeck and N. Cesa-Bianchi A Survey on Bandits.
+
+A Survey on Contextual Multi-armed Bandits, a survey/tutorial for Contextual Bandits.
+
+Blog post on multi-armed bandit strategies, with Python code.
+
+Animated, interactive plots illustrating Epsilon-greedy, Thompson sampling, and Upper Confidence Bound exploration/exploitation balancing strategies.
+
+Category:Sequential methods
+
+Category:Sequential experiments
+
+Category:Stochastic optimization
+
+Category:Machine learning
+
+Category:Metaphors referring to body parts
+
+Category:Science and technology during World War II

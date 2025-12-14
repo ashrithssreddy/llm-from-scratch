@@ -1,0 +1,33 @@
+{{Infobox software
+
+name = BigDL
+
+developer = Intel
+
+repo = https://github.com/intel-analytics/BigDL
+
+genre = Library for deep learning
+
+license = Apache 2.0
+
+website =
+
+}}
+
+BigDL is a distributed deep learning framework for Apache Spark, created by Jason Dai at Intel. BigDL has its source code hosted on GitHub.
+
+Features
+
+Applications
+
+See also
+
+Comparison of deep learning software
+
+References
+
+Category:Data mining and machine learning software
+
+Category:Free science software
+
+Category:Free statistical software

@@ -1,0 +1,37 @@
+that the net represents.]]
+
+In machine learning, a deep belief network (DBN) is a generative graphical model, or alternatively a class of deep neural network, composed of multiple layers of latent variables ("hidden units"), with connections between the layers but not between units within each layer.
+
+When trained without supervision on a set of examples, a DBN can learn to probabilistically reconstruct its inputs. The layers then act as feature detectors. where each sub-network's hidden layer serves as the visible layer for the next. An RBM is an undirected, generative energy-based model with a "visible" input layer and a hidden layer and connections between but not within layers. This composition leads to a fast, layer-by-layer unsupervised training procedure, where contrastive divergence is applied to each sub-network in turn, starting from the "lowest" pair of layers (the lowest visible layer is a training set).
+
+The observation that DBNs can be trained greedily, one layer at a time, led to one of the first effective deep learning algorithms. Overall, there are many attractive implementations and uses of DBNs in real-life applications and scenarios (e.g., electroencephalography, drug discovery).
+
+Training
+
+The training method for RBMs proposed by Geoffrey Hinton for use with training "Product of Experts" models is called contrastive divergence (CD). CD provides an approximation to the maximum likelihood method that would ideally be applied for learning the weights. In training a single RBM, weight updates are performed with gradient descent via the following equation:  w_{ij}(t+1) = w_{ij}(t) + \eta\frac{\partial \log(p(v))}{\partial w_{ij}}
+
+where, p(v) is the probability of a visible vector, which is given by p(v) = \frac{1}{Z}\sum_he^{-E(v,h)}.  Z  is the partition function (used for normalizing) and E(v,h) is the energy function assigned to the state of the network. A lower energy indicates the network is in a more "desirable" configuration. The gradient \frac{\partial \log(p(v))}{\partial w_{ij}} has the simple form \langle v_ih_j\rangle_\text{data} - \langle v_ih_j\rangle_\text{model} where \langle\cdots\rangle_p represent averages with respect to distribution p. The issue arises in sampling \langle v_ih_j\rangle_\text{model} because this requires extended alternating Gibbs sampling. CD replaces this step by running alternating Gibbs sampling for n steps (values of n = 1 perform well). After n steps, the data are sampled and that sample is used in place of \langle v_ih_j\rangle_\text{model}. The CD procedure works as follows:
+
+Although the approximation of CD to maximum likelihood is crude (does not follow the gradient of any function), it is empirically effective.
+
+(RBM) with fully connected visible and hidden units. Note there are no hidden-hidden or visible-visible connections.]]
+
+See also
+
+Bayesian network
+
+Convolutional deep belief network
+
+Deep learning
+
+Energy based model
+
+Stacked Restricted Boltzmann Machine
+
+References
+
+External links
+
+Category:Neural network architectures
+
+Category:Probabilistic models

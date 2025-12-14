@@ -1,0 +1,9 @@
+REDIRECT OpenAI#API
+
+{{Rcat shell|
+
+}}
+
+Category:Application programming interfaces
+
+Category:Deep learning software applications

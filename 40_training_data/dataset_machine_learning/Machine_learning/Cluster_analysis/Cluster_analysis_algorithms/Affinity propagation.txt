@@ -1,0 +1,19 @@
+In statistics and data mining, affinity propagation (AP) is a clustering algorithm based on the concept of "message passing" between data points.
+
+Unlike clustering algorithms such as -means or -medoids, affinity propagation does not require the number of clusters to be determined or estimated before running the algorithm. Similar to -medoids, affinity propagation finds "exemplars," members of the input set that are representative of clusters.
+
+A study comparing affinity propagation and Markov clustering on protein interaction graph partitioning found Markov clustering to work better for that problem. A semi-supervised variant has been proposed for text mining applications. Another recent application was in economics, when the affinity propagation was used to find some temporal patterns in the output multipliers of the US economy between 1997 and 2017.
+
+Software
+
+A Java implementation is included in the ELKI data mining framework.
+
+A Julia implementation of affinity propagation is contained in Julia Statistics's Clustering.jl package.
+
+A Python version is part of the scikit-learn library.
+
+An R implementation is available in the "apcluster" package.
+
+References
+
+Category:Cluster analysis algorithms

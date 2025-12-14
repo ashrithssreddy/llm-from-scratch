@@ -1,0 +1,67 @@
+{{Infobox software
+
+logo =
+
+screenshot =
+
+developer = Visual Geometry Group
+
+released =
+
+latest release version =
+
+programming language = Caffe
+
+engine =
+
+platform =
+
+genre =
+
+license = CC BY 4.0
+
+website =
+
+}}
+
+architecture]]
+
+The VGGNets are a series of convolutional neural networks (CNNs) developed by the Visual Geometry Group (VGG) at the University of Oxford.
+
+The VGG family includes various configurations with different depths, denoted by the letter "VGG" followed by the number of weight layers. The most common ones are VGG-16 (13 convolutional layers + 3 fully connected layers, 138M parameters) and VGG-19 (16 + 3, 144M parameters). An ensemble model of VGGNets achieved state-of-the-art results in the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) in 2014. It was used as a baseline comparison in the ResNet paper for image classification, as the network in the Fast Region-based CNN for object detection, and as a base network in neural style transfer.
+
+The series was historically important as an early influential model designed by composing generic modules, whereas AlexNet (2012) was designed "from scratch". It was also instrumental in changing the standard convolutional kernels in CNN from large (up to 11-by-11 in AlexNet) to just 3-by-3, a decision that was only revised in ConvNext (2022).
+
+VGGNets were mostly obsoleted by Inception, ResNet, and DenseNet. RepVGG (2021) is an updated version of the architecture.
+
+Architecture
+
+The key architectural principle of VGG models is the consistent use of small 3 \times 3 convolutional filters throughout the network. This contrasts with earlier CNN architectures that employed larger filters, such as 11 \times 11 in AlexNet.
+
+As an example, the 16 convolutional layers of VGG-19 are structured as follows:\begin{aligned}
+
+&3 \to 64 \to 64 &\xrightarrow{\text{downsample}}\\
+
+&64 \to 128 \to 128 &\xrightarrow{\text{downsample}}\\
+
+&128 \to 256 \to 256 \to 256 \to 256 &\xrightarrow{\text{downsample}} \\
+
+&256 \to 512 \to 512 \to 512 \to 512 &\xrightarrow{\text{downsample}}\\
+
+&512 \to 512 \to 512 \to 512 \to 512 &\xrightarrow{\text{downsample}}
+
+\end{aligned}
+
+where the arrow c_1 \to c_2 means a 3x3 convolution with c_1 input channels and c_2 output channels and stride 1, followed by ReLU activation. The \xrightarrow{\text{downsample}} means a down-sampling layer by 2x2 maxpooling with stride 2.
+
+Training
+
+The original VGG models were implemented in a version of C++ Caffe, modified for multi-GPU training and evaluation with data parallelism. On a system equipped with 4 NVIDIA Titan Black GPUs, training a single net took 2–3 weeks depending on the architecture.
+
+References
+
+Category:Deep learning software
+
+Category:Object recognition and categorization
+
+Category:Neural network architectures

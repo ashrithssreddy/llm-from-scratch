@@ -1,0 +1,65 @@
+{{Infobox software
+
+name = Emergent
+
+screenshot = Screenshot ve arm.png
+
+screenshot size = 250px
+
+caption = A robotics simulation utilizing the Open Dynamics Engine
+
+author = Carnegie Mellon University
+
+developer = University of Colorado at Boulder
+
+latest_release_version = 8.2.0 /
+
+programming language = Go
+
+operating_system = Cross-platform
+
+genre = Neural network software
+
+license = GPL
+
+website = Emergent homepage
+
+}}
+
+Emergent (formerly PDP++) is a biologically-based neural simulation software that is primarily intended for creating models of the brain and cognitive processes. Development initially began in 1995 at Carnegie Mellon University, and , continues at the University of Colorado at Boulder. The 3.x release of the software, which was known as PDP++, is featured in the textbook Computational Explorations in Cognitive Neuroscience.
+
+Features
+
+Emergent features a modular design, based on the principles of object-oriented programming. It runs on Microsoft Windows, Darwin / macOS and Linux. C-Super-Script (variously, CSS and C^C), a built-in C++-like interpreted scripting language, allows access to virtually all simulator objects and can initiate all the same actions as the GUI, and more. Version 4 and upward features a full 3D environment for visualizations, based on Qt and Open Inventor. Robotics simulations are made possible by integration with the Open Dynamics Engine. A plugin system allows for expanding the software in many ways. Version 5 introduced parallel threading support, numerous speed improvements, a help browser featuring an interface to the project's Wiki and auto-generated documentation, undo and redo using diffs and a definable undo depth. In addition, 5.0.2 introduced a built-in plugin source code editor, and plugins can now be compiled from the main interface, enabling full development of plugins within Emergent.
+
+Emergent also provides an implementation of Leabra which was developed by Randall C. O'Reilly in his PhD thesis.
+
+See also
+
+David Rumelhart
+
+Randall C. O'Reilly
+
+James McClelland (psychologist)
+
+Biologically inspired computing
+
+Computational neuroscience
+
+Leabra
+
+Bibliography
+
+References
+
+Category:Neural network software
+
+Category:Science software for macOS
+
+Category:Science software for Windows
+
+Category:Science software for Linux
+
+Category:Free science software
+
+Category:Software that uses Qt

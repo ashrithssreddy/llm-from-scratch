@@ -1,0 +1,41 @@
+David Andreoff  Evans (born 1948 in St. Louis) is an American scientist in the field of computational linguistics, best known for his research into indexing using natural language processing, and in ontology learning, especially in medical informatics.
+
+Education
+
+Evans attended Stanford University, receiving his Ph.D. in Computational Linguistics there in 1982.
+
+He attended the Inter-University Center for Japanese Language Studies in 1979.
+
+Career
+
+He was on the faculty of Carnegie Mellon University from 1983 until 1996, and founded their Computational Linguistics Program and Laboratory for Computational Linguistics in 1986.
+
+Supported by a grant from Digital Equipment Corporation, he led a research project on "computational-linguistic approaches to indexing and retrieval of text" (CLARIT).
+
+In September 1992, CLARIT was spun-out from Carnegie-Mellon as a company called Claritech.
+
+The technology was used to index the papers of politician H. John Heinz III.
+
+Claritech became a research and development subsidiary of JustSystems and its name was changed to Clairvoyance Corporation in 1996, before becoming JustSystems Evans Research in 2007.
+
+He has made many contributions to the field of computational linguistics and information retrieval, authoring books, many research papers, and is the holder of 25 US patents.
+
+References
+
+Category:1948 births
+
+Category:Living people
+
+Category:Stanford University alumni
+
+Category:Carnegie Mellon University faculty
+
+Category:American computer scientists
+
+Category:Linguists from the United States
+
+Category:Computational linguistics researchers
+
+Category:Businesspeople from Pennsylvania
+
+Category:Natural language processing researchers

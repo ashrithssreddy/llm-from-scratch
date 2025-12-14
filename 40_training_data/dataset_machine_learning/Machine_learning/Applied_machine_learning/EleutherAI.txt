@@ -1,0 +1,61 @@
+{{Infobox website
+
+name = EleutherAI
+
+logo = EleutherAI logo.svg
+
+logo_size = 200px
+
+company_type = Research co-operative
+
+founded =
+
+founder =
+
+industry = Artificial intelligence
+
+products = GPT-Neo, GPT-J, GPT-NeoX, Pythia, The Pile, VQGAN-CLIP
+
+website = eleuther.ai
+
+}}
+
+EleutherAI () is a grass-roots non-profit artificial intelligence (AI) research group. The group, considered an open-source version of OpenAI, was formed in a Discord server in 2020 to create an open-source version of GPT-3. In early 2023, it formally incorporated as the EleutherAI Institute, a non-profit research institute. As of 2025, the nonprofit no longer trains its own models and instead maintains widely-used training datasets, conducts research and is involved in public policy. in reference to eleutheria, the Greek word for liberty. On June 9, 2021, EleutherAI followed this up with GPT-J-6B, a six billion parameter language model that was again the largest open-source GPT-3-like model in the world. These language models were released under the Apache 2.0 free software license and are considered to have "fueled an entirely new wave of startups".
+
+In early 2023, EleutherAI incorporated as a non-profit research institute run by Stella Biderman, Curtis Huebner, and Shivanshu Purohit. While EleutherAI is still committed to promoting access to AI technologies, they feel that "there is substantially more interest in training and releasing LLMs than there once was", enabling them to focus on other projects.
+
+In July 2024, an investigation by Proof news found that EleutherAI's The Pile dataset includes subtitles from over 170,000 YouTube videos across more than 48,000 channels. The findings drew criticism and accusations of theft from YouTubers and others who had their work published on the platform.
+
+As of February 2025, Eleuther was no longer training their own open-source AI models given their budget constraints of $3 million per year and the increasing number and capabilities of other models, instead looking for other niches.
+
+Research
+
+EleutherAI works with hundreds of volunteer researchers.
+
+The Pile
+
+The Pile is an 886 GB dataset designed for training large language models. It was originally developed to train EleutherAI's GPT-Neo models but has become widely used to train other models, including Microsoft's Megatron-Turing Natural Language Generation. Compared to other datasets, the Pile's main distinguishing features are that it is a curated selection of data chosen by researchers at EleutherAI to contain information they thought language models should learn and that it is the only such dataset that is thoroughly documented by the researchers who developed it. The initial Pile dataset has come under scrutiny for containing copyrighted material and subtitles from documentaries, movies, television and online videos including from YouTube. released in March 2021, it was the largest open-source GPT-3-style language model in the world at the time of release.
+
+GPT-J (6B): released in March 2021, it was the largest open-source GPT-3-style language model in the world at the time of release.
+
+GPT-NeoX-20B, released on Feb 10, 2022.]]
+
+Following the release of DALL-E by OpenAI in January 2021, EleutherAI started working on text-to-image synthesis models. When OpenAI did not release DALL-E publicly, EleutherAI's Katherine Crowson and digital artist Ryan Murdock developed a technique for using CLIP (another model developed by OpenAI) to convert regular image generation models into text-to-image synthesis ones. Building on ideas dating back to Google's DeepDream, they found their first major success combining CLIP with another publicly available model called VQGAN and the resulting model is called VQGAN-CLIP. Crowson released the technology by tweeting notebooks demonstrating the technique that people could run for free without any special equipment.
+
+See also
+
+List of artificial intelligence companies
+
+Lists of open-source artificial intelligence software
+
+References
+
+Category:Language modeling
+
+Category:Artificial intelligence laboratories
+
+Category:Deep learning
+
+Category:Applied machine learning
+
+Category:Open-source artificial intelligence

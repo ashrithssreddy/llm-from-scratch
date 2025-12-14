@@ -1,0 +1,45 @@
+In probability theory and statistics, diffusion processes are a class of continuous-time Markov process with almost surely continuous sample paths. Diffusion processes are stochastic in nature and hence are used to model many real-life stochastic systems. Brownian motion, reflected Brownian motion and Ornstein–Uhlenbeck processes are examples of diffusion processes. It is used heavily in statistical physics, statistical analysis, information theory, data science, neural networks, finance and marketing.
+
+A sample path of a diffusion process models the trajectory of a particle embedded in a flowing fluid and subjected to random displacements due to collisions with other particles, which is called Brownian motion.  The position of the particle is then random; its probability density function as a function of space and time is  governed by a convection–diffusion equation.
+
+Mathematical definition
+
+A diffusion process is a Markov process with continuous sample paths for which the Kolmogorov forward equation is the Fokker–Planck equation.
+
+A diffusion process is defined by the following properties.  Let a^{ij}(x,t) be uniformly continuous coefficients and b^{i}(x,t) be bounded, Borel measurable drift terms. There is a unique family of probability measures \mathbb{P}^{\xi,\tau}_{a;b} (for \tau \ge 0, \xi \in \mathbb{R}^d) on the canonical space \Omega = C([0,\infty), \mathbb{R}^d), with its Borel \sigma-algebra, such that:
+
+1. (Initial Condition) The process starts at \xi at time \tau: \mathbb{P}^{\xi,\tau}_{a;b}[\psi \in \Omega : \psi(t) = \xi \text{ for } 0 \le t \le \tau] = 1.
+
+2. (Local Martingale Property) For every f \in C^{2,1}(\mathbb{R}^d \times [\tau,\infty)), the process
+
+M_t^{[f]} = f(\psi(t),t) - f(\psi(\tau),\tau) - \int_\tau^t \bigl(L_{a;b} + \tfrac{\partial}{\partial s}\bigr) f(\psi(s),s)\,ds  is a local martingale under \mathbb{P}^{\xi,\tau}_{a;b} for t \ge \tau, with M_t^{[f]} = 0 for t \le \tau.
+
+This family \mathbb{P}^{\xi,\tau}_{a;b} is called the \mathcal{L}_{a;b}-diffusion.
+
+SDE Construction and Infinitesimal Generator
+
+It is clear that if we have an \mathcal{L}_{a;b}-diffusion, i.e. (X_t)_{t \ge 0} on (\Omega, \mathcal{F}, \mathcal{F}_t, \mathbb{P}^{\xi,\tau}_{a;b}), then X_t satisfies the SDE dX_t^i = \frac{1}{2}\,\sum_{k=1}^d \sigma^i_k(X_t)\,dB_t^k + b^i(X_t)\,dt. In contrast, one can construct this diffusion from that SDE if a^{ij}(x,t) = \sum_k \sigma^k_i(x,t)\,\sigma^k_j(x,t) and \sigma^{ij}(x,t), b^i(x,t) are Lipschitz continuous.
+
+To see this, let X_t solve the SDE starting at X_\tau = \xi. For f \in C^{2,1}(\mathbb{R}^d \times [\tau,\infty)), apply Itô's formula: df(X_t,t) = \bigl(\frac{\partial f}{\partial t} + \sum_{i=1}^d b^i \frac{\partial f}{\partial x_i} + v \sum_{i,j=1}^d a^{ij}\,\frac{\partial^2 f}{\partial x_i \partial x_j}\bigr)\,dt + \sum_{i,k=1}^d \frac{\partial f}{\partial x_i}\,\sigma^i_k\,dB_t^k. Rearranging gives f(X_t,t) - f(X_\tau,\tau) - \int_\tau^t \bigl(\frac{\partial f}{\partial s} + L_{a;b}f\bigr)\,ds = \int_\tau^t \sum_{i,k=1}^d \frac{\partial f}{\partial x_i}\,\sigma^i_k\,dB_s^k, whose right‐hand side is a local martingale, matching the local‐martingale property in the diffusion definition. The law of X_t defines \mathbb{P}^{\xi,\tau}_{a;b} on \Omega = C([0,\infty), \mathbb{R}^d) with the correct initial condition and local martingale property. Uniqueness follows from the Lipschitz continuity of \sigma\!,\!b. In fact, L_{a;b} + \tfrac{\partial}{\partial s} coincides with the infinitesimal generator \mathcal{A} of this process. If X_t solves the SDE, then for f(\mathbf{x},t) \in C^2(\mathbb{R}^d \times \mathbb{R}^+), the generator \mathcal{A} is \mathcal{A}f(\mathbf{x},t) = \sum_{i=1}^d b_i(\mathbf{x},t)\,\frac{\partial f}{\partial x_i} + v\sum_{i,j=1}^d a_{ij}(\mathbf{x},t)\,\frac{\partial^2 f}{\partial x_i \partial x_j} + \frac{\partial f}{\partial t}.
+
+See also
+
+Stochastic differential equation
+
+Itô calculus
+
+Fokker–Planck equation
+
+Markov process
+
+Diffusion
+
+Itô diffusion
+
+Jump diffusion
+
+Sample-continuous process
+
+References
+
+Category:Markov processes

@@ -1,0 +1,113 @@
+Maximum Variance Unfolding (MVU), also known as Semidefinite Embedding (SDE), is an algorithm in computer science that uses semidefinite programming to perform non-linear dimensionality reduction of high-dimensional vectorial input data.
+
+It is motivated by the observation that kernel Principal Component Analysis (kPCA) does not reduce the data dimensionality, as it leverages the Kernel trick to non-linearly map the original data into an inner-product space.
+
+Algorithm
+
+MVU creates a mapping from the high dimensional input vectors to some low dimensional Euclidean vector space in the following steps:
+
+A neighbourhood graph is created. Each input is connected with its k-nearest input vectors (according to Euclidean distance metric) and all k-nearest neighbors are connected with each other. If the data is sampled well enough, the resulting graph is a discrete approximation of the underlying manifold.
+
+The neighbourhood graph is "unfolded" with the help of semidefinite programming. Instead of learning the output vectors directly, the semidefinite programming aims to find an inner product matrix that maximizes the pairwise distances between any two inputs that are not connected in the neighbourhood graph while preserving the nearest neighbors distances.
+
+The low-dimensional embedding is finally obtained by application of multidimensional scaling on the learned inner product matrix.
+
+The steps of applying semidefinite programming followed by a linear dimensionality reduction step to recover a low-dimensional embedding into a Euclidean space were first proposed by Linial, London, and Rabinovich.
+
+Optimization formulation
+
+Let X \,\! be the original input and Y\,\! be the embedding. If i,j\,\! are two neighbors, then the local isometry constraint that needs to be satisfied is:
+
+X_{i}-X_{j}|^{2}=|Y_{i}-Y_{j}|^{2}\,\!
+
+Let G, K\,\! be the Gram matrices of  X \,\! and  Y \,\! (i.e.: G_{ij}=X_i \cdot X_j,K_{ij}=Y_i \cdot Y_j \,\!). We can express the above constraint for every neighbor points i,j\,\! in term of G, K\,\!:
+
+G_{ii}+G_{jj}-G_{ij}-G_{ji}=K_{ii}+K_{jj}-K_{ij}-K_{ji}\,\!
+
+In addition, we also want to constrain the embedding  Y \,\! to center at the origin:
+
+0 = |\sum_{i}Y_{i}|^2\Leftrightarrow(\sum_{i}Y_{i}) \cdot (\sum_{i}Y_{i})\Leftrightarrow\sum_{i,j}Y_{i} \cdot Y_{j}\Leftrightarrow\sum_{i,j}K_{ij}
+
+As described above, except the distances of neighbor points are preserved, the algorithm aims to maximize the pairwise distance of every pair of points. The objective function to be maximized is:
+
+T(Y)=\dfrac{1}{2N}\sum_{i,j}|Y_{i}-Y_{j}|^{2}
+
+Intuitively, maximizing the function above is equivalent to pulling the points as far away from each other as possible and therefore "unfold" the manifold. The local isometry constraint
+
+Let \tau = max \{\eta_{ij}|Y_{i}-Y_{j}|^2\} \,\! where
+
+\eta_{ij} := \begin{cases}
+
+1 & \mbox{if}\ i \mbox{ is a neighbour of } j \\
+
+0 & \mbox{otherwise} .
+
+\end{cases}
+
+prevents the objective function from diverging (going to infinity).
+
+Since the graph has N points, the distance between any two points |Y_{i}-Y_{j}|^2 \leq N \tau \,\!. We can then bound the objective function as follows:
+
+T(Y)=\dfrac{1}{2N}\sum_{i,j}|Y_{i}-Y_{j}|^{2} \leq \dfrac{1}{2N}\sum_{i,j}(N\tau)^2 = \dfrac{N^3\tau^2}{2} \,\!
+
+The objective function can be rewritten purely in the form of the Gram matrix:
+
+\begin{align}
+
+T(Y) &{}=  \dfrac{1}{2N}\sum_{i,j}|Y_{i}-Y_{j}|^{2} \\
+
+&{}= \dfrac{1}{2N}\sum_{i,j}(Y_{i}^2+Y_{j}^2-Y_{i} \cdot Y_{j} - Y_{j} \cdot Y_{i})\\
+
+&{}= \dfrac{1}{2N}(\sum_{i,j}Y_{i}^2+\sum_{i,j}Y_{j}^2-\sum_{i,j}Y_{i} \cdot Y_{j} -\sum_{i,j}Y_{j} \cdot Y_{i})\\
+
+&{}= \dfrac{1}{2N}(\sum_{i,j}Y_{i}^2+\sum_{i,j}Y_{j}^2-0 -0)\\
+
+&{}= \dfrac{1}{N}(\sum_{i}Y_{i}^2)=\dfrac{1}{N}(Tr(K))\\
+
+\end{align}
+
+\,\!
+
+Finally, the optimization can be formulated as:
+
+\begin{align}
+
+& \text{Maximize}   && Tr(\mathbf{K})\\
+
+& \text{subject to} && \mathbf{K} \succeq 0, \sum_{ij}\mathbf{K}_{ij} = 0 \\
+
+& \text{and} && G_{ii}+G_{jj}-G_{ij}-G_{ji}=K_{ii}+K_{jj}-K_{ij}-K_{ji}, \forall i, j \mbox{  where } \eta_{ij} = 1,
+
+\end{align}
+
+After the Gram matrix K \,\! is learned by semidefinite programming, the output Y \,\! can be obtained via Cholesky decomposition.
+
+In particular, the Gram matrix can be written as  K_{ij}=\sum_{\alpha = 1}^{N}(\lambda_{\alpha } V_{\alpha i} V_{\alpha j}) \,\! where  V_{\alpha i} \,\! is the i-th element of eigenvector  V_{\alpha} \,\! of the eigenvalue  \lambda_{\alpha } \,\!.
+
+It follows that the  \alpha \,\!-th element of the output  Y_i \,\! is  \sqrt{\lambda_{\alpha }} V_{\alpha i} \,\!.
+
+See also
+
+Locally linear embedding
+
+Isometry (disambiguation)
+
+Local Tangent Space Alignment
+
+Riemannian manifold
+
+Energy minimization
+
+Notes
+
+References
+
+Additional material
+
+Kilian Q. Weinberger's MVU Matlab code
+
+Category:Computational statistics
+
+Category:Dimension reduction
+
+Category:Optimization algorithms and methods

@@ -1,0 +1,9 @@
+Chinese whispers is a clustering method used in network science named after the famous whispering game. Clustering methods are basically used to identify communities of nodes or links in a given network. This algorithm was designed by Chris Biemann and Sven Teresniak in 2005. On the other hand the algorithm is applicable to any kind of community identification problem which is related to a network framework. Chinese whispers is available for personal use as an extension package for Gephi which is an open source program designed for network analysis.
+
+References
+
+External links
+
+Implementation in Python
+
+Category:Cluster analysis algorithms

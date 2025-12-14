@@ -1,0 +1,39 @@
+GigaChat is a generative artificial intelligence chatbot developed by the Russian financial services corporation Sberbank. It was launched in a closed testing mode in April 2023 and is positioned as a Russian alternative to ChatGPT.
+
+The model is multimodal, meaning it can generate text, answer questions, and create images from text descriptions. It is also capable of writing software code. By February 2024, it had accumulated over 2.5 million users.
+
+Capabilities
+
+GigaChat is designed to handle a range of tasks, including participating in discussions, generating text and code, and answering inquiries. The platform can be used to generate analytical reports, summarize extensive text volumes, and create articles in specified formats and styles.
+
+See also
+
+List of artificial intelligence projects
+
+List of chatbots
+
+Alice AI
+
+Chatbot
+
+OpenAI
+
+References
+
+Category:Chatbots
+
+Category:Large language models
+
+Category:Generative pre-trained transformers
+
+Category:Interactive narrative
+
+Category:Virtual assistants
+
+Category:2023 software
+
+Category:2023 in artificial intelligence
+
+Category:Sberbank of Russia
+
+Category:Russian inventions

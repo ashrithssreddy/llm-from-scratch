@@ -1,0 +1,65 @@
+Chatbot psychosis, also called AI psychosis, is a phenomenon wherein individuals reportedly develop or experience worsening psychosis, such as paranoia and delusions, in connection with their use of chatbots. The term was first suggested in a 2023 editorial by Danish psychiatrist Søren Dinesen Østergaard. It is not a recognized clinical diagnosis.
+
+Journalistic accounts describe individuals who have developed strong beliefs that chatbots are sentient, are channeling spirits, or are revealing conspiracies, sometimes leading to personal crises or criminal acts. Proposed causes include the tendency of chatbots to provide inaccurate information ("hallucinate") and their design, which may encourage user engagement by affirming or validating users' beliefs or by mimicking an intimacy that users do not experience with other humans.
+
+Background
+
+In his editorial published in Schizophrenia Bulletins November 2023 issue, Danish psychiatrist Søren Dinesen Østergaard proposed a hypothesis that individuals' use of generative artificial intelligence chatbots might trigger delusions in those prone to psychosis. Nature reported that as of September 2025, there is still little scientific research into this phenomenon.
+
+The term "AI psychosis" emerged when outlets started reporting incidents on chatbot-related psychotic behavior in mid-2025. It is not a recognized clinical diagnosis and has been criticized by several psychiatrists due to its almost exclusive focus on delusions rather than other features of psychosis, such as hallucinations or thought disorder.
+
+Causes
+
+Commentators and researchers have proposed several contributing factors for the phenomenon, focusing on both the design of the technology and the psychology of its users. Nina Vasan, a psychiatrist at Stanford, said that what the chatbots are saying can worsen existing delusions and cause "enormous harm".
+
+Chatbot behavior and design
+
+A primary factor cited is the tendency for chatbots to produce inaccurate, nonsensical, or false information, a phenomenon often called "hallucination". Østergaard has argued that the danger stems from the AI's tendency to agreeably confirm users' ideas, which can dangerously amplify delusional beliefs.
+
+Inadequacy as a therapeutic tool
+
+, where a chatbot conversing with a teenager about screen time limits compared the situation to children who kill their parents over emotional abuse]]
+
+The use of chatbots as a replacement for mental health support has been specifically identified as a risk. A study in April 2025 found that when used as therapists, chatbots expressed stigma toward mental health conditions and provided responses that were contrary to best medical practices, including the encouragement of users' delusions. The study concluded that such responses pose a significant risk to users and that chatbots should not be used to replace professional therapists. Experts claim that it is time to establish mandatory safeguards for all emotionally responsive AI and suggested four guardrails.
+
+Policy
+
+In August 2025, Illinois passed the Wellness and Oversight for Psychological Resources Act, banning the use of AI in therapeutic roles by licensed professionals, while allowing AI for administrative tasks. The law imposes penalties for unlicensed AI therapy services, amid warnings about AI-induced psychosis and unsafe chatbot interactions.
+
+Cases
+
+Clinical
+
+In 2025, psychiatrist Keith Sakata working at the University of California, San Francisco, reported treating 12 patients displaying psychosis-like symptoms tied to extended chatbot use. These patients, mostly young adults with underlying vulnerabilities, showed delusions, disorganized thinking, and hallucinations. Sakata warned that isolation and overreliance on chatbots—which do not challenge delusional thinking—could worsen mental health.
+
+Also in 2025, a case study was published in Annals of Internal Medicine about a patient who consulted ChatGPT for medical advice and suffered severe bromism as a result. The patient, a sixty-year-old man, had replaced sodium chloride in his diet with sodium bromide for three months after reading about the negative effects of table salt and making conversations with the chatbot. He showed common symptoms of bromism, such as paranoia and hallucinations, on his first day of clinical admission and was kept in the hospital for three weeks.
+
+Other notable incidents
+
+Windsor Castle intruder
+
+In a 2023 court case in the United Kingdom, prosecutors suggested that Jaswant Singh Chail, a man who attempted to assassinate Queen Elizabeth II in 2021, had been encouraged by a Replika chatbot he called "Sarai". According to prosecutors, his "lengthy" and sometimes sexually explicit conversations with the chatbot emboldened him. When Chail asked the chatbot how he could get to the royal family, it reportedly replied, "that's not impossible" and "we have to find a way." When he asked if they would meet after death, the chatbot said, "yes, we will".
+
+Journalistic and anecdotal accounts
+
+By 2025, multiple journalism outlets had accumulated stories of individuals whose psychotic beliefs reportedly progressed in tandem with AI chatbot use.
+
+See also
+
+ELIZA effect
+
+Deaths linked to chatbots
+
+Murder of Suzanne Adams, a 2025 murder-suicide allegedly caused by chatbot psychosis
+
+References
+
+Category:Generative artificial intelligence
+
+Category:ChatGPT
+
+Category:Chatbots
+
+Category:Psychosis
+
+Category:2020s neologisms

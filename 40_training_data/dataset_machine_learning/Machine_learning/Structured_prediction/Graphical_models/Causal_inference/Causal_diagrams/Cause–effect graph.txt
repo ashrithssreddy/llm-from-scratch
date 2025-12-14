@@ -1,0 +1,11 @@
+REDIRECT Causal map#Cause–effect graph
+
+Category:Causal diagrams
+
+Category:Graph data structures
+
+Category:Decision analysis
+
+Category:Software testing
+
+Category:Directed graphs

@@ -1,0 +1,153 @@
+Disparate impact in the law of the United States refers to practices in employment, housing, and other areas that adversely affect one group of people of a protected characteristic more than another, even though rules applied by employers or landlords are formally neutral. Although the protected classes vary by statute, most federal civil rights laws consider race, color, religion, national origin, and sex to be protected characteristics, and some laws include disability status and other traits as well.
+
+A violation of Title VII of the 1964 Civil Rights Act may be proven by showing that an employment practice or policy has a disproportionately adverse effect on members of the protected class as compared with non-members of the protected class. Therefore, the disparate impact theory under Title VII prohibits employers "from using a facially neutral employment practice that has an unjustified adverse impact on members of a protected class. A facially neutral employment practice is one that does not appear to be discriminatory on its face; rather it is one that is discriminatory in its application or effect." Where a disparate impact is shown, the plaintiff can prevail without the necessity of showing intentional discrimination unless the defendant employer demonstrates that the practice or policy in question has a demonstrable relationship to the requirements of the job in question.  This is the "business necessity" defense. although the federal government may still pursue disparate impact claims under these laws. Although they do not contain explicit disparate impact provisions, the U.S. Supreme Court has held that the Age Discrimination in Employment Act of 1967 and the Fair Housing Act of 1968 create a cause of action for disparate impact. During the second presidency of Donald Trump, US agencies were ordered to stop using disparate impact in civil rights cases.
+
+The idea of disparate impact has been applied within the EU with respect to systemic discrimination and substantive equality.
+
+Substantive equality
+
+Disparate impact is violation of substantive equality, the equality of outcomes for groups. In contrast, disparate treatment is violation of formal equal opportunity.
+
+Adverse impact
+
+While disparate impact is a legal theory of liability under Title VII, adverse impact is one element of that doctrine, which measures the effect an employment practice has on a class protected by Title VII. In the Uniform Guidelines on Employee Selection Procedures, an adverse impact is defined as a "substantially different rate of selection in hiring, promotion, or other employment decision which works to the disadvantage of members of a race, sex, or ethnic group". A "substantially different" rate is typically defined in government enforcement or Title VII litigation settings using the 80% Rule, statistical significance tests, and/or practical significance tests. Adverse impact is often used interchangeably with "disparate impact", which was a legal term coined in one of the most significant U.S. Supreme Court rulings on disparate or adverse impact: Griggs v. Duke Power Co., 1971. Adverse Impact does not mean that an individual in a majority group is given preference over a minority group. However, having adverse impact does mean that there is the "potential" for discrimination in the hiring process and it could warrant investigation.
+
+The 80% rule
+
+The 80% test was originally framed by a panel of 32 professionals (called the Technical Advisory Committee on Testing, or TACT) assembled by the State of California Fair Employment Practice Commission (FEPC) in 1971, which published the State of California Guidelines on Employee Selection Procedures in October 1972. This was the first official government document that listed the 80% test in the context of adverse impact, and was later codified in the 1978 Uniform Guidelines on Employee Selection Procedures, a document used by the U.S. Equal Employment Opportunity Commission (EEOC), Department of Labor, and Department of Justice in Title VII enforcement.
+
+Originally, the Uniform Guidelines on Employee Selection Procedures provided a simple "80 percent" rule for determining that a company's selection system was having an "adverse impact" on a minority group. The rule was based on the rates at which job applicants were hired. For example, if XYZ Company hired 50 percent of the men applying for work in a predominantly male occupation while hiring only 20 percent of the female applicants, one could look at the ratio of those two hiring rates to judge whether there might be a discrimination problem. The ratio of 20:50 means that the rate of hiring for female applicants is only 40 percent of the rate of hiring for male applicants. That is, 20 divided by 50 equals 0.40, which is equivalent to 40 percent. Clearly, 40 percent is well below the 80 percent that was arbitrarily set as an acceptable difference in hiring rates. Therefore, in this example, XYZ Company could have been called upon to prove that there was a legitimate reason for hiring men at a rate so much higher than the rate of hiring women. Since the 1980s, courts in the U.S. have questioned the arbitrary nature of the 80 percent rule, making the rule less important than it was when the Uniform Guidelines were first published. A 2007 memorandum from the U.S. Equal Employment Opportunities Commission suggests that a more defensible standard would be based on comparing a company's hiring rate of a particular group with the rate that would occur if the company simply selected people at random.
+
+False positives
+
+The 80% threshold can result in a large number of false positives. We are able to convert between measures of effect size using the relationships:d = {\sqrt{3}\over{\pi}}\log\text{OR}, \quad d = 2\sqrt{\rho^{2}\over{1-\rho^{2}}}, \quad \mathbb{P}(X > Y) = \Phi(d/\sqrt{2})where d is Cohen's d, \text{OR} is the odds ratio, \rho is the Pearson correlation, and \Phi(\cdot) is the standard normal cumulative distribution function. The coefficient of determination R^{2} is the square of the correlation. The term \mathbb{P}(X > Y) is the probability that a member of group X obtains a score greater than a member of group Y. For a set of odds ratios, which is often used to determine if there is a disparate impact, we may convert between effect sizes as such:
+
+Using these different measures of effect size, we are able to quantitatively determine the size of a gap based on several common interpretations. Notably, we may interpret the effect size as:
+
+The amount of explained variation (coefficient of determination)
+
+The difference in terms of standard deviations (Cohen's d)
+
+The probability of a greater score
+
+If we take the 80% rule to apply via the odds ratio, this implies that the threshold odds ratio for assuming discrimination is 1.25 – the other measures of effect size are therefore:\rho = 0.061,\quad R^{2} = 0.004, \quad d = 0.123, \quad \mathbb{P}(X > Y) = 0.535This implies that discrimination is presumed to exist if 0.4% of the variation in outcomes is explained and there is a 0.123 standard deviation difference between two groups. Both of these quantities are small enough that there are significant concerns about finding false positive instances of discrimination at an unacceptable level. A greater threshold for presuming that disparities are due to discrimination, such as an odds ratio of 2–3, is less likely to have false positives.
+
+More advanced statistical tests
+
+The concept of practical significance for adverse impact was first introduced by Section 4D of the Uniform Guidelines, which states "Smaller differences in selection rate may nevertheless constitute adverse impact, where they are significant in both statistical and practical terms ..." Several federal court cases have applied practical significance tests to adverse impact analyses to assess the "practicality" or "stability" of the results. This is typically done by evaluating the change to the statistical significance tests after hypothetically changing focal group members selection status from "failing" to "passing" (see for example, Contreras v. City of Los Angeles (656 F.2d 1267, 9th Cir. 1981); U.S. v. Commonwealth of Virginia (569 F.2d 1300, 4th Cir. 1978); and Waisome v. Port Authority (948 F.2d 1370, 1376, 2d Cir. 1991)).
+
+Unintentional discrimination
+
+This form of discrimination occurs where an employer does not intend to discriminate; to the contrary, it occurs when identical standards or procedures are applied to everyone, despite the fact that they lead to a substantial difference in employment outcomes for the members of a particular group and they are unrelated to successful job performance. An important thing to note is that disparate impact is not, in and of itself, illegal. This is because disparate impact only becomes illegal if the employer cannot justify the employment practice causing the adverse impact as a "job related for the position in question and consistent with business necessity" (called the "business necessity defense").
+
+The Fair Housing Act
+
+The disparate impact theory has application also in the housing context under Title VIII of the Civil Rights Act of 1968, also known as the Fair Housing Act.  The ten federal appellate courts that have addressed the issue have all determined that one may establish a Fair Housing Act violation through the disparate impact theory of liability.  The U.S. Department of Housing and Urban Development's Office of Fair Housing and Equal Opportunity, the federal government which administers the Fair Housing Act, issued a proposed regulation on November 16, 2011, setting forth how HUD applies disparate impact in Fair Housing Act cases. On February 8, 2013, HUD issued its Final Rule.
+
+Until 2015, the U.S. Supreme Court had not yet determined whether the Fair Housing Act allowed for claims of disparate impact. This question reached the Supreme Court twice since 2012, first in Magner v. Gallagher and then in Township of Mount Holly v. Mount Holly Gardens Citizens. Both cases settled before the Supreme Court could issue a decision; the Obama administration had encouraged settlement, as civil rights groups feared that a Supreme Court ruling on the issue would be hostile to disparate impact theories, and thus weaken housing discrimination enforcement.
+
+On June 25, 2015, by a 5–4 decision in Texas Department of Housing and Community Affairs v. Inclusive Communities Project, Inc., the Supreme Court held If a defendant cannot do so, then a plaintiff's claim of disparate impact must prevail.
+
+Finally, if the defendant has "satisfied its burden at step two", the plaintiff may "prevail upon proving that the substantial, legitimate, nondiscriminatory interests supporting the challenged practice could be served by another [i.e. alternative] practice that has a less discriminatory effect".
+
+Liability for criminal acts committed by employees
+
+In 2013, the Equal Employment Opportunity Commission (EEOC) filed a suit, EEOC v. FREEMAN, against the use of typical criminal-background and credit checks during the hiring process. While admitting that there are many legitimate and race-neutral reasons for employers to screen out convicted criminals and debtors, the EEOC presented the theory that this practice is discriminatory because minorities in the U.S. are more likely to be convicted criminals with bad credit histories than White Americans. Ergo, employers should have to include criminals and debtors in their hiring. In this instance U.S. District Judge Roger Titus ruled firmly against the disparate impact theory, stating that EEOC's action had been "a theory in search of facts to support it". "By bringing actions of this nature, the EEOC has placed many employers in the "Hobson's choice" of ignoring criminal history and credit background, thus exposing themselves to potential liability for criminal and fraudulent acts committed by employees, on the one hand, or incurring the wrath of the EEOC for having utilized information deemed fundamental by most employers.  Something more... must be utilized to justify a disparate impact claim based upon criminal history and credit checks. To require less, would be to condemn the use of common sense, and this is simply not what the laws of this country require."
+
+Confounding
+
+Disparities may be affected by underlying variables (confounding), which would imply that the disparity is due to underlying differences that are not predicated on group membership. When investigating whether or not a pay disparity between two groups is due to discrimination we may construct a multiple regression model for pay y as:y = \underbrace{\beta_{0}}_{\text{Intercept}} + \underbrace{\sum_{i=1}^{p}\beta_{i}x_{i}}_{\text{Confounding Variables}} + \underbrace{\gamma G}_{\text{Effect of Group Membership}} + \underbrace{\epsilon}_{\text{Error Term}}where the x_{i} are the confounding variables, G \in \{0,1\} is a dichotomous variable indicating group membership, and \epsilon \sim \mathcal{N}(0,\sigma^{2}) is a normally distributed random variable. After correction for the potentially confounding variables in a regression model, we should be able to tell if there is still an impact of group membership on the quantity of interest. If we have not omitted any important confounding variables and not engaged in p-hacking, then a statistically significant |\gamma | > 0 suggests a very good possibility of positive or negative discrimination.
+
+For example, following disparities can be explained by confounders:
+
+Under-representation of women among firefighters can be explained by firefighters requiring physical strength and sex differences in human physiology.
+
+Among Uber drivers, a 7% pay gap between men and women was explained by three factors: where and when rides originate from (i.e., time and location), amount of driver experience and driving speed.
+
+While differences in Police use of deadly force in the United States use of less-than-deadly force still exist after accounting for confounding variables, there does not appear to be any relationship between race and deadly force once confounders are taken into account.
+
+Executive Order 14281
+
+On April 23, 2025, President Donald Trump signed Executive Order 14281. Previously issued presidential actions that recognize disparate impact liability in federal law were revoked. Federal agencies were instructed to no longer enforce disparate impact cases and remove disparate impact theory from federal regulations. Statutory and case law precedent remains unchanged.
+
+Relevant case law
+
+Griggs v. Duke Power Company,  — established theory of disparate impact; held Title VII of the Civil Rights Act of 1964 authorizes disparate impact lawsuits
+
+Lau v. Nichols,
+
+Albemarle Paper Co. v. Moody,
+
+Washington v. Davis,
+
+Village of Arlington Heights v. Metropolitan Housing Development Corp.,
+
+Teamsters v. United States,
+
+Hazelwood School District v. United States,
+
+Dothard v. Rawlinson,
+
+Connecticut v. Teal,
+
+General Bldg. Contractors Assn., Inc. v. Pennsylvania,
+
+Guardians Assn. v. Civil Svc. Comm'n,
+
+Watson v. Fort Worth Bank & Trust,
+
+Town of Huntington v. NAACP,
+
+Wards Cove Packing Co. v. Atonio,
+
+Alexander v. Sandoval,  — held Title VI of the Civil Rights Act of 1964 does not authorize disparate impact lawsuits by private citizens
+
+Raytheon Co. v. Hernandez,
+
+Smith v. City of Jackson,  — held the Age Discrimination in Employment Act of 1967 authorizes disparate impact lawsuits
+
+Meacham v. Knolls Atomic Power Laboratory,
+
+Ricci v. DeStefano,
+
+Texas Department of Housing and Community Affairs v. Inclusive Communities Project, Inc.,  — held the Fair Housing Act authorizes disparate impact lawsuits
+
+Brnovich v. Democratic National Committee,  — curtailed the use of disparate impact to evaluate "vote denial" claims brought under Section 2 of the Voting Rights Act of 1965
+
+Marietta Memorial Hospital Employee Health Benefit Plan v. Davita Inc.,
+
+See also
+
+Causal inference
+
+Disparate treatment
+
+Housing discrimination
+
+Indirect discrimination (Sufficient disparate impact is equivalent)
+
+Jurimetrics
+
+Office of Fair Housing and Equal Opportunity
+
+Regression analysis
+
+Simpson's paradox#UC Berkeley gender bias
+
+References
+
+External links
+
+The Office of Fair Housing and Equal Opportunity
+
+Free online software that assesses whether or not disparate impact has occurred
+
+Explanation of disparate impact under the Fair Housing Act and example briefs
+
+Category:Anti-discrimination law in the United States
+
+Category:Causal inference
+
+Category:United States labor law
+
+Category:American legal terminology

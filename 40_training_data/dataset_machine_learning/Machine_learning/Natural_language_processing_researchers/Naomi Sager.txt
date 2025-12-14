@@ -1,0 +1,75 @@
+{{Infobox scientist
+
+name          = Naomi Sager
+
+image         =
+
+image_size    =
+
+caption       =
+
+birth_name    =
+
+birth_date    =
+
+birth_place   = Chicago, Illinois, US
+
+other_names   =
+
+occupation    = Professor of computational linguistics
+
+years_active  =
+
+known_for     = natural language processing for computers
+
+notable_works =
+
+thesis_title = Seriality and ambiguity in english sentence structure
+
+thesis_year = 1968
+
+doctoral_advisor = Zellig Harris
+
+}}
+
+Naomi Sager (born 1927) is an American computational linguistics research scientist. She is a former research professor at New York University, now retired.
+
+Early life and education
+
+Sager was born in Chicago, Illinois in 1927. In 1946 she earned a bachelor of philosophy degree from the University of Chicago. She obtained a Bachelor of Science in electrical engineering from Columbia University in 1953.
+
+Career
+
+After graduating from Columbia, Sager worked for five years as an electronics engineer in the Biophysics Department of the Sloan-Kettering Institute for Cancer Research in New York City. Sager developed an algorithm to deal with syntactic ambiguity (where a sentence can be interpreted several ways due to ambiguity in its structure) and to convert sublanguage texts into suitable data formats for retrieval. This was "one of the first major practical applications of sublanguage analysis." This work formed the basis for a PhD thesis, and in 1968 she was awarded a PhD in linguistics from the University of Pennsylvania. Sager managed the project for 30 years until her retirement in 1995.
+
+At NYU she taught classes in natural language processing and advised doctoral students, many of whom (such as Jerry Hobbs and Carol Friedman) are now leaders in the field of natural language processing.
+
+Selected publications
+
+Sager, Naomi. Natural Language Information Processing: A Computer Grammar of English and Its Applications Addison-Wesley Publishing Company, Inc. (1981).
+
+Sager, Naomi. Syntactic analysis of natural language. Advances in computers 8.153&ndash;188 (1967): 35.
+
+Sager, Naomi, et al. Natural Language Processing and the Representation of Clinical Data. Journal of the American Medical Informatics Association 1:142&ndash;160 (March&ndash;April 1994).
+
+References
+
+Category:American computer scientists
+
+Category:New York University faculty
+
+Category:University of Chicago alumni
+
+Category:University of Pennsylvania alumni
+
+Category:Columbia School of Engineering and Applied Science alumni
+
+Category:1927 births
+
+Category:Living people
+
+Category:People from Chicago
+
+Category:Natural language processing researchers
+
+Category:Computational linguistics researchers

@@ -1,0 +1,11 @@
+REDIRECT Astroinformatics
+
+Category:Astronomy
+
+Category:Astrophysics
+
+Category:Data science
+
+Category:Machine learning
+
+Category:Applied statistics

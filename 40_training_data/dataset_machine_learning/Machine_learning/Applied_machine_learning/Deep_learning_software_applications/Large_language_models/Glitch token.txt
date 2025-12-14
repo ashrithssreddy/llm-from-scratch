@@ -1,0 +1,15 @@
+In large language models (LLMs), a glitch token is token that causes unexpected or "glitchy" outputs when used in a prompt. Such output may include the model misunderstanding meanings of words, refusing to respond or generating repetitive or unrelated text. Prompts that cause this behaviour may look completely normal.
+
+Background
+
+As large language models use numbers rather than text, the text must be converted to numbers. The first step of this process is tokenisation, where text is converted into a sequence of small chunks, called tokens. An example algorithm is byte-pair encoding. These tokens are then mapped to numerical vectors via an embedding.
+
+References
+
+External links
+
+Blog post about glitch tokens on LessWrong
+
+Category:Large language models
+
+Category:Software bugs

@@ -1,0 +1,213 @@
+The birth–death process (or birth-and-death process) is a special case of continuous-time Markov process where the state transitions are of only two types: "births", which increase the state variable by one and "deaths", which decrease the state by one. It was introduced by William Feller.  The model's name comes from a common application, the use of such models to represent the current size of a population where the transitions are literal births and deaths. Birth–death processes have many applications in demography, queueing theory, performance engineering, epidemiology, biology and other areas. They may be used, for example, to study the evolution of bacteria, the number of people with a disease within a population, or the number of customers in line at the supermarket.
+
+Definition
+
+When a birth occurs, the process goes from state n to n&nbsp;+&nbsp;1. When a death occurs, the process goes from state n to state&nbsp;n&nbsp;&minus;&nbsp;1. The process is specified by positive birth rates \{\lambda_i\}_{i=0\dots\infty} and positive death rates \{\mu_i\}_{i=1\dots\infty}. The number of individuals in the process at time t is denoted by X(t). The process has the Markov property and P_{i,j}(t)=\mathsf{P}\{X(t+s)=j|X(s)=i\} describes how X(t) changes through time. For small \triangle t>0,   the function P_{i,j}(\triangle t) is assumed to satisfy the following properties:
+
+P_{i,i+1}(\triangle t)=\lambda_i\triangle t+o(\triangle t), \quad i\geq0,
+
+P_{i,i-1}(\triangle t)=\mu_i\triangle t+o(\triangle t), \quad i\geq1,
+
+P_{i,i}(\triangle t)=1-(\lambda_i+\mu_i)\triangle t+o(\triangle t), \quad i\geq1.
+
+This process is represented by the following figure with the states of the process (i.e. the number of individuals in the population) depicted by the circles, and transitions between states indicated by the arrows.
+
+Recurrence and transience
+
+For recurrence and transience in Markov processes see Section 5.3 from Markov chain.
+
+Conditions for recurrence and transience
+
+Conditions for recurrence and transience were established by Samuel Karlin and James McGregor.
+
+A birth-and-death process is recurrent if and only if
+
+\sum_{i=1}^\infty\prod_{n=1}^i\frac{\mu_n}{\lambda_n}=\infty.
+
+A birth-and-death process is ergodic if and only if
+
+\sum_{i=1}^\infty\prod_{n=1}^i\frac{\mu_n}{\lambda_n}=\infty \quad \text{and} \quad \sum_{i=1}^\infty\prod_{n=1}^i\frac{\lambda_{n-1}}{\mu_n}
+
+A birth-and-death process is null-recurrent if and only if
+
+\sum_{i=1}^\infty\prod_{n=1}^i\frac{\mu_n}{\lambda_n}=\infty \quad \text{and} \quad \sum_{i=1}^\infty\prod_{n=1}^i\frac{\lambda_{n-1}}{\mu_n}=\infty.
+
+By using Extended Bertrand's test (see Section 4.1.4 from Ratio test) the conditions for recurrence, transience, ergodicity and null-recurrence can be derived in a more explicit form.
+
+For integer K\geq1, let \ln_{(K)}(x) denote the Kth iterate of natural logarithm, i.e. \ln_{(1)}(x)=\ln (x) and for any 2\leq k\leq K,
+
+\ln_{(k)}(x)=\ln_{(k-1)}(\ln (x)).
+
+Then, the conditions for recurrence and transience of a birth-and-death process are as follows.
+
+The birth-and-death process is transient if there exist c > 1, K\geq1 and n_0 such that for all n > n_0
+
+\frac{\lambda_n}{\mu_n}\geq1+\frac{1}{n}+\frac{1}{n}\sum_{k=1}^{K-1}\frac{1}{\prod_{j=1}^k\ln_{(j)}(n)}+\frac{c}{n\prod_{j=1}^K\ln_{(j)}(n)},
+
+where the empty sum for K=1 is assumed to be 0.
+
+The birth-and-death process is recurrent if there exist K\geq1 and n_0 such that for all n > n_0
+
+\frac{\lambda_n}{\mu_n}\leq1+\frac{1}{n}+\frac{1}{n}\sum_{k=1}^{K}\frac{1}{\prod_{j=1}^k\ln_{(j)}(n)}.
+
+Wider classes of birth-and-death processes, for which the conditions for recurrence and transience can be established, can be found in.
+
+Application
+
+Consider one-dimensional random walk S_t, \ t=0,1,\ldots, that is defined as follows. Let S_0=1, and S_t=S_{t-1}+e_t, \ t\geq1, where e_t takes values \pm1, and the distribution of S_t is defined by the following conditions:
+
+\mathsf{P}\{S_{t+1}=S_t+1|S_t>0\}=\frac{1}{2}+\frac{\alpha_{S_t}}{S_t}, \quad \mathsf{P}\{S_{t+1}=S_t-1|S_t>0\}=\frac{1}{2}-\frac{\alpha_{S_t}}{S_t}, \quad \mathsf{P}\{S_{t+1}=1|S_t=0\}=1,
+
+where \alpha_n satisfy the condition 00.
+
+The random walk described here is a discrete time analogue of the birth-and-death process (see Markov chain) with the birth rates
+
+\lambda_n=\frac{1}{2}+\frac{\alpha_{n}}{n},
+
+and the death rates
+
+\mu_n=\frac{1}{2}-\frac{\alpha_{n}}{n}.
+
+So, recurrence or transience of the random walk is associated with recurrence or transience of the birth-and-death process. Notably, they are used in viral phylodynamics to understand the transmission process and how the number of people infected changes through time.
+
+The use of generalized birth-death processes in phylodynamics has stimulated investigations into the degree to which the rates of birth and death can be identified from data. While the model is unidentifiable in general, the subset of models that are typically used are identifiable.
+
+Use in queueing theory
+
+In queueing theory the birth–death process is the most fundamental example of a queueing model, the M/M/C/K/\infty/FIFO (in complete Kendall's notation) queue. This is a queue with Poisson arrivals, drawn from an infinite population,  and C servers with exponentially distributed service times with K places in the queue. Despite the assumption of an infinite population this model is a good model for various telecommunication systems.
+
+M/M/1 queue
+
+The M/M/1 is a single server queue with an infinite buffer size. In a non-random environment the birth–death process in queueing models tend to be long-term averages, so the average rate of arrival is given as \lambda and the average service time as 1/\mu. The birth and death process is an M/M/1 queue when,
+
+\lambda_{i}=\lambda\text{ and }\mu_{i}=\mu\text{ for all }i. \,
+
+The differential equations for the probability that the system is in state k at time t are
+
+p_0^\prime(t)=\mu p_1(t)-\lambda p_0(t), \,
+
+p_k^\prime(t)=\lambda p_{k-1}(t)+\mu p_{k+1}(t)-(\lambda +\mu) p_k(t) \quad \text{for } k=1,2,\ldots \,
+
+Pure birth process associated with an M/M/1 queue
+
+Pure birth process with \lambda_k\equiv\lambda is a particular case of the M/M/1 queueing process. We have the following system of differential equations:
+
+p_0^\prime(t)=-\lambda p_0(t), \,
+
+p_k^\prime(t)=\lambda p_{k-1}(t)-\lambda p_k(t) \quad \text{for } k=1,2,\ldots \,
+
+Under the initial condition p_0(0)=1 and p_k(0)=0, \ k=1,2,\ldots, the solution of the system is
+
+p_k(t)=\frac{(\lambda t)^k}{k!}\mathrm{e}^{-\lambda t}.
+
+That is, a (homogeneous) Poisson process is a pure birth process.
+
+M/M/c queue
+
+The M/M/C is a multi-server queue with C servers and an infinite buffer. It characterizes by the following birth and death parameters:
+
+\mu_i = i\mu \quad \text{ for }i\leq C-1, \,
+
+and
+
+\mu_i = C\mu \quad \text{ for }i\geq C, \,
+
+with
+
+\lambda_i = \lambda \quad \text{ for all }i. \,
+
+The system of differential equations in this case has the form:
+
+p_0^\prime(t)=\mu p_1(t)-\lambda p_0(t), \,
+
+p_k^\prime(t)=\lambda p_{k-1}(t)+(k+1)\mu p_{k+1}(t)-(\lambda +k\mu) p_k(t) \quad \text{for } k=1,2,\ldots,C-1, \,
+
+p_k^\prime(t)=\lambda p_{k-1}(t)+C\mu p_{k+1}(t)-(\lambda +C\mu) p_k(t) \quad \text{for } k\geq C. \,
+
+Pure death process associated with an M/M/C queue
+
+Pure death process with \mu_k= k\mu is a particular case of the M/M/C queueing process. We have the following system of differential equations:
+
+p_C^\prime(t)=-C\mu p_C(t), \,
+
+p_k^\prime(t)=(k+1)\mu p_{k+1}(t)-k\mu p_k(t) \quad \text{for } k=0,1,\ldots,C-1. \,
+
+Under the initial condition p_C(0)=1 and p_k(0)=0, \ k=0,1,\ldots, C-1, we obtain the solution
+
+p_k(t)=\binom{C}{k}\mathrm{e}^{-k\mu t}\left(1-\mathrm{e}^{-\mu t}\right)^{C-k},
+
+that presents the version of binomial distribution depending on time parameter t (see Binomial process).
+
+M/M/1/K queue
+
+The M/M/1/K queue is a single server queue with a buffer of size K. This queue has applications in telecommunications, as well as in biology when a population has a capacity limit. In telecommunication we again use the parameters from the M/M/1 queue with,
+
+\lambda_i = \lambda \quad \text{ for }0 \leq i
+
+\lambda_i=0 \quad \text{ for }i\geq K, \,
+
+\mu_i=\mu \quad \text{ for }1 \leq i \leq K. \,
+
+In biology, particularly the growth of bacteria, when the population is zero there is no ability to grow so,
+
+\lambda_0=0. \,
+
+Additionally if the capacity represents a limit where the individual dies from over population,
+
+\mu_K = 0. \,
+
+The differential equations for the probability that the system is in state k at time t are
+
+p_0^\prime(t)=\mu p_1(t)-\lambda p_0(t),
+
+p_k^\prime(t)=\lambda p_{k-1}(t)+\mu p_{k+1}(t)-(\lambda +\mu) p_k(t) \quad \text{ for }k \leq K-1, \,
+
+p_K^\prime(t)=\lambda p_{K-1}(t)-(\lambda +\mu) p_K(t), \,
+
+p_k(t)=0 \quad \text{ for }k > K. \,
+
+Equilibrium
+
+A queue is said to be in equilibrium if the steady state probabilities \pi_k=\lim_{t \to \infty}p_k(t), \ k=0,1,\ldots, exist. The condition for the existence of these steady-state probabilities in the case of M/M/1 queue is \rho=\lambda/\mu and in the case of M/M/C queue is \rho=\lambda/(C\mu). The parameter \rho is usually called load parameter or utilization parameter. Sometimes it is also called traffic intensity.
+
+Using the M/M/1 queue as an example, the steady state equations are
+
+\lambda \pi_0=\mu \pi_1, \,
+
+(\lambda +\mu) \pi_k=\lambda \pi_{k-1}+\mu \pi_{k+1}. \,
+
+This can be reduced to
+
+\lambda \pi_k=\mu \pi_{k+1}\text{ for }k\geq 0. \,
+
+So, taking into account that \pi_0+\pi_1+\ldots=1, we obtain
+
+\pi_k=(1-\rho)\rho^k.
+
+Bilateral birth-and-death process
+
+Bilateral birth-and-death process is defined similarly to that standard one with the only difference that the birth and death rates \lambda_i and \mu_i are defined for the values of index parameter i=0,\pm1,\pm2,\ldots. Following this, a bilateral birth-and-death process is recurrent if and only if
+
+\sum_{i=1}^{\infty}\prod_{n=1}^{i}\frac{\mu_n}{\lambda_n}=\infty \quad \text{and} \quad \sum_{i=1}^{\infty}\prod_{n=1}^{i}\frac{\lambda_{-n}}{\mu_{-n}}=\infty.
+
+The notions of ergodicity and null-recurrence are defined similarly by extending the corresponding notions of the standard birth-and-death process.
+
+See also
+
+Erlang unit
+
+Queueing theory
+
+Queueing models
+
+Quasi-birth–death process
+
+Moran process
+
+Notes
+
+References
+
+Category:Queueing theory
+
+Category:Markov processes

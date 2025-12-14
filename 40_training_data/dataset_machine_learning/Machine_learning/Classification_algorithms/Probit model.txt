@@ -1,0 +1,201 @@
+In statistics, a probit model is a type of regression where the dependent variable can take only two values, for example married or not married. The word is a portmanteau, coming from probability + unit. The purpose of the model is to estimate the probability that an observation with particular characteristics will fall into a specific one of the categories; moreover, classifying observations based on their predicted probabilities is a type of binary classification model.
+
+A probit model is a popular specification for a binary response model. As such it treats the same set of problems as does logistic regression using similar techniques. When viewed in the generalized linear model framework, the probit model employs a probit link function. It is most often estimated using the maximum likelihood procedure, such an estimation being called a probit regression.
+
+Conceptual framework
+
+Suppose a response variable Y is binary, that is it can have only two possible outcomes which we will denote as 1 and 0. For example, Y may represent presence/absence of a certain condition, success/failure of some device, answer yes/no on a survey, etc. We also have a vector of regressors X, which are assumed to influence the outcome Y. Specifically, we assume that the model takes the form
+
+P(Y=1 \mid X) = \Phi(X^\operatorname{T}\beta),
+
+where P is the probability and \Phi is the cumulative distribution function (CDF) of the standard normal distribution. The parameters β are typically estimated by maximum likelihood.
+
+It is possible to motivate the probit model as a latent variable model.  Suppose there exists an auxiliary  random variable
+
+Y^\ast = X^T\beta + \varepsilon,
+
+where ε ~ N(0, 1). Then Y can be viewed as an indicator for whether this latent variable is positive:
+
+Y = \left.\begin{cases} 1 & Y^* > 0 \\
+
+0 &\text{otherwise} \end{cases} \right\} = \left.\begin{cases} 1 &  X^\operatorname{T}\beta + \varepsilon > 0 \\
+
+0 &\text{otherwise} \end{cases} \right\}
+
+The use of the standard normal distribution causes no loss of generality compared with the use of a normal distribution with an arbitrary mean and standard deviation, because adding a fixed amount to the mean can be compensated by subtracting the same amount from the intercept, and multiplying the standard deviation by a fixed amount can be compensated by multiplying the weights by the same amount.
+
+To see that the two models are equivalent, note that
+
+\begin{align}
+
+P(Y = 1 \mid X)
+
+&= P(Y^\ast > 0) \\
+
+&= P(X^\operatorname{T}\beta + \varepsilon > 0) \\
+
+&= P(\varepsilon > -X^\operatorname{T}\beta) \\
+
+&= P(\varepsilon
+
+Model estimation
+
+Maximum likelihood estimation
+
+Suppose data set \{y_i,x_i\}_{i=1}^n contains n independent statistical units corresponding to the model above.
+
+For the single observation, conditional on the vector of inputs of that observation, we have:
+
+P(y_i=1|x_i)= \Phi(x_i^\operatorname{T}\beta)
+
+P(y_i=0|x_i)= 1-\Phi(x_i^\operatorname{T}\beta)
+
+where x_i is a vector of K \times 1 inputs, and \beta is a K \times 1 vector of coefficients.
+
+The likelihood of a single observation (y_i, x_i) is then
+
+\mathcal{L}(\beta; y_i, x_i) = \Phi(x_i^\operatorname{T}\beta)^{y_i} [1-\Phi(x_i^\operatorname{T}\beta)]^{(1-y_i)}
+
+In fact, if y_i=1, then \mathcal{L}(\beta; y_i, x_i) = \Phi(x_i^\operatorname{T}\beta), and if y_i=0, then \mathcal{L}(\beta; y_i, x_i) = 1-\Phi(x_i^\operatorname{T}\beta).
+
+Since the observations are independent and identically distributed, then the likelihood of the entire sample, or the joint likelihood, will be equal to the product of the likelihoods of the single observations:
+
+\mathcal{L}(\beta; Y, X) = \prod_{i=1}^n \left( \Phi(x_i^\operatorname{T}\beta)^{y_i} [1-\Phi(x_i^\operatorname{T}\beta)]^{(1-y_i)} \right)
+
+The joint log-likelihood function is thus
+
+\ln\mathcal{L}(\beta; Y, X) = \sum_{i=1}^n \bigg( y_i\ln\Phi(x_i^\operatorname{T}\beta) + (1-y_i)\ln\!\big(1-\Phi(x_i^\operatorname{T}\beta)\big) \bigg)
+
+The estimator \hat\beta which maximizes this function will be consistent, asymptotically normal and efficient provided that
+
+\operatorname{E}[XX^\operatorname{T}]
+
+exists and is not singular. It can be shown that this log-likelihood function is globally concave in
+
+\beta
+
+, and therefore standard numerical algorithms for optimization will converge rapidly to the unique maximum.
+
+Asymptotic distribution for \hat\beta is given by
+
+\sqrt{n}(\hat\beta - \beta)\ \xrightarrow{d}\ \mathcal{N}(0,\,\Omega^{-1}),
+
+where
+
+\Omega = \operatorname{E}\bigg[ \frac{\varphi^2(X^\operatorname{T}\beta)}{\Phi(X^\operatorname{T}\beta)(1-\Phi(X^\operatorname{T}\beta))}XX^\operatorname{T} \bigg], \qquad
+
+\hat\Omega = \frac{1}{n}\sum_{i=1}^n \frac{\varphi^2(x^\operatorname{T}_i\hat\beta)}{\Phi(x^\operatorname{T}_i\hat\beta)(1-\Phi(x^\operatorname{T}_i\hat\beta))}x_ix^\operatorname{T}_i,
+
+and \varphi=\Phi' is the Probability Density Function (PDF) of standard normal distribution.
+
+Semi-parametric and non-parametric maximum likelihood methods for probit-type and other related models are also available.
+
+Berkson's minimum chi-square method
+
+This method can be applied only when there are many observations of response variable y_i having the same value of the vector of regressors x_i (such situation may be referred to as "many observations per cell"). More specifically, the model can be formulated as follows.
+
+Suppose among n observations \{y_i,x_i\}_{i=1}^n there are only T distinct values of the regressors, which can be denoted as \{x_{(1)},\ldots,x_{(T)}\}. Let n_t be the number of observations with x_i=x_{(t)}, and r_t the number of such observations with y_i=1. We assume that there are indeed "many" observations per each "cell": for each  t, \lim_{n \rightarrow \infty} n_t/n = c_t > 0 .
+
+Denote
+
+\hat{p}_t = r_t/n_t
+
+\hat\sigma_t^2 = \frac{1}{n_t} \frac{\hat{p}_t(1-\hat{p}_t)}{\varphi^2\big(\Phi^{-1}(\hat{p}_t)\big)}
+
+Then Berkson's minimum chi-square estimator is a generalized least squares estimator in a regression of \Phi^{-1}(\hat{p}_t) on x_{(t)} with weights \hat\sigma_t^{-2}:
+
+\hat\beta = \Bigg( \sum_{t=1}^T \hat\sigma_t^{-2}x_{(t)}x^\operatorname{T}_{(t)} \Bigg)^{-1} \sum_{t=1}^T \hat\sigma_t^{-2}x_{(t)}\Phi^{-1}(\hat{p}_t)
+
+It can be shown that this estimator is consistent (as n→∞ and T fixed), asymptotically normal and efficient. Its advantage is the presence of a closed-form formula for the estimator. However, it is only meaningful to carry out this analysis when individual observations are not available, only their aggregated counts r_t, n_t, and x_{(t)} (for example in the analysis of voting behavior).
+
+Albert and Chib Gibbs sampling method
+
+Gibbs sampling of a probit model is possible with the introduction of normally distributed latent variables z, which are observed as 1 if positive and 0 otherwise. This approach was introduced in Albert and Chib (1993), which demonstrated how Gibbs sampling could be applied to binary and polychotomous response models within a Bayesian framework. Under a multivariate normal prior distribution over the weights, the model can be described as
+
+\begin{align}
+
+\boldsymbol\beta & \sim \mathcal{N}(\mathbf{b}_0, \mathbf{B}_0) \\[3pt]
+
+z_i\mid\mathbf{x}_i,\boldsymbol\beta & \sim \mathcal{N}(\mathbf{x}^\operatorname{T}_i\boldsymbol\beta, 1) \\[3pt]
+
+y_i  & = \begin{cases} 1 & \text{if } z_i > 0 \\ 0 & \text{otherwise} \end{cases}
+
+\end{align}
+
+From this, Albert and Chib (1993) derive the following full conditional distributions in the Gibbs sampling algorithm:
+
+\begin{align}
+
+\mathbf{B} &= (\mathbf{B}_0^{-1} + \mathbf{X}^\operatorname{T}\mathbf{X})^{-1} \\[3pt]
+
+\boldsymbol\beta\mid\mathbf{z} &\sim \mathcal{N}(\mathbf{B}(\mathbf{B}_0^{-1}\mathbf{b}_0 + \mathbf{X}^\operatorname{T}\mathbf{z}), \mathbf{B}) \\[3pt]
+
+z_i \mid y_i=0,\mathbf{x}_i,\boldsymbol\beta &\sim \mathcal{N}(\mathbf{x}^\operatorname{T}_i\boldsymbol\beta, 1)[z_i \le 0] \\[3pt]
+
+z_i \mid y_i=1,\mathbf{x}_i,\boldsymbol\beta &\sim \mathcal{N}(\mathbf{x}^\operatorname{T}_i\boldsymbol\beta, 1)[z_i > 0]
+
+\end{align}
+
+The result for
+
+\boldsymbol\beta
+
+is given in the article on Bayesian linear regression, although specified with different notation, while the conditional posterior distributions of the latent variables follow a truncated normal distribution within the given ranges. The notation [z_i  is the Iverson bracket, sometimes written \mathcal{I}(z_i  or similar.  Thus, knowledge of the observed outcomes serves to restrict the support of the latent variables.
+
+Sampling of the weights \boldsymbol{\beta}
+
+given the latent vector \mathbf{z} from the multinormal distribution is standard. For sampling the latent variables from the truncated normal posterior distributions, one can  take advantage of the inverse-cdf method, implemented in the following R vectorized function, making it straightforward to implement the method.
+
+zbinprobit
+
+Model evaluation
+
+The suitability of an estimated binary model can be evaluated by counting the number of true observations equaling 1, and the number equaling zero, for which the model assigns a correct predicted classification by treating any estimated probability above 1/2 (or, below 1/2), as an assignment of a prediction of 1 (or, of 0). See  for details.
+
+Performance under misspecification
+
+Consider the latent variable model formulation of the probit model. When the variance of \varepsilon conditional on x is not constant but dependent on x, then the heteroscedasticity issue arises. For example, suppose y^*= \beta_0+B_1 x_1+\varepsilon and \varepsilon\mid x \sim N (0,x^2_1) where x_1 is a continuous positive explanatory variable. Under heteroskedasticity, the probit estimator for \beta is usually inconsistent, and most of the tests about the coefficients are invalid. More importantly, the estimator for P (y=1\mid x) becomes inconsistent, too. To deal with this problem, the original model needs to be transformed to be homoskedastic. For instance, in the same example, 1[\beta_0+\beta_1 x_1+\varepsilon>0] can be rewritten as 1[\beta_0/x_1+\beta_1+\varepsilon/x_1>0], where \varepsilon/x_1\mid x\sim N(0,1). Therefore, P(y=1\mid x) = \Phi (\beta_1 + \beta_0/x_1) and running probit on (1, 1/x_1) generates a consistent estimator for the conditional probability P(y=1\mid x).
+
+When the assumption that \varepsilon is normally distributed fails to hold, then a functional form misspecification issue arises: if the model is still estimated as a probit model, the estimators of the coefficients \beta are inconsistent. For instance, if \varepsilon follows a logistic distribution in the true model, but the model is estimated by probit, the estimates will be generally smaller than the true value. However, the inconsistency of the coefficient estimates is practically irrelevant because the estimates for the partial effects, \partial P(y=1\mid x)/\partial x_{i'}, will be close to the estimates given by the true logit model.
+
+To avoid the issue of distribution misspecification, one may adopt a general distribution assumption for the error term, such that many different types of distribution can be included in the model. The cost is heavier computation and lower accuracy for the increase of the number of parameter. In most of the cases in practice where the distribution form is misspecified, the estimators for the coefficients are inconsistent, but estimators for the conditional probability and the partial effects are still very good.
+
+One can also take semi-parametric or non-parametric approaches, e.g., via local-likelihood or nonparametric quasi-likelihood methods, which avoid assumptions on a parametric form for the index function and is robust to the choice of the link function (e.g., probit or logit).
+
+History
+
+The probit model is usually credited to Chester Bliss, who coined the term "probit" in 1934, and to John Gaddum (1933), who systematized earlier work. However, the basic model dates to the Weber–Fechner law by Gustav Fechner, published in , and was repeatedly rediscovered until the 1930s; see  and .
+
+A fast method for computing maximum likelihood estimates for the probit model was proposed by Ronald Fisher as an appendix to Bliss' work in 1935.
+
+See also
+
+Generalized linear model
+
+Limited dependent variable
+
+Logit model
+
+Multinomial probit
+
+Multivariate probit models
+
+Ordered probit and ordered logit model
+
+Separation (statistics)
+
+Tobit model
+
+References
+
+Published in:
+
+Further reading
+
+External links
+
+by Mark Thoma
+
+Category:Categorical regression models
+
+Category:Classification algorithms

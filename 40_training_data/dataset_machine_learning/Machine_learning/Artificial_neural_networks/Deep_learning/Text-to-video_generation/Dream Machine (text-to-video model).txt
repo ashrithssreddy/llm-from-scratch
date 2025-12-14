@@ -1,0 +1,65 @@
+{{Infobox software
+
+name = Dream Machine
+
+screenshot =
+
+caption = A video created with Dream Machine by director Ellenor Argyropoulos of an ancient Egyptian girl
+
+logo =
+
+logo_size =
+
+logo_caption =
+
+developer = Luma Labs
+
+released = June 12, 2024
+
+latest release version =
+
+latest release date =
+
+genre = Text-to-video model
+
+website =
+
+}}
+
+Dream Machine is a text-to-video model created by Luma Labs and launched in June 2024. It generates video output based on user prompts or still images. Dream Machine has been noted for its ability to realistically capture motion, while some critics have remarked upon the lack of transparency about its training data.
+
+History
+
+'' character Mike Wazowski in the background of one scene.]]
+
+Dream Machine is a text-to-video model created by the San Francisco-based generative artificial intelligence company Luma Labs, which had previously created Genie, a 3D model generator. It was released to the public on June 12, 2024, which was announced by the company in a post on X alongside examples of videos it created. Soon after its release, users on social media posted video versions of images generated with Midjourney, as well as moving recreations of artworks such as Girl with a Pearl Earring and memes such as Doge, Picard facepalm, Success Kid, and distracted boyfriend. One video, a trailer for a fictional animated movie titled Monster Camp, was reposted by Luma Labs on their X account. Users on the platform criticized the video as stealing the aesthetic of the Monsters, Inc. franchise, also pointing out that Mike Wazowski, a character from the franchise, appears in the trailer. Another video posted by director Ellenor Argyropoulos of a Pixar-style animation of a girl in ancient Egypt created with Dream Machine went viral online.
+
+Capabilities
+
+, users can create videos with Dream Machine, which are five seconds long and 1360 × 752 pixels, by signing up with their Google account and typing in a prompt or using a still image. Dream Machine alters the prompt based on its own large language model. Users can create 10 videos a day and 30 videos for free with Dream Machine. The program also offers Standard, Pro, and Premier subscription plans, which allow users to create 120, 400, and 2,000 videos, respectively. Dream Machine's website states that its videos have difficulty depicting text and motion.
+
+Reception
+
+Critics compared Dream Machine heavily to Sora, a text-to-video model created by OpenAI, and Kling, another text-to-video model, upon its release. For Tom's Guide, Ryan Morrison called Dream Machine "one of the best prompt following and motion understanding AI video models yet" and "an impressive next step in generative AI video", but that "it is still falling short of what is needed". Mashables Chase DiBenedetto described user-created Dream Machine videos circulating on social media as "eerily-moving" and "Harry Potter-esque".
+
+References
+
+External links
+
+Category:2024 software
+
+Category:Artificial intelligence art
+
+Category:Video processing
+
+Category:Film and video technology
+
+Category:Applications of artificial intelligence
+
+Category:Text-to-video generation
+
+Category:Generative artificial intelligence
+
+Category:2024 in artificial intelligence
+
+Category:Articles containing video clips

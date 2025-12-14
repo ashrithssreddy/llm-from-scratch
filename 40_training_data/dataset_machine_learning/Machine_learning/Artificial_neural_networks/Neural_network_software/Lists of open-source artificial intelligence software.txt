@@ -1,0 +1,143 @@
+These are lists include projects which release at least some of their software under open-source licenses and are related to artificial intelligence projects. These include software libraries, frameworks, platforms, and tools used for machine learning, deep learning, natural language processing, computer vision, reinforcement learning, artificial general intelligence, and more.
+
+Machine learning or data mining
+
+Caffe — Image classification and image segmentation
+
+Scikit-learn — library built on top of NumPy, SciPy, and matplotlib
+
+Shogun — C++ library for large-scale machine learning
+
+mlpack — C++ header-only machine learning library
+
+Weka — collection of machine learning algorithms for data mining tasks
+
+Apache Mahout — scalable machine learning library for big data built on Hadoop and Spark
+
+Apache SystemDS — ML system for the end-to-end data science lifecycle
+
+Jubatus — online machine learning and distributed computing framework
+
+KNIME — modular data pipelining
+
+Orange (software) — machine learning, data mining, data visualization, and data analysis.
+
+RapidMiner — predictive analytics
+
+fastText – Word embeddings developed by Meta AI
+
+XGBoost — machine learning library for gradient boosting
+
+AutoML platforms
+
+TPOT – tree-based pipeline optimization tool using genetic programming
+
+Neural Network Intelligence – Microsoft toolkit for hyperparameter tuning and neural architecture search
+
+MindsDB – AutoML platform that embeds machine learning into SQL databases and applications
+
+Deep learning frameworks
+
+TensorFlow – end-to-end open-source platform for machine learning developed by Google Brain
+
+PyTorch – deep learning framework developed by Meta AI
+
+model weights only
+
+Transformer libraries
+
+Hugging Face transformers library – Python library of pretrained transformer models for NLP, computer vision, speech, and more.
+
+Fairseq – Facebook AI Research's sequence-to-sequence learning toolkit for training custom transformer models
+
+OpenNMT – neural machine translation framework that supports transformer architectures
+
+Chat bots
+
+LAION OpenAssistant
+
+Mycroft
+
+Text to speech
+
+Festival Speech Synthesis System
+
+WaveNet
+
+eSpeak
+
+Flux
+
+Stable Diffusion
+
+AI hardware and inference acceleration
+
+OpenVINO – Intel's toolkit for optimizing deep learning models for edge devices
+
+ONNX – Open Neural Network Exchange format for interoperability between AI frameworks
+
+Robotics software
+
+ArduPilot
+
+CoppeliaSim
+
+Gazebo
+
+Mobile Robot Programming Toolkit
+
+OpenRTM-aist
+
+Paparazzi Project
+
+Player Project
+
+Python Robotics
+
+Robot Operating System
+
+TurtleBot
+
+Webots
+
+See also
+
+Open-source artificial intelligence
+
+List of artificial intelligence journals and List of artificial intelligence books
+
+List of artificial intelligence projects
+
+List of free and open-source software packages for artificial intelligence
+
+Common Crawl – nonprofit that crawls the web and freely provides its archives and datasets to the public under an MIT License
+
+Google Colab – an O-IDE Jupyter notebook environment with free access to GPUs and TPUs for machine learning and deep learning development
+
+External links
+
+opensource.org/ai – Open Source Initiative
+
+Data and AI White paper (July 24, 2024) – Open Data Institute
+
+{{Navboxes
+
+title = Articles related to artificial intelligence
+
+list=
+
+}}
+
+References
+
+Category:Free software
+
+Category:Open-source artificial intelligence
+
+Category:Lists of software
+
+Category:Free and open-source software
+
+Category:Artificial intelligence
+
+Category:Neural network software

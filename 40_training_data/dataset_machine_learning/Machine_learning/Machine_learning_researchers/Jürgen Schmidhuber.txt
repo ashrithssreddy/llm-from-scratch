@@ -1,0 +1,55 @@
+{{Infobox scientist
+
+name              = Jürgen Schmidhuber
+
+image             = Jürgen Schmidhuber, 2017 (cropped).jpg
+
+caption           = Schmidhuber speaking at the AI for GOOD Global Summit in 2017
+
+birth_date        = 17 January 1963
+
+He is best known for his foundational and highly-cited work on long short-term memory (LSTM), a type of neural network architecture which was the dominant technique for various natural language processing tasks in research and commercial applications in the 2010s. He also introduced principles of dynamic neural networks, meta-learning, generative adversarial networks and linear transformers, He taught there from 2004 until 2009. From 2009, until 2021, he was a professor of artificial intelligence at the Università della Svizzera Italiana in Lugano, Switzerland.
+
+He has served as the director of Dalle Molle Institute for Artificial Intelligence Research (IDSIA), a Swiss AI lab, since 1995.
+
+In 2014, Schmidhuber formed a company, Nnaisense, to work on commercial applications of artificial intelligence in fields such as finance, heavy industry and self-driving cars. Sepp Hochreiter, Jaan Tallinn, and Marcus Hutter are advisers to the company. Sales were under US$11 million in 2016; however, Schmidhuber states that the current emphasis is on research and not revenue. Nnaisense raised its first round of capital funding in January 2017. Schmidhuber's overall goal is to create an all-purpose AI by training a single AI in sequence on a variety of narrow tasks.
+
+Research
+
+In the 1980s, backpropagation did not work well for deep learning with long credit assignment paths in artificial neural networks. To overcome this problem, Schmidhuber (1991) proposed a hierarchy of recurrent neural networks (RNNs) pre-trained one level at a time by self-supervised learning. It uses predictive coding  to learn internal representations at multiple self-organizing time scales. This can substantially facilitate downstream deep learning. The RNN hierarchy can be collapsed into a single RNN, by distilling a higher level chunker network into a lower level automatizer network. In 1993, a chunker solved a deep learning task whose depth exceeded 1000.
+
+In 1991, Schmidhuber published adversarial neural networks that contest with each other in the form of a zero-sum game, where one network's gain is the other network's loss. which he considered "one of the most important documents in the history of machine learning".
+
+It was not yet the standard LSTM architecture which is used in almost all current applications. The standard LSTM architecture was introduced in 2000 by Felix Gers, Schmidhuber, and Fred Cummins. Today's "vanilla LSTM" using backpropagation through time was published with his student Alex Graves in 2005, and its connectionist temporal classification (CTC) training algorithm in 2006. CTC was applied to end-to-end speech recognition with LSTM. By the 2010s, the LSTM became the dominant technique for a variety of natural language processing tasks including speech recognition and machine translation, and was widely implemented in commercial technologies such as Google Neural Machine Translation, have also been used in Google Voice for transcription and search, and Siri.
+
+In 2014, the state of the art was training “very deep neural network” with 20 to 30 layers. Stacking too many layers led to a steep reduction in training accuracy, known as the "degradation" problem. In May 2015, Rupesh Kumar Srivastava, Klaus Greff, and Schmidhuber used LSTM principles to create the highway network, a feedforward neural network with hundreds of layers, much deeper than previous networks. In Dec 2015, the residual neural network (ResNet) was published, which is a variant of the highway network.
+
+In 1992, Schmidhuber published fast weights programmer, an alternative to recurrent neural networks. It has a slow feedforward neural network that learns by gradient descent to control the fast weights of another neural network through outer products of self-generated activation patterns, and the fast weights network itself operates over inputs. Schmidhuber used the terminology "learning internal spotlights of attention" in 1993.
+
+In 2011, Schmidhuber's team at IDSIA with his postdoc Dan Ciresan also achieved dramatic speedups of convolutional neural networks (CNNs) on fast parallel computers called GPUs. An earlier CNN on GPU by Chellapilla et al. (2006) was 4 times faster than an equivalent implementation on CPU. The deep CNN of Dan Ciresan et al. (2011) at IDSIA was already 60 times faster and achieved the first superhuman performance in a computer vision contest in August 2011. Between 15 May 2011 and 10 September 2012, these CNNs won four more image competitions and improved the state of the art on multiple image benchmarks. The approach has become central to the field of computer vision. and published details of numerous priority disputes with Hinton, Bengio and LeCun.
+
+The term "schmidhubered" has been jokingly used in the AI community to describe Schmidhuber's habit of publicly challenging the originality of other researchers' work, a practice seen by some in the AI community as a "rite of passage" for young researchers. Some suggest that Schmidhuber's significant accomplishments have been underappreciated due to his confrontational personality.
+
+Recognition
+
+Schmidhuber received the Helmholtz Award of the International Neural Network Society in 2013, and the Neural Networks Pioneer Award of the IEEE Computational Intelligence Society in 2016 for "pioneering contributions to deep learning and neural networks."}} the "father of Generative AI," and also the "father of deep learning." and gives credit to many even earlier AI pioneers.
+
+}}
+
+Category:Living people
+
+Category:German artificial intelligence researchers
+
+Category:Machine learning researchers
+
+Category:German computer scientists
+
+Category:Members of the European Academy of Sciences and Arts
+
+Category:Technical University of Munich alumni
+
+Category:Academic staff of the Technical University of Munich
+
+Category:Academic staff of the Università della Svizzera italiana
+
+Category:1963 births

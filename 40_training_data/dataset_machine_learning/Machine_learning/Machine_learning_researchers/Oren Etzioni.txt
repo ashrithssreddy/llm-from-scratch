@@ -1,0 +1,181 @@
+{{Infobox scientist
+
+name                      = Oren Etzioni
+
+native_name               =
+
+native_name_lang          =
+
+image                     = Oren Etzioni headshot.png
+
+image_size                =
+
+alt                       =
+
+caption                   =
+
+birth_date                =
+
+birth_place               = New York, New York, U.S.
+
+death_date                =
+
+death_place               =
+
+death_cause               =
+
+resting_place             =
+
+resting_place_coordinates =
+
+other_names               =
+
+nationality               =
+
+fields                    = Computer science
+
+workplaces                = Allen Institute for Artificial Intelligence  University of Washington
+
+patrons                   =
+
+education                 =
+
+alma_mater                = Harvard University (BA 1986)  Carnegie Mellon University (PhD 1991)
+
+thesis_title              =
+
+thesis_url                =
+
+thesis_year               =
+
+doctoral_advisor          = Tom M. Mitchell
+
+academic_advisors         =
+
+doctoral_students         =
+
+notable_students          =
+
+known_for                 =
+
+influences                =
+
+influenced                =
+
+awards                    = AAAI Fellow (2003)
+
+spouse                    =
+
+partner                   =
+
+children                  =
+
+relatives                 = Amitai Etzioni (father)
+
+signature                 =
+
+signature_alt             =
+
+website                   =
+
+footnotes                 =
+
+}}
+
+Oren Etzioni (born 1964) is Professor Emeritus of Computer Science at the University of Washington, and founding CEO of the Allen Institute for Artificial Intelligence (AI2). Etzioni is a co-founder of Vercept, an AI startup, and founder and CEO of TrueMedia.org, a non-profit dedicated to fighting political deepfakes, which launched in April 2024. He is also the Founder and Technical Director of the AI2 Incubator and a venture partner at the Madrona Venture Group. He was the first student to major in computer science at Harvard University, where he earned a bachelor's degree in 1986. He earned a PhD from Carnegie Mellon University in January, 1991, supervised by Tom M. Mitchell.
+
+Entrepreneurship
+
+As a faculty member Etzioni was also an active entrepreneur, founding multiple companies and pioneering multiple technologies including MetaCrawler (bought by Infospace), Netbot (bought by Excite in 1997 for $35 million), and ClearForest (bought by Reuters). He founded Farecast, a travel metasearch and price prediction site, which was acquired by Microsoft in 2008 for $115 million. Before founding Farecast, he developed a program originally called Hamlet, that used algorithms to identify patterns in airfare data using data-mining techniques.
+
+He also co-founded Decide.com, a website to help consumers make buying decisions using previous price history and recommendations from other users. Decide.com was bought by eBay in September, 2013. Etzioni is also a venture partner at the Madrona Venture Group.
+
+He is founder and CEO of TrueMedia.org, a non-profit dedicated to fighting political deepfakes, which launched in April 2024. and in January 2014 he took a leave of absence from the University of Washington to serve in that role.
+
+Etzioni's technical contributions continued at AI2; for example, in 2015, he helped to create the Semantic Scholar search engine. Under Etzioni’s leadership, AI2 grew from zero to over two hundred team members including notable researchers and engineers across several domains of AI. By 2021, its AI2 researchers had published near 700 papers in publications such as AAAI, ACL, CVPR, NeurIPS, and ICLR. Twenty-four of these papers had garnered special-recognition awards. AI2 also offered several key resources and tools to the AI community including the AllenNLP library, Semantic Scholar, and the conservation platforms EarthRanger and Skylight.
+
+Ed Lazowska, AI2 Board Member, has stated about Etzioni that he "took the collegial, collaborative culture that he absorbed in his 20+ years as a professor in UW's Allen School and mixed it with the singular focus that drives startups to create an elixir that AI2 folks have been drinking over the last eight years. The result is an exceptional organization of scientists, engineers, and entrepreneurs that's pursuing Paul Allen’s vision of ‘AI for the Common Good’ with extraordinary success.”
+
+Popular press
+
+In addition to his scientific publications, Etzioni has written commentary on AI for The New York Times, Wired, Nature, and other publications.
+
+After reading the idea in a book about AI by Brad Smith and Harry Shum, Etzioni has attempted to create an oath for AI practitioners. In 2018, he published what he called a "Hippocratic Oath for artificial intelligence practitioners" in TechCrunch.
+
+Awards and recognition
+
+In 1993, Etzioni received a National Young Investigator Award.
+
+In 2022, Etzioni, along with Ana-Maria Popescu and Henry Kautz, received the ACM Intelligent User Interfaces Most Impact Award for their 2003 paper, "Towards a Theory of Natural Language Interfaces to Databases".
+
+Personal life
+
+Etzioni has three children, and has said in interviews that family is his number one priority.  He is married to Ivone Etzioni, and was previously married to Dr. Ruth Etzioni, a biostatistician at the Fred Hutchinson Cancer Center.
+
+Outside of his professional career, Etzioni has a wide range of personal interests. He has attended the Burning Man festival, which he described as a valuable way to step outside his comfort zone.
+
+His first computer was a TRS-80, and he has described his car’s GPS as his favorite gadget, joking that he has “no sense of direction.”
+
+Selected publications
+
+Scholarly publications
+
+Popular articles
+
+References
+
+{{reflist|refs=
+
+}}
+
+Further reading
+
+External links
+
+Allen Institute for Artificial Intelligence Page
+
+University of Washington faculty profile
+
+Oren Etzioni - The Mathematics Genealogy Project
+
+, Microsoft Research
+
+Profile at Allen Institute for AI
+
+Category:1964 births
+
+Category:Living people
+
+Category:American chief executives
+
+Category:American businesspeople in the computer industry
+
+Category:American computer scientists
+
+Category:American artificial intelligence researchers
+
+Category:Businesspeople from Seattle
+
+Category:Carnegie Mellon University alumni
+
+Category:Data miners
+
+Category:Harvard University alumni
+
+Category:Machine learning researchers
+
+Category:Natural language processing researchers
+
+Category:Scientists from Seattle
+
+Category:University of Washington faculty
+
+Category:21st-century American scientists
+
+Category:21st-century American businesspeople
+
+Category:American people of Israeli descent
+
+Category:American people of German-Jewish descent
+
+Category:Fellows of the Association for the Advancement of Artificial Intelligence

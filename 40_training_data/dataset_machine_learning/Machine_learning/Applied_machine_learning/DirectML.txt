@@ -1,0 +1,3 @@
+REDIRECT Direct3D#Direct3D 12
+
+Category:Applied machine learning

@@ -1,0 +1,105 @@
+{{Infobox scientist
+
+name              = Marilyn A. Walker
+
+image             =
+
+image_size        =
+
+alt               =
+
+caption           =
+
+birth_date        =
+
+birth_place       =
+
+death_date        =
+
+death_place       =
+
+resting_place     =
+
+citizenship       = United States of America
+
+nationality       = American
+
+fields            = Computer science
+
+workplaces        = University of California, Santa CruzUniversity of SheffieldAT&T Labs ResearchBell Labs
+
+alma_mater        = University of Pennsylvania (Ph.D.)
+
+thesis_title      = Informational Redundancy and Resource Bounds in Dialogue
+
+thesis_url        = https://users.soe.ucsc.edu/~maw/papers/thesis.pdf
+
+thesis_year       = 1993
+
+doctoral_advisor  = Aravind K. Joshi
+
+academic_advisors = Karen Sparck Jones, Ellen F. Prince
+
+doctoral_students =
+
+notable_students  =
+
+known_for         =
+
+author_abbrev_bot =
+
+author_abbrev_zoo =
+
+awards            =
+
+website           =
+
+footnotes         =
+
+spouse            =
+
+}}
+
+Marilyn A. Walker  is an American computer scientist. She is professor of computer science and head of the Natural Language and Dialogue Systems Lab at the University of California, Santa Cruz (UCSC). Her research includes work on computational models of dialogue interaction and conversational agents, analysis of affect, sarcasm and other social phenomena in social media dialogue, acquiring causal knowledge from text, conversational summarization, interactive story and narrative generation, and statistical methods for training the dialogue manager and the language generation engine for dialogue systems.
+
+Biography
+
+Walker received an M.S. in Computer Science from Stanford University in 1987, and a Ph.D. in Computer and Information Science and an M.A in linguistics from the University of Pennsylvania in 1993.
+
+Walker was awarded a  Royal Society Wolfson Research Fellowship at the University of Sheffield from 2003 to 2009. She was inducted as a Fellow of the Association for Computational Linguistics (ACL) in December 2016 for "fundamental contributions to statistical methods for dialog optimization, to centering theory, and to expressive generation for dialog". She served as the general chair of the 2018 North American Association for Computational Linguistics (NAACL-2018) conference.
+
+Walker pioneered the use of statistical methods for dialog optimization at AT&T Bell Labs Research where she conducted some of the first experiments on reinforcement learning for optimizing dialogue systems. Her research on Centering Theory is taught in standard textbooks on NLP. She also pioneered the use of statistical NLP methods for Natural Language Generation with the development of the first statistical sentence planner for dialogue systems in 2001. She is well known for her work with François Mairesse on recognizing Big Five personality from text as well as using statistical methods for stylistic Natural Language Generation to express a particular Big Five personality type. An extension of this work learns how  to manifest the linguistic style of a particular character in a film.
+
+She has published over 300 papers and is the holder of 10 U.S. patents. Her work on the evaluation of dialogue systems conducted at AT&T Bell Labs Research (PARADISE: A framework for evaluating spoken dialogue agents) is a classic, has been cited more than 1100 times. At UCSC, her lab focuses on computational modeling of dialogue and user-generated content in social media such as weblogs, including spoken dialogue systems and interactive stories. She led the Athena team, which was selected as a contender in the  Alexa Prize SocialBot Challenge for 5 challenges between 2018 and 2023.
+
+References
+
+External links
+
+List of publications
+
+Google Scholar
+
+CITRIS and the Banatao Institute – Project on Healthcare intervention
+
+Project on teaching computers to understand sarcasm
+
+Category:American women computer scientists
+
+Category:Living people
+
+Category:American theoretical computer scientists
+
+Category:University of California, Santa Cruz faculty
+
+Category:Year of birth missing (living people)
+
+Category:University of Pennsylvania alumni
+
+Category:Stanford University alumni
+
+Category:Computational linguistics researchers
+
+Category:Natural language processing researchers
+
+Category:21st-century American women

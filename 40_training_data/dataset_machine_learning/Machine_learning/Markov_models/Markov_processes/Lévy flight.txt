@@ -1,0 +1,63 @@
+A Lévy flight is a random walk in which the step-lengths have a stable distribution, a probability distribution that is heavy-tailed. When defined as a walk in a space of dimension greater than one, the steps made are in isotropic random directions. Later researchers have extended the use of the term "Lévy flight" to also include cases where the random walk takes place on a discrete grid rather than on a continuous space. who used this for one specific definition of the distribution of step sizes. He used the term Cauchy flight for the case where the distribution of step sizes is a Cauchy distribution, and Rayleigh flight for when the distribution is a normal distribution (which is not an example of a heavy-tailed probability distribution).
+
+The particular case for which Mandelbrot used the term "Lévy flight"
+
+\Pr(U>u) = \begin{cases}
+
+1 &:\ u
+
+Here D is a parameter related to the fractal dimension and the distribution is a particular case of the Pareto distribution.
+
+Properties
+
+Lévy flights are, by construction, Markov processes. For general distributions of the step-size, satisfying the power-like condition, the distance from the origin of the random walk tends, after a large number of steps, to a stable distribution due to the generalized central limit theorem, enabling many processes to be modeled using Lévy flights.
+
+The probability densities for particles undergoing a Levy flight can be modeled using a generalized version of the Fokker–Planck equation, which is usually used to model Brownian motion. The equation requires the use of fractional derivatives. For jump lengths which have a symmetric probability distribution, the equation takes a simple form in terms of the Riesz fractional derivative. In one dimension, the equation reads as
+
+\frac{\partial \varphi(x,t)}{\partial t}=-\frac{\partial}{\partial x} f(x,t)\varphi(x,t) + \gamma \frac{\partial^\alpha \varphi(x,t)}{\partial |x|^\alpha}
+
+where γ is a constant akin to the diffusion constant, α is the stability parameter and f(x,t) is the potential. The Riesz derivative can be understood in terms of its Fourier Transform.
+
+F_k\left[\frac{\partial^\alpha \varphi(x,t)}{\partial |x|^\alpha}\right] = -|k|^\alpha F_k[\varphi(x,t)]
+
+This can be easily extended to multiple dimensions.
+
+Another important property of the Lévy flight is that of diverging variances in all cases except that of α&nbsp;=&nbsp;2, i.e. Brownian motion. In general, the θ fractional moment of  the distribution diverges if α&nbsp;≤&nbsp;θ. Also,
+
+\left\langle |x|^\theta \right\rangle \propto t^{\theta/\alpha} \quad\text{if } \theta
+
+The exponential scaling of the step lengths gives Lévy flights a scale invariant property, and they are used to model data that exhibits clustering.
+
+[[Image:LevyFlight.svg|thumb|left|256px|Figure 1. An example of 1000 steps of a Lévy flight in two dimensions. The origin of the motion is at [0,0], the angular direction is uniformly distributed and the step size is distributed according to a Lévy (i.e. stable) distribution with α&nbsp;=&nbsp;1 and β&nbsp;=&nbsp;0 which is a Cauchy distribution. Note the presence of large jumps in location compared to the Brownian motion illustrated in Figure 2.]]
+
+[[Image:BrownianMotion.svg|thumb|right|256px|Figure 2. An example of 1000 steps of an approximation to a Brownian motion type of Lévy flight in two dimensions. The origin of the motion is at [0,&nbsp;0], the angular direction is uniformly distributed and the step size is distributed according to a Lévy (i.e. stable) distribution with α&nbsp;=&nbsp;2 and β&nbsp;=&nbsp;0 (i.e., a normal distribution).]]
+
+Applications
+
+The definition of a Lévy flight stems from the mathematics related to chaos theory and is useful in stochastic measurement and simulations for random or pseudo-random natural phenomena. Examples include earthquake data analysis, financial mathematics, cryptography, signals analysis as well as many applications in astronomy, biology, and physics.
+
+It has been found that jumping between climate states observed in the paleoclimatic record can be described as a Lévy flight or an alpha-stable process
+
+Another application is the Lévy flight foraging hypothesis. When sharks and other ocean predators cannot find food, they abandon the Brownian motion, the random motion seen in swirling gas molecules, for the Lévy flight — a mix of long trajectories and short, random movements found in turbulent fluids. Researchers analyzed over 12 million movements recorded over 5,700 days in 55 data-logger-tagged animals from 14 ocean predator species in the Atlantic and Pacific Oceans, including silky sharks, yellowfin tuna, blue marlin and swordfish. The data showed that Lévy flights interspersed with Brownian motion can describe the animals' hunting patterns. Birds and other animals (including humans) follow paths that have been modeled using Lévy flight (e.g. when searching for food).
+
+Additionally, biological flight can also apparently be mimicked by other models such as composite correlated random walks, which grow across scales to converge on optimal Lévy walks. Composite Brownian walks can be finely tuned to theoretically optimal Lévy walks but they are not as efficient as Lévy search across most landscapes types, suggesting selection pressure for Lévy walk characteristics is more likely than multi-scaled normal diffusive patterns.
+
+Furthermore, it has been shown that Lévy walk appears in high-energy particle physics as well. Observations indicate that Lévy-processes occur in high-energy heavy-ion collisions. Here, hadronic scattering and decays after a high-energy heavy-ion collision lead to power-law tailed spatial particle creation (hadron freeze-out from the quark-gluon plasma) distributions.
+
+Efficient routing in a network can be performed by links having a Levy flight length distribution with specific values of alpha.
+
+}}
+
+References
+
+Further reading
+
+External links
+
+A comparison of the paintings of Jackson Pollock to a Lévy flight model
+
+Category:Fractals
+
+Category:Markov processes
+
+Category:Paul Lévy (mathematician)

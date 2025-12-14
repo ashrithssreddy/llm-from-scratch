@@ -1,0 +1,199 @@
+This is a list of genetic algorithm (GA) applications.
+
+Natural Sciences, Mathematics and Computer Science
+
+Bayesian inference links to particle methods in Bayesian statistics and hidden Markov chain models
+
+Artificial creativity
+
+Chemical kinetics (gas and solid phases)
+
+Calculation of bound states and local-density approximations
+
+Code-breaking, using the GA to search large solution spaces of ciphers for the one correct decryption.
+
+Computer architecture: using GA to find out weak links in approximate computing such as lookahead.
+
+Configuration applications, particularly physics applications of optimal molecule configurations for particular systems like C60 (buckyballs)
+
+Construction of facial composites of suspects by eyewitnesses in forensic science.
+
+Data Center/Server Farm.
+
+Distributed computer network topologies
+
+Electronic circuit design, known as evolvable hardware
+
+Evolutionary image processing
+
+Feature selection for Machine Learning
+
+Feynman-Kac models
+
+File allocation for a distributed system
+
+Filtering and signal processing
+
+Finding hardware bugs.
+
+Game theory equilibrium resolution
+
+Genetic Algorithm for Rule Set Production
+
+Scheduling applications, including job-shop scheduling and scheduling in printed circuit board assembly. The objective being to schedule jobs in a sequence-dependent or non-sequence-dependent setup environment in order to maximize the volume of production while minimizing penalties such as tardiness. Satellite communication scheduling for the NASA Deep Space Network was shown to benefit from genetic algorithms.
+
+Learning robot behavior using genetic algorithms
+
+Image processing: Dense pixel matching
+
+Learning fuzzy rule base using genetic algorithms
+
+Molecular structure optimization (chemistry)
+
+Optimisation of data compression systems, for example using wavelets.
+
+Power electronics design.
+
+Traveling salesman problem and its applications
+
+Earth Sciences
+
+Climatology: Estimation of heat flux between the atmosphere and sea ice
+
+Climatology: Modelling global temperature changes
+
+Design of water resource systems
+
+Groundwater monitoring networks
+
+Finance and Economics
+
+Financial mathematics
+
+Real options valuation
+
+Portfolio optimization
+
+Genetic algorithm in economics
+
+Representing rational agents in economic models such as the cobweb model
+
+the same, in Agent-based computational economics generally, and in artificial financial markets
+
+Social Sciences
+
+Design of anti-terrorism systems
+
+Linguistic analysis, including grammar induction and other aspects of Natural language processing (NLP) such as word-sense disambiguation.
+
+Finding the optimum subset of questions from a candidate pool of questions in psychological test design
+
+Industry, Management and Engineering
+
+Audio watermark insertion/detection
+
+Airlines revenue management
+
+Automated design of mechatronic systems using bond graphs and genetic programming (NSF)
+
+Automated design of industrial equipment using catalogs of exemplar lever patterns
+
+Automated design, including research on composite material design and multi-objective design of automotive components for crashworthiness, weight savings, and other characteristics
+
+Automated planning of structural inspection
+
+Container loading optimization
+
+Control engineering,
+
+Marketing mix analysis
+
+Mechanical engineering
+
+Mobile communications infrastructure optimization.
+
+Plant floor layout
+
+Pop music record production
+
+Quality control
+
+Sorting network
+
+Timetabling problems, such as designing a non-conflicting class timetable for a large university
+
+Vehicle routing problem
+
+Optimal bearing placement
+
+Computer-automated design
+
+Biological Sciences and Bioinformatics
+
+Bioinformatics Multiple Sequence Alignment
+
+Bioinformatics: RNA structure prediction
+
+Bioinformatics: Motif Discovery
+
+Biology and computational chemistry
+
+Building phylogenetic trees.
+
+Gene expression profiling analysis.
+
+Medicine: Clinical decision support in ophthalmology and oncology
+
+Computational Neuroscience: finding values for the maximal conductances of ion channels in biophysically detailed neuron models
+
+Protein folding and protein/ligand docking
+
+Selection of optimal mathematical model to describe biological systems
+
+Operon prediction.
+
+General Applications
+
+Neural Networks; particularly recurrent neural networks
+
+Training artificial neural networks when pre-classified training examples are not readily obtainable (neuroevolution)
+
+Physics
+
+Optimization of beam dynamics in accelerator physics.
+
+Design of particle accelerator beamlines
+
+Other Applications
+
+Clustering, using genetic algorithms to optimize a wide range of different fit-functions.
+
+Multidimensional systems
+
+Multimodal Optimization
+
+Multiple criteria production scheduling
+
+Multiple population topologies and interchange methodologies
+
+Mutation testing
+
+Parallelization of GAs/GPs including use of hierarchical decomposition of problem domains and design spaces nesting of irregular shapes using feature matching and GAs.
+
+Rare event analysis
+
+Solving the machine-component grouping problem required for cellular manufacturing systems
+
+Stochastic optimization
+
+Tactical asset allocation and international equity strategies
+
+Wireless sensor/ad-hoc networks.
+
+References
+
+Category:Mathematics-related lists
+
+Applications
+
+Category:Applications of evolutionary algorithms

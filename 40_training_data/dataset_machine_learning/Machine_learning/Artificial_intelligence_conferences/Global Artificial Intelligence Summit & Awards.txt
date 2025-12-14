@@ -1,0 +1,47 @@
+{{Multiple issues|
+
+}}
+
+{{Infobox Convention
+
+name       = Global Artificial Intelligence Summit & Awards
+
+logo       = Gaisa new logo.png
+
+status     = Active
+
+genre      = Artificial Intelligence, Technology
+
+venue      = Bharat Mandapam
+
+location   = New Delhi, India
+
+first      = 2019
+
+next      = 2025
+
+organizer  = All India Council for Robotics & Automation (AICRA)
+
+website    =
+
+}}
+
+The Global Artificial Intelligence Summit & Awards (GAISA) is an international conference on Artificial Intelligence organized annually by AICRA. Since its inception in 2019, GAISA has been held at various locations each year. The 5th Edition of GAISA will be Scheduled on April 11-12, 2024, at Bharat Mandapam.
+
+GAISA 2025 features a distinguished lineup of speakers, including leading experts, researchers, and executives from top global tech companies. These thought leaders are at the forefront of AI innovation, with deep expertise in areas such as machine learning, robotics, and ethical AI. Their diverse backgrounds span academia, industry, and entrepreneurship, offering unique insights into how AI is reshaping sectors like healthcare, finance, transportation, and more. Attendees can expect thought-provoking discussions on the future of AI, its societal impact, and the transformative potential of emerging technologies in solving complex global challenges
+
+Few Speakers are listed below:-
+
+Shri Nitin Gadkari, Rao Inderjit Singh, Piyush Goyal, Admiral R Hari Kumar PVSM, AVSM, ADC, Samir V Kamat, Narayan Tatu Rane, Prof. K. Vijay Raghavan and many others.
+
+History
+
+The conference was launched first in 2019 as Vigyan Bhawan New Delhi by AICRA with an objective of discussion and exploring artificial intelligence in engrossed sectors.
+
+References
+
+External links
+
+{{Cite web |last=GAISA |title=Global AI Summit  AI Events  Artificial Intelligence and Machine Learning - Gaisa 2022 |url=https://gaisa.in/ |access-date=2022-11-26 |website=Global AI Summit |language=en |archive-date=2022-11-30 |archive-url=https://web.archive.org/web/20221130071943/https://gaisa.in// |url-status=live }}
+
+Category:Artificial intelligence conferences

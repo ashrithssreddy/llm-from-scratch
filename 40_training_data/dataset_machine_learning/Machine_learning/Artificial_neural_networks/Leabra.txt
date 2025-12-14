@@ -1,0 +1,109 @@
+Leabra stands for local, error-driven and associative, biologically realistic algorithm. It is a model of learning which is a balance between Hebbian and error-driven learning with other network-derived characteristics.  This model is used to mathematically predict outcomes based on inputs and previous learning influences. Leabra is heavily influenced by and contributes to neural network designs and models, including emergent.
+
+Background
+
+It is the default algorithm in emergent (successor of PDP++) when making a new project, and is extensively used in various simulations.
+
+Hebbian learning is performed using conditional principal components analysis (CPCA) algorithm with correction factor for sparse expected activity levels.
+
+Error-driven learning is performed using GeneRec, which is a generalization of the recirculation algorithm, and approximates Almeida–Pineda recurrent backpropagation. The symmetric, midpoint version of GeneRec is used, which is equivalent to the contrastive Hebbian learning algorithm (CHL). See O'Reilly (1996; Neural Computation) for more details.
+
+The activation function is a point-neuron approximation with both discrete spiking and continuous rate-code output.
+
+Layer or unit-group level inhibition can be computed directly using a k-winners-take-all (KWTA) function, producing sparse distributed representations. A feedforward and feedback (FFFB) form of inhibition has now replaced the KWTA form of inhibition. FFFB inhibition can be efficiently implemented by using the average excitatory input and activity levels in a given layer.
+
+The net input is computed as an average, not a sum, over connections, based on normalized, sigmoidally transformed weight values, which are subject to scaling on a connection-group level to alter relative contributions.  Automatic scaling is performed to compensate for differences in expected activity level in the different projections.
+
+Documentation about this algorithm can be found in the book "Computational Explorations in Cognitive Neuroscience: Understanding the Mind by Simulating the Brain" published by MIT press. and in the Emergent Documentation
+
+Overview of the leabra algorithm
+
+The pseudocode for Leabra is given here, showing exactly how the pieces of the algorithm described in more detail in the subsequent sections fit together.
+
+Iterate over minus and plus phases of settling for each event.
+
+o At start of settling, for all units:
+
+- Initialize all state variables (activation, v_m, etc.).
+
+- Apply external patterns (clamp input in minus, input & output in
+
+plus).
+
+- Compute net input scaling terms (constants, computed
+
+here so network can be dynamically altered).
+
+- Optimization: compute net input once from all static activations
+
+(e.g., hard-clamped external inputs).
+
+o During each cycle of settling, for all non-clamped units:
+
+- Compute excitatory netinput (g_e(t), aka eta_j or net)
+
+-- sender-based optimization by ignoring inactives.
+
+- Compute kWTA inhibition for each layer, based on g_i^Q:
+
+* Sort units into two groups based on g_i^Q: top k and
+
+remaining k+1 -> n.
+
+* If basic, find k and k+1th highest
+
+If avg-based, compute avg of 1 -> k & k+1 -> n.
+
+* Set inhibitory conductance g_i from g^Q_k and g^Q_k+1
+
+- Compute point-neuron activation combining excitatory input and
+
+inhibition
+
+o After settling, for all units, record final settling activations
+
+as either minus or plus phase (y^-_j or y^+_j).
+
+After both phases update the weights (based on linear current
+
+weight values), for all connections:
+
+o Compute error-driven weight changes with CHL with soft weight bounding
+
+o Compute Hebbian weight changes with CPCA from plus-phase activations
+
+o Compute net weight change as weighted sum of error-driven and Hebbian
+
+o Increment the weights according to net weight change.
+
+Implementations
+
+Emergent  is the original implementation of Leabra; its most recent implementation is written in Go. It was written chiefly by Dr. O'Reilly, but professional software engineers were recently hired to improve the existing codebase. This is the fastest implementation, suitable for constructing large networks. Although emergent has a graphical user interface, it is very complex and has a steep learning curve.
+
+If you want to understand the algorithm in detail, it will be easier to read non-optimized code. For this purpose, check out the MATLAB version. There is also an R version available, that can be easily installed via install.packages("leabRa") in R and has a short introduction to how the package is used. The MATLAB and R versions are not suited for constructing very large networks, but they can be installed quickly and (with some programming background) are easy to use. Furthermore, they can also be adapted easily.
+
+Special algorithms
+
+Temporal differences and general dopamine modulation. Temporal differences (TD) is widely used as a model of midbrain dopaminergic firing.
+
+Primary value learned value (PVLV). PVLV simulates behavioral and neural data on Pavlovian conditioning and the midbrain dopaminergic neurons that fire in proportion to unexpected rewards (an alternative to TD).
+
+Prefrontal cortex basal ganglia working memory (PBWM). PBWM uses PVLV to train prefrontal cortex working memory updating system, based on the biology of the prefrontal cortex and basal ganglia.
+
+References
+
+External links
+
+Emergent about Leabra
+
+PDP++ about Leabra
+
+O'Reilly, R.C. (1996). The Leabra Model of Neural Interactions and Learning in the Neocortex. Phd Thesis, Carnegie Mellon University, Pittsburgh, PA
+
+R version of Leabra
+
+Vignette for R version of Leabra
+
+Category:Machine learning algorithms
+
+Category:Artificial neural networks

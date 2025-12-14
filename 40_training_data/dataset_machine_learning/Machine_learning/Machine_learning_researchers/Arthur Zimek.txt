@@ -1,0 +1,31 @@
+Arthur Zimek is a professor in data mining, data science and machine learning at the University of Southern Denmark in Odense, Denmark.
+
+He graduated from the Ludwig Maximilian University of Munich in Munich, Germany, where he worked with Prof. Hans-Peter Kriegel. His dissertation on "Correlation Clustering" was awarded the "SIGKDD Doctoral Dissertation Award 2009 Runner-up" by the Association for Computing Machinery.
+
+He is well known for his work on outlier detection, density-based clustering, correlation clustering, and the curse of dimensionality.
+
+He is one of the founders and core developers of the open-source ELKI data mining framework.
+
+References
+
+External links
+
+University homepage
+
+Publications in the Digital Bibliography & Library Project
+
+Google Scholar profile
+
+Category:Data miners
+
+Category:Machine learning researchers
+
+Category:German computer scientists
+
+Category:Living people
+
+Category:Ludwig Maximilian University of Munich alumni
+
+Category:Academic staff of the University of Southern Denmark
+
+Category:Year of birth missing (living people)

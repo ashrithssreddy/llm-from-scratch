@@ -1,0 +1,67 @@
+{{Infobox person
+
+name               = Kavita Gnesan
+
+education          = * M.S. in Computer Science, University of Southern California
+
+Ph.D. in Computer Science, University of Illinois Urbana-Champaign
+
+alma_mater         =
+
+occupation         = Author, data scientist, AI Consultant
+
+years_active       = 2012-present
+
+website            =
+
+}}
+
+Kavita Annapoorani Ganesan is a Malaysian-born author, data scientist and AI consultant known for her research in the fields of artificial intelligence, machine learning, and natural language processing. She wrote the book, The Business Case for AI and founded the company Opinosis Analytics. Her works have been cited over 1500 times according to Google Scholar. In 2017, she brought the first machine learning (ML) pipeline to GitHub with the launch of GitHub Topics. While working at GitHub, Ganesan founded the Utah-based AI and machine learning company Opinosis Analytics.
+
+In 2021, Ganesan was nominated for the Rising Star Award at VentureBeat’s Women in AI Awards.
+
+In 2022, Ganesan published the book The Business Case for AI: A Leader’s Guide to AI Strategies, Best Practices & Real-World Applications.
+
+In 2023, her book The Business Case for AI was the runner up in the San Francisco Book Festival’s Technology category and also  won Gold Medal in Business Life Category in the2023 Global Book Awards. The book also won an award in the 2nd Quarter 2023 Firebird Book Awards.
+
+Research
+
+Ganesan’s background is in natural language processing (NLP), search technologies, and machine learning. Her work has been cited in over 1500 papers. and search engines. data analysis for clinical notes and written opinions, and data mining for e-commerce.
+
+Ganesan has patents for software systems and methods used for visualizing reputation ratings, activity-based recommendations, and search clustering.
+
+Selected publications
+
+Ganesan, K. (2022). The Business Case for AI: A Leader's Guide to AI Strategies, Best Practices & Real-World Applications. United States: Opinosis Analytics Publishing.
+
+Ganesan, K., Zhai, C., & Han, J. (2010, August). Opinosis: A graph based approach to abstractive summarization of highly redundant opinions. In Proceedings of the 23rd international conference on computational linguistics (Coling 2010) (pp.&nbsp;340–348).
+
+Ganesan, K., & Zhai, C. (2012). Opinion-based entity ranking. Information Retrieval, 15, 116-150.
+
+Ganesan, K., Zhai, C., & Viegas, E. (2012, April). Micropinion generation: an unsupervised approach to generating ultra-concise summaries of opinions. In Proceedings of the 21st International Conference on World Wide Web (pp.&nbsp;869–878).
+
+Ganesan, K. (2018). Rouge 2.0: Updated and improved measures for evaluation of summarization tasks. arXiv preprint arXiv:1803.01937.
+
+External links
+
+Opinosis Analytics - company she has founded
+
+Kavita Ganesan Official Website
+
+References
+
+Category:Living people
+
+Category:Malaysian writers
+
+Category:Malaysian chief executives
+
+Category:Artificial intelligence researchers
+
+Category:Natural language processing researchers
+
+Category:Year of birth missing (living people)
+
+Category:Women data scientists
+
+Category:Data scientists

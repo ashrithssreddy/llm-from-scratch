@@ -1,0 +1,79 @@
+Monica Sin-Ling Lam is an American computer scientist. She is a professor in the Computer Science Department at Stanford University.
+
+Education
+
+Monica Lam received a B.Sc. from University of British Columbia in 1980 and a Ph.D. in computer science from Carnegie Mellon University in 1987.
+
+Career
+
+Lam joined the faculty of Computer Science at Stanford University in 1988. She has contributed to the research of a wide range of computer systems topics including compilers, program analysis, operating systems, security, computer architecture, and high-performance computing. More recently, she is working in natural language processing, and virtual assistants with an emphasis on privacy protection. She is the faculty director of the Open Virtual Assistant Lab, which organized the first workshop for the World Wide Voice Web. The lab developed the open-source Almond voice assistant, which is sponsored by the National Science Foundation. Almond received Popular Science's Best of What's New award in 2019.
+
+Previously, Lam led the SUIF (Stanford University Intermediate Format) Compiler project, which produced a widely used compiler infrastructure known for its locality optimizations and interprocedural parallelization. Many of the compiler techniques she developed have been adopted by industry. Her other research projects included the architecture and compiler for the CMU Warp machine, a systolic array of VLIW processors, and the Stanford DASH distributed shared memory machine. In 1998, she took a sabbatical leave from Stanford to help start Tensilica Inc., a company that specializes in configurable processor cores.
+
+In another research project, her program analysis group developed a collection of tools for improving software security and reliability. They developed the first scalable context-sensitive inclusion-based pointer analysis and a freely available tool called BDDBDDB, that allows programmers to express context-sensitive analyses simply by writing Datalog queries. Other tools developed include Griffin, static and dynamic analysis for finding security vulnerabilities in Web applications such as SQL injection, a static and dynamic program query language called QL, a static memory leak detector called Clouseau, a dynamic buffer overrun detector called CRED, and a dynamic error diagnosis tool called DIDUCE.
+
+In the Collective project, her research group and she developed the concept of a livePC: subscribers of the livePC will automatically run the latest of the published PC virtual images with each reboot. This approach allows computers to be managed scalably and securely. In 2005, the group started a company called MokaFive to transfer the technology to industry. She also directed the MobiSocial laboratory at Stanford, as part of the Programmable Open Mobile Internet 2020 initiative.
+
+Lam is also the cofounder of Omlet, which launched in 2014. Omlet is the first product from MobiSocial. Omlet is an open, decentralized social networking tool, based on an extensible chat platform.
+
+Lam chaired the ACM SIGPLAN Programming Languages Design and Implementation Conference in 2000, served on the Editorial Board of ACM Transactions on Computer Systems and numerous program committees for conferences on languages and compilers (PLDI, POPL), operating systems (SOSP), and computer architecture (ASPLOS, ISCA).
+
+Awards and honors
+
+National Academy of Engineering member, 2019
+
+University of British Columbia Computer Science 50th Anniversary Research Award, 2018
+
+Fellow of the ACM, 2007
+
+ACM Programming Language Design and Implementation Best Paper Award in 2004
+
+ACM SIGSOFT Distinguished Paper Award in 2002
+
+ACM Most Influential Programming Language Design and Implementation Paper Award in 2001
+
+NSF Young Investigator award in 1992
+
+Two of her papers were recognized in "20 Years of PLDI--a Selection (1979-1999)"
+
+One of her papers was recognized in the "25 Years of the International Symposia on Computer Architecture", 1988.
+
+Selected works
+
+Compilers: Principles, Techniques and Tools (2d Ed) (2006) (the "Dragon Book") by Alfred V. Aho, Monica S. Lam, Ravi Sethi, and Jeffrey D. Ullman ()
+
+A Systolic Array Optimizing Compiler (1989) ()
+
+Monica Lam, Dissertation
+
+References
+
+External links
+
+Tree of Monica Lam's students
+
+DBLP Publications Server
+
+Monica Lam Current CV
+
+Monica Lam interview on MokaFive's background
+
+Category:Living people
+
+Category:American computer scientists
+
+Category:Carnegie Mellon University alumni
+
+Category:2007 fellows of the Association for Computing Machinery
+
+Category:Programming language researchers
+
+Category:Stanford University Department of Electrical Engineering faculty
+
+Category:University of British Columbia alumni
+
+Category:American women computer scientists
+
+Category:Year of birth missing (living people)
+
+Category:Natural language processing researchers

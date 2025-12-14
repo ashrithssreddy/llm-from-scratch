@@ -1,0 +1,161 @@
+Linear Programming Boosting (LPBoost) is a supervised classifier from the boosting family of classifiers. LPBoost maximizes a margin between training samples of different classes, and thus also belongs to the class of margin classifier algorithms.
+
+Consider a classification function f: \mathcal{X} \to \{ -1, 1 \},
+
+which classifies samples from a space \mathcal{X} into one of two classes, labelled 1 and -1, respectively.  LPBoost is an algorithm for learning such a classification function, given a set of training examples with known class labels. LPBoost is a machine learning technique especially suited for joint classification and feature selection in structured domains.
+
+LPBoost overview
+
+As in all boosting classifiers, the final classification function is of the form
+
+f(\boldsymbol{x}) = \sum_{j=1}^{J} \alpha_j h_j(\boldsymbol{x}),
+
+where \alpha_j are non-negative weightings for weak classifiers h_j: \mathcal{X} \to \{-1,1\}.    Each individual weak classifier h_j may be just a little bit better than random, but the resulting linear combination of many weak classifiers can perform very well.
+
+LPBoost constructs f by starting with an empty set of weak classifiers.  Iteratively, a single weak classifier to add to the set of considered weak classifiers is selected, added and all the weights \boldsymbol{\alpha} for the current set of weak classifiers are adjusted.  This is repeated until no weak classifiers to add remain.
+
+The property that all classifier weights are adjusted in each iteration is known as totally-corrective property.  Early boosting methods, such as AdaBoost do not have this property and converge slower.
+
+Linear program
+
+More generally, let \mathcal{H}=\{h(\cdot;\omega) | \omega \in \Omega\} be the possibly infinite set of weak classifiers, also termed hypotheses.  One way to write down the problem LPBoost solves is as a linear program with infinitely many variables.
+
+The primal linear program of LPBoost, optimizing over the non-negative weight vector \boldsymbol{\alpha}, the non-negative vector \boldsymbol{\xi} of slack variables and the margin \rho is the following.
+
+\begin{array}{cl}
+
+\underset{\boldsymbol{\alpha},\boldsymbol{\xi},\rho}{\min} & -\rho + D \sum_{n=1}^{\ell} \xi_n\\
+
+\textrm{sb.t.} & \sum_{\omega \in \Omega} y_n \alpha_{\omega} h(\boldsymbol{x}_n ; \omega) + \xi_n \geq \rho,\qquad n=1,\dots,\ell,\\
+
+& \sum_{\omega \in \Omega} \alpha_{\omega} = 1,\\
+
+& \xi_n \geq 0,\qquad n=1,\dots,\ell,\\
+
+& \alpha_{\omega} \geq 0,\qquad \omega \in \Omega,\\
+
+& \rho \in {\mathbb R}.
+
+\end{array}
+
+Note the effects of slack variables \boldsymbol{\xi} \geq 0: their one-norm is penalized in the objective function by a constant factor D, which—if small enough—always leads to a primal feasible linear program.
+
+Here we adopted the notation of a parameter space \Omega, such that for a choice \omega \in \Omega the weak classifier h(\cdot ; \omega): \mathcal{X} \to \{-1,1\} is uniquely defined.
+
+When the above linear program was first written down in early publications about boosting methods it was disregarded as intractable due to the large number of variables \boldsymbol{\alpha}.  Only later it was discovered that such linear programs can indeed be solved efficiently using the classic technique of column generation.
+
+Column generation for LPBoost
+
+In a linear program a column corresponds to a primal variable.  Column generation is a technique to solve large linear programs.  It typically works in a restricted problem, dealing only with a subset of variables.  By generating primal variables iteratively and on-demand, eventually the original unrestricted problem with all variables is recovered.  By cleverly choosing the columns to generate the problem can be solved such that while still guaranteeing the obtained solution to be optimal for the original full problem, only a small fraction of columns has to be created.
+
+LPBoost dual problem
+
+Columns in the primal linear program corresponds to rows in the dual linear program.  The equivalent dual linear program of LPBoost is the following linear program.
+
+\begin{array}{cl}
+
+\underset{\boldsymbol{\lambda},\gamma}{\max} & \gamma\\
+
+\textrm{sb.t.} & \sum_{n=1}^{\ell} y_n h(\boldsymbol{x}_n ; \omega) \lambda_n + \gamma \leq 0,\qquad \omega \in \Omega,\\
+
+& 0 \leq \lambda_n \leq D,\qquad n=1,\dots,\ell,\\
+
+& \sum_{n=1}^{\ell} \lambda_n = 1,\\
+
+& \gamma \in \mathbb{R}.
+
+\end{array}
+
+For linear programs the optimal value of the primal and dual problem are equal.  For the above primal and dual problems, the optimal value is equal to the negative 'soft margin'.  The soft margin is the size of the margin separating positive from negative training instances minus positive slack variables that carry penalties for margin-violating samples.  Thus, the soft margin may be positive although not all samples are linearly separated by the classification function.  The latter is called the 'hard margin' or 'realized margin'.
+
+Convergence criterion
+
+Consider a subset of the satisfied constraints in the dual problem.  For any finite subset we can solve the linear program and thus satisfy all constraints.  If we could prove that of all the constraints which we did not add to the dual problem no single constraint is violated, we would have proven that solving our restricted problem is equivalent to solving the original problem.  More formally, let \gamma^* be the optimal objective function value for any restricted instance.  Then, we can formulate a search problem for the 'most violated constraint' in the original problem space, namely finding \omega^* \in \Omega as
+
+\omega^* = \underset{\omega \in \Omega}{\textrm{argmax}} \sum_{n=1}^{\ell} y_n h(\boldsymbol{x}_n;\omega) \lambda_n.
+
+That is, we search the space \mathcal{H} for a single decision stump h(\cdot;\omega^*) maximizing the left hand side of the dual constraint.  If the constraint cannot be violated by any choice of decision stump, none of the corresponding constraint can be active in the original problem and the restricted problem is equivalent.
+
+Penalization constant D
+
+The positive value of penalization constant D has to be found using model selection techniques.  However, if we choose D=\frac{1}{\ell \nu}, where \ell is the number of training samples and 0 , then the new parameter \nu has the following properties.
+
+\nu is an upper bound on the fraction of training errors; that is, if k denotes the number of misclassified training samples, then \frac{k}{\ell} \leq \nu.
+
+\nu is a lower bound on the fraction of training samples outside or on the margin.
+
+Algorithm
+
+Input:
+
+Training set X = \{\boldsymbol{x}_1, \dots, \boldsymbol{x}_{\ell}\}, \boldsymbol{x}_i \in \mathcal{X}
+
+Training labels Y = \{y_1,\dots,y_{\ell}\}, y_i \in \{-1,1\}
+
+Convergence threshold \theta \geq 0
+
+Output:
+
+Classification function f: \mathcal{X} \to \{-1,1\}
+
+Initialization
+
+Weights, uniform \lambda_n \leftarrow \frac{1}{\ell},\quad n=1,\dots,\ell
+
+Edge \gamma \leftarrow 0
+
+Hypothesis count J \leftarrow 1
+
+Iterate
+
+\hat h \leftarrow \underset{\omega \in \Omega}{\textrm{argmax}} \sum_{n=1}^{\ell} y_n h(\boldsymbol{x}_n;\omega) \lambda_n
+
+if \sum_{n=1}^{\ell} y_n \hat h(\boldsymbol{x}_n) \lambda_n + \gamma \leq \theta then
+
+break
+
+h_J \leftarrow \hat h
+
+J \leftarrow J + 1
+
+(\boldsymbol{\lambda},\gamma) \leftarrow solution of the LPBoost dual
+
+\boldsymbol{\alpha} \leftarrow Lagrangian multipliers of solution to LPBoost dual problem
+
+f(\boldsymbol{x}) := \textrm{sign} \left(\sum_{j=1}^J \alpha_j h_j (\boldsymbol{x})\right)
+
+Note that if the convergence threshold is set to \theta = 0 the solution obtained is the global optimal solution of the above linear program.  In practice, \theta is set to a small positive value in order obtain a good solution quickly.
+
+Realized margin
+
+The actual margin separating the training samples is termed the realized margin and is defined as
+
+\rho(\boldsymbol{\alpha}) := \min_{n=1,\dots,\ell} y_n \sum_{\alpha_{\omega} \in \Omega} \alpha_{\omega} h(\boldsymbol{x}_n ; \omega).
+
+The realized margin can and will usually be negative in the first iterations.  For a hypothesis space that permits singling out of any single sample, as is commonly the case, the realized margin will eventually converge to some positive value.
+
+Convergence guarantee
+
+While the above algorithm is proven to converge, in contrast to other boosting formulations, such as AdaBoost and TotalBoost, there are no known convergence bounds for LPBoost.  In practise however, LPBoost is known to converge quickly, often faster than other formulations.
+
+Base learners
+
+LPBoost is an ensemble learning method and thus does not dictate the choice of base learners, the space of hypotheses \mathcal{H}.  Demiriz et al. showed that under mild assumptions, any base learner can be used.  If the base learners are particularly simple, they are often referred to as decision stumps.
+
+The number of base learners commonly used with Boosting in the literature is large.  For example, if \mathcal{X} \subseteq {\mathbb R}^n, a base learner could be a linear soft margin support vector machine.  Or even more simple, a simple stump of the form
+
+h(\boldsymbol{x} ; \omega \in \{1,-1\}, p \in \{1,\dots,n\}, t \in {\mathbb R}) :=
+
+\left\{\begin{array}{cl} \omega & \textrm{if~} \boldsymbol{x}_p \leq t\\
+
+-\omega & \textrm{otherwise}\end{array}\right..
+
+The above decision stumps looks only along a single dimension p of the input space and simply thresholds the respective column of the sample using a constant threshold t.  Then, it can decide in either direction, depending on \omega for a positive or negative class.
+
+Given weights for the training samples, constructing the optimal decision stump of the above form simply involves searching along all sample columns and determining p, t and \omega in order to optimize the gain function.
+
+References
+
+Linear Programming Boosting via Column Generation, A. Demiriz and K.P. Bennett and J. Shawe-Taylor. Published 2002 in Kluwer Machine Learning 46, pages 225–254.
+
+Category:Ensemble learning

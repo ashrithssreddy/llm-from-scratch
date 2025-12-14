@@ -1,0 +1,37 @@
+In the mathematical theory of stochastic processes, variable-order Markov (VOM) models are an important class of models that extend the well known Markov chain models. In contrast to the Markov chain models, where each random variable in a sequence with a Markov property depends on a fixed number of random variables, in VOM models this number of conditioning random variables may vary based on the specific observed realization.
+
+This realization sequence is often called the context; therefore the VOM models are also called context trees. VOM models are nicely rendered by colorized probabilistic suffix trees (PST). The flexibility in the number of conditioning random variables turns out to be of real advantage for many applications, such as statistical analysis, classification and prediction.
+
+Example
+
+Consider for example a sequence of random variables, each of which takes a value from the ternary alphabet {{math|}}. Specifically, consider the string constructed from infinite concatenations of the sub-string : .
+
+The VOM model of maximal order 2 can approximate the above string using only the following five conditional probability components: {{math|Pr(a  aa)  0.5}}, {{math|Pr(b  aa)  0.5}}, {{math|Pr(c  b)  1.0}}, {{math|Pr(a  c) 1.0}}, {{math|Pr(a  ca)  1.0}}.
+
+In this example, {{math|Pr(c  ab)  Pr(c  b)  1.0}}; therefore, the shorter context  is sufficient to determine the next character. Similarly, the VOM model of maximal order 3 can generate the string exactly using only five conditional probability components, which are all equal to 1.0.
+
+To construct the Markov chain of order 1 for the next character in that string, one must estimate the following 9 conditional probability components: {{math|Pr(a  a)}}, {{math|Pr(a  b)}}, {{math|Pr(a  c)}}, {{math|Pr(b  a)}}, {{math|Pr(b  b)}}, {{math|Pr(b  c)}}, {{math|Pr(c  a)}}, {{math|Pr(c  b)}}, {{math|Pr(c  c)}}. To construct the Markov chain of order 2 for the next character, one must estimate 27 conditional probability components: {{math|Pr(a  aa)}}, {{math|Pr(a  ab)}}, , {{math|Pr(c  cc)}}. And to construct the Markov chain of order three for the next character one must estimate the following 81 conditional probability components: {{math|Pr(a  aaa)}}, {{math|Pr(a  aab)}}, , {{math|Pr(c  ccc)}}.
+
+In practical settings there is seldom sufficient data to accurately estimate the exponentially increasing number of conditional probability components as the order of the Markov chain increases.
+
+The variable-order Markov model assumes that in realistic settings, there are certain realizations of states (represented by contexts) in which some past states are independent from the future states; accordingly, "a great reduction in the number of model parameters can be achieved."  haplotyping, speech recognition, sequence analysis in social sciences,  and others.
+
+See also
+
+Stochastic chains with memory of variable length
+
+Examples of Markov chains
+
+Variable order Bayesian network
+
+Markov process
+
+Markov chain Monte Carlo
+
+Semi-Markov process
+
+Artificial intelligence
+
+References
+
+Category:Markov models

@@ -1,0 +1,7 @@
+Upper Confidence Bound (UCB) is a family of algorithms in machine learning and statistics for solving the multi-armed bandit problem and addressing the exploration–exploitation trade-off. UCB methods select actions by computing an upper confidence estimate of each action’s potential reward, thus balancing exploration of uncertain options with exploitation of those known to perform well. Introduced by Auer, Cesa-Bianchi & Fischer in 2002, UCB and its variants have become standard techniques in reinforcement learning, online advertising, recommender systems, clinical trials, and Monte Carlo tree search.
+
+Category:Algorithms
+
+Category:Machine learning
+
+Category:Statistical algorithms

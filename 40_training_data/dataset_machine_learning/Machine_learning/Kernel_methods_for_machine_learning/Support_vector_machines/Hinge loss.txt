@@ -1,0 +1,51 @@
+In machine learning, the hinge loss is a loss function used for training classifiers. The hinge loss is used for "maximum-margin" classification, most notably for support vector machines (SVMs).
+
+For an intended output {{math|t  ±1}} and a classifier score , the hinge loss of the prediction  is defined as
+
+\ell(y) = \max(0, 1-t \cdot y)
+
+Note that y should be the "raw" output of the classifier's decision function, not the predicted class label. For instance, in linear SVMs, y = \mathbf{w} \cdot \mathbf{x} + b, where (\mathbf{w},b) are the parameters of the hyperplane and \mathbf{x} is the input variable(s).
+
+When  and  have the same sign (meaning  predicts the right class) and |y| \ge 1, the hinge loss \ell(y) = 0. When they have opposite signs, \ell(y) increases linearly with , and similarly if |y| , even if it has the same sign (correct prediction, but not by enough margin).
+
+The Hinge loss is not a proper scoring rule.
+
+Extensions
+
+While binary SVMs are commonly extended to multiclass classification in a one-vs.-all or one-vs.-one fashion,
+
+it is also possible to extend the hinge loss itself for such an end. Several different variations of multiclass hinge loss have been proposed. For example, Crammer and Singer
+
+defined it for a linear classifier as
+
+\ell(y) = \max(0, 1 + \max_{y \ne t} \mathbf{w}_y \mathbf{x} - \mathbf{w}_t \mathbf{x}),
+
+where t is the target label, \mathbf{w}_t and \mathbf{w}_y are the model parameters.
+
+Weston and Watkins provided a similar definition, but with a sum rather than a max:
+
+\ell(y) = \begin{cases}
+
+\frac{1}{2} - ty       & \text{if} ~~ ty \le 0, \\
+
+\frac{1}{2} (1 - ty)^2 & \text{if} ~~ 0
+
+or the quadratically smoothed
+
+\ell_\gamma(y) = \begin{cases}
+
+\frac{1}{2\gamma} \max(0, 1 - ty)^2 & \text{if} ~~ ty \ge 1 - \gamma, \\
+
+1 - \frac{\gamma}{2} - ty           & \text{otherwise}
+
+\end{cases}
+
+suggested by Zhang. The modified Huber loss L is a special case of this loss function with \gamma = 2, specifically L(t,y) = 4 \ell_2(y).
+
+See also
+
+References
+
+Category:Loss functions
+
+Category:Support vector machines

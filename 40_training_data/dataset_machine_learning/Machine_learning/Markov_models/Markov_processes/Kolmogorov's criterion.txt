@@ -1,0 +1,49 @@
+In probability theory, Kolmogorov's criterion, named after Andrey Kolmogorov, is a theorem giving a necessary and sufficient condition for a Markov chain or continuous-time Markov chain to be stochastically identical to its time-reversed version.
+
+Discrete-time Markov chains
+
+The theorem states that an irreducible, positive recurrent, aperiodic Markov chain with transition matrix P is reversible if and only if its stationary Markov chain satisfies
+
+p_{j_1 j_2} p_{j_2 j_3} \cdots p_{j_{n-1} j_n} p_{j_n j_1} = p_{j_1 j_n} p_{j_n j_{n-1}} \cdots p_{j_3 j_2} p_{j_2 j_1}
+
+for all finite sequences of states
+
+j_1, j_2, \ldots, j_n \in S .
+
+Here pij are components of the transition matrix P, and S is the state space of the chain.
+
+That is, the chain-multiplication along any cycle is the same forwards and backwards.
+
+Example
+
+Consider this figure depicting a section of a Markov chain with states i, j, k and l and the corresponding transition probabilities. Here Kolmogorov's criterion implies that the product of probabilities when traversing through any closed loop must be equal, so the product around the loop i to j to l to k returning to i must be equal to the loop the other way round,
+
+p_{ij}p_{jl}p_{lk}p_{ki} = p_{ik}p_{kl}p_{lj}p_{ji}.
+
+Proof
+
+Let X be the Markov chain and denote by \pi its stationary distribution (such exists since the chain is positive recurrent).
+
+If the chain is reversible, the equality follows from the relation p_{ji}=\frac{\pi_i p_{ij}}{\pi_j}.
+
+Now assume that the equality is fulfilled. Fix states s and t. Then
+
+\text{P}(X_{n+1}=t,X_{n}=i_n,\ldots,X_{0}=s|X_0=s)= p_{si_1}p_{i_1i_2}\cdots p_{i_nt}=\frac{ p_{st}}{p_{ts}}p_{ti_n}p_{i_{n}i_{n-1}}\cdots p_{i_1s}=\frac{p_{st}}{p_{ts}}\text{P}(X_{n+1}=s,X_{n}=i_1,\ldots,X_{0}=t|X_0=t).
+
+Now sum both sides of the last equality for all possible ordered choices of n states i_1,i_2,\ldots,i_n. Thus we obtain p_{st}^{(n)}=\frac{p_{st}}{p_{ts}}p_{ts}^{(n)} so \frac{p_{st}^{(n)}}{p_{ts}^{(n)}}=\frac{p_{st}}{p_{ts}}. Send n to \infty on the left side of the last. From the properties of the chain follows that \lim_{n\to\infty}p_{ij}^{(n)}=\pi_j, hence \frac{\pi_t}{\pi_s}=\frac{p_{st}}{p_{ts}} which shows that the chain is reversible.
+
+Continuous-time Markov chains
+
+The theorem states that a continuous-time Markov chain with transition rate matrix Q is, under any invariant probability vector, reversible if and only if its transition probabilities satisfy
+
+q_{j_1 j_2} q_{j_2 j_3} \cdots q_{j_{n-1} j_n} q_{j_n j_1} = q_{j_1 j_n} q_{j_n j_{n-1}} \cdots q_{j_3 j_2} q_{j_2 j_1}
+
+for all finite sequences of states
+
+j_1, j_2, \ldots, j_n \in S .
+
+The proof for continuous-time Markov chains follows in the same way as the proof for discrete-time Markov chains.
+
+References
+
+Category:Markov processes

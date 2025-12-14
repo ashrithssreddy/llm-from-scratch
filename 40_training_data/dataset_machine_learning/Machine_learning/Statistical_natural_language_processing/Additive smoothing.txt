@@ -1,0 +1,95 @@
+In statistics, additive smoothing, also called Laplace smoothing or Lidstone smoothing, is a technique used to smooth count data, eliminating issues caused by certain values having 0 occurrences. Given a set of observation counts \mathbf{x} = \langle x_1, x_2, \ldots, x_d \rangle from a d-dimensional multinomial distribution with N trials, a "smoothed" version of the counts gives the estimator
+
+\hat\theta_i = \frac{x_i + \alpha}{N + \alpha d} \qquad (i = 1, \ldots, d),
+
+where the smoothed count \hat x_i = N \hat\theta_i, and the "pseudocount" α&nbsp;>&nbsp;0 is a smoothing parameter, with α&nbsp;=&nbsp;0 corresponding to no smoothing (this parameter is explained in  below). Additive smoothing is a type of shrinkage estimator, as the resulting estimate will be between the empirical probability (relative frequency) x_i/N and the uniform probability 1/d. Common choices for α are 0 (no smoothing),  (the Jeffreys prior), or 1 (Laplace's rule of succession), but the parameter may also be set empirically based on the observed data.
+
+From a Bayesian point of view, this corresponds to the expected value of the posterior distribution, using a symmetric Dirichlet distribution with parameter α as a prior distribution. In the special case where the number of categories is 2, this is equivalent to using a beta distribution as the conjugate prior for the parameters of the binomial distribution.
+
+History
+
+Laplace came up with this smoothing technique when he tried to estimate the chance that the sun will rise tomorrow. His rationale was that even given a large sample of days with the rising sun, we still can not be completely sure that the sun will still rise tomorrow (known as the sunrise problem).
+
+Pseudocount
+
+A pseudocount is an amount (not generally an integer, despite its name) added to the number of observed cases in order to change the expected probability in a model of those data, when not known to be zero. It is so named because, roughly speaking, a pseudo-count of value \alpha weighs into the posterior distribution similarly to each category having an additional count of \alpha. If the frequency of each item i is x_i out of N samples, the empirical probability of event i is
+
+p_{i,\text{empirical}} = \frac{x_i}{N},
+
+but the posterior probability when additively smoothed is
+
+p_{i,\alpha\text{-smoothed}} = \frac{x_i + \alpha}{N + \alpha d},
+
+as if to increase each count x_i by \alpha a priori.
+
+Depending on the prior knowledge, which is sometimes a subjective value, a pseudocount may have any non-negative finite value. It may only be zero (or the possibility ignored) if impossible by definition, such as the possibility of a decimal digit of ' being a letter, or a physical possibility that would be rejected and so not counted, such as a computer printing a letter when a valid program for ' is run, or excluded and not counted because of no interest, such as if only interested in the zeros and ones. Generally, there is also a possibility that no value may be computable or observable in a finite time (see the halting problem). But at least one possibility must have a non-zero pseudocount, otherwise no prediction could be computed before the first observation. The relative values of pseudocounts represent the relative prior expected probabilities of their possibilities. The sum of the pseudocounts, which may be very large, represents the estimated weight of the prior knowledge compared with all the actual observations (one for each) when determining the expected probability.
+
+In any observed data set or sample there is the possibility, especially with low-probability events and with small data sets, of a possible event not occurring. Its observed frequency is therefore zero, apparently implying a probability of zero. This oversimplification is inaccurate and often unhelpful, particularly in probability-based machine learning techniques such as artificial neural networks and hidden Markov models. By artificially adjusting the probability of rare (but not impossible) events so those probabilities are not exactly zero, zero-frequency problems are avoided. Also see Cromwell's rule.
+
+Choice of pseudocount
+
+Weakly informative prior
+
+One common approach is to add 1 to each observed number of events, including the zero-count possibilities. This is sometimes called Laplace's rule of succession. This approach is equivalent to assuming a uniform prior distribution over the probabilities for each possible event (spanning the simplex where each probability is between 0 and 1, and they all sum to 1).
+
+Using the Jeffreys prior approach, a pseudocount of one half should be added to each possible outcome.
+
+Pseudocounts should be set to one or one-half only when there is no prior knowledge at allsee the principle of indifference. However, given appropriate prior knowledge, the sum should be adjusted in proportion to the expectation that the prior probabilities should be considered correct, despite evidence to the contrarysee further analysis. Higher values are appropriate inasmuch as there is prior knowledge of the true values (for a mint-condition coin, say); lower values inasmuch as there is prior knowledge that there is probable bias, but of unknown degree (for a bent coin, say).
+
+Frequentist interval
+
+One way to motivate pseudocounts, particularly for binomial data, is via a formula for the midpoint of an interval estimate, particularly a binomial proportion confidence interval. The best-known is due to Edwin Bidwell Wilson, in : the midpoint of the Wilson score interval corresponding to  standard deviations on either side is
+
+\frac{n_S + z}{n + 2z}
+
+Taking z = 2 standard deviations to approximate a 95% confidence interval () yields pseudocount of 2 for each outcome, so 4 in total, colloquially known as the "plus four rule":
+
+\frac{n_S + 2}{n + 4}
+
+This is also the midpoint of the Agresti–Coull interval .
+
+Known incidence rates
+
+Often the bias of an unknown trial population is tested against a control population with known parameters (incidence rates) \boldsymbol \mu = \langle \mu_1, \mu_2, \ldots, \mu_d \rangle. In this case the uniform probability 1/d should be replaced by the known incidence rate of the control population \mu_i to calculate the smoothed estimator:
+
+\hat\theta_i = \frac{x_i + \mu_i \alpha d}{N + \alpha d} \qquad (i = 1, \ldots, d).
+
+As a consistency check, if the empirical estimator happens to equal the incidence rate, i.e. \mu_i = x_i/N, the smoothed estimator is independent of \alpha and also equals the incidence rate.
+
+Applications
+
+Classification
+
+Additive smoothing is commonly a component of naive Bayes classifiers.
+
+Statistical language modelling
+
+In a bag of words model of natural language processing and information retrieval, the data consists of the number of occurrences of each word in a document. Additive smoothing allows the assignment of non-zero probabilities to words which do not occur in the sample. Studies have shown that additive smoothing is more effective than other probability smoothing methods in several retrieval tasks such as language-model-based pseudo-relevance feedback and recommender systems.
+
+See also
+
+Bayesian average
+
+Prediction by partial matching
+
+Categorical distribution
+
+References
+
+Sources
+
+External links
+
+SF Chen, J Goodman (1996). "An empirical study of smoothing techniques for language modeling". Proceedings of the 34th annual meeting on Association for Computational Linguistics.
+
+Pseudocounts
+
+Bayesian interpretation of pseudocount regularizers
+
+A video explaining the use of Additive smoothing in a Naïve Bayes classifier
+
+Category:Statistical natural language processing
+
+Category:Categorical data
+
+Category:Probability theory

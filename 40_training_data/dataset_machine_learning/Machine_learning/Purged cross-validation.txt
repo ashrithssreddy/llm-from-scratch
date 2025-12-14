@@ -1,0 +1,9 @@
+Purged cross-validation is a variant of k-fold cross-validation designed to prevent look-ahead bias in time series and other structured data, developed in 2017 by Marcos López de Prado at Guggenheim Partners and Cornell University. It is primarily used in financial machine learning to ensure the independence of training and testing samples when labels depend on future events. It provides an alternative to conventional cross-validation and walk-forward backtesting methods, which often yield overly optimistic performance estimates due to information leakage and overfitting.
+
+Purging
+
+Purging removes from the training set any observation whose timestamp falls within the time range of formation of a label in the test set. This can be the case for train set observations before and after the test set. Their removal ensures that the algorithm cannot learn during train time information that will be used to assess the performance of the algorithm. See the figure below for an illustration of purging.
+
+Category:Machine learning
+
+Category:Investment management

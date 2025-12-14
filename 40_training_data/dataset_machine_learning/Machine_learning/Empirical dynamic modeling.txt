@@ -1,0 +1,141 @@
+Empirical dynamic modeling (EDM) is a framework for analysis and prediction of nonlinear dynamical systems. Applications include population dynamics, ecosystem service, medicine, neuroscience, dynamical systems, geophysics, and human-computer interaction. EDM was originally developed by Robert May and George Sugihara.  It can be considered a methodology for data modeling, predictive analytics, dynamical system analysis, machine learning and time series analysis.
+
+Description
+
+Mathematical models have tremendous power to describe observations of real-world systems. They are routinely used to test hypothesis, explain mechanisms and predict future outcomes. However, real-world systems are often nonlinear and multidimensional, in some instances rendering explicit equation-based modeling problematic. Empirical models, which infer patterns and associations from the data instead of using hypothesized equations, represent a natural and flexible framework for modeling complex dynamics.
+
+Donald DeAngelis and Simeon Yurek illustrated that canonical statistical models are ill-posed when applied to nonlinear dynamical systems. A hallmark of nonlinear dynamics is state-dependence: system states are related to previous states governing transition from one state to another.  EDM operates in this space, the multidimensional state-space of system dynamics rather than on one-dimensional observational time series.  EDM does not presume relationships among states, for example, a functional dependence, but projects future states from localised, neighboring states. EDM is thus a state-space, nearest-neighbors paradigm where system dynamics are inferred from states derived from observational time series. This provides a model-free representation of the system naturally encompassing nonlinear dynamics.
+
+A cornerstone of EDM is recognition that time series observed from a dynamical system can be transformed into higher-dimensional state-spaces by time-delay embedding with Takens's theorem.  The state-space models are evaluated based on in-sample fidelity to observations, conventionally with Pearson correlation between predictions and observations.
+
+Methods
+
+Primary EDM algorithms include Simplex projection, Sequential locally weighted global linear maps (S-Map) projection, Multivariate embedding in Simplex or S-Map, and Multiview Embeding, described below.
+
+Nearest neighbors are found according to:
+
+\text{NN}(y, X, k) = \| X_{N_i}^{E} - y\| \leq \| X_{N_j}^{E} - y\| \text{ if } 1 \leq i \leq j \leq k
+
+Simplex
+
+Simplex projection is a nearest neighbor projection. It locates the k nearest neighbors to the location in the state-space from which a prediction is desired. To minimize the number of free parameters k is typically set to E+1 defining an E+1 dimensional simplex in the state-space. The prediction is computed as the average of the weighted phase-space simplex projected Tp points ahead. Each neighbor is weighted proportional to their distance to the projection origin vector in the state-space.
+
+Find k nearest neighbor: N_k \gets \text{NN}(y, X, k)
+
+Define the distance scale: d \gets  \| X_{N_1}^{E} - y\|
+
+Compute weights: For{i=1,\dots,k} : w_i \gets \exp (-\| X_{N_i}^{E} - y\| / d )
+
+Average of state-space simplex: \hat{y} \gets \sum_{i = 1}^{k} \left(w_iX_{N_i+T_p}\right) / \sum_{i = 1}^{k} w_i
+
+S-Map
+
+S-Map These Jacobians represent the time-varying interaction strengths between system variables.
+
+Find k nearest neighbor: N \gets \text{NN}(y, X, k)
+
+Sum of distances: D \gets \frac{1}{k} \sum_{i=1}^k \| X_{N_i}^{E} - y\|
+
+Compute weights: For{i=1,\dots,k} : w_i \gets \exp (-\theta \| X_{N_i}^{E} - y\| / D )
+
+Reweighting matrix: W \gets \text{diag}(w_i)
+
+Design matrix: A \gets
+
+\begin{bmatrix}
+
+1          & X_{N_1} & X_{N_1- 1} & \dots  & X_{N_1 - E + 1} \\
+
+1          & X_{N_2} & X_{N_2- 1} & \dots  & X_{N_2 - E + 1} \\
+
+\vdots     & \vdots & \vdots   & \ddots & \vdots       \\
+
+1          & X_{N_k} & X_{N_k- 1} & \dots  & X_{N_k - E + 1}
+
+\end{bmatrix}
+
+Weighted design matrix: A \gets WA
+
+Response vector at Tp: b \gets
+
+\begin{bmatrix}
+
+X_{N_1 + T_p} \\
+
+X_{N_2 + T_p} \\
+
+\vdots  \\
+
+X_{N_k + T_p}
+
+\end{bmatrix}
+
+Weighted response vector: b \gets Wb
+
+Least squares solution (SVD): \hat{c} \gets \text{argmin}_{c}\| Ac - b \|_2^2
+
+Local linear model \hat{c} is prediction: \hat{y} \gets \hat{c}_0 + \sum_{i=1}^E\hat{c}_iy_i
+
+Multivariate Embedding
+
+Multivariate Embedding recognizes that time-delay embeddings are not the only valid state-space construction.  In Simplex and S-Map one can generate a state-space from observational vectors, or time-delay embeddings of a single observational time series, or both.
+
+Convergent Cross Mapping
+
+Convergent cross mapping (CCM)
+
+Visual analytics with EDM
+
+Convergent Cross Sorting
+
+Expert system with EDM hybrid
+
+Sliding windows based on the extended convergent cross-mapping
+
+Empirical Mode Modeling
+
+Accounting for observation noise
+
+Hierarchical Bayesian EDM via Gaussian processes
+
+Optimal control via Empirical dynamic programming
+
+Multiview distance regularised S-map
+
+See also
+
+System dynamics
+
+Complex dynamics
+
+Nonlinear dimensionality reduction
+
+References
+
+Further reading
+
+External links
+
+Animations
+
+Online books or lecture notes
+
+EDM Introduction. Introduction with video, examples and references.
+
+Arxiv preprint server has daily submissions of (non-refereed) manuscripts in dynamical systems.
+
+Research groups
+
+Sugihara Lab, Scripps Institution of Oceanography, University of California San Diego.
+
+Biological Nonlinear Dynamics Data Science Unit, Okinawa Institute of Science and Technology Graduate University, Okinawa Japan.
+
+Category:Nonlinear systems
+
+Category:Data modeling
+
+Category:Predictive analytics
+
+Category:Machine learning
+
+Category:Nonlinear time series analysis

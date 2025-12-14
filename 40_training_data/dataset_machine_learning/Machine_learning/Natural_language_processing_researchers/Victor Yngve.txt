@@ -1,0 +1,77 @@
+{{Infobox scientist
+
+name              = Victor H. Yngve
+
+image             =
+
+image_size        =
+
+image_upright     =
+
+alt               =
+
+caption           =
+
+birth_date        =
+
+birth_place       =
+
+death_date        =
+
+death_place       =
+
+nationality       = American
+
+fields            = Computational linguistics
+
+workplaces        = University of ChicagoMassachusetts Institute of Technology (1953-1965)
+
+alma_mater        = University of Chicago
+
+thesis_title      = The Time Variation of Cosmic-Ray Heavy Nuclei
+
+thesis_url        = https://pi.lib.uchicago.edu/1001/cat/bib/4285146
+
+thesis_year       = 1953
+
+doctoral_advisor  = Marcel Schein
+
+doctoral_students = Bob FabryKen Knowlton
+
+known_for         =
+
+awards            =
+
+}}
+
+Victor H. Yngve (July 5, 1920 – January 15, 2012) was a professor of linguistics at the University of Chicago and the Massachusetts Institute of Technology (1953-1965). He was one of the earliest researchers in computational linguistics and natural language processing, the use of computers to analyze and process languages. He created the first program to produce random but well-formed output sentences, given a text, a children's book called Engineer Small and the Little Train.
+
+Most importantly, he showed in computer processing terms why the human brain can only process sentences of a certain kind of complexity, ones that do not exceed a "depth limit" (which has nothing to do with length) of the kind established independently by George Miller with his depth limit of "seven plus or minus two" sentence constituents in memory at any given time.
+
+Yngve was also the author of COMIT, the first string processing language (compare SNOBOL, TRAC, and Perl), which was developed on the IBM 700/7000 series computers by Yngve and collaborators at MIT from 1957-1965. Yngve created the language for supporting computerized research in the field of linguistics, and more specifically, the area of machine translation for natural language processing.
+
+In his 1970 paper "On Getting a Word in Edgewise", Yngve coined the term 'back channel behavior' to describe the conversational phenomenon that to this day is known in the linguistic literature as back-channeling. According to Duncan, Yngve's paper also suggested the term turn-taking, independently of Erving Goffman (Duncan, 1972: 283).
+
+References
+
+Sources
+
+External links
+
+Interview , dcs.shef.ac.uk; accessed August 15, 2017.
+
+Interview video; accessed August 15, 2017.
+
+In Memoriam
+
+Category:1920 births
+
+Category:2012 deaths
+
+Category:Linguists from the United States
+
+Category:University of Chicago faculty
+
+Category:Computational linguistics researchers
+
+Category:Natural language processing researchers

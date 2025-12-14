@@ -1,0 +1,99 @@
+{{Infobox scientist
+
+name = Alexei A. Efros
+
+image =
+
+caption =
+
+birth_date =
+
+birth_place = St. Petersburg, Soviet Union
+
+death_date =
+
+death_place =
+
+residence =
+
+citizenship = Russian, American
+
+nationality =
+
+ethnicity =
+
+relatives = Alexei Efros (father)
+
+fields = Computer Science
+
+workplaces = University of OxfordCarnegie Mellon UniversityUniversity of California, Berkeley
+
+alma_mater = University of UtahUniversity of California, Berkeley
+
+doctoral_advisor = Jitendra Malik
+
+academic_advisors =
+
+doctoral_students =
+
+notable_students =
+
+thesis_title = Data-driven Approaches for Texture and Motion
+
+thesis_year = 2003
+
+thesis_url = http://graphics.cs.cmu.edu/people/efros/research/efros-thesis.pdf
+
+known_for =
+
+influences =
+
+influenced =
+
+awards =
+
+religion          =
+
+website =
+
+signature =
+
+footnotes =
+
+}}
+
+Alexei "Alyosha" A. Efros (born 9 April 1975) is a Russian-American computer scientist and professor at University of California, Berkeley. He has contributed to the field of computer vision, and his work has been referenced in Wired, BBC News, The New York Times, and The New Yorker.
+
+Early life and education
+
+Efros was born in St. Petersburg in the Soviet Union. His father is Alexei L. Efros, then a physics professor at the Ioffe Physico-Technical Institute. His family emigrated to the United States when he was 14 to accommodate his father's career and the family settled in Salt Lake City in 1991.
+
+He graduated from the University of Utah in 1997, and attended University of California, Berkeley for his PhD, where he was advised by Jitendra Malik and graduated in 2003. He then spent a year as a research fellow at the University of Oxford, where he worked with Andrew Zisserman.
+
+Career
+
+Efros joined the faculty at Carnegie Mellon University in Pittsburgh, where he remained until 2013 when he joined the faculty of the University of California, Berkeley. He received a Guggenheim Fellowship in 2008. He received the 2016 ACM Prize in Computing.
+
+References
+
+Category:1975 births
+
+Category:Living people
+
+Category:American computer scientists
+
+Category:Carnegie Mellon University faculty
+
+Category:Computer vision researchers
+
+Category:Machine learning researchers
+
+Category:Recipients of the ACM Prize in Computing
+
+Category:Russian emigrants to the United States
+
+Category:UC Berkeley College of Engineering faculty
+
+Category:University of California, Berkeley alumni
+
+Category:University of Utah alumni

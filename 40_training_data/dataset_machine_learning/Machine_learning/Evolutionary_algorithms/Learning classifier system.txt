@@ -1,0 +1,57 @@
+Learning classifier systems, or LCS, are a paradigm of rule-based machine learning methods that combine a discovery component (e.g. typically a genetic algorithm in evolutionary computation) with a learning component (performing either supervised learning, reinforcement learning, or unsupervised learning).  Learning classifier systems seek to identify a set of context-dependent rules that collectively store and apply knowledge in a piecewise manner in order to make predictions (e.g. behavior modeling, classification, data mining, regression, function approximation, or game strategy).  This approach allows complex solution spaces to be broken up into smaller, simpler parts for the reinforcement learning that is inside artificial intelligence research.
+
+The founding concepts behind learning classifier systems came from attempts to model complex adaptive systems, using rule-based agents to form an artificial cognitive system (i.e. artificial intelligence).
+
+Methodology
+
+The architecture and components of a given learning classifier system can be quite variable. It is useful to think of an LCS as a machine consisting of several interacting components. Components may be added or removed, or existing components modified/exchanged to suit the demands of a given problem domain (like algorithmic building blocks) or to make the algorithm flexible enough to function in many different problem domains. As a result, the LCS paradigm can be flexibly applied to many problem domains that call for machine learning. The major divisions among LCS implementations are as follows: (1) Michigan-style architecture vs. Pittsburgh-style architecture, (2) reinforcement learning vs. supervised learning, (3) incremental learning vs. batch learning, (4) online learning vs. offline learning, (5) strength-based fitness vs. accuracy-based fitness, and (6) complete action mapping vs best action mapping. These divisions are not necessarily mutually exclusive. For example, XCS, in 1975 and his formalization of Holland's schema theorem.  In 1976, Holland conceptualized an extension of the GA concept to what he called a "cognitive system", and provided the first detailed description of what would become known as the first learning classifier system in the paper "Cognitive Systems based on Adaptive Algorithms".  This first system, named Cognitive System One (CS-1) was conceived as a modeling tool, designed to model a real system (i.e. environment) with unknown underlying dynamics using a population of human readable rules.  The goal was for a set of rules to perform online machine learning to adapt to the environment based on infrequent payoff/reward (i.e. reinforcement learning) and apply these rules to generate a behavior that matched the real system. This early, ambitious implementation was later regarded as overly complex, yielding inconsistent results.
+
+Beginning in 1980, Kenneth de Jong and his student Stephen Smith took a different approach to rule-based machine learning with (LS-1), where learning was viewed as an offline optimization process rather than an online adaptation process.  This new approach was more similar to a standard genetic algorithm but evolved independent sets of rules.  Since that time LCS methods inspired by the online learning framework introduced by Holland at the University of Michigan have been referred to as Michigan-style LCS, and those inspired by Smith and De Jong at the University of Pittsburgh have been referred to as Pittsburgh-style LCS.
+
+Other important concepts that emerged in the early days of LCS research included (1) the formalization of a bucket brigade algorithm (BBA) for credit assignment/learning, (2) selection of parent rules from a common 'environmental niche' (i.e. the match set [M]) rather than from the whole population [P], (3) covering, first introduced as a create operator, (4) the formalization of an action set [A], and the introduction of the correct set [C], (8) accuracy-based fitness (9) the combination of fuzzy logic with LCS (which later spawned a lineage of fuzzy LCS algorithms), (10) encouraging long action chains and default hierarchies for improving performance on multi-step problems, (11) examining latent learning (which later inspired a new branch of anticipatory classifier systems (ACS)), and (12) the introduction of the first Q-learning-like credit assignment technique.  While not all of these concepts are applied in modern LCS algorithms, each were landmarks in the development of the LCS paradigm.
+
+The revolution
+
+Interest in learning classifier systems was reinvigorated in the mid 1990s largely due to two events; the development of the Q-Learning algorithm for reinforcement learning, and the introduction of significantly simplified Michigan-style LCS architectures by Stewart Wilson.  Wilson's Zeroth-level Classifier System (ZCS)  Reinforcement learning typically seeks to learn a value function that maps out a complete representation of the state/action space.  Similarly, the design of XCS drives it to form an all-inclusive and accurate representation of the problem space (i.e. a complete map) rather than focusing on high payoff niches in the environment (as was the case with strength-based LCS).  Conceptually, complete maps don't only capture what you should do, or what is correct, but also what you shouldn't do, or what's incorrect.  Differently, most strength-based LCSs, or exclusively supervised learning LCSs seek a rule set of efficient generalizations in the form of a best action map (or a partial map).   Comparisons between strength vs. accuracy-based fitness and complete vs. best action maps have since been examined in greater detail.
+
+In the wake of XCS
+
+XCS inspired the development of a whole new generation of LCS algorithms and applications.  In 1995, Congdon was the first to apply LCS to real-world epidemiological investigations of disease  EpiCS, and later EpiXCS for epidemiological classification.  These early works inspired later interest in applying LCS algorithms to complex and large-scale data mining tasks epitomized by bioinformatics applications.  In 1998, Stolzmann introduced anticipatory classifier systems (ACS) which included rules in the form of 'condition-action-effect, rather than the classic 'condition-action' representation.  In 2002, Wilson introduced XCSF, adding a computed action in order to perform function approximation.  In 2003, Bernado-Mansilla introduced a sUpervised Classifier System (UCS), which specialized the XCS algorithm to the task of supervised learning, single-step problems, and forming a best action set.  UCS removed the reinforcement learning strategy in favor of a simple, accuracy-based rule fitness as well as the explore/exploit learning phases, characteristic of many reinforcement learners.  Bull introduced a simple accuracy-based LCS (YCS) and a simple strength-based LCS Minimal Classifier System (MCS) in order to develop a better theoretical understanding of the LCS framework.  Bacardit introduced GAssist and BioHEL, Pittsburgh-style LCSs designed for data mining and scalability to large datasets in bioinformatics applications.  In 2008, Drugowitsch published the book titled "Design and Analysis of Learning Classifier Systems" including some theoretical examination of LCS algorithms.  Butz introduced the first rule online learning visualization within a GUI for XCSF  ExSTraCS integrated (1) expert knowledge to drive covering and genetic algorithm towards important features in the data, (2) a form of long-term memory referred to as attribute tracking, allowing for more efficient learning and the characterization of heterogeneous data patterns, and (3) a flexible rule representation similar to Bacardit's mixed discrete-continuous attribute list representation.  Both Bacardit and Urbanowicz explored statistical and visualization strategies to interpret LCS rules and perform knowledge discovery for data mining.  Browne and Iqbal explored the concept of reusing building blocks in the form of code fragments and were the first to solve the 135-bit multiplexer benchmark problem by first learning useful building blocks from simpler multiplexer problems. ExSTraCS 2.0 was later introduced to improve Michigan-style LCS scalability, successfully solving the 135-bit multiplexer benchmark problem for the first time directly. have also been applied to refer to what would be more characteristically defined as a learning classifier system.  Due to their similarity to genetic algorithms, Pittsburgh-style learning classifier systems are sometimes generically referred to as 'genetic algorithms'.  Beyond this, some LCS algorithms, or closely related methods, have been referred to as 'cognitive systems',   This variation in terminology contributes to some confusion in the field.
+
+Up until the 2000s nearly all learning classifier system methods were developed with reinforcement learning problems in mind. As a result, the term ‘learning classifier system’ was commonly defined as the combination of ‘trial-and-error’ reinforcement learning with the global search of a genetic algorithm. Interest in supervised learning applications, and even unsupervised learning have since broadened the use and definition of this term.
+
+See also
+
+Rule-based machine learning
+
+Production system
+
+Expert system
+
+Genetic algorithm
+
+Association rule learning
+
+Artificial immune system
+
+Population-based Incremental Learning
+
+Machine learning
+
+References
+
+External links
+
+Video tutorial
+
+Learning Classifier Systems in a Nutshell - (2016) Go inside a basic LCS algorithm to learn their components and how they work.
+
+Webpages
+
+LCS & GBML Central
+
+UWE Learning Classifier Research Group
+
+Prediction Dynamics
+
+Category:Evolutionary algorithms

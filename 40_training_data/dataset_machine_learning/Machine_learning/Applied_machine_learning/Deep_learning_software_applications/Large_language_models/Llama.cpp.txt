@@ -1,0 +1,19 @@
+{{Infobox software
+
+name = llama.cpp
+
+logo = File:Llama1-logo.svg
+
+author = Georgi Gerganov
+
+developer = Georgi Gerganov and community
+
+released =  While initially designed for CPUs, GPU inference support was later added.
+
+}}
+
+Category:Large language models
+
+Category:Open-source artificial intelligence
+
+Category:Free and open-source software

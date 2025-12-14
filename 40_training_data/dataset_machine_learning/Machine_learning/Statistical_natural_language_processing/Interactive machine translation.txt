@@ -1,0 +1,105 @@
+Interactive machine translation (IMT), is a specific sub-field of computer-aided translation. Under this translation paradigm, the computer software that assists the human translator attempts to predict the text the user is going to input by taking into account all the information it has available. Whenever such prediction is wrong and the user provides feedback to the system, a new prediction is performed considering the new information available. Such process is repeated until the translation provided matches the  user's expectations.
+
+Interactive machine translation is specially interesting when translating texts in domains where it is not admissible to output a translation containing errors, hence requiring a human user to amend the translations provided by the system.  In such cases, interactive machine translation has been proved to provide benefit to potential users.
+
+Nevertheless, there are few commercial software that implements interactive machine translation and work done in the field is mostly restrained to academic research.
+
+History
+
+Historically, interactive machine translation is born as an evolution of the computer-aided translation paradigm, where the human translator and the machine translation system were intended to work as a tandem.
+
+This first work was extended within the TransType research project, funded by the Canadian government. In this project, the human interaction was aimed towards producing the target text for the first time by embedding data-driven machine translation techniques within the interactive translation environment with the goal of achieving the best of both actors: the efficiency of the automatic system and the reliability of human translators.
+
+Later, a larger-scale research project, TransType2, also funded by the European Commission, aimed at developing novel types of assistance to human translators and integrated them into a new workbench, consisting of an editor, a server, and analysis and visualisation tools. The workbench was designed in a modular fashion and can be combined with existing computer aided translation tools. Furthermore, the CASMACAT workbench can learn from the interaction with the human translator by updating and adapting its models instantly based on the translation choices of the user.
+
+Recent work on involving an extensive evaluation with human users revealed the fact that interactive machine translation may even be used by users that do not speak the source language in order to achieve near professional translation quality. Moreover, it also elucidated the fact that an interactive scenario is more beneficial than a classic post-edition scenario.
+
+The previously described approaches rely on a tightly coupled underlying corpus-based machine translation system (usually, a Statistical machine translation system) that is used as a glass box, therefore inheriting the shortcomings of the translation systems and limiting the usage of interactive machine translation for some scenarios. For this reason, an approach that uses any kind of bilingual resource (not limited to machine translation) as a black-box to provide interactive machine translation was developed. This approach is not able to extract as much information from the bilingual resources used, due to the black-box nature of the interaction, but can use any resource available to the user. Forecat is a black-box interactive machine translation implementation that is available both as a web application (that includes a webpage and a web services interface) and as a plugin for OmegaT (Forecat-OmegaT).
+
+Process
+
+The interactive machine translation process starts with the system suggesting a
+
+translation hypothesis to the user. Then, the user may accept the complete
+
+sentence as correct, or may modify it if he considers there is some error.
+
+Typically, when modifying a given word, it is assumed that the prefix until
+
+that word is correct, leading to a left-to-right interaction scheme. Once the
+
+user has changed the word considered incorrect, the system then proposes a new
+
+suffix, i.e. the remainder of the sentence. Such process continues until the
+
+translation provided satisfies the user.
+
+Although explained at the word level, the previous process may also be implemented at the character level, and hence the system provides a suffix whenever the human translator types in a single character. In addition, there is ongoing effort towards changing the typical left-to-right interaction scheme in order to make human-machine interaction easier.
+
+A similar approach is used in the Caitra translation tool.
+
+Evaluation
+
+Evaluation is a difficult issue in interactive machine translation. Ideally,
+
+evaluation should take place in experiments involving human users. However,
+
+given the high monetary cost this would imply, this is seldom the case.
+
+Moreover, even when considering human translators in order to perform a true
+
+evaluation of interactive machine translation techniques, it is not clear what
+
+should be measured in such experiments, since there are many different
+
+variables that should be taken into account and cannot be controlled, as is
+
+for instance the time the user takes in order to get used to the process.
+
+In the CASMACAT project, some field trials have been carried out to study some of these variables.
+
+For quick evaluations in laboratory conditions, interactive machine translation is measured by using the key stroke ratio or the word stroke ratio. Such criteria attempt to measure how many key-strokes  or words did the user need to introduce before producing the final translated  document.
+
+Differences with classical computer-aided translation
+
+Although interactive machine translation is a sub-field of computer-aided translation, the main attractive of the former with respect to the latter is the interactivity. In classical computer-aided translation, the translation system may suggest one translation hypothesis in the best case, and then the user is required to post-edit such hypothesis. In contrast, in interactive machine translation the system produces a new translation hypothesis each time the user interacts with the system, i.e. after each word (or letter) has been introduced.
+
+See also
+
+Machine translation
+
+Statistical machine translation
+
+Computer-aided translation
+
+Computational linguistics
+
+Postediting
+
+Translation
+
+References
+
+External links
+
+Lilt's Interactive Machine Translation demo
+
+Interactive Machine Translation demo
+
+TransType project web page
+
+TransType2 project web page
+
+MIPRCV project web page
+
+Forecat
+
+Forecat-OmegaT
+
+Category:Human–computer interaction
+
+Category:Machine translation
+
+Category:Statistical natural language processing
+
+Category:Computer-assisted translation
