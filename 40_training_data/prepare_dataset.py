@@ -48,6 +48,7 @@ import sys; from pathlib import Path; sys.path.insert(0, str(Path(__file__).pare
 # Imports
 import os
 import re
+import json
 import time
 import argparse
 import requests
@@ -470,6 +471,117 @@ def sanitize_filename(title: str) -> str:
     return filename
 
 
+def sanitize_category_path(category_path: str, max_length: int = 200) -> str:
+    """
+    Sanitize and truncate category path to avoid Windows path length limits.
+    
+    Args:
+        category_path: Category path like "Machine_learning/Neural_networks/Deep_learning"
+        max_length: Maximum allowed path length
+        
+    Returns:
+        Sanitized and truncated category path
+    """
+    if not category_path:
+        return ""
+    
+    # Split into parts
+    parts = category_path.split('/')
+    
+    # Sanitize each part (remove invalid chars, limit length)
+    sanitized_parts = []
+    for part in parts:
+        # Replace invalid path characters
+        sanitized = part.replace('/', '_').replace('\\', '_')
+        sanitized = sanitized.replace(':', '_').replace('*', '_')
+        sanitized = sanitized.replace('?', '_').replace('"', '_')
+        sanitized = sanitized.replace('<', '_').replace('>', '_')
+        sanitized = sanitized.replace('|', '_')
+        sanitized = sanitized.strip('. ')
+        
+        # Limit each part length
+        if len(sanitized) > 50:
+            sanitized = sanitized[:50]
+        
+        if sanitized:  # Only add non-empty parts
+            sanitized_parts.append(sanitized)
+    
+    # Rejoin and check total length
+    result = '/'.join(sanitized_parts)
+    
+    # If still too long, truncate from the beginning (keep most specific categories)
+    if len(result) > max_length:
+        # Keep the last parts (most specific)
+        parts = result.split('/')
+        result_parts = []
+        current_length = 0
+        
+        # Add parts from the end until we hit the limit
+        for part in reversed(parts):
+            if current_length + len(part) + 1 <= max_length:  # +1 for separator
+                result_parts.insert(0, part)
+                current_length += len(part) + 1
+            else:
+                break
+        
+        result = '/'.join(result_parts) if result_parts else parts[-1] if parts else ""
+    
+    return result
+
+
+# =====================
+#  HIERARCHY CACHE OPERATIONS
+# =====================
+
+def save_page_hierarchy(article_to_category: Dict[str, str], output_folder: Path):
+    """
+    Save the page hierarchy (article to category mapping) to a JSON file.
+    
+    Args:
+        article_to_category: Dictionary mapping article titles to category paths
+        output_folder: Base output folder
+    """
+    scratch_folder = output_folder / "scratch_files"
+    scratch_folder.mkdir(parents=True, exist_ok=True)
+    
+    hierarchy_file = scratch_folder / "page_hierarchy.json"
+    
+    try:
+        with open(hierarchy_file, 'w', encoding='utf-8') as f:
+            json.dump(article_to_category, f, indent=2, ensure_ascii=False)
+        logger.info(f"Saved page hierarchy to: {hierarchy_file}")
+        logger.info(f"  Total articles: {len(article_to_category)}")
+    except Exception as e:
+        logger.warning(f"Failed to save page hierarchy: {e}")
+
+
+def load_page_hierarchy(output_folder: Path) -> Optional[Dict[str, str]]:
+    """
+    Load the page hierarchy (article to category mapping) from a JSON file.
+    
+    Args:
+        output_folder: Base output folder
+        
+    Returns:
+        Dictionary mapping article titles to category paths, or None if file doesn't exist
+    """
+    scratch_folder = output_folder / "scratch_files"
+    hierarchy_file = scratch_folder / "page_hierarchy.json"
+    
+    if not hierarchy_file.exists():
+        return None
+    
+    try:
+        with open(hierarchy_file, 'r', encoding='utf-8') as f:
+            article_to_category = json.load(f)
+        logger.info(f"Loaded page hierarchy from: {hierarchy_file}")
+        logger.info(f"  Total articles: {len(article_to_category)}")
+        return article_to_category
+    except Exception as e:
+        logger.warning(f"Failed to load page hierarchy: {e}")
+        return None
+
+
 # =====================
 #  FILE OPERATIONS
 # =====================
@@ -494,17 +606,39 @@ def save_article_to_file(title: str, text: str, output_folder: Path, category_pa
     
     # Create category subfolder if needed
     if category_path:
-        category_folder = output_folder / category_path
-        category_folder.mkdir(parents=True, exist_ok=True)
-        save_folder = category_folder
+        # Sanitize and truncate category path to avoid Windows path length limits
+        # Windows MAX_PATH is 260, but we need room for filename and base path
+        base_path_len = len(str(output_folder))
+        filename_len = len(sanitize_filename(title)) + 4  # +4 for .txt
+        max_category_path_len = 200 - base_path_len - filename_len - 10  # -10 for safety margin
+        
+        sanitized_path = sanitize_category_path(category_path, max_length=max_category_path_len)
+        
+        if sanitized_path:
+            category_folder = output_folder / sanitized_path
+            try:
+                category_folder.mkdir(parents=True, exist_ok=True)
+                save_folder = category_folder
+            except (OSError, FileNotFoundError) as e:
+                # If path is still too long, use a shorter fallback
+                logger.warning(f"Path too long, using fallback: {category_path}")
+                # Use just the last part of the category path
+                last_part = category_path.split('/')[-1] if '/' in category_path else category_path
+                sanitized_last = sanitize_category_path(last_part, max_length=50)
+                category_folder = output_folder / sanitized_last
+                category_folder.mkdir(parents=True, exist_ok=True)
+                save_folder = category_folder
+        else:
+            save_folder = output_folder
     else:
         save_folder = output_folder
     
     filename = sanitize_filename(title) + '.txt'
     filepath = save_folder / filename
     
+    # Check if file already exists - skip download if it does (helps with resuming)
     if filepath.exists() and not overwrite:
-        logger.debug(f"Skipping {title}: file already exists")
+        logger.debug(f"Skipping {title}: file already exists at {filepath}")
         return False
     
     try:
@@ -559,23 +693,36 @@ def prepare_dataset(
     logger.info(f"Output folder created/verified: {output_path}")
     logger.info("")
     
-    # Step 1: Get all article titles
+    # Step 1: Get all article titles (use cache if available)
     logger.info("=" * 80)
     logger.info("STEP 1: GETTING ARTICLE TITLES")
     logger.info("=" * 80)
     logger.info("")
-    logger.info(f"Recursively traversing category: {category}")
-    logger.info("This may take a few minutes...")
-    logger.info("")
     
-    start_time = time.time()
-    article_to_category = get_all_category_members(category)
-    elapsed_time = time.time() - start_time
+    # Try to load existing hierarchy first
+    article_to_category = load_page_hierarchy(output_path)
     
-    logger.info("")
-    logger.info(f"Found {len(article_to_category)} unique articles")
-    logger.info(f"Time taken: {elapsed_time:.2f} seconds")
-    logger.info("")
+    if article_to_category is None:
+        # No cache found, generate hierarchy
+        logger.info(f"No cached hierarchy found. Recursively traversing category: {category}")
+        logger.info("This may take a few minutes...")
+        logger.info("")
+        
+        start_time = time.time()
+        article_to_category = get_all_category_members(category)
+        elapsed_time = time.time() - start_time
+        
+        logger.info("")
+        logger.info(f"Found {len(article_to_category)} unique articles")
+        logger.info(f"Time taken: {elapsed_time:.2f} seconds")
+        logger.info("")
+        
+        # Save hierarchy for future use
+        save_page_hierarchy(article_to_category, output_path)
+        logger.info("")
+    else:
+        logger.info(f"Using cached page hierarchy with {len(article_to_category)} articles")
+        logger.info("")
     
     # Limit articles if specified
     if max_articles and len(article_to_category) > max_articles:
@@ -603,6 +750,30 @@ def prepare_dataset(
         logger.info(f"[{i}/{len(article_list)}] Processing: {title}")
         if category_path:
             logger.info(f"  Category path: {category_path}")
+        
+        # Check if file already exists before fetching (skip download if exists)
+        # This helps with resuming interrupted downloads
+        sanitized_path = sanitize_category_path(category_path, max_length=200) if category_path else ""
+        if sanitized_path:
+            base_path_len = len(str(output_path))
+            filename_len = len(sanitize_filename(title)) + 4
+            max_category_path_len = 200 - base_path_len - filename_len - 10
+            sanitized_path = sanitize_category_path(category_path, max_length=max_category_path_len)
+            if sanitized_path:
+                check_folder = output_path / sanitized_path
+            else:
+                check_folder = output_path
+        else:
+            check_folder = output_path
+        
+        filename = sanitize_filename(title) + '.txt'
+        filepath = check_folder / filename
+        
+        if filepath.exists() and not overwrite:
+            skipped_count += 1
+            logger.info(f"  Skipped: file already exists (resuming from previous run)")
+            logger.info("")
+            continue
         
         # Fetch article text
         text = fetch_article_text(title)

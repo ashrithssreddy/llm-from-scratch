@@ -9,13 +9,14 @@ from typing import List
 
 def load_text_files_from_folder(folder_path: str) -> str:
     """
-    Load all text files from a folder and concatenate their contents.
+    Load all text files from a folder (recursively) and concatenate their contents.
+    Excludes folders containing "scratch_files" in their path.
     
     Args:
         folder_path: Path to the folder containing text files.
         
     Returns:
-        Concatenated string containing all text from all .txt files in the folder.
+        Concatenated string containing all text from all .txt files in the folder and subfolders.
     """
     folder = Path(folder_path)
     
@@ -25,8 +26,11 @@ def load_text_files_from_folder(folder_path: str) -> str:
     if not folder.is_dir():
         raise ValueError(f"Path is not a directory: {folder_path}")
     
-    # Find all .txt files in the folder
-    text_files = list(folder.glob("*.txt"))
+    # Find all .txt files recursively in the folder and subfolders
+    text_files = list(folder.rglob("*.txt"))
+    
+    # Filter out files in folders containing "scratch_files"
+    text_files = [f for f in text_files if "scratch_files" not in str(f)]
     
     if not text_files:
         raise ValueError(f"No .txt files found in folder: {folder_path}")
@@ -43,13 +47,14 @@ def load_text_files_from_folder(folder_path: str) -> str:
 
 def get_text_file_paths(folder_path: str) -> List[Path]:
     """
-    Get list of all text file paths in a folder.
+    Get list of all text file paths in a folder (recursively).
+    Excludes folders containing "scratch_files" in their path.
     
     Args:
         folder_path: Path to the folder containing text files.
         
     Returns:
-        List of Path objects for all .txt files in the folder.
+        List of Path objects for all .txt files in the folder and subfolders.
     """
     folder = Path(folder_path)
     
@@ -59,6 +64,11 @@ def get_text_file_paths(folder_path: str) -> List[Path]:
     if not folder.is_dir():
         raise ValueError(f"Path is not a directory: {folder_path}")
     
-    text_files = list(folder.glob("*.txt"))
+    # Find all .txt files recursively in the folder and subfolders
+    text_files = list(folder.rglob("*.txt"))
+    
+    # Filter out files in folders containing "scratch_files"
+    text_files = [f for f in text_files if "scratch_files" not in str(f)]
+    
     return sorted(text_files)
 
