@@ -116,7 +116,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--model-path",
         type=str,
-        default="50_models/dataset_machine_learning/embed128_layers3_heads4_epochs10.pt",
+        default="50_models/AI_Generated_Dataset/embed128_layers3_heads4_epochs10_latest.pt",
         help="Path to trained model file (default: 50_models/trained_model.pt)"
     )
     parser.add_argument(
