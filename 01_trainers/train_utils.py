@@ -229,3 +229,36 @@ def train_epoch(model, dataloader, optimizer, criterion, device, epoch_num=None,
     
     return avg_loss
 
+
+def evaluate(model, dataloader, criterion, device):
+    """
+    Evaluate the model on a validation/test set.
+    
+    Args:
+        model: The model to evaluate
+        dataloader: DataLoader for validation/test data
+        criterion: Loss function
+        device: Device to run evaluation on
+    
+    Returns:
+        Average loss over the validation set
+    """
+    model.eval()
+    total_loss = 0.0
+    num_batches = 0
+    
+    with torch.no_grad():
+        for x, y in tqdm(dataloader, desc="Validation"):
+            # Move data to device
+            x, y = x.to(device), y.to(device)
+            
+            # Forward pass
+            logits = model(x)
+            loss = criterion(logits.view(-1, logits.size(-1)), y.view(-1))
+            
+            total_loss += loss.item()
+            num_batches += 1
+    
+    avg_loss = total_loss / num_batches if num_batches > 0 else 0.0
+    return avg_loss
+
