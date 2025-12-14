@@ -128,7 +128,7 @@ def save_checkpoint(model, dataset, optimizer, epoch, avg_loss, model_path,
 
 def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128, 
                 embed_dim=128, num_heads=4, num_layers=3, learning_rate=1e-3,
-                device=None):
+                gradient_accumulation_steps=4, device=None):
     """
     Train a language model on all text files in a dataset folder.
     
@@ -141,6 +141,8 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
         num_heads: Number of attention heads
         num_layers: Number of transformer layers
         learning_rate: Learning rate for optimizer
+        gradient_accumulation_steps: Number of batches to accumulate gradients over
+                                    before updating parameters (default: 4)
         device: Device to train on (cuda/cpu)
     """
     logger.info("")
@@ -267,6 +269,10 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
     logger.info("Configuring training components:")
     logger.info("  - Loss function: CrossEntropyLoss")
     logger.info(f"  - Optimizer: AdamW (learning rate: {learning_rate})")
+    logger.info(f"  - Gradient accumulation steps: {gradient_accumulation_steps}")
+    if gradient_accumulation_steps > 1:
+        effective_batch_size = batch_size * gradient_accumulation_steps
+        logger.info(f"  - Effective batch size: {effective_batch_size} (actual: {batch_size})")
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.AdamW(model.parameters(), lr=learning_rate)
     step_duration = time.time() - last_timestamp
@@ -362,7 +368,8 @@ def train_model(dataset_folder, epochs=10, batch_size=32, block_size=128,
         logger.info(f"EPOCH {epoch+1}/{epochs}")
         logger.info("-" * 80)
         logger.info("")
-        avg_loss = train_epoch(model, dataloader, optimizer, criterion, device, epoch_num=epoch+1)
+        avg_loss = train_epoch(model, dataloader, optimizer, criterion, device, 
+                              epoch_num=epoch+1, gradient_accumulation_steps=gradient_accumulation_steps)
         final_avg_loss = avg_loss  # Keep track of latest loss
         epoch_duration = time.time() - epoch_start_time
         logger.info("")
@@ -477,6 +484,8 @@ if __name__ == "__main__":
     parser.add_argument("--num-heads", type=int, default=4, help="Number of attention heads")
     parser.add_argument("--num-layers", type=int, default=3, help="Number of transformer layers")
     parser.add_argument("--lr", type=float, default=1e-3, help="Learning rate")
+    parser.add_argument("--grad-accum-steps", type=int, default=4, 
+                       help="Number of batches to accumulate gradients over before updating (default: 4)")
     
     args = parser.parse_args()
     
@@ -493,7 +502,8 @@ if __name__ == "__main__":
             embed_dim=args.embed_dim,
             num_heads=args.num_heads,
             num_layers=args.num_layers,
-            learning_rate=args.lr
+            learning_rate=args.lr,
+            gradient_accumulation_steps=args.grad_accum_steps
         )
     except Exception as e:
         logger.error("")

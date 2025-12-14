@@ -120,15 +120,38 @@ class SimpleLanguageModel(nn.Module):
 #  TRAINING FUNCTIONS
 # =====================
 
-def train_epoch(model, dataloader, optimizer, criterion, device, epoch_num=None):
-    """Train for one epoch."""
+def train_epoch(model, dataloader, optimizer, criterion, device, epoch_num=None, 
+                gradient_accumulation_steps=1):
+    """
+    Train for one epoch with optional gradient accumulation.
+    
+    Args:
+        model: The model to train
+        dataloader: DataLoader for training data
+        optimizer: Optimizer for parameter updates
+        criterion: Loss function
+        device: Device to run training on
+        epoch_num: Current epoch number (for logging)
+        gradient_accumulation_steps: Number of batches to accumulate gradients over
+                                    before updating parameters (default: 1, no accumulation)
+    """
     if epoch_num is not None:
         logger.info(f"Processing {len(dataloader)} batches...")
+        if gradient_accumulation_steps > 1:
+            effective_batch_size = dataloader.batch_size * gradient_accumulation_steps
+            logger.info(f"  - Gradient accumulation: {gradient_accumulation_steps} steps")
+            logger.info(f"  - Effective batch size: {effective_batch_size} (actual: {dataloader.batch_size})")
     
     model.train()
-    total_loss = 0
-    num_batches = 0
+    total_loss = 0.0
+    total_batches_processed = 0
+    num_update_steps = 0
     batch_losses = []
+    accumulated_loss = 0.0
+    accumulated_batches = 0
+    
+    # Zero gradients at the start
+    optimizer.zero_grad()
     
     for batch_idx, (x, y) in enumerate(tqdm(dataloader, desc=f"Epoch {epoch_num}")):
         # Move data to device
@@ -138,11 +161,18 @@ def train_epoch(model, dataloader, optimizer, criterion, device, epoch_num=None)
         logits = model(x)
         loss = criterion(logits.view(-1, logits.size(-1)), y.view(-1))
         
-        # Backward pass: compute gradients
-        optimizer.zero_grad()
-        loss.backward()
+        # Scale loss by accumulation steps to get average gradient
+        # This ensures the effective batch size matches what we'd get with a larger batch
+        scaled_loss = loss / gradient_accumulation_steps
         
-        # Log gradient norms for first batch (to monitor training health)
+        # Backward pass: accumulate gradients
+        scaled_loss.backward()
+        
+        accumulated_loss += loss.item()  # Store unscaled loss for logging
+        accumulated_batches += 1
+        total_batches_processed += 1
+        
+        # Log gradient norms for first accumulation step (to monitor training health)
         if batch_idx == 0:
             total_grad_norm = 0
             for p in model.parameters():
@@ -152,23 +182,50 @@ def train_epoch(model, dataloader, optimizer, criterion, device, epoch_num=None)
             total_grad_norm = total_grad_norm ** (1. / 2)
             logger.debug(f"  First batch gradient norm: {total_grad_norm:.4f}")
         
+        # Update model parameters every gradient_accumulation_steps batches
+        if accumulated_batches >= gradient_accumulation_steps:
+            # Gradient clipping for stability (optional but recommended)
+            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+            
+            # Update model parameters
+            optimizer.step()
+            optimizer.zero_grad()
+            
+            # Log the accumulated loss (average over accumulation steps)
+            avg_accumulated_loss = accumulated_loss / accumulated_batches
+            total_loss += accumulated_loss
+            batch_losses.append(avg_accumulated_loss)
+            num_update_steps += 1
+            accumulated_loss = 0.0
+            accumulated_batches = 0
+            
+            # Log progress every 10 update steps
+            if num_update_steps % 10 == 0:
+                current_avg = total_loss / total_batches_processed
+                logger.debug(f"  Update step {num_update_steps}: Current loss = {avg_accumulated_loss:.4f}, Running average = {current_avg:.4f}")
+    
+    # Handle case where last batch doesn't complete an accumulation step
+    if accumulated_batches > 0:
+        # Gradient clipping for stability
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+        
         # Update model parameters
         optimizer.step()
+        optimizer.zero_grad()
         
-        batch_loss = loss.item()
-        total_loss += batch_loss
-        batch_losses.append(batch_loss)
-        num_batches += 1
-        
-        # Log progress every 10 batches
-        if (batch_idx + 1) % 10 == 0:
-            logger.debug(f"  Batch {batch_idx + 1}/{len(dataloader)}: Current loss = {batch_loss:.4f}, Running average = {total_loss/num_batches:.4f}")
+        # Log the accumulated loss
+        avg_accumulated_loss = accumulated_loss / accumulated_batches
+        total_loss += accumulated_loss
+        batch_losses.append(avg_accumulated_loss)
+        num_update_steps += 1
     
-    avg_loss = total_loss / num_batches
+    # Calculate average loss over all batches
+    avg_loss = total_loss / total_batches_processed if total_batches_processed > 0 else 0.0
     logger.info(f"Epoch statistics:")
     logger.info(f"  - Average loss: {avg_loss:.4f}")
     logger.info(f"  - Min batch loss: {min(batch_losses):.4f}")
     logger.info(f"  - Max batch loss: {max(batch_losses):.4f}")
+    logger.info(f"  - Update steps: {num_update_steps} (from {total_batches_processed} batches)")
     
     return avg_loss
 
