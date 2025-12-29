@@ -1,0 +1,183 @@
+################################
+Introduciton to Hugging Face
+################################
+Access collaborate and stay informed
+Models, Datasets and Apps (called huggingface spaces)
+
+## Python libraries avaiable
+Core ML libraries
+Transormers (built by hugging face) and Transormers.js 
+Diffusers
+Datasets
+Tokenizers
+Evaluate
+timm - vision Models
+Sentense Trnasformers - Embeddidngs, retrieval and reranking
+
+## Training n Optimization
+    PEFT - Parameter effivcient fine tuning
+    Accelerate - Train pytorch models using multi-GPT, TPU effivcient
+    Optimum - Optimize HF transformers for faster training and inference
+    AWS trianium and inferentia
+    TRL - Train with reinforment learning
+    Safetensors - Safe way to store/transmit NN weights
+    bitsandbytes - Quantize models
+    Lighteval - evaluate LLMs across multiple backends
+
+## e.g. Text Generation Model (for custom enterprise data)
+Model Page
+    https://huggingface.co/zai-org/GLM-4.5
+Model Card
+
+Use the Model
+    Transformers python library to use models
+    Notebooks 
+        Google Colab
+        Kaggle
+    Load Model
+        vLLM
+
+################################
+Running Hugging Face models
+################################
+Run on personal local harware, or on the personal cloud
+    Good for small models
+Run on inference provider (partners who runs the computation) using hugging face API
+    For large GPU needs. Fast, todo: free trial 
+
+## Transformers library -- local machine
+from transformers import pipeline
+
+todo: what is a task? same as Tasks on hugging face models page?
+gpt2_pipeline = pipeline(task = "task-generation", model = "openai-community/gpt2")
+command:
+gpt2_pipeline("what if AI")
+output: list of dictinaries
+[
+    {"generated_text": "what if AI would not be used, ..."}
+]
+
+todo: all the params of pipeline object?
+max_new_tokens = output is 10 tokens max
+num_return_sequences === 2 texts outputs produced
+gpt2_pipeline("what if AI", max_new_tokens=10, num_return_sequences=2)
+
+[
+    {"generated_text": "what if AI would not be used, ..."}
+    {"generated_text": "what if AI was not smarter than humans ..."}
+]
+
+## Inference providers
+examples: AWS (SageMaker, Bedrock), Google Cloud (Vertex AI), Azure (Azure ML)
+    Together AI, Replicate, Banana.dev, Modal, Runpod
+
+todo: setup an API key
+from huggingface_hub import InferenceClient
+import os
+
+client = InferenceClient(
+    provider = "together", # together-AI provider
+    api_key = os.environ["HF_TOKEN"]
+)
+
+# an app with conversation interface
+completion = client.chat.completions.create(
+    model  = "deepseek-ai/DeepSeek-V3"
+    messages = [
+        {
+            "role": "user", # input to the model
+            "context": "what is the capital city of France?"
+        }
+    ]
+)
+print(completion.choices[0].message)
+"The capital of France is Paris, known for iconic landmarks"
+
+################################
+Hugging Face Datasets
+################################
+e.g. italian text generation
+Text modalities
+Text Generation task
+Dataset card
+    meta data
+    comilation method
+    row count 
+    licenses
+    Explore: Data Studio and data viewer. sql query
+
+pip install datasets --- developed by hugging face
+    Access, use, download
+
+from datasets import load_dataset
+# todo: how different from pandas dataframe?
+data = load_dataset("IVN-BIN/BioBERT_Italian", split = "train") # "train", test and validate
+Common format: apache arrow (column based storage for faster querying)
+
+filtered = data.filter(lambda row: "bella" in row["text"]) # datasets.arrow_dataset.Dataset
+Dataset({
+    features: ['id', 'url', 'title', 'text'],
+    num_rows: 93
+})
+
+sliced = data.select(range(20)) # first 20 rows
+Dataset({
+    features: ['id', 'url', 'title', 'text'],
+    num_rows: 20
+})
+
+sliced[0]
+{'id': '20519193',
+ 'url': 'https://en.wikipedia.org/wiki/Gugu%20%28footballer%29',
+ 'title': 'Gugu (footballer)',
+ 'text': "Luis Miguel Aparecido Alves (born May 25, 1985), known as Gugu, is a Brazilian ..."
+ }
+
+sliced[0]['text']
+"Luis Miguel Aparecido Alves (born May 25, 1985), known as Gugu, is a Brazilian ..."
+
+
+
+
+
+
+
+################################
+## Scratch Notes 
+################################
+todo: explanation for each of them
+available tasks are [
+    'audio-classification', 
+    'automatic-speech-recognition', 
+    'depth-estimation', 
+    'document-question-answering', 
+    'feature-extraction', 
+    'fill-mask', 
+    'image-classification', 
+    'image-feature-extraction', 
+    'image-segmentation', 
+    'image-text-to-text', 
+    'image-to-image', 
+    'image-to-text', 
+    'mask-generation', 
+    'ner', 
+    'object-detection', 
+    'question-answering', 
+    'sentiment-analysis', 
+    'summarization', 
+    'table-question-answering', 
+    'text-classification', 
+    'text-generation', 
+    'text-to-audio', 
+    'text-to-speech', 
+    'text2text-generation', 
+    'token-classification', 
+    'translation', 
+    'video-classification', 
+    'visual-question-answering', 
+    'vqa', 
+    'zero-shot-audio-classification', 
+    'zero-shot-classification', 
+    'zero-shot-image-classification', 
+    'zero-shot-object-detection', 
+    'translation_XX_to_YY']"

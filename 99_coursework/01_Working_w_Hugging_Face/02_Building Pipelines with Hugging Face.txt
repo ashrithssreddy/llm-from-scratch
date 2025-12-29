@@ -1,0 +1,140 @@
+################################
+Text classification
+################################
+## e.g. Sentiment Analysis
+
+from transformers import pipeline
+
+my_pipeline = pipeline(
+    "text-classification"
+    model = "distilbert-base-uncased-finetuned-sst-2-english" # todo: how to choose a model?
+)
+my_pipeline("my wifi is slower than the snail")
+[{"label":"negative", "score":0.99}]
+
+## e.g. gramatical correctness (labels acceptable or unacceptable)
+    grammer checkers and Language learning tools
+my_pipeline = pipeline(
+    "text-classification"
+    model = "abdulmatinomotoso/English_Grammar_Checker" 
+)
+my_pipeline("he eat pizza every daily")
+[{"label":"label_0", "score":0.99}]
+
+## e.g. QNLI question natural language inference
+# if the premise answers the question 
+question: which state is hollywood in?
+Premise: Hollywood in California (True/Entailment) 
+Premise: Hollywood in amazing (False/Not-Entailment) 
+
+my_pipeline = pipeline(
+    "text-classification"
+    model = "cross-encoder/qnli-electra-base" 
+)
+my_pipeline("which state is hollywood in?, Hollywood in California")
+[{"label":"label_0", "score":0.997}]
+
+## e.g. Dynamic Category assignment
+# assign predefined cateogries to text. content mdoeration and recommendation systems
+my_pipeline = pipeline(
+    "zero-shot-classification"
+    model = "facebook/bart-large-mnli" 
+)
+my_pipeline("hey datacamp, we wanna feature you in newsletter", ["sales","marketing","support"])
+
+
+################################
+Text Summarization
+################################
+extractive: large text to small text while retaining key information
+    legal docs, financial insights
+abstractive: new text
+    news articles summary
+    content recommendations
+
+my_pipeline = pipeline(
+    task = "summarization"
+    model = "nyamuda/extractive-summarization" # extractive
+    -- model = "sshleifer/distilbart-cnn-12-6" # abstrative, fabrication risk
+)
+output = my_pipeline("this is a large text about data science") # output is dict
+min_new_tokens and max_new_tokens control for length. todo: how much is 1 token
+output[0]["summary_text"]
+
+
+
+################################
+Auto models and tokenizers
+################################
+Auto Classes: Pipelines are great but Auto Classes are more flexible to access models and tokenizers
+    More control than quick-experimentation pipelines
+
+AutoModels:
+from transformers import AutoModelForSequenceClassification # AKA text classification
+
+my_model = AutoModelForSequenceClassification.from_pretrained(
+    "dilbert-base-uncased-finetuned-sst-2-english"
+)
+
+Tokenizers: to prepare text input for using in the model
+    Clean input and split text into tokens
+    todo: what exactly is token
+Ideally: choose tokenizer paired with the model itself (happens in pipeline automatically, but manually in autoclasses)
+
+from transformers import AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
+tokens = tokenizer.tokenize("AI: helping robots think and humans overthink")
+print(tokens)
+
+tokenizer = AutoTokenizer.from_pretrained("BERT-Base-Cased")
+tokens = tokenizer.tokenize("AI: helping robots think and humans overthink")
+print(tokens) # different output
+
+todo: do I need to know all tokenizations?
+todo: is there a taxonomy of tokenization?
+
+from transformers import AutoModelForSequenceClassification, AutoTokenizer, pipeline 
+my_model = AutoModelForSequenceClassification.from_pretrained(model_name)
+my_tokenizer = AutoTokenizer.from_pretrained(model_name)
+
+# todo: what does this line even do? more customization? what other parameters does pipeline() take
+my_pipeline = pipeline(task = "sentiment-analysis", model = my_model, tokenizer = my_tokenizer)
+
+# what customization. e.g.
+task reqiores tokenizing financial reports, adding custom tokens like EBITDA or ROI
+Our customer support model should prioritize 'Urgent' category more often
+
+
+################################
+Document Q&A
+################################
+Answering questions from a Document
+2 inputs: document (pdf) and a question
+    research doc, legal contract, financial statement etc.  
+    total revenue of Q3
+
+from pypdf import PdfReader
+reader = PdfReader("abc.pdf")
+
+document_text = ""
+for page in reader.pages:
+    document_text = document_text + page.extract_text()
+
+my_pipeline =  pipeline(
+    task = "question-answering" 
+    model = "distilbert-base-cased-distilled-squad"
+)
+my_question = "how many"
+results = my_pipeline(question = my_question, context = document_text)  
+results["answer"]
+
+
+################################
+################################
+
+
+################################
+Scratch Notes
+################################
+what if task and model name misaligns?
